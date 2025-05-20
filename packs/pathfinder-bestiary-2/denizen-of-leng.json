@@ -1230,7 +1230,8 @@
                     "rarity": "common",
                     "value": [
                         "agile",
-                        "finesse"
+                        "finesse",
+                        "unarmed"
                     ]
                 },
                 "weaponType": {
@@ -1484,7 +1485,15 @@
             ],
             "resistances": [
                 {
+                    "doubleVs": [],
+                    "exceptions": [],
                     "type": "critical-hits",
+                    "value": 10
+                },
+                {
+                    "doubleVs": [],
+                    "exceptions": [],
+                    "type": "precision",
                     "value": 10
                 }
             ],

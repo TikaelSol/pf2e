@@ -193,7 +193,7 @@
                 "compendiumSource": "Compendium.pf2e.equipment-srd.Item.zBYEU9E7034ENCmh"
             },
             "img": "icons/equipment/chest/breastplate-banded-leather-brown.webp",
-            "name": "Leather Apron",
+            "name": "Leather Apron (Functions as Padded Armor)",
             "sort": 300000,
             "system": {
                 "acBonus": 1,
@@ -511,7 +511,9 @@
                 "traits": {
                     "value": [
                         "agile",
-                        "nonlethal"
+                        "finesse",
+                        "nonlethal",
+                        "unarmed"
                     ]
                 }
             },
@@ -652,7 +654,7 @@
                     {
                         "key": "FlatModifier",
                         "predicate": [
-                            "poison"
+                            "item:trait:poison"
                         ],
                         "selector": "saving-throw",
                         "type": "circumstance",

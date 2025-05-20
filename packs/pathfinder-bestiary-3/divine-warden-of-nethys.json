@@ -349,7 +349,8 @@
                     "rarity": "common",
                     "value": [
                         "magical",
-                        "reach-10"
+                        "reach-10",
+                        "unarmed"
                     ]
                 },
                 "weaponType": {
@@ -488,7 +489,15 @@
                     "remaster": false,
                     "title": "Pathfinder Bestiary 3"
                 },
-                "rules": [],
+                "rules": [
+                    {
+                        "key": "Immunity",
+                        "mode": "remove",
+                        "type": [
+                            "spirit"
+                        ]
+                    }
+                ],
                 "slug": "divine-warden-faith-bound",
                 "traits": {
                     "rarity": "common",

@@ -4,7 +4,7 @@
     "name": "Effect: Guide's Warning",
     "system": {
         "description": {
-            "value": "<p>You gain a +1 circumstance bonus to your initiative roll (+2 if the guide also benefits from <a class=\"content-link\" draggable=\"true\" data-link=\"\" data-uuid=\"Compendium.pf2e.actionspf2e.Item.kV3XM0YJeS2KCSOb\" data-id=\"kV3XM0YJeS2KCSOb\" data-type=\"Item\" data-pack=\"pf2e.actionspf2e\" data-tooltip=\"Ability Item\">Scout</a>).</p>"
+            "value": "<p>You gain a +1 circumstance bonus to your initiative rolls. This bonus increases to +2 if the guide was Scouting.</p>"
         },
         "duration": {
             "expiry": "turn-start",
@@ -13,7 +13,7 @@
             "value": 0
         },
         "level": {
-            "value": 1
+            "value": 4
         },
         "publication": {
             "license": "ORC",
@@ -24,6 +24,7 @@
             {
                 "key": "FlatModifier",
                 "selector": "initiative",
+                "slug": "guides-warning",
                 "type": "circumstance",
                 "value": 1
             },
@@ -31,7 +32,7 @@
                 "key": "AdjustModifier",
                 "mode": "upgrade",
                 "predicate": [
-                    "self:effect:scout"
+                    "parent:origin:effect:scout"
                 ],
                 "selector": "initiative",
                 "slug": "guides-warning",

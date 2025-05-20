@@ -37,7 +37,8 @@
                     "rarity": "common",
                     "value": [
                         "magical",
-                        "reach-10"
+                        "reach-10",
+                        "unarmed"
                     ]
                 },
                 "weaponType": {
@@ -121,8 +122,8 @@
                         "value": true
                     },
                     {
-                       "itemType": "melee",
-                       "key": "ItemAlteration",
+                        "itemType": "melee",
+                        "key": "ItemAlteration",
                         "mode": "add",
                         "predicate": [
                             "mostly-harmless"

@@ -16,6 +16,9 @@ import type { ConsumableCategory, ConsumableTrait, OtherConsumableTag } from "./
 import { DAMAGE_ONLY_CONSUMABLE_CATEGORIES, DAMAGE_OR_HEALING_CONSUMABLE_CATEGORIES } from "./values.ts";
 
 class ConsumablePF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends PhysicalItemPF2e<TParent> {
+    /** A cached copy of embeddedSpell, lazily regenerated every data preparation cycle */
+    declare private _embeddedSpell: SpellPF2e<NonNullable<TParent>> | null | undefined;
+
     static override get validTraits(): Record<ConsumableTrait, string> {
         return CONFIG.PF2E.consumableTraits;
     }
@@ -36,15 +39,13 @@ class ConsumablePF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extend
         return R.pick(this.system.uses, ["value", "max"]);
     }
 
-    #embeddedSpell: SpellPF2e<NonNullable<TParent>> | null | undefined;
-
     get embeddedSpell(): SpellPF2e<NonNullable<TParent>> | null {
         if (!this.actor) throw ErrorPF2e(`No owning actor found for "${this.name}" (${this.id})`);
-        if (this.#embeddedSpell !== undefined) {
-            return this.#embeddedSpell;
+        if (this._embeddedSpell !== undefined) {
+            return this._embeddedSpell;
         }
         if (!this.system.spell) {
-            this.#embeddedSpell = null;
+            this._embeddedSpell = null;
             return null;
         }
 
@@ -57,10 +58,10 @@ class ConsumablePF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extend
             const context = { parent: this.actor, parentItem: this };
             const spell = new ItemProxyPF2e(spellSource, context) as SpellPF2e<NonNullable<TParent>>;
             performLatePreparation(spell);
-            this.#embeddedSpell = spell;
+            this._embeddedSpell = spell;
             return spell;
         } catch (ex) {
-            this.#embeddedSpell = null;
+            this._embeddedSpell = null;
             console.error(ex);
             return null;
         }
@@ -68,7 +69,7 @@ class ConsumablePF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extend
 
     override prepareBaseData(): void {
         super.prepareBaseData();
-        this.#embeddedSpell = undefined;
+        this._embeddedSpell = undefined;
 
         this.system.uses.max ||= 1;
 
@@ -195,23 +196,20 @@ class ConsumablePF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extend
             }
         }
 
-        // Optionally destroy the item
+        // Optionally destroy the item or deduct charges or quantity
+        // Also keep ammunition if it has rule elements
         if (this.system.uses.autoDestroy && uses.value <= thisMany) {
-            const quantityRemaining = this.quantity;
-
-            // Keep ammunition if it has rule elements
+            const newQuantity = Math.max(this.quantity - (uses.max > 1 ? 1 : thisMany), 0);
             const isPreservedAmmo = this.category === "ammo" && this.system.rules.length > 0;
-            if (quantityRemaining <= 1 && !isPreservedAmmo) {
+            if (newQuantity <= 0 && !isPreservedAmmo) {
                 await this.delete();
             } else {
-                // Deduct one from quantity if this item has one charge or doesn't have charges
                 await this.update({
-                    "system.quantity": Math.max(quantityRemaining - thisMany, 0),
+                    "system.quantity": newQuantity,
                     "system.uses.value": uses.max,
                 });
             }
         } else {
-            // Deduct one charge
             await this.update({
                 "system.uses.value": Math.max(uses.value - thisMany, 0),
             });

@@ -2249,7 +2249,8 @@
                     "value": [
                         "fire",
                         "magical",
-                        "reach-20"
+                        "reach-20",
+                        "unarmed"
                     ]
                 },
                 "weaponType": {
@@ -2294,7 +2295,8 @@
                     "value": [
                         "agile",
                         "magical",
-                        "reach-15"
+                        "reach-15",
+                        "unarmed"
                     ]
                 },
                 "weaponType": {
@@ -2482,7 +2484,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p><strong>Trigger</strong> Mengkare fails a saving throw against a spell.</p>\n<hr />\n<p><strong>Effect</strong> @UUID[Compendium.pf2e.spells-srd.Item.Dispel Magic] (7th level) attempts to counteract the triggering spell.</p>"
+                    "value": "<p><strong>Trigger</strong> Mengkare fails a saving throw against a spell.</p>\n<hr />\n<p><strong>Effect</strong> @UUID[Compendium.pf2e.spells-srd.Item.Dispel Magic] (7th rank) attempts to counteract the triggering spell.</p>"
                 },
                 "publication": {
                     "license": "OGL",

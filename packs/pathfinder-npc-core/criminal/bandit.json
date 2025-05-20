@@ -473,7 +473,6 @@
                 "traits": {
                     "value": [
                         "agile",
-                        "finesse",
                         "versatile-s"
                     ]
                 }
@@ -638,7 +637,8 @@
                         ],
                         "selector": "initiative",
                         "text": "{item|description}",
-                        "title": "{item|name}"
+                        "title": "{item|name}",
+                        "visibility": "owner"
                     }
                 ],
                 "slug": null,
@@ -857,7 +857,6 @@
                 "value": "med"
             },
             "value": [
-                "evil",
                 "human",
                 "humanoid"
             ]

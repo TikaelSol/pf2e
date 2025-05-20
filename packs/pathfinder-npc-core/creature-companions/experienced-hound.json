@@ -34,7 +34,9 @@
                 "rules": [],
                 "slug": null,
                 "traits": {
-                    "value": []
+                    "value": [
+                        "unarmed"
+                    ]
                 }
             },
             "type": "melee"
@@ -262,7 +264,7 @@
             },
             "will": {
                 "saveDetail": "",
-                "value": 2
+                "value": 12
             }
         },
         "skills": {

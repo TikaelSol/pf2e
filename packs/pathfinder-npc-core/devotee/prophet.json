@@ -1100,7 +1100,7 @@
                 "compendiumSource": "Compendium.pf2e.equipment-srd.Item.z1okOYtNVnpBNj9F"
             },
             "img": "icons/sundries/books/book-open-brown.webp",
-            "name": "Manifesto",
+            "name": "Manifesto (Functions as a Religious Text)",
             "sort": 1600000,
             "system": {
                 "baseItem": null,
@@ -1284,7 +1284,8 @@
                 "traits": {
                     "value": [
                         "agile",
-                        "nonlethal"
+                        "nonlethal",
+                        "unarmed"
                     ]
                 }
             },
@@ -1444,7 +1445,6 @@
                 "value": "med"
             },
             "value": [
-                "chaotic",
                 "human",
                 "humanoid"
             ]

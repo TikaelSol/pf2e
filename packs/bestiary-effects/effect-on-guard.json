@@ -3,15 +3,17 @@
     "img": "icons/skills/targeting/target-glowing-yellow.webp",
     "name": "Effect: On Guard",
     "system": {
-        "actionType": {
-            "value": "action"
-        },
-        "actions": {
-            "value": 1
-        },
-        "category": null,
         "description": {
             "value": "<p>You gain a +2 circumstance bonus to your initiative roll.</p>"
+        },
+        "duration": {
+            "expiry": null,
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 9
         },
         "publication": {
             "license": "ORC",
@@ -26,9 +28,16 @@
                 "value": 2
             }
         ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
         "traits": {
             "value": []
         }
     },
-    "type": "action"
+    "type": "effect"
 }

@@ -2,12 +2,12 @@
     "id": "pf2e",
     "title": "Pathfinder Second Edition",
     "description": "A community contributed game system for Pathfinder Second Edition",
-    "version": "6.10.2",
+    "version": "6.12.1",
     "license": "./LICENSE",
     "compatibility": {
         "minimum": "12.328",
         "verified": "12.331",
-        "maximum": "13"
+        "maximum": "12"
     },
     "authors": [
         {
@@ -118,6 +118,19 @@
             "flags": {}
         },
         {
+            "name": "claws-of-the-tyrant-bestiary",
+            "label": "Claws of the Tyrant",
+            "path": "packs/claws-of-the-tyrant-bestiary",
+            "type": "Actor",
+            "banner": "systems/pf2e/assets/compendium-banner/red.webp",
+            "system": "pf2e",
+            "ownership": {
+                "PLAYER": "LIMITED",
+                "ASSISTANT": "OWNER"
+            },
+            "flags": {}
+        },
+        {
             "name": "curtain-call-bestiary",
             "label": "Curtain Call",
             "path": "packs/curtain-call-bestiary",
@@ -209,74 +222,9 @@
             "flags": {}
         },
         {
-            "name": "lost-omens-impossible-lands-bestiary",
-            "label": "Lost Omens: Impossible Lands",
-            "path": "packs/impossible-lands-bestiary",
-            "type": "Actor",
-            "banner": "systems/pf2e/assets/compendium-banner/red.webp",
-            "system": "pf2e",
-            "ownership": {
-                "PLAYER": "LIMITED",
-                "ASSISTANT": "OWNER"
-            },
-            "flags": {}
-        },
-        {
-            "name": "lost-omens-mwangi-expanse-bestiary",
-            "label": "Lost Omens: Mwangi Expanse",
-            "path": "packs/mwangi-expanse-bestiary",
-            "type": "Actor",
-            "banner": "systems/pf2e/assets/compendium-banner/red.webp",
-            "system": "pf2e",
-            "ownership": {
-                "PLAYER": "LIMITED",
-                "ASSISTANT": "OWNER"
-            },
-            "flags": {}
-        },
-        {
-            "name": "lost-omens-highhelm-bestiary",
-            "label": "Lost Omens: Highhelm",
-            "path": "packs/highhelm-bestiary",
-            "type": "Actor",
-            "banner": "systems/pf2e/assets/compendium-banner/red.webp",
-            "system": "pf2e",
-            "ownership": {
-                "PLAYER": "LIMITED",
-                "ASSISTANT": "OWNER"
-            },
-            "flags": {}
-        },
-        {
-            "name": "lost-omens-monsters-of-myth-bestiary",
-            "label": "Lost Omens: Monsters of Myth",
-            "path": "packs/monsters-of-myth-bestiary",
-            "type": "Actor",
-            "banner": "systems/pf2e/assets/compendium-banner/red.webp",
-            "system": "pf2e",
-            "ownership": {
-                "PLAYER": "LIMITED",
-                "ASSISTANT": "OWNER"
-            },
-            "flags": {}
-        },
-        {
-            "name": "lost-omens-tian-xia-world-guide",
-            "label": "Lost Omens: Tian Xia World Guide",
-            "path": "packs/tian-xia-world-guide-bestiary",
-            "type": "Actor",
-            "banner": "systems/pf2e/assets/compendium-banner/red.webp",
-            "system": "pf2e",
-            "ownership": {
-                "PLAYER": "LIMITED",
-                "ASSISTANT": "OWNER"
-            },
-            "flags": {}
-        },
-        {
-            "name": "lost-omens-travel-guide-bestiary",
-            "label": "Lost Omens: Travel Guide",
-            "path": "packs/travel-guide-bestiary",
+            "name": "lost-omens-bestiary",
+            "label": "Lost Omens Bestiary",
+            "path": "packs/lost-omens-bestiary",
             "type": "Actor",
             "banner": "systems/pf2e/assets/compendium-banner/red.webp",
             "system": "pf2e",
@@ -1280,12 +1228,7 @@
                         "rage-of-elements-bestiary",
                         "hazards",
                         "howl-of-the-wild-bestiary",
-                        "lost-omens-impossible-lands-bestiary",
-                        "lost-omens-highhelm-bestiary",
-                        "lost-omens-mwangi-expanse-bestiary",
-                        "lost-omens-monsters-of-myth-bestiary",
-                        "lost-omens-tian-xia-world-guide",
-                        "lost-omens-travel-guide-bestiary",
+                        "lost-omens-bestiary",
                         "war-of-immortals-bestiary",
                         "npc-gallery",
                         "vehicles",
@@ -1297,18 +1240,19 @@
                     "sorting": "m",
                     "color": "#573938",
                     "packs": [
+                        "claws-of-the-tyrant-bestiary",
+                        "crown-of-the-kobold-king-bestiary",
                         "fall-of-plaguestone-bestiary",
                         "malevolence-bestiary",
                         "menace-under-otari-bestiary",
+                        "night-of-the-gray-death-bestiary",
                         "one-shot-bestiary",
                         "prey-for-death-bestiary",
                         "rusthenge-bestiary",
                         "shadows-at-sundown-bestiary",
                         "the-enmity-cycle-bestiary",
                         "the-slithering-bestiary",
-                        "troubles-in-otari-bestiary",
-                        "night-of-the-gray-death-bestiary",
-                        "crown-of-the-kobold-king-bestiary"
+                        "troubles-in-otari-bestiary"
                     ]
                 },
                 {

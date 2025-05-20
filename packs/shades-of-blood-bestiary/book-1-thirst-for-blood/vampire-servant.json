@@ -35,7 +35,8 @@
                 "slug": null,
                 "traits": {
                     "value": [
-                        "agile"
+                        "agile",
+                        "unarmed"
                     ]
                 }
             },
@@ -300,9 +301,6 @@
         }
     ],
     "name": "Vampire Servant",
-    "prototypeToken": {
-        "name": "Vampire Servitor"
-    },
     "system": {
         "abilities": {
             "cha": {
@@ -399,7 +397,7 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "darkvision",
+            "details": "",
             "mod": 9,
             "senses": [
                 {

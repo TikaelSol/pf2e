@@ -1393,7 +1393,7 @@
                         "disarm",
                         "finesse",
                         "nonlethal",
-                        "reach-10",
+                        "reach",
                         "trip"
                     ]
                 }
@@ -1626,7 +1626,6 @@
                 "value": "med"
             },
             "value": [
-                "evil",
                 "human",
                 "humanoid"
             ]

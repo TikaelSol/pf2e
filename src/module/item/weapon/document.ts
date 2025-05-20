@@ -56,9 +56,9 @@ class WeaponPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Ph
     altUsageType: "melee" | "thrown" | null = null;
 
     override get isEquipped(): boolean {
-        const { category, slug, traits } = this.system;
+        const { category, traits } = this.system;
         // Make unarmed "weapons" always equipped with the exception of handwraps
-        if (category === "unarmed" && slug !== "handwraps-of-mighty-blows") {
+        if (category === "unarmed" && !traits.otherTags.includes("handwraps-of-mighty-blows")) {
             return true;
         }
 
@@ -353,6 +353,14 @@ class WeaponPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Ph
             traits.value.push("unarmed");
         }
 
+        // Ensure handwraps have otherTags set
+        if (
+            this.system.slug === "handwraps-of-mighty-blows" &&
+            !traits.otherTags.includes("handwraps-of-mighty-blows")
+        ) {
+            traits.otherTags.push("handwraps-of-mighty-blows");
+        }
+
         // Force a weapon to be ranged if it is among a set of certain groups or has a thrown trait
         const mandatoryRanged =
             (this.system.group && MANDATORY_RANGED_GROUPS.has(this.system.group)) ||
@@ -393,6 +401,11 @@ class WeaponPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Ph
         ABP.cleanupRunes(this);
         const runes = this.system.runes;
         runes.effects = [];
+        // @todo remove after switch to data model
+        if (!Array.isArray(runes.property)) {
+            runes.property = [];
+            this._source.system.runes.property = [];
+        }
         runes.property.length = Math.min(runes.property.length, getPropertyRuneSlots(this));
 
         // Set damage dice according to striking rune
@@ -730,8 +743,7 @@ class WeaponPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Ph
     async consumeAmmo(): Promise<void> {
         const ammo = this.ammo;
         if (ammo?.isOfType("consumable")) {
-            const deduction = this.system.traits.toggles.doubleBarrel.selected ? 2 : 1;
-            return ammo.consume(deduction);
+            return ammo.consume(this.ammoRequired);
         } else if (ammo?.isOfType("weapon")) {
             if (!ammo.system.usage.canBeAmmo) {
                 throw ErrorPF2e("attempted to consume weapon not usable as ammunition");
