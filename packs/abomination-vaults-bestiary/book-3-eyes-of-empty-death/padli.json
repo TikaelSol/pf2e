@@ -1029,6 +1029,7 @@
                     "handsHeld": 0,
                     "invested": null
                 },
+                "expend": null,
                 "group": "knife",
                 "hardness": 0,
                 "hp": {
@@ -1526,7 +1527,6 @@
                         "value": 2
                     },
                     {
-                        "domain": "all",
                         "key": "RollOption",
                         "option": "occult-ward",
                         "toggleable": true
@@ -1576,7 +1576,6 @@
                         "selector": "strike-damage"
                     },
                     {
-                        "domain": "all",
                         "key": "RollOption",
                         "label": "PF2E.SpecificRule.TOTMToggle.OffGuard",
                         "option": "target:condition:off-guard",
