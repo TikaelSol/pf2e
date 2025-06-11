@@ -19,7 +19,11 @@
                 },
                 "damageRolls": {
                     "83wOtv3n0vOd80jF": {
-                        "damage": "2d10+5",
+                        "damage": "1d10+5",
+                        "damageType": "slashing"
+                    },
+                    "QBwzLbTUeg8OayfU": {
+                        "damage": "1d10",
                         "damageType": "fire"
                     }
                 },
@@ -210,7 +214,7 @@
                     "value": "action"
                 },
                 "actions": {
-                    "value": 1
+                    "value": 2
                 },
                 "category": "offensive",
                 "description": {
@@ -438,7 +442,8 @@
             },
             "value": [
                 "elemental",
-                "fire"
+                "fire",
+                "mythic"
             ]
         }
     },

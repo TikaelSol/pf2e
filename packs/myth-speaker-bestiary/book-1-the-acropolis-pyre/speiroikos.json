@@ -4,31 +4,28 @@
     "img": "systems/pf2e/icons/default-icons/npc.svg",
     "items": [
         {
-            "_id": "XfQkLnA7l66NJ31M",
-            "_stats": {
-                "compendiumSource": "Compendium.pf2e.bestiary-ability-glossary-srd.Item.m4HQ2o5aPxjXf2kY"
-            },
-            "img": "systems/pf2e/icons/actions/Reaction.webp",
-            "name": "Shield Block",
+            "_id": "KWazRbO9RBGG3km1",
+            "img": "systems/pf2e/icons/default-icons/action.svg",
+            "name": "Diverted Fury",
             "sort": 100000,
             "system": {
                 "actionType": {
-                    "value": "reaction"
+                    "value": "passive"
                 },
                 "actions": {
                     "value": null
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
+                    "value": "<p>The speiroikos' aggression can be redirected against their own numbers. A creature within 30 feet of the speiroikos can take an action to throw a small object such as a rock among the troop, attempting a @Check[deception|dc:17|traits:manipulate] check; this action has the manipulate trait. On a success, the troop deals its two-action Dory Strike damage to itself on its next round, taking no other actions.</p>"
                 },
                 "publication": {
-                    "license": "ORC",
-                    "remaster": true,
-                    "title": "Pathfinder Monster Core"
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
                 },
                 "rules": [],
-                "slug": "shield-block",
+                "slug": null,
                 "traits": {
                     "value": []
                 }
@@ -142,14 +139,28 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The speiroikos channel the power of their progenitor dragon to grow thick, scaly hides, gaining a +1 circumstance bonus to AC until the end of their next turn.</p>"
+                    "value": "<p>The speiroikos channel the power of their progenitor dragon to grow thick, scaly hides. Until the end of their next turn, they gain a +1 circumstance bonus to AC, and they reduce their weaknesses to area damage and splash damage by 2.</p>"
                 },
                 "publication": {
                     "license": "OGL",
                     "remaster": false,
                     "title": ""
                 },
-                "rules": [],
+                "rules": [
+                    {
+                        "key": "Weakness",
+                        "predicate": [
+                            {
+                                "not": "self:effect:dragonhide"
+                            }
+                        ],
+                        "type": [
+                            "area-damage",
+                            "splash-damage"
+                        ],
+                        "value": 3
+                    }
+                ],
                 "selfEffect": {
                     "name": "Effect: Dragonhide",
                     "uuid": "Compendium.pf2e.bestiary-effects.Item.Effect: Dragonhide"
@@ -175,7 +186,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The speiroikos let loose a flurry of heavy darts flung from slings. The volley is a @Template[type:burst|distance:10] within 60 feet that deals @Damage[1d8[piercing]] damage (@Check[reflex|dc:17|basic] save) plus 1 persistent bleed damage. When the speiroikos are reduced to 2 or fewer segments, this area decreases to a @Template[type:burst|distance:5].</p>"
+                    "value": "<p>The speiroikos let loose a flurry of heavy darts flung from slings. The volley is a @Template[type:burst|distance:10] within 60 feet that deals @Damage[1d8[piercing]] damage (@Check[reflex|dc:17|basic] save) plus @Damage[1[bleed]] damage. When the speiroikos are reduced to 2 or fewer segments, this area decreases to a @Template[type:burst|distance:5].</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -257,7 +268,19 @@
                 "details": "troop movement",
                 "otherSpeeds": [],
                 "value": 25
-            }
+            },
+            "weaknesses": [
+                {
+                    "exceptions": [],
+                    "type": "area-damage",
+                    "value": 1
+                },
+                {
+                    "exceptions": [],
+                    "type": "splash-damage",
+                    "value": 1
+                }
+            ]
         },
         "details": {
             "blurb": "",

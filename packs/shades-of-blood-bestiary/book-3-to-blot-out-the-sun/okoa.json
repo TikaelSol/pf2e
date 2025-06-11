@@ -139,6 +139,7 @@
                     "handsHeld": 0,
                     "invested": null
                 },
+                "expend": null,
                 "group": "brawling",
                 "hardness": 0,
                 "hp": {
@@ -165,7 +166,7 @@
                 "quantity": 1,
                 "range": null,
                 "reload": {
-                    "value": ""
+                    "value": null
                 },
                 "rules": [],
                 "runes": {
@@ -228,6 +229,7 @@
                     "handsHeld": 0,
                     "invested": null
                 },
+                "expend": 1,
                 "group": "bow",
                 "hardness": 0,
                 "hp": {
@@ -347,7 +349,7 @@
         },
         {
             "_id": "clcBXuY5I7HmG2D6",
-            "img": "icons/commodities/treasure/broach-pink-orbs.webp",
+            "img": "icons/commodities/treasure/brooch-pink-orbs.webp",
             "name": "Beaded Earrings",
             "sort": 600000,
             "system": {

@@ -221,7 +221,7 @@
                     "value": "action"
                 },
                 "actions": {
-                    "value": 1
+                    "value": 2
                 },
                 "category": "offensive",
                 "description": {
@@ -447,7 +447,7 @@
             }
         },
         "traits": {
-            "rarity": "common",
+            "rarity": "uncommon",
             "size": {
                 "value": "med"
             },

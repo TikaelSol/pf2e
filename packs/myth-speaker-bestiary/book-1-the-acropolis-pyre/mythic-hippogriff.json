@@ -253,42 +253,13 @@
             "type": "action"
         },
         {
-            "_id": "0RqSlr6fKHXSLliD",
-            "img": "systems/pf2e/icons/default-icons/action.svg",
-            "name": "Flying Strafe",
-            "sort": 800000,
-            "system": {
-                "actionType": {
-                    "value": "action"
-                },
-                "actions": {
-                    "value": 2
-                },
-                "category": "offensive",
-                "description": {
-                    "value": "<p>The hippogriff Flies up to its fly speed and makes two talon Strikes at any point during that movement. Each Strike must target a different creature. The attacks take the normal multiple attack penalty.</p>"
-                },
-                "publication": {
-                    "license": "OGL",
-                    "remaster": false,
-                    "title": ""
-                },
-                "rules": [],
-                "slug": null,
-                "traits": {
-                    "value": []
-                }
-            },
-            "type": "action"
-        },
-        {
             "_id": "Q52PMKzTbXStZHUI",
             "_stats": {
                 "compendiumSource": "Compendium.pf2e.bestiary-family-ability-glossary.Item.jNW79frpM2miwJvD"
             },
             "img": "systems/pf2e/icons/actions/Passive.webp",
             "name": "Mythic Power",
-            "sort": 900000,
+            "sort": 800000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -317,7 +288,7 @@
             "_id": "L2gXRu1WoS7KMFfE",
             "img": "systems/pf2e/icons/default-icons/action.svg",
             "name": "Unimpeded",
-            "sort": 1000000,
+            "sort": 900000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -447,13 +418,16 @@
         },
         "skills": {
             "acrobatics": {
-                "base": 7
+                "base": 11,
+                "special": []
             },
             "athletics": {
-                "base": 7
+                "base": 7,
+                "special": []
             },
             "survival": {
-                "base": 6
+                "base": 6,
+                "special": []
             }
         },
         "traits": {
@@ -462,7 +436,8 @@
                 "value": "lg"
             },
             "value": [
-                "animal"
+                "beast",
+                "mythic"
             ]
         }
     },

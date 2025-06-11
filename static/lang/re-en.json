@@ -2260,6 +2260,9 @@
                     "Note": "If you hit, your mark takes an additional @Damage[(6d6[precision])[@item.system.damage.damageType]] damage with a @Check[fortitude|against:class-spell|basic] save. If the mark critically fails, it dies unless its level is higher than yours."
                 }
             },
+            "AssuredIdentification": {
+                "CursedItem": "If you would misidentify a cursed item because you roll a success, you simply can't identify it."
+            },
             "Automaton": {
                 "ArcaneLocomotion": {
                     "Prompt": "Select a movement type."
@@ -2478,6 +2481,11 @@
                 },
                 "WeAreOne": {
                     "OffGuardToggle": "We Are One — Make target Off-Guard against your Strike"
+                }
+            },
+            "Blackjacket": {
+                "NothingPersonal": {
+                    "ToggleLabel": "Nothing Personal - First weapon Strike against impediment"
                 }
             },
             "BlessingOfDefiance": {
@@ -3419,6 +3427,10 @@
                         "Moderate": "Moderate"
                     }
                 },
+                "BracersOfDevotion": {
+                    "BlessedArmamentToggle": "Bracers of Devotion — Bonus against Disarm",
+                    "BlessedShieldToggle": "Bracers of Devotion — Blessed shield raised"
+                },
                 "BravosBrew": {
                     "Greater": {
                         "FearLabel": "Greater Bravo's Brew (Vs. Fear)"
@@ -3606,11 +3618,18 @@
                     "CriticalImmunityLabel": "Activate Scapular of Shields to gain critical immunity.",
                     "ResistAllLabel": "Activate Scapular of Shields to gain resistance to all damage."
                 },
+                "ScreamingPinion": {
+                    "TranscendentShot": "Screaming Pinion — Transcendent Shot"
+                },
                 "SerpentDagger": {
                     "Note": "When you critically succeed at an attack roll with the <em>serpent dagger</em>, the target becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} unless it succeeds at a @Check[fortitude|dc:19] save."
                 },
                 "ShardOfSelfDestruction": {
                     "Note": "You also take @Damage[1d6[bleed]] damage."
+                },
+                "ShawlOfSeasons": {
+                    "BenefitToggleLabel": "Shawl of Seasons — Change of Seasons",
+                    "CurrentSeasonToggleLabel": "Shawl of Seasons — Benefit matches season"
                 },
                 "SoothingToddy": {
                     "AmarettoLabel": "Amaretto",
@@ -5545,6 +5564,15 @@
                 "Weaving": "Weaving",
                 "Woodworking": "Woodworking"
             },
+            "SpectralDagger": {
+                "InstrumentOfDeath": {
+                    "SuppressBonuses": "Suppress bonuses",
+                    "Weakness": "Weakness to spirit damage"
+                },
+                "SoulBleed": {
+                    "Note": "You gain temporary Hit Points equal to the spirit damage dealt by the attack that last until the beginning of your next turn."
+                }
+            },
             "SpellEffectAnimalFeature": {
                 "CatEyes": "Cat Eyes",
                 "FishTail": "Fish Tail",
@@ -5895,6 +5923,11 @@
                     "Note": "If an enemy fails a saving throw against a spell you cast that has the curse trait, you gain temporary Hit Points equal to double that spell's rank. These temporary Hit Points last 10 minutes. The enemy must be a significant threat and can't have been a willing subject of the curse."
                 }
             },
+            "StalwartDefender": {
+                "StalwartChant": {
+                    "ToggleLabel": "Stalwart Chant — Resistance to mental damage"
+                }
+            },
             "Stance": {
                 "Attack": {
                     "CobraFang": "Cobra Fang",
@@ -6196,6 +6229,11 @@
                 "Staff": "Use Staff Two-Handed",
                 "Tuskblade": "Use Tuskblade Two-Handed"
             },
+            "UlfenGuard": {
+                "GuardsFury": {
+                    "ToggleLabel": "Guard's Fury — Adjacent to designated ally"
+                }
+            },
             "UndeadSlayer": {
                 "SlayersPresence": {
                     "Note": "The target is @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round."
@@ -6210,6 +6248,14 @@
                 "UntamedClaws": "Untamed Claws",
                 "UntamedJaws": "Untamed Jaws",
                 "Wings": "Wings"
+            },
+            "UrsineAvenger": {
+                "GreatBear": {
+                    "Description": "When you transform, you can take on a bear's bulk and size. You can spend an additional action when using Ursine Avenger Form to gain the effects of a 1st-rank *enlarge* spell, which lasts for the spell's normal duration or until you leave your Ursine Avenger Form, whichever comes first.",
+                    "Frequency": "**Frequency** once per hour",
+                    "Effect": "@UUID[Compendium.pf2e.feat-effects.Item.PZuICqcgpErGQcqG]{Effect: Great Bear}",
+                    "MightyBear": "The power of the bear within you can expand your physical presence even further. The *enlarge* spell you cast with your Great Bear feat is heightened to 4th rank."
+                }
             },
             "Vampire": {
                 "ViciousFangs": {
@@ -6487,7 +6533,7 @@
                     "BornOfAnimal": "**Animal** Your hide thickens, granting a +1 circumstance bonus to AC.",
                     "BornOfCelestial": "**Celestial** You recover some of your celestial perfection, granting you and all allies within 15 feet a +1 status bonus to attack rolls.",
                     "BornOfElements": "**Elements** You're surrounded in wind and dust, granting concealment each round that you spend at least 1 action that has the move trait. You can't use this concealment to Hide or Sneak, as normal for sources of obvious concealment.",
-                    "BornOfItem": "**Object ** Your skin transmutes partially into an inorganic substance, granting resistance 5 to your choice of bludgeoning, piercing, or slashing.",
+                    "BornOfItem": "**Object** Your skin transmutes partially into an inorganic substance, granting resistance 5 to your choice of bludgeoning, piercing, or slashing.",
                     "BornOfVegetation": "**Vegetation** You trigger an accelerated growth, gaining fast healing 5.",
                     "Description": "As you enter your yaoguai form, you draw upon your internal magic to assume an even greater form. When you Change Shape to enter your yaoguai form, you can spend an additional action to gain the effects of Enlarge and an additional effect based on your heritage. This effect persists for 1 minute or until you Change Shape again.",
                     "Effect": "@UUID[Compendium.pf2e.feat-effects.Item.OBsItGQScxHyUcmR]{Effect: Unleash Yaoguai Might}",
