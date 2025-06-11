@@ -43,39 +43,10 @@
             "type": "melee"
         },
         {
-            "_id": "1XmYQ3VFWPVdhgLd",
-            "img": "systems/pf2e/icons/default-icons/action.svg",
-            "name": "Fishhooked",
-            "sort": 200000,
-            "system": {
-                "actionType": {
-                    "value": "passive"
-                },
-                "actions": {
-                    "value": null
-                },
-                "category": "offensive",
-                "description": {
-                    "value": "<p>While it has persistent bleed damage from the fisher's fishing line Strike, a creature has a fishhook embedded in it. The creature can't move farther away from the fisher (though it can move laterally). The fisher can reel the creature in as a single action with the attack and manipulate trait, attempting an @Check[athletics|against:fortitude] check against the creature's Fortitude DC. On a success, the creature takes @Damage[2d4[slashing]] damage and is pulled 10 feet closer to the fisher (double the damage and distance on a critical success).</p>"
-                },
-                "publication": {
-                    "license": "ORC",
-                    "remaster": true,
-                    "title": ""
-                },
-                "rules": [],
-                "slug": null,
-                "traits": {
-                    "value": []
-                }
-            },
-            "type": "action"
-        },
-        {
             "_id": "hGiOF8yJK8VGjkTM",
             "img": "systems/pf2e/icons/default-icons/lore.svg",
             "name": "Fishing Lore",
-            "sort": 300000,
+            "sort": 200000,
             "system": {
                 "description": {
                     "value": ""
@@ -101,7 +72,7 @@
             "_id": "JotoXMGz6vlJbw8z",
             "img": "systems/pf2e/icons/default-icons/lore.svg",
             "name": "Sailing Lore",
-            "sort": 400000,
+            "sort": 300000,
             "system": {
                 "description": {
                     "value": ""
@@ -225,7 +196,7 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "low-light vision",
+            "details": "",
             "mod": 6,
             "senses": [
                 {
@@ -260,7 +231,7 @@
             }
         },
         "traits": {
-            "rarity": "common",
+            "rarity": "uncommon",
             "size": {
                 "value": "med"
             },

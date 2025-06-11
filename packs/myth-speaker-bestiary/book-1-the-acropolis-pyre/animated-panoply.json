@@ -336,9 +336,49 @@
                             }
                         ],
                         "value": 0
+                    },
+                    {
+                        "key": "Immunity",
+                        "mode": "remove",
+                        "type": [
+                            "vitality",
+                            "spirit"
+                        ]
                     }
                 ],
                 "slug": null,
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
+            "_id": "vP8g4md3gqEAh2bT",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.bestiary-ability-glossary-srd.Item.m4HQ2o5aPxjXf2kY"
+            },
+            "img": "systems/pf2e/icons/actions/Reaction.webp",
+            "name": "Shield Block",
+            "sort": 700000,
+            "system": {
+                "actionType": {
+                    "value": "reaction"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "defensive",
+                "description": {
+                    "value": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Monster Core"
+                },
+                "rules": [],
+                "slug": "shield-block",
                 "traits": {
                     "value": []
                 }

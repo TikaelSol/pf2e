@@ -411,14 +411,16 @@
             "sort": 700000,
             "system": {
                 "attackEffects": {
-                    "value": []
+                    "value": [
+                        "tempest-rage"
+                    ]
                 },
                 "bonus": {
                     "value": 10
                 },
                 "damageRolls": {
                     "mixf3z9c4AvNHslA": {
-                        "damage": "1d6+5",
+                        "damage": "1d6+4",
                         "damageType": "piercing"
                     }
                 },
