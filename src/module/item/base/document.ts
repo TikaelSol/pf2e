@@ -5,7 +5,6 @@ import type { ItemUUID } from "@client/documents/_module.d.mts";
 import type { DropCanvasData } from "@client/helpers/hooks.d.mts";
 import type { DocumentConstructionContext } from "@common/_types.d.mts";
 import type {
-    DatabaseAction,
     DatabaseCreateCallbackOptions,
     DatabaseCreateOperation,
     DatabaseDeleteCallbackOptions,
@@ -108,11 +107,11 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
      * Set a source ID on a dropped embedded item without a full data reset
      * This is currently necessary as of 10.291 due to system measures to prevent premature data preparation
      */
-    static override async fromDropData<T extends typeof Document>(
-        this: T,
+    static override async fromDropData<T extends Document>(
+        this: ConstructorOf<T>,
         data: object,
         options?: object,
-    ): Promise<InstanceType<T> | null>;
+    ): Promise<T | null>;
     static override async fromDropData(data: object, options?: Record<string, unknown>): Promise<Document | null> {
         if ("uuid" in data && UUIDUtils.isItemUUID(data.uuid)) {
             const item = await fromUuid(data.uuid);
@@ -688,6 +687,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
         }
 
         // Convert all non-kit sources to item objects, and recursively extract the simple grants from ABC items
+        const actorClone = actor.clone({}, { keepId: true });
         const items = await (async (): Promise<ItemPF2e<ActorPF2e>[]> => {
             /** Internal function to recursively get all simple granted items */
             async function getSimpleGrants(item: ItemPF2e<ActorPF2e>): Promise<ItemPF2e<ActorPF2e>[]> {
@@ -697,7 +697,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
                     (i): ItemPF2e<ActorPF2e> =>
                         (i.parent
                             ? i
-                            : new CONFIG.Item.documentClass(i._source, { parent: actor })) as ItemPF2e<ActorPF2e>,
+                            : new CONFIG.Item.documentClass(i._source, { parent: actorClone })) as ItemPF2e<ActorPF2e>,
                 );
                 return [...reparented, ...(await Promise.all(reparented.map(getSimpleGrants))).flat()];
             }
@@ -706,7 +706,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
                 if (!(operation.keepId || operation.keepEmbeddedIds)) {
                     source._id = fu.randomID();
                 }
-                return new CONFIG.Item.documentClass(source, { parent: actor }) as ItemPF2e<ActorPF2e>;
+                return new CONFIG.Item.documentClass(source, { parent: actorClone }) as ItemPF2e<ActorPF2e>;
             });
 
             // If any item we plan to add will add new items (such as ABC items), add those too
@@ -838,8 +838,6 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
             }
         }
 
-        await this.#updateTokenSizes(data, "create");
-
         this._source.system.traits.value?.sort();
         // Remove any rule elements that request their own removal upon item creation
         this._source.system.rules = this._source.system.rules.filter(
@@ -880,90 +878,12 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
             }
         }
 
-        const sizeUpdates = await this.#updateTokenSizes(changed, "update");
-        if (sizeUpdates === false) return false;
-
         // Run preUpdateItem rule element callbacks
         for (const rule of this.rules) {
             await rule.preUpdate?.(changed);
         }
 
         return super._preUpdate(changed, options, user);
-    }
-
-    protected override async _preDelete(
-        options: DatabaseDeleteCallbackOptions,
-        user: fd.BaseUser,
-    ): Promise<boolean | void> {
-        const result = await super._preDelete(options, user);
-        if (result === false || (await this.#updateTokenSizes(this._source, "delete")) === false) return false;
-    }
-
-    /** Perform actor and token updates if the actor's size is to be dynamically changed. */
-    async #updateTokenSizes(
-        data: this["_source"] | DeepPartial<this["_source"]>,
-        action: DatabaseAction,
-    ): Promise<boolean | void> {
-        // Look for any opportunity to abort early
-        if (
-            this.type !== "ancestry" &&
-            !data.system?.rules?.some((r) => ["BattleForm", "CreatureSize"].includes(r.key ?? ""))
-        )
-            return;
-        const actor = this.actor;
-        if (!actor) return;
-        const currentSize = actor.system.traits?.size;
-        if (!currentSize) return;
-        const sourceClone = fu.deepClone(actor._source);
-        switch (action) {
-            case "create":
-                (sourceClone.items as DeepPartial<ItemSourcePF2e>[]).push(this.toObject());
-                break;
-            case "update": {
-                const itemSource = sourceClone.items.find((i) => i._id === this._id);
-                if (itemSource) fu.mergeObject(itemSource, data, { performDeletions: true });
-                break;
-            }
-            case "delete":
-                sourceClone.items.findSplice((i) => i._id === this._id);
-                break;
-        }
-
-        const actorClone = new Actor.implementation(sourceClone) as ActorPF2e;
-        const newSize = actorClone.system.traits?.size;
-        if (!newSize) return;
-        if ((["value", "width", "length"] as const).every((p) => newSize[p] === currentSize[p])) return;
-
-        // Simple case: synthetic actor and its single token
-        const newWidth = newSize.width / 5;
-        const newHeight = newSize.length / 5;
-        const operation = { animation: { movementSpeed: 2 } };
-        const unlinkedToken = actor.token;
-        if (unlinkedToken) {
-            if (unlinkedToken?.linkToActorSize) {
-                const result = await unlinkedToken.update({ width: newWidth, height: newHeight }, operation);
-                if (!result) return false;
-            }
-            return;
-        }
-
-        // Add prototype token to list of changes and update tokens across all scenes
-        const actorResult = actor.update({ prototypeToken: { width: newWidth, height: newHeight } }, { render: false });
-        const tokens = game.scenes
-            .map((s) =>
-                s.tokens.filter(
-                    (t) => t.actor === actor && t.linkToActorSize && (t.width !== newWidth || t.height !== newHeight),
-                ),
-            )
-            .flat();
-        const updates = R.filter(
-            await Promise.all([
-                actorResult,
-                ...tokens.map((t) => t.update({ width: newWidth, height: newHeight }, { ...operation })),
-            ]),
-            R.isDefined,
-        );
-        if (![tokens.length, tokens.length + 1].includes(updates.length)) return false;
     }
 
     /** Call onCreate rule-element hooks */
