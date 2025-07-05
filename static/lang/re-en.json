@@ -3230,7 +3230,7 @@
                     "EnergyPrompt": "Select an energy associated with your dragon abilities."
                 },
                 "Label": "Deviant Ability",
-                "Prompt": "Select a deviant feat",
+                "Prompt": "Select a deviant feat.",
                 "TitanSwing": {
                     "NoteFifteenFeet": "The target is pushed back 15 feet.",
                     "NoteFiveFeet": "The target is pushed back 5 feet.",
