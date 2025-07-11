@@ -617,6 +617,10 @@
                         "label": "PF2E.Strike.Fist.Label",
                         "predicate": [
                             "change-shape:humanoid"
+                        ],
+                        "slug": "fist",
+                        "traits": [
+                            "unarmed"
                         ]
                     },
                     {
@@ -679,6 +683,14 @@
                         ],
                         "selector": "fly",
                         "value": 30
+                    },
+                    {
+                        "key": "BaseSpeed",
+                        "predicate": [
+                            "change-shape:hybrid"
+                        ],
+                        "selector": "fly",
+                        "value": 25
                     }
                 ],
                 "slug": "werecreature-change-shape",
@@ -857,12 +869,7 @@
                 "value": 45
             },
             "speed": {
-                "otherSpeeds": [
-                    {
-                        "type": "fly",
-                        "value": 25
-                    }
-                ],
+                "otherSpeeds": [],
                 "value": 25
             },
             "weaknesses": [
