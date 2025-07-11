@@ -1221,7 +1221,7 @@
                     "value": "action"
                 },
                 "actions": {
-                    "value": 1
+                    "value": 2
                 },
                 "category": "offensive",
                 "description": {
@@ -1256,7 +1256,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>Amnerion disappears and reappears instantaneously at any location within Amneros. They can then immediately @UUID[Compendium.pf2e.actionspf2e.Item.Seek], Step, Stride, or @UUID[Compendium.pf2e.actionspf2e.Recall Knowledge]{Recall Knowledge}, typically in response to whatever awaits them at their destination.</p>"
+                    "value": "<p>Amnerion disappears and reappears instantaneously at any location within Amneros. They can then immediately @UUID[Compendium.pf2e.actionspf2e.Item.Seek], Step, Stride, or Recall Knowledge, typically in response to whatever awaits them at their destination.</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -1416,6 +1416,14 @@
                 {
                     "exceptions": [],
                     "type": "poison"
+                }
+            ],
+            "resistances": [
+                {
+                    "doubleVs": [],
+                    "exceptions": [],
+                    "type": "mythic",
+                    "value": 11
                 }
             ],
             "speed": {
