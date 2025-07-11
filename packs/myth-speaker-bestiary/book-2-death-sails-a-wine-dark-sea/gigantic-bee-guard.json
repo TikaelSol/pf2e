@@ -56,7 +56,7 @@
                 "damageRolls": {
                     "eJBNu8wZxFCTa9Ml": {
                         "damage": "2d6+4",
-                        "damageType": "bludgeoning"
+                        "damageType": "piercing"
                     }
                 },
                 "description": {

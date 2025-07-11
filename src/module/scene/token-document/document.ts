@@ -512,11 +512,13 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         operation?: Partial<DatabaseOperation<Document | null>>,
     ): void {
         super._onRelatedUpdate(update, operation);
+
         const { actor, scene } = this;
-        if (!actor || !(scene instanceof ScenePF2e)) return;
+        if (!actor?.isOwner || !(scene instanceof ScenePF2e)) return;
 
         // Follow up any actor (or descendant document thereof) modification with a size synchronization
-        if (this.linkToActorSize && actor.system.traits?.size) {
+        const activeGM = game.users.activeGM; // Let the active GM take care of updates if available
+        if ((!activeGM || game.user === activeGM) && this.linkToActorSize && actor.system.traits?.size) {
             const dimensions = actor.system.traits.size.tokenDimensions;
             if (dimensions.width !== this.width || dimensions.height !== this.height) {
                 scene.syncTokenDimensions(this, dimensions);

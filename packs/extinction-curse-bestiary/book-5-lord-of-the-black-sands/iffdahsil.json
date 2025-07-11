@@ -264,7 +264,7 @@
             "_stats": {
                 "compendiumSource": "Compendium.pf2e.spells-srd.Item.HBJPsonQnWcC3qdX"
             },
-            "img": "systems/pf2e/icons/spells/hallucinatory-terrain.webp",
+            "img": "icons/environment/wilderness/cave-entrance-vulcano.webp",
             "name": "Hallucinatory Terrain",
             "sort": 500000,
             "system": {
@@ -772,7 +772,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>@Check[reflex|dc:43], @Damage[10d6[void]], Escape DC 43, Rupture 45</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "value": "<p>@Check[reflex|dc:43], @Damage[10d6[void]], [[/act escape dc=43]], Rupture 45</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "publication": {
                     "license": "OGL",

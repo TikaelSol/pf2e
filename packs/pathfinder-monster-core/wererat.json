@@ -566,6 +566,10 @@
                         "label": "PF2E.Strike.Fist.Label",
                         "predicate": [
                             "change-shape:humanoid"
+                        ],
+                        "slug": "fist",
+                        "traits": [
+                            "unarmed"
                         ]
                     },
                     {
@@ -660,7 +664,7 @@
                 "rules": [
                     {
                         "key": "Note",
-                        "selector": "jaws-attack",
+                        "selector": "jaws-damage",
                         "text": "{item|description}",
                         "title": "{item|name}",
                         "visibility": "owner"

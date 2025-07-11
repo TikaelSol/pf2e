@@ -276,6 +276,16 @@
                 "temp": 0,
                 "value": 140
             },
+            "immunities": [
+                {
+                    "exceptions": [],
+                    "type": "death-effects"
+                },
+                {
+                    "exceptions": [],
+                    "type": "unconscious"
+                }
+            ],
             "speed": {
                 "otherSpeeds": [],
                 "value": 35
@@ -310,6 +320,11 @@
             "senses": [
                 {
                     "type": "darkvision"
+                },
+                {
+                    "acuity": "imprecise",
+                    "range": 30,
+                    "type": "lifesense"
                 },
                 {
                     "acuity": "imprecise",
