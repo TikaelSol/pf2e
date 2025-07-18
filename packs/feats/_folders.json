@@ -22,12 +22,34 @@
         "type": "Item"
     },
     {
+        "_id": "UdfuJ9pRYdG9nJej",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "FKMvqXlYpSV0UOZs",
+        "name": "Commander",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
         "_id": "0xnakREinRcowzlH",
         "color": null,
         "description": "",
         "flags": {},
         "folder": "FX1or4GrdIq3xxxj",
         "name": "Deviant",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "eICr7D3fXAPMSn83",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "FKMvqXlYpSV0UOZs",
+        "name": "Guardian",
         "sort": 0,
         "sorting": "a",
         "type": "Item"
@@ -143,6 +165,17 @@
         "type": "Item"
     },
     {
+        "_id": "GgaQl7a4EHY42e3q",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "eVDQqpZR0CmVWHXX",
+        "name": "Level 1",
+        "sort": 100000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
         "_id": "01Zkn7RR6iIazmCs",
         "color": null,
         "description": "",
@@ -193,6 +226,17 @@
         "flags": {},
         "folder": "CNmvkgjxs9Dic24R",
         "name": "Ardande",
+        "sort": 200000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "qiDgiFJGy0wJ6qMn",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "eVDQqpZR0CmVWHXX",
+        "name": "Level 5",
         "sort": 200000,
         "sorting": "a",
         "type": "Item"
@@ -264,6 +308,17 @@
         "type": "Item"
     },
     {
+        "_id": "220DWwnhRMi5NjC8",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "eVDQqpZR0CmVWHXX",
+        "name": "Level 9",
+        "sort": 300000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
         "_id": "4WOF5JNgEosMJE6y",
         "color": null,
         "description": "",
@@ -271,6 +326,17 @@
         "folder": "FKMvqXlYpSV0UOZs",
         "name": "Thaumaturge",
         "sort": 300000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "MoIERhZnRMRZL4Fb",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "eVDQqpZR0CmVWHXX",
+        "name": "Level 13",
+        "sort": 350000,
         "sorting": "a",
         "type": "Item"
     },
@@ -314,6 +380,17 @@
         "flags": {},
         "folder": "6dfcpgcEgb0DINu5",
         "name": "Kobold",
+        "sort": 400000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "FiYm47E918RTO73a",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "eVDQqpZR0CmVWHXX",
+        "name": "Level 17",
         "sort": 400000,
         "sorting": "a",
         "type": "Item"
@@ -1658,6 +1735,17 @@
         "name": "Crystal Keeper",
         "sort": 4500000,
         "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "eVDQqpZR0CmVWHXX",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "6dfcpgcEgb0DINu5",
+        "name": "Jotunborn",
+        "sort": 4500000,
+        "sorting": "m",
         "type": "Item"
     },
     {
