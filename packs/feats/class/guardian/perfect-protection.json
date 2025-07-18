@@ -1,0 +1,42 @@
+{
+    "_id": "oYzkopbXguiwfNTx",
+    "folder": "eICr7D3fXAPMSn83",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Perfect Protection",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Your armor protects you from the deadliest hits. Each time you're critically hit while wearing the medium or heavy armor, attempt a @Check[flat|dc:14]. On a success, it becomes a normal hit.</p><hr /><p><strong>Special</strong> If your armor has a fortification rune, you roll only one flat check, but the DC is 12 (or 10 if it's a greater fortification rune).</p>"
+        },
+        "level": {
+            "value": 18
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Battlecry!"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "guardian"
+            ]
+        }
+    },
+    "type": "feat"
+}

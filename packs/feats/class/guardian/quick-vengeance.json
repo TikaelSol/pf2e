@@ -1,0 +1,46 @@
+{
+    "_id": "VeejX9bGhI9di1eL",
+    "folder": "eICr7D3fXAPMSn83",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Quick Vengeance",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Indignant at any who would strike you or your allies, you get your revenge. When you use Intercept Attack or Shield Block, you are @UUID[Compendium.pf2e.conditionitems.Item.Quickened] on your next turn. You can use the extra action only to Stride closer to the enemy whose attack triggered that reaction or to Strike that enemy.</p>"
+        },
+        "level": {
+            "value": 18
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Intercept Attack or Shield Block"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Battlecry!"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "guardian"
+            ]
+        }
+    },
+    "type": "feat"
+}

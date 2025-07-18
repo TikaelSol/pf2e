@@ -1,0 +1,46 @@
+{
+    "_id": "eje2BkIpxCrf39E9",
+    "folder": "eICr7D3fXAPMSn83",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Armored Courage",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 1
+        },
+        "category": "class",
+        "description": {
+            "value": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Requirements</strong> You are wearing medium or heavy armor.</p><hr /><p>You take comfort in the safety of your armor. You gain a number of temporary Hit Points equal to your level that last for 1 minute, and you reduce your frightened condition value by 1 (to a minimum of 0).</p>"
+        },
+        "frequency": {
+            "max": 1,
+            "per": "day"
+        },
+        "level": {
+            "value": 4
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Battlecry!"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "guardian"
+            ]
+        }
+    },
+    "type": "feat"
+}

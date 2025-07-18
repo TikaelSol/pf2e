@@ -1,0 +1,41 @@
+{
+    "_id": "DPPFBUk0l9KfRN8h",
+    "img": "icons/commodities/cloth/thread-spindle-white-needle.webp",
+    "name": "Iivlar Weaving",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestryfeature",
+        "description": {
+            "value": "<p>Planar thread produced by creatures called iivlars is woven into your skin. This thread glows with dim light in a 10-foot emanation. You can Sustain to extinguish, reactivate, or adjust the coloration of this light.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Battlecry!"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "jotunborn"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,72 @@
+{
+    "_id": "wHVfwjs6LJOgDERO",
+    "img": "icons/sundries/flags/banner-yellow.webp",
+    "name": "Master Tactician",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You are among the greatest tacticians to have ever led forces on the field of battle. Your proficiency rank for commander class DC increases to master, and you add two new tactics to your folio; these can be any mobility or offensive tactics you don't already have in your folio, or you can choose from expert tactics or master tactics you have access to. The total number of tactics you can have prepared increases to five. In addition, you gain legendary proficiency in Warfare Lore.</p>"
+        },
+        "level": {
+            "value": 15
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Battlecry!"
+        },
+        "rules": [
+            {
+                "adjustName": false,
+                "choices": {
+                    "filter": [
+                        "item:trait:tactic"
+                    ],
+                    "itemType": "action"
+                },
+                "flag": "firstTactic",
+                "key": "ChoiceSet"
+            },
+            {
+                "adjustName": false,
+                "choices": {
+                    "filter": [
+                        "item:trait:tactic"
+                    ],
+                    "itemType": "action"
+                },
+                "flag": "secondTactic",
+                "key": "ChoiceSet"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.pf2e.rulesSelections.firstTactic}"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.pf2e.rulesSelections.secondTactic}"
+            }
+        ],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "commander"
+            ]
+        }
+    },
+    "type": "feat"
+}
