@@ -594,6 +594,9 @@
         }
     ],
     "name": "Hesla, The Broken Ember (11-12)",
+    "prototypeToken": {
+        "name": "Hesla, The Broken Ember"
+    },
     "system": {
         "abilities": {
             "cha": {

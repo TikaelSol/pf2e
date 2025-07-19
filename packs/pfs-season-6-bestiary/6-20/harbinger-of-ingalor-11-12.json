@@ -191,6 +191,9 @@
         }
     ],
     "name": "Harbinger of Ingalor (11-12)",
+    "prototypeToken": {
+        "name": "Harbinger of Ingalor"
+    },
     "system": {
         "abilities": {
             "cha": {
