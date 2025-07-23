@@ -535,6 +535,7 @@ const weaponTraits = {
     "versatile-spirit": "PF2E.TraitVersatileSpirit",
     "versatile-vitality": "PF2E.TraitVersatileVitality",
     "versatile-void": "PF2E.TraitVersatileVoid",
+    visual: "PF2E.TraitVisual",
     "volley-20": "PF2E.TraitVolley20",
     "volley-30": "PF2E.TraitVolley30",
     "volley-50": "PF2E.TraitVolley50",
