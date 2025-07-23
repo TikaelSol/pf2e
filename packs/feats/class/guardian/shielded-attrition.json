@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p><strong>Requirements</strong> You are wielding a shield.</p><hr /><p>You provoke attacks from foes that might otherwise stop your allies from moving. Raise your Shield, then choose whether to Stride up to half your Speed. This movement triggers enemies' reactions as normal. Each enemy who could have reacted to your movement is unable to react to your allies' movement until the start of your next turn (regardless of whether it chose to react to your movement).</p>"
+            "value": "<p><strong>Requirements</strong> You are wielding a shield.</p><hr /><p>You provoke attacks from foes that might otherwise stop your allies from moving. @UUID[Compendium.pf2e.actionspf2e.Item.Raise a Shield]{Raise your Shield}, then choose whether to Stride up to half your Speed. This movement triggers enemies' reactions as normal. Each enemy who could have reacted to your movement is unable to react to your allies' movement until the start of your next turn (regardless of whether it chose to react to your movement).</p>"
         },
         "level": {
             "value": 4

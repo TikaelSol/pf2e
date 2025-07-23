@@ -29,7 +29,24 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "flying-tackle",
+                "toggleable": true
+            },
+            {
+                "adjustment": {
+                    "success": "to-critical-success"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "action:trip",
+                    "flying-tackle"
+                ],
+                "selector": "athletics"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

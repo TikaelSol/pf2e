@@ -43,6 +43,7 @@
                     "commanders-banner"
                 ],
                 "radius": 30,
+                "slug": "commanders-banner",
                 "traits": []
             }
         ],

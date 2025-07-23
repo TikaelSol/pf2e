@@ -25,7 +25,22 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "weapon",
+                "key": "ItemAlteration",
+                "mode": "upgrade",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:base:shield-boss",
+                            "item:base:shield-spikes"
+                        ]
+                    }
+                ],
+                "property": "damage-dice-faces"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

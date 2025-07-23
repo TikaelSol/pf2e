@@ -25,7 +25,17 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "never"
+                ],
+                "selector": "saving-throw",
+                "type": "circumstance",
+                "value": 4
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

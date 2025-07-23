@@ -37,7 +37,10 @@
                     "armor:trait:bulwark"
                 ],
                 "selector": "reflex",
-                "slug": "mighty-bulwark",
+                "slug": "bulwark",
+                "tags": [
+                    "mighty-bulwark"
+                ],
                 "value": 4
             },
             {
@@ -51,6 +54,11 @@
             },
             {
                 "key": "AdjustModifier",
+                "predicate": [
+                    {
+                        "not": "modifier:tag:mighty-bulwark"
+                    }
+                ],
                 "selector": "reflex",
                 "slug": "bulwark",
                 "suppress": true

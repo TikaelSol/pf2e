@@ -30,6 +30,10 @@
             "title": "Pathfinder Battlecry!"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Tough Cookie",
+            "uuid": "Compendium.pf2e.feat-effects.Item.Effect: Tough Cookie"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

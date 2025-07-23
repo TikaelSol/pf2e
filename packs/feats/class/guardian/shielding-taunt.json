@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p><strong>Requirements</strong> You are wielding a shield.</p><hr /><p>By banging loudly on your shield, you get the attention of even the most stubborn of foes. Raise a Shield, and then Taunt a creature. Your Taunt gains the auditory trait.</p>"
+            "value": "<p><strong>Requirements</strong> You are wielding a shield.</p><hr /><p>By banging loudly on your shield, you get the attention of even the most stubborn of foes. @UUID[Compendium.pf2e.actionspf2e.Item.Raise a Shield], and then @UUID[Compendium.pf2e.actionspf2e.Item.Taunt] a creature. Your Taunt gains the auditory trait.</p>"
         },
         "level": {
             "value": 2

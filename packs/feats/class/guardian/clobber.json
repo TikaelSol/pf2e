@@ -25,7 +25,23 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "domain": "strike-damage",
+                "key": "RollOption",
+                "option": "clobber",
+                "toggleable": true
+            },
+            {
+                "diceNumber": 1,
+                "key": "DamageDice",
+                "predicate": [
+                    "clobber"
+                ],
+                "selector": "strike-damage",
+                "toggleable": true
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

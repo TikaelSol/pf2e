@@ -25,7 +25,14 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "AdjustModifier",
+                "selector": "ac",
+                "slug": "clumsy",
+                "suppress": true
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

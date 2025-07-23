@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>Your armor protects you from the deadliest hits. Each time you're critically hit while wearing the medium or heavy armor, attempt a @Check[flat|dc:14]. On a success, it becomes a normal hit.</p><hr /><p><strong>Special</strong> If your armor has a fortification rune, you roll only one flat check, but the DC is 12 (or 10 if it's a greater fortification rune).</p>"
+            "value": "<p>Your armor protects you from the deadliest hits. Each time you're critically hit while wearing the medium or heavy armor, attempt a @Check[flat|dc:14|showDC:all]. On a success, it becomes a normal hit.</p><hr /><p><strong>Special</strong> If your armor has a fortification rune, you roll only one flat check, but the DC is 12 (or 10 if it's a greater fortification rune).</p>"
         },
         "level": {
             "value": 18
@@ -25,7 +25,16 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "selector": "damage-received",
+                "text": "PF2E.SpecificRule.Guardian.PerfectProtection.Note"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

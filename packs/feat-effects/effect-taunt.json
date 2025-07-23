@@ -17,9 +17,9 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": ""
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Battlecry!"
         },
         "rules": [
             {
@@ -108,6 +108,47 @@
                         "text": "PF2E.SpecificRule.Guardian.Taunt.Note"
                     }
                 ]
+            },
+            {
+                "key": "RollOption",
+                "label": "PF2E.SpecificRule.Guardian.Bodyguard.ToggleLabel",
+                "option": "bodyguard-taunt",
+                "predicate": [
+                    "parent:origin:item:tag:bodyguard"
+                ],
+                "toggleable": true
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "downgrade",
+                "predicate": [
+                    "bodyguard-taunt"
+                ],
+                "selectors": [
+                    "attack-roll",
+                    "inline-dc",
+                    "spell-dc"
+                ],
+                "slug": "taunt-attack-roll",
+                "value": -2
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "downgrade",
+                "predicate": [
+                    "bodyguard-taunt"
+                ],
+                "selectors": [
+                    "attack-roll",
+                    "inline-dc",
+                    "spell-dc"
+                ],
+                "slug": "taunt-dc",
+                "value": -2
+            },
+            {
+                "key": "RollOption",
+                "option": "self:effect:taunt:{item|origin.signature}"
             }
         ],
         "start": {

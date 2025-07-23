@@ -29,7 +29,26 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "success",
+                    "criticalSuccess"
+                ],
+                "predicate": [
+                    {
+                        "or": [
+                            "action:reposition",
+                            "action:shove"
+                        ]
+                    }
+                ],
+                "selector": "athletics",
+                "text": "{item|description}",
+                "title": "{item|name}"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

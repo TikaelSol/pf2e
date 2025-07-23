@@ -26,6 +26,10 @@
             "title": "Pathfinder Battlecry!"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Stance: Jotun's Battle Stance",
+            "uuid": "Compendium.pf2e.feat-effects.Item.Stance: Jotun's Battle Stance"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

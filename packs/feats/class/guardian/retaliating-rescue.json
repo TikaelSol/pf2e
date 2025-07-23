@@ -25,7 +25,17 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "retaliating-rescue"
+                ],
+                "selector": "strike-attack-roll",
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

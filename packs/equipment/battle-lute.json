@@ -39,13 +39,13 @@
         },
         "price": {
             "value": {
-                "gp": 15
+                "gp": 7
             }
         },
         "publication": {
             "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder #164: Hands of the Devil"
+            "remaster": true,
+            "title": "Pathfinder Battlecry!"
         },
         "quantity": 1,
         "range": null,

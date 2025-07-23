@@ -25,7 +25,18 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:taunt"
+                ],
+                "property": "other-tags",
+                "value": "bodyguard"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

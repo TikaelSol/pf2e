@@ -25,7 +25,64 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "definition": [
+                    {
+                        "or": [
+                            {
+                                "and": [
+                                    "item:trait:jotunborn",
+                                    "item:category:martial"
+                                ]
+                            },
+                            "item:base:bola",
+                            "item:base:greataxe",
+                            "item:base:halberd",
+                            "item:base:maul",
+                            "item:base:longspear",
+                            "item:base:war-flail"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "PF2E.SpecificRule.MartialProficiency.MartialJotunbornWeapons",
+                "sameAs": "simple",
+                "slug": "martial-jotunborn-weapons"
+            },
+            {
+                "definition": [
+                    "item:trait:jotunborn",
+                    "item:category:advanced"
+                ],
+                "key": "MartialProficiency",
+                "label": "PF2E.SpecificRule.MartialProficiency.AdvancedJotunbornWeapons",
+                "sameAs": "martial",
+                "slug": "advanced-jotunborn-weapons"
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:jotunborn",
+                            "item:base:bola",
+                            "item:base:greataxe",
+                            "item:base:halberd",
+                            "item:base:maul",
+                            "item:base:longspear",
+                            "item:base:war-flail"
+                        ]
+                    }
+                ]
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

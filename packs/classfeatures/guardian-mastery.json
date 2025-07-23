@@ -32,6 +32,7 @@
                 ],
                 "selector": "reflex",
                 "slug": "guardian-mastery",
+                "type": "item",
                 "value": "@actor.wornArmor.system.acBonus"
             },
             {
@@ -47,8 +48,7 @@
                 "key": "AdjustModifier",
                 "mode": "add",
                 "predicate": [
-                    "armor:trait:bulwark",
-                    "damaging-effect"
+                    "armor:trait:bulwark"
                 ],
                 "selector": "reflex",
                 "slug": "guardian-mastery",

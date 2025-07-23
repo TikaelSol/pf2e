@@ -25,7 +25,87 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "self:effect:raise-a-shield",
+                    {
+                        "or": [
+                            "item:trait:light",
+                            "item:trait:visual"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "ac",
+                    "fortitude",
+                    "reflex",
+                    "will"
+                ],
+                "type": "circumstance",
+                "value": 2
+            },
+            {
+                "adjustment": {
+                    "success": "to-critical-success"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "self:effect:raise-a-shield",
+                    {
+                        "or": [
+                            "item:trait:light",
+                            "item:trait:visual"
+                        ]
+                    }
+                ],
+                "selector": "fortitude"
+            },
+            {
+                "adjustment": {
+                    "success": "to-critical-success"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "self:effect:raise-a-shield",
+                    {
+                        "or": [
+                            "item:trait:light",
+                            "item:trait:visual"
+                        ]
+                    }
+                ],
+                "selector": "reflex"
+            },
+            {
+                "adjustment": {
+                    "success": "to-critical-success"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "self:effect:raise-a-shield",
+                    {
+                        "or": [
+                            "item:trait:light",
+                            "item:trait:visual"
+                        ]
+                    }
+                ],
+                "selector": "will"
+            },
+            {
+                "affects": "origin",
+                "key": "EphemeralEffect",
+                "selectors": [
+                    "ac",
+                    "fortitude-dc",
+                    "reflex-dc",
+                    "will-dc"
+                ],
+                "uuid": "Compendium.pf2e.feat-effects.Item.Effect: Shield Your Eyes"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

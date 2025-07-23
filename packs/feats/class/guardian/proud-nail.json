@@ -25,7 +25,22 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "domain": "strike-damage",
+                "key": "RollOption",
+                "option": "proud-nail",
+                "toggleable": true
+            },
+            {
+                "diceNumber": "ternary(gte(@actor.level,18),3,ternary(gte(@actor.level,10),2,1))",
+                "key": "DamageDice",
+                "predicate": [
+                    "proud-nail"
+                ],
+                "selector": "strike-damage"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},
