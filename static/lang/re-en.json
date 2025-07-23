@@ -179,9 +179,16 @@
                 }
             },
             "DemonForm": {
+                "ChoiceSet": {
+                    "Abrikandilu": "Abrikandilu",
+                    "Brimorak": "Brimorak",
+                    "Kithangian": "Kithangian",
+                    "Vloriak": "Vloriak"
+                },
                 "Note": {
                     "AbrikandiluCritical": "On a critical hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for 1 minute."
-                }
+                },
+                "Prompt": "Select a demon."
             },
             "ElementEmbodied": {
                 "AirPushNote": "Plus @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.t6cx9FOODmeZQNYl]{Push} 10 feet",
@@ -850,6 +857,7 @@
                     "Cassisian": "Cassisian",
                     "CaveWorm": "Cave Worm",
                     "Cobra": "Cobra",
+                    "Coyote": "Coyote",
                     "Dog": "Dog",
                     "Dove": "Dove",
                     "Dragon": "Dragon",
@@ -934,6 +942,7 @@
                     "RajaKrodha": "Raja-Krodha",
                     "Raktavarna": "Raktavarna",
                     "Rat": "Rat",
+                    "Raven": "Raven",
                     "Scorpion": "Scorpion",
                     "SeaSerpent": "Sea Serpent",
                     "Shark": "Shark",
@@ -1087,6 +1096,12 @@
             "HobgoblinFormationArea": "Formation vs. Area Effects",
             "Hryngar": {
                 "AlchemicalGrenade": "Damage Type of Alchemical Grenade"
+            },
+            "ImmortalTrickster": {
+                "Attack": {
+                    "Pipe": "Pipe",
+                    "TelekineticManipulation": "Telekinetic Manipulation"
+                }
             },
             "Inizkar": {
                 "AlignTheStars": {
@@ -4390,6 +4405,9 @@
                     "SaveNote": "If you roll a success on a saving throw against a curse or a spell cast by a witch or hag, you get a critical success instead."
                 }
             },
+            "HumanoidForm": {
+                "RollOptionLabel": "Human Form — Pass as Humanoid"
+            },
             "HuntPrey": {
                 "FirstHitDamage": "First Hit on Hunted Prey",
                 "FirstHitSwitch": "Hitting Hunted Prey for the First Time This Round",
@@ -5145,6 +5163,7 @@
                 "Sanctification": "Select a sanctification.",
                 "SavingThrow": "Select a saving throw.",
                 "SecondImplement": "Select a second implement.",
+                "Sense": "Select a sense.",
                 "Shield": "Select a shield.",
                 "ShieldOrWeapon": "Select shield or weapon.",
                 "Shillelagh": "Select a club or staff.",
@@ -6666,6 +6685,9 @@
                 }
             },
             "Wrestler": {
+                "InescapableGrasp": {
+                    "Note": "If you attempt to use a teleportation spell or effect to Escape, you must succeed at a @Check[flat|dc:15] or the spell fails."
+                },
                 "Spinebreaker": {
                     "Note": {
                         "CriticalSuccess": "The target is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} until the end of its next turn and then is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for 1 minute.",
