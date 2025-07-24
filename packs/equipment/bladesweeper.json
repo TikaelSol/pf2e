@@ -1,30 +1,27 @@
 {
-    "_id": "Ak3oHoPDJoMR14yg",
-    "img": "icons/weapons/sickles/scythe-curved-steel.webp",
-    "name": "Lion Scythe",
+    "_id": "geSDZ68zolr0dNrD",
+    "img": "icons/weapons/swords/sword-guard-brass-worn.webp",
+    "name": "Bladesweeper",
     "system": {
-        "baseItem": "lion-scythe",
+        "baseItem": "bladesweeper",
         "bonus": {
             "value": 0
         },
-        "bonusDamage": {
-            "value": 0
-        },
         "bulk": {
-            "value": 0.1
+            "value": 2
         },
-        "category": "martial",
+        "category": "advanced",
         "containerId": null,
         "damage": {
             "damageType": "slashing",
             "dice": 1,
-            "die": "d6"
+            "die": "d10"
         },
         "description": {
-            "value": "<p>A lion scythe resembles a common sickle but is specially weighted to allow for greater power when attacking.</p>"
+            "value": "<p>Little more than three swords attached to a single hilt, a bladesweeper is a devastating weapon in the hands of a jotunborn warrior.</p>"
         },
         "expend": null,
-        "group": "knife",
+        "group": "sword",
         "hardness": 0,
         "hp": {
             "max": 0,
@@ -39,12 +36,12 @@
         },
         "price": {
             "value": {
-                "gp": 1
+                "gp": 4
             }
         },
         "publication": {
             "license": "ORC",
-            "remaster": false,
+            "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
         "quantity": 1,
@@ -65,13 +62,14 @@
         "traits": {
             "rarity": "uncommon",
             "value": [
-                "agile",
-                "finesse",
-                "trip"
+                "disarm",
+                "jotunborn",
+                "sweep",
+                "versatile-p"
             ]
         },
         "usage": {
-            "value": "held-in-one-hand"
+            "value": "held-in-two-hands"
         }
     },
     "type": "weapon"

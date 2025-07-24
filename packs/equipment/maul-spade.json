@@ -1,27 +1,24 @@
 {
-    "_id": "79krBL334Kp1RMNB",
-    "img": "icons/tools/instruments/lute-gold-brown.webp",
-    "name": "Battle Lute",
+    "_id": "MiiaZeNMGGSefjVH",
+    "img": "icons/weapons/hammers/hammer-war-rounding.webp",
+    "name": "Maul-spade",
     "system": {
-        "baseItem": "battle-lute",
+        "baseItem": "maul-spade",
         "bonus": {
             "value": 0
         },
-        "bonusDamage": {
-            "value": 0
-        },
         "bulk": {
-            "value": 1
+            "value": 2
         },
-        "category": "simple",
+        "category": "advanced",
         "containerId": null,
         "damage": {
             "damageType": "bludgeoning",
             "dice": 1,
-            "die": "d4"
+            "die": "d10"
         },
         "description": {
-            "value": "<p>This reinforced lute is suitable both for use as a handheld musical instrument and for bashing heads should a crowd turn sour. Its strings are finely braided wires that run along its sturdy metal neck. A battle lute adds its item bonus from weapon potency runes (if any) as an item bonus on Performance checks made while using it as an instrument.</p>"
+            "value": "<p>This heavy, club-like weapon can clobber foes, but it also functions as a shovel. A maul-spade adds its item bonus from weapon potency runes (if any) as an item bonus on checks made with Athletics and appropriate Lore skills (such as Labor Lore) when using it as a shovel to dig.</p>"
         },
         "expend": null,
         "group": "club",
@@ -39,11 +36,11 @@
         },
         "price": {
             "value": {
-                "gp": 7
+                "gp": 6
             }
         },
         "publication": {
-            "license": "OGL",
+            "license": "ORC",
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
@@ -52,7 +49,20 @@
         "reload": {
             "value": null
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "shovel-mode"
+                ],
+                "selector": [
+                    "athletics",
+                    "lore-check"
+                ],
+                "type": "item",
+                "value": "@item.system.runes.potency"
+            }
+        ],
         "runes": {
             "potency": 0,
             "property": [],
@@ -65,12 +75,13 @@
         "traits": {
             "rarity": "uncommon",
             "value": [
-                "shove",
-                "two-hand-d8"
+                "deadly-d10",
+                "jotunborn",
+                "shove"
             ]
         },
         "usage": {
-            "value": "held-in-one-hand"
+            "value": "held-in-two-hands"
         }
     },
     "type": "weapon"
