@@ -541,7 +541,6 @@ const weaponTraits = {
     "volley-50": "PF2E.TraitVolley50",
     "volley-60": "PF2E.TraitVolley60",
     wand: "PF2E.TraitWand",
-    whetstone: "PF2E.TraitWhetstone",
 };
 
 const preciousMaterials: Record<PreciousMaterialType, string> = {
@@ -771,6 +770,7 @@ const consumableTraits = {
     virulent: "PF2E.TraitVirulent",
     visual: "PF2E.TraitVisual",
     wand: "PF2E.TraitWand",
+    whetstone: "PF2E.TraitWhetstone",
 };
 
 const weaponActionTraits = R.pick(weaponTraits, [
