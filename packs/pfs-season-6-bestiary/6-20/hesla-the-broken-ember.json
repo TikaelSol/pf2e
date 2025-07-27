@@ -473,7 +473,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p><strong>Requirements</strong> Hesla is wielding <em>Riftcarver</em></p><hr /><p><strong>Effect</strong> <em>Riftcarver</em> extends to an impossible length, dealing @Damage[6d8[slashing]|options:area-damage] damage to all creatures in a @Template[type:line|distance:60] with a @Check[reflex|dc:32|basic] save.</p>"
+                    "value": "<p><strong>Requirements</strong> Hesla is wielding <em>Riftcarver</em></p><hr /><p><strong>Effect</strong> <em>Riftcarver</em> extends to an impossible length, dealing @Damage[6d8[slashing]|options:area-damage] damage to all creatures in a @Template[type:line|distance:60] with a @Check[reflex|dc:32|basic|options:area-effect] save.</p>"
                 },
                 "publication": {
                     "license": "OGL",

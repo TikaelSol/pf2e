@@ -216,7 +216,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The lava spitter expels a @Template[type:cone|distance:15] of lava, dealing @Damage[5d6[fire]|options:area-damage] damage to every creature within the cone (@Check[reflex|dc:20|basic] save). This area becomes hazardous terrain for 1 minute. A creature takes @Damage[2[fire]|options:area-damage] damage each time it moves into one of these squares. The lava spitter then can't Spew Lava for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "value": "<p>The lava spitter expels a @Template[type:cone|distance:15] of lava, dealing @Damage[5d6[fire]|options:area-damage] damage to every creature within the cone (@Check[reflex|dc:20|basic|options:area-damage] save). This area becomes hazardous terrain for 1 minute. A creature takes @Damage[2[fire]|options:area-damage] damage each time it moves into one of these squares. The lava spitter then can't Spew Lava for [[/gmr 1d4 #Recharge Spew Lava]]{1d4 rounds}.</p>"
                 },
                 "publication": {
                     "license": "OGL",

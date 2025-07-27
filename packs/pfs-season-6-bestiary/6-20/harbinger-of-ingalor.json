@@ -46,7 +46,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>20 feet. The swarm's component members cry out, crawling all over everything and everyone with sickening sounds and limbs. Creatures who enter or begin their turns inside the aura must attempt a @Check[fortitude|dc:25] save. Once a creature has been targeted by this ability, regardless of the result, they are temporarily immune to Disgusting Chorus for 1 hour.</p><hr /><p><strong>Success</strong> No effect.</p>\n<p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 1}, and cannot reduce their sickened condition below 1 while inside the swarm's space.</p>\n<p><strong>Critical Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 2}, and cannot reduce their sickened condition below 1 while inside the swarm's space.</p>"
+                    "value": "<p>20 feet. The swarm's component members cry out, crawling all over everything and everyone with sickening sounds and limbs. Creatures who enter or begin their turns inside the aura must attempt a @Check[fortitude|dc:25|options:inflicts:sickened] save. Once a creature has been targeted by this ability, regardless of the result, they are temporarily immune to Disgusting Chorus for 1 hour.</p><hr /><p><strong>Success</strong> No effect.</p>\n<p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 1}, and cannot reduce their sickened condition below 1 while inside the swarm's space.</p>\n<p><strong>Critical Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 2}, and cannot reduce their sickened condition below 1 while inside the swarm's space.</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -87,7 +87,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The swarm pulls at flesh just as locusts strip away vegetation. Each enemy in the swarm's space must succeed at a @Check[fortitude|dc:23] save or take @Damage[3d6[persistent,bleed]] damage.</p>"
+                    "value": "<p>The swarm pulls at flesh just as locusts strip away vegetation. Each enemy in the swarm's space must succeed at a @Check[fortitude|dc:23|options:area-effect,damaging-effect] save or take @Damage[3d6[persistent,bleed]|options:area-damage] damage.</p>"
                 },
                 "publication": {
                     "license": "OGL",

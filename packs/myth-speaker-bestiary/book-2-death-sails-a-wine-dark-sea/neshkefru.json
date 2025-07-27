@@ -679,7 +679,7 @@
                 },
                 "category": "interaction",
                 "description": {
-                    "value": "<p>Sphinxes are naturally curious, and their love of puzzles and mysteries leads them to gather information on a broad range of topics. Neshkefru has Bardic Lore, a special Lore skill that can be used only to @UUID[Compendium.pf2e.actionspf2e.Recall Knowledge]{Recall Knowledge}, but on any topic.</p>"
+                    "value": "<p>Sphinxes are naturally curious, and their love of puzzles and mysteries leads them to gather information on a broad range of topics. Neshkefru has Bardic Lore, a special Lore skill that can be used only to @UUID[Compendium.pf2e.actionspf2e.Item.Recall Knowledge], but on any topic.</p>"
                 },
                 "publication": {
                     "license": "OGL",

@@ -17,7 +17,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p><strong>Trigger</strong> An enemy of Hesla Embersplitter rolls for initiative</p><hr /><p><strong>Effect</strong> <em>Riftcarver</em> calls out with thousands of voices to infest the minds of the righteous. Any creature within 60 feet with the holy trait must succeed at a @Check[will|dc:33] save or become @UUID[Compendium.pf2e.conditionitems.Item.Frightened]{Frightened 2} (@UUID[Compendium.pf2e.conditionitems.Item.Frightened]{Frightened 3} on a critical failure). <em>Riftcarver</em> then rolls initiative.</p>"
+                    "value": "<p><strong>Trigger</strong> An enemy of Hesla Embersplitter rolls for initiative</p><hr /><p><strong>Effect</strong> <em>Riftcarver</em> calls out with thousands of voices to infest the minds of the righteous. Any creature within 60 feet with the holy trait must succeed at a @Check[will|dc:33|options:area-effect,inflicts:frightened] save or become @UUID[Compendium.pf2e.conditionitems.Item.Frightened]{Frightened 2} (@UUID[Compendium.pf2e.conditionitems.Item.Frightened]{Frightened 3} on a critical failure). <em>Riftcarver</em> then rolls initiative.</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -60,7 +60,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>A line of acid slices through creatures and terrain alike, creating a rift that is 20 feet high, 100 feet long, and 1 inch thick. This rift provides cover. The rift deals @Damage[6d8[acid]] damage to each creature that is in its space when it is first created, that attempts to pass through it, or that ends its turn inside the rift, with a @Check[reflex|dc:29|basic] save. A creature that succeeds at this save when the chasm is created is pushed to the nearest space on the side of its choice. Creatures trying to move through the rift fail to do so if they critically fail their save, ending their movement next to the rift.</p>"
+                    "value": "<p>A line of acid slices through creatures and terrain alike, creating a rift that is 20 feet high, 100 feet long, and 1 inch thick. This rift provides cover. The rift deals @Damage[6d8[acid]|options:area-damage] damage to each creature that is in its space when it is first created, that attempts to pass through it, or that ends its turn inside the rift, with a @Check[reflex|dc:29|basic|options:area-effect] save. A creature that succeeds at this save when the chasm is created is pushed to the nearest space on the side of its choice. Creatures trying to move through the rift fail to do so if they critically fail their save, ending their movement next to the rift.</p>"
                 },
                 "publication": {
                     "license": "OGL",
