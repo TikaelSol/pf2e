@@ -143,7 +143,8 @@
                 "runes": {
                     "potency": 2,
                     "property": [
-                        "greaterFireResistant"
+                        "greaterFireResistant",
+                        "raiment"
                     ],
                     "resilient": 1
                 },
@@ -196,14 +197,12 @@
                     "title": ""
                 },
                 "rules": [],
-                "slug": "scythe",
+                "slug": "riftcarver",
                 "traits": {
                     "value": [
                         "adamantine",
-                        "deadly-d10",
                         "magical",
                         "reach-10",
-                        "trip",
                         "unholy"
                     ]
                 }
@@ -229,7 +228,7 @@
                     },
                     "uNP5rhCzyX528yna": {
                         "damage": "1d6",
-                        "damageType": "bludgeoning"
+                        "damageType": "spirit"
                     }
                 },
                 "description": {
@@ -269,7 +268,7 @@
                     },
                     "QQyvF5pMo1jcgEvf": {
                         "damage": "2d8+7",
-                        "damageType": "bludgeoning"
+                        "damageType": "piercing"
                     }
                 },
                 "description": {
@@ -281,7 +280,7 @@
                     "title": ""
                 },
                 "rules": [],
-                "slug": null,
+                "slug": "rift-locusts",
                 "traits": {
                     "value": [
                         "adamantine",
@@ -357,7 +356,7 @@
                         ],
                         "selector": "reflex-dc",
                         "type": "status",
-                        "value": 1
+                        "value": 2
                     }
                 ],
                 "slug": "2-status-bonus-versus-attempts-to-disarm",
@@ -556,7 +555,10 @@
                         "predicate": [
                             "target:trait:holy"
                         ],
-                        "selector": "riftcarver-damage"
+                        "selector": [
+                            "riftcarver-damage",
+                            "rift-locusts-damage"
+                        ]
                     }
                 ],
                 "slug": null,
@@ -639,7 +641,7 @@
             ],
             "speed": {
                 "otherSpeeds": [],
-                "value": 25
+                "value": 30
             }
         },
         "details": {

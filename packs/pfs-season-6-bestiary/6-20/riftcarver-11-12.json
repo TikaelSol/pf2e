@@ -124,10 +124,10 @@
         },
         "saves": {
             "fortitude": {
-                "value": 27
+                "value": 30
             },
             "reflex": {
-                "value": 24
+                "value": 27
             },
             "will": {
                 "value": 0

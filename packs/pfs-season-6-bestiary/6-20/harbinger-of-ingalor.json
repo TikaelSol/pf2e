@@ -103,39 +103,10 @@
             "type": "action"
         },
         {
-            "_id": "PVz0vFoGVEdUbTBw",
-            "img": "systems/pf2e/icons/default-icons/action.svg",
-            "name": "Speed 5 feet, fly 30 feet",
-            "sort": 400000,
-            "system": {
-                "actionType": {
-                    "value": "passive"
-                },
-                "actions": {
-                    "value": null
-                },
-                "category": "offensive",
-                "description": {
-                    "value": ""
-                },
-                "publication": {
-                    "license": "OGL",
-                    "remaster": false,
-                    "title": ""
-                },
-                "rules": [],
-                "slug": null,
-                "traits": {
-                    "value": []
-                }
-            },
-            "type": "action"
-        },
-        {
             "_id": "JpDh3EjEwQPgySHs",
             "img": "systems/pf2e/icons/default-icons/action.svg",
             "name": "Swallowed Foulness",
-            "sort": 500000,
+            "sort": 400000,
             "system": {
                 "actionType": {
                     "value": "reaction"
@@ -164,7 +135,7 @@
             "_id": "Yi05a1PP68K9UVev",
             "img": "systems/pf2e/icons/default-icons/action.svg",
             "name": "Thousands of Teeth",
-            "sort": 600000,
+            "sort": 500000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -261,8 +232,13 @@
                 }
             ],
             "speed": {
-                "otherSpeeds": [],
-                "value": 25
+                "otherSpeeds": [
+                    {
+                        "type": "fly",
+                        "value": 30
+                    }
+                ],
+                "value": 5
             },
             "weaknesses": [
                 {
