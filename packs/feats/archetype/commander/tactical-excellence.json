@@ -32,10 +32,27 @@
         },
         "rules": [
             {
+                "count": true,
+                "key": "RollOption",
+                "option": "tactical-excellence"
+            },
+            {
                 "adjustName": false,
                 "choices": {
                     "filter": [
-                        "item:trait:tactic"
+                        "item:trait:tactic",
+                        {
+                            "or": [
+                                "item:tag:commander-mobility-tactic",
+                                "item:tag:commander-offensive-tactic",
+                                {
+                                    "and": [
+                                        "item:tag:commander-expert-tactic",
+                                        "tactical-excellence:2"
+                                    ]
+                                }
+                            ]
+                        }
                     ],
                     "itemType": "action"
                 },
@@ -44,20 +61,32 @@
                 "prompt": "PF2E.SpecificRule.Commander.Tactics.Prompt"
             },
             {
+                "key": "GrantItem",
+                "uuid": "{item|flags.pf2e.rulesSelections.firstTactic}"
+            },
+            {
                 "adjustName": false,
                 "choices": {
                     "filter": [
-                        "item:trait:tactic"
+                        "item:trait:tactic",
+                        {
+                            "or": [
+                                "item:tag:commander-mobility-tactic",
+                                "item:tag:commander-offensive-tactic",
+                                {
+                                    "and": [
+                                        "item:tag:commander-expert-tactic",
+                                        "tactical-excellence:2"
+                                    ]
+                                }
+                            ]
+                        }
                     ],
                     "itemType": "action"
                 },
                 "flag": "secondTactic",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Commander.Tactics.Prompt"
-            },
-            {
-                "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.firstTactic}"
             },
             {
                 "key": "GrantItem",

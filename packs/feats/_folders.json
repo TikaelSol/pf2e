@@ -29,7 +29,7 @@
         "folder": "3gIKQZf49LM55dii",
         "name": "Captain",
         "sort": 0,
-        "sorting": "a",
+        "sorting": "m",
         "type": "Item"
     },
     {
@@ -95,7 +95,7 @@
         "folder": "3gIKQZf49LM55dii",
         "name": "Guerrilla",
         "sort": 0,
-        "sorting": "a",
+        "sorting": "m",
         "type": "Item"
     },
     {
@@ -121,12 +121,210 @@
         "type": "Item"
     },
     {
+        "_id": "PlwzPlxQs0QNh9nk",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 10",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "bwvtq7YUZFtB1Wsr",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 12",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "y6uyFEkUdSRrwflz",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 12",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "SjMX2CVJxJR1evv5",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 14",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "oCpLKPi5gVwxEuu8",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 14",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "creh8ZITzeTLZWI6",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 15",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "ftDiFTj6qEI4c8h1",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 16",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "glY8a1YvaNZfdFaD",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 18",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "640TgMeMxYMqBIn7",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 2",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "KFfSh2wxn252jxCN",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "lcAbFFHgv56Zo5C3",
+        "name": "Level 2",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "ShtP2ZBEPvuqrvT1",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 2",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
         "_id": "mGGZeOTiVPO8xhBp",
         "color": null,
         "description": "",
         "flags": {},
         "folder": "sOqikPUEblPCoth9",
         "name": "Level 2",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "Dgh1E7ZjrAKqoNhB",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 20",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "6JuWlCfOlFt4XvgQ",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 4",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "UHRER0tpekq1fDqh",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 4",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "FJdYBwNNEbY2Yiig",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 6",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "jpzNu73Sq42E01Ij",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 6",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "eGDcK39hBmxYuWbD",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "8nLO1dKianLCGdi1",
+        "name": "Level 8",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "vbeu7QGs9jvrjQQh",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "jK146BiZRWiEnjUl",
+        "name": "Level 8",
         "sort": 0,
         "sorting": "a",
         "type": "Item"
@@ -3516,7 +3714,7 @@
         "folder": "3gIKQZf49LM55dii",
         "name": "Crossbow Infiltrator",
         "sort": 17000000,
-        "sorting": "a",
+        "sorting": "m",
         "type": "Item"
     },
     {

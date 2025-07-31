@@ -46,7 +46,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:aldori-dueling-sword"
+                    "item:base:aldori-dueling-sword"
                 ],
                 "property": "traits",
                 "value": "parry"

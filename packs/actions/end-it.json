@@ -20,6 +20,9 @@
         },
         "rules": [],
         "traits": {
+            "otherTags": [
+                "commander-offensive-tactic"
+            ],
             "value": [
                 "brandish",
                 "commander",

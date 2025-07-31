@@ -24,6 +24,9 @@
         },
         "rules": [],
         "traits": {
+            "otherTags": [
+                "commander-legendary-tactic"
+            ],
             "value": [
                 "brandish",
                 "commander",

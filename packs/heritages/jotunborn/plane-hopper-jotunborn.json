@@ -17,7 +17,13 @@
             "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "CreatureSize",
+                "resizeEquipment": true,
+                "value": "medium"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

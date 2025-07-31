@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> Your last action was a Mobbing Assault made by your horde that reduced at least one living creature to 0 Hit Points.</p><hr /><p>The expiring breaths of your enemies fuel your power. You gain 15 temporary Hit Points that last for 1 minute. The temporary Hit Points you gain increase by 5 at 10th level and every 2 levels thereafter.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.Effect: Dismal Harvest]</p>"
+            "value": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> Your last action was a Mobbing Assault made by your horde that reduced at least one living creature to 0 Hit Points.</p><hr /><p>The expiring breaths of your enemies fuel your power. You gain 15 temporary Hit Points that last for 1 minute. The temporary Hit Points you gain increase by 5 at 10th level and every 2 levels thereafter.</p>"
         },
         "frequency": {
             "max": 1,
@@ -34,6 +34,10 @@
             "title": "Pathfinder Battlecry!"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Dismal Harvest",
+            "uuid": "Compendium.pf2e.feat-effects.Item.Effect: Dismal Harvest"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

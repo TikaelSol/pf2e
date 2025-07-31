@@ -51,7 +51,7 @@
                 ],
                 "selector": "initiative",
                 "text": "PF2E.SpecificRule.AldoriDuelist.DuelistsEdge.Note",
-                "title": "{item|name}"
+                "title": "{item|name} <span class=\"action-glyph\">F</span>"
             }
         ],
         "traits": {

@@ -7,11 +7,11 @@
         "bulk": {
             "value": 0.1
         },
-        "category": "other",
+        "category": "ammo",
         "containerId": null,
         "damage": null,
         "description": {
-            "value": "<p>Ammunition any</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (manipulate)</p><hr /><p>Resembling a large salt crystal, preserving shots are made to allow troops to more easily hunt for food on long marches. When a large or smaller animal is killed by a preserving shot, the meat is magically transformed into jerky, salt pork, or some other preserved form appropriate for the animal, allowing the hunter to quickly butcher it and resume their march without the need to smoke or cure the meat.</p>"
+            "value": "<p><strong>Ammunition</strong> any</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (manipulate)</p><hr /><p>Resembling a large salt crystal, preserving shots are made to allow troops to more easily hunt for food on long marches. When a large or smaller animal is killed by a preserving shot, the meat is magically transformed into jerky, salt pork, or some other preserved form appropriate for the animal, allowing the hunter to quickly butcher it and resume their march without the need to smoke or cure the meat.</p>"
         },
         "hardness": 0,
         "hp": {
@@ -26,7 +26,6 @@
             "type": null
         },
         "price": {
-            "per": 1,
             "value": {
                 "gp": 3
             }

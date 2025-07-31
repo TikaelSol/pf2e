@@ -149,10 +149,39 @@
             "type": "action"
         },
         {
+            "_id": "R5lNnsguizwqTZFA",
+            "img": "systems/pf2e/icons/actions/TwoActions.webp",
+            "name": "Reflective Arrows",
+            "sort": 600000,
+            "system": {
+                "actionType": {
+                    "value": "action"
+                },
+                "actions": {
+                    "value": 2
+                },
+                "category": "offensive",
+                "description": {
+                    "value": "<p>Adjusting to the angle of the sun, the camel riders draw their shortbows, then launch a ranged attack in the form of an arcing volley. This volley is a @Template[type:burst|distance:10] within 60 feet that deals @Damage[3d6[piercing]|options:area-damage] damage (@Check[reflex|dc:21|basic|options:area-effect] save). In areas of bright light, such as outside during the day, the targets take a –1 circumstance penalty to the save. When the camel corps is reduced to 2 segments, this area decreases to a @Template[type:burst|distance:5].</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Effect: Reflective Arrows (Penalty)]</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
             "_id": "Pcfzy3NAiFVVZefL",
             "img": "systems/pf2e/icons/actions/OneThreeActions.webp",
             "name": "Scimitar Assault",
-            "sort": 600000,
+            "sort": 700000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -185,7 +214,7 @@
             "_id": "DcjFGhKHKRAVTcD0",
             "img": "systems/pf2e/icons/actions/Passive.webp",
             "name": "Trailblazing Stride",
-            "sort": 700000,
+            "sort": 800000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -196,35 +225,6 @@
                 "category": "offensive",
                 "description": {
                     "value": "<p>While moving on land, the Qadiran camel corps ignores the effects of non-magical difficult terrain.</p>"
-                },
-                "publication": {
-                    "license": "OGL",
-                    "remaster": false,
-                    "title": ""
-                },
-                "rules": [],
-                "slug": null,
-                "traits": {
-                    "value": []
-                }
-            },
-            "type": "action"
-        },
-        {
-            "_id": "R5lNnsguizwqTZFA",
-            "img": "systems/pf2e/icons/actions/TwoActions.webp",
-            "name": "Reflective Arrows",
-            "sort": 800000,
-            "system": {
-                "actionType": {
-                    "value": "action"
-                },
-                "actions": {
-                    "value": 2
-                },
-                "category": null,
-                "description": {
-                    "value": "<p>Adjusting to the angle of the sun, the camel riders draw their shortbows, then launch a ranged attack in the form of an arcing volley. This volley is a @Template[type:burst|distance:10] within 60 feet that deals @Damage[3d6[piercing]|options:area-damage] damage (@Check[reflex|dc:21|basic|options:area-effect] save). In areas of bright light, such as outside during the day, the targets take a –1 circumstance penalty to the save. When the camel corps is reduced to 2 segments, this area decreases to a @Template[type:burst|distance:5].</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Effect: Reflective Arrows (Penalty)]</p>"
                 },
                 "publication": {
                     "license": "OGL",

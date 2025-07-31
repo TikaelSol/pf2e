@@ -1,6 +1,6 @@
 {
     "_id": "ebqKAQowcYjHyLHe",
-    "img": "icons/skills/melee/blade-tip-energy-green.webp",
+    "img": "icons/skills/melee/maneuver-greatsword-yellow.webp",
     "name": "Stance: Duelist's Form",
     "system": {
         "description": {
@@ -14,7 +14,7 @@
         },
         "fromSpell": false,
         "level": {
-            "value": 1
+            "value": 16
         },
         "publication": {
             "license": "ORC",

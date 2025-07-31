@@ -44,7 +44,12 @@
                 ],
                 "radius": 30,
                 "slug": "commanders-banner",
-                "traits": []
+                "traits": [
+                    "emotion",
+                    "mental",
+                    "visual",
+                    "aura"
+                ]
             }
         ],
         "subfeatures": {

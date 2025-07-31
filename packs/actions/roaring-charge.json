@@ -24,6 +24,9 @@
         },
         "rules": [],
         "traits": {
+            "otherTags": [
+                "commander-master-tactic"
+            ],
             "value": [
                 "commander",
                 "tactic"

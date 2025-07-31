@@ -62,6 +62,16 @@
                 "selector": "reflex",
                 "slug": "bulwark",
                 "suppress": true
+            },
+            {
+                "adjustment": {
+                    "success": "to-critical-success"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "damaging-effect"
+                ],
+                "selector": "reflex"
             }
         ],
         "subfeatures": {

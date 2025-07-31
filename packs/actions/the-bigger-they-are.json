@@ -20,6 +20,9 @@
         },
         "rules": [],
         "traits": {
+            "otherTags": [
+                "commander-expert-tactic"
+            ],
             "value": [
                 "brandish",
                 "commander",

@@ -1,13 +1,13 @@
 {
     "_id": "73W3mBLXRPfeVl3G",
-    "img": "systems/pf2e/icons/actions/OneAction.webp",
+    "img": "systems/pf2e/icons/actions/TwoActions.webp",
     "name": "Strike Hard!",
     "system": {
         "actionType": {
             "value": "action"
         },
         "actions": {
-            "value": 1
+            "value": 2
         },
         "category": "offensive",
         "description": {
@@ -20,6 +20,9 @@
         },
         "rules": [],
         "traits": {
+            "otherTags": [
+                "commander-offensive-tactic"
+            ],
             "value": [
                 "brandish",
                 "commander",

@@ -14,6 +14,10 @@
         "description": {
             "value": "<p><strong>Frequency</strong> once per day</p><hr /><p>You move with magical swiftness, treading between planar boundaries to shorten your journey. Stride once; this Stride does not trigger reactions normally triggered by movement. Once this Stride is complete, you gain a +5-foot status bonus to your Speed until the start of your next turn.</p>"
         },
+        "frequency": {
+            "max": 1,
+            "per": "day"
+        },
         "level": {
             "value": 1
         },

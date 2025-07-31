@@ -5128,6 +5128,7 @@
                 "Finisher": "Finisher"
             },
             "Prompt": {
+                "Ability": "Select an ability.",
                 "AdvancedMulticlassFeat": "Select a class feat up to half your character level.",
                 "Alignment": "Select an alignment.",
                 "Attribute": "Select an attribute.",

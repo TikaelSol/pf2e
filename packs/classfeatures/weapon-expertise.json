@@ -34,6 +34,7 @@
                         "or": [
                             "class:champion",
                             "class:exemplar",
+                            "class:guardian",
                             "class:investigator",
                             "class:magus",
                             "class:swashbuckler"

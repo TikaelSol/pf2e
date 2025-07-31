@@ -20,6 +20,9 @@
         },
         "rules": [],
         "traits": {
+            "otherTags": [
+                "mobility-tactic"
+            ],
             "value": [
                 "brandish",
                 "commander",

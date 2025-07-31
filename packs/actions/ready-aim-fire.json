@@ -24,6 +24,9 @@
         },
         "rules": [],
         "traits": {
+            "otherTags": [
+                "vcommander-master-tactic"
+            ],
             "value": [
                 "brandish",
                 "commander",
