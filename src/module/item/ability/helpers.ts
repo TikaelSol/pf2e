@@ -1,3 +1,5 @@
+import type { ClientDocument } from "@client/documents/abstract/_module.d.mts";
+import type { CompendiumIndexData } from "@client/documents/collections/compendium-collection.d.mts";
 import type { AbilityItemPF2e, FeatPF2e, SpellPF2e } from "@item";
 import { ItemPF2e } from "@item";
 import { ActionCost, FrequencySource } from "@item/base/data/system.ts";
@@ -65,7 +67,7 @@ function getActionCostRollOptions(prefix: string, item: { actionCost?: ActionCos
 function createSelfEffectSheetData(data: Maybe<SelfEffectReference>): SelfEffectSheetReference | null {
     if (!data) return null;
 
-    type MaybeIndexData = ((ClientDocument | CompendiumIndexData) & { img?: unknown }) | null;
+    type MaybeIndexData = ((ClientDocument | CompendiumIndexData) & { name?: string; img?: unknown }) | null;
     const indexEntry: MaybeIndexData = fromUuidSync(data.uuid);
     if (indexEntry?.name && isImageFilePath(indexEntry.img)) {
         data.name = indexEntry.name;
@@ -73,9 +75,12 @@ function createSelfEffectSheetData(data: Maybe<SelfEffectReference>): SelfEffect
     }
     const parsedUUID = fu.parseUuid(data.uuid);
     const linkData = {
-        id: parsedUUID.documentId ?? null,
-        type: parsedUUID.documentType ?? null,
-        pack: parsedUUID.collection instanceof CompendiumCollection ? parsedUUID.collection.metadata.id : null,
+        id: parsedUUID?.documentId ?? null,
+        type: parsedUUID?.documentType ?? null,
+        pack:
+            parsedUUID?.collection instanceof fd.collections.CompendiumCollection
+                ? parsedUUID.collection.metadata.id
+                : null,
     };
 
     return { ...data, ...linkData };

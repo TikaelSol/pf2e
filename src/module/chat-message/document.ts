@@ -1,7 +1,7 @@
 import type { ActorPF2e } from "@actor";
 import { StrikeData } from "@actor/data/base.ts";
 import type { Rolled } from "@client/dice/roll.d.mts";
-import type { DataModelConstructionContext } from "@common/abstract/_module.mjs";
+import type { DataModelConstructionContext } from "@common/abstract/_module.d.mts";
 import type {
     ChatMessageCreateCallbackOptions,
     ChatMessageCreateOperation,
@@ -241,6 +241,19 @@ class ChatMessagePF2e extends ChatMessage {
             if (this.author) {
                 header.append(createHTMLElement("span", { classes: ["user"], children: [this.author.name] }));
             }
+        }
+
+        // If the description has auto-collapse, collapse if text exceeds a certain length
+        // Its not possible to check the actual size if its not in the DOM yet
+        const collapsableElement = html.querySelector<HTMLElement>(
+            ".description[data-auto-collapse], .card-content[data-auto-collapse]",
+        );
+        if (collapsableElement && collapsableElement.innerText.length > 250) {
+            collapsableElement.classList.add("collapsed");
+            collapsableElement.dataset.action = "expand-description";
+            collapsableElement.dataset.tooltipClass = "pf2e";
+            collapsableElement.dataset.tooltip = "PF2E.Action.ExpandDescription";
+            collapsableElement.after(createHTMLElement("div", { classes: ["shadow"] }));
         }
 
         if (!this.flags.pf2e.suppressDamageButtons && this.isDamageRoll) {

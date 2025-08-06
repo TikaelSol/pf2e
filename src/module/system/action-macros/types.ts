@@ -2,6 +2,7 @@ import type { ActorPF2e } from "@actor";
 import { StrikeData } from "@actor/data/base.ts";
 import type { ModifierPF2e } from "@actor/modifiers.ts";
 import type { DCSlug } from "@actor/types.ts";
+import type { Rolled } from "@client/dice/_module.d.mts";
 import type { ItemPF2e } from "@item";
 import type { WeaponTrait } from "@item/weapon/types.ts";
 import type { RollNotePF2e } from "@module/notes.ts";
@@ -66,7 +67,7 @@ interface SimpleRollActionCheckOptions<TItem extends ItemPF2e<ActorPF2e>> {
     content?: (title: string) => Promise<string | null | undefined | void> | string | null | undefined | void;
     item?: (actor: ActorPF2e) => TItem | undefined;
     traits: string[];
-    event?: JQuery.TriggeredEvent | Event | null;
+    event?: Event | null;
     /**
      * A DC can be represented as a preassembled `CheckDC` object, a slug referencing a `Statistic`, or a function that
      * returns a `CheckDC` or `null`.
@@ -83,7 +84,7 @@ interface SimpleRollActionCheckOptions<TItem extends ItemPF2e<ActorPF2e>> {
 type UnresolvedCheckDC = CheckDC | DCSlug | ((actor: ActorPF2e | null) => CheckDC | null);
 
 interface ActionDefaultOptions {
-    event?: JQuery.TriggeredEvent | Event | null;
+    event?: Event | null;
     actors?: ActorPF2e | ActorPF2e[];
     glyph?: ActionGlyph;
     modifiers?: ModifierPF2e[];

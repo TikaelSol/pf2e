@@ -79,6 +79,7 @@ import {
     createForceOpenPenalty,
     createHinderingPenalty,
     createShoddyPenalty,
+    getItemProficiencyRank,
     imposeOversizedWeaponCondition,
 } from "./helpers.ts";
 import { CharacterSheetTabVisibility } from "./sheet.ts";
@@ -373,7 +374,7 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
         this.system.traits.size = new ActorSizePF2e({ value: "med" });
 
         // Attack and defense proficiencies
-        type PartialMartialProficiency = Record<string, Partial<MartialProficiency> | undefined>;
+        type PartialMartialProficiency = Record<string, DeepPartial<MartialProficiency> | undefined>;
         const attacks: PartialMartialProficiency = (system.proficiencies.attacks ??= {});
         // Set custom attack proficiencies to be visible
         for (const attack of Object.values(attacks).filter(R.isDefined)) {
@@ -755,20 +756,12 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
         const attributeModifier = modifiers
             .filter((m) => m.type === "ability" && !!m.ability)
             .reduce((best, modifier) => (modifier.modifier > best.modifier ? modifier : best), dexModifier);
-        const proficiency = Object.entries(this.system.proficiencies.defenses as Record<string, MartialProficiency>)
-            .filter(([key, proficiency]) => {
-                if (!wornArmor) return key === "unarmored";
-                if (wornArmor.category === key) return true;
-                return proficiency.definition?.test(wornArmor.getRollOptions("item")) ?? false;
-            })
-            .map(([_k, v]) => v)
-            .reduce((best, p) => (p.rank > best.rank ? p : best), { rank: 0 as ZeroToFour });
+        const attribute = attributeModifier.ability ?? "dex";
+        const rank = wornArmor
+            ? getItemProficiencyRank(this, wornArmor)
+            : this.system.proficiencies.defenses["unarmored"].rank;
 
-        return new ArmorStatistic(this, {
-            rank: proficiency.rank,
-            attribute: attributeModifier.ability ?? "dex",
-            modifiers: [attributeModifier],
-        });
+        return new ArmorStatistic(this, { rank, attribute, modifiers: [attributeModifier] });
     }
 
     private prepareSaves(): void {
@@ -886,10 +879,7 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
         });
 
         // Assemble lore items, key'd by a normalized slug
-        const loreItems = R.mapToObj(this.itemTypes.lore, (loreItem) => {
-            const rawLoreSlug = sluggify(loreItem.name);
-            return [/\blore\b/.test(rawLoreSlug) ? rawLoreSlug : `${rawLoreSlug}-lore`, loreItem];
-        });
+        const loreItems = R.mapToObj(this.itemTypes.lore, (loreItem) => [loreItem.slug, loreItem]);
 
         // Add Lore skills to skill statistics
         for (const [slug, loreItem] of Object.entries(loreItems)) {
@@ -1136,22 +1126,7 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
         processTwoHandTrait(weapon);
         const weaponTraits = weapon.traits;
         const weaponRollOptions = new Set(weapon.getRollOptions("item"));
-
-        // If the character has an ancestral weapon familiarity or similar feature, it will make weapons that meet
-        // certain criteria also count as weapon of different category
-        const proficiencies = this.system.proficiencies;
-        const categoryRank = proficiencies.attacks[weapon.category]?.rank ?? 0;
-        const groupRank = proficiencies.attacks[`weapon-group-${weapon.group}`]?.rank ?? 0;
-
-        // Weapons that are interchangeable for all rules purposes (e.g., longbow and composite longbow)
-        const equivalentWeapons: Record<string, string | undefined> = CONFIG.PF2E.equivalentWeapons;
-        const baseWeapon = equivalentWeapons[weapon.baseType ?? ""] ?? weapon.baseType;
-        const baseWeaponRank = proficiencies.attacks[`weapon-base-${baseWeapon}`]?.rank ?? 0;
-        const syntheticRanks = Object.values(proficiencies.attacks)
-            .filter((p): p is MartialProficiency => !!p?.definition?.test(weaponRollOptions))
-            .map((p) => p.rank);
-
-        const proficiencyRank = Math.max(categoryRank, groupRank, baseWeaponRank, ...syntheticRanks) as ZeroToFour;
+        const proficiencyRank = getItemProficiencyRank(this, weapon, weaponRollOptions);
         const meleeOrRanged = weapon.isMelee ? "melee" : "ranged";
         const baseOptions = [
             "action:strike",
@@ -1715,10 +1690,8 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
             );
             for (const proficiency of linkedProficiencies) {
                 const category = proficiencies[proficiency.sameAs ?? ""];
-                proficiency.rank = ((): ZeroToFour => {
-                    const maxRankIndex = PROFICIENCY_RANKS.indexOf(proficiency.maxRank ?? "legendary");
-                    return Math.min(category?.rank ?? 0, maxRankIndex) as ZeroToFour;
-                })();
+                const maxRankIndex = PROFICIENCY_RANKS.indexOf(proficiency.maxRank ?? "legendary");
+                proficiency.rank = Math.min(category?.rank ?? 0, maxRankIndex) as ZeroToFour;
             }
 
             // Deduplicate proficiencies, set proficiency bonuses to all

@@ -1,5 +1,6 @@
 import { AutomaticBonusProgression as ABP } from "@actor/character/automatic-bonus-progression.ts";
 import { MODIFIER_TYPES, ModifierType } from "@actor/modifiers.ts";
+import type { FormSelectOption } from "@client/applications/forms/fields.d.mts";
 import type { FlatModifierRuleElement, FlatModifierSource } from "@module/rules/rule-element/flat-modifier.ts";
 import type { DamageCategoryUnique } from "@system/damage/types.ts";
 import { DAMAGE_CATEGORIES_UNIQUE } from "@system/damage/values.ts";
@@ -54,7 +55,9 @@ class FlatModifierForm extends RuleElementForm<FlatModifierSource, FlatModifierR
         };
     }
 
-    override updateObject(formData: Partial<FlatModifierSource> & Partial<Record<string, JSONValue>>): void {
+    override updateObject(
+        formData: { key: string } & Partial<FlatModifierSource> & Partial<Record<string, JSONValue>>,
+    ): void {
         // Flat Modifier types may have mutually exclusive properties
         delete formData[formData.type === "ability" ? "value" : "ability"];
 
