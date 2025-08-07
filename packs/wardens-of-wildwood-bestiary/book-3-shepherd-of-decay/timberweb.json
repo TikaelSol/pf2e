@@ -252,7 +252,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>A creature hit by the timberweb's vine Strike becomes entangled by the sticky fibers, taking a –15-foot penalty to its Speeds for 1 minute or until it Escapes (DC 34) or is cut free (AC 36, Hardness 8, 30 HP). If the target is adjacent to a wooden object of its size or larger, the target is instead @UUID[Compendium.pf2e.conditionitems.Item.Immobilized] and stuck to that object until it Escapes or is cut free.</p>"
+                    "value": "<p>A creature hit by the timberweb's vine Strike becomes entangled by the sticky fibers, taking a –15-foot penalty to its Speeds for 1 minute or until it [[/act escape dc=34]]{Escapes} or is cut free (AC 36, Hardness 8, 30 HP). If the target is adjacent to a wooden object of its size or larger, the target is instead @UUID[Compendium.pf2e.conditionitems.Item.Immobilized] and stuck to that object until it Escapes or is cut free.</p>"
                 },
                 "publication": {
                     "license": "OGL",
