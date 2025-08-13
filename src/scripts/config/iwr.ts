@@ -83,6 +83,7 @@ const immunityTypes = {
     polymorph: "PF2E.Damage.IWR.Type.polymorph",
     possession: "PF2E.Damage.IWR.Type.possession",
     precision: "PF2E.Damage.RollFlavor.precision",
+    prediction: "PF2E.Damage.IWR.Type.prediction",
     prone: "PF2E.Damage.IWR.Type.prone",
     radiation: "PF2E.Damage.IWR.Type.radiation",
     restrained: "PF2E.Damage.IWR.Type.restrained",
