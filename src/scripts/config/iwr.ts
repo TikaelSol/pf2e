@@ -24,6 +24,7 @@ const immunityTypes = {
     ...sanctifiedIWR,
     ...traditionIWR,
     acid: "PF2E.Damage.RollFlavor.acid",
+    aging: "PF2E.Damage.IWR.Type.aging",
     air: "PF2E.Damage.RollFlavor.air",
     alchemical: "PF2E.Damage.IWR.Type.alchemical",
     "area-damage": "PF2E.Damage.IWR.Type.area-damage",
