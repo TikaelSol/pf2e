@@ -36,12 +36,11 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         if (this.actor?.isOfType("party")) {
             return this.actor.members.every((a) => game.combat?.getCombatantByActor(a.id));
         }
-
         return super.inCombat;
     }
 
     /** This should be in Foundry core, but ... */
-    get scene(): this["parent"] {
+    get scene(): TParent {
         return this.parent;
     }
 
@@ -71,7 +70,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
 
     /** Is this token's scale locked at 1 or (for small creatures) 0.8? */
     get autoscale(): boolean {
-        return this.flags.pf2e.autoscale;
+        return this.linkToActorSize && game.pf2e.settings.tokens.autoscale && this.flags.pf2e.autoscale;
     }
 
     get playersCanSeeName(): boolean {
@@ -222,22 +221,16 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
     override prepareBaseData(): void {
         super.prepareBaseData();
 
-        this.flags = fu.mergeObject(this.flags, { pf2e: {} });
+        const flags = fu.mergeObject(this.flags, { pf2e: {} });
         const actor = this.actor;
         if (!actor) return;
 
         TokenDocumentPF2e.assignDefaultImage(this);
 
         // Dimensions and scale
-        const linkDefault = SIZE_LINKABLE_ACTOR_TYPES.has(actor.type);
-        const linkToActorSize = this.flags.pf2e?.linkToActorSize ?? linkDefault;
-
-        const autoscaleDefault = game.pf2e.settings.tokens.autoscale;
-        // Autoscaling is a secondary feature of linking to actor size
-        const autoscale = linkToActorSize ? (this.flags.pf2e.autoscale ?? autoscaleDefault) : false;
-        this.flags.pf2e = Object.assign(this.flags.pf2e, { linkToActorSize, autoscale });
-
-        // Token dimensions from actor size
+        flags.pf2e.linkToActorSize ??= SIZE_LINKABLE_ACTOR_TYPES.has(actor.type);
+        const settingEnabled = game.pf2e.settings.tokens.autoscale;
+        flags.pf2e.autoscale = settingEnabled && flags.pf2e.linkToActorSize ? (flags.pf2e.autoscale ?? true) : false;
         TokenDocumentPF2e.prepareScale(this);
 
         // Merge token overrides from REs into this document
@@ -361,15 +354,12 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
 
     /** Set a TokenData instance's dimensions from actor data. Static so actors can use for their prototypes */
     static prepareScale(token: TokenDocumentPF2e | PrototypeTokenPF2e<ActorPF2e>): void {
-        const linkToActorSize = token.flags.pf2e.linkToActorSize;
-        const autoscale = game.pf2e.settings.tokens.autoscale && token.flags.pf2e.autoscale !== false;
-        if (linkToActorSize && autoscale) {
-            const absoluteScale = token.actor?.size === "sm" ? 0.8 : 1;
-            const mirrorX = token.texture.scaleX < 0 ? -1 : 1;
-            token.texture.scaleX = mirrorX * absoluteScale;
-            const mirrorY = token.texture.scaleY < 0 ? -1 : 1;
-            token.texture.scaleY = mirrorY * absoluteScale;
-        }
+        if (!token.flags.pf2e.autoscale) return;
+        const absoluteScale = token.actor?.size === "sm" ? 0.8 : 1;
+        const mirrorX = token.texture.scaleX < 0 ? -1 : 1;
+        token.texture.scaleX = mirrorX * absoluteScale;
+        const mirrorY = token.texture.scaleY < 0 ? -1 : 1;
+        token.texture.scaleY = mirrorY * absoluteScale;
     }
 
     /** Set a token's initiative on the current encounter, creating a combatant if necessary */
@@ -434,6 +424,9 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         const postUpdate = this.toObject(false);
         const postUpdateAuras = Array.from(this.auras.values()).map((a) => R.omit(a, ["appearance", "token"]));
         const tokenChanges = fu.diffObject<DeepPartial<this["_source"]>>(preUpdate, postUpdate);
+        if (!this.actorLink && this.autoscale && fu.hasProperty(updates, "system.traits.size")) {
+            tokenChanges.texture = fu.mergeObject(tokenChanges, R.pick(this.texture, ["scaleX", "scaleY"]));
+        }
 
         if (this.scene?.isView && Object.keys(tokenChanges).length > 0) {
             const tokenOverrides = this.actor?.synthetics.tokenOverrides ?? {};
@@ -512,22 +505,22 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         operation?: Partial<DatabaseOperation<Document | null>>,
     ): void {
         super._onRelatedUpdate(update, operation);
-
-        const { actor, scene } = this;
-        if (!actor?.isOwner || !(scene instanceof ScenePF2e)) return;
-
-        // Follow up any actor (or descendant document thereof) modification with a size synchronization
-        const activeGM = game.users.activeGM; // Let the active GM take care of updates if available
-        if ((!activeGM || game.user === activeGM) && this.linkToActorSize && actor.system.traits?.size) {
-            const dimensions = actor.system.traits.size.tokenDimensions;
-            if (dimensions.width !== this.width || dimensions.height !== this.height) {
-                scene.syncTokenDimensions(this, dimensions);
-            }
-        }
+        if (!(this.scene instanceof ScenePF2e)) return;
 
         // Simulate update to detect and fulfill canvas-affecting actor changes
         const updates = Array.isArray(update) ? update : [update];
         this.simulateUpdate(updates[0]);
+
+        // Follow up any actor (or descendant document thereof) modification with a size synchronization
+        const actor = this.actor;
+        if (!actor?.isOwner) return;
+        const activeGM = game.users.activeGM; // Let the active GM take care of updates if available
+        if ((!activeGM || game.user === activeGM) && this.linkToActorSize && actor.system.traits?.size) {
+            const dimensions = actor.system.traits.size.tokenDimensions;
+            if (dimensions.width !== this.width || dimensions.height !== this.height) {
+                this.scene.syncTokenDimensions(this, dimensions);
+            }
+        }
     }
 
     protected override _onDelete(options: DatabaseDeleteCallbackOptions, userId: string): void {
