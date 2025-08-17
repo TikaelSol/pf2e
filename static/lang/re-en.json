@@ -170,10 +170,18 @@
                 "Wrap": "Wrap"
             },
             "CosmicForm": {
+                "Moon": "Moon",
                 "MoonNote": "The target is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 round.",
+                "Sun": "Sun",
                 "SunNote": "The target is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round."
             },
             "DaemonForm": {
+                "ChoiceSet": {
+                    "Lacridaemon": "Lacridaemon",
+                    "Leukodaemon": "Leukodaemon",
+                    "Meladaemon": "Meladaemon",
+                    "Venedaemon": "Venedaemon"
+                },
                 "Note": {
                     "CeustodaemonDamage": "Any successful jaws or claw Strike deals an additional @Damage[1d6[untyped]] damage, and you take the same amount of damage"
                 }
@@ -217,6 +225,11 @@
                 "SpiderWebNote": "A successful Web attack entangles the target for 1 round, but deals no damage"
             },
             "MonstrosityForm": {
+                "ChoiceSet": {
+                    "CaveWorm": "Cave Worm",
+                    "Phoenix": "Phoenix",
+                    "SeaSerpent": "Sea Serpent"
+                },
                 "ShroudOfFlame": "Shroud of Flame"
             },
             "NatureIncarnate": {
@@ -1236,6 +1249,9 @@
             "PaleStranger": {
                 "TargetMurderedPaleStranger": "Target Murdered Pale Stranger",
                 "TargetNeverKilled": "Target has Never Killed"
+            },
+            "PhantasmalProtagonist": {
+                "AbilityLabel": "Phantasmal Protagonist"
             },
             "PlanarScion": {
                 "Duskwalker": {
@@ -4305,6 +4321,12 @@
             "FrenziedRevelry": {
                 "Note": "Whenever someone benefitting from this bonus critically succeeds at a saving throw against an enemy's mental effect, its revelry increases, granting it a +1 status bonus to attack rolls and damage rolls for 1 round. @UUID[Compendium.pf2e.spell-effects.Item.ldl1aU5ovTQMUHJ2]{Spell Effect: Frenzied Revelry (Critical)}"
             },
+            "FulcrumLens": {
+                "Crimson": {
+                    "Strike": "Crimson Fulcrum Lens Strike"
+                },
+                "StatisticLabel": "Fulcrum Lens Spell Attack Roll"
+            },
             "FuneralFlames": {
                 "DismissLabel": "Dismiss Funeral Flames"
             },
@@ -5254,6 +5276,9 @@
             },
             "PackAttack": {
                 "Label": "Target is Within Range of At Least Two Allies"
+            },
+            "Parry": {
+                "Prompt": "Are you wielding a weapon with the parry trait?"
             },
             "PathfinderAgentDedication": {
                 "ThoroughReports": "Thorough Reports"
