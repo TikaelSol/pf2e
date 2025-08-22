@@ -503,7 +503,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>Rapidly cooling obsidian clings to the target's body and stiffens around their limbs. The target must attempt a @Check[reflex|dc:42] save. On a failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.Immobilized] until they @UUID[Compendium.pf2e.actionspf2e.Item.Escape] (DC 42). On a critical failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] for as long as they remain immobilized.</p>"
+                    "value": "<p>Rapidly cooling obsidian clings to the target's body and stiffens around their limbs. The target must attempt a @Check[reflex|dc:42] save. On a failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.Immobilized] until they [[/act escape dc=42]]. On a critical failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] for as long as they remain immobilized.</p>"
                 },
                 "publication": {
                     "license": "OGL",
