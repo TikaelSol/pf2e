@@ -9,7 +9,6 @@ export function getAreaSquares(data: GetAreaSquaresParams): EffectAreaSquare[] {
     const squareWidth = canvas.dimensions.size;
     const rowCount = Math.ceil(data.bounds.width / squareWidth);
     const emptyVector = Array<null>(rowCount - 1).fill(null);
-
     const genColumn = (square: EffectAreaSquare): EffectAreaSquare[] => {
         return emptyVector.reduce(
             (colSquares) => {
@@ -26,7 +25,6 @@ export function getAreaSquares(data: GetAreaSquaresParams): EffectAreaSquare[] {
             [square],
         );
     };
-
     const topLeftSquare = new EffectAreaSquare(data.bounds.x, data.bounds.y, squareWidth, squareWidth);
     const collisionType =
         data.traits?.includes("visual") && !data.traits.includes("auditory")
@@ -60,12 +58,11 @@ export function getAreaSquares(data: GetAreaSquaresParams): EffectAreaSquare[] {
         const tokenObject = data.token instanceof TokenDocumentPF2e ? data.token.object : data.token;
         return new PointSource({ object: tokenObject });
     })();
-
     const tokenCenterPolygons = tokenCenters.map((c) =>
         CONFIG.Canvas.polygonBackends[collisionType].create(c, {
             type: collisionType,
             source: pointSource,
-            boundaryShape: [data.bounds],
+            boundaryShapes: [data.bounds],
         }),
     );
 

@@ -23,7 +23,6 @@ import type {
     CompendiumBrowserSources,
 } from "@module/apps/compendium-browser/browser.ts";
 import type { EffectsPanel } from "@module/apps/effects-panel.ts";
-import type { LicenseViewer } from "@module/apps/license-viewer/app.ts";
 import type {
     ActorDirectoryPF2e,
     ChatLogPF2e,
@@ -91,6 +90,7 @@ interface ClientSettingsPF2e extends fh.ClientSettings {
     get(module: "pf2e", setting: "automation.flankingDetection"): boolean;
     get(module: "pf2e", setting: "automation.iwr"): boolean;
     get(module: "pf2e", setting: "automation.lootableNPCs"): boolean;
+    get(module: "pf2e", setting: "automation.reachEnforcement"): Set<"doors" | "corpses" | "loot" | "merchants">;
     get(module: "pf2e", setting: "automation.removeExpiredEffects"): boolean;
     get(module: "pf2e", setting: "automation.rulesBasedVision"): boolean;
 
@@ -170,7 +170,6 @@ interface GamePF2e
         // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
         actions: Record<string, Function> & Collection<string, Action>;
         compendiumBrowser: CompendiumBrowser;
-        licenseViewer: LicenseViewer;
         worldClock: WorldClock;
         effectPanel: EffectsPanel;
         effectTracker: EffectTracker;
@@ -213,6 +212,7 @@ interface GamePF2e
             automation: {
                 /** Flanking detection */
                 flanking: boolean;
+                reachEnforcement: Set<"doors" | "corpses" | "loot" | "merchants">;
                 removeEffects: boolean;
             };
             /** Campaign feat slots */
