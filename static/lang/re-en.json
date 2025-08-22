@@ -88,9 +88,21 @@
         },
         "BattleForm": {
             "AberrantForm": {
+                "ChoiceSet": {
+                    "Chuul": "Chuul",
+                    "Gogiteth": "Gogiteth",
+                    "Gug": "Gug",
+                    "Otyugh": "Otyugh"
+                },
                 "GugSqueezeNote": "Your multiple joints allow you to fit through tight spaces as if you were a Medium creature."
             },
             "AngelForm": {
+                "ChoiceSet": {
+                    "Balisse": "Balisse",
+                    "Choral": "Choral",
+                    "Kuribu": "Kuribu",
+                    "Tennin": "Tennin"
+                },
                 "DeafenedNote": "@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 round on a critical hit"
             },
             "Attack": {
@@ -1220,6 +1232,11 @@
                 "ImpactDriver": "Impact Driver",
                 "SpinningBlade": "Spinning Blade"
             },
+            "Murschen": {
+                "RedRuinStance": {
+                    "RedClawLabel": "Red Claw"
+                }
+            },
             "Necrohulk": {
                 "AlchemicalCartridgeRuptured": "Alchemical Cartridge Ruptured"
             },
@@ -1303,7 +1320,7 @@
                 }
             },
             "Pyrkaion": {
-                "AuraOfSophistryNote": "<p>You become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} and gain weakness 4 to mental damage for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p><p>Compendium.pf2e.bestiary-effects.Item.Rr4stNn2zqzspjQu</p>"
+                "AuraOfSophistryNote": "<p>You become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} and gain weakness 4 to mental damage for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p><p>@UUID[Compendium.pf2e.bestiary-effects.Item.Rr4stNn2zqzspjQu]</p>"
             },
             "RaptorGuardWight": {
                 "TerrorMaster": "The Raptor Guard is wearing their dinosaur-skull helm."
@@ -3241,6 +3258,9 @@
                 }
             },
             "Conditions": {
+                "Concealed": {
+                    "Ignore": "You ignore the target's concealed condition."
+                },
                 "Sickened": {
                     "AllowEatOrDrink": "You can eat and drink things when you're sickened.",
                     "Reduce": {
@@ -4586,9 +4606,9 @@
             "HuntPrey": {
                 "FirstHitDamage": "First Hit on Hunted Prey",
                 "FirstHitSwitch": "Hitting Hunted Prey for the First Time This Round",
-                "SeekHuntedPrey": "To Seek hunted prey",
+                "SeekHuntedPrey": "To Seek Hunted Prey",
                 "TargetHuntedPrey": "Target is your Hunted Prey",
-                "TrackHuntedPrey": "To Track hunted prey"
+                "TrackHuntedPrey": "To Track Hunted Prey"
             },
             "Ifrit": {
                 "Lavasoul": {
@@ -5194,6 +5214,11 @@
                 "Four": "Four",
                 "Nine": "Nine",
                 "One": "One",
+                "Ordinals": {
+                    "First": "First",
+                    "Second": "Second",
+                    "Third": "Third"
+                },
                 "Seven": "Seven",
                 "Six": "Six",
                 "Ten": "Ten",
@@ -5557,9 +5582,31 @@
                 },
                 "HuntersEdge": {
                     "FirstAttack": "First attack on hunted prey this round",
+                    "Flurry": {
+                        "Label": "Flurry"
+                    },
+                    "Outwit": {
+                        "Label": "Outwit"
+                    },
+                    "Precision": {
+                        "Label": "Precision",
+                        "ToggleLabel": "Precision — Hit against Hunted Prey"
+                    },
                     "Prompt": "Select a hunter's edge."
                 },
+                "MasterfulHunter": {
+                    "Flurry": "If you have master proficiency with your weapon, your multiple attack penalty for attacks against your hunted prey is –2 (–1 with an agile weapon) on your second attack of the turn, and –4 (–2 with an agile weapon) on your third and subsequent attacks of the turn.",
+                    "Label": "Masterful Hunter",
+                    "Outwit": "Your mastery of skills allows you to overwhelm your prey. If you have master proficiency in Deception, Intimidation, Stealth, or the skill you use to Recall Knowledge about your prey, increase the circumstance bonus against the prey with that skill from +2 to +4. If you have master proficiency with your armor, increase the circumstance bonus to AC against the prey from +1 to +2.",
+                    "Precision": "Your weapon mastery allows you to hit your prey's vital areas multiple times. The second time in a round you hit your hunted prey, you also deal 1d8 precision damage. At 19th level, your second hit in a round against your hunted prey deals 2d8 precision damage, and your third hit in a round against your hunted prey deals 1d8 precision damage."
+                },
+                "TheHarderTheyFall": {
+                    "CriticalSuccess": "On a critical success, your target takes @Damage[(ternary(gte(@actor.system.skills.athletics.rank,3),4,2))d8[bludgeoning]] damage.",
+                    "Success": "On a success, your target takes @Damage[(ternary(gte(@actor.system.skills.athletics.rank,3),2,1))d8[bludgeoning]] damage."
+                },
                 "Vindicator": {
+                    "BenefitsAddendum": "You gain a +1 status bonus to your spell attack rolls against your hunted prey, and they take a –1 status penalty to their saving throws against divine spells you cast.",
+                    "SpellPenaltyAddendum": "Your hunted prey takes a status penalty to their saving throws against divine spells you cast.",
                     "Edge": "Vindication Edge",
                     "Interrogate": "Against same religion members or undead/werecreatures pretending"
                 }
@@ -5692,6 +5739,10 @@
                 },
                 "Racket": {
                     "Prompt": "Select a racket."
+                },
+                "TheHarderTheyFall": {
+                    "CriticalSuccess": "On a critical success, your target takes @Damage[1d6[bludgeoning],(((@actor.flags.pf2e.sneakAttackDamage.number)d(@actor.flags.pf2e.sneakAttackDamage.faces))[precision])[bludgeoning]] damage.",
+                    "Success": "On a success, your target takes @Damage[1d6[bludgeoning]] damage."
                 },
                 "TrainSkill": {
                     "Prompt": "Select a skill to become trained in."

@@ -1,7 +1,7 @@
 import type { ActorPF2e } from "@actor";
 import type { PrototypeTokenPF2e } from "@actor/data/base.ts";
 import { SIZE_LINKABLE_ACTOR_TYPES } from "@actor/values.ts";
-import type { TrackedAttributesDescription } from "@client/_types.d.mts";
+import type { TokenAnimationOptions, TrackedAttributesDescription } from "@client/_types.d.mts";
 import type { TokenResourceData } from "@client/canvas/placeables/token.d.mts";
 import type { TokenUpdateCallbackOptions } from "@client/documents/token.d.mts";
 import type { Point } from "@common/_types.d.mts";
@@ -13,7 +13,6 @@ import type {
 import type Document from "@common/abstract/document.d.mts";
 import type { ImageFilePath, TokenDisplayMode, VideoFilePath } from "@common/constants.d.mts";
 import type { TokenPF2e } from "@module/canvas/index.ts";
-import { TokenAnimationOptionsPF2e } from "@module/canvas/token/object.ts";
 import { ChatMessagePF2e } from "@module/chat-message/document.ts";
 import type { CombatantPF2e, EncounterPF2e } from "@module/encounter/index.ts";
 import { DifficultTerrainGrade, EnvironmentFeatureRegionBehavior, RegionDocumentPF2e } from "@scene";
@@ -29,7 +28,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
     declare auras: Map<string, TokenAura>;
 
     /** The most recently used animation for later use when a token override is reverted. */
-    #lastAnimation: TokenAnimationOptionsPF2e | null = null;
+    #lastAnimation: TokenAnimationOptions | null = null;
 
     /** Returns if the token is in combat, though some actors have different conditions */
     override get inCombat(): boolean {
@@ -220,7 +219,6 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
     /** If rules-based vision is enabled, disable manually configured vision radii */
     override prepareBaseData(): void {
         super.prepareBaseData();
-
         const flags = fu.mergeObject(this.flags, { pf2e: {} });
         const actor = this.actor;
         if (!actor) return;
@@ -449,9 +447,9 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
     /*  Event Handlers                              */
     /* -------------------------------------------- */
 
-    /** Ensure that actors that don't allow synthetics are linked */
+    /** Ensure that actors that don't allow synthetics are linked. */
     protected override _preCreate(
-        data: this["_source"],
+        data: DeepPartial<this["_source"]>,
         options: DatabaseCreateCallbackOptions,
         user: fd.BaseUser,
     ): Promise<boolean | void> {
@@ -461,7 +459,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         return super._preCreate(data, options, user);
     }
 
-    /** Ensure that actors that don't allow synthetics stay linked */
+    /** Ensure that actors that don't allow synthetics stay linked. */
     protected override _preUpdate(
         data: Record<string, unknown>,
         options: TokenUpdateCallbackOptions,
