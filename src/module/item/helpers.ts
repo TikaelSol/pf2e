@@ -1,17 +1,11 @@
 import type { ActorPF2e } from "@actor";
-import { createHTMLElement, objectHasKey, setHasElement, sluggify } from "@util";
+import { createHTMLElement, setHasElement } from "@util";
 import type { Converter } from "showdown";
 import { processSanctification } from "./ability/helpers.ts";
 import type { ItemSourcePF2e, ItemType } from "./base/data/index.ts";
-import type {
-    ItemTrait,
-    ItemTraits,
-    ItemTraitsNoRarity,
-    OtherTagsOnly,
-    RarityTraitAndOtherTags,
-    ValuedTraits,
-} from "./base/data/system.ts";
+import { ItemTraits, ItemTraitsNoRarity } from "./base/data/system.ts";
 import type { ItemPF2e } from "./base/document.ts";
+import { ItemTrait } from "./base/types.ts";
 import type { PhysicalItemPF2e } from "./physical/document.ts";
 import { PHYSICAL_ITEM_TYPES } from "./physical/values.ts";
 import type { ItemInstances } from "./types.ts";
@@ -82,89 +76,66 @@ function markdownToHTML(markdown: string): string {
         .innerHTML.trim();
 }
 
-const valueRegex = /^([\w-]+)-(\d{1,3})$/;
+/**
+ * Add a trait to an array of traits--unless it matches an existing trait except by annotation. Replace the trait if
+ * the new trait is an upgrade, or otherwise do nothing. Note: the array is mutated as part of this process.
+ */
+function addOrUpgradeTrait<TTrait extends ItemTrait>(
+    traits: ItemTraits<TTrait> | ItemTraitsNoRarity<TTrait> | TTrait[],
+    newTrait: TTrait,
+): void {
+    // Get traits and annotations object to potentially upgrade
+    const isArray = Array.isArray(traits);
+    const value = isArray ? traits : traits.value;
+    const config = isArray ? null : (traits.config ??= {});
 
-function evaluateTraitConfig(traits?: string[]): ValuedTraits {
-    if (!traits) return {};
-
-    const data: ValuedTraits = {};
-    for (const trait of traits) {
-        const match = valueRegex.exec(trait);
-        if (match) {
-            const key = sluggify(match[1]);
-            data[key] = Math.max(data[key] ?? 0, Number(match[2]));
-        }
+    // Check first if its not an annotated trait
+    const annotatedTraitMatch = newTrait.match(/^([a-z][-a-z]+)-(\d*d?\d+)$/);
+    if (!annotatedTraitMatch) {
+        if (!value.includes(newTrait)) value.push(newTrait);
+        return;
     }
-    return data;
+
+    // If annotated, log it and potentially upgrade it
+    const traitBase = annotatedTraitMatch[1];
+    const upgradeAnnotation = annotatedTraitMatch[2];
+    const traitPattern = new RegExp(String.raw`${traitBase}-(\d*d?\d*)`);
+    const existingTrait = value.find((t) => traitPattern.test(t));
+    const existingAnnotation = existingTrait?.match(traitPattern)?.at(1);
+    if (!(existingTrait && existingAnnotation)) {
+        if (!value.includes(newTrait)) value.push(newTrait);
+        if (config) config[traitBase] = Number(upgradeAnnotation);
+    } else if (_expectedValueOf(upgradeAnnotation) > _expectedValueOf(existingAnnotation)) {
+        value.splice(value.indexOf(existingTrait), 1, newTrait);
+        if (config) config[traitBase] = Number(upgradeAnnotation);
+    }
 }
 
 /**
- * Wraps over item data to extend for the purposes of system data.
- * @todo once all items use data models, replace with data model implementation
+ * Removes the trait from the traits object, and also updates the annotation if relevant
+ * @param traits the traits object to update
+ * @param trait the trait being removed, either the full one or an unannotated variant (like "volley")
  */
-function wrapItemTraits<T extends ItemTraits | ItemTraitsNoRarity | RarityTraitAndOtherTags | OtherTagsOnly>(
-    item: ItemPF2e,
-    traits: T,
-): T {
-    traits.value &&= traits.value.filter((t) => t in item.constructor.validTraits);
+function removeTrait<TTrait extends ItemTrait>(
+    traits: ItemTraits<TTrait> | ItemTraitsNoRarity<TTrait>,
+    trait: string,
+): void {
+    const idx = traits.value.findIndex((t) => t === trait);
+    if (idx < 0) return;
 
-    // Implement cache busting when the traits are being updated
-    let config: ValuedTraits | null = null;
-    let value = traits.value ? createDirtyCheckArray(traits.value, () => (config = null)) : traits.value;
-    const expanded = Object.defineProperties(traits, {
-        value: {
-            get: function () {
-                return value;
-            },
-            set: function (value: ItemTrait[]) {
-                if (traits.value && value !== traits.value) {
-                    value = createDirtyCheckArray(traits.value, () => (config = null));
-                    config = null;
-                }
-            },
-        },
-        config: {
-            get: function () {
-                return (config ??= evaluateTraitConfig(traits.value));
-            },
-            set: function (value: ValuedTraits | null) {
-                config = value;
-            },
-        },
-    });
-
-    return expanded;
+    traits.value.splice(idx, 1);
+    const annotatedTraitMatch = trait.match(/^([a-z][-a-z]+)-(\d*d?\d+)$/);
+    if (annotatedTraitMatch && traits.config) {
+        const traitBase = annotatedTraitMatch[1];
+        delete traits.config[traitBase];
+    }
 }
 
-/** Internal helper that creates an array that calls a callback whenever any value changes */
-function createDirtyCheckArray<T>(arr: T[] & { isProxy?: boolean }, onChange: () => void): T[] & { isProxy: boolean } {
-    arr = arr.isProxy ? Array.from(arr) : arr;
-    return new Proxy(arr, {
-        get(target, key, receiver) {
-            if (key === "isProxy") {
-                return true;
-            }
-
-            return Reflect.get(target, key, receiver);
-        },
-        deleteProperty: function (target: Record<keyof T[], unknown>, property) {
-            if (objectHasKey(target, property)) {
-                delete target[property];
-                onChange();
-                return true;
-            }
-
-            return false;
-        },
-        set: function (target: Record<keyof T[], unknown>, property, value) {
-            // Used for setting *any* value, even "length"
-            target[property as keyof typeof target] = value;
-            if (Number.isNumeric(property)) {
-                onChange();
-            }
-            return true;
-        },
-    }) as T[] & { isProxy: boolean };
+function _expectedValueOf(annotation: string): number {
+    const traitValueMatch = annotation.match(/(\d*)d(\d+)/);
+    return traitValueMatch
+        ? Number(traitValueMatch[1] || 1) * ((Number(traitValueMatch[2]) + 1) / 2)
+        : Number(annotation);
 }
 
-export { itemIsOfType, markdownToHTML, performLatePreparation, reduceItemName, wrapItemTraits };
+export { addOrUpgradeTrait, itemIsOfType, markdownToHTML, performLatePreparation, reduceItemName, removeTrait };

@@ -909,6 +909,7 @@ const vehicleTraits = {
     artifact: "PF2E.TraitArtifact",
     clockwork: "PF2E.TraitClockwork",
     magical: "PF2E.TraitMagical",
+    tech: "PF2E.TraitTech",
     teleportation: "PF2E.TraitTeleportation",
 };
 
@@ -1020,6 +1021,7 @@ const shieldTraits = {
     invested: "PF2E.TraitInvested",
     "launching-dart": "PF2E.TraitLaunching",
     magical: "PF2E.TraitMagical",
+    mythic: "PF2E.TraitMythic",
     relic: "PF2E.TraitRelic",
     "shield-throw-20": "PF2E.TraitShieldThrow20",
     "shield-throw-30": "PF2E.TraitShieldThrow30",
