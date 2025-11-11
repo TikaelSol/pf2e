@@ -349,13 +349,16 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": 60,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
                         "arcane",
-                        "fire",
-                        "range-increment-60"
+                        "fire"
                     ]
                 }
             },

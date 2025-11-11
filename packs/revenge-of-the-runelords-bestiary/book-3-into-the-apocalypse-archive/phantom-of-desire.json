@@ -478,14 +478,17 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": null,
+                    "max": 100
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
                         "illusion",
                         "mental",
-                        "occult",
-                        "range-100"
+                        "occult"
                     ]
                 }
             },

@@ -2921,12 +2921,15 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": 60,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
-                        "mental",
-                        "range-increment-60"
+                        "mental"
                     ]
                 }
             },

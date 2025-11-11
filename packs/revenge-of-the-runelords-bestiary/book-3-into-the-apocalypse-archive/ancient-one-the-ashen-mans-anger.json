@@ -763,12 +763,15 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": 30,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
-                        "occult",
-                        "range-increment-30"
+                        "occult"
                     ]
                 }
             },
