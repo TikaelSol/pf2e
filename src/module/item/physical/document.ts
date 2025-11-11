@@ -17,7 +17,7 @@ import { MAGIC_TRADITIONS } from "@item/spell/values.ts";
 import type { Rarity, Size, ZeroToTwo } from "@module/data.ts";
 import { RuleElement, RuleElementOptions } from "@module/rules/index.ts";
 import type { EffectSpinoff } from "@module/rules/rule-element/effect-spinoff/spinoff.ts";
-import { createHTMLElement, ErrorPF2e, isObject, localizer, setHasElement, tupleHasValue } from "@util";
+import { createHTMLElement, ErrorPF2e, localizer, setHasElement, tupleHasValue } from "@util";
 import * as R from "remeda";
 import { getUnidentifiedPlaceholderImage } from "../identification.ts";
 import { Bulk } from "./bulk.ts";
@@ -262,13 +262,8 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         this.system.material.type ||= null;
         this.system.material.grade ||= null;
         this.system.material.effects ??= [];
-        this.system.stackGroup ??= null;
+        if (this.type !== "treasure") this.system.stackGroup ??= null;
         this.system.hp.brokenThreshold = Math.floor(this.system.hp.max / 2);
-
-        // Temporary: prevent noise from items pre migration 746
-        if (typeof this.system.price.value === "string") {
-            this.system.price.value = Coins.fromString(this.system.price.value);
-        }
 
         // Ensure infused items are always temporary
         const traits: PhysicalItemTrait[] = this.system.traits.value;
@@ -474,10 +469,18 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         item: PhysicalItemPF2e,
         { quantity = 1, stack = false }: { quantity?: number; stack?: boolean } = {},
     ): Promise<boolean> {
-        const subitems = fu.deepClone(this._source.system.subitems);
-        if (!subitems) {
-            throw ErrorPF2e("This item does not accept attachments");
-        }
+        if (!this._source.system.subitems) throw ErrorPF2e("This item does not accept attachments");
+
+        // Get subitems, excluding those that will need to be purged this update
+        // Empty ammo removal is deferred for reloading, since the ammo may still needed for rule elements to function
+        const purgedItems = this.isOfType("weapon")
+            ? this.subitems
+                  .filter((i) => i.isOfType("ammo", "weapon") && i.isAmmoFor(this) && !i.quantity)
+                  .map((i) => i.id)
+            : [];
+        const subitems = fu
+            .deepClone(this._source.system.subitems)
+            .filter((i) => i._id && !purgedItems.includes(i._id));
 
         // Add to subitems, matching with a stackable item if stack is true
         const validCarryTypes = ["attached", "installed"] as const;
@@ -526,7 +529,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
      * Detach a subitem from another physical item, either creating it as a new, independent item or incrementing the
      * quantity of an existing stack.
      */
-    async detach({ skipConfirm }: { skipConfirm?: boolean }): Promise<void> {
+    async detach({ skipConfirm }: { skipConfirm?: boolean } = {}): Promise<void> {
         const parentItem = this.parentItem;
         if (!parentItem) throw ErrorPF2e("Subitem has no parent item");
 
@@ -546,9 +549,12 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
                 // Find a stack match, cloning the subitem as worn so the search won't fail due to it being equipped
                 const subitemData: PhysicalItemSource = this.toObject();
                 subitemData.system.equipped.carryType = "worn";
-                const stack = this.isOfType("consumable")
-                    ? parentItem.actor?.inventory.findStackableItem(subitemData)
-                    : null;
+                const isWeaponAmmo =
+                    this.isOfType("weapon") && parentItem.isOfType("weapon") && this.isAmmoFor(parentItem);
+                const stack =
+                    this.isOfType("consumable", "ammo") || isWeaponAmmo
+                        ? parentItem.actor?.inventory.findStackableItem(subitemData)
+                        : null;
                 const keepId = !!parentItem.actor && !parentItem.actor.items.has(this.id);
                 return (
                     stack?.update({ "system.quantity": stack.quantity + this.quantity }) ??
@@ -564,7 +570,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
     }
 
     /**
-     * Can the provided item stack with this item?
+     * Can the provided item stack with this item? This should be used on existing items.
      * @param item an item we are trying to add to the inventory
      */
     isStackableWith(item: PhysicalItemPF2e): boolean {
@@ -577,8 +583,8 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         if (!preCheck) return false;
 
         // Additional checks to make sure the worn state is what we want
-        // These checks are skipped for sub-items
-        if (!this.parentItem) {
+        // These checks are skipped for sub-items or items that are in a container
+        if (!this.parentItem && !this.container) {
             const secondPreCheck =
                 this.isHeld === item.isHeld && (!this.isHeld || this.quantity === 0 || item.quantity === 0);
             if (!secondPreCheck) return false;
@@ -586,11 +592,14 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
 
         const thisData = this.toObject().system;
         const otherData = item.toObject().system;
+        thisData.price.value = { cp: new Coins(thisData.price.value).copperValue };
+        otherData.price.value = { cp: new Coins(otherData.price.value).copperValue };
         thisData.quantity = otherData.quantity;
         thisData.equipped = otherData.equipped;
         thisData.containerId = otherData.containerId;
         thisData._migration = otherData._migration;
         thisData.identification = otherData.identification;
+        thisData.publication = otherData.publication;
 
         return R.isDeepEqual(thisData, otherData);
     }
@@ -679,16 +688,13 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
 
     /* Retrieve subtitution data for an unidentified or misidentified item, generating defaults as necessary */
     getMystifiedData(status: IdentificationStatus, _options?: Record<string, boolean>): MystifiedData {
-        const mystifiedData: MystifiedData = this.system.identification[status];
-
-        const name = mystifiedData.name || this.generateUnidentifiedName();
-        const img = mystifiedData.img || getUnidentifiedPlaceholderImage(this);
-
+        const mystifiedData = this.system.identification?.[status];
+        const name = mystifiedData?.name || this.generateUnidentifiedName();
+        const img = mystifiedData?.img || getUnidentifiedPlaceholderImage(this);
         const description =
-            mystifiedData.data.description.value ||
+            mystifiedData?.data.description.value ||
             (() => {
                 if (status === "identified") return this.description;
-
                 const itemType = this.generateUnidentifiedName({ typeOnly: true });
                 const caseCorrect = (noun: string) =>
                     game.i18n.lang.toLowerCase() === "de" ? noun : noun.toLowerCase();
@@ -865,25 +871,19 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         if (operation.checkHP ?? true) handleHPChange(this, changed);
 
         // Clear 0 price denominations and per fields with values 0 or 1
-        if (isObject<Record<string, unknown>>(changed.system.price)) {
+        if (R.isPlainObject(changed.system.price)) {
             const price: Record<string, unknown> = changed.system.price;
-            if (isObject<Record<string, number | null>>(price.value)) {
+            if (R.isPlainObject(price.value)) {
                 const coins = price.value;
                 for (const denomination of DENOMINATIONS) {
-                    if (coins[denomination] === 0) {
-                        coins[`-=${denomination}`] = null;
-                    }
+                    if (coins[denomination] === 0) coins[`-=${denomination}`] = null;
                 }
             }
-
-            if ("per" in price && (!price.per || Number(price.per) <= 1)) {
-                price["-=per"] = null;
-            }
+            if ("per" in price) price.per = Math.max(1, Math.floor(Number(price.per) || 1));
         }
 
-        const equipped: Record<string, unknown> = changed.system.equipped ?? {};
-
         // Uninvest if dropping
+        const equipped: Record<string, unknown> = changed.system.equipped ?? {};
         if (equipped.carryType === "dropped" && this.system.equipped.invested) {
             equipped.invested = false;
         }
@@ -897,7 +897,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         const isSlotted = Boolean(equipped.inSlot ?? this.system.equipped.inSlot);
         if (hasSlot) {
             equipped.inSlot = isSlotted;
-        } else if ("inSlot" in this._source.system.equipped) {
+        } else if ("inSlot" in (this._source.system.equipped ?? {})) {
             equipped["-=inSlot"] = null;
         }
 

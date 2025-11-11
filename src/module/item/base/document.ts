@@ -17,6 +17,7 @@ import type { ImageFilePath, RollMode } from "@common/constants.d.mts";
 import type { ContainerPF2e, PhysicalItemPF2e } from "@item";
 import { createConsumableFromSpell } from "@item/consumable/spell-consumables.ts";
 import { addOrUpgradeTrait, itemIsOfType, markdownToHTML } from "@item/helpers.ts";
+import { ITEM_TYPES } from "@item/values.ts";
 import type { ItemOriginFlag } from "@module/chat-message/data.ts";
 import { ChatMessagePF2e } from "@module/chat-message/document.ts";
 import { preImportJSON } from "@module/doc-helpers.ts";
@@ -41,7 +42,7 @@ import * as R from "remeda";
 import type { AfflictionSource } from "../affliction/data.ts";
 import { PHYSICAL_ITEM_TYPES } from "../physical/values.ts";
 import { MAGIC_TRADITIONS } from "../spell/values.ts";
-import type { ItemInstances } from "../types.ts";
+import type { ItemInstances, ItemType } from "../types.ts";
 import type {
     ConditionSource,
     EffectSource,
@@ -49,7 +50,6 @@ import type {
     ItemFlagsPF2e,
     ItemSourcePF2e,
     ItemSystemData,
-    ItemType,
     RawItemChatData,
     TraitChatData,
 } from "./data/index.ts";
@@ -158,18 +158,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
     getRollOptions(prefix = this.type, { includeGranter = true } = {}): string[] {
         if (prefix.length === 0) throw ErrorPF2e("`prefix` must be at least one character long");
 
-        const { value: traits = [], rarity = null, otherTags } = this.system.traits;
-        const traitOptions = ((): string[] => {
-            // Additionally include annotated traits without their annotations
-            const damageType = Object.keys(CONFIG.PF2E.damageTypes).join("|");
-            const diceOrNumber = /-(?:[0-9]*d)?[0-9]+(?:-min)?$/;
-            const versatile = new RegExp(`-(?:b|p|s|${damageType})$`);
-            const deannotated = traits
-                .filter((t) => diceOrNumber.test(t) || versatile.test(t))
-                .map((t) => t.replace(diceOrNumber, "").replace(versatile, ""));
-            return [traits, deannotated].flat().map((t) => `trait:${t}`);
-        })();
-
+        const { value: traits = [], rarity = null, otherTags, config = {} } = this.system.traits;
         const slug = this.slug ?? sluggify(this.name);
         const granterOptions = includeGranter
             ? (this.grantedBy?.getRollOptions("granter", { includeGranter: false }).map((o) => `${prefix}:${o}`) ?? [])
@@ -181,8 +170,9 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
             `${prefix}:slug:${slug}`,
             ...granterOptions,
             ...Array.from(this.specialOptions).map((o) => `${prefix}:${o}`),
-            ...traitOptions.map((t) => `${prefix}:${t}`),
             ...otherTags.map((t) => `${prefix}:tag:${t}`),
+            ...traits.map((t) => `${prefix}:trait:${t}`),
+            ...Object.keys(config).map((k) => `${prefix}:trait:${k}`),
         ];
 
         if (rarity) {
@@ -281,14 +271,13 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
 
         // If this item has traits, filter for valid traits and check for annotations
         if (this.system.traits.value) {
-            this.system.traits.value = this.system.traits.value.filter((t) => t in this.constructor.validTraits);
+            const validTraits = this.constructor.validTraits;
+            const original = this.system.traits.value;
+            this.system.traits.value = [];
             this.system.traits.config = {};
-            for (const trait of this.system.traits.value) {
-                const annotatedTraitMatch = trait.match(/^([a-z][-a-z]+)-(\d*d?\d+)$/);
-                if (annotatedTraitMatch) {
-                    const [_, traitBase, annotation] = annotatedTraitMatch;
-                    this.system.traits.config[traitBase] = Number(annotation);
-                }
+            for (const trait of original) {
+                if (!(trait in validTraits)) continue;
+                addOrUpgradeTrait(this.system.traits, trait);
             }
         }
 
@@ -304,7 +293,11 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
                 grant.onDelete ??= "detach";
             }
         }
-        this.grantedBy = this.actor?.items.get(this.flags.pf2e.grantedBy?.id ?? "") ?? null;
+        const actor = this.actor;
+        const grantedById = this.flags.pf2e.grantedBy?.id;
+        this.grantedBy = grantedById
+            ? (actor?.items.get(grantedById) ?? actor?.conditions.get(grantedById) ?? null)
+            : null;
     }
 
     prepareRuleElements(options: Omit<RuleElementOptions, "parent"> = {}): RuleElement[] {
@@ -398,7 +391,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
                 if (refreshedSpell instanceof ItemPF2e && refreshedSpell.isOfType("spell")) {
                     const spellConsumableData = await createConsumableFromSpell(refreshedSpell, {
                         type: currentSource.system.category,
-                        heightenedLevel: currentSource.system.spell.system.location.heightenedLevel,
+                        rank: currentSource.system.spell.system.location.heightenedLevel,
                     });
                     fu.mergeObject(updates, {
                         name: spellConsumableData.name,
@@ -599,16 +592,14 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
             types?: string[];
         } & Partial<DialogV2Configuration> = {},
     ): Promise<Item | null> {
-        options.classes = [...(options.classes ?? []), "dialog-item-create"];
-        options.types &&= R.unique(options.types);
-        options.types ??= Object.keys(game.system.documentTypes.Item);
+        options.classes = [options.classes ?? [], "item-create"].flat();
+        options.types = R.unique([options.types ?? ITEM_TYPES].flat());
 
-        // Figure out the types to omit
-        const omittedTypes: ItemType[] = ["condition", "spellcastingEntry", "lore"];
-        if (BUILD_MODE === "production") omittedTypes.push("affliction", "book");
-        if (game.settings.get("pf2e", "campaignType") !== "kingmaker") omittedTypes.push("campaignFeature");
-
-        for (const type of omittedTypes) {
+        // Exclude certain types from being creatable
+        const excludedTypes: ItemType[] = ["condition", "spellcastingEntry", "lore"];
+        if (BUILD_MODE === "production") excludedTypes.push("affliction", "book");
+        if (game.settings.get("pf2e", "campaignType") !== "kingmaker") excludedTypes.push("campaignFeature");
+        for (const type of excludedTypes) {
             options.types.findSplice((t) => t === type);
         }
 
@@ -1032,7 +1023,9 @@ const ItemProxyPF2e = new Proxy(ItemPF2e, {
         const type =
             source?.type === "armor" && (source.system?.category as string | undefined) === "shield"
                 ? "shield"
-                : source?.type;
+                : source?.type === "consumable" && (source.system?.category as string | undefined) === "ammo"
+                  ? "ammo"
+                  : source?.type;
         const ItemClass: typeof ItemPF2e = CONFIG.PF2E.Item.documentClasses[type];
         if (!ItemClass) {
             throw ErrorPF2e(`Item type ${type} does not exist and item module sub-types are not supported`);

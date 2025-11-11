@@ -1,6 +1,6 @@
 {
     "_id": "EIExtvIGAnR420JB",
-    "folder": "9DM2gLywMTdKFld6",
+    "folder": "72YwVdCn52tsSyGQ",
     "img": "systems/pf2e/icons/default-icons/npc.svg",
     "items": [
         {
@@ -31,6 +31,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -70,6 +71,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {

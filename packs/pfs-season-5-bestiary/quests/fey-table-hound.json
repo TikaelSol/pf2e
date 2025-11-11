@@ -29,6 +29,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -203,9 +204,15 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "scent (imprecise) 30 feet",
+            "details": "",
             "mod": 5,
-            "senses": []
+            "senses": [
+                {
+                    "acuity": "imprecise",
+                    "range": 30,
+                    "type": "scent"
+                }
+            ]
         },
         "resources": {},
         "saves": {

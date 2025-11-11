@@ -5,6 +5,9 @@
     "items": [
         {
             "_id": "MfkCIPxLddgFHvOd",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.rQWaJhI5Bko5x14Z"
+            },
             "img": "icons/weapons/daggers/dagger-straight-blue.webp",
             "name": "Dagger",
             "sort": 100000,
@@ -92,6 +95,9 @@
         },
         {
             "_id": "SbDjp6bCb9q4Lp2r",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.4tIVTg9wj56RrveA"
+            },
             "img": "icons/equipment/chest/breastplate-banded-simple-leather-brown.webp",
             "name": "Leather Armor",
             "sort": 200000,
@@ -233,6 +239,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -271,6 +278,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -309,11 +317,14 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": 10,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
-                        "range-increment-10",
                         "versatile-s"
                     ]
                 }

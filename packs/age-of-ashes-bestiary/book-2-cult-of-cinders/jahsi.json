@@ -752,6 +752,11 @@
             "name": "Longbow",
             "sort": 1100000,
             "system": {
+                "ammo": {
+                    "baseType": "arrows",
+                    "builtIn": false,
+                    "capacity": null
+                },
                 "baseItem": "longbow",
                 "bonus": {
                     "value": 0
@@ -910,6 +915,7 @@
                 "bulk": {
                     "value": 0
                 },
+                "category": "art-object",
                 "containerId": null,
                 "description": {
                     "value": ""
@@ -935,9 +941,9 @@
                     }
                 },
                 "publication": {
-                    "license": "OGL",
-                    "remaster": false,
-                    "title": "Pathfinder Gamemastery Guide"
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder GM Core"
                 },
                 "quantity": 1,
                 "rules": [],
@@ -979,6 +985,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [
                     {
                         "damageType": "vitality",
@@ -1036,6 +1043,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -1082,6 +1090,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [
                     {
                         "damageType": "vitality",
@@ -1140,6 +1149,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -1192,6 +1202,10 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": 100,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -1199,7 +1213,6 @@
                     "value": [
                         "deadly-d10",
                         "magical",
-                        "range-increment-100",
                         "reload-0",
                         "volley-30"
                     ]

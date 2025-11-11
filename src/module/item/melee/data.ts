@@ -1,3 +1,4 @@
+import type { ModelPropsFromSchema, SourceFromSchema } from "@common/data/fields.mjs";
 import type { MeleePF2e } from "@item";
 import { ItemSystemModel, ItemSystemSchema } from "@item/base/data/model.ts";
 import type {
@@ -6,12 +7,17 @@ import type {
     ItemSystemSource,
     ItemTraitsNoRarity,
 } from "@item/base/data/system.ts";
+import type { EffectAreaShape } from "@item/types.ts";
+import { EFFECT_AREA_SHAPES } from "@item/values.ts";
 import type { WeaponMaterialData } from "@item/weapon/data.ts";
 import type { WeaponPropertyRuneType } from "@item/weapon/types.ts";
+import { getLegacyRangeData } from "@module/migration/migrations/949-npc-range-data.ts";
 import { damageCategoriesUnique } from "@scripts/config/damage.ts";
 import type { DamageCategoryUnique, DamageType } from "@system/damage/types.ts";
 import { LaxArrayField, RecordField, SlugField } from "@system/schema-data-fields.ts";
-import type { NPCAttackTrait } from "./types.ts";
+import * as R from "remeda";
+import type { NPCAttackActionType, NPCAttackTrait } from "./types.ts";
+import { NPC_ATTACK_ACTIONS } from "./values.ts";
 import fields = foundry.data.fields;
 
 type MeleeSource = BaseItemSourcePF2e<"melee", MeleeSystemSource> & {
@@ -25,6 +31,8 @@ type MeleeFlags = ItemFlagsPF2e & {
 };
 
 class MeleeSystemData extends ItemSystemModel<MeleePF2e, NPCAttackSystemSchema> {
+    static override LOCALIZATION_PREFIXES = [...super.LOCALIZATION_PREFIXES, "PF2E.Item.NPCAttack"];
+
     declare material: WeaponMaterialData;
 
     /** Weapon property runes (or rather the effects thereof) added via rule element */
@@ -48,6 +56,31 @@ class MeleeSystemData extends ItemSystemModel<MeleePF2e, NPCAttackSystemSchema> 
                     }),
                 ),
             }),
+            action: new fields.StringField({
+                choices: NPC_ATTACK_ACTIONS,
+                required: true,
+                nullable: false,
+                initial: "strike",
+            }),
+            area: new fields.SchemaField(
+                {
+                    type: new fields.StringField({
+                        choices: EFFECT_AREA_SHAPES,
+                        required: true,
+                        nullable: false,
+                        initial: "burst",
+                    }),
+                    value: new fields.NumberField({
+                        min: 5,
+                        max: 50,
+                        step: 5,
+                        required: true,
+                        nullable: false,
+                        initial: 5,
+                    }),
+                },
+                { required: true, nullable: true, initial: null },
+            ),
             damageRolls: new RecordField(
                 new fields.StringField({ required: true, nullable: false, blank: false, initial: undefined }),
                 new fields.SchemaField({
@@ -79,13 +112,70 @@ class MeleeSystemData extends ItemSystemModel<MeleePF2e, NPCAttackSystemSchema> 
                     new fields.StringField({ required: true, nullable: false, blank: false, initial: undefined }),
                 ),
             }),
+            range: new fields.SchemaField(
+                {
+                    increment: new fields.NumberField({
+                        required: true,
+                        integer: true,
+                        min: 5,
+                        step: 5,
+                        max: 500,
+                        nullable: true,
+                        initial: null,
+                    }),
+                    max: new fields.NumberField({
+                        required: true,
+                        integer: true,
+                        min: 5,
+                        step: 5,
+                        max: 500,
+                        nullable: true,
+                        initial: null,
+                    }),
+                },
+                { required: true, nullable: true, initial: null },
+            ),
         };
+    }
+
+    override prepareBaseData(): void {
+        super.prepareBaseData();
+        if (this.action !== "strike") this.area ??= { type: "burst", value: 5 };
+
+        // Set precious material (currently unused)
+        this.material = { type: null, grade: null, effects: [] };
+
+        // Set empty property runes array for use by rule elements
+        this.runes = { property: [] };
+
+        for (const attackDamage of Object.values(this.damageRolls)) {
+            if (attackDamage.damageType === "bleed") attackDamage.category = "persistent";
+        }
+
+        // If thrown, set range data to the thrown value
+        if (this.traits.config?.thrown) {
+            const increment = this.traits.config.thrown;
+            this.range = { increment, max: null };
+        }
+    }
+
+    static override migrateData(source: Record<string, unknown>): Record<string, unknown> {
+        const migrated = super.migrateData(source);
+        if (!R.isPlainObject(migrated.traits) || !Array.isArray(migrated.traits.value)) return migrated;
+        const rangeData = getLegacyRangeData(migrated.traits.value);
+        if (rangeData) {
+            migrated.range ??= { increment: rangeData.increment, max: rangeData.max };
+            migrated.traits.value = migrated.traits.value.filter((t) => !/^(?:range-increment|range)-\d+$/.test(t));
+        }
+        return migrated;
     }
 }
 
 interface MeleeSystemData
     extends ItemSystemModel<MeleePF2e, NPCAttackSystemSchema>,
-        Omit<fields.ModelPropsFromSchema<NPCAttackSystemSchema>, "description"> {}
+        Omit<fields.ModelPropsFromSchema<NPCAttackSystemSchema>, "description"> {
+    traits: NPCAttackTraits;
+}
 
 type NPCAttackSystemSchema = Omit<ItemSystemSchema, "traits"> & {
     traits: fields.SchemaField<{
@@ -99,6 +189,15 @@ type NPCAttackSystemSchema = Omit<ItemSystemSchema, "traits"> & {
             true
         >;
     }>;
+    action: fields.StringField<NPCAttackActionType, NPCAttackActionType, true, false, true>;
+    area: fields.SchemaField<
+        EffectAreaSchema,
+        SourceFromSchema<EffectAreaSchema>,
+        ModelPropsFromSchema<EffectAreaSchema>,
+        true,
+        true,
+        true
+    >;
     damageRolls: RecordField<
         fields.StringField<string, string, true, false, false>,
         fields.SchemaField<{
@@ -118,6 +217,22 @@ type NPCAttackSystemSchema = Omit<ItemSystemSchema, "traits"> & {
     attackEffects: fields.SchemaField<{
         value: fields.ArrayField<fields.StringField<string, string, true, false, false>>;
     }>;
+    range: fields.SchemaField<
+        {
+            increment: fields.NumberField<number, number, true, true, true>;
+            max: fields.NumberField<number, number, true, true, true>;
+        },
+        { increment: number | null; max: number | null },
+        { increment: number | null; max: number | null },
+        true,
+        true,
+        true
+    >;
+};
+
+type EffectAreaSchema = {
+    type: fields.StringField<EffectAreaShape, EffectAreaShape, true, false, true>;
+    value: fields.NumberField<number, number, true, false, true>;
 };
 
 type MeleeSystemSource = fields.SourceFromSchema<NPCAttackSystemSchema> & {

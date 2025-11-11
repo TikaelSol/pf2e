@@ -32,6 +32,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -73,6 +74,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": "tail",
                 "traits": {
@@ -225,6 +227,10 @@
                 "category": "offensive",
                 "description": {
                     "value": "<p>Ahrkinos moves up to twice his Speed. He can do this three times per day.</p>"
+                },
+                "frequency": {
+                    "max": 3,
+                    "per": "day"
                 },
                 "publication": {
                     "license": "OGL",

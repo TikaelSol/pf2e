@@ -1,5 +1,5 @@
 import type { ActorPF2e } from "@actor";
-import type { StrikeData } from "@actor/data/base.ts";
+import type { AttackAction } from "@actor/data/base.ts";
 import { iterateAllItems } from "@actor/helpers.ts";
 import type { InitiativeRollResult } from "@actor/initiative.ts";
 import type Tabs from "@client/applications/ux/tabs.d.mts";
@@ -11,7 +11,7 @@ import { AbstractEffectPF2e, ItemPF2e, SpellPF2e } from "@item";
 import type { AbilityTrait, ActionCategory } from "@item/ability/types.ts";
 import type { EffectTrait } from "@item/abstract-effect/types.ts";
 import type { ActionType, ItemSourcePF2e } from "@item/base/data/index.ts";
-import { createConsumableFromSpell } from "@item/consumable/spell-consumables.ts";
+import { SpellcastingItemCreator } from "@item/consumable/apps/spellcasting-item-creator/app.ts";
 import { isContainerCycle } from "@item/container/helpers.ts";
 import { itemIsOfType } from "@item/helpers.ts";
 import type { RawCoins } from "@item/physical/data.ts";
@@ -70,7 +70,6 @@ import type {
 import { createBulkPerLabel, onClickCreateSpell } from "./helpers.ts";
 import { ItemSummaryRenderer } from "./item-summary-renderer.ts";
 import { AddCoinsPopup } from "./popups/add-coins-popup.ts";
-import { CastingItemCreateDialog } from "./popups/casting-item-create-dialog.ts";
 import { IdentifyItemPopup } from "./popups/identify-popup.ts";
 import { ItemTransferDialog } from "./popups/item-transfer-dialog.ts";
 import { IWREditor } from "./popups/iwr-editor.ts";
@@ -216,6 +215,7 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
                 types: ["consumable"],
                 items: [],
             },
+            { label: game.i18n.localize("TYPES.Item.ammo"), types: ["ammo"], items: [] },
             { label: game.i18n.localize("TYPES.Item.treasure"), types: ["treasure"], items: [] },
             { label: game.i18n.localize("PF2E.Item.Container.Plural"), types: ["backpack"], items: [] },
         ];
@@ -250,14 +250,26 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
 
         return {
             item,
+            // Sort subitems to get a certain logical order
+            // 0 = usable weapons, 1 = upgrades, 2 = temp attachables, 3 = ammo
+            subitems: R.sortBy(item.subitems.contents, (i) => {
+                const isAmmo =
+                    i.isOfType("ammo") || (i.isOfType("weapon") && item.isOfType("weapon") && i.isAmmoFor(item));
+                const isEquipment = i.system.usage.type === "installed";
+                return isAmmo ? 3 : i.isOfType("weapon") ? 0 : isEquipment ? 1 : 2;
+            }),
             canBeEquipped: !item.isStowed,
-            hasCharges: item.isOfType("consumable") && item.system.uses.max > 0,
+            hasCharges:
+                (item.isOfType("consumable") && item.system.uses.max > 0) ||
+                (item.isOfType("ammo") && item.system.uses.max > 1),
             heldItems,
             isContainer: item.isOfType("backpack"),
             isInvestable: false,
             isSellable: editable && item.isOfType("treasure") && !item.isCoinage,
             itemSize: sizeDifference !== 0 ? itemSize : null,
             unitBulk: actor.isOfType("loot") ? createBulkPerLabel(item) : null,
+            unitPrice: item.price.value.toString({ short: true }),
+            assetValue: item.assetValue.toString({ short: true }),
             hidden: false,
         };
     }
@@ -316,15 +328,11 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
         );
     }
 
-    protected getStrikeFromDOM(button: HTMLElement, readyOnly = false): StrikeData | null {
+    protected getAttackActionFromDOM(button: HTMLElement, readyOnly = false): AttackAction | null {
         const actionIndex = Number(htmlClosest(button, "[data-action-index]")?.dataset.actionIndex ?? "NaN");
         const rootAction = this.actor.system.actions?.at(actionIndex) ?? null;
-        const altUsage = tupleHasValue(["thrown", "melee"], button?.dataset.altUsage) ? button?.dataset.altUsage : null;
-
-        const strike = altUsage
-            ? (rootAction?.altUsages?.find((s) => (altUsage === "thrown" ? s.item.isThrown : s.item.isMelee)) ?? null)
-            : rootAction;
-
+        const altUsage = "altUsage" in button?.dataset ? Number(button?.dataset.altUsage) : null;
+        const strike = typeof altUsage === "number" ? (rootAction?.altUsages?.at(altUsage) ?? null) : rootAction;
         return strike?.ready || !readyOnly ? strike : null;
     }
 
@@ -463,7 +471,7 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
                         ? button.dataset.altUsage
                         : null;
 
-                    const strike = this.getStrikeFromDOM(button, true);
+                    const strike = this.getAttackActionFromDOM(button, true);
                     const variantIndex = Number(button.dataset.variantIndex);
                     await strike?.variants[variantIndex]?.roll({ event, altUsage });
                 });
@@ -472,7 +480,7 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
             // Damage
             const damageSelectors = "button[data-action=strike-damage], button[data-action=strike-critical]";
             for (const button of htmlQueryAll(strikeElem, damageSelectors)) {
-                const strike = this.getStrikeFromDOM(button);
+                const strike = this.getAttackActionFromDOM(button);
                 const method = button.dataset.action === "strike-damage" ? "damage" : "critical";
                 button.addEventListener("click", async (event) => {
                     await strike?.[method]?.({ event });
@@ -1174,20 +1182,7 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
             if (item.isRitual) {
                 return this._onDropItemCreate(item.clone().toObject());
             } else if (dropContainerType === "actorInventory" && itemSource.system.level.value > 0) {
-                const popup = new CastingItemCreateDialog(
-                    actor,
-                    {},
-                    async (heightenedLevel, itemType, spell) => {
-                        const createdItem = await createConsumableFromSpell(spell, {
-                            type: itemType,
-                            heightenedLevel,
-                            mystified,
-                        });
-                        await this._onDropItemCreate(createdItem);
-                    },
-                    item,
-                );
-                popup.render(true);
+                new SpellcastingItemCreator({ actor, spell: item, mystified }).render({ force: true });
                 return [item];
             } else {
                 return [];
@@ -1289,9 +1284,13 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
             throw ErrorPF2e("Unexpected missing actor(s)");
         }
 
-        const containerId = htmlClosest(event.target, "[data-is-container]")?.dataset.containerId?.trim();
-        const stackable = !!recipient.inventory.findStackableItem(item._source);
+        const containerId = htmlClosest(event.target, "[data-is-container]")?.dataset.itemId?.trim();
+        const stackable = !!recipient.inventory.findStackableItem(item._source, { containerId });
         const mode = sourceActor.isOfType("loot") && sourceActor.isMerchant ? "purchase" : "move";
+        if (mode === "purchase" && item.isOfType("backpack") && item.contents.size) {
+            ui.notifications.error("PF2E.ErrorMessage.CantPurchaseContainerWithItems", { localize: true });
+            return;
+        }
 
         // If more than one item can be moved, show a popup to ask how many to move
         const result = await ItemTransferDialog.wait({ item, recipient, lockStack: !stackable, mode });
@@ -1466,6 +1465,8 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
                     element,
                     `${tagName}[data-item-id="${itemId}"][data-item-property="${itemProperty}"]`,
                 )?.focus();
+            } else if (focused.dataset.refocus) {
+                htmlQuery(element, `${tagName}[data-refocus="${focused.dataset.refocus}"]`)?.focus();
             }
         }
 

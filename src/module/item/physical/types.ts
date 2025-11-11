@@ -17,7 +17,12 @@ type PhysicalItemType = SetElement<typeof PHYSICAL_ITEM_TYPES>;
 type PreciousMaterialType = SetElement<typeof PRECIOUS_MATERIAL_TYPES>;
 type PreciousMaterialGrade = SetElement<typeof PRECIOUS_MATERIAL_GRADES>;
 
-type Grade = keyof ConfigPF2e["PF2E"]["grades"];
+type Grade = keyof typeof CONFIG.PF2E.grades;
+
+interface StackDefinition {
+    size: number;
+    lightBulk: number;
+}
 
 export type {
     BaseMaterial,
@@ -27,4 +32,5 @@ export type {
     PhysicalItemType,
     PreciousMaterialGrade,
     PreciousMaterialType,
+    StackDefinition,
 };

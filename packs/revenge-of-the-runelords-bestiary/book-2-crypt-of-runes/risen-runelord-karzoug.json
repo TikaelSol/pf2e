@@ -1,6 +1,6 @@
 {
     "_id": "fJM5suUaAEe000s2",
-    "folder": "9DM2gLywMTdKFld6",
+    "folder": "72YwVdCn52tsSyGQ",
     "img": "systems/pf2e/icons/default-icons/npc.svg",
     "items": [
         {
@@ -2416,6 +2416,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {

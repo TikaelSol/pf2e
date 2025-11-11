@@ -5,10 +5,18 @@
     "items": [
         {
             "_id": "OBrvHfkdalfvPt4J",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.62nnVQvGhoVLLl2K"
+            },
             "img": "icons/weapons/crossbows/crossbow-simple-brown.webp",
             "name": "Crossbow",
             "sort": 100000,
             "system": {
+                "ammo": {
+                    "baseType": "bolts",
+                    "builtIn": false,
+                    "capacity": 1
+                },
                 "baseItem": "crossbow",
                 "bonus": {
                     "value": 0
@@ -86,6 +94,9 @@
         },
         {
             "_id": "HtIysMfANCDrF0Et",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.aXuJh4i8HqSu6NYV"
+            },
             "img": "icons/weapons/polearms/spear-simple-engraved.webp",
             "name": "Longspear",
             "sort": 200000,
@@ -169,6 +180,9 @@
         },
         {
             "_id": "4XY9yemew0r5e8BW",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.YMQr577asquZIP65"
+            },
             "img": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
             "name": "Scale Mail",
             "sort": 300000,
@@ -234,35 +248,24 @@
         },
         {
             "_id": "1elKyf9JIeMq5jrZ",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.AITVZmakiu3RgfKo"
+            },
             "img": "systems/pf2e/icons/equipment/weapons/bolts.webp",
             "name": "Fan Bolts",
             "sort": 400000,
             "system": {
-                "baseItem": null,
+                "baseItem": "bolts",
                 "bulk": {
                     "value": 0.1
                 },
-                "category": "ammo",
                 "containerId": null,
-                "damage": null,
+                "craftableAs": null,
                 "description": {
                     "value": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
                 },
-                "equipped": {
-                    "carryType": "worn",
-                    "handsHeld": 0
-                },
-                "hardness": 0,
-                "hp": {
-                    "max": 0,
-                    "value": 0
-                },
                 "level": {
                     "value": 0
-                },
-                "material": {
-                    "grade": null,
-                    "type": null
                 },
                 "price": {
                     "per": 10,
@@ -279,13 +282,11 @@
                 "rules": [],
                 "size": "med",
                 "slug": "bolts",
-                "stackGroup": "bolts",
                 "traits": {
                     "rarity": "common",
-                    "value": []
-                },
-                "usage": {
-                    "value": "held-in-one-hand"
+                    "value": [
+                        "consumable"
+                    ]
                 },
                 "uses": {
                     "autoDestroy": true,
@@ -293,7 +294,7 @@
                     "value": 1
                 }
             },
-            "type": "consumable"
+            "type": "ammo"
         },
         {
             "_id": "8hoPxayirM6ubTyC",
@@ -326,6 +327,7 @@
                     "remaster": true,
                     "title": "Pathfinder Monster Core"
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -369,11 +371,14 @@
                     "remaster": true,
                     "title": "Pathfinder Monster Core"
                 },
+                "range": {
+                    "increment": 120,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
-                        "range-increment-120",
                         "reload-1"
                     ]
                 }

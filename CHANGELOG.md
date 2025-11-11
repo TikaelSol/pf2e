@@ -1,3 +1,266 @@
+## 7.7.1
+
+### Bugfixes
+
+- (Supe) Fix permission check allowing players to roll saving throws for Area Fire and Auto-Fire attacks
+- (In3luki) Fix treasure-item validation not allowing a quantity of zero
+
+## 7.7.0
+
+### System Improvements
+
+- (Supe) Also transfer item contents when transferring a container
+- (Supe) Convert NPC range traits to fields in the item sheet
+- (Supe) Create Ammo item type and implement reloading
+- (Supe) Implement Area Fire and Auto Fire for PCs
+
+### Bugfixes
+
+- (stwlam) Fix retrieval of in-memory unarmed attacks for use in damage application
+- (stwlam) Perform forced replacement in armor-to-shield migration
+- (Supe) Avoid excluding the tech trait in generated npc attack traits
+- (Supe) Fix batch size for consumable non-mundane ammo
+
+### Data Updates
+
+- (Ambrose, Dire Weasel, Mecha Maya, Rigo, Tikael) Add content from Monster Core 2
+- (Ambrose) Add bleed damage to Bloodrager's physical attack spells
+- (Ambrose) Add climb speed to Gripping Limbs feat
+- (Ambrose) Add effect to Triangular Teeth
+- (Ambrose) Add entry for Necromantic Resistance to Lastwall Sentry journal
+- (Ambrose) Add `handwraps-of-mighty-blows` tag to Bloodknuckles
+- (Ambrose) Fix data errors in Mirror of Glory and Nizca Iricol
+- (Ambrose) Fix feat grant of Planar Migrant background
+- (Ambrose) Remove Animal Companion Gallop action
+- (Ambrose) Remove unneccessary notes from Greater Flaming Rune automation
+- (Ambrose) Separate Android's Emotionally Unaware perception penalty to Sense Motive
+- (Ambrose) Update Jin Li's deity entry description to match updated TXWG text
+- (Dire Weasel) Add effect for Bit of Luck, Charming Push, Primal Herd
+- (Dire Weasel) Add inlines to Massacre, Phantasmal Killer, and Phantasmal Calamity
+- (Dire Weasel) Fix action cost of Raised Cavalry's Trampling Charge
+- (Dire Weasel) Fix formatting of Consecrate spell description
+- (kromko) Fix Guarded Advance linking to Raise a Tome feat
+- (kromko) Fix minor Trusty Helmet activation formatting error
+- (Mecha Maya) Reduce light color intensity of several effects
+- (rectulo) Remove prerequisites for dragon stance
+- (rectulo) Remove unarmored prerequisite in Yacob's Dragon Stance
+- (Rigo) Add note upon receiving critical damage with Mountain Strategy (#20633)
+- (Rigo) Fix typo in Propaganda Promoter background's lore skill
+- (Rigo) Reduce light intensity of Light spell effect
+- (Rigo) Remove disabledIf fields reliant on resolved values in Exemplar ikon feats
+- (Tikael) Add axe and arrow vulnerabilities to apply once list
+- (Tikael) Add effect for Sepulchral Mask
+- (Tikael) Add missing focus spells to PFS actors
+- (Zinneryte) Fix Hydra Spear base item and properties
+
+### Under the Hood
+
+- (stwlam) Convert TreasureSystemData to `TypeDataModel`
+- (stwlam) Replace `stackGroup` with `category` in `TreasureSystemData`
+- (Trent) Add roll data to consumable damage rolls
+- (Trent) Always include action roll options in basic actions
+- (Vauxs) Resolve Battleform speeds
+
+## 7.6.4
+
+### Enhancements
+
+- (Supe) Prefer displaying item prices in gp if at least one gp (e.g. "15sp" -> "1 gp, 5 sp")
+
+### Bugfixes
+
+- (stwlam) Fix application of Clumsy condition from auto-applied Encumbered
+- (stwlam) Set token distance label to be initially hidden
+- (Supe) Fix dropping actors to parties from compendium
+- (Supe) Fix player drag drop to their own items
+- (Supe) Fix solarian crystals when using sf2e anachronism
+- (Supe) Prevent errors when granting flat persistent damage (such as with Flames Oracle)
+
+### Data Updates
+
+- (Abaddon) Add glitterspore tremorsense
+- (Ambrose) Add Anointed Ground to Remaster journal spells page
+- (Ambrose) Add automation to Mythic Skill ability and add mythic resistance to missing actors
+- (Ambrose) Add You Can't Kill an Idea feat to Broken Chain Mythic Destiny journal page
+- (Ambrose) Clean up text on Avenging Runelord Mythic Destiny and add Martial Proficiency automation
+- (Ambrose) Correct embed link in Summoner class journal
+- (Ambrose) Separate Guarded Advance feat into Guardian and Archetype version
+- (Dire Weasel) Add automation for Bone Gladiator's "Loose Bones"
+- (Dire Weasel) Brush up Meokdan, Roc's "Snack", Trident of Dis abilities
+- (Dire Weasel) Fix action type and cost of Oracle of Zagresh's "Destructive Touch"
+- (Dire Weasel) Fix level of Daemonic Fog, various inline roll options, and several NPC ItemAlterations
+- (Dire Weasel) Update "Effect: Spin Tale" to use TokenMark and Digly's Oil of Sympathy inline rolls to use `@Damage`
+- (rectulo) Fix label on the effect of Runelord Researcher
+- (Rigo) Correct Detect Magic spell link in Nagaji Spell Familiarity
+- (Rigo) Increase emanation area of heightened Sepulchral Mask spell
+- (Rigo) Match deity favored weapon proficiency rank with martial weapons on Vindicator
+- (Tikael) Automate Battle Planner skill feat
+- (Trent) Fix forced movement and prone roll options
+- (websterguy) Clean up background lores
+
+### Under the Hood
+
+- (stwlam) Don't apply absolute value on resolved reach value in CreatureSize RE
+
+## 7.6.3
+
+### Bugfixes
+
+- (stwlam) Fix handling of copy-to-clipboard buttons on item sheet RE panel
+- (stwlam) Fix pathing to certain variable in default Rule Element template
+- (Supe) Fix certain invalid predicates from potency and striking migration
+- (Supe) Fix context menu for other parties in Actor Directory
+- (Supe) Fix transferring physical items into a container
+- (Supe) Open up area and auto fire in production
+
+### Data Updates
+
+- (Ambrose) Add Alchemical Food tag to Sparking Pepper String
+- (Ambrose) Add description to Time trait
+- (Ambrose) Correct price for Lion's Call equipment
+- (Dire Weasel) Brush up automation for Bullyrag Beatdown and Frightening Critical
+- (Dire Weasel) Fix automation for Sedacthy Speaker's Exploit Weakness
+- (Dire Weasel) Set showDC:all for some PC-facing flat checks that mitigate critical hits
+- (rectulo) Fix backlink in Effect: Runelord Researcher
+- (stwlam) Fix setting shield data in Fire Shield REs
+
+### Under the Hood
+
+- (Supe) Ignore publication source when stacking items
+
+## 7.6.2
+
+### Bugfixes
+
+- (stwlam) Musical refrain
+
+## 7.6.1
+
+### Bugfixes
+
+- (stwlam) Prevent error when closing item sheets with auto generated RE forms
+
+## 7.6.0
+
+### System Improvements
+
+- (stwlam) Add support for automatic generation of RE forms
+- (stwlam) Convert variant-rules settings menu to `ApplicationV2`
+- (stwlam) Indicate additional movement cost from difficult terrain in waypoint labels
+- (stwlam) Retire and migrate away Striking and WeaponPotency REs
+- (stwlam) Use prose-mirror editor for description in vehicle sheet
+- (Supe) Add support for configuring NPC attacks as SF2e area/auto fire
+- (Supe) Show embedded spell of consumables in the sheet (actor owned only for now)
+- (Tikael) Drop minimum class HP from 6 to 4
+
+### Bugfixes
+
+- (stwlam) Clear turn marker on encounter end
+- (stwlam) Fix DamageAlteration RE validation for numeric values
+- (stwlam) Fix hearing through walls with proximity sound restriction
+- (stwlam) Fix inline rolls against AC ignoring modifiers
+- (stwlam) Fix reach check for opening trade dialog following item drop
+- (stwlam) Fix ruler action-glyph positioning given non-default grid sizes
+- (stwlam) Fix size downgrades of Bulk for values greater than 1
+- (stwlam) Set default actor and item types for create dialog
+- (stwlam) Show activity count instead of minimum speed under Exploration Activities in party sheet
+
+### Data Update
+
+- (Ambrose) Add automation to Five-Gods Ram feat and update roll syntax on Whirling in the Summer Storm feat
+- (Ambrose) Add Escape `/act` syntax to bestiary Engulf action
+- (Ambrose) Add Revenge of the Runelords Mythic Destinies to Archetypes journal
+- (Ambrose) Add The Scourge of Sheerleaf NPCs
+- (Ambrose) Correct Critical Specialization Rule Element on Iruxi Armaments feat.
+- (Ambrose) Update brackets on Spell Effect: Ooze Form to use new `match` syntax
+- (Dire Weasel) Add automation to Soaring Wings
+- (Dire Weasel) Add effect for Caltrops and update to remaster text
+- (Dire Weasel) Add variable action cost to some NPC ability descriptions
+- (Dire Weasel) Brush up Angelic Chorus and Iron Maiden Trap
+- (Dire Weasel) Fix effects for Soaring Wings and A Little Bird Told Me...
+- (Dire Weasel) Fix some basic saving throws and frequencies and missing `compendiumSource`
+- (Dire Weasel) Remove and redirect extraneous copy of Sand Racer
+- (HavocsCall) Fix the category of the Bendy Arm Mutagens
+- (Clemente) Update sidebar's proficiency ranks to fix localization styling regression
+- (rectulo) Fix description of the puff dragon
+- (rectulo) Fix Plunderer of the Hive's Riches description in re-en.json
+- (rectulo) Fix the description of orator's filibuster
+- (Rigo) Add darkvision with Signifer's Sight while wearing Signifer's Mask
+- (Rigo) Add Divine Warden of Brigh from Paizo Blog
+- (Rigo) Add note to Mythic Casting regarding PFS 6-09's allowance for kineticist impulses
+- (Rigo) Allow Raise Haft's parry trait granting to work with any weapon held in 2 hands
+- (Rigo) Append Will save to mindshifted feats
+- (Rigo) Apply Empowered Onslaught adjustment to selected spell only
+- (Rigo) Correct action cost of Instant Minefield and resistance granted by Inked Panoply
+- (Rigo) Lower priority of Celestial Armaments' Token Light
+- (Rigo) Remove acid damage and automate temporary Hit Points effect from Untwisting Iron Buffer
+- (Rigo) Rename Battle Harbinger's Divine Font to Battle Font
+- (Rigo) Update Oddity Identification's Flat Modifier predicate to remaster
+- (Rigo) Update rule elements and formatting on Goloma ancestry feats and heritages
+- (Rigo) Upgrade Snare DCs to class DC with Snarecrafter Dedication and Powerful Snares
+- (Rigo) Grant additional languages in Tangle-Tongue's Wit and Pact of the Rune Dragon
+- (Suldrun45) Fix the automation of Effect:Augmented Body
+- (Tikael) Add content from the RotRL Player's Guide
+- (Tikael) Add missing spell DC for Lich Legion
+- (Tikael) Fix Mukradi's breath weapon
+- (Tikael) Limit Rogue Dedication to skill feats at or below the character's level
+- (Tikael) Remove incorrect link to Invisible condition in Consult the Spirits
+- (trapbuilder2) Add ItemAlteration to Leap And Fire that shows the feat information on its prerequisite feat/reaction
+
+### Under the Hood
+
+- (stwlam) Ensure item name and UUID are included in DamageAlteration warnings
+- (stwlam) Retire and migrate away RE brackets and add match() function
+- (Supe) Rewrite adding wands and scrolls in svelte and make them configurable
+
+## 7.5.2
+
+### System Improvements
+
+- (stwlam) Add support for configuring PC hand count from ancestries
+
+### Bugfixes
+
+- (In3luki) Fix filtering of some disabled sources in the Compendium Browser
+- (stwlam) Avoid some issues from too-closely managing hover distance line
+- (stwlam) Disallow interactive rolling of blind rolls from chat log
+- (stwlam) Don't load packs with lower than LIMITED ownership for compendium browser
+- (stwlam) Exclude grenades from getting strength to damage
+- (stwlam) Fix extraction of adjustments of non-synthetic speed modifiers
+- (stwlam) Fix most issues with calculation of derived speeds
+- (stwlam) Ignore check/speed penalties from battle forms via modifier adjustments
+- (stwlam) Limit AE purges during migrations
+- (stwlam) Link action to Reset World Time button in World Clock settings
+- (stwlam) Retrieve land speeds created by BaseSpeed RE
+- (stwlam) Undo setting of weapon dice-upgraded flag by damage alterations after rolling
+- (Supe) Fix closing choice set without selection
+
+### Data Updates
+
+- (Ambrose) Add `immutable:true` to Sacred Defense inline rolls
+- (Ambrose) Correct Choir Politic Patron Skill to Society
+- (Ambrose) Update immunities on additional Wisp variant actors
+- (Clemente) Add PreparationType localization strings for Focus and Ritual entries
+- (CotillionTheRope) Fix the extra precision damage of the item Mantis Embrace's Crushing Embrace
+- (CotillionTheRope) Fix the weapon damage dice upgrade from the item clay sphere
+- (Dire Weasel) Add automation and inline scaling damage to Blazing Spirit
+- (Dire Weasel) Fix some missing NPC `compendiumSource`
+- (Rigo) Add Consume Flesh action to Priest of Kabriri
+- (Rigo) Automate Officer's Education
+- (Rigo) Ensure Energized Spark's Damage Alteration occurs after other similar rules
+- (Rigo) Lower Gate Junction roll option priority to fire before default AELike upgrades
+- (Rigo) Prevent multiple instances of Precise Debilitations Damage Dice from stacking
+- (Rigo) Push priority of skill-based Crafting Abilities after default AE-Like upgrades and overrides
+- (Rigo) Reduce penalty from drained and enfeebled conditions with Sanguine Tenacity
+- (Rigo) Update Settlement Scholastics to Player Core 2
+- (stwlam) Fix selector of Blessed Swiftness's speed bonus
+- (stwlam) Include full description of Shield Throw trait
+
+### Under the Hood
+
+- (stwlam) Guard against modules assigning frozen point objects to `RulerPF2e#path`
+- (stwlam) Include distance roll options in roll-context actor clones
+
 ## 7.5.1
 
 ### System Improvements

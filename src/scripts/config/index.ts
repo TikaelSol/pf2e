@@ -5,6 +5,7 @@ import type { ActorType, AttributeString, SkillSlug } from "@actor/types.ts";
 import {
     AbilityItemPF2e,
     AfflictionPF2e,
+    AmmoPF2e,
     AncestryPF2e,
     ArmorPF2e,
     BackgroundPF2e,
@@ -33,6 +34,7 @@ import { ConditionSlug } from "@item/condition/types.ts";
 import { CONSUMABLE_CATEGORIES } from "@item/consumable/values.ts";
 import { DeityDomain } from "@item/deity/types.ts";
 import { FeatOrFeatureCategory } from "@item/feat/index.ts";
+import { STACK_DEFINITIONS } from "@item/physical/bulk.ts";
 import { PreciousMaterialGrade } from "@item/physical/types.ts";
 import { MeleeWeaponGroup, WeaponCategory, WeaponGroup, WeaponReloadTime } from "@item/weapon/types.ts";
 import { Size, ZeroToThree } from "@module/data.ts";
@@ -312,6 +314,205 @@ const grades = {
     paragon: "PF2E.Item.Physical.Grade.paragon",
 };
 
+type BaseWeaponType = keyof typeof baseWeaponTypes;
+
+const round5Firearms = [
+    "dwarven-scattergun",
+    "explosive-dogslicer",
+    "flingflenser",
+    "harmona-gun",
+] as const satisfies BaseWeaponType[];
+
+const round10Firearms = [
+    // Round 10
+    "arquebus",
+    "axe-musket",
+    "black-powder-knuckle-dusters",
+    "blunderbuss",
+    "cane-pistol",
+    "clan-pistol",
+    "coat-pistol",
+    "dagger-pistol",
+    "double-barreled-musket",
+    "double-barreled-pistol",
+    "dragon-mouth-pistol",
+    "dueling-pistol",
+    "fire-lance",
+    "flintlock-musket",
+    "flintlock-pistol",
+    "gnome-amalgam-musket",
+    "gun-sword",
+    "hammer-gun",
+    "hand-cannon",
+    "jezail",
+    "mace-multipistol",
+    "mithral-tree",
+    "pepperbox",
+    "piercing-wind",
+    "rapier-pistol",
+    "shield-pistol",
+    "shobhad-longrifle",
+    "slide-pistol",
+    "three-peaked-tree",
+    "triggerbrand",
+] satisfies BaseWeaponType[];
+
+const repeatingCrossbows = [
+    "repeating-crossbow",
+    "repeating-hand-crossbow",
+    "repeating-heavy-crossbow",
+] satisfies BaseWeaponType[];
+
+// Beast guns aren't loaded with the same ammunition as other guns, but they do still use ammunition, ...
+// This ammunition comes as specially designed rounds, such as miniature tentacles fired from the tentacle gun or javelin-like spikes from the spike gun.
+// Unless otherwise stated, these rounds come in packs of 10 that cost 1 sp and have light Bulk.
+// - Guns & Gears pg 154
+// Hydrocannon does not use ammo, and growth gun is....uncertain
+const beastGuns = [
+    "alicorn-trigger",
+    "breath-blaster",
+    "drake-rifle",
+    "fulmination-fang",
+    "howler-pistol",
+    "leydroth-spellbreaker",
+    "nightmares-lament",
+    "petrification-cannon",
+    "screech-shooter",
+    "spider-gun",
+    "spike-launcher",
+    "tentacle-cannon",
+] as const;
+
+const DEFAULT_AMMO_STACK_GROUPS: Partial<Record<string, keyof typeof STACK_DEFINITIONS>> = {
+    arrows: "arrows",
+    rounds: "rounds10",
+    bolts: "bolts",
+    "sling-bullets": "slingBullets",
+    "blowgun-darts": "blowgunDarts",
+    "wooden-taws": "woodenTaws",
+};
+
+interface BaseAmmoTypeData {
+    parent: string | null;
+    label: string;
+    magazine: boolean;
+    stackGroup: keyof typeof STACK_DEFINITIONS | null;
+    weapon: string | null; // The associated base weapon or weapon slug (if any)
+}
+
+// Despite usually being bespoke, magazines and rounds have their own ammo types
+// to support data fallbacks and looser table rules.
+const ammoTypes = {
+    ...R.mapToObj(
+        [
+            "arrows",
+            "blowgun-darts",
+            "bolts",
+            "rounds",
+            "sling-bullets",
+            "spray-pellets",
+            "wooden-taws",
+            "projectile-ammo",
+        ] as const,
+        (slug) => [
+            slug,
+            {
+                parent: null,
+                label: `PF2E.Item.Ammo.Base.${slug}`,
+                magazine: false,
+                stackGroup: DEFAULT_AMMO_STACK_GROUPS[slug] ?? null,
+                weapon: null,
+            },
+        ],
+    ),
+    ...R.mapToObj(["magazine", "battery", "chem-tank"] as const, (slug) => [
+        slug,
+        {
+            parent: null,
+            label: `PF2E.Item.Ammo.Base.${slug}`,
+            magazine: true,
+            stackGroup: null,
+            weapon: null,
+        },
+    ]),
+    // Include all rounds
+    ...R.mapToObj(round5Firearms, (baseWeapon) => [
+        `rounds-${baseWeapon}`,
+        {
+            parent: "rounds",
+            label: `PF2E.Item.Ammo.Base.rounds-${baseWeapon}`,
+            magazine: false,
+            stackGroup: "rounds5",
+            weapon: baseWeapon,
+        },
+    ]),
+    ...R.mapToObj([...round10Firearms, ...beastGuns], (baseWeapon) => [
+        `rounds-${baseWeapon}`,
+        {
+            parent: "rounds",
+            label: `PF2E.Item.Ammo.Base.rounds-${baseWeapon}`,
+            magazine: false,
+            stackGroup: "rounds10",
+            weapon: baseWeapon,
+        },
+    ]),
+    cutlery: {
+        parent: "rounds",
+        label: "PF2E.Item.Ammo.Base.cutlery",
+        magazine: false,
+        stackGroup: "rounds10",
+        weapon: "spoon-gun",
+    },
+
+    // Include all magazines. Magazine items don't map as cleanly
+    ...R.mapToObj(repeatingCrossbows, (baseWeapon) => [
+        `${baseWeapon}-magazine`,
+        {
+            parent: "magazine",
+            label: `PF2E.Item.Ammo.Base.${baseWeapon}-magazine`,
+            magazine: true,
+            stackGroup: null,
+            weapon: baseWeapon,
+        },
+    ]),
+    "8-round-magazine": {
+        parent: "magazine",
+        label: `PF2E.Item.Ammo.Base.8-round-magazine`,
+        magazine: true,
+        stackGroup: null,
+        weapon: "barricade-buster",
+    },
+    "magazine-with-6-pellets": {
+        parent: "magazine",
+        label: `PF2E.Item.Ammo.Base.magazine-with-6-pellets`,
+        magazine: true,
+        stackGroup: null,
+        weapon: "air-repeater",
+    },
+    "magazine-with-8-pellets": {
+        parent: "magazine",
+        label: `PF2E.Item.Ammo.Base.magazine-with-8-pellets`,
+        magazine: true,
+        stackGroup: null,
+        weapon: "long-air-repeater",
+    },
+    // Other oddities
+    "backpack-ballista-bolts": {
+        parent: null,
+        label: "PF2E.Item.Ammo.Base.backpack-ballista-bolts",
+        magazine: false,
+        stackGroup: null,
+        weapon: "backpack-ballista",
+    },
+    "backpack-catapult-stones": {
+        parent: null,
+        label: "PF2E.Item.Ammo.Base.backpack-catapult-stones",
+        magazine: false,
+        stackGroup: null,
+        weapon: "backpack-catapult",
+    },
+} satisfies Record<string, BaseAmmoTypeData>;
+
 export const PF2ECONFIG = {
     defaultPartyId: "xxxPF2ExPARTYxxx",
     chatDamageButtonShieldToggle: false,
@@ -404,16 +605,8 @@ export const PF2ECONFIG = {
     resistanceTypes,
 
     stackGroups: {
-        arrows: "PF2E.StackGroupArrows",
-        blowgunDarts: "PF2E.StackGroupBlowgunDarts",
-        bolts: "PF2E.StackGroupBolts",
         coins: "PF2E.StackGroupCoins",
         gems: "PF2E.StackGroupGems",
-        rounds5: "PF2E.StackGroupRounds5",
-        rounds10: "PF2E.StackGroupRounds10",
-        slingBullets: "PF2E.StackGroupSlingBullets",
-        sprayPellets: "PF2E.StackGroupSprayPellets",
-        woodenTaws: "PF2E.StackGroupWoodenTaws",
     },
 
     weaknessTypes,
@@ -558,15 +751,50 @@ export const PF2ECONFIG = {
     identification: configFromLocalization(EN_JSON.PF2E.identification, "PF2E.identification"),
 
     /** Base weapons that should always be treated as thrown */
-    thrownBaseWeapons: ["alchemical-bomb"] as const,
+    thrownBaseWeapons: ["alchemical-bomb", "grenade"] as const,
 
     preparationType: {
         prepared: "PF2E.PreparationTypePrepared",
         spontaneous: "PF2E.PreparationTypeSpontaneous",
         innate: "PF2E.PreparationTypeInnate",
-        focus: "PF2E.TraitFocus",
+        focus: "PF2E.PreparationTypeFocus",
         items: "PF2E.PreparationTypeItems",
-        ritual: "PF2E.Item.Spell.Ritual.Label",
+        ritual: "PF2E.PreparationTypeRitual",
+    },
+
+    spellcastingItems: {
+        scroll: {
+            name: "PF2E.Item.Consumable.Category.scroll",
+            nameTemplate: "PF2E.Item.Physical.FromSpell.Scroll",
+            compendiumUuids: {
+                1: "Compendium.pf2e.equipment-srd.Item.RjuupS9xyXDLgyIr",
+                2: "Compendium.pf2e.equipment-srd.Item.Y7UD64foDbDMV9sx",
+                3: "Compendium.pf2e.equipment-srd.Item.ZmefGBXGJF3CFDbn",
+                4: "Compendium.pf2e.equipment-srd.Item.QSQZJ5BC3DeHv153",
+                5: "Compendium.pf2e.equipment-srd.Item.tjLvRWklAylFhBHQ",
+                6: "Compendium.pf2e.equipment-srd.Item.4sGIy77COooxhQuC",
+                7: "Compendium.pf2e.equipment-srd.Item.fomEZZ4MxVVK3uVu",
+                8: "Compendium.pf2e.equipment-srd.Item.iPki3yuoucnj7bIt",
+                9: "Compendium.pf2e.equipment-srd.Item.cFHomF3tty8Wi1e5",
+                10: "Compendium.pf2e.equipment-srd.Item.o1XIHJ4MJyroAHfF",
+            },
+        },
+        wand: {
+            name: "PF2E.Item.Consumable.Category.wand",
+            nameTemplate: "PF2E.Item.Physical.FromSpell.Wand",
+            compendiumUuids: {
+                1: "Compendium.pf2e.equipment-srd.Item.UJWiN0K3jqVjxvKk",
+                2: "Compendium.pf2e.equipment-srd.Item.vJZ49cgi8szuQXAD",
+                3: "Compendium.pf2e.equipment-srd.Item.wrDmWkGxmwzYtfiA",
+                4: "Compendium.pf2e.equipment-srd.Item.Sn7v9SsbEDMUIwrO",
+                5: "Compendium.pf2e.equipment-srd.Item.5BF7zMnrPYzyigCs",
+                6: "Compendium.pf2e.equipment-srd.Item.kiXh4SUWKr166ZeM",
+                7: "Compendium.pf2e.equipment-srd.Item.nmXPj9zuMRQBNT60",
+                8: "Compendium.pf2e.equipment-srd.Item.Qs8RgNH6thRPv2jt",
+                9: "Compendium.pf2e.equipment-srd.Item.Fgv722039TVM5JTc",
+                10: null,
+            },
+        },
     },
 
     attitude: {
@@ -576,6 +804,8 @@ export const PF2ECONFIG = {
         friendly: "PF2E.Attitudes.Friendly",
         helpful: "PF2E.Attitudes.Helpful",
     },
+
+    ammoTypes,
 
     skills: Object.freeze({
         acrobatics: { label: "PF2E.Skill.Acrobatics", attribute: "dex" },
@@ -770,6 +1000,7 @@ export const PF2ECONFIG = {
         documentClasses: {
             action: AbilityItemPF2e,
             affliction: AfflictionPF2e,
+            ammo: AmmoPF2e,
             ancestry: AncestryPF2e,
             armor: ArmorPF2e,
             background: BackgroundPF2e,

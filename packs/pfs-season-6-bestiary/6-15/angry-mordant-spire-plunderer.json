@@ -256,6 +256,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -299,6 +300,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -338,6 +340,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -380,6 +383,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -552,7 +556,7 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "low-light vision",
+            "details": "",
             "mod": 11,
             "senses": [
                 {

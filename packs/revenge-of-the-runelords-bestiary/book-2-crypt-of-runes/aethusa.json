@@ -1,6 +1,6 @@
 {
     "_id": "GUxewaLEqttNr7Hg",
-    "folder": "9DM2gLywMTdKFld6",
+    "folder": "72YwVdCn52tsSyGQ",
     "img": "systems/pf2e/icons/default-icons/npc.svg",
     "items": [
         {
@@ -2204,6 +2204,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": "dagger",
                 "traits": {
@@ -2256,6 +2257,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": "dagger",
                 "traits": {

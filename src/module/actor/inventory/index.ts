@@ -1,7 +1,7 @@
 import type { ActorPF2e } from "@actor";
 import { applyActorGroupUpdate } from "@actor/helpers.ts";
 import type { DatabaseDeleteOperation } from "@common/abstract/_module.d.mts";
-import { ItemPF2e, ItemProxyPF2e, KitPF2e, PhysicalItemPF2e } from "@item";
+import { ContainerPF2e, ItemPF2e, ItemProxyPF2e, KitPF2e, PhysicalItemPF2e } from "@item";
 import { ItemSourcePF2e, KitSource, PhysicalItemSource } from "@item/base/data/index.ts";
 import { itemIsOfType } from "@item/helpers.ts";
 import { RawCoins } from "@item/physical/data.ts";
@@ -46,20 +46,23 @@ class ActorInventory<TActor extends ActorPF2e> extends DelegatedCollection<Physi
     }
 
     /** Find an item already owned by the actor that can stack with the given item */
-    findStackableItem(item: PhysicalItemPF2e | ItemSourcePF2e): PhysicalItemPF2e<TActor> | null {
+    findStackableItem(
+        item: PhysicalItemPF2e | ItemSourcePF2e,
+        { containerId = null }: { containerId?: string | null } = {},
+    ): PhysicalItemPF2e<TActor> | null {
         // Prevent upstream from mutating property descriptors
         const testItem = item instanceof PhysicalItemPF2e ? item.clone() : new ItemProxyPF2e(fu.deepClone(item));
         if (!testItem.isOfType("physical")) return null;
 
-        const stackCandidates = this.filter((i) => !i.isInContainer && i.isStackableWith(testItem));
-        if (stackCandidates.length === 0) {
-            return null;
-        } else if (stackCandidates.length > 1) {
+        const stackCandidates = this.filter(
+            (i) => (containerId ? i.container?.id === containerId : !i.isInContainer) && i.isStackableWith(testItem),
+        );
+        if (stackCandidates.length > 1) {
             // Prefer stacking with unequipped items
             const notEquipped = stackCandidates.filter((item) => !item.isEquipped);
             return notEquipped.length > 0 ? notEquipped[0] : stackCandidates[0];
         } else {
-            return stackCandidates[0];
+            return stackCandidates.at(0) ?? null;
         }
     }
 
@@ -232,43 +235,64 @@ class ActorInventory<TActor extends ActorPF2e> extends DelegatedCollection<Physi
         return [];
     }
 
-    /** Adds one or more items to this inventory without removing from its original location */
+    /** Adds one or more items to this inventory without removing from its original location. */
     async add(
-        itemOrItems:
-            | PhysicalItemPF2e
-            | KitPF2e
-            | PreCreate<PhysicalItemSource | KitSource>
-            | (PhysicalItemPF2e | KitPF2e | PreCreate<PhysicalItemSource | KitSource>)[],
-        options: AddItemOptions = {},
-    ): Promise<void> {
+        itemOrItems: AddItemParam,
+        { stack = true, render = true, container, keepId }: AddItemOptions = {},
+    ): Promise<PhysicalItemPF2e<TActor>[]> {
         const items = Array.isArray(itemOrItems) ? itemOrItems : [itemOrItems];
         const itemCreates: PreCreate<PhysicalItemSource | KitSource>[] = [];
         const newQuantities: Record<string, number> = {};
+        const containerId = container?.id ?? null;
+        const resultIds: string[] = []; // stores ids to retrieve in the end for the result
         for (const item of items) {
-            if (options.stack && itemIsOfType(item, "physical")) {
+            const isPhysical = itemIsOfType(item, "physical");
+
+            if (stack && isPhysical) {
                 const source = "_source" in item ? item._source : item;
-                const stackableItem = this.findStackableItem(source);
+                const stackableItem = this.findStackableItem(source, { containerId });
                 if (stackableItem) {
+                    resultIds.push(stackableItem.id);
                     newQuantities[stackableItem.id] ??= stackableItem.quantity;
                     newQuantities[stackableItem.id] += item.system.quantity;
                     continue;
                 }
             }
 
-            itemCreates.push(item instanceof ItemPF2e ? item.toObject() : item);
+            // Create source, place in valid container, though skip if keepId is on and its already in a container
+            const source = item instanceof ItemPF2e ? item.toObject() : item;
+            source._id = keepId ? (source._id ?? fu.randomID()) : fu.randomID();
+            const alreadyInValidContainer =
+                keepId && isPhysical && items.some((i) => i._id === item.system.containerId);
+            if (itemIsOfType(source, "physical")) {
+                source.system.containerId = alreadyInValidContainer ? source.system.containerId : containerId;
+            }
+
+            // Add source to items to create
+            itemCreates.push(source);
+            resultIds.push(source._id);
         }
 
         const itemUpdates = Object.entries(newQuantities).map(([_id, quantity]) => ({
             _id,
             "system.quantity": quantity,
         }));
-        return applyActorGroupUpdate(this.actor, { itemCreates, itemUpdates }, { render: options.render });
+        await applyActorGroupUpdate(this.actor, { itemCreates, itemUpdates }, { render, keepId: true });
+
+        // Return created or updated items
+        return resultIds.map((id) => this.actor.inventory.get(id, { strict: true }));
     }
 }
+
+type AddItemParam = AddableItemSourceOrEntry | AddableItemSourceOrEntry[];
+type AddableItemSourceOrEntry = PhysicalItemPF2e | KitPF2e | PreCreate<PhysicalItemSource | KitSource>;
 
 interface AddItemOptions {
     stack?: boolean;
     render?: boolean;
+    container?: ContainerPF2e<ActorPF2e>;
+    keepId?: boolean;
 }
 
 export { ActorInventory, InventoryBulk };
+export type { AddItemParam };

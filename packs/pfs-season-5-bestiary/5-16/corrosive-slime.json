@@ -38,6 +38,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -88,11 +89,14 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": 15,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
-                        "range-increment-15",
                         "splash"
                     ]
                 },
@@ -311,7 +315,7 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "no vision",
+            "details": "",
             "mod": 6,
             "senses": [
                 {
@@ -319,7 +323,8 @@
                     "range": 60,
                     "type": "motion-sense"
                 }
-            ]
+            ],
+            "vision": false
         },
         "resources": {},
         "saves": {

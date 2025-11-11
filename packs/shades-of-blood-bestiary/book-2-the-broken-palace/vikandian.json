@@ -446,6 +446,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -490,6 +491,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -542,6 +544,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": "sword-cane",
                 "traits": {
@@ -1117,7 +1120,7 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "darkvision",
+            "details": "",
             "mod": 16,
             "senses": [
                 {

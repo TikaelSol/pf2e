@@ -1,6 +1,6 @@
 {
     "_id": "aLAvOKIN2zRaJRFe",
-    "folder": "9DM2gLywMTdKFld6",
+    "folder": "72YwVdCn52tsSyGQ",
     "img": "systems/pf2e/icons/default-icons/npc.svg",
     "items": [
         {
@@ -899,6 +899,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -1371,7 +1372,7 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "darkvision, smoke vision",
+            "details": "smoke vision",
             "mod": 28,
             "senses": [
                 {

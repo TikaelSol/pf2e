@@ -18,6 +18,7 @@ import { CreatureInitiativeSource, Language } from "@actor/creature/index.ts";
 import {
     ActorAttributesSource,
     ActorFlagsPF2e,
+    AreaAttack,
     AttributeBasedTraceData,
     HitPointsStatistic,
     InitiativeData,
@@ -34,8 +35,8 @@ import { BaseWeaponType, WeaponCategory, WeaponGroup } from "@item/weapon/types.
 import { ValueAndMax, ZeroToFour } from "@module/data.ts";
 import { DamageType } from "@system/damage/types.ts";
 import type { Predicate } from "@system/predication.ts";
+import type { WeaponAuxiliaryAction } from "./auxiliary.ts";
 import type { CharacterPF2e } from "./document.ts";
-import type { WeaponAuxiliaryAction } from "./helpers.ts";
 import type { CharacterSheetTabVisibility } from "./sheet.ts";
 
 type CharacterSource = BaseCreatureSource<"character", CharacterSystemSource> & {
@@ -268,7 +269,7 @@ interface CharacterSystemData extends Omit<CharacterSystemSource, SourceOmission
     skills: Record<string, CharacterSkillData>;
 
     /** Special strikes which the character can take. */
-    actions: CharacterStrike[];
+    actions: CharacterAttack[];
 
     resources: CharacterResources;
 
@@ -388,21 +389,32 @@ interface ClassDCData extends Required<AttributeBasedTraceData> {
     primary: boolean;
 }
 
-/** The full data for a character strike */
-interface CharacterStrike extends StrikeData {
-    item: WeaponPF2e<CharacterPF2e>;
+interface BasicAttackData {
     /** Whether this attack is visible on the sheet */
     visible: boolean;
-    /** Domains/selectors from which modifiers are drawn */
-    domains: string[];
-    /** Whether the character has sufficient hands available to wield this weapon or use this unarmed attack */
-    handsAvailable: boolean;
-    altUsages: CharacterStrike[];
     auxiliaryActions: WeaponAuxiliaryAction[];
     weaponTraits: TraitViewData[];
+    /** Whether the character has sufficient hands available to wield this weapon or use this unarmed attack */
+    handsAvailable: boolean;
+}
+
+/** The full data for a character strike */
+interface CharacterStrike extends StrikeData, BasicAttackData {
+    item: WeaponPF2e<CharacterPF2e>;
+    /** Domains/selectors from which modifiers are drawn */
+    domains: string[];
+    altUsages: CharacterAttack[];
     doubleBarrel: { selected: boolean } | null;
     versatileOptions: VersatileWeaponOption[];
 }
+
+interface CharacterAreaAttack extends AreaAttack, BasicAttackData {
+    item: WeaponPF2e<CharacterPF2e>;
+    /** Whether this attack is visible on the sheet */
+    altUsages: CharacterAttack[];
+}
+
+type CharacterAttack = CharacterStrike | CharacterAreaAttack;
 
 interface VersatileWeaponOption {
     value: DamageType;
@@ -504,6 +516,8 @@ export type {
     BaseWeaponProficiencyKey,
     CategoryProficiencies,
     CharacterAbilities,
+    CharacterAreaAttack,
+    CharacterAttack,
     CharacterAttributes,
     CharacterAttributesSource,
     CharacterBiography,

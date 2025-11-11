@@ -1028,6 +1028,11 @@
             "name": "Composite Shortbow",
             "sort": 400000,
             "system": {
+                "ammo": {
+                    "baseType": "arrows",
+                    "builtIn": false,
+                    "capacity": null
+                },
                 "baseItem": "composite-shortbow",
                 "bonus": {
                     "value": 0
@@ -1406,31 +1411,17 @@
             "name": "Arrows",
             "sort": 900000,
             "system": {
-                "baseItem": null,
+                "baseItem": "arrows",
                 "bulk": {
                     "value": 0.1
                 },
-                "category": "ammo",
                 "containerId": null,
-                "damage": null,
+                "craftableAs": null,
                 "description": {
                     "value": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
                 },
-                "equipped": {
-                    "carryType": "worn",
-                    "handsHeld": 0
-                },
-                "hardness": 0,
-                "hp": {
-                    "max": 0,
-                    "value": 0
-                },
                 "level": {
                     "value": 0
-                },
-                "material": {
-                    "grade": null,
-                    "type": null
                 },
                 "price": {
                     "per": 10,
@@ -1447,13 +1438,11 @@
                 "rules": [],
                 "size": "med",
                 "slug": "arrows",
-                "stackGroup": "arrows",
                 "traits": {
                     "rarity": "common",
-                    "value": []
-                },
-                "usage": {
-                    "value": "held-in-one-hand"
+                    "value": [
+                        "consumable"
+                    ]
                 },
                 "uses": {
                     "autoDestroy": true,
@@ -1461,7 +1450,7 @@
                     "value": 1
                 }
             },
-            "type": "consumable"
+            "type": "ammo"
         },
         {
             "_id": "ELHjeSX6Z3f42Rh3",
@@ -1612,6 +1601,7 @@
                 "bulk": {
                     "value": 1
                 },
+                "category": "coin",
                 "containerId": null,
                 "description": {
                     "value": ""
@@ -1637,15 +1627,14 @@
                     }
                 },
                 "publication": {
-                    "license": "OGL",
-                    "remaster": false,
-                    "title": "Pathfinder Core Rulebook"
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
                 },
                 "quantity": 4,
                 "rules": [],
                 "size": "med",
                 "slug": "gold-pieces",
-                "stackGroup": "coins",
                 "traits": {
                     "rarity": "common",
                     "value": []
@@ -2779,49 +2768,13 @@
                 "rules": [
                     {
                         "category": "precision",
+                        "diceNumber": "match(when(lte(@actor.level, 4), 1), when(btwn(@actor.level, 5, 8), 2), when(btwn(@actor.level, 9, 12), 3), when(btwn(@actor.level, 13, 16), 4), when(gte(@actor.level, 17), 5))",
                         "dieSize": "d6",
                         "key": "DamageDice",
                         "predicate": [
                             "check:substitution:devise-a-stratagem"
                         ],
-                        "selector": "strike-damage",
-                        "value": {
-                            "brackets": [
-                                {
-                                    "end": 4,
-                                    "value": {
-                                        "diceNumber": 1
-                                    }
-                                },
-                                {
-                                    "end": 8,
-                                    "start": 5,
-                                    "value": {
-                                        "diceNumber": 2
-                                    }
-                                },
-                                {
-                                    "end": 12,
-                                    "start": 9,
-                                    "value": {
-                                        "diceNumber": 3
-                                    }
-                                },
-                                {
-                                    "end": 16,
-                                    "start": 13,
-                                    "value": {
-                                        "diceNumber": 4
-                                    }
-                                },
-                                {
-                                    "start": 17,
-                                    "value": {
-                                        "diceNumber": 5
-                                    }
-                                }
-                            ]
-                        }
+                        "selector": "strike-damage"
                     }
                 ],
                 "slug": "strategic-strike",
@@ -3331,18 +3284,7 @@
                             "skill-check"
                         ],
                         "type": "circumstance",
-                        "value": {
-                            "brackets": [
-                                {
-                                    "end": 8,
-                                    "value": 1
-                                },
-                                {
-                                    "start": 9,
-                                    "value": 2
-                                }
-                            ]
-                        }
+                        "value": "match(when(lte(@actor.level, 8), 1), when(gte(@actor.level, 9), 2))"
                     }
                 ],
                 "slug": "pursue-a-lead",

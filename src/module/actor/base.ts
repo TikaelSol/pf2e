@@ -22,7 +22,7 @@ import type { AbstractEffectPF2e, ArmorPF2e, ConditionPF2e, ContainerPF2e, Physi
 import { ItemPF2e, ItemProxyPF2e } from "@item";
 import type { EffectTrait } from "@item/abstract-effect/types.ts";
 import type { AfflictionSource } from "@item/affliction/index.ts";
-import type { ItemSourcePF2e, ItemType, PhysicalItemSource } from "@item/base/data/index.ts";
+import type { ItemSourcePF2e, PhysicalItemSource } from "@item/base/data/index.ts";
 import type { ConditionKey, ConditionSlug, ConditionSource } from "@item/condition/index.ts";
 import { PersistentDamageEditor } from "@item/condition/persistent-damage-editor.ts";
 import { CONDITION_SLUGS } from "@item/condition/values.ts";
@@ -32,6 +32,7 @@ import { createDisintegrateEffect } from "@item/effect/helpers.ts";
 import { itemIsOfType } from "@item/helpers.ts";
 import { Coins } from "@item/physical/coins.ts";
 import { getDefaultEquipStatus } from "@item/physical/helpers.ts";
+import { ItemType } from "@item/types.ts";
 import { ActiveEffectPF2e } from "@module/active-effect.ts";
 import type { TokenPF2e } from "@module/canvas/index.ts";
 import { ChatMessagePF2e } from "@module/chat-message/document.ts";
@@ -83,7 +84,7 @@ import {
     migrateActorSource,
 } from "./helpers.ts";
 import type { ActorInitiative } from "./initiative.ts";
-import { ActorInventory } from "./inventory/index.ts";
+import { ActorInventory, AddItemParam } from "./inventory/index.ts";
 import { ItemTransfer } from "./item-transfer.ts";
 import { applyStackingRules } from "./modifiers.ts";
 import type { ActorSheetPF2e } from "./sheet/base.ts";
@@ -626,11 +627,10 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
             context?: object;
         } & Partial<DialogV2Configuration> = {},
     ): Promise<Document | null> {
-        options.types &&= R.unique(options.types);
-        options.types ??= [...ACTOR_TYPES];
+        options.types = R.unique([options.types ?? ACTOR_TYPES].flat());
 
         // Determine omitted types. Army is hidden in most games, and party is hidden in folders
-        const omittedTypes = game.settings.get("pf2e", "campaignType") !== "kingmaker" ? ["army"] : [];
+        const omittedTypes: ActorType[] = game.settings.get("pf2e", "campaignType") !== "kingmaker" ? ["army"] : [];
         if (data?.folder) omittedTypes.push("party");
         for (const type of omittedTypes) {
             options.types.findSplice((t) => t === type);
@@ -1574,16 +1574,46 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         const newQuantity = item.quantity - quantity;
         const removeFromSource = newQuantity < 1;
 
+        // Create update to start deleting/updating items on this actor
+        const update = createActorGroupUpdate();
         if (removeFromSource) {
-            await item.delete();
+            update.itemDeletes.push(item.id);
         } else {
-            await item.update({ "system.quantity": newQuantity });
+            update.itemUpdates.push({ _id: item.id, "system.quantity": newQuantity });
         }
 
+        // Create the item transfer data, but also handle backpacks and add their items to the delete update
         const newItemData = item.toObject();
+        newItemData._id = fu.randomID();
         newItemData.system.quantity = quantity;
         newItemData.system.equipped = getDefaultEquipStatus(item);
-        return targetActor.addToInventory(newItemData, container, newStack);
+        const itemTransfer: AddItemParam = [newItemData];
+        if (item.isOfType("backpack")) {
+            const addBackpack = (container: ContainerPF2e, containerId: string) => {
+                for (const item of container.contents) {
+                    const source = item.toObject();
+                    source._id = fu.randomID();
+                    source.system.containerId = containerId;
+                    itemTransfer.push(source);
+                    update.itemDeletes.push(item.id);
+
+                    if (item.isOfType("backpack")) addBackpack(item, source._id);
+                }
+            };
+            addBackpack(item, newItemData._id);
+        }
+
+        // Delete the transferred items from this actor
+        await applyActorGroupUpdate(this, update);
+
+        // Perform the create/updates on the target actor
+        const results = await targetActor.inventory.add(itemTransfer, {
+            container,
+            stack: itemTransfer.length < 2 && !newStack,
+            keepId: true, // avoid breaking container id links
+        });
+
+        return results[0];
     }
 
     async addToInventory(
@@ -1592,7 +1622,8 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         newStack?: boolean,
     ): Promise<PhysicalItemPF2e<this> | null> {
         // Stack with an existing item if possible
-        const stackItem = this.inventory.findStackableItem(itemSource);
+        const containerId = container?.id ?? null;
+        const stackItem = !newStack ? this.inventory.findStackableItem(itemSource, { containerId }) : null;
         if (!newStack && stackItem && stackItem.type !== "backpack") {
             const stackQuantity = stackItem.quantity + itemSource.system.quantity;
             await stackItem.update({ "system.quantity": stackQuantity });

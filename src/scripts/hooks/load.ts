@@ -19,6 +19,7 @@ import { FeatSystemData } from "@item/feat/data.ts";
 import { HeritageSystemData } from "@item/heritage/data.ts";
 import { KitSystemData } from "@item/kit/data.ts";
 import { MeleeSystemData } from "@item/melee/data.ts";
+import { TreasureSystemData } from "@item/treasure/data.ts";
 import { ActiveEffectPF2e } from "@module/active-effect.ts";
 import { TradeDialog } from "@module/apps/trade-dialog/app.ts";
 import { DoorControlPF2e } from "@module/canvas/door-control.ts";
@@ -34,7 +35,6 @@ import {
     TokenPF2e,
 } from "@module/canvas/index.ts";
 import { TokenLayerPF2e } from "@module/canvas/layer/token.ts";
-import { PointVisionSourcePF2e } from "@module/canvas/perception/point-vision-source.ts";
 import { TerrainDataPF2e } from "@module/canvas/token/movement/terrain-data.ts";
 import { TokenRulerPF2e } from "@module/canvas/token/ruler.ts";
 import { ChatMessagePF2e } from "@module/chat-message/index.ts";
@@ -72,12 +72,14 @@ export class Load {
         // Assign document classes
         CONFIG.ActiveEffect.documentClass = ActiveEffectPF2e;
         CONFIG.Actor.collection = ActorsPF2e;
+        CONFIG.Actor.defaultType = "character";
         CONFIG.Actor.documentClass = ActorProxyPF2e;
         CONFIG.AmbientLight.documentClass = AmbientLightDocumentPF2e;
         CONFIG.AmbientLight.objectClass = AmbientLightPF2e;
         CONFIG.ChatMessage.documentClass = ChatMessagePF2e;
         CONFIG.Combat.documentClass = EncounterPF2e;
         CONFIG.Combatant.documentClass = CombatantPF2e;
+        CONFIG.Item.defaultType = "action";
         CONFIG.Item.documentClass = ItemProxyPF2e;
         CONFIG.Macro.documentClass = MacroPF2e;
         CONFIG.MeasuredTemplate.defaults.angle = 90;
@@ -129,6 +131,7 @@ export class Load {
         CONFIG.Item.dataModels.heritage = HeritageSystemData;
         CONFIG.Item.dataModels.kit = KitSystemData;
         CONFIG.Item.dataModels.melee = MeleeSystemData;
+        CONFIG.Item.dataModels.treasure = TreasureSystemData;
 
         // Assign canvas-related classes
         CONFIG.Canvas.doorControlClass = DoorControlPF2e;
@@ -139,24 +142,25 @@ export class Load {
         CONFIG.Canvas.layers.templates.layerClass = TemplateLayerPF2e;
         CONFIG.Canvas.layers.tokens.layerClass = TokenLayerPF2e;
         CONFIG.Canvas.rulerClass = RulerPF2e;
-        CONFIG.Canvas.visionSourceClass = PointVisionSourcePF2e;
 
         CONFIG.Dice.rolls.push(CheckRoll, StrikeAttackRoll, DamageRoll, DamageInstance);
         for (const TermCls of [ArithmeticExpression, Grouping, InstancePool, IntermediateDie]) {
             CONFIG.Dice.termTypes[TermCls.name] = TermCls;
         }
 
-        CONFIG.queries["pf2e.trade"] = TradeDialog.handleQuery;
+        Math.btwn = (v, gte, lte) => v >= gte && v <= lte;
+        Math.eq = (a, b) => a === b;
+        Math.gt = (a, b) => a > b;
+        Math.gte = (a, b) => a >= b;
+        Math.lt = (a, b) => a < b;
+        Math.lte = (a, b) => a <= b;
+        Math.ne = (a, b) => a !== b;
+        Math.ternary = (condition, ifTrue, ifFalse) => (condition ? ifTrue : ifFalse);
 
-        // Add functions to the `Math` namespace for use in `Roll` formulas
-        Math.eq = (a: number, b: number): boolean => a === b;
-        Math.gt = (a: number, b: number): boolean => a > b;
-        Math.gte = (a: number, b: number): boolean => a >= b;
-        Math.lt = (a: number, b: number): boolean => a < b;
-        Math.lte = (a: number, b: number): boolean => a <= b;
-        Math.ne = (a: number, b: number): boolean => a !== b;
-        Math.ternary = (condition: boolean | number, ifTrue: number, ifFalse: number): number =>
-            condition ? ifTrue : ifFalse;
+        Math.match = (...args) => args.find((a) => a !== null) ?? 0;
+        Math.when = (condition, then) => (condition ? then : null);
+
+        CONFIG.queries["pf2e.trade"] = TradeDialog.handleQuery;
 
         // Mystery Man but with a drop shadow
         Actor.DEFAULT_ICON = "systems/pf2e/icons/default-icons/mystery-man.svg";

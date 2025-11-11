@@ -8,16 +8,18 @@ export const RenderHUDContainer = {
             TokenRulerPF2e.observeHudContainer();
 
             // Create a distance label to show above hovered tokens
-            document.getElementById("measurement")?.append(
-                createHTMLElement("div", {
-                    id: "token-hover-distance",
-                    classes: ["waypoint-label"],
-                    children: [
-                        fa.fields.createFontAwesomeIcon("ruler"),
-                        createHTMLElement("span", { classes: ["total-measurement"] }),
-                    ],
-                }),
-            );
+            const measurementEl = document.getElementById("measurement");
+            measurementEl?.style.setProperty("--counter-scale", (1 / canvas.stage.scale.x).toFixed(4));
+            const labelEl = createHTMLElement("div", {
+                id: "token-hover-distance",
+                classes: ["waypoint-label"],
+                children: [
+                    fa.fields.createFontAwesomeIcon("ruler"),
+                    createHTMLElement("span", { classes: ["total-measurement"] }),
+                ],
+            });
+            labelEl.hidden = true;
+            measurementEl?.append(labelEl);
         });
     },
 };

@@ -22,6 +22,7 @@ import type {
 import type {
     ActorAttributesSource,
     ActorFlagsPF2e,
+    AreaAttack,
     AttributeBasedTraceData,
     HitPointsStatistic,
     StrikeData,
@@ -158,7 +159,7 @@ interface NPCSystemData extends Omit<NPCSystemSource, "attributes" | "perception
     skills: Record<string, NPCSkillData>;
 
     /** Special strikes which the creature can take. */
-    actions: NPCStrike[];
+    actions: NPCAttackAction[];
 
     resources: NPCResources;
 
@@ -209,7 +210,7 @@ interface NPCDetails extends NPCDetailsSource, CreatureDetails {
 interface NPCStrike extends StrikeData {
     item: MeleePF2e<ActorPF2e>;
     /** The type of attack as a localization string */
-    attackRollType?: string;
+    attackRollType: string;
     /** The id of the item this strike is generated from */
     sourceId?: string;
     /** Additional effects from a successful strike, like "Grab" */
@@ -217,6 +218,15 @@ interface NPCStrike extends StrikeData {
     /** A melee usage of a firearm: not available on NPC strikes */
     altUsages?: never;
 }
+
+interface NPCAreaAttack extends AreaAttack {
+    item: MeleePF2e<ActorPF2e>;
+    /** Additional effects from a successful strike, like "Grab" */
+    additionalEffects: { tag: string; label: string }[];
+    altUsages?: never;
+}
+
+type NPCAttackAction = NPCStrike | NPCAreaAttack;
 
 /** Save data with an additional "base" value */
 interface NPCSaveData extends SaveData {
@@ -257,6 +267,8 @@ interface NPCResources extends CreatureResources {
 }
 
 export type {
+    NPCAreaAttack,
+    NPCAttackAction,
     NPCAttributes,
     NPCAttributesSource,
     NPCFlags,

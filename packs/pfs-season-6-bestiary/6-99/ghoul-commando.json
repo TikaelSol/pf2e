@@ -5,6 +5,9 @@
     "items": [
         {
             "_id": "Dr6jKzMRsCUA79jT",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.6KWYmeRMxsQfWhhJ"
+            },
             "img": "icons/weapons/swords/sword-guard.webp",
             "name": "Bastard Sword",
             "sort": 100000,
@@ -88,6 +91,9 @@
         },
         {
             "_id": "KNDnXlNout3fSEvM",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.equipment-srd.Item.r0ifJfoz8aqf0mwk"
+            },
             "img": "icons/equipment/chest/breastplate-collared-steel.webp",
             "name": "Breastplate",
             "sort": 200000,
@@ -177,6 +183,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": "jaws",
                 "traits": {
@@ -215,6 +222,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -257,6 +265,7 @@
                     "remaster": true,
                     "title": ""
                 },
+                "range": null,
                 "rules": [
                     {
                         "domain": "damage",

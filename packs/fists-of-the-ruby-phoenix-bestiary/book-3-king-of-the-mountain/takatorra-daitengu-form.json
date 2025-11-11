@@ -124,6 +124,7 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": null,
                 "rules": [],
                 "slug": null,
                 "traits": {
@@ -163,12 +164,15 @@
                     "remaster": false,
                     "title": ""
                 },
+                "range": {
+                    "increment": 120,
+                    "max": null
+                },
                 "rules": [],
                 "slug": null,
                 "traits": {
                     "value": [
-                        "air",
-                        "range-increment-120"
+                        "air"
                     ]
                 }
             },
@@ -177,7 +181,7 @@
         {
             "_id": "JO3mcH2vMLFBPCFB",
             "img": "systems/pf2e/icons/actions/Passive.webp",
-            "name": "+2 status to all saves vs. air and electricity",
+            "name": "+2 Status to All Saves vs. Air and Electricity",
             "sort": 400000,
             "system": {
                 "actionType": {
