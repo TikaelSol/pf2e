@@ -1155,8 +1155,8 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
             actor.getStatistic("class") ??
             new Statistic(this, { slug: "class", label: "PF2E.Actor.Character.ClassDC.Label" });
         const tracking = weapon.system.traits.config?.tracking;
-        const domains = ["all", `${action}-save`];
         const statistic = classDC.extend({
+            domains: ["all", `${action}-dc`],
             modifiers: tracking
                 ? [
                       new Modifier({
@@ -1164,11 +1164,6 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
                           label: "PF2E.Item.Weapon.Tracking",
                           type: "item",
                           modifier: tracking,
-                          adjustments: extractModifierAdjustments(
-                              actor.synthetics.modifierAdjustments,
-                              domains,
-                              "tracking",
-                          ),
                       }),
                   ]
                 : [],
@@ -1211,6 +1206,9 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
             meleeOrRanged,
             "area-damage",
             "area-effect",
+            `item:proficiency:rank:${proficiencyRank}`,
+            // @todo migrate away:
+            PROFICIENCY_RANK_OPTION[proficiencyRank],
             ...weaponRollOptions,
         ];
 
@@ -1258,7 +1256,6 @@ class CharacterPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e
                             action,
                             identifier,
                             actionCost,
-                            domains,
                             options,
                             area,
                         });

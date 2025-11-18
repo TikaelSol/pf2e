@@ -29,6 +29,10 @@
                 <div class="alt-usage" data-tooltip-direction="LEFT">
                     {{#if usage.item.isThrown}}
                         <img class="alt-usage-icon" src="systems/pf2e/icons/mdi/thrown.svg" data-tooltip="{{localize "PF2E.Item.Weapon.ThrownUsage.Label"}}" />
+                    {{else if (eq usage.type "auto-fire")}}
+                        <img class="alt-usage-icon" src="systems/pf2e/assets/icons/striking-balls.svg" data-tooltip="{{localize "PF2E.Actions.AutoFire.Title"}}" />
+                    {{else if usage.item.isRanged}}
+                        <i class="alt-usage-icon fa-regular fa-bullseye-arrow" inert data-tooltip="{{localize "PF2E.Item.Weapon.MeleeUsage.Label"}}"></i>
                     {{else}}
                         <img class="alt-usage-icon" src="systems/pf2e/icons/mdi/sword.svg" data-tooltip="{{localize "PF2E.Item.Weapon.MeleeUsage.Label"}}" />
                     {{/if}}
@@ -72,7 +76,7 @@
                     {{#if action.ammunition.remaining}}
                         <div class="empty plain">
                             <a class="name" data-action="reload" data-anchor-id="{{action.item.uuid}}-actions">
-                                <span>{{localize "PF2E.Actions.Reload.ShortTitle"}} <span class="action-glyph">{{action.ammunition.reloadGlyph}}</span></span>
+                                <span>{{localize "PF2E.Actions.Interact.Reload.Title"}} <span class="action-glyph">{{action.ammunition.reloadGlyph}}</span></span>
                             </a>
                             <span class="remaining">
                                 {{#if (gt action.ammunition.capacity 1)}}
