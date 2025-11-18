@@ -43,6 +43,10 @@
                 "selector": "saving-throw",
                 "type": "circumstance",
                 "value": 1
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.pf2e.ancestryfeatures.Item.Draconic Exemplar"
             }
         ],
         "traits": {
