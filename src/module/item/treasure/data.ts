@@ -19,7 +19,7 @@ import type { CarriedUsage } from "@item/physical/usage.ts";
 import { PRECIOUS_MATERIAL_TYPES } from "@item/physical/values.ts";
 import { ItemSize } from "@item/types.ts";
 import { RarityField } from "@module/model.ts";
-import { SlugField } from "@system/schema-data-fields.ts";
+import { LaxArrayField, SlugField } from "@system/schema-data-fields.ts";
 import type { TreasurePF2e } from "./document.ts";
 import { TreasureCategory } from "./types.ts";
 import { TREASURE_CATEGORIES } from "./values.ts";
@@ -109,7 +109,7 @@ class TreasureSystemData extends ItemSystemModel<TreasurePF2e, TreasureSystemSch
                 required: true,
                 nullable: false,
                 integer: true,
-                positive: true,
+                min: 0,
                 initial: 1,
             }),
             size: new fields.StringField({
@@ -119,23 +119,19 @@ class TreasureSystemData extends ItemSystemModel<TreasurePF2e, TreasureSystemSch
             }),
             temporary: new fields.BooleanField({ required: false }),
             traits: new fields.SchemaField({
-                value: new fields.ArrayField(
-                    new fields.StringField({ required: true, choices: ["precious"] } as const),
-                ),
+                value: new LaxArrayField(new fields.StringField({ required: true, choices: ["precious"] } as const)),
                 rarity: new RarityField(),
                 otherTags: new fields.ArrayField(new SlugField({ required: true, initial: undefined })),
             }),
         };
     }
 
-    static override migrateData<T extends foundry.abstract.DataModel>(
-        this: ConstructorOf<T>,
-        source: Record<string, unknown>,
-    ): T["_source"] {
-        if (source.size === "sm") source.size = "med";
-        if (source.stackGroup === "coins") source.category = "coin";
-        else if (source.stackGroup === "gems") source.category = "gem";
-        return super.migrateData(source);
+    static override migrateData(source: Record<string, unknown>): Record<string, unknown> {
+        const migrated = super.migrateData(source);
+        if (migrated.size === "sm") migrated.size = "med";
+        if (migrated.stackGroup === "coins") migrated.category = "coin";
+        else if (migrated.stackGroup === "gems") migrated.category = "gem";
+        return migrated;
     }
 
     get stackGroup(): "coins" | "gems" | null {

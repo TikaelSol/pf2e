@@ -247,6 +247,7 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
         const actorSize = new ActorSizePF2e({ value: actor.size });
         const itemSize = new ActorSizePF2e({ value: item.size });
         const sizeDifference = itemSize.difference(actorSize, { smallIsMedium: true });
+        const isCurrency = item.isOfType("treasure") && item.isCoinage;
 
         return {
             item,
@@ -269,7 +270,7 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
             itemSize: sizeDifference !== 0 ? itemSize : null,
             unitBulk: actor.isOfType("loot") ? createBulkPerLabel(item) : null,
             unitPrice: item.price.value.toString({ short: true }),
-            assetValue: item.assetValue.toString({ short: true }),
+            assetValue: item.assetValue.toString({ short: true, denomination: isCurrency ? item.denomination : null }),
             hidden: false,
         };
     }
@@ -937,7 +938,7 @@ abstract class ActorSheetPF2e<TActor extends ActorPF2e> extends fav1.sheets.Acto
     }
 
     protected deleteItem<TItem extends ItemPF2e>(item: TItem, event?: PointerEvent): Promise<TItem | undefined> {
-        return event?.ctrlKey ? item.delete() : item.deleteDialog();
+        return event?.ctrlKey || event?.shiftKey ? item.delete() : item.deleteDialog();
     }
 
     #onClickBrowseAbilities(anchor: HTMLElement): void {

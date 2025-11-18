@@ -656,7 +656,7 @@ function areaFireFromMeleeItem(item: MeleePF2e<ActorPF2e>): NPCAreaAttack {
     const actor = item.actor;
     const attackSlug = item.slug ?? sluggify(item.name);
     const meleeOrRanged = item.isMelee ? "melee" : "ranged";
-    const domains = ["all", `${action}-save`];
+    const domains = ["all", `${action}-dc`];
     const baseOptions = [
         `self:action:slug:${action}`,
         meleeOrRanged,
@@ -686,6 +686,7 @@ function areaFireFromMeleeItem(item: MeleePF2e<ActorPF2e>): NPCAreaAttack {
     const actionCost: ActionCost = { type: "action", value: item.system.traits.value.includes("consumable") ? 1 : 2 };
     const identifier = `${item.id}.${attackSlug}.${action}`;
     const statistic = new Statistic(actor, {
+        domains,
         slug: attackSlug,
         label: item.name,
         modifiers,
@@ -704,6 +705,10 @@ function areaFireFromMeleeItem(item: MeleePF2e<ActorPF2e>): NPCAreaAttack {
         item,
         statistic,
         additionalEffects,
+        traits: [
+            ["attack"].map((t) => traitSlugToObject(t, CONFIG.PF2E.actionTraits)),
+            item.system.traits.value.map((t) => traitSlugToObject(t, CONFIG.PF2E.npcAttackTraits)),
+        ].flat(),
         variants: [
             {
                 label: game.i18n.format("PF2E.ActionWithDC", {
@@ -719,7 +724,6 @@ function areaFireFromMeleeItem(item: MeleePF2e<ActorPF2e>): NPCAreaAttack {
                         action,
                         identifier,
                         actionCost,
-                        domains,
                         options: baseOptions,
                         area: item.system.area,
                     });
@@ -837,7 +841,6 @@ interface AreaAttackOptions {
     statistic: Statistic;
     identifier: string;
     actionCost: ActionCost;
-    domains: string[];
     options: string[];
     area: { type: EffectAreaShape; value: number };
 }
@@ -850,7 +853,6 @@ async function createAreaAttackMessage({
     statistic,
     identifier,
     actionCost,
-    domains,
     options,
     area,
 }: AreaAttackOptions): Promise<void> {
@@ -883,7 +885,7 @@ async function createAreaAttackMessage({
         type: action,
         area,
         identifier,
-        domains,
+        domains: dc.domains,
         options,
     };
 
