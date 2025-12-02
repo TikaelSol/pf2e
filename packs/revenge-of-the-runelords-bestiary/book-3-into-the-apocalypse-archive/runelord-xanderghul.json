@@ -3356,7 +3356,12 @@
                     "remaster": false,
                     "title": ""
                 },
-                "rules": [],
+                "rules": [
+                    {
+                        "key": "RollOption",
+                        "option": "self:tag:xanderghul"
+                    }
+                ],
                 "slug": null,
                 "traits": {
                     "value": [
