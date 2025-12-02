@@ -86,11 +86,15 @@ class WeaponReloader extends SvelteApplicationMixin<
                     max: weapon.system.ammo?.capacity ?? 1,
                 },
                 weapon: getBasePhysicalItemViewData(weapon),
-                compatible: compatible.map((c) => ({
-                    ...getBasePhysicalItemViewData(c),
-                    quantity: c.quantity,
-                    uses: c.isOfType("ammo") && c.uses.max > 1 ? c.uses : null,
-                })),
+                compatible: R.sortBy(
+                    compatible.map((c) => ({
+                        ...getBasePhysicalItemViewData(c),
+                        quantity: c.quantity,
+                        uses: c.isOfType("ammo") && c.uses.max > 1 ? c.uses : null,
+                        depleted: c.quantity === 0 || (c.isOfType("ammo") && c.uses.value === 0),
+                    })),
+                    (c) => (c.depleted ? 1 : 0),
+                ),
             },
         };
     }
@@ -105,7 +109,10 @@ class WeaponReloader extends SvelteApplicationMixin<
         const ammo = weapon.actor.inventory.get(ammoId, { strict: true });
 
         const capacity = weapon.system.ammo?.capacity ?? 0;
-        const numLoaded = R.sumBy(getLoadedAmmo(weapon), (l) => l.quantity);
+        const loaded = getLoadedAmmo(weapon).filter(
+            (a) => !(a.isOfType("ammo") && a.isMagazine && a.system.uses.value === 0),
+        );
+        const numLoaded = R.sumBy(loaded, (l) => l.quantity);
         const remainingSpace = Math.max(0, capacity - numLoaded);
         const quantity = all ? Math.min(remainingSpace, ammo.quantity) : 1;
         if (remainingSpace > 0) {
@@ -130,8 +137,8 @@ class WeaponReloader extends SvelteApplicationMixin<
         if (!game.combat || !actor) return;
 
         const templates = {
-            flavor: "./systems/pf2e/templates/chat/action/flavor.hbs",
-            content: "./systems/pf2e/templates/chat/action/content.hbs",
+            flavor: `./${SYSTEM_ROOT}/templates/chat/action/flavor.hbs`,
+            content: `./${SYSTEM_ROOT}/templates/chat/action/content.hbs`,
         };
         const actionKey = "Interact";
         const annotationKey = "Reload";
@@ -209,6 +216,7 @@ interface ReloadWeaponContext extends SvelteApplicationRenderContext {
 interface AmmoChoiceViewData extends BasePhysicalItemViewData {
     quantity: number;
     uses: ValueAndMax | null;
+    depleted: boolean;
 }
 
 export { WeaponReloader };

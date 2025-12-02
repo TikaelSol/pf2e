@@ -8,11 +8,11 @@
             },
             "ExplosiveAmmunition": {
                 "Greater": {
-                    "Text": "The missile explodes in a @Template[burst|distance:10], dealing @Damage[10d6[fire]] damage to each creature in the area (including the target). Each creature must attempt a @Check[reflex|dc:30|basic|name:Explosive Ammunition] save.",
+                    "Text": "The missile explodes in a @Template[burst|distance:10], dealing @Damage[10d6[fire]|options:area-damage] damage to each creature in the area (including the target). Each creature must attempt a @Check[reflex|dc:30|basic|name:Explosive Ammunition|options:area-effect] save.",
                     "Title": "Explosive Ammunition (Greater)"
                 },
                 "Normal": {
-                    "Text": "The missile explodes in a @Template[burst|distance:10], dealing @Damage[6d6[fire]] damage to each creature in the area (including the target). Each creature must attempt a @Check[reflex|dc:25|basic|name:Explosive Ammunition] save.",
+                    "Text": "The missile explodes in a @Template[burst|distance:10], dealing @Damage[6d6[fire]|options:area-damage] damage to each creature in the area (including the target). Each creature must attempt a @Check[reflex|dc:25|basic|name:Explosive Ammunition|options:area-effect] save.",
                     "Title": "Explosive Ammunition"
                 }
             },
@@ -81,6 +81,7 @@
             "IncreasedReach5": "Reach increased by 5 feet",
             "InterruptAction": "On a hit, the target's action is interrupted.",
             "KnockProne": "On a hit, the target is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.",
+            "KnockProneCriticalHit": "On a critical hit, the target is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.",
             "ReduceHiddenCheck": "The DC of the flat check to target a @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} creature is only @Check[flat|dc:5]."
         },
         "Background": {
@@ -758,6 +759,10 @@
             "StrikeCount": {
                 "First": "First Strike",
                 "Second": "Second Strike"
+            },
+            "TargetNumber": {
+                "Multiple": "Multiple targets",
+                "Single": "Single target"
             }
         },
         "IWR": {
@@ -783,9 +788,11 @@
                 "CrystalHazards": "crystal hazards",
                 "DamageFromSwornCreatures": "damage from sworn creature kind",
                 "DraconicBreathWeapons": "draconic breath weapons",
+                "ElementalInstinct": "damage dealt by instinct element creatures",
                 "EnemyStrikes": "enemy Strikes",
                 "FallDamage": "fall damage",
                 "GasInhaled": "gases and other inhaled effects",
+                "HarvestBlood": "damage dealt by last Harvest Blood target",
                 "HolyBludgeoningPiercingSlashing": "holy bludgeoning, piercing and slashing damage",
                 "ImpulseFireFrom": "impulse fire from {origin}",
                 "IncorporealCreatures": "incorporeal creatures",
@@ -1409,6 +1416,9 @@
                 "CriticalHit": "Shell Broken by a Critical Hit"
             },
             "Shieldmarshal": {
+                "EquitableDefense": {
+                    "ResistanceToggle": "Equitable Defense — Critical Hit Resistance"
+                },
                 "LawbringerSpeedLabel": "Lawbringer — Moving Toward Target"
             },
             "ShockerLizard": {
@@ -3374,8 +3384,8 @@
                     "Note": "You can target a second willing creature to heal the same amount from the spell. This creature can be outside of the spell's range, provided it's adjacent to the enemy you hit."
                 },
                 "SacredGround": {
-                    "Harmful": "A creature that remains in the area for the entire 10 minutes regains @Damage[(@actor.level)[void,healing]]{Hit Points} equal to your level. This activity has the healing and void traits and heals undead creatures (or other creatures with void healing).",
-                    "Healing": "A creature that remains in the area for the entire 10 minutes regains @Damage[(@actor.level)[vitality,healing]]{Hit Points} equal to your level. This activity has the healing and vitality traits and heals living creatures."
+                    "Harmful": "A creature that remains in the area for the entire 10 minutes regains @Damage[(@actor.level)[void,healing]|traits:healing,void]{Hit Points} equal to your level. This activity has the healing and void traits and heals undead creatures (or other creatures with void healing).",
+                    "Healing": "A creature that remains in the area for the entire 10 minutes regains @Damage[(@actor.level)[vitality,healing]|traits:healing,vitality]{Hit Points} equal to your level. This activity has the healing and vitality traits and heals living creatures."
                 },
                 "SapLife": {
                     "Note": "When you cast a <em>harm</em> spell and damage at least one living creature, you regain @Damage[(@item.rank)[healing]] Hit Points."
@@ -4005,6 +4015,12 @@
                 "SashOfBooks": {
                     "Label": "Sash of Books",
                     "Note": "Regardless of the result, you gain a +1 circumstance bonus to attack rolls against the creature and to your AC and saving throws against attacks and effects from the creature for 1 minute. @UUID[Compendium.pf2e.equipment-effects.Item.P3lpqXMd5FbUF57c]{Effect: Sash of Books (Bonus)}"
+                },
+                "ScaldingGauntlet": {
+                    "Basic": "A creature you grab or restrain while wearing the gauntlets must succeed at a @Check[fortitude|dc:26|options:damaging-effect,inflicts:sickened|showDC:all] save or take @Damage[2d6[persistent,fire]] damage and be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain; it's temporarily immune to being sickened by <em>scalding gauntlets</em> for 1 hour.",
+                    "Greater": "A creature you grab or restrain while wearing the gauntlets must succeed at a @Check[fortitude|dc:28|options:damaging-effect,inflicts:sickened|showDC:all] save or take @Damage[2d6[persistent,fire]] damage and be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain; it's temporarily immune to being sickened by <em>scalding gauntlets</em> for 1 hour.",
+                    "Major": "A creature you grab or restrain while wearing the gauntlets must succeed at a @Check[fortitude|dc:32|options:damaging-effect,inflicts:sickened|showDC:all] save or take @Damage[3d6[persistent,fire]] damage and be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain; it's temporarily immune to being sickened by <em>scalding gauntlets</em> for 1 hour.",
+                    "True": "A creature you grab or restrain while wearing the gauntlets must succeed at a @Check[fortitude|dc:36|options:damaging-effect,inflicts:sickened|showDC:all] save or take @Damage[4d6[persistent,fire]] damage and be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain; it's temporarily immune to being sickened by <em>scalding gauntlets</em> for 1 hour."
                 },
                 "ScapularOfShields": {
                     "CriticalImmunityLabel": "Activate Scapular of Shields to gain critical immunity.",
@@ -4646,6 +4662,14 @@
                     "Note": "Regardless of your roll, after the attack you're @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of your next turn and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.",
                     "NoteFailure": "The weapon misfires."
                 },
+                "FleshWound": {
+                    "ToggleLabel": "Flesh Wound — Reduce Strike damage"
+                },
+                "SwordAndPistol": {
+                    "MeleeNote": "When you make a successful melee Strike against an enemy with your one-handed melee weapon, the next ranged Strike you make against that enemy with a one-handed firearm or one-handed crossbow doesn't trigger reactions that would trigger on a ranged attack but not a melee attack, such as Reactive Strike. This benefit is lost if not used by the end of your next turn.",
+                    "RangedNote": "When you make a successful ranged Strike against an enemy within your reach with your one-handed firearm or one-handed crossbow, that enemy is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against your next melee attack with a one-handed melee weapon. This benefit is lost if not used by the end of your next turn.",
+                    "RollOptionLabel": "Sword and Pistol — Enemy is within reach"
+                },
                 "Way": {
                     "Prompt": "Select a way.",
                     "Spellshot": "Way of the Spellshot (Archetype)"
@@ -4903,6 +4927,12 @@
                 "Trigger": "Your prey is within reach and attempts to move away from you."
             },
             "Kineticist": {
+                "ConsumePower": {
+                    "ResistanceToggle": "Consume Power — Resistance"
+                },
+                "DesertWind": {
+                    "DamageToggle": "Desert Wind — Extra damage"
+                },
                 "ExtendedKinesis": {
                     "Proliferate": {
                         "Title": "Proliferate",
@@ -5272,6 +5302,10 @@
                 "Penalty": "Penalty"
             },
             "Monk": {
+                "DodgingRoll": {
+                    "StepIn": "Step into effect's area",
+                    "StepOut": "Step out of effect's area"
+                },
                 "DragonRoar": {
                     "Label": "First attack vs. frightened creature"
                 },
@@ -6646,6 +6680,12 @@
                 "RuptureDamage": "If the monster takes piercing or slashing damage equaling or exceeding the listed Rupture value from a single attack or spell, the swallowed creature cuts itself free."
             },
             "Swashbuckler": {
+                "ElegantBuckler": {
+                    "RollOptionLabel": "Elegant Buckler — Using a buckler"
+                },
+                "ExtravagantParry": {
+                    "Prompt": "Do you have a free hand or wield a parry weapon?"
+                },
                 "Finisher": {
                     "Basic": "Basic",
                     "Bleeding": "Bleeding",
@@ -6672,7 +6712,7 @@
                     "Note": "On a successful Feint, the target take a -2 circumstance penalty to attack rolls against you instead of any other effects that you would gain when you Feint. @UUID[Compendium.pf2e.feat-effects.Item.rflbFzV44Fd6aBLE]{Effect: Goading Feint}"
                 },
                 "Panache": "You gain @UUID[Compendium.pf2e.feat-effects.Item.uBJsxCzNhje8m8jj]{Panache}.",
-                "PanacheFailure": "You gain panache until the end of your next turn @UUID[Compendium.pf2e.feat-effects.Item.uBJsxCzNhje8m8jj]{Effect: Panache}",
+                "PanacheFailure": "You gain panache until the end of your next turn @UUID[Compendium.pf2e.feat-effects.Item.paKKHPds77fq5VTH]{Effect: Panache (Temporary)}",
                 "Style": {
                     "Prompt": "Select a style."
                 },

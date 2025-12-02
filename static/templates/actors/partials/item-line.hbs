@@ -18,7 +18,7 @@
                 <a data-action="toggle-summary">{{item.name}}</a>
                 {{#if (and @root.user.isGM (not item.isIdentified))}}<span class="gm-mystified-data">({{item.system.identification.identified.name}})</span>{{/if}}
                 {{#if itemSize}}<span class="size">({{itemSize}})</span>{{/if}}
-                {{#if item.isTemporary}}<i class="fa-solid fa-info-circle" data-tooltip="PF2E.TemporaryItemToolTip"></i>{{/if}}
+                {{#if item.isTemporary}}<i class="fa-solid fa-clock" data-tooltip="PF2E.TemporaryItemToolTip"></i>{{/if}}
             </h4>
             {{#if (and item.uses.max (or (gt item.uses.max 1) (eq item.category "wand")))}}
                 <span class="uses">({{item.uses.value}}/{{item.uses.max}})</span>
@@ -26,6 +26,13 @@
         </div>
         {{#if (or @root.inventory.showValueAlways (and (eq item.type "treasure") (not item.container)))}}
             <span class="price">
+                {{#if (and @root.editable (eq item.system.category "credstick"))}}
+                    <a
+                        class="decrease"
+                        data-action="decrease-credits"
+                        title="{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.Click"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.ShiftClick"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.ControlClick"}}"
+                    >&ndash;</a>
+                {{/if}}
                 {{#if (or item.isIdentified @root.user.isGM)}}
                     <span data-visibility="{{#if item.isIdentified}}all{{else}}gm{{/if}}">
                         {{#if @root.inventory.showUnitBulkPrice}}
@@ -38,10 +45,17 @@
                         {{/if}}
                     </span>
                 {{/if}}
+                {{#if (and @root.editable (eq item.system.category "credstick"))}}
+                <a
+                    class="increase"
+                    data-action="increase-credits"
+                    title="{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.Click"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.ShiftClick"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.ControlClick"}}"
+                >+</a>
+                {{/if}}
             </span>
         {{/if}}
         <span class="quantity">
-            {{#if (and @root.editable (not isSubitem))}}
+            {{#if (and canEditQuantity @root.editable (not isSubitem))}}
                 <a
                     class="decrease"
                     data-action="decrease-quantity"
@@ -49,7 +63,7 @@
                 >&ndash;</a>
             {{/if}}
             <span>{{item.quantity}}</span>
-            {{#if (and @root.editable (not isSubitem))}}
+            {{#if (and canEditQuantity @root.editable (not isSubitem))}}
                 <a
                     class="increase"
                     data-action="increase-quantity"
@@ -146,7 +160,7 @@
     {{#if subitems.length}}
         <ul class="items subitems">
             {{#each subitems as |subitem|}}
-                {{> "systems/pf2e/templates/actors/partials/item-line.hbs" item=subitem isSubitem=true}}
+                {{> (resolvePath "templates/actors/partials/item-line.hbs") item=subitem isSubitem=true}}
             {{/each}}
         </ul>
     {{/if}}
@@ -154,7 +168,7 @@
     {{#if (and isContainer (not item.isCollapsed))}}
         <ul class="items container-contents" data-item-list data-container-id="{{item.id}}">
             {{#each heldItems as |containedItem|}}
-                {{> "systems/pf2e/templates/actors/partials/item-line.hbs" this=containedItem}}
+                {{> (resolvePath "templates/actors/partials/item-line.hbs") this=containedItem}}
             {{/each}}
         </ul>
     {{/if}}

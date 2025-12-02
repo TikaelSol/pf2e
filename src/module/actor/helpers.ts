@@ -693,7 +693,7 @@ function areaFireFromMeleeItem(item: MeleePF2e<ActorPF2e>): NPCAreaAttack {
     });
 
     return {
-        slug: identifier,
+        slug: attackSlug,
         type: action,
         attackRollType: NPC_ATTACK_ACTIONS[action],
         label: item.name,
@@ -765,7 +765,7 @@ function createDamageRollFunctions(
     const createDamageRoll =
         (outcome: "success" | "criticalSuccess"): DamageRollFunction =>
         async (params: DamageRollParams = {}): Promise<Rolled<DamageRoll> | string | null> => {
-            const domains = getAttackDamageDomains(item, proficiencyRank);
+            const domains = getAttackDamageDomains(item, proficiencyRank, action);
             const targetToken = (params.target ?? game.user.targets.first())?.document ?? null;
             const context = await new DamageContext({
                 viewOnly: params.getFormula ?? false,
@@ -865,12 +865,12 @@ async function createAreaAttackMessage({
     const token = actor.getActiveTokens(false, true).shift();
     const speaker = ChatMessagePF2e.getSpeaker({ actor, token });
     const glyph = getActionGlyph(actionCost);
-    const flavor = await fa.handlebars.renderTemplate("systems/pf2e/templates/chat/action/flavor.hbs", {
+    const flavor = await fa.handlebars.renderTemplate(`${SYSTEM_ROOT}/templates/chat/action/flavor.hbs`, {
         action: { title, glyph },
         item,
         traits: [traitSlugToObject("attack", CONFIG.PF2E.actionTraits)],
     });
-    const content = await fa.handlebars.renderTemplate("systems/pf2e/templates/chat/action/area-fire.hbs", {
+    const content = await fa.handlebars.renderTemplate(`${SYSTEM_ROOT}/templates/chat/action/area-fire.hbs`, {
         actor,
         description,
         saveLabel: game.i18n.format("PF2E.SaveDCLabelBasic", {
