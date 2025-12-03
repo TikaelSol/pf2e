@@ -519,7 +519,7 @@ export const PF2ECONFIG = {
 
     statusEffects: {
         lastIconTheme: "default" as StatusEffectIconTheme,
-        iconDir: "systems/pf2e/icons/conditions/",
+        iconDir: `${SYSTEM_ROOT}/icons/conditions/`,
         conditions: tokenHUDConditions,
     },
 
@@ -573,10 +573,12 @@ export const PF2ECONFIG = {
     } as const,
 
     currencies: {
-        pp: "PF2E.CurrencyPP",
-        gp: "PF2E.CurrencyGP",
-        sp: "PF2E.CurrencySP",
-        cp: "PF2E.CurrencyCP",
+        pp: "PF2E.Currency.pp",
+        gp: "PF2E.Currency.gp",
+        sp: "PF2E.Currency.sp",
+        cp: "PF2E.Currency.cp",
+        credits: "PF2E.Currency.credits",
+        upb: "PF2E.Currency.upb",
     },
 
     preciousMaterialGrades,

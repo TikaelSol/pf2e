@@ -60,13 +60,13 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
+                    "action:recall-knowledge",
                     "target:trait:fiend"
                 ],
                 "selector": [
-                    "religion",
-                    "lore-skill-check"
+                    "skill-check"
                 ],
-                "type": "item",
+                "type": "circumstance",
                 "value": 3
             },
             {

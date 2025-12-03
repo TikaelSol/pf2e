@@ -9,7 +9,7 @@ import type {
     DatabaseUpdateCallbackOptions,
     DatabaseUpdateOperation,
 } from "@common/abstract/_types.d.mts";
-import { ItemPF2e, ItemProxyPF2e, type ContainerPF2e } from "@item";
+import { ItemPF2e, ItemProxyPF2e, type AmmoPF2e, type ContainerPF2e } from "@item";
 import type { ItemSourcePF2e, PhysicalItemSource, RawItemChatData, TraitChatData } from "@item/base/data/index.ts";
 import { MystifiedTraits } from "@item/base/data/values.ts";
 import { isContainerCycle } from "@item/container/helpers.ts";
@@ -33,7 +33,7 @@ import type {
 } from "./data.ts";
 import { Coins, computeLevelRarityPrice, getDefaultEquipStatus, handleHPChange, prepareBulkData } from "./helpers.ts";
 import { getUsageDetails, isEquipped } from "./usage.ts";
-import { DENOMINATIONS } from "./values.ts";
+import { COIN_DENOMINATIONS } from "./values.ts";
 
 abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends ItemPF2e<TParent> {
     /** The item in which this item is embedded */
@@ -465,6 +465,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         return super.getEmbeddedDocument(embeddedName, id, options);
     }
 
+    /** Attaches an item to this item as a subitem. If it is an ammo to a weapon, also performs reloading */
     async attach(
         item: PhysicalItemPF2e,
         { quantity = 1, stack = false }: { quantity?: number; stack?: boolean } = {},
@@ -473,15 +474,37 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         const actor = this.actor;
 
         // Get subitems, excluding those that will need to be purged this update
-        // Empty ammo removal is deferred for reloading, since the ammo may still needed for rule elements to function
+        // Some empty ammo removal is deferred for reloading due to rule element for damage reasons
         const purgedItems = this.isOfType("weapon")
-            ? this.subitems
-                  .filter((i) => i.isOfType("ammo", "weapon") && i.isAmmoFor(this) && !i.quantity)
-                  .map((i) => i.id)
+            ? this.subitems.filter(
+                  (i) =>
+                      i.isOfType("ammo", "weapon") &&
+                      i.isAmmoFor(this) &&
+                      (!i.quantity || (i.isOfType("ammo") && i.isMagazine && !i.system.uses.value)),
+              )
             : [];
+        const purgedItemIds = purgedItems.map((i) => i.id);
         const subitems = fu
             .deepClone(this._source.system.subitems)
-            .filter((i) => i._id && !purgedItems.includes(i._id));
+            .filter((i) => i._id && !purgedItemIds.includes(i._id));
+
+        // Add any ejected ammo we need to preserve to the inventory
+        // If any are consumables, this is someone's attempt at infinite ammo, so we need to restore uses
+        // Later one we can remove infinite ammo handling for a real setting
+        const ejected = purgedItems.filter(
+            (i): i is AmmoPF2e<TParent> => i.isOfType("ammo") && i.isMagazine && !i.system.uses.autoDestroy,
+        );
+        if (actor && ejected.length) {
+            const items = ejected.map((e) => {
+                const source = e.toObject();
+                source.system.equipped = getDefaultEquipStatus(e);
+                if (e.system.traits.value.includes("consumable")) {
+                    source.system = fu.mergeObject(source.system, { uses: { value: e.system.uses.max } });
+                }
+                return source;
+            });
+            await actor.inventory.add(items, { stack: true, render: false });
+        }
 
         // Create attachment source data.
         // If it is unattributed special ammo, lock in the time so removal doesn't re-prompt
@@ -541,7 +564,8 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
     async detach({
         skipConfirm,
         quantity = this.quantity,
-    }: { skipConfirm?: boolean; quantity?: number } = {}): Promise<void> {
+        keepZero = false,
+    }: { skipConfirm?: boolean; quantity?: number; keepZero?: boolean } = {}): Promise<void> {
         const parentItem = this.parentItem;
         quantity = Math.clamp(quantity, 0, this.quantity);
         if (!parentItem) throw ErrorPF2e("Subitem has no parent item");
@@ -558,9 +582,9 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
 
         if (confirmed) {
             const updateDeletePromise =
-                quantity === this.quantity
+                quantity >= this.quantity && !keepZero
                     ? this.delete()
-                    : this.update({ "system.quantity": this.quantity - quantity });
+                    : this.update({ "system.quantity": Math.max(0, this.quantity - quantity) });
             const createPromise = (async (): Promise<unknown> => {
                 // Find a stack match, cloning the subitem as worn so the search won't fail due to it being equipped
                 const subitemData: PhysicalItemSource = this.toObject();
@@ -752,6 +776,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         return {
             rarity,
             description: this.system.description,
+            price: this.system.price.value.toString(),
             material,
         };
     }
@@ -898,7 +923,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
             const price: Record<string, unknown> = changed.system.price;
             if (R.isPlainObject(price.value)) {
                 const coins = price.value;
-                for (const denomination of DENOMINATIONS) {
+                for (const denomination of COIN_DENOMINATIONS) {
                     if (coins[denomination] === 0) coins[`-=${denomination}`] = null;
                 }
             }
