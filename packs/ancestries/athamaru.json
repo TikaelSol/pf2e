@@ -45,6 +45,7 @@
                 ]
             }
         },
+        "hands": 2,
         "hp": 8,
         "items": {},
         "languages": {

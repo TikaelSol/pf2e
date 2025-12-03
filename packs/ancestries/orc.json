@@ -46,6 +46,7 @@
                 "value": []
             }
         },
+        "hands": 2,
         "hp": 10,
         "items": {},
         "languages": {

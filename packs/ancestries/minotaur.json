@@ -46,6 +46,7 @@
                 ]
             }
         },
+        "hands": 2,
         "hp": 10,
         "items": {
             "MZeAa": {

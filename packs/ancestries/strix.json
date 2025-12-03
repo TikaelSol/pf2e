@@ -41,6 +41,7 @@
                 "value": []
             }
         },
+        "hands": 2,
         "hp": 8,
         "items": {
             "64eou": {

@@ -3,6 +3,7 @@
     "img": "icons/weapons/staves/staff-orb-feather.webp",
     "name": "Fiendbreaker (Heroic)",
     "system": {
+        "ammo": null,
         "apex": {
             "attribute": "wis"
         },

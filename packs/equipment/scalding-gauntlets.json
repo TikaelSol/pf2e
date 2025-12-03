@@ -3,6 +3,7 @@
     "img": "icons/equipment/hand/gauntlet-plate-gold.webp",
     "name": "Scalding Gauntlets",
     "system": {
+        "ammo": null,
         "baseItem": "spiked-gauntlet",
         "bonus": {
             "value": 0
