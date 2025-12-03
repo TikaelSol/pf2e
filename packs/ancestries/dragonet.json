@@ -68,7 +68,7 @@
             "remaster": true,
             "title": "Pathfinder Lost Omens Draconic Codex"
         },
-        "reach": 5,
+        "reach": 0,
         "rules": [],
         "size": "tiny",
         "speed": 20,
