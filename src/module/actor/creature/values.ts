@@ -183,14 +183,42 @@ const RARE_LANGUAGES = [
     "yithian",
 ] as const;
 
+const SF_LANGUAGES = [
+    "aballonian",
+    "brethedan",
+    "castrovelian",
+    "diasporan",
+    "eoxian",
+    "jinsul",
+    "kalo",
+    "kasatha",
+    "khizar",
+    "kothama",
+    "kucharn",
+    "lashunta",
+    "morandomandranan",
+    "orbian",
+    "pahtra",
+    "prelurian",
+    "sarcesian",
+    "sarcesian-signed",
+    "shirren",
+    "shobhad",
+    "triaxian",
+    "trinary",
+    "vercite",
+    "vesk",
+    "vlaka",
+] as const
+
 const LANGUAGES_BY_RARITY = {
     common: COMMON_LANGUAGES,
-    uncommon: UNCOMMON_LANGUAGES,
+    uncommon: [...UNCOMMON_LANGUAGES, ...SF_LANGUAGES],
     rare: RARE_LANGUAGES,
     secret: ["wildsong"] as const,
 };
 
-const LANGUAGES: Language[] = ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, "wildsong"];
+const LANGUAGES: Language[] = ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, ...SF_LANGUAGES, "wildsong"];
 LANGUAGES.sort();
 
 const LANGUAGE_RARITIES = ["common", "uncommon", "rare", "secret"] as const;
