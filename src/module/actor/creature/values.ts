@@ -209,7 +209,7 @@ const SF_LANGUAGES = [
     "vercite",
     "vesk",
     "vlaka",
-] as const
+] as const;
 
 const LANGUAGES_BY_RARITY = {
     common: COMMON_LANGUAGES,
@@ -218,7 +218,14 @@ const LANGUAGES_BY_RARITY = {
     secret: ["wildsong"] as const,
 };
 
-const LANGUAGES: Language[] = ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, ...SF_LANGUAGES, "wildsong"];
+const LANGUAGES: Language[] = [
+    "common",
+    ...COMMON_LANGUAGES,
+    ...UNCOMMON_LANGUAGES,
+    ...RARE_LANGUAGES,
+    ...SF_LANGUAGES,
+    "wildsong",
+];
 LANGUAGES.sort();
 
 const LANGUAGE_RARITIES = ["common", "uncommon", "rare", "secret"] as const;
