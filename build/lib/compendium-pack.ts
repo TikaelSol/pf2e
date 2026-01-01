@@ -9,14 +9,16 @@ import { itemIsOfType } from "@item/helpers.ts";
 import { SIZES } from "@module/data.ts";
 import { MigrationRunnerBase } from "@module/migration/runner/base.ts";
 import type { RuleElementSource } from "@module/rules/index.ts";
-import { recursiveReplaceString, setHasElement, sluggify, tupleHasValue } from "@util/misc.ts";
+import { objectHasKey, recursiveReplaceString, setHasElement, sluggify, tupleHasValue } from "@util/misc.ts";
 import fs from "fs";
 import path from "path";
 import * as R from "remeda";
-import systemJSON from "../../static/system.json" with { type: "json" };
+import pf2eManifest from "../../system.pf2e.json" with { type: "json" };
+import sf2eManifest from "../../system.sf2e.json" with { type: "json" };
 import coreIconsJSON from "../core-icons.json" with { type: "json" };
+import duplicates from "../duplicates.json" with { type: "json" };
 import "./foundry-utils.ts";
-import { PackError, getFilesRecursively } from "./helpers.ts";
+import { PackError, getFolderPath, getPackJSONPaths } from "./helpers.ts";
 import { DBFolder, LevelDatabase } from "./level-database.ts";
 import { PackEntry } from "./types.ts";
 
@@ -53,6 +55,13 @@ function isItemSource(docSource: PackEntry): docSource is ItemSourcePF2e {
     );
 }
 
+interface ConstructorParams {
+    dirName: string;
+    data: unknown[];
+    folders: unknown[];
+    systemId: SystemId;
+}
+
 /**
  * This is used to check paths to core icons to ensure correctness. The JSON file will need to be periodically refreshed
  *  as upstream adds more icons.
@@ -60,72 +69,33 @@ function isItemSource(docSource: PackEntry): docSource is ItemSourcePF2e {
 const coreIcons = new Set(coreIconsJSON);
 
 class CompendiumPack {
-    packId: string;
-    packDir: string;
-    documentType: CompendiumDocumentType;
-    systemId: string;
-    data: PackEntry[];
-    folders: DBFolder[];
-
-    static outDir = path.resolve(process.cwd(), "dist/packs");
-    static #namesToIds: {
-        [K in Extract<CompendiumDocumentType, "Actor" | "Item" | "JournalEntry" | "Macro" | "RollTable">]: Map<
-            string,
-            Map<string, string>
-        >;
-    } & Record<string, Map<string, Map<string, string>> | undefined> = {
-        Actor: new Map(),
-        Item: new Map(),
-        JournalEntry: new Map(),
-        Macro: new Map(),
-        RollTable: new Map(),
-    };
-
-    static #packsMetadata = JSON.parse(fs.readFileSync("static/system.json", "utf-8")).packs as PackMetadata[];
-
-    static LINK_PATTERNS = {
-        world: /@(?:Item|JournalEntry|Actor)\[[^\]]+\]|@Compendium\[world\.[^\]]{16}\]|@UUID\[(?:Item|JournalEntry|Actor)/g,
-        compendium:
-            /@Compendium\[pf2e\.(?<packName>[^.]+)\.(?<docType>Actor|JournalEntry|Item|Macro|RollTable)\.(?<docName>[^\]]+)\]\{?/g,
-        uuid: /@UUID\[Compendium\.pf2e\.(?<packName>[^.]+)\.(?<docType>Actor|JournalEntry|Item|Macro|RollTable)\.(?<docName>[^\]]+)\]\{?/g,
-    };
-
-    constructor(packDir: string, parsedData: unknown[], parsedFolders: unknown[]) {
-        const metadata = CompendiumPack.#packsMetadata.find(
-            (pack) => path.basename(pack.path) === path.basename(packDir),
-        );
-        if (metadata === undefined) {
-            throw PackError(`Compendium at ${packDir} has no metadata in the local system.json file.`);
-        }
-        this.systemId = metadata.system;
-        this.packId = metadata.name;
+    constructor({ dirName, data, folders, systemId }: ConstructorParams) {
+        this.systemId = systemId;
+        this.dirName = dirName;
+        const metadata = this.packsMetadata.find((d) => path.basename(d.path) === path.basename(dirName));
+        if (!metadata) throw PackError(`Compendium at ${dirName} has no metadata in the local system.json file.`);
+        this.id = metadata.name;
         this.documentType = metadata.type;
 
-        if (!this.#isFoldersData(parsedFolders)) {
-            throw PackError(`Folder data supplied for ${this.packId} does not resemble folder source data.`);
+        if (!this.#isPackData(data)) {
+            throw PackError(`Data supplied for ${this.id} does not resemble Foundry document source data.`);
         }
-        this.folders = parsedFolders;
-
-        if (!this.#isPackData(parsedData)) {
-            throw PackError(`Data supplied for ${this.packId} does not resemble Foundry document source data.`);
-        }
-
-        this.packDir = packDir;
-
-        CompendiumPack.#namesToIds[this.documentType]?.set(this.packId, new Map());
-        const packMap = CompendiumPack.#namesToIds[this.documentType]?.get(this.packId);
-        if (!packMap) {
-            throw PackError(`Compendium ${this.packId} (${packDir}) was not found.`);
-        }
-
-        parsedData.sort((a, b) => {
-            if (a._id === b._id) {
-                throw PackError(`_id collision in ${this.packId}: ${a._id}`);
-            }
+        this.data = data.sort((a, b) => {
+            if (a._id === b._id) throw PackError(`_id collision in ${this.id}: ${a._id}`);
             return a._id?.localeCompare(b._id ?? "") ?? 0;
         });
+        if (!this.#isFoldersData(folders)) {
+            throw PackError(`Folder data supplied for ${this.id} does not resemble folder source data.`);
+        }
+        this.folders = folders;
 
-        this.data = parsedData;
+        this.outDir = path.resolve(process.cwd(), `dist/${this.systemId}/packs`);
+
+        CompendiumPack.#namesToIds[this.documentType]?.set(this.id, new Map());
+        const packMap = CompendiumPack.#namesToIds[this.documentType]?.get(this.id);
+        if (!packMap) {
+            throw PackError(`Compendium ${this.id} (${dirName}) was not found.`);
+        }
 
         const imagePathsFromItemSystemData = (item: ItemSourcePF2e): string[] => {
             if (itemIsOfType(item, "ancestry", "background", "class", "kit")) {
@@ -153,7 +123,7 @@ class CompendiumPack {
                 for (const imgPath of imgPaths) {
                     if (imgPath.startsWith("data:image")) {
                         const imgData = imgPath.slice(0, 64);
-                        const msg = `${documentName} (${this.packId}) has base64-encoded image data: ${imgData}...`;
+                        const msg = `${documentName} (${this.id}) has base64-encoded image data: ${imgData}...`;
                         throw PackError(msg);
                     }
 
@@ -161,13 +131,13 @@ class CompendiumPack {
                     const repoImgPath = path.resolve(
                         process.cwd(),
                         "static",
-                        decodeURIComponent(imgPath).replace("systems/pf2e/", ""),
+                        decodeURIComponent(imgPath).replace(`systems/${this.systemId}/`, ""),
                     );
                     if (!isCoreIconPath && !fs.existsSync(repoImgPath)) {
-                        throw PackError(`${documentName} (${this.packId}) has an unknown image path: ${imgPath}`);
+                        throw PackError(`${documentName} (${this.id}) has an unknown image path: ${imgPath}`);
                     }
                     if (!(imgPath === "" || imgPath.match(/\.(?:svg|webp)$/))) {
-                        throw PackError(`${documentName} (${this.packId}) references a non-WEBP/SVG image: ${imgPath}`);
+                        throw PackError(`${documentName} (${this.id}) references a non-WEBP/SVG image: ${imgPath}`);
                     }
                 }
             }
@@ -185,7 +155,7 @@ class CompendiumPack {
                             ? docSource.items.some((i) => i._id === linkedWeapon && i.type === "weapon")
                             : false;
                         if (linkedWeapon && !weaponFound) {
-                            throw PackError(`Dangling linked weapon reference on ${docSource.name} in ${this.packId}`);
+                            throw PackError(`Dangling linked weapon reference on ${docSource.name} in ${this.id}`);
                         }
                     }
                 }
@@ -193,25 +163,90 @@ class CompendiumPack {
         }
     }
 
-    static loadJSON(dirPath: string): CompendiumPack {
-        const filePaths = getFilesRecursively(dirPath);
-        const parsedData = filePaths.map((filePath) => {
+    id: string;
+
+    dirName: string;
+
+    documentType: CompendiumDocumentType;
+
+    systemId: SystemId;
+
+    data: PackEntry[];
+
+    folders: DBFolder[];
+
+    outDir: string;
+
+    static #namesToIds: {
+        [K in Extract<CompendiumDocumentType, "Actor" | "Item" | "JournalEntry" | "Macro" | "RollTable">]: Map<
+            string,
+            Map<string, string>
+        >;
+    } & Record<string, Map<string, Map<string, string>> | undefined> = {
+        Actor: new Map(),
+        Item: new Map(),
+        JournalEntry: new Map(),
+        Macro: new Map(),
+        RollTable: new Map(),
+    };
+
+    get packsMetadata(): PackMetadata[] {
+        return (this.#packsMetadata ??= JSON.parse(fs.readFileSync(`system.${this.systemId}.json`, "utf-8")).packs);
+    }
+
+    #packsMetadata: PackMetadata[] | null = null;
+
+    static get sf2eCompendiumRemap(): Record<string, string> {
+        if (this.#sf2eCompendiumRemap) return this.#sf2eCompendiumRemap;
+
+        this.#sf2eCompendiumRemap = {};
+        for (const { name, path } of pf2eManifest.packs) {
+            const match = sf2eManifest.packs.find((p) => p.path === path);
+            if (match) this.#sf2eCompendiumRemap[name] = match.name;
+        }
+        return this.#sf2eCompendiumRemap;
+    }
+
+    static #sf2eCompendiumRemap: Record<string, string> | null = null;
+
+    static LINK_PATTERNS = {
+        world: /@(?:Item|JournalEntry|Actor)\[[^\]]+\]|@Compendium\[world\.[^\]]{16}\]|@UUID\[(?:Item|JournalEntry|Actor)/g,
+        compendium:
+            /@Compendium\[(?:pf2e|sf2e)\.(?<packName>[^.]+)\.(?<docType>Actor|JournalEntry|Item|Macro|RollTable)\.(?<docName>[^\]]+)\]\{?/g,
+        uuid: /@UUID\[Compendium\.(?:pf2e|sf2e)\.(?<packName>[^.]+)\.(?<docType>Actor|JournalEntry|Item|Macro|RollTable)\.(?<docName>[^\]]+)\]\{?/g,
+    };
+
+    static loadJSON(packDirName: string, { systemId }: { systemId: SystemId }): CompendiumPack {
+        function parsePackEntrySource(filePath: string): PackEntry {
             const jsonString = fs.readFileSync(filePath, "utf-8");
-            const packSource: PackEntry = (() => {
-                try {
-                    return JSON.parse(jsonString);
-                } catch (error) {
-                    if (error instanceof Error) {
-                        throw PackError(`File ${filePath} could not be parsed: ${error.message}`);
-                    }
+            try {
+                return JSON.parse(jsonString);
+            } catch (error) {
+                if (error instanceof Error) {
+                    throw PackError(`File ${filePath} could not be parsed: ${error.message}`);
                 }
-            })();
-
-            const documentName = packSource?.name;
-            if (documentName === undefined) {
-                throw PackError(`Document contained in ${filePath} has no name.`);
+                throw error;
             }
+        }
 
+        function loadFoldersFromFile(foldersFile: string) {
+            if (!fs.existsSync(foldersFile)) return [];
+            const jsonString = fs.readFileSync(foldersFile, "utf-8");
+            try {
+                return JSON.parse(jsonString) as DBFolder[];
+            } catch (error) {
+                if (error instanceof Error) {
+                    throw PackError(`File ${foldersFile} could not be parsed: ${error.message}`);
+                }
+                throw error;
+            }
+        }
+
+        const filePaths = getPackJSONPaths(packDirName, systemId);
+        const parsedData = filePaths.map((filePath) => {
+            const packSource = parsePackEntrySource(filePath);
+            const documentName = packSource?.name;
+            if (!documentName) throw PackError(`Document contained in ${filePath} has no name.`);
             const filenameForm = sluggify(documentName).concat(".json");
             if (path.basename(filePath) !== filenameForm) {
                 throw PackError(`Filename at ${filePath} does not reflect document name (should be ${filenameForm}).`);
@@ -220,27 +255,74 @@ class CompendiumPack {
             return packSource;
         });
 
-        const folders = ((): DBFolder[] => {
-            const foldersFile = path.resolve(dirPath, "_folders.json");
-            if (fs.existsSync(foldersFile)) {
-                const jsonString = fs.readFileSync(foldersFile, "utf-8");
-                const foldersSource: DBFolder[] = (() => {
-                    try {
-                        return JSON.parse(jsonString);
-                    } catch (error) {
-                        if (error instanceof Error) {
-                            throw PackError(`File ${foldersFile} could not be parsed: ${error.message}`);
+        const folders = loadFoldersFromFile(path.resolve("packs", systemId, packDirName, "_folders.json"));
+
+        // Determine if we need to resolve cross-system duplicates.
+        // Once we do, we need to lookup the new folder and make some changes to it.
+        if (systemId === "sf2e") {
+            const resolvedDuplicates = duplicates.flatMap((group) => {
+                const data = objectHasKey(group.entries, packDirName) ? group.entries[packDirName] : null;
+                return data?.map((d) => ({ publication: group.publication, name: d })) ?? [];
+            });
+            if (resolvedDuplicates.length) {
+                // A mapping from slug to file path, used to lookup the file to duplicate
+                const pf2eFilePaths = R.mapToObj(getPackJSONPaths(packDirName, "pf2e"), (p) => [
+                    (p.split(path.sep)?.at(-1) ?? p).replace(".json", ""),
+                    p,
+                ]);
+                // Map the PF2e folder id to a folder path, to then retrieve the SF2e folder id
+                const pf2eFolders = loadFoldersFromFile(path.resolve("packs/pf2e", packDirName, "_folders.json"));
+                const pf2eFolderPaths = R.mapToObj(pf2eFolders, (f) => [
+                    f._id,
+                    getFolderPath({ folders: pf2eFolders, dirName: packDirName }, f),
+                ]);
+                // Maps the SF2e folder to the folder ID
+                const sf2eFolderLookup = R.mapToObj(folders, (f) => [
+                    getFolderPath({ folders, dirName: packDirName }, f),
+                    f._id,
+                ]);
+                for (const { publication, name } of resolvedDuplicates) {
+                    const pf2ePath = pf2eFilePaths[sluggify(name)];
+                    if (!pf2ePath) {
+                        throw PackError(`Duplicate item ${name} could not be found in pf2e pack ${packDirName}`);
+                    }
+                    const source = parsePackEntrySource(pf2ePath);
+                    if (source.folder) {
+                        const folderPath = pf2eFolderPaths[source.folder];
+                        source.folder = sf2eFolderLookup[folderPath] ?? null;
+                        if (!source.folder) {
+                            console.warn(`Failed to find folder ${folderPath} for item ${name} in pack ${packDirName}`);
                         }
                     }
-                })();
 
-                return foldersSource;
+                    parsedData.push(this.#adjustPF2eDocumentForSF2e(source, { publication }));
+                }
             }
-            return [];
-        })();
+        }
 
-        const dbFilename = path.basename(dirPath);
-        return new CompendiumPack(dbFilename, parsedData, folders);
+        return new CompendiumPack({ dirName: path.basename(packDirName), data: parsedData, folders, systemId });
+    }
+
+    static #adjustPF2eDocumentForSF2e(source: PackEntry, { publication }: { publication?: string | null }): PackEntry {
+        if ("img" in source && source.img === "icons/sundries/books/book-red-exclamation.webp") {
+            source.img = "systems/sf2e/icons/default-icons/feats-sf2e.webp";
+        }
+        if ("system" in source) {
+            if (publication && "publication" in source.system) {
+                source.system.publication.title = publication;
+            }
+        }
+        if (source.flags?.pf2e) {
+            source.flags.sf2e = source.flags.pf2e;
+            delete source.flags.pf2e;
+        }
+        return recursiveReplaceString(source, (s) => {
+            s = s.replaceAll("systems/pf2e", "systems/sf2e").replace(/\bflags\.pf2e\./g, "flags.sf2e.");
+            for (const [pf2eName, sf2eName] of Object.entries(this.sf2eCompendiumRemap)) {
+                s = s.replaceAll(`Compendium.pf2e.${pf2eName}`, `Compendium.sf2e.${sf2eName}`);
+            }
+            return s;
+        });
     }
 
     finalizeAll(): PackEntry[] {
@@ -252,13 +334,14 @@ class CompendiumPack {
         const stringified = JSON.stringify(docSource);
         const worldItemLink = CompendiumPack.LINK_PATTERNS.world.exec(stringified);
         if (worldItemLink !== null) {
-            throw PackError(`${docSource.name} (${this.packId}) has a link to a world item: ${worldItemLink[0]}`);
+            throw PackError(`${docSource.name} (${this.id}) has a link to a world item: ${worldItemLink[0]}`);
         }
 
         // Stamp actors and items with partial stats data so the server won't attempt to migrate
+        const systemJSON = JSON.parse(fs.readFileSync(`system.${this.systemId}.json`, { encoding: "utf-8" }));
         const partialStats = {
             coreVersion: systemJSON.compatibility.minimum,
-            systemId: "pf2e",
+            systemId: this.systemId,
             systemVersion: systemJSON.version,
         } as DocumentStatsData;
         docSource._stats = { ...partialStats };
@@ -305,12 +388,12 @@ class CompendiumPack {
             const namesToIds = CompendiumPack.#namesToIds[docType]?.get(packId);
             const link = match.replace(/\{$/, "");
             if (namesToIds === undefined) {
-                throw PackError(`${docSource.name} (${this.packId}) has a bad pack reference: ${link}`);
+                throw PackError(`${docSource.name} (${this.id}) has a bad pack reference: ${link}`);
             }
 
             const documentId: string | undefined = namesToIds.get(docName);
             if (documentId === undefined) {
-                throw PackError(`${docSource.name} (${this.packId}) has broken link to ${docName}: ${match}`);
+                throw PackError(`${docSource.name} (${this.id}) has broken link to ${docName}: ${match}`);
             }
             const sourceId = this.#sourceIdOf(documentId, { packId, docType });
             const labelBraceOrFullLabel = match.endsWith("{") ? "{" : `{${docName}}`;
@@ -326,7 +409,7 @@ class CompendiumPack {
     #sourceIdOf(documentId: string, { packId, docType }: { packId?: string; docType: "Actor" }): CompendiumActorUUID;
     #sourceIdOf(documentId: string, { packId, docType }: { packId?: string; docType: "Item" }): CompendiumItemUUID;
     #sourceIdOf(documentId: string, { packId, docType }: { packId?: string; docType: string }): string;
-    #sourceIdOf(documentId: string, { packId = this.packId, docType }: { packId?: string; docType: string }): string {
+    #sourceIdOf(documentId: string, { packId = this.id, docType }: { packId?: string; docType: string }): string {
         return `Compendium.${this.systemId}.${packId}.${docType}.${documentId}`;
     }
 
@@ -372,7 +455,7 @@ class CompendiumPack {
         if (uuid.startsWith("Item.")) {
             throw PackError(`World-item UUID found: ${uuid}`);
         }
-        if (!uuid.startsWith("Compendium.pf2e.")) return uuid;
+        if (!/^Compendium\.(?:pf2e|sf2e)\./.test(uuid)) return uuid;
 
         const toNameRef = (uuid: string): TUUID => {
             const parts = uuid.split(".");
@@ -387,7 +470,7 @@ class CompendiumPack {
         };
 
         const toIDRef = (uuid: string): TUUID => {
-            const match = /(?<=^Compendium\.pf2e\.)([^.]+)\.([^.]+)\.(.+)$/.exec(uuid);
+            const match = /(?<=^Compendium\.(?:pf2e|sf2e)\.)([^.]+)\.([^.]+)\.(.+)$/.exec(uuid);
             const [, packId, _docType, docName] = match ?? [null, null, null, null];
             const docId = map.get(packId ?? "")?.get(docName ?? "");
             if (docName && docId) {
@@ -400,14 +483,12 @@ class CompendiumPack {
         return to === "id" ? toIDRef(uuid) : toNameRef(uuid);
     }
 
-    async save(asJson?: boolean): Promise<number> {
-        if (asJson) {
-            return this.saveAsJSON();
+    async save({ jsonArtifacts = false } = {}): Promise<number> {
+        if (jsonArtifacts) return this.saveAsJSON();
+        if (!fs.lstatSync(this.outDir, { throwIfNoEntry: false })?.isDirectory()) {
+            fs.mkdirSync(this.outDir, { recursive: true });
         }
-        if (!fs.lstatSync(CompendiumPack.outDir, { throwIfNoEntry: false })?.isDirectory()) {
-            fs.mkdirSync(CompendiumPack.outDir);
-        }
-        const packDir = path.join(CompendiumPack.outDir, this.packDir);
+        const packDir = path.join(this.outDir, this.dirName);
 
         // If the old folder is not removed the new data will be inserted into the existing db
         const stats = fs.lstatSync(packDir, { throwIfNoEntry: false });
@@ -415,10 +496,10 @@ class CompendiumPack {
             fs.rmSync(packDir, { recursive: true });
         }
 
-        const db = await LevelDatabase.connect(packDir, { packName: path.basename(packDir) });
+        const db = await LevelDatabase.connect(packDir, { systemId: this.systemId, packName: path.basename(packDir) });
         await db.createPack(this.finalizeAll(), this.folders);
         await db.close();
-        console.log(`Pack "${this.packId}" with ${this.data.length} entries built successfully.`);
+        console.log(`Pack "${this.id}" with ${this.data.length} entries built successfully.`);
 
         return this.data.length;
     }
@@ -429,7 +510,7 @@ class CompendiumPack {
             fs.mkdirSync(outDir, { recursive: true });
         }
 
-        const filePath = path.resolve(outDir, this.packDir);
+        const filePath = path.resolve(outDir, this.dirName);
         const outFile = filePath.concat(".json");
         if (fs.existsSync(outFile)) {
             fs.rmSync(outFile, { force: true });
@@ -444,7 +525,7 @@ class CompendiumPack {
             }
             fs.writeFileSync(folderFile, JSON.stringify(this.folders));
         }
-        console.log(`File "${this.packDir}.json" with ${this.data.length} entries created successfully.`);
+        console.log(`File "${this.dirName}.json" with ${this.data.length} entries created successfully.`);
 
         return this.data.length;
     }
@@ -460,9 +541,7 @@ class CompendiumPack {
             .filter((key) => key !== null);
 
         if (failedChecks.length > 0) {
-            throw PackError(
-                `Document source in (${this.packId}) has invalid or missing keys: ${failedChecks.join(", ")}`,
-            );
+            throw PackError(`Document source in (${this.id}) has invalid or missing keys: ${failedChecks.join(", ")}`);
         }
 
         return true;

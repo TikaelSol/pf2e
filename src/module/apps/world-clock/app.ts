@@ -44,7 +44,7 @@ export class WorldClock extends fa.api.HandlebarsApplicationMixin(fa.api.Applica
     };
 
     static override PARTS: Record<string, HandlebarsTemplatePart> = {
-        base: { template: `${SYSTEM_ROOT}/templates/system/world-clock.hbs`, root: true },
+        base: { template: `systems/${SYSTEM_ID}/templates/system/world-clock.hbs`, root: true },
     };
 
     /** Is the ctrl key currently held down? */
@@ -103,7 +103,7 @@ export class WorldClock extends fa.api.HandlebarsApplicationMixin(fa.api.Applica
 
     /** Setting: whether to keep the scene's darkness level synchronized with the world time */
     get syncDarkness(): boolean {
-        const sceneSetting = canvas.scene?.flags.pf2e.syncDarkness ?? "default";
+        const sceneSetting = canvas.scene?.flags[SYSTEM_ID].syncDarkness ?? "default";
         return {
             enabled: true,
             disabled: false,
@@ -188,10 +188,10 @@ export class WorldClock extends fa.api.HandlebarsApplicationMixin(fa.api.Applica
     #initialize() {
         /* Save world creation date/time if equal to default (i.e., server time at first retrieval of the setting) */
         const setting = game.pf2e.settings.worldClock;
-        const defaults = game.settings.settings.get("pf2e.worldClock")?.default;
+        const defaults = game.settings.settings.get(`${SYSTEM_ID}.worldClock`)?.default;
         if (!R.isPlainObject(defaults)) throw ErrorPF2e("Unexpected failure to find setting");
         if (setting.worldCreatedOn === null) {
-            game.settings.set("pf2e", "worldClock", { ...setting, worldCreatedOn: DateTime.utc().toISO() });
+            game.settings.set(SYSTEM_ID, "worldClock", { ...setting, worldCreatedOn: DateTime.utc().toISO() });
         }
     }
 

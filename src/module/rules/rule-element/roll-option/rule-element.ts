@@ -149,7 +149,7 @@ class RollOptionRuleElement extends RuleElement<RollOptionSchema> {
 
     /** Force false totm toggleable roll options if the totmToggles setting is disabled */
     override resolveValue(): boolean {
-        if (this.toggleable === "totm" && !game.settings.get("pf2e", "totmToggles")) {
+        if (this.toggleable === "totm" && !game.settings.get(SYSTEM_ID, "totmToggles")) {
             return false;
         }
         return this.alwaysActive ? true : !!super.resolveValue(this.value);
@@ -337,9 +337,9 @@ class RollOptionRuleElement extends RuleElement<RollOptionSchema> {
             const flagKey = sluggify(this.#resolveOption(), { camel: "dromedary" });
             if (value) {
                 const flagValue = /^\d+$/.test(this.selection) ? Number(this.selection) : this.selection;
-                this.item.flags.pf2e.rulesSelections[flagKey] = flagValue;
+                this.item.flags[SYSTEM_ID].rulesSelections[flagKey] = flagValue;
             } else {
-                this.item.flags.pf2e.rulesSelections[flagKey] ??= null;
+                this.item.flags[SYSTEM_ID].rulesSelections[flagKey] ??= null;
             }
         }
     }

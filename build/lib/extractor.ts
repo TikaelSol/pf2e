@@ -9,16 +9,18 @@ import { itemIsOfType } from "@item/helpers.ts";
 import type { ItemInstances, ItemType } from "@item/types.ts";
 import type { PublicationData } from "@module/data.ts";
 import type { RuleElementSource } from "@module/rules/index.ts";
-import { sluggify } from "@util/index.ts";
+import { objectHasKey, sluggify } from "@util/index.ts";
 import fs from "fs";
 import { JSDOM } from "jsdom";
 import path from "path";
 import process from "process";
 import * as R from "remeda";
-import systemJSON from "../../static/system.json" with { type: "json" };
 import templateJSON from "../../static/template.json" with { type: "json" };
+import systemPF2eJSON from "../../system.pf2e.json" with { type: "json" };
+import systemSF2eJSON from "../../system.sf2e.json" with { type: "json" };
+import duplicates from "../duplicates.json" with { type: "json" };
 import { CompendiumPack, isActorSource, isItemSource } from "./compendium-pack.ts";
-import { PackError, getFilesRecursively } from "./helpers.ts";
+import { PackError, getFolderPath, getPackJSONPaths } from "./helpers.ts";
 import { DBFolder, LevelDatabase } from "./level-database.ts";
 import type { PackEntry } from "./types.ts";
 
@@ -37,6 +39,7 @@ interface ExtractArgs {
     packDb: string;
     disablePresort?: boolean;
     logWarnings?: boolean;
+    system: SystemId;
 }
 
 class PackExtractor {
@@ -76,13 +79,17 @@ class PackExtractor {
 
     disablePresort: boolean;
 
+    systemId: SystemId;
+
     constructor(params: ExtractArgs) {
         this.emitWarnings = !!params.logWarnings;
         this.packDB = params.packDb;
         this.disablePresort = !!params.disablePresort;
+        this.systemId = params.system;
 
         this.tempDataPath = path.resolve(process.cwd(), "packs-temp");
-        this.dataPath = path.resolve(process.cwd(), "packs");
+        this.dataPath = path.resolve(process.cwd(), "packs", params.system);
+        const systemJSON = this.systemId === "pf2e" ? systemPF2eJSON : systemSF2eJSON;
         this.packsMetadata = systemJSON.packs as unknown as CompendiumMetadata[];
     }
 
@@ -92,10 +99,9 @@ class PackExtractor {
             await fs.promises.mkdir(this.dataPath);
         }
 
-        const packsPath = path.join(process.cwd(), "dist", "packs");
-
+        const packsPath = path.join(process.cwd(), "dist", this.systemId, "packs");
         if (!fs.existsSync(packsPath)) {
-            throw Error("`dist/` directory not found! Build first if you haven't.");
+            throw Error(`directory at ${packsPath} not found! Build first if you haven't.`);
         }
 
         console.log("Cleaning up old temp data...");
@@ -124,7 +130,7 @@ class PackExtractor {
 
                     const sourceCount = await this.extractPack(filePath, dbDirectory);
 
-                    // Move ./packs-temp/[packname]/ to ./packs/[packname]/
+                    // Move ./packs-temp/[packname]/ to ./packs/[system]/[packname]/
                     fs.rmSync(outDirPath, { recursive: true, force: true });
                     await fs.promises.rename(tempOutDirPath, outDirPath);
 
@@ -139,42 +145,26 @@ class PackExtractor {
         console.log(`Extracting pack: ${packDirectory} (Presorting: ${this.disablePresort ? "Disabled" : "Enabled"})`);
         const outPath = path.resolve(this.tempDataPath, packDirectory);
 
-        const db = await LevelDatabase.connect(filePath, { packName: packDirectory });
+        const db = await LevelDatabase.connect(filePath, { packName: packDirectory, systemId: this.systemId });
         const { packSources, folders } = await db.getEntries();
 
-        // Prepare subfolder data
-        if (folders.length > 0) {
-            const getFolderPath = (folder: DBFolder, parts: string[] = []): string => {
-                if (parts.length > 3) {
-                    throw PackError(
-                        `Error: Maximum folder depth exceeded for "${folder.name}" in pack: ${packDirectory}`,
-                    );
-                }
-                parts.unshift(sluggify(folder.name));
-                if (folder.folder) {
-                    // This folder is inside another folder
-                    const parent = folders.find((f) => f._id === folder.folder);
-                    if (!parent) {
-                        throw PackError(`Error: Unknown parent folder id [${folder.folder}] in pack: ${packDirectory}`);
-                    }
-                    return getFolderPath(parent, parts);
-                }
-                parts.unshift(packDirectory);
-                return path.join(...parts);
-            };
-            const sanitzeFolder = (folder: Partial<DBFolder>): void => {
-                delete folder._stats;
-            };
-
-            for (const folder of folders) {
-                this.#folderPathMap.set(folder._id, getFolderPath(folder));
-                sanitzeFolder(folder);
-            }
-            const folderFilePath = path.resolve(outPath, "_folders.json");
-            await fs.promises.writeFile(folderFilePath, this.#prettyPrintJSON(folders), "utf-8");
+        // Prepare subfolder data if it exists or if its needed to prevent git from deleting the folder
+        for (const folder of folders) {
+            const filepath = path.join(packDirectory, getFolderPath({ folders, dirName: packDirectory }, folder));
+            this.#folderPathMap.set(folder._id, filepath);
+            const pFolder: Partial<DBFolder> = folder;
+            delete pFolder._stats;
         }
 
-        for (const source of packSources) {
+        // Export sources. In SF2e, some entries may be copies of pf2e entries. We need to skip those
+        const omittedEntries =
+            this.systemId === "sf2e"
+                ? duplicates.flatMap((group) =>
+                      objectHasKey(group.entries, packDirectory) ? group.entries[packDirectory] : [],
+                  )
+                : [];
+        const exportedSources = packSources.filter((s) => !omittedEntries.includes(s.name));
+        for (const source of exportedSources) {
             // Remove or replace unwanted values from the document source
             const preparedSource = this.#convertUUIDs(source, packDirectory);
             if ("items" in preparedSource && preparedSource.type === "npc" && !this.disablePresort) {
@@ -204,6 +194,12 @@ class PackExtractor {
 
             // Write the JSON file
             await fs.promises.writeFile(outFilePath, outData, "utf-8");
+        }
+
+        // Persist subfolder data if it exists or if its needed for git to preserve the folder
+        if (folders.length > 0 || exportedSources.length === 0) {
+            const folderFilePath = path.resolve(outPath, "_folders.json");
+            await fs.promises.writeFile(folderFilePath, this.#prettyPrintJSON(folders), "utf-8");
         }
 
         return packSources.length;
@@ -296,7 +292,7 @@ class PackExtractor {
     #sanitizeDocument<T extends PackEntry>(docSource: T, { isEmbedded } = { isEmbedded: false }): T {
         // Clear non-core/pf2e flags
         for (const flagScope in docSource.flags) {
-            if (!["core", "pf2e"].includes(flagScope) || !isEmbedded) {
+            if (!["core", this.systemId].includes(flagScope) || !isEmbedded) {
                 delete docSource.flags[flagScope];
             }
         }
@@ -415,7 +411,6 @@ class PackExtractor {
                 );
             }
         }
-
         return docSource;
     }
 
@@ -440,13 +435,14 @@ class PackExtractor {
 
                 if ("img" in docSource && typeof docSource.img === "string") {
                     docSource.img = docSource.img.replace(
-                        "https://assets.forge-vtt.com/bazaar/systems/pf2e/assets/",
-                        "systems/pf2e/",
+                        `https://assets.forge-vtt.com/bazaar/systems/${this.systemId}/assets/`,
+                        `systems/${this.systemId}/`,
                     ) as ImageFilePath;
                 }
 
-                if (R.isPlainObject(docSource.flags?.pf2e) && Object.keys(docSource.flags.pf2e).length === 0) {
-                    delete docSource.flags.pf2e;
+                const systemFlags = docSource.flags?.[this.systemId];
+                if (R.isPlainObject(systemFlags) && Object.keys(systemFlags).length === 0) {
+                    delete docSource.flags[this.systemId];
                 }
                 if (Object.keys(docSource.flags ?? {}).length === 0) {
                     delete (docSource as { flags?: object }).flags;
@@ -821,6 +817,18 @@ class PackExtractor {
     }
 
     #populateIdNameMap(): void {
+        function parsePackEntrySource(filePath: string): PackEntry {
+            const jsonString = fs.readFileSync(filePath, "utf-8");
+            try {
+                return JSON.parse(jsonString);
+            } catch (error) {
+                if (error instanceof Error) {
+                    throw PackError(`File ${filePath} could not be parsed: ${error.message}`);
+                }
+                throw error;
+            }
+        }
+
         const packDirs = fs.readdirSync(this.dataPath);
 
         for (const packDir of packDirs) {
@@ -832,19 +840,28 @@ class PackExtractor {
             const packMap: Map<string, string> = new Map();
             this.#idsToNames[metadata.type]?.set(metadata.name, packMap);
 
-            const filePaths = getFilesRecursively(path.resolve(this.dataPath, packDir));
+            const filePaths = getPackJSONPaths(packDir, this.systemId);
             for (const filePath of filePaths) {
-                const jsonString = fs.readFileSync(filePath, "utf-8");
-                const source = (() => {
-                    try {
-                        return JSON.parse(jsonString);
-                    } catch (error) {
-                        if (error instanceof Error) {
-                            throw PackError(`File at ${filePath} could not be parsed: ${error.message}`);
-                        }
-                    }
-                })();
-                packMap.set(source._id, source.name);
+                const source = parsePackEntrySource(filePath);
+                if (source._id) packMap.set(source._id, source.name);
+            }
+
+            // If the system is sf2e, also add the entries in the duplicates record to the map
+            if (this.systemId === "sf2e") {
+                const duplicateNames = duplicates.flatMap((group) =>
+                    objectHasKey(group.entries, packDir) ? (group.entries[packDir] ?? []) : [],
+                );
+                // A mapping from slug to file path, used to lookup the file to duplicate
+                const pf2eFilePaths = R.mapToObj(getPackJSONPaths(packDir, "pf2e"), (p) => [
+                    (p.split(path.sep)?.at(-1) ?? p).replace(".json", ""),
+                    p,
+                ]);
+                for (const name of duplicateNames) {
+                    const pf2ePath = pf2eFilePaths[sluggify(name)];
+                    if (!pf2ePath) throw PackError(`Duplicate item ${name} could not be found in pf2e pack ${packDir}`);
+                    const source = parsePackEntrySource(pf2ePath);
+                    if (source._id) packMap.set(source._id, source.name);
+                }
             }
         }
     }

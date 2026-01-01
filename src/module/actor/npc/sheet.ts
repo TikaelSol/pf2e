@@ -1,5 +1,6 @@
 import type { NPCPF2e } from "@actor";
 import { CreatureSheetPF2e, type CreatureSheetData } from "@actor/creature/sheet.ts";
+import { applyActorGroupUpdate } from "@actor/helpers.ts";
 import { Modifier } from "@actor/modifiers.ts";
 import { NPCSkillsEditor } from "@actor/npc/skills-editor.ts";
 import { SheetClickActionHandlers } from "@actor/sheet/base.ts";
@@ -7,6 +8,7 @@ import { createAbilityViewData } from "@actor/sheet/helpers.ts";
 import { RecallKnowledgePopup } from "@actor/sheet/popups/recall-knowledge-popup.ts";
 import { ATTRIBUTE_ABBREVIATIONS, SAVE_TYPES } from "@actor/values.ts";
 import type { ActorSheetOptions } from "@client/appv1/sheets/actor-sheet.d.mts";
+import type { MeleePF2e, MeleeSource } from "@item/melee/index.ts";
 import { createNPCAttackTraitsAndTags, createTagifyTraits, eventToRollParams } from "@module/sheet/helpers.ts";
 import type { UserPF2e } from "@module/user/document.ts";
 import { DicePF2e } from "@scripts/dice.ts";
@@ -158,11 +160,11 @@ class NPCSheetPF2e extends AbstractNPCSheet {
     /** Show either the actual NPC sheet or a briefened lootable version if the NPC is dead */
     override get template(): string {
         if (this.isLootSheet) {
-            return `${SYSTEM_ROOT}/templates/actors/npc/loot-sheet.hbs`;
+            return `systems/${SYSTEM_ID}/templates/actors/npc/loot-sheet.hbs`;
         } else if (this.actor.limited) {
-            return `${SYSTEM_ROOT}/templates/actors/limited/npc-sheet.hbs`;
+            return `systems/${SYSTEM_ID}/templates/actors/limited/npc-sheet.hbs`;
         }
-        return `${SYSTEM_ROOT}/templates/actors/npc/sheet.hbs`;
+        return `systems/${SYSTEM_ID}/templates/actors/npc/sheet.hbs`;
     }
 
     /** Use the token name as the title if showing a lootable NPC sheet */
@@ -270,7 +272,7 @@ class NPCSheetPF2e extends AbstractNPCSheet {
         };
         const traits = actor.system.traits.value;
         sheetData.hasHardness = traits.includes("construct") || (Number(hardness?.value) || 0) > 0;
-        sheetData.configLootableNpc = game.settings.get("pf2e", "automation.lootableNPCs");
+        sheetData.configLootableNpc = game.settings.get(SYSTEM_ID, "automation.lootableNPCs");
 
         return sheetData as NPCSheetData;
     }
@@ -410,7 +412,7 @@ class NPCSheetPF2e extends AbstractNPCSheet {
 
                 // Get confirmation from the user before replacing existing generated attacks
                 const existing = actor.itemTypes.melee
-                    .filter((m) => m.flags.pf2e.linkedWeapon === itemId)
+                    .filter((m) => m.flags[SYSTEM_ID].linkedWeapon === itemId)
                     .map((m) => m.id);
                 if (existing.length > 0) {
                     const proceed = await foundry.applications.api.DialogV2.confirm({
@@ -425,13 +427,35 @@ class NPCSheetPF2e extends AbstractNPCSheet {
                     }
                 }
 
+                // Create actions, and either relink to existing actions or create them
                 const attacks = item.toNPCAttacks().map((a) => a.toObject());
-                await actor.createEmbeddedDocuments("Item", attacks);
-                ui.notifications.info(
-                    game.i18n.format("PF2E.Actor.NPC.GenerateAttack.Notification", {
-                        attack: attacks.at(0)?.name ?? "",
-                    }),
-                );
+                const missingLinks = actor.itemTypes.melee.filter((m) => !m.linkedWeapon);
+                const getComparisonSubset = (item: MeleeSource | MeleePF2e) => ({
+                    name: item.name,
+                    ...R.pick(item.system, ["action", "range"]),
+                });
+                const pairs = attacks.map((a): [MeleeSource, MeleePF2e | null] => [
+                    a,
+                    missingLinks.find(
+                        (l) =>
+                            a.flags[SYSTEM_ID].linkedWeapon &&
+                            R.isDeepEqual(getComparisonSubset(a), getComparisonSubset(l)),
+                    ) ?? null,
+                ]);
+                const update = {
+                    itemCreates: pairs.filter((p) => !p[1]).map((p) => p[0]),
+                    itemUpdates: pairs
+                        .filter((p): p is [MeleeSource, MeleePF2e] => !!p[1])
+                        .map(([newAction, oldAction]) => ({
+                            _id: oldAction.id,
+                            [`flags.${SYSTEM_ID}.linkedWeapon`]: newAction.flags[SYSTEM_ID].linkedWeapon,
+                        })),
+                };
+                await applyActorGroupUpdate(actor, update);
+
+                // Show correct notification based on update
+                const localizationKey = `PF2E.Actor.NPC.GenerateAttack.Notification.${update.itemCreates.length ? "New" : "Relinked"}`;
+                ui.notifications.info(game.i18n.format(localizationKey, { attack: attacks.at(0)?.name ?? "" }));
             };
         }
 
@@ -482,7 +506,7 @@ class SimpleNPCSheet extends AbstractNPCSheet {
             width: 650,
             height: 420,
             scrollY: [".sheet-body"],
-            template: `${SYSTEM_ROOT}/templates/actors/npc/simple-sheet.hbs`,
+            template: `systems/${SYSTEM_ID}/templates/actors/npc/simple-sheet.hbs`,
         };
     }
 }

@@ -148,7 +148,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         img: ImageFilePath;
         texture: { src: ImageFilePath | VideoFilePath };
     } {
-        const img: ImageFilePath = `${SYSTEM_ROOT}/icons/default-icons/${actorData.type}.svg`;
+        const img: ImageFilePath = `systems/${SYSTEM_ID}/icons/default-icons/${actorData.type}.svg`;
         return { img, texture: { src: img } };
     }
 
@@ -282,7 +282,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
     }
 
     get rollOptions(): RollOptionFlags {
-        return this.flags.pf2e.rollOptions;
+        return this.flags[SYSTEM_ID].rollOptions;
     }
 
     /** Get the actor's held shield. Meaningful implementation in `CreaturePF2e`'s override. */
@@ -443,11 +443,10 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
             {},
         );
         const applicableEffects = ephemeralEffects.filter((e) => !this.isImmuneTo(e));
-
         return this.clone(
             {
                 items: [fu.deepClone(this._source.items), applicableEffects].flat(),
-                flags: { pf2e: { rollOptions: { all: rollOptionsAll } } },
+                flags: { [SYSTEM_ID]: { rollOptions: { all: rollOptionsAll } } },
             },
             { keepId: true },
         );
@@ -489,12 +488,8 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
                 }
 
                 const flags: DeepPartial<EffectFlags> = {
-                    pf2e: {
-                        aura: {
-                            slug: aura.slug,
-                            origin: origin.actor.uuid,
-                            removeOnExit: data.removeOnExit,
-                        },
+                    [SYSTEM_ID]: {
+                        aura: { slug: aura.slug, origin: origin.actor.uuid, removeOnExit: data.removeOnExit },
                     },
                 };
 
@@ -630,7 +625,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         options.types = R.unique([options.types ?? ACTOR_TYPES].flat());
 
         // Determine omitted types. Army is hidden in most games, and party is hidden in folders
-        const omittedTypes: ActorType[] = game.settings.get("pf2e", "campaignType") !== "kingmaker" ? ["army"] : [];
+        const omittedTypes: ActorType[] = game.pf2e.settings.campaign.type === "kingmaker" ? [] : ["army"];
         if (data?.folder) omittedTypes.push("party");
         for (const type of omittedTypes) {
             options.types.findSplice((t) => t === type);
@@ -661,15 +656,10 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
                 (typeof source.prototypeToken?.texture?.scaleX !== "number" ||
                     source.prototypeToken.texture.scaleX === 1) &&
                 (source.prototypeToken?.flags?.pf2e?.autoscale ??
-                    (linkToActorSize && game.settings.get("pf2e", "tokens.autoscale")));
+                    (linkToActorSize && game.settings.get(SYSTEM_ID, "tokens.autoscale")));
             const merged = fu.mergeObject(source, {
                 ownership: source.ownership ?? { default: CONST.DOCUMENT_OWNERSHIP_LEVELS.NONE },
-                prototypeToken: {
-                    flags: {
-                        // Sync token dimensions with actor size?
-                        pf2e: { linkToActorSize, autoscale },
-                    },
-                },
+                prototypeToken: { flags: { [SYSTEM_ID]: { linkToActorSize, autoscale } } },
             });
 
             // Set default token dimensions for familiars and vehicles
@@ -856,7 +846,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         if (traits?.size) traits.size = new ActorSizePF2e(traits.size);
 
         // Setup the basic structure of pf2e flags with roll options
-        this.flags.pf2e = fu.mergeObject(this.flags.pf2e ?? {}, {
+        this.flags[SYSTEM_ID] = fu.mergeObject(this.flags[SYSTEM_ID] ?? {}, {
             rollOptions: {
                 all: {
                     [`self:type:${this.type}`]: true,
@@ -867,6 +857,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
             },
             trackedItems: {},
         });
+        Object.defineProperty(this.flags, "system", { get: () => this.flags[SYSTEM_ID] });
     }
 
     /** Prepare the physical-item collection on this actor, item-sibling data, and rule elements */
@@ -944,7 +935,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
 
     /** Set traits as roll options */
     override prepareDerivedData(): void {
-        const rollOptionsAll = this.flags.pf2e.rollOptions.all;
+        const rollOptionsAll = this.flags[SYSTEM_ID].rollOptions.all;
         for (const trait of this.system.traits?.value ?? []) {
             rollOptionsAll[`self:trait:${trait}`] = true;
         }
@@ -953,11 +944,12 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
     /** Set defaults for this actor's prototype token */
     private preparePrototypeToken(): void {
         const prototypeToken = this.prototypeToken;
-        const flags = fu.mergeObject(prototypeToken.flags, { pf2e: {} });
-        flags.pf2e.linkToActorSize ??= SIZE_LINKABLE_ACTOR_TYPES.has(this.type);
+        const flags = fu.mergeObject(prototypeToken.flags, { [SYSTEM_ID]: {} });
+        flags[SYSTEM_ID].linkToActorSize ??= SIZE_LINKABLE_ACTOR_TYPES.has(this.type);
         const settingEnabled = game.pf2e.settings.tokens.autoscale;
-        flags.pf2e.autoscale = settingEnabled && flags.pf2e.linkToActorSize ? (flags.pf2e.autoscale ?? true) : false;
-        if (flags.pf2e.linkToActorSize && this.system.traits?.size) {
+        flags[SYSTEM_ID].autoscale =
+            settingEnabled && flags[SYSTEM_ID].linkToActorSize ? (flags[SYSTEM_ID].autoscale ?? true) : false;
+        if (flags[SYSTEM_ID].linkToActorSize && this.system.traits?.size) {
             const tokenDimensions = this.system.traits.size.tokenDimensions;
             prototypeToken.width = tokenDimensions.width;
             prototypeToken.height = tokenDimensions.height;
@@ -1001,7 +993,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         data: DeepPartial<foundry.documents.TokenSource> = {},
         options?: DocumentConstructionContext<this>,
     ): Promise<NonNullable<TParent>> {
-        if (this.prototypeToken.flags.pf2e.linkToActorSize) {
+        if (this.prototypeToken.flags[SYSTEM_ID].linkToActorSize) {
             Object.assign(data, this.system.traits?.size?.tokenDimensions);
         }
         return super.getTokenDocument(data, options);
@@ -1116,11 +1108,9 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
                 resolvables,
                 test: rollOptions,
             }).filter((d) => (d.critical === null || d.critical === critical) && d.predicate.test(rollOptions));
-
             const modifiers = extractModifiers(this.synthetics, [domain], { resolvables }).filter(
                 (m) => (m.critical === null || m.critical === critical) && m.predicate.test(rollOptions),
             );
-
             return { modifiers, damageDice };
         })();
 
@@ -1132,7 +1122,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
                     const roll = await new Roll(formula).evaluate();
                     roll._formula = `${dice.diceNumber}${dice.dieSize}`; // remove the label from the main formula
                     await roll.toMessage({
-                        flags: { pf2e: { suppressDamageButtons: true } },
+                        flags: { [SYSTEM_ID]: { suppressDamageButtons: true } },
                         flavor: dice.label,
                         speaker: ChatMessage.getSpeaker({ token }),
                     });
@@ -1285,7 +1275,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
                 damageTaken: damageResult.totalApplied,
                 finePowder,
             });
-            const setting = game.settings.get("pf2e", "automation.actorsDeadAtZero");
+            const setting = game.settings.get(SYSTEM_ID, "automation.actorsDeadAtZero");
             const deadAtZero =
                 (this.isOfType("npc") && ["npcsOnly", "both"].includes(setting)) ||
                 (this.isOfType("character") && setting === "both" && !!instantDeath);
@@ -1374,22 +1364,25 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         ) as ConditionPF2e<this>[];
 
         const canUndoDamage = !!(damageResult.totalApplied || shieldDamage || persistentCreated.length);
-        const content = await fa.handlebars.renderTemplate(`${SYSTEM_ROOT}/templates/chat/damage/damage-taken.hbs`, {
-            breakdown,
-            statements,
-            persistent: persistentCreated.map((p) => p.system.persistent?.damage.formula).filter(R.isTruthy),
-            iwr: {
-                applications: result.applications,
-                visibility: this.hasPlayerOwner ? "all" : "gm",
+        const content = await fa.handlebars.renderTemplate(
+            `systems/${SYSTEM_ID}/templates/chat/damage/damage-taken.hbs`,
+            {
+                breakdown,
+                statements,
+                persistent: persistentCreated.map((p) => p.system.persistent?.damage.formula).filter(R.isTruthy),
+                iwr: {
+                    applications: result.applications,
+                    visibility: this.hasPlayerOwner ? "all" : "gm",
+                },
+                canUndoDamage,
             },
-            canUndoDamage,
-        });
+        );
         const flavor = await (async (): Promise<string | undefined> => {
             if (breakdown.length || notes.length) {
-                return fa.handlebars.renderTemplate(`${SYSTEM_ROOT}/templates/chat/damage/damage-taken-flavor.hbs`, {
-                    breakdown,
-                    notes: RollNotePF2e.notesToHTML(notes)?.outerHTML,
-                });
+                return fa.handlebars.renderTemplate(
+                    `systems/${SYSTEM_ID}/templates/chat/damage/damage-taken-flavor.hbs`,
+                    { breakdown, notes: RollNotePF2e.notesToHTML(notes)?.outerHTML },
+                );
             }
             return;
         })();
@@ -1409,10 +1402,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
                                   // Ignore the update if there is no difference
                                   return [];
                               }
-                              return {
-                                  path,
-                                  value: difference,
-                              };
+                              return { path, value: difference };
                           }
                           return [];
                       })
@@ -1423,7 +1413,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         await ChatMessagePF2e.create({
             speaker: ChatMessagePF2e.getSpeaker({ token }),
             flags: {
-                pf2e: {
+                [SYSTEM_ID]: {
                     appliedDamage,
                     context: {
                         type: "damage-taken",
@@ -1437,7 +1427,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
             content,
             style: CONST.CHAT_MESSAGE_STYLES.OTHER,
             whisper:
-                game.settings.get("pf2e", "metagame_secretDamage") && !token.actor?.hasPlayerOwner
+                game.settings.get(SYSTEM_ID, "metagame_secretDamage") && !token.actor?.hasPlayerOwner
                     ? ChatMessagePF2e.getWhisperRecipients("GM").map((u) => u.id)
                     : [],
         });
@@ -1460,12 +1450,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
         if (shield) {
             const item = this.inventory.get<ArmorPF2e<this>>(shield.id);
             if (item) {
-                actorUpdates.items = [
-                    {
-                        _id: shield.id,
-                        "system.hp.value": item.hitPoints.value + shield.damage,
-                    },
-                ];
+                actorUpdates.items = [{ _id: shield.id, "system.hp.value": item.hitPoints.value + shield.damage }];
             }
         }
 
@@ -1474,7 +1459,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
             await this.deleteEmbeddedDocuments("Item", persistent, { render: updateCount === 0 });
         }
         if (updateCount) {
-            const { hitPoints } = this;
+            const hitPoints = this.hitPoints;
             const damageTaken =
                 hitPoints && typeof actorUpdates["system.attributes.hp.value"] === "number"
                     ? hitPoints.value - actorUpdates["system.attributes.hp.value"]
@@ -1633,9 +1618,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
 
         // Otherwise create a new item
         const result = await ItemPF2e.create(itemSource, { parent: this });
-        if (!result) {
-            return null;
-        }
+        if (!result) return null;
         const movedItem = this.inventory.get(result.id);
         if (!movedItem) return null;
         await this.stowOrUnstow(movedItem, container);
@@ -1687,7 +1670,6 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
             const remaining = delta - appliedToTemp;
             const applied = Math.min(sp.value, remaining);
             updates["system.attributes.hp.sp.value"] = Math.max(sp.value - applied, 0);
-
             return applied;
         })();
 
@@ -1713,7 +1695,6 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
                 if (optionsRecord[option]) options.push(option);
             }
         }
-
         return options;
     }
 
@@ -1823,7 +1804,6 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
 
             return items.shift() ?? null;
         }
-
         return null;
     }
 
@@ -1965,7 +1945,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
     ): void {
         super._onUpdate(changed, options, userId);
         const hideFromUser =
-            !this.hasPlayerOwner && !game.user.isGM && game.settings.get("pf2e", "metagame_secretDamage");
+            !this.hasPlayerOwner && !game.user.isGM && game.settings.get(SYSTEM_ID, "metagame_secretDamage");
         if (options.damageTaken && !hideFromUser) {
             const tokens = this.getActiveTokens();
             for (const token of tokens) {

@@ -18,7 +18,8 @@ export class SceneConfigPF2e<TDocument extends ScenePF2e> extends fa.sheets.Scen
 
     static override TABS = (() => {
         const tabsConfig = super.TABS;
-        tabsConfig["sheet"].tabs.push({ id: "pf2e", icon: "action-glyph", label: "PF2E.Pathfinder" });
+        const label = SYSTEM_ID === "pf2e" ? "PF2E.Pathfinder" : "SF2E.Starfinder";
+        tabsConfig["sheet"].tabs.push({ id: SYSTEM_ID, icon: "action-glyph", label });
         return tabsConfig;
     })();
 
@@ -28,21 +29,24 @@ export class SceneConfigPF2e<TDocument extends ScenePF2e> extends fa.sheets.Scen
         const parts = super._configureRenderParts(options);
         const footer = parts.footer;
         delete parts.footer;
-        parts.pf2e = { template: `${SYSTEM_ROOT}/templates/scene/pf2e-panel.hbs` };
+        parts[SYSTEM_ID] = { template: `systems/${SYSTEM_ID}/templates/scene/pf2e-panel.hbs` };
         parts.footer = footer;
         return parts;
     }
 
-    /** Prepare context data for the pf2e tab */
+    /** Prepare context data for the system tab. */
     protected override async _preparePartContext(
         partId: string,
         context: fa.api.DocumentSheetRenderContext,
         options: fa.api.HandlebarsRenderOptions,
     ): Promise<fa.api.DocumentSheetRenderContext> {
         const partContext = await super._preparePartContext(partId, context, options);
-        if (partId !== "pf2e") return partContext;
+        if (partId !== SYSTEM_ID) return partContext;
+        const scene = this.document;
         return Object.assign(partContext, {
-            scene: this.document,
+            scene,
+            systemId: SYSTEM_ID,
+            systemFlags: scene.flags[SYSTEM_ID],
             rbvOptions: [
                 {
                     value: "",
@@ -140,17 +144,17 @@ export class SceneConfigPF2e<TDocument extends ScenePF2e> extends fa.sheets.Scen
         formData: fa.ux.FormDataExtended,
         updateData?: Record<string, unknown>,
     ): Record<string, unknown> {
-        const rbvSetting = formData.object["flags.pf2e.rulesBasedVision"];
-        formData.object["flags.pf2e.rulesBasedVision"] =
+        const rbvSetting = formData.object[`flags.${SYSTEM_ID}.rulesBasedVision`];
+        formData.object[`flags.${SYSTEM_ID}.rulesBasedVision`] =
             rbvSetting === "true" ? true : rbvSetting === "false" ? false : null;
 
-        const hearingRange = formData.object["flags.pf2e.hearingRange"];
-        formData.object["flags.pf2e.hearingRange"] =
+        const hearingRange = formData.object[`flags.${SYSTEM_ID}.hearingRange`];
+        formData.object[`flags.${SYSTEM_ID}.hearingRange`] =
             typeof hearingRange === "number" ? Math.ceil(Math.clamp(hearingRange || 5, 5, 3000) / 5) * 5 : null;
 
         const terrainChanged = !R.isDeepEqual(
-            formData.object["flags.pf2e.environmentTypes"],
-            this.document._source.flags?.pf2e?.environmentTypes ?? [],
+            formData.object[`flags.${SYSTEM_ID}.environmentTypes`],
+            this.document._source.flags?.[SYSTEM_ID]?.environmentTypes ?? [],
         );
 
         if (terrainChanged) {

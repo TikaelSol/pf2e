@@ -18,7 +18,7 @@ export class HazardSheetPF2e extends ActorSheetPF2e<HazardPF2e> {
             scrollY: ["section.content"],
             width: 710,
             height: 680,
-            template: `${SYSTEM_ROOT}/templates/actors/hazard/sheet.hbs`,
+            template: `systems/${SYSTEM_ID}/templates/actors/hazard/sheet.hbs`,
         };
     }
 
@@ -27,7 +27,7 @@ export class HazardSheetPF2e extends ActorSheetPF2e<HazardPF2e> {
     }
 
     get editing(): boolean {
-        return this.isEditable && !!this.actor.getFlag("pf2e", "editHazard.value");
+        return this.isEditable && !!this.actor.flags[SYSTEM_ID]?.editMode;
     }
 
     override async getData(options?: ActorSheetOptions): Promise<HazardSheetData> {
@@ -99,6 +99,7 @@ export class HazardSheetPF2e extends ActorSheetPF2e<HazardPF2e> {
                     : null;
 
             results.push({
+                label: attack.label,
                 description,
                 damageFormula: String(await attack.damage?.({ getFormula: true })),
                 breakdown: attack.type === "strike" ? attack.breakdown : attack.statistic.dc.breakdown,
@@ -163,7 +164,7 @@ export class HazardSheetPF2e extends ActorSheetPF2e<HazardPF2e> {
         const handlers = super.activateClickListener(html);
 
         handlers["toggle-edit-mode"] = () => {
-            return this.actor.update({ "flags.pf2e.editHazard.value": !this.editing });
+            return this.actor.update({ [`flags.${SYSTEM_ID}.editMode`]: !this.editing });
         };
 
         handlers["edit-section"] = (event) => {

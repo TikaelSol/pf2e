@@ -65,7 +65,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
     declare grantedBy: ItemPF2e<ActorPF2e> | null;
 
     static override getDefaultArtwork(itemData: foundry.documents.ItemSource): { img: ImageFilePath } {
-        return { img: `${SYSTEM_ROOT}/icons/default-icons/${itemData.type}.svg` as const };
+        return { img: `systems/${SYSTEM_ID}/icons/default-icons/${itemData.type}.svg` as const };
     }
 
     /** Traits an item of this type can have */
@@ -215,7 +215,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
         // Basic template rendering data
         const sluggifiedType = sluggify(this.type);
         const templateBase = this.isOfType("weapon", "ammo", "armor", "backpack") ? "equipment" : sluggifiedType;
-        const template = `${SYSTEM_ROOT}/templates/chat/${templateBase}-card.hbs`;
+        const template = `systems/${SYSTEM_ID}/templates/chat/${templateBase}-card.hbs`;
         const token = this.actor.token;
         const nearestItem = htmlClosest(event?.target, ".item");
         const rollOptions = options.data ?? { ...(nearestItem?.dataset ?? {}) };
@@ -236,7 +236,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
                     token: this.actor.getActiveTokens(false, true).at(0),
                 }),
                 content: await fa.handlebars.renderTemplate(template, templateData),
-                flags: { pf2e: { origin: this.getOriginData() } },
+                flags: { [SYSTEM_ID]: { origin: this.getOriginData() } },
             },
             rollMode,
         );
@@ -283,18 +283,17 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
 
         // Set item grant default values: pre-migration values will be strings, so temporarily check for objectness
         const flags = this.flags;
-        flags.pf2e = fu.mergeObject(flags.pf2e ?? {}, { rulesSelections: {} });
-        if (R.isPlainObject(flags.pf2e.grantedBy)) {
-            flags.pf2e.grantedBy.onDelete ??= this.isOfType("physical") ? "detach" : "cascade";
+        flags[SYSTEM_ID] = fu.mergeObject(flags[SYSTEM_ID] ?? {}, { rulesSelections: {} });
+        Object.defineProperty(this.flags, "system", { get: () => this.flags[SYSTEM_ID] });
+        if (R.isPlainObject(flags[SYSTEM_ID].grantedBy)) {
+            flags[SYSTEM_ID].grantedBy.onDelete ??= this.isOfType("physical") ? "detach" : "cascade";
         }
-        const grants = (flags.pf2e.itemGrants ??= {});
+        const grants = (flags[SYSTEM_ID].itemGrants ??= {});
         for (const grant of Object.values(grants)) {
-            if (R.isPlainObject(grant)) {
-                grant.onDelete ??= "detach";
-            }
+            if (R.isPlainObject(grant)) grant.onDelete ??= "detach";
         }
         const actor = this.actor;
-        const grantedById = this.flags.pf2e.grantedBy?.id;
+        const grantedById = this.flags[SYSTEM_ID].grantedBy?.id;
         this.grantedBy = grantedById
             ? (actor?.items.get(grantedById) ?? actor?.conditions.get(grantedById) ?? null)
             : null;
@@ -384,7 +383,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
             if (
                 currentSource.type === "consumable" &&
                 currentSource.system.spell?.system?.traits &&
-                tupleHasValue(["scroll", "wand"], currentSource.system.category) &&
+                tupleHasValue(["scroll", "spell-gem", "wand"], currentSource.system.category) &&
                 latestSource.type === "consumable" &&
                 !latestSource.system.spell
             ) {
@@ -498,7 +497,7 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
         const addenda = await (async (): Promise<string[]> => {
             if (!includeAddendum || this.system.description.addenda.length === 0) return [];
 
-            const templatePath = `${SYSTEM_ROOT}/templates/items/partials/addendum.hbs`;
+            const templatePath = `systems/${SYSTEM_ID}/templates/items/partials/addendum.hbs`;
             return Promise.all(
                 description.addenda.flatMap((unfiltered) => {
                     const addendum = {
@@ -601,11 +600,10 @@ class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item
         // Exclude certain types from being creatable
         const excludedTypes: ItemType[] = ["condition", "spellcastingEntry", "lore"];
         if (BUILD_MODE === "production") excludedTypes.push("affliction", "book");
-        if (game.settings.get("pf2e", "campaignType") !== "kingmaker") excludedTypes.push("campaignFeature");
+        if (game.pf2e.settings.campaign.type !== "kingmaker") excludedTypes.push("campaignFeature");
         for (const type of excludedTypes) {
             options.types.findSplice((t) => t === type);
         }
-
         return super.createDialog(data, createOptions, options);
     }
 

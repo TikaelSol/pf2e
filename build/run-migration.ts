@@ -1,4 +1,5 @@
 import "./global.ts";
+import "./migration-global.ts";
 
 import type { ActorSourcePF2e } from "@actor/data/index.ts";
 import { ACTOR_TYPES } from "@actor/values.ts";
@@ -13,7 +14,7 @@ import fs from "fs-extra";
 import path from "path";
 import * as R from "remeda";
 import "./lib/foundry-utils.ts";
-import { getFilesRecursively } from "./lib/helpers.ts";
+import { getPackJSONPaths } from "./lib/helpers.ts";
 import type { PackEntry } from "./lib/types.ts";
 
 import { Migration937RemoveInvalidAuraTraits } from "@module/migration/migrations/937-remove-invalid-aura-traits.ts";
@@ -47,8 +48,6 @@ const migrations: MigrationBase[] = [
     new Migration952AmmoTraitsAndOptions(),
     new Migration953NotStrikeDamage(),
 ];
-
-const packsDataPath = path.resolve(process.cwd(), "packs");
 
 type CompendiumSource = CompendiumDocument["_source"];
 
@@ -95,13 +94,14 @@ function jsonStringifyOrder(obj: object): string {
     return `${newJson}\n`;
 }
 
-async function getAllFiles(directory: string = packsDataPath, allEntries: string[] = []): Promise<string[]> {
-    const packs = fs.readdirSync(directory);
-    for (const pack of packs) {
-        console.log(`Collecting data for "${pack}"`);
-        allEntries.push(...getFilesRecursively(path.join(directory, pack)));
+async function getAllFiles(allEntries: string[] = []): Promise<string[]> {
+    for (const systemId of ["pf2e", "sf2e"]) {
+        const packDirs = fs.readdirSync(path.resolve("packs", systemId));
+        for (const packDir of packDirs) {
+            console.log(`Collecting data for "${packDir}"`);
+            allEntries.push(...getPackJSONPaths(packDir, systemId));
+        }
     }
-
     return allEntries;
 }
 

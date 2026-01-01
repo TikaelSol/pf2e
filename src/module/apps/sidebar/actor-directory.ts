@@ -32,11 +32,11 @@ class ActorDirectoryPF2e extends fa.sidebar.tabs.ActorDirectory<ActorPF2e<null>>
 
     static override PARTS = ((): Record<string, HandlebarsTemplatePart> => {
         const parts = { ...super.PARTS };
-        parts["parties"] = { template: `${SYSTEM_ROOT}/templates/sidebar/party-document-partial.hbs` };
+        parts["parties"] = { template: `systems/${SYSTEM_ID}/templates/sidebar/party-document-partial.hbs` };
         return parts;
     })();
 
-    protected static override _entryPartial = `${SYSTEM_ROOT}/templates/sidebar/actor-document-partial.hbs`;
+    protected static override _entryPartial = `systems/${SYSTEM_ID}/templates/sidebar/actor-document-partial.hbs`;
 
     /** Any additional "folder like" elements (such as parties) that are maintained separately */
     #extraFolders: Record<string, boolean> = {};
@@ -53,7 +53,7 @@ class ActorDirectoryPF2e extends fa.sidebar.tabs.ActorDirectory<ActorPF2e<null>>
         if (partId !== "parties") return partContext;
 
         const activeParty = game.actors.party;
-        if (options.isFirstRender && activeParty && game.settings.get("pf2e", "activePartyFolderState")) {
+        if (options.isFirstRender && activeParty && game.settings.get(SYSTEM_ID, "activePartyFolderState")) {
             this.#extraFolders[activeParty.id] = true;
         }
         const parties = R.sortBy(
@@ -97,7 +97,7 @@ class ActorDirectoryPF2e extends fa.sidebar.tabs.ActorDirectory<ActorPF2e<null>>
     }
 
     async saveActivePartyFolderState(): Promise<void> {
-        game.settings.set("pf2e", "activePartyFolderState", this.#extraFolders[game.actors.party?.id ?? ""] ?? true);
+        game.settings.set(SYSTEM_ID, "activePartyFolderState", this.#extraFolders[game.actors.party?.id ?? ""] ?? true);
     }
 
     override render(options: Partial<HandlebarsRenderOptions> = {}): Promise<this> {
@@ -345,7 +345,7 @@ class ActorDirectoryPF2e extends fa.sidebar.tabs.ActorDirectory<ActorPF2e<null>>
     static async #activateParty(this: ActorDirectoryPF2e, event: PointerEvent): Promise<void> {
         const documentId = htmlClosest(event.target, "[data-entry-id]")?.dataset.entryId ?? "";
         if (game.actors.has(documentId)) {
-            game.settings.set("pf2e", "activeParty", documentId);
+            game.settings.set(SYSTEM_ID, "activeParty", documentId);
             this.saveActivePartyFolderState();
         }
     }

@@ -66,7 +66,7 @@ export const Init = {
 
             // Configure the bundled TinyMCE editor with PF2-specific options
             CONFIG.TinyMCE.extended_valid_elements = "pf2-action[action|glyph]";
-            CONFIG.TinyMCE.content_css.push(`${SYSTEM_ROOT}/styles/pf2e.css`);
+            CONFIG.TinyMCE.content_css.push(`systems/${SYSTEM_ID}/styles/pf2e.css`);
             CONFIG.TinyMCE.style_formats = (CONFIG.TinyMCE.style_formats ?? []).concat({
                 title: "PF2E",
                 items: [
@@ -144,10 +144,6 @@ export const Init = {
                 pattern: /\[\[\/(act)\s+(?<slug>[-a-z]+)(?:\s+(?<options>[^\]]+))?\]\](?:\{(?<label>[^}]+)\})?/g,
                 enricher: (match, options) => TextEditorPF2e.enrichString(match, options),
             });
-
-            // Soft-set system-preferred core settings until they've been explicitly set by the GM
-            // const schema = foundry.data.PrototypeToken.schema;
-            // schema.displayName.default = schema.displayBars.default = CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER;
 
             // Register stuff with the Foundry client
             registerFonts();

@@ -37,7 +37,7 @@ export class DamagePF2e {
         let flavor = data.name.startsWith("<h4")
             ? data.name
             : data.name || subtitle
-              ? await fa.handlebars.renderTemplate(`${SYSTEM_ROOT}/templates/chat/action/header.hbs`, {
+              ? await fa.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/chat/action/header.hbs`, {
                     title: data.name,
                     outcome,
                     subtitle,
@@ -172,7 +172,7 @@ export class DamagePF2e {
             const critRule =
                 degreeOfSuccess !== DEGREE_OF_SUCCESS.CRITICAL_SUCCESS
                     ? null
-                    : game.settings.get("pf2e", "critRule") === "doubledamage"
+                    : game.settings.get(SYSTEM_ID, "critRule") === "doubledamage"
                       ? "double-damage"
                       : "double-dice";
             const options: DamageRollData = {
@@ -253,7 +253,7 @@ export class DamagePF2e {
                     speaker: ChatMessagePF2e.getSpeaker({ actor: self?.actor, token: self?.token }),
                     flavor,
                     flags: {
-                        pf2e: {
+                        [SYSTEM_ID]: {
                             context: contextFlag,
                             target: targetFlag,
                             modifiers: data.modifiers?.flatMap((m) => ("kind" in m ? m.toObject() : [])) ?? [],

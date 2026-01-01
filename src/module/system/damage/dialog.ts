@@ -58,7 +58,7 @@ class DamageModifierDialog extends fav1.api.Application {
     static override get defaultOptions(): fav1.api.ApplicationV1Options {
         return {
             ...super.defaultOptions,
-            template: `${SYSTEM_ROOT}/templates/chat/damage/damage-modifier-dialog.hbs`,
+            template: `systems/${SYSTEM_ID}/templates/chat/damage/damage-modifier-dialog.hbs`,
             classes: ["roll-modifiers-dialog", "damage-dialog", "dialog"],
             popOut: true,
             width: 440,
@@ -333,7 +333,7 @@ class DamageModifierDialog extends fav1.api.Application {
         // Toggle show dialog default
         const toggle = htmlQuery<HTMLInputElement>(html, "input[data-action=change-show-default]");
         toggle?.addEventListener("click", async () => {
-            await game.user.update({ "flags.pf2e.settings.showDamageDialogs": toggle.checked });
+            await game.user.update({ [`flags.${SYSTEM_ID}.settings.showDamageDialogs`]: toggle.checked });
         });
     }
 

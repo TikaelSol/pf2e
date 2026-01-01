@@ -23,16 +23,16 @@ export class StatusEffects {
     static #lastCombatantToken: string | null = null;
 
     static readonly #ICON_THEME_DIRS: Record<StatusEffectIconTheme, string> = {
-        default: `${SYSTEM_ROOT}/icons/conditions/`,
-        blackWhite: `${SYSTEM_ROOT}/icons/conditions-2/`,
+        default: `systems/${SYSTEM_ID}/icons/conditions/`,
+        blackWhite: `systems/${SYSTEM_ID}/icons/conditions-2/`,
     };
 
     static #conditionSummaries: Record<ConditionSlug, { name: string; rules: string; summary: string }> | null = null;
 
     /** Set the theme for condition icons on tokens */
     static initialize(): void {
-        const iconTheme = game.settings.get("pf2e", "statusEffectType");
-        CONFIG.controlIcons.defeated = game.settings.get("pf2e", "deathIcon");
+        const iconTheme = game.settings.get(SYSTEM_ID, "statusEffectType");
+        CONFIG.controlIcons.defeated = game.settings.get(SYSTEM_ID, "deathIcon");
         CONFIG.PF2E.statusEffects.lastIconTheme = iconTheme;
         CONFIG.PF2E.statusEffects.iconDir = this.#ICON_THEME_DIRS[iconTheme];
         this.#updateStatusIcons();
@@ -40,7 +40,7 @@ export class StatusEffects {
 
     /** Update status icons and tokens due to certain potential changes */
     static reset(): void {
-        CONFIG.controlIcons.defeated = game.settings.get("pf2e", "deathIcon");
+        CONFIG.controlIcons.defeated = game.settings.get(SYSTEM_ID, "deathIcon");
         this.#updateStatusIcons();
         this.refresh();
     }
@@ -95,12 +95,12 @@ export class StatusEffects {
 
     /** Updates the core CONFIG.statusEffects with the new icons */
     static #updateStatusIcons(): void {
-        const iconTheme = game.settings.get("pf2e", "statusEffectType");
+        const iconTheme = game.settings.get(SYSTEM_ID, "statusEffectType");
         const directory = iconTheme === "default" ? "conditions" : "conditions-2";
         CONFIG.statusEffects = Object.entries(CONFIG.PF2E.statusEffects.conditions).map(([id, name]) => ({
             id,
             name,
-            img: `${SYSTEM_ROOT}/icons/${directory}/${id}.webp` as const,
+            img: `systems/${SYSTEM_ID}/icons/${directory}/${id}.webp` as const,
         }));
         CONFIG.statusEffects.push({
             id: "dead",
@@ -123,7 +123,7 @@ export class StatusEffects {
         iconGrid.append(titleBar);
 
         const statusIcons = iconGrid.querySelectorAll<HTMLImageElement>(".effect-control");
-        const deathIcon = game.settings.get("pf2e", "deathIcon");
+        const deathIcon = game.settings.get(SYSTEM_ID, "deathIcon");
 
         for (const icon of statusIcons) {
             // Replace the img element with anchor element, which can display ::after content
@@ -181,7 +181,7 @@ export class StatusEffects {
 
     /** Called by `EncounterPF2e#_onUpdate` */
     static onUpdateEncounter(encounter: EncounterPF2e): void {
-        if (!(game.user.isGM && game.settings.get("pf2e", "statusEffectShowCombatMessage"))) return;
+        if (!(game.user.isGM && game.settings.get(SYSTEM_ID, "statusEffectShowCombatMessage"))) return;
 
         if (!encounter.started) {
             this.#lastCombatantToken = null;
@@ -303,7 +303,7 @@ export class StatusEffects {
         );
         if (conditions.length === 0) return null;
 
-        const templatePath = `${SYSTEM_ROOT}/templates/chat/participant-conditions.hbs`;
+        const templatePath = `systems/${SYSTEM_ID}/templates/chat/participant-conditions.hbs`;
         const content = await fa.handlebars.renderTemplate(templatePath, { conditions });
         const messageSource: Partial<foundry.documents.ChatMessageSource> = {
             author: game.user.id,
@@ -312,7 +312,7 @@ export class StatusEffects {
             style: CONST.CHAT_MESSAGE_STYLES.OTHER,
         };
         const isNPCEvent = !token.actor?.hasPlayerOwner;
-        const whisperMessage = whisper || (isNPCEvent && game.settings.get("pf2e", "metagame_secretCondition"));
+        const whisperMessage = whisper || (isNPCEvent && game.settings.get(SYSTEM_ID, "metagame_secretCondition"));
         if (whisperMessage) {
             messageSource.whisper = ChatMessage.getWhisperRecipients("GM").map((u) => u.id);
         }

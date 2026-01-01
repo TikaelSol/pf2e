@@ -1,0 +1,274 @@
+{
+    "_id": "2ZMeCSbtg4C5bpM2",
+    "description": "",
+    "displayRoll": true,
+    "formula": "1d100",
+    "img": "icons/svg/d20-grey.svg",
+    "name": "Plains Dangers",
+    "ownership": {
+        "default": 0
+    },
+    "replacement": true,
+    "results": [
+        {
+            "_id": "tN5JKsWzilRrlHs2",
+            "description": "[[/r 1d8]] @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.Crawling Hand](Moderate 1)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                1,
+                8
+            ],
+            "type": "text",
+            "weight": 8
+        },
+        {
+            "_id": "awBCY7mfI0WZDlLo",
+            "description": "[[/r 1d3+1]] @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Festrog]{Festrogs} (Moderate 2)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                9,
+                11
+            ],
+            "type": "text",
+            "weight": 3
+        },
+        {
+            "_id": "4HOFiPRCa2KlYCuM",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Shambler Troop] (Moderate 2)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                12,
+                15
+            ],
+            "type": "text",
+            "weight": 4
+        },
+        {
+            "_id": "nci27bhg5zpjW6jl",
+            "description": "[[/r 1d3]] @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Assassin Vine]{Assassin Vines} (Moderate 3)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                16,
+                19
+            ],
+            "type": "text",
+            "weight": 4
+        },
+        {
+            "_id": "tP1hkxRkU4rMaQNz",
+            "description": "[[/r 2d6]] @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.Skeleton Guard]{Skeleton Guards} (Moderate 3)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                20,
+                23
+            ],
+            "type": "text",
+            "weight": 4
+        },
+        {
+            "_id": "q2WLLuJI3iHxHvoy",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Baobhan Sith] (Moderate 4)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                24,
+                27
+            ],
+            "type": "text",
+            "weight": 4
+        },
+        {
+            "_id": "iaZECXvXswU1GfpO",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Scythe Tree] (Moderate 4)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                28,
+                32
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "OVMYLJ2dPVQjmuVD",
+            "description": "[[/r 1d3]] @UUID[Compendium.pf2e.pathfinder-npc-core.Actor.Necromancer]{Necromancers} (Moderate 5)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                33,
+                37
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "Yrr37oyX8GbcJX6s",
+            "description": "[[/r 2d4]] @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.Zombie Brute]{Zombie Brutes} (Moderate 5)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                38,
+                42
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "mUOKAPKr9HFc3hDs",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.Greater Shadow] and 1 @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.Shadow] (Moderate 6)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                43,
+                47
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "MW9ixwCW93jkhZ9I",
+            "description": "[[/r 1d3]] @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.Shambler]{Shamblers} {Moderate 6}",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                48,
+                55
+            ],
+            "type": "text",
+            "weight": 8
+        },
+        {
+            "_id": "QtTACUG23nHVOrZc",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Dread Wraith] {Moderate 7}",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                56,
+                63
+            ],
+            "type": "text",
+            "weight": 8
+        },
+        {
+            "_id": "5nsnLgH7gW4nRPja",
+            "description": "[[/r 1d3+1]] @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Gurgist Mauler]{Gurgist Maulers} (Moderate 7)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                64,
+                71
+            ],
+            "type": "text",
+            "weight": 8
+        },
+        {
+            "_id": "mcYt3adKxdlcznRy",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Clacking Skull Swarm] (Moderate 8)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                72,
+                76
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "fiP57z7JVNtuB8Hu",
+            "description": "[[/r 1d3]] @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.Bulette]{Bulettes} (Moderate 8)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                77,
+                81
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "uo6a7YYU2bW5LUqz",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Devourer] (Moderate 9)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                82,
+                86
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "K2bScFmVPv2oR8ki",
+            "description": "3 @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Lifeleecher Brawler]{Lifeleecher Brawlers} (Moderate 9)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                87,
+                91
+            ],
+            "type": "text",
+            "weight": 5
+        },
+        {
+            "_id": "Fp6LLcZedr6v9grj",
+            "description": "[[/r 1d3]] @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.Graveknight]{Graveknights} (Moderate 10)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                92,
+                94
+            ],
+            "type": "text",
+            "weight": 3
+        },
+        {
+            "_id": "l54K1LGfNGwhbpJw",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Viper Vine] (Moderate 11)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                95,
+                97
+            ],
+            "type": "text",
+            "weight": 3
+        },
+        {
+            "_id": "mejp0hGcgBMAz7Jh",
+            "description": "[[/r 1d4]] @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Skeleton Infantry] (Moderate 12)",
+            "drawn": false,
+            "img": "icons/svg/d20-black.svg",
+            "name": "",
+            "range": [
+                98,
+                100
+            ],
+            "type": "text",
+            "weight": 3
+        }
+    ]
+}

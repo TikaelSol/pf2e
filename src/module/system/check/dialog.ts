@@ -53,7 +53,7 @@ export class CheckModifiersDialog extends fav1.api.Application {
     static override get defaultOptions(): ApplicationV1Options {
         return {
             ...super.defaultOptions,
-            template: `${SYSTEM_ROOT}/templates/chat/check-modifiers-dialog.hbs`,
+            template: `systems/${SYSTEM_ID}/templates/chat/check-modifiers-dialog.hbs`,
             classes: ["roll-modifiers-dialog", "dice-checks", "dialog"],
             popOut: true,
             width: 380,
@@ -187,7 +187,7 @@ export class CheckModifiersDialog extends fav1.api.Application {
         // Toggle show dialog default
         const toggle = htmlQuery<HTMLInputElement>(html, "input[data-action=change-show-default]");
         toggle?.addEventListener("click", async () => {
-            await game.user.update({ "flags.pf2e.settings.showCheckDialogs": toggle.checked });
+            await game.user.update({ [`flags.${SYSTEM_ID}.settings.showCheckDialogs`]: toggle.checked });
         });
     }
 

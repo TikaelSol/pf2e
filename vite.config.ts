@@ -13,22 +13,27 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 import tsconfigPaths from "vite-tsconfig-paths";
 import packageJSON from "./package.json" with { type: "json" };
 import { sluggify } from "./src/util/misc.ts";
-import systemJSON from "./static/system.json" with { type: "json" };
+import pf2eManifest from "./system.pf2e.json" with { type: "json" };
+import sf2eManifest from "./system.sf2e.json" with { type: "json" };
 
-const SYSTEM_ID = "pf2e" as "pf2e" | "sf2e";
-const SYSTEM_ROOT = `systems/pf2e`;
+const [SYSTEM_ID, systemJSON] =
+    process.env.SYSTEM_ID === "pf2e" ? (["pf2e", pf2eManifest] as const) : (["sf2e", sf2eManifest] as const);
 const CONDITION_SOURCES = ((): ConditionSource[] => {
-    const output = execSync("npm run build:conditions", { encoding: "utf-8" });
+    const output = execSync(`pnpm run build:conditions --system=${SYSTEM_ID}`, { encoding: "utf-8" });
     return JSON.parse(output.slice(output.indexOf("[")));
 })();
 const EN_JSON = JSON.parse(fs.readFileSync("./static/lang/en.json", { encoding: "utf-8" }));
 
 /** Get UUID redirects from JSON file, converting names to IDs. */
-function getUuidRedirects(): Record<CompendiumUUID, CompendiumUUID> {
-    const redirectJSON = JSON.parse(fs.readFileSync(path.resolve(__dirname, "build/uuid-redirects.json"), "utf-8"));
+function getUuidRedirects({ systemId }: { systemId: SystemId }): Record<CompendiumUUID, CompendiumUUID> {
+    const redirectJSON = JSON.parse(
+        fs.readFileSync(path.resolve(__dirname, "build", "uuid-redirects", `${systemId}.json`), "utf-8"),
+    );
     for (const [from, to] of Object.entries<string>(redirectJSON)) {
         const [, , pack, documentType, name] = to.split(".", 5);
-        const packDir = systemJSON.packs.find((p) => p.type === documentType && p.name === pack)?.path;
+        const packDir = systemJSON.packs
+            .find((p) => p.type === documentType && p.name === pack)
+            ?.path.replace(/^packs/, `packs/${systemId}`);
         const dirPath = path.resolve(__dirname, packDir ?? "");
         const filename = `${sluggify(name)}.json`;
         const jsonPath = fs.existsSync(path.resolve(dirPath, filename))
@@ -38,7 +43,7 @@ function getUuidRedirects(): Record<CompendiumUUID, CompendiumUUID> {
         const docJSON = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
         const id = docJSON._id;
         if (!id) throw new Error(`No UUID redirect match found for ${documentType} ${name} in ${pack}`);
-        redirectJSON[from] = `Compendium.pf2e.${pack}.${documentType}.${id}`;
+        redirectJSON[from] = `Compendium.${systemId}.${pack}.${documentType}.${id}`;
     }
 
     return redirectJSON;
@@ -46,8 +51,7 @@ function getUuidRedirects(): Record<CompendiumUUID, CompendiumUUID> {
 
 const config = Vite.defineConfig(({ command, mode }): Vite.UserConfig => {
     const buildMode = mode === "production" ? "production" : "development";
-    const outDir = "dist";
-
+    const outDir = `dist/${SYSTEM_ID}`;
     const rollGrammar = fs.readFileSync("roll-grammar.peggy", { encoding: "utf-8" });
     const ROLL_PARSER = Peggy.generate(rollGrammar, { output: "source" }).replace(
         'return {\n    StartRules: ["Expression"],\n    SyntaxError: peg$SyntaxError,\n    parse: peg$parse,\n  };',
@@ -81,29 +85,57 @@ const config = Vite.defineConfig(({ command, mode }): Vite.UserConfig => {
             preprocess: command === "serve" ? hmrPreprocess : undefined,
         }),
     ];
-    // Handle minification after build to allow for tree-shaking and whitespace minification
-    // "Note the build.minify option does not minify whitespaces when using the 'es' format in lib mode, as it removes
-    // pure annotations and breaks tree-shaking."
+    const packUUIDPattern = /Compendium\.pf2e\.[^\]]+/g;
+    const adjustUUIDForSF2e = (s: string): string =>
+        s.replace(packUUIDPattern, (uuid) =>
+            uuid
+                .replace("Compendium.pf2e.", "Compendium.sf2e.")
+                .replace(".actionspf2e.", ".actions.")
+                .replace(".ancestryfeatures.", ".ancestry-features.")
+                .replace(".classfeatures.", ".class-features.")
+                .replace(".conditionitems.", ".conditions.")
+                .replace("-srd.", "."),
+        );
     if (buildMode === "production") {
         plugins.push(
+            // Handle minification after build to allow for tree-shaking and whitespace minification
+            // "Note the build.minify option does not minify whitespaces when using the 'es' format in lib mode, as it
+            // removes pure annotations and breaks tree-shaking."
             {
                 name: "minify",
                 renderChunk: {
                     order: "post",
-                    async handler(code, chunk) {
-                        return chunk.fileName.endsWith(".mjs")
+                    handler: async (code, chunk) =>
+                        chunk.fileName.endsWith(".mjs")
                             ? esbuild.transform(code, {
                                   keepNames: true,
                                   minifyIdentifiers: false,
                                   minifySyntax: true,
                                   minifyWhitespace: true,
                               })
-                            : code;
+                            : code,
+                },
+            },
+            // Replace pf2e UUIDs with sf2e ones
+            {
+                name: "transformLangFile",
+                renderStart: {
+                    order: "post",
+                    handler: async (outputOptions) => {
+                        if (SYSTEM_ID === "pf2e") return;
+                        const langDir = path.join(outputOptions.dir ?? "", "lang");
+                        const langFilenames = fs.readdirSync(langDir);
+                        for (const filename of langFilenames) {
+                            const filePath = path.join(langDir, filename);
+                            const content = fs.readFileSync(filePath, { encoding: "utf-8" });
+                            fs.writeFileSync(filePath, adjustUUIDForSF2e(content));
+                        }
                     },
                 },
             },
             ...viteStaticCopy({
                 targets: [
+                    { src: `system.${SYSTEM_ID}.json`, dest: ".", rename: "system.json" },
                     { src: "CHANGELOG.md", dest: "." },
                     { src: "README.md", dest: "." },
                     { src: "CONTRIBUTING.md", dest: "." },
@@ -128,16 +160,16 @@ const config = Vite.defineConfig(({ command, mode }): Vite.UserConfig => {
                 apply: "serve",
                 handleHotUpdate(context) {
                     if (context.file.startsWith(outDir)) return;
-
                     if (context.file.endsWith("en.json")) {
                         const basePath = context.file.slice(context.file.indexOf("lang/"));
                         console.debug(`Updating lang file at ${basePath}`);
-                        fs.promises.copyFile(context.file, `${outDir}/${basePath}`).then(() => {
-                            context.server.ws.send({
-                                type: "custom",
-                                event: "lang-update",
-                                data: { path: `${SYSTEM_ROOT}/${basePath}` },
-                            });
+                        const content = fs.readFileSync(context.file, { encoding: "utf-8" });
+                        const adjusted = SYSTEM_ID === "sf2e" ? adjustUUIDForSF2e(content) : content;
+                        fs.writeFileSync(path.join(outDir, basePath), adjusted);
+                        context.server.ws.send({
+                            type: "custom",
+                            event: "lang-update",
+                            data: { path: `systems/${SYSTEM_ID}/${basePath}` },
                         });
                     } else if (context.file.endsWith(".hbs")) {
                         const basePath = context.file.slice(context.file.indexOf("templates/"));
@@ -146,7 +178,7 @@ const config = Vite.defineConfig(({ command, mode }): Vite.UserConfig => {
                             context.server.ws.send({
                                 type: "custom",
                                 event: "template-update",
-                                data: { path: `${SYSTEM_ROOT}/${basePath}` },
+                                data: { path: `systems/${SYSTEM_ID}/${basePath}` },
                             });
                         });
                     }
@@ -172,27 +204,24 @@ const config = Vite.defineConfig(({ command, mode }): Vite.UserConfig => {
 
     // Create dummy files for vite dev server
     if (command === "serve") {
-        const message = "This file is for a running vite dev server and is not copied to a build";
+        const message = "This file is for a running vite dev server and is not copied to a build.";
         fs.writeFileSync("./index.html", `<h1>${message}</h1>\n`);
         if (!fs.existsSync("./styles")) fs.mkdirSync("./styles");
-        fs.writeFileSync("./styles/pf2e.css", `/** ${message} */\n`);
-        fs.writeFileSync("./pf2e.mjs", `/** ${message} */\n\nimport "./src/pf2e.ts";\n`);
+        fs.writeFileSync(`./styles/${SYSTEM_ID}.css`, `/** ${message} */\n`);
+        fs.writeFileSync(`./${SYSTEM_ID}.mjs`, `/** ${message} */\n\nimport "./src/pf2e.ts";\n`);
         fs.writeFileSync("./vendor.mjs", `/** ${message} */\n`);
     }
 
-    const reEscape = (s: string) => s.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
-
     return {
-        base: command === "build" ? "./" : `/${SYSTEM_ROOT}/`,
+        base: command === "build" ? "./" : `/systems/${SYSTEM_ID}/`,
         publicDir: "static",
         define: {
             SYSTEM_ID: JSON.stringify(SYSTEM_ID),
-            SYSTEM_ROOT: JSON.stringify(SYSTEM_ROOT),
             BUILD_MODE: JSON.stringify(buildMode),
             CONDITION_SOURCES: JSON.stringify(CONDITION_SOURCES),
             EN_JSON: JSON.stringify(EN_JSON),
             ROLL_PARSER: JSON.stringify(ROLL_PARSER),
-            UUID_REDIRECTS: JSON.stringify(getUuidRedirects()),
+            UUID_REDIRECTS: JSON.stringify(getUuidRedirects({ systemId: SYSTEM_ID })),
             fa: "foundry.applications",
             fav1: "foundry.appv1",
             fc: "foundry.canvas",
@@ -207,27 +236,17 @@ const config = Vite.defineConfig(({ command, mode }): Vite.UserConfig => {
             minify: false,
             sourcemap: buildMode === "development",
             lib: {
-                name: "pf2e",
+                name: SYSTEM_ID,
                 entry: "src/pf2e.ts",
                 formats: ["es"],
-                fileName: "pf2e",
+                fileName: SYSTEM_ID,
             },
             rollupOptions: {
-                external: new RegExp(
-                    [
-                        "(?:",
-                        reEscape("../icons/weapons/"),
-                        "[-a-z/]+",
-                        reEscape(".webp"),
-                        "|",
-                        reEscape("ui/parchment.jpg"),
-                        ")$",
-                    ].join(""),
-                ),
+                external: /(?:\.\.\/icons\/[a-z]+\/[-a-z/]+\.webp|ui\/parchment\.jpg)$/,
                 output: {
-                    assetFileNames: "styles/pf2e.css",
+                    assetFileNames: `styles/${SYSTEM_ID}.css`,
                     chunkFileNames: "[name].mjs",
-                    entryFileNames: "pf2e.mjs",
+                    entryFileNames: `${SYSTEM_ID}.mjs`,
                     manualChunks: {
                         vendor: buildMode === "production" ? Object.keys(packageJSON.dependencies) : [],
                     },
@@ -240,7 +259,8 @@ const config = Vite.defineConfig(({ command, mode }): Vite.UserConfig => {
             port: serverPort,
             open: "/game",
             proxy: {
-                "^(?!/systems/pf2e/)": `http://localhost:${foundryPort}/`,
+                [`^(?!/systems/${SYSTEM_ID}/)`]: `http://localhost:${foundryPort}/`,
+                [`^/systems/${SYSTEM_ID}/lang`]: `http://localhost:${foundryPort}/`,
                 "/socket.io": {
                     target: `ws://localhost:${foundryPort}`,
                     ws: true,

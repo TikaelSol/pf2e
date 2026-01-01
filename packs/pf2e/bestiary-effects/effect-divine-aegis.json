@@ -1,0 +1,68 @@
+{
+    "_id": "e4HoYakV7SvwvcrH",
+    "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+    "name": "Effect: Divine Aegis",
+    "system": {
+        "description": {
+            "value": "<p>You gain a +1 circumstance bonus to saving throws against non-divine magical effects and a -1 circumstance penalty to saves against divine effects.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 6
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Monster Core 2"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "magical",
+                            "item:trait:arcane",
+                            "item:trait:primal",
+                            "item:trait:occult",
+                            "item:trait:divine"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "slug": "divine-aegis-bonus",
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "override",
+                "predicate": [
+                    "item:trait:divine"
+                ],
+                "selector": "saving-throw",
+                "slug": "divine-aegis-bonus",
+                "value": -1
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

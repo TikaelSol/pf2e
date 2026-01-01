@@ -183,8 +183,8 @@ abstract class AbstractEffectPF2e<TParent extends ActorPF2e | null = ActorPF2e |
             this.isOfType("condition") &&
             !game.user.isGM &&
             !this.actor?.hasPlayerOwner &&
-            game.settings.get("pf2e", "metagame_secretCondition");
-        const auraNotInCombat = this.flags.pf2e.aura && !game.combat?.started;
+            game.settings.get(SYSTEM_ID, "metagame_secretCondition");
+        const auraNotInCombat = this.flags[SYSTEM_ID].aura && !game.combat?.started;
         const identified = game.user.isGM || this.isIdentified;
 
         if (skipFloatyText || !identified || auraNotInCombat) return;

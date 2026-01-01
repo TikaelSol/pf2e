@@ -51,7 +51,7 @@ async function repair(options: RepairActionOptions): Promise<void> {
         checkContext: (opts) => ActionMacroHelpers.defaultCheckContext(opts, { modifiers, rollOptions, slug }),
         content: async (title) => {
             if (item) {
-                const templatePath = `${SYSTEM_ROOT}/templates/system/actions/repair/item-heading-partial.hbs`;
+                const templatePath = `systems/${SYSTEM_ID}/templates/system/actions/repair/item-heading-partial.hbs`;
                 const content = await fa.handlebars.renderTemplate(templatePath, { item });
                 return title + content;
             }
@@ -134,7 +134,7 @@ async function onRepairChatCardEvent(
         await ChatMessagePF2e.create({ content, speaker });
     } else if (repair === "roll-damage") {
         const roll = await Roll.create("2d6").evaluate();
-        const templatePath = `${SYSTEM_ROOT}/templates/system/actions/repair/roll-damage-chat-message.hbs`;
+        const templatePath = `systems/${SYSTEM_ID}/templates/system/actions/repair/roll-damage-chat-message.hbs`;
         const flavor = await fa.handlebars.renderTemplate(templatePath, {
             damage: {
                 dealt: Math.max(0, roll.total - item.system.hardness),
@@ -142,15 +142,7 @@ async function onRepairChatCardEvent(
             },
             item,
         });
-        await roll.toMessage({
-            flags: {
-                pf2e: {
-                    suppressDamageButtons: true,
-                },
-            },
-            flavor,
-            speaker,
-        });
+        await roll.toMessage({ flavor, speaker, flags: { [SYSTEM_ID]: { suppressDamageButtons: true } } });
     } else if (repair === "damage") {
         const hardness = Math.max(0, item.system.hardness);
         const damage = (message?.rolls.at(0)?.total ?? 0) - hardness;
@@ -166,7 +158,7 @@ async function onRepairChatCardEvent(
             });
             await ChatMessage.create({ content, speaker });
         } else {
-            const templatePath = `${SYSTEM_ROOT}/templates/system/actions/repair/roll-damage-chat-message.hbs`;
+            const templatePath = `systems/${SYSTEM_ID}/templates/system/actions/repair/roll-damage-chat-message.hbs`;
             const content = await fa.handlebars.renderTemplate(templatePath, {
                 damage: {
                     dealt: 0,
@@ -185,7 +177,7 @@ async function renderRepairResult(
     buttonLabel: string,
     value: string,
 ): Promise<string> {
-    const templatePath = `${SYSTEM_ROOT}/templates/system/actions/repair/repair-result-partial.hbs`;
+    const templatePath = `systems/${SYSTEM_ID}/templates/system/actions/repair/repair-result-partial.hbs`;
     const label = game.i18n.format(buttonLabel, { value });
     return fa.handlebars.renderTemplate(templatePath, { item, label, result, value });
 }

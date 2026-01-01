@@ -3,12 +3,12 @@ import { htmlQuery } from "@util";
 export const RenderRegionLegend = {
     listen: (): void => {
         Hooks.on("renderRegionLegend", async (_app, html) => {
-            const environmentTypes = canvas.scene?.flags.pf2e.environmentTypes;
+            const environmentTypes = canvas.scene?.flags[SYSTEM_ID].environmentTypes;
             if (!environmentTypes || environmentTypes.length === 0) return;
 
             const template = await (async () => {
                 const markup = await fa.handlebars.renderTemplate(
-                    `${SYSTEM_ROOT}/templates/scene/region-legend-partial.hbs`,
+                    `systems/${SYSTEM_ID}/templates/scene/region-legend-partial.hbs`,
                     {
                         environmentTypes: environmentTypes.map((t) =>
                             game.i18n.localize(CONFIG.PF2E.environmentTypes[t]),

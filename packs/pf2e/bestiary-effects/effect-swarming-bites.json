@@ -1,0 +1,99 @@
+{
+    "_id": "0aRm0b55015XPj7Y",
+    "img": "icons/creatures/invertebrates/ant-strength-green.webp",
+    "name": "Effect: Swarming Bites",
+    "system": {
+        "description": {
+            "value": "<p>You become @UUID[Compendium.pf2e.conditionitems.Item.Clumsy]{Clumsy 1}. If you attempt a concentrate or manipulate action while affected, you must succeed at a @Check[flat|dc:5|showDC:all] or the action is lost; roll the check after spending the action, but before any effects are applied.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 5
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Monster Core"
+        },
+        "rules": [
+            {
+                "inMemoryOnly": true,
+                "key": "GrantItem",
+                "uuid": "Compendium.pf2e.conditionitems.Item.Clumsy"
+            },
+            {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:trait:concentrate",
+                            "item:trait:manipulate"
+                        ]
+                    }
+                ],
+                "property": "description",
+                "value": [
+                    {
+                        "text": "PF2E.NPCAbility.SwarmingBites.Note"
+                    }
+                ]
+            },
+            {
+                "itemType": "feat",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:trait:concentrate",
+                            "item:trait:manipulate"
+                        ]
+                    }
+                ],
+                "property": "description",
+                "value": [
+                    {
+                        "text": "PF2E.NPCAbility.SwarmingBites.Note"
+                    }
+                ]
+            },
+            {
+                "itemType": "spell",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:trait:concentrate",
+                            "item:trait:manipulate"
+                        ]
+                    }
+                ],
+                "property": "description",
+                "value": [
+                    {
+                        "text": "PF2E.NPCAbility.SwarmingBites.Note"
+                    }
+                ]
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

@@ -131,7 +131,7 @@ class WeaponAuxiliaryAction {
      */
     async execute({ selection = null }: { selection?: string | null } = {}): Promise<void> {
         const { actor, weapon } = this;
-        const COVER_UUID = "Compendium.pf2e.other-effects.Item.I9lfZUiCwMiGogVi";
+        const COVER_UUID = `Compendium.${SYSTEM_ID}.other-effects.Item.I9lfZUiCwMiGogVi`;
 
         if (this.carryType) {
             await actor.changeCarryType(this.weapon, { carryType: this.carryType, handsHeld: this.hands ?? 0 });
@@ -142,7 +142,7 @@ class WeaponAuxiliaryAction {
             // Apply Effect: Raise a Shield
             const alreadyRaised = actor.itemTypes.effect.some((e) => e.slug === "raise-a-shield");
             if (alreadyRaised) return;
-            const effect = await fromUuid("Compendium.pf2e.equipment-effects.Item.2YgXoHvJfrDHucMr");
+            const effect = await fromUuid(`Compendium.${SYSTEM_ID}.equipment-effects.Item.2YgXoHvJfrDHucMr`);
             if (effect instanceof EffectPF2e) {
                 await actor.createEmbeddedDocuments("Item", [{ ...effect.toObject(), _id: null }]);
             }
@@ -163,7 +163,7 @@ class WeaponAuxiliaryAction {
             // Apply Effect: Parry
             const alreadyParrying = actor.itemTypes.effect.some((e) => e.slug === "parry");
             if (alreadyParrying) return;
-            const effect = await fromUuid("Compendium.pf2e.equipment-effects.Item.fRlvmul3LbLo2xvR");
+            const effect = await fromUuid(`Compendium.${SYSTEM_ID}.equipment-effects.Item.fRlvmul3LbLo2xvR`);
             if (effect instanceof EffectPF2e) {
                 await actor.createEmbeddedDocuments("Item", [{ ...effect.toObject(), _id: null }]);
             }
@@ -172,8 +172,8 @@ class WeaponAuxiliaryAction {
         if (!game.combat) return; // Only send out messages if in encounter mode
 
         const templates = {
-            flavor: `./${SYSTEM_ROOT}/templates/chat/action/flavor.hbs`,
-            content: `./${SYSTEM_ROOT}/templates/chat/action/content.hbs`,
+            flavor: `./systems/${SYSTEM_ID}/templates/chat/action/flavor.hbs`,
+            content: `./systems/${SYSTEM_ID}/templates/chat/action/content.hbs`,
         };
 
         const actionKey = sluggify(this.action, { camel: "bactrian" });

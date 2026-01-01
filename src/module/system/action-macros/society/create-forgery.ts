@@ -23,7 +23,7 @@ async function createForgeryCallback(
     // consider any modifiers enabled in the roll dialog
     const societyDC = (() => {
         if (result.actor instanceof CreaturePF2e) {
-            const systemFlags = result.message?.flags.pf2e as unknown as ChatMessageCheckFlags;
+            const systemFlags = result.message?.flags[SYSTEM_ID] as unknown as ChatMessageCheckFlags;
             const modifiers = (systemFlags.modifiers as RawModifier[])
                 .filter((modifier) => modifier.enabled)
                 .map((modifier) => {
@@ -60,7 +60,7 @@ async function createForgeryCallback(
     // create forged document item
     await Item.create(
         {
-            img: `${SYSTEM_ROOT}/icons/equipment/adventuring-gear/scroll-case.webp`,
+            img: `systems/${SYSTEM_ID}/icons/equipment/adventuring-gear/scroll-case.webp`,
             name: game.i18n.localize("PF2E.Actions.CreateForgery.ForgedDocument.Name"),
             type: "equipment",
             system: {

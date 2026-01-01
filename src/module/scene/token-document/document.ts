@@ -33,10 +33,9 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
 
     /** Returns if the token is in combat, though some actors have different conditions */
     override get inCombat(): boolean {
-        if (this.actor?.isOfType("party")) {
-            return this.actor.members.every((a) => game.combat?.getCombatantByActor(a.id));
-        }
-        return super.inCombat;
+        return this.actor?.isOfType("party")
+            ? this.actor.members.every((a) => game.combat?.getCombatantsByActor(a).length)
+            : super.inCombat;
     }
 
     /** This should be in Foundry core, but ... */
@@ -65,12 +64,12 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
 
     /** Is this token's dimensions linked to its actor's size category? */
     get linkToActorSize(): boolean {
-        return this.flags.pf2e.linkToActorSize;
+        return this.flags[SYSTEM_ID].linkToActorSize;
     }
 
     /** Is this token's scale locked at 1 or (for small creatures) 0.8? */
     get autoscale(): boolean {
-        return this.linkToActorSize && game.pf2e.settings.tokens.autoscale && this.flags.pf2e.autoscale;
+        return this.linkToActorSize && game.pf2e.settings.tokens.autoscale && this.flags[SYSTEM_ID].autoscale;
     }
 
     get playersCanSeeName(): boolean {
@@ -209,9 +208,9 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
             token.texture.src = ((): ImageFilePath | VideoFilePath => {
                 switch (actor.alliance) {
                     case "party":
-                        return `${SYSTEM_ROOT}/icons/default-icons/alternatives/nath/ally.webp`;
+                        return `systems/${SYSTEM_ID}/icons/default-icons/alternatives/nath/ally.webp`;
                     case "opposition":
-                        return `${SYSTEM_ROOT}/icons/default-icons/alternatives/nath/enemy.webp`;
+                        return `systems/${SYSTEM_ID}/icons/default-icons/alternatives/nath/enemy.webp`;
                     default:
                         return token.texture.src ?? CONST.DEFAULT_TOKEN;
                 }
@@ -223,7 +222,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
 
     /** Set a TokenData instance's dimensions from actor data. Static so actors can use for their prototypes */
     static prepareScale(token: TokenDocumentPF2e | PrototypeTokenPF2e<ActorPF2e>): void {
-        if (!token.flags.pf2e.autoscale) return;
+        if (!token.flags[SYSTEM_ID].autoscale) return;
         const absoluteScale = token.actor?.size === "sm" ? 0.8 : 1;
         const mirrorX = token.texture.scaleX < 0 ? -1 : 1;
         token.texture.scaleX = mirrorX * absoluteScale;
@@ -273,16 +272,17 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
     /** If rules-based vision is enabled, disable manually configured vision radii */
     override prepareBaseData(): void {
         super.prepareBaseData();
-        const flags = fu.mergeObject(this.flags, { pf2e: {} });
+        const flags = fu.mergeObject(this.flags, { [SYSTEM_ID]: {} });
         const actor = this.actor;
         if (!actor) return;
 
         TokenDocumentPF2e.assignDefaultImage(this);
 
         // Dimensions and scale
-        flags.pf2e.linkToActorSize ??= SIZE_LINKABLE_ACTOR_TYPES.has(actor.type);
+        flags[SYSTEM_ID].linkToActorSize ??= SIZE_LINKABLE_ACTOR_TYPES.has(actor.type);
         const settingEnabled = game.pf2e.settings.tokens.autoscale;
-        flags.pf2e.autoscale = settingEnabled && flags.pf2e.linkToActorSize ? (flags.pf2e.autoscale ?? true) : false;
+        flags[SYSTEM_ID].autoscale =
+            settingEnabled && flags[SYSTEM_ID].linkToActorSize ? (flags[SYSTEM_ID].autoscale ?? true) : false;
         TokenDocumentPF2e.prepareScale(this);
 
         // Merge token overrides from REs into this document
@@ -295,7 +295,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
             if ("scaleX" in tokenOverrides.texture) {
                 this.texture.scaleX = tokenOverrides.texture.scaleX;
                 this.texture.scaleY = tokenOverrides.texture.scaleY;
-                this.flags.pf2e.autoscale = false;
+                this.flags[SYSTEM_ID].autoscale = false;
             }
             this.texture.tint = tokenOverrides.texture.tint ?? this.texture.tint;
         }
@@ -360,7 +360,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         if (visionMode === "darkvision") {
             this.sight.range = basicSight.range = Infinity;
 
-            if (actor.isOfType("character") && actor.flags.pf2e.colorDarkvision) {
+            if (actor.isOfType("character") && actor.flags[SYSTEM_ID].colorDarkvision) {
                 this.sight.saturation = 1;
             } else if (!game.user.settings.monochromeDarkvision) {
                 this.sight.saturation = 0;
@@ -377,7 +377,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         }
 
         if (!actor.hasCondition("deafened")) {
-            const range = scene?.flags.pf2e.hearingRange ?? Infinity;
+            const range = scene?.flags[SYSTEM_ID].hearingRange ?? Infinity;
             this.detectionModes.push({ id: "hearing", enabled: true, range });
         }
     }

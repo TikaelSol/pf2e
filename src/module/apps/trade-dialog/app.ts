@@ -133,7 +133,7 @@ class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
         const traderName = TradeDialog.#getObfuscatedActorName(trader.actor);
         ui.notifications.info(TradeDialog.localize("Request.Requesting", { trader: traderName }));
         try {
-            const response = await trader.user.query("pf2e.trade", queryData, { timeout: 30_000 });
+            const response = await trader.user.query(`${SYSTEM_ID}.trade`, queryData, { timeout: 30_000 });
             if (!response) throw ErrorPF2e("No response from other side.");
             if (response.ok) {
                 const dialog = new TradeDialog({ self: { ...self, gift: giftQuantity, initiator: true }, trader });
@@ -252,7 +252,7 @@ class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
 
     async abortTrade(message: string): Promise<this> {
         if (message) ui.notifications.error(message, { console: false });
-        this.#trader.user.query("pf2e.trade", { action: "abort" });
+        this.#trader.user.query(`${SYSTEM_ID}.trade`, { action: "abort" });
         return this.close({ aborted: true });
     }
 
@@ -353,8 +353,8 @@ class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
             traits: [traitSlugToObject("manipulate", CONFIG.PF2E.actionTraits)],
         };
         const templates = {
-            flavor: `${SYSTEM_ROOT}/templates/chat/action/flavor.hbs`,
-            content: `${SYSTEM_ROOT}/templates/chat/action/content.hbs`,
+            flavor: `systems/${SYSTEM_ID}/templates/chat/action/flavor.hbs`,
+            content: `systems/${SYSTEM_ID}/templates/chat/action/content.hbs`,
         };
         const itemExchanged = mutualExchange
             ? null
@@ -369,7 +369,7 @@ class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
         });
         const other = speakerActor === self.actor ? trader.actor : self.actor;
         const content = await fa.handlebars.renderTemplate(templates.content, {
-            imgPath: itemExchanged?.img ?? `${SYSTEM_ROOT}/icons/actions/interact/trade.webp`,
+            imgPath: itemExchanged?.img ?? `systems/${SYSTEM_ID}/icons/actions/interact/trade.webp`,
             message: game.i18n.format(`PF2E.Actions.Interact.${annotationKey}.Description`, {
                 actor: speaker.alias,
                 other: TradeDialog.#getObfuscatedActorName(other),
@@ -396,7 +396,7 @@ class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
         } else if (!options.aborted) {
             const trader = this.#trader;
             const message = TradeDialog.localize("Aborted", { user: trader.user.name });
-            trader.user.query("pf2e.trade", { action: "abort", message });
+            trader.user.query(`${SYSTEM_ID}.trade`, { action: "abort", message });
         }
         TradeDialog.#userTrading = false;
         delete this.#self.actor.apps[this.id];

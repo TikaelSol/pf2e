@@ -25,7 +25,6 @@ import {
 } from "./data.ts";
 import { ReservedTermsRecord, prepareCleanup, prepareReservedTerms, readModuleHomebrewSettings } from "./helpers.ts";
 import { LanguagesManager } from "./languages.ts";
-import appv1 = foundry.appv1;
 
 class HomebrewElements extends SettingsMenuPF2e {
     static override readonly namespace = "homebrew";
@@ -51,10 +50,10 @@ class HomebrewElements extends SettingsMenuPF2e {
         return Object.keys(this.settings);
     }
 
-    static override get defaultOptions(): appv1.api.FormApplicationOptions {
+    static override get defaultOptions(): fav1.api.FormApplicationOptions {
         return {
             ...super.defaultOptions,
-            template: `${SYSTEM_ROOT}/templates/system/settings/homebrew.hbs`,
+            template: `systems/${SYSTEM_ID}/templates/system/settings/homebrew.hbs`,
             width: 625,
         };
     }
@@ -108,6 +107,18 @@ class HomebrewElements extends SettingsMenuPF2e {
             },
             {} as Record<HomebrewTraitKey, PartialSettingsData>,
         );
+    }
+
+    static override register(): void {
+        super.register();
+        game.settings.registerMenu(SYSTEM_ID, "homebrew", {
+            name: "PF2E.SETTINGS.Homebrew.Name",
+            label: "PF2E.SETTINGS.Homebrew.Label",
+            hint: "PF2E.SETTINGS.Homebrew.Hint",
+            icon: "fa-solid fa-beer-mug-empty",
+            type: HomebrewElements,
+            restricted: true,
+        });
     }
 
     protected static override get settings(): Record<HomebrewKey, PartialSettingsData> {
@@ -225,7 +236,7 @@ class HomebrewElements extends SettingsMenuPF2e {
     /** Tagify sets an empty input field to "" instead of "[]", which later causes the JSON parse to throw an error */
     protected override async _onSubmit(
         event: Event,
-        options?: appv1.api.OnSubmitFormOptions,
+        options?: fav1.api.OnSubmitFormOptions,
     ): Promise<Record<string, unknown> | false> {
         event.preventDefault(); // Prevent page refresh if it returns early
 
@@ -290,7 +301,7 @@ class HomebrewElements extends SettingsMenuPF2e {
 
     /** Prepare and run a migration for each set of tag deletions from a tag map */
     #processDeletions(listKey: HomebrewTraitKey, newTagList: HomebrewTag[]): MigrationBase | null {
-        const oldTagList = game.settings.get("pf2e", `homebrew.${listKey}`);
+        const oldTagList = game.settings.get(SYSTEM_ID, `homebrew.${listKey}`);
         const newIDList = newTagList.map((tag) => tag.id);
         const deletions: string[] = oldTagList.flatMap((oldTag) => (newIDList.includes(oldTag.id) ? [] : oldTag.id));
 
@@ -331,7 +342,7 @@ class HomebrewElements extends SettingsMenuPF2e {
         // Add custom traits from settings
         for (const listKey of HOMEBREW_ELEMENT_KEYS) {
             const settingsKey: HomebrewTraitSettingsKey = `homebrew.${listKey}` as const;
-            const elements = game.settings.get("pf2e", settingsKey);
+            const elements = game.settings.get(SYSTEM_ID, settingsKey);
             const validElements = elements.filter((e) => !reservedTerms[listKey].has(e.id));
             this.#updateConfigRecords(validElements, listKey);
         }
@@ -341,8 +352,8 @@ class HomebrewElements extends SettingsMenuPF2e {
             this.#initialRefresh = false;
         } else {
             const sheets = Object.values(ui.windows).filter(
-                (app): app is appv1.api.DocumentSheet =>
-                    app instanceof appv1.sheets.ActorSheet || app instanceof ItemSheetPF2e,
+                (app): app is fav1.api.DocumentSheet =>
+                    app instanceof fav1.sheets.ActorSheet || app instanceof ItemSheetPF2e,
             );
             for (const sheet of sheets) {
                 sheet.render();
