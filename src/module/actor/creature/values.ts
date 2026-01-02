@@ -220,7 +220,7 @@ const LANGUAGES_BY_RARITY =
               secret: ["wildsong"] as const,
           }
         : {
-              common: "pact-common",
+              common: ["pact-common"],
               uncommon: UNCOMMON_SF_LANGUAGES,
               rare: [],
               secret: [] as const,
@@ -231,7 +231,7 @@ const DEFAULT_COMMON_LANGUAGE = SYSTEM_ID === "pf2e" ? "taldane" : "pact-common"
 const LANGUAGES: Language[] =
     SYSTEM_ID === "pf2e"
         ? ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, "wildsong"]
-        : ["pact-common", ...UNCOMMON_SF_LANGUAGES];
+        : ["common", "pact-common", ...UNCOMMON_SF_LANGUAGES];
 LANGUAGES.sort();
 
 const LANGUAGE_RARITIES = ["common", "uncommon", "rare", "secret"] as const;
