@@ -183,7 +183,7 @@ const RARE_LANGUAGES = [
     "yithian",
 ] as const;
 
-const SF_LANGUAGES = [
+const UNCOMMON_SF_LANGUAGES = [
     "aballonian",
     "brethedan",
     "castrovelian",
@@ -211,27 +211,34 @@ const SF_LANGUAGES = [
     "vlaka",
 ] as const;
 
-const LANGUAGES_BY_RARITY = {
-    common: COMMON_LANGUAGES,
-    uncommon: [...UNCOMMON_LANGUAGES, ...SF_LANGUAGES],
-    rare: RARE_LANGUAGES,
-    secret: ["wildsong"] as const,
-};
+const LANGUAGES_BY_RARITY =
+    SYSTEM_ID === "pf2e"
+        ? {
+              common: COMMON_LANGUAGES,
+              uncommon: UNCOMMON_LANGUAGES,
+              rare: RARE_LANGUAGES,
+              secret: ["wildsong"] as const,
+          }
+        : {
+              common: "pact-common",
+              uncommon: UNCOMMON_SF_LANGUAGES,
+              rare: [],
+              secret: [] as const,
+          };
 
-const LANGUAGES: Language[] = [
-    "common",
-    ...COMMON_LANGUAGES,
-    ...UNCOMMON_LANGUAGES,
-    ...RARE_LANGUAGES,
-    ...SF_LANGUAGES,
-    "wildsong",
-];
+const DEFAULT_COMMON_LANGUAGE = SYSTEM_ID === "pf2e" ? "taldane" : "pact-common";
+
+const LANGUAGES: Language[] =
+    SYSTEM_ID === "pf2e"
+        ? ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, "wildsong"]
+        : ["pact-common", ...UNCOMMON_SF_LANGUAGES];
 LANGUAGES.sort();
 
 const LANGUAGE_RARITIES = ["common", "uncommon", "rare", "secret"] as const;
 
 export {
     ALLIANCES,
+    DEFAULT_COMMON_LANGUAGE,
     LANGUAGE_RARITIES,
     LANGUAGES,
     LANGUAGES_BY_RARITY,
