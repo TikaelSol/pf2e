@@ -1,15 +1,15 @@
 {
-    "_id": "LdbqPPiSg5gn5Kqp",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
-    "name": "Effect: Gremlin's Inverted Gift",
+    "_id": "vaqiHzEewOKDx6rP",
+    "img": "icons/skills/melee/shield-damaged-broken-gold.webp",
+    "name": "Effect: To Shreds (AC Penalty)",
     "system": {
         "description": {
-            "value": "<p>You gain –4 status penalty to checks with the chosen skill.</p>"
+            "value": "<p>You take a –2 circumstance penalty to your AC.</p>"
         },
         "duration": {
             "expiry": "turn-start",
             "sustained": false,
-            "unit": "minutes",
+            "unit": "rounds",
             "value": 1
         },
         "fromSpell": false,
@@ -19,24 +19,16 @@
         "publication": {
             "license": "ORC",
             "remaster": true,
-            "title": "Starfinder Alien Core"
+            "title": "Pathfinder Society Scenario 7-10: Shattered Blades"
         },
         "rules": [
             {
-                "choices": {
-                    "config": "skills"
-                },
-                "flag": "skill",
-                "key": "ChoiceSet",
-                "prompt": "PF2E.SpecificRule.Prompt.Skill"
-            },
-            {
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.sf2e.rulesSelections.skill}"
+                    "ac"
                 ],
-                "type": "status",
-                "value": -4
+                "type": "circumstance",
+                "value": -2
             }
         ],
         "start": {

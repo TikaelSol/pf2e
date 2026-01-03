@@ -1,15 +1,15 @@
 {
-    "_id": "LdbqPPiSg5gn5Kqp",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
-    "name": "Effect: Gremlin's Inverted Gift",
+    "_id": "vWEYKF37OexA14Ki",
+    "img": "icons/magic/holy/angel-wings-gray.webp",
+    "name": "Spell Effect: Holy Host (Garuda)",
     "system": {
         "description": {
-            "value": "<p>You gain –4 status penalty to checks with the chosen skill.</p>"
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Holy Host]</p>\n<p>You gain a +1 circumstance bonus to all skill checks and DCs.</p>"
         },
         "duration": {
             "expiry": "turn-start",
             "sustained": false,
-            "unit": "minutes",
+            "unit": "rounds",
             "value": 1
         },
         "fromSpell": false,
@@ -19,24 +19,17 @@
         "publication": {
             "license": "ORC",
             "remaster": true,
-            "title": "Starfinder Alien Core"
+            "title": "Pathfinder Battlecry!"
         },
         "rules": [
             {
-                "choices": {
-                    "config": "skills"
-                },
-                "flag": "skill",
-                "key": "ChoiceSet",
-                "prompt": "PF2E.SpecificRule.Prompt.Skill"
-            },
-            {
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.sf2e.rulesSelections.skill}"
+                    "skill-check",
+                    "skill-dc"
                 ],
-                "type": "status",
-                "value": -4
+                "type": "circumstance",
+                "value": 1
             }
         ],
         "start": {
