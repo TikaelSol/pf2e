@@ -84,7 +84,12 @@
                 "add": [
                     "{item|flags.system.rulesSelections.sanctification}"
                 ],
-                "key": "ActorTraits"
+                "key": "ActorTraits",
+                "predicate": [
+                    {
+                        "not": "faith-tattoo:none"
+                    }
+                ]
             }
         ],
         "size": "med",
