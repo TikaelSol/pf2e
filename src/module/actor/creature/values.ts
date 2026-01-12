@@ -185,6 +185,7 @@ const RARE_LANGUAGES = [
 
 const UNCOMMON_SF_LANGUAGES = [
     "aballonian",
+    "akitonian",
     "brethedan",
     "castrovelian",
     "diasporan",
@@ -209,6 +210,7 @@ const UNCOMMON_SF_LANGUAGES = [
     "vercite",
     "vesk",
     "vlaka",
+    "ysoki",
 ] as const;
 
 const LANGUAGES_BY_RARITY =
