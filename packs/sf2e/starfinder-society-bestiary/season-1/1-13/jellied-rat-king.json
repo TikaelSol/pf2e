@@ -174,7 +174,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The jellied rat king loosens its ooze-like flesh, allowing the tiny rat corpses inside of it to open their mouths and wail horrifically. All creatures within 30 feet must succeed on a @Check[will|dc:15] save or become @UUID[Compendium.sf2e.conditions.Item.Frightened]{Frightened 1} (@UUID[Compendium.sf2e.conditions.Item.Frightened]{Frightened 2} on a critical failure).</p>"
+                    "value": "<p>The jellied rat king loosens its ooze-like flesh, allowing the tiny rat corpses inside of it to open their mouths and wail horrifically. All creatures within 30 feet must succeed on a @Check[will|dc:15|options:area-effect,inflicts:frightened] save or become @UUID[Compendium.sf2e.conditions.Item.Frightened]{Frightened 1} (@UUID[Compendium.sf2e.conditions.Item.Frightened]{Frightened 2} on a critical failure).</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -207,7 +207,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The jellied rat king spins and swirls, letting the tiny rat corpses inside of it bulge out inside its body like bludgeons. It deals @Damage[2d6[bludgeoning]|options:area-damage] damage to all creatures in a @Template[type:emanation|distance:10] (@Check[reflex|dc:15|basic] save).</p>"
+                    "value": "<p>The jellied rat king spins and swirls, letting the tiny rat corpses inside of it bulge out inside its body like bludgeons. It deals @Damage[2d6[bludgeoning]|options:area-damage] damage to all creatures in a @Template[type:emanation|distance:10] (@Check[reflex|dc:15|basic|options:area-effect] save).</p>"
                 },
                 "publication": {
                     "license": "OGL",
