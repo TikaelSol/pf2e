@@ -80,7 +80,8 @@ class Coins implements RawCoins {
 
         switch (size) {
             case "lg": {
-                return basePrice.scale(2);
+                const scale = SYSTEM_ID === "pf2e" ? 2 : 1;
+                return basePrice.scale(scale);
             }
             case "huge": {
                 return basePrice.scale(4);
