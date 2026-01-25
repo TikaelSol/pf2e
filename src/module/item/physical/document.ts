@@ -146,6 +146,10 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         return this.system.traits.value.some((t) => t === "magical" || setHasElement(MAGIC_TRADITIONS, t));
     }
 
+    get isTech(): boolean {
+        return this.system.traits.value.includes("tech");
+    }
+
     /** Returns true if invested, false if not invested and requires investment, and otherwise null */
     get isInvested(): boolean | null {
         if (!this.system.traits.value.includes("invested")) return null;
@@ -349,7 +353,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         };
 
         // Compute level, rarity, and price from factors like runes, precious material, shoddiness, and size
-        if (this.isMagical) this.system.price.sizeSensitive = false;
+        if (this.isMagical || this.isTech) this.system.price.sizeSensitive = false;
         const { level, rarity, price } = computeLevelRarityPrice(this);
         this.system.level.value = level;
         this.system.traits.rarity = rarity;
