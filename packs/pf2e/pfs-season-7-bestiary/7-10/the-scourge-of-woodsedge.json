@@ -400,16 +400,19 @@
             },
             "immunities": [
                 {
+                    "type": "bleed"
+                },
+                {
                     "exceptions": [],
                     "type": "dazzled"
                 },
                 {
                     "exceptions": [],
-                    "type": "disease"
+                    "type": "death-effects"
                 },
                 {
                     "exceptions": [],
-                    "type": "death-effects"
+                    "type": "disease"
                 },
                 {
                     "exceptions": [],
@@ -497,7 +500,7 @@
             "publication": {
                 "license": "ORC",
                 "remaster": true,
-                "title": "Pathfinder Society Scenario 7-10: Shattered Blades"
+                "title": "Pathfinder Society Scenario #7-10: Shattered Blades"
             }
         },
         "initiative": {

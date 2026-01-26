@@ -55,7 +55,7 @@ export const Ready = {
             // Save the current world schema version if hasn't before.
             storeInitialWorldVersions().then(async () => {
                 // Ensure only a single GM will run migrations if multiple are logged in
-                if (game.user !== game.users.activeGM) return;
+                if (!game.user.isActiveGM) return;
 
                 // 🎉
                 await createFirstParty();
@@ -147,14 +147,6 @@ export const Ready = {
             ]);
             resetActors(actorsToReprepare, { sheets: false, tokens: inEnvironments.length > 0 });
             ui.actors.render({ parts: ["directory", "parties"] });
-
-            // Show the GM the Remaster changes journal entry if they haven't seen it already.
-            if (game.user.isGM && !game.settings.get(SYSTEM_ID, "seenRemasterJournalEntry")) {
-                fromUuid("Compendium.pf2e.journals.JournalEntry.6L2eweJuM8W7OCf2").then((entry) => {
-                    entry?.sheet.render(true);
-                });
-                game.settings.set(SYSTEM_ID, "seenRemasterJournalEntry", true);
-            }
 
             // Reset all encounter data and re-render the tracker if an encounter is running
             if (game.combat) {

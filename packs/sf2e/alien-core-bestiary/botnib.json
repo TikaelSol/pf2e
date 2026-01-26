@@ -41,6 +41,9 @@
         },
         {
             "_id": "YeLRNo8qdJca4Hsq",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.yXD9uU8w8uFD2OBQ"
+            },
             "folder": "PUfxgisPd7TTDluV",
             "img": "systems/sf2e/icons/abilities/cerulean-circular-sign.webp",
             "name": "Delete",
@@ -100,6 +103,9 @@
         },
         {
             "_id": "JFWXpZ6yZyP1cWK2",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.kBhaPuzLUSwS6vVf"
+            },
             "folder": "D7UVaOiB40wTR6kv",
             "img": "icons/magic/lightning/bolt-strike-forked-blue.webp",
             "name": "Electric Arc",
@@ -151,7 +157,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "30 feet"
@@ -183,6 +189,9 @@
         },
         {
             "_id": "OmqiU8uv0fmOcpds",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.0zU8CPejjQFnhZFI"
+            },
             "folder": "D7UVaOiB40wTR6kv",
             "img": "systems/sf2e/icons/spells/ghost-sound.webp",
             "name": "Figment",
@@ -211,7 +220,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "30 feet"
@@ -244,6 +253,9 @@
         },
         {
             "_id": "6jJaRGnNd6JX2mo4",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.5y70IWhVV6bVjC9N"
+            },
             "folder": "PUfxgisPd7TTDluV",
             "img": "systems/sf2e/icons/abilities/blue-battery-gauge.webp",
             "name": "Recharge Weapon",
@@ -303,6 +315,9 @@
         },
         {
             "_id": "sif2FjmWrHSW3C73",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.zDJS8E66UI0himqV"
+            },
             "folder": "T8AzYUgNIAgTJ9Iz",
             "img": "systems/sf2e/icons/spells/shocking-grasp.webp",
             "name": "Thunderstrike",
@@ -366,7 +381,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "120 feet"
@@ -556,7 +571,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>20 feet. Creatures and items with the tech trait struggle to function reliably when near a botnib. Creatures with the tech trait, unattended items with the tech trait, or creatures holding equipment with the tech trait that start their turn in the aura must attempt a @Check[will|dc:16|options:area-effect,inflicts:glitching] save.</p><hr /><p><strong>Critical Success</strong> No effect, and the creature or item is temporarily immune to the botnib's glitch aura for 1 minute.</p>\n<p><strong>Success</strong> The creature or items are unaffected.</p>\n<p><strong>Failure</strong> The creature, item, or all the creature's held items become @UUID[Compendium.sf2e.conditions.6A2QDy8wRGCVQsSd]{Glitching 1}.</p>\n<p><strong>Critical Failure</strong> As failure, but @UUID[Compendium.sf2e.conditions.6A2QDy8wRGCVQsSd]{Glitching 2}.</p>"
+                    "value": "<p>20 feet. Creatures and items with the tech trait struggle to function reliably when near a botnib. Creatures with the tech trait, unattended items with the tech trait, or creatures holding equipment with the tech trait that start their turn in the aura must attempt a @Check[will|dc:16|options:area-effect,inflicts:glitching] save.</p><hr /><p><strong>Critical Success</strong> No effect, and the creature or item is temporarily immune to the botnib's glitch aura for 1 minute.</p>\n<p><strong>Success</strong> The creature or items are unaffected.</p>\n<p><strong>Failure</strong> The creature, item, or all the creature's held items become @UUID[Compendium.sf2e.conditions.Item.Glitching]{Glitching 1}.</p>\n<p><strong>Critical Failure</strong> As failure, but @UUID[Compendium.sf2e.conditions.Item.Glitching]{Glitching 2}.</p>"
                 },
                 "publication": {
                     "license": "OGL",

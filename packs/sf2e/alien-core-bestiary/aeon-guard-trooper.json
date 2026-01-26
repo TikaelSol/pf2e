@@ -96,12 +96,18 @@
         },
         {
             "_id": "HQQO7nTQ7KaSWyx5",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.SzGr78zdpnnrorre"
+            },
             "folder": "1zLXGqhSgBIthlcs",
             "img": "systems/sf2e/icons/equipment/weapons/grenade-hand.webp",
             "name": "Frag Grenade (Commercial)",
             "sort": 200000,
             "system": {
-                "ammo": null,
+                "ammo": {
+                    "baseType": null,
+                    "builtIn": false
+                },
                 "baseItem": "grenade",
                 "bonus": {
                     "value": 0
@@ -342,6 +348,9 @@
         },
         {
             "_id": "39KaQMvhcprhNQx6",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.7psnMwQ95uO5apQz"
+            },
             "folder": "cTmXSS0L1MClVGP3",
             "img": "systems/sf2e/icons/abilities/purple-third-eye.webp",
             "name": "Darkvision Visor",
@@ -357,6 +366,7 @@
                 },
                 "equipped": {
                     "carryType": "worn",
+                    "handsHeld": 0,
                     "invested": null
                 },
                 "hardness": 0,
@@ -397,13 +407,16 @@
                     ]
                 },
                 "usage": {
-                    "value": "other"
+                    "value": "installed-in-armor"
                 }
             },
             "type": "equipment"
         },
         {
             "_id": "9ZygTbQqMYFYe0vK",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.0jSc8zqUPnAByMf9"
+            },
             "folder": "F6h7fO0Z7cgQBVRD",
             "img": "systems/sf2e/icons/equipment/other/green-battery.webp",
             "name": "Battery (Commercial)",
@@ -419,7 +432,8 @@
                     "value": ""
                 },
                 "equipped": {
-                    "carryType": "worn"
+                    "carryType": "worn",
+                    "handsHeld": 0
                 },
                 "hardness": 0,
                 "hp": {
@@ -434,6 +448,7 @@
                     "type": null
                 },
                 "price": {
+                    "per": 1,
                     "value": {
                         "sp": 10
                     }
@@ -452,7 +467,7 @@
                     "value": []
                 },
                 "uses": {
-                    "autoDestroy": true,
+                    "autoDestroy": false,
                     "max": 10,
                     "value": 10
                 }
@@ -612,7 +627,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>After the trooper attempts a Strike against a target (regardless of success or failure), the next attack roll one of the trooper's allies makes against the same target gains a +2 circumstance bonus. If a Strike with a bonus from coordinated fire hits, the target becomes @UUID[Compendium.sf2e.conditions.Item.Suppressed] until the end of the attacking ally's next turn.</p>\n<p>@UUID[Compendium.sf2e.bestiary-effects.x9nA4lIcHmE7x8Tt]{Effect: Coordinated Fire}</p>"
+                    "value": "<p>After the trooper attempts a Strike against a target (regardless of success or failure), the next attack roll one of the trooper's allies makes against the same target gains a +2 circumstance bonus. If a Strike with a bonus from coordinated fire hits, the target becomes @UUID[Compendium.sf2e.conditions.Item.Suppressed] until the end of the attacking ally's next turn.</p>\n<p>@UUID[Compendium.sf2e.bestiary-effects.Item.Effect: Coordinated Fire]</p>"
                 },
                 "publication": {
                     "license": "OGL",

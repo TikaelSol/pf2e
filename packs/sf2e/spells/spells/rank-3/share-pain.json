@@ -36,7 +36,7 @@
         },
         "heightening": {
             "levels": {
-                "4": {
+                "6": {
                     "damage": {
                         "dIvEREAgyIVyanqT": {
                             "applyMod": false,
@@ -77,7 +77,10 @@
         },
         "traits": {
             "rarity": "common",
-            "traditions": [],
+            "traditions": [
+                "divine",
+                "occult"
+            ],
             "value": [
                 "concentrate",
                 "manipulate",

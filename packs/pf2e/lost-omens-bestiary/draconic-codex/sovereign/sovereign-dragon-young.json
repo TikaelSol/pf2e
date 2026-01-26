@@ -592,9 +592,10 @@
                         "outcome": [
                             "criticalSuccess"
                         ],
-                        "selector": "attack",
-                        "text": "{item|system.description.value}",
-                        "title": "{item|name}"
+                        "selector": "strike-attack-roll",
+                        "text": "{item|description}",
+                        "title": "{item|name}",
+                        "visibility": "owner"
                     }
                 ],
                 "slug": null,
@@ -810,7 +811,6 @@
                 "base": 18,
                 "special": []
             },
-            "and whether it’s holy or unholy": {},
             "athletics": {
                 "base": 22,
                 "special": []
@@ -833,9 +833,6 @@
             "occultism": {
                 "base": 18,
                 "special": []
-            },
-            "or item is sanctified": {
-                "base": null
             },
             "society": {
                 "base": 20,

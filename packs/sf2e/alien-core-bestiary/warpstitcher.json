@@ -44,6 +44,9 @@
         },
         {
             "_id": "TMTA9QLyhICRuspQ",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.SwUiVavHKMWG7t5K"
+            },
             "folder": "iDjm2cXyRAe4VZ35",
             "img": "systems/sf2e/icons/spells/tongues.webp",
             "name": "Truespeech (constant)",
@@ -72,7 +75,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "touch"
@@ -238,7 +241,7 @@
                             "claw-damage"
                         ],
                         "text": "@Localize[PF2E.NPC.Abilities.Glossary.Grab]",
-                        "title": "@Localize[PF2E.AttackEffectGrab]  <span class=\"action-glyph\">1</span>",
+                        "title": "@Localize[PF2E.AttackEffectGrab] <span class=\"action-glyph\">1</span>",
                         "visibility": "owner"
                     },
                     {
@@ -250,7 +253,7 @@
                             "claw-damage"
                         ],
                         "text": "@Localize[PF2E.NPC.Abilities.Glossary.ImprovedGrab]",
-                        "title": "@Localize[PF2E.AttackEffectImprovedGrab]  <span class=\"action-glyph\">f</span>",
+                        "title": "@Localize[PF2E.AttackEffectImprovedGrab] <span class=\"action-glyph\">f</span>",
                         "visibility": "owner"
                     }
                 ],

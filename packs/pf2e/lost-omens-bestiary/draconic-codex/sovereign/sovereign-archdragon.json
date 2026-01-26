@@ -729,7 +729,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p><strong>Trigger</strong> The dragon is targeted by a mental effect they're aware of</p><hr /><p><strong>Effect</strong> The dragon immediately attempts to counteract the triggering effect (counteract modifier [[/r 1d20+32 #Counteract]]{+32}, counteract rank 10).</p>"
+                    "value": "<p><strong>Trigger</strong> The dragon is targeted by a mental effect they're aware of</p><hr /><p><strong>Effect</strong> The dragon immediately attempts to counteract the triggering effect (counteract modifier [[/r 1d20+38 #Counteract]]{+38}, counteract rank 10).</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -867,9 +867,10 @@
                         "outcome": [
                             "criticalSuccess"
                         ],
-                        "selector": "attack",
-                        "text": "{item|system.description.value}",
-                        "title": "{item|name}"
+                        "selector": "strike-attack-roll",
+                        "text": "{item|description}",
+                        "title": "{item|name}",
+                        "visibility": "owner"
                     }
                 ],
                 "slug": null,
@@ -1156,7 +1157,6 @@
                 "base": 38,
                 "special": []
             },
-            "and whether it’s holy or unholy": {},
             "athletics": {
                 "base": 43,
                 "special": []
@@ -1179,9 +1179,6 @@
             "occultism": {
                 "base": 38,
                 "special": []
-            },
-            "or item is sanctified": {
-                "base": null
             },
             "society": {
                 "base": 40,

@@ -150,7 +150,7 @@ class CompendiumPack {
                     // Ensure all linked-weapon IDs point to a weapon
                     const attackItems = docSource.items.filter((i): i is MeleeSource => i.type === "melee");
                     for (const item of attackItems) {
-                        const { linkedWeapon } = item.flags?.pf2e ?? {};
+                        const { linkedWeapon } = item.flags?.[systemId] ?? {};
                         const weaponFound = linkedWeapon
                             ? docSource.items.some((i) => i._id === linkedWeapon && i.type === "weapon")
                             : false;
@@ -277,7 +277,7 @@ class CompendiumPack {
                     getFolderPath({ folders: pf2eFolders, dirName: packDirName }, f),
                 ]);
                 // Maps the SF2e folder to the folder ID
-                const sf2eFolderLookup = R.mapToObj(folders, (f) => [
+                const sf2eFolderIds = R.mapToObj(folders, (f) => [
                     getFolderPath({ folders, dirName: packDirName }, f),
                     f._id,
                 ]);
@@ -289,7 +289,7 @@ class CompendiumPack {
                     const source = parsePackEntrySource(pf2ePath);
                     if (source.folder) {
                         const folderPath = pf2eFolderPaths[source.folder];
-                        source.folder = sf2eFolderLookup[folderPath] ?? null;
+                        source.folder = sf2eFolderIds[folderPath] ?? folders.find((f) => f._id === source.folder)?._id;
                         if (!source.folder) {
                             console.warn(`Failed to find folder ${folderPath} for item ${name} in pack ${packDirName}`);
                         }
@@ -512,17 +512,13 @@ class CompendiumPack {
 
         const filePath = path.resolve(outDir, this.dirName);
         const outFile = filePath.concat(".json");
-        if (fs.existsSync(outFile)) {
-            fs.rmSync(outFile, { force: true });
-        }
+        if (fs.existsSync(outFile)) fs.rmSync(outFile, { force: true });
         fs.writeFileSync(outFile, JSON.stringify(this.finalizeAll()));
 
         // Save folders if available
         if (this.folders.length > 0) {
             const folderFile = filePath.concat("_folders.json");
-            if (fs.existsSync(folderFile)) {
-                fs.rmSync(folderFile, { force: true });
-            }
+            if (fs.existsSync(folderFile)) fs.rmSync(folderFile, { force: true });
             fs.writeFileSync(folderFile, JSON.stringify(this.folders));
         }
         console.log(`File "${this.dirName}.json" with ${this.data.length} entries created successfully.`);
@@ -532,18 +528,9 @@ class CompendiumPack {
 
     #isDocumentSource(maybeDocSource: unknown): maybeDocSource is PackEntry {
         if (!R.isPlainObject(maybeDocSource)) return false;
-        const checks = Object.entries({
-            name: (data: { name?: unknown }) => typeof data.name === "string",
-        });
-
-        const failedChecks = checks
-            .map(([key, check]) => (check(maybeDocSource) ? null : key))
-            .filter((key) => key !== null);
-
-        if (failedChecks.length > 0) {
-            throw PackError(`Document source in (${this.id}) has invalid or missing keys: ${failedChecks.join(", ")}`);
+        if (typeof maybeDocSource.name !== "string") {
+            throw PackError(`Document source in (${this.id}) has an invalid or missing name`);
         }
-
         return true;
     }
 
@@ -560,10 +547,9 @@ class CompendiumPack {
     }
 
     #assertSizeValid(source: ActorSourcePF2e | ItemSourcePF2e): void {
-        if (source.type === "npc" || source.type === "vehicle") {
-            if (!tupleHasValue(SIZES, source.system.traits.size.value)) {
-                throw PackError(`Actor size on ${source.name} (${source._id}) is invalid.`);
-            }
+        const sizeIsStored = source.type === "npc" || source.type === "vehicle";
+        if (sizeIsStored && !tupleHasValue(SIZES, source.system.traits.size.value)) {
+            throw PackError(`Actor size on ${source.name} (${source._id}) is invalid.`);
         }
     }
 }

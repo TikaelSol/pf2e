@@ -38,7 +38,7 @@
         },
         {
             "_id": "4HOFiPRCa2KlYCuM",
-            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Shambler Troop] (Moderate 2)",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Shambler Troop] (Moderate 2)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -155,7 +155,7 @@
         },
         {
             "_id": "QtTACUG23nHVOrZc",
-            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Dread Wraith] {Moderate 7}",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.War Wraith] {Moderate 7}",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -246,7 +246,7 @@
         },
         {
             "_id": "l54K1LGfNGwhbpJw",
-            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Viper Vine] (Moderate 11)",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Viper Vine] (Moderate 11)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -259,7 +259,7 @@
         },
         {
             "_id": "mejp0hGcgBMAz7Jh",
-            "description": "[[/r 1d4]] @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Skeleton Infantry] (Moderate 12)",
+            "description": "[[/r 1d4]] @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Skeleton Infantry] (Moderate 12)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",

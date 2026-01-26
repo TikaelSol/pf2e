@@ -116,7 +116,7 @@
         },
         {
             "_id": "KD3Z8NA99lrCFXCL",
-            "description": "[[/r 2d4]] @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Shambler Troop]{Shambler Troops} (Moderate 5)",
+            "description": "[[/r 2d4]] @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Shambler Troop]{Shambler Troops} (Moderate 5)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -142,7 +142,7 @@
         },
         {
             "_id": "usdRN5QFrpBsA0xC",
-            "description": "[[/r 1d4]] @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Sulfur Zombie]{Sulfur Zombies} (Moderate 6)",
+            "description": "[[/r 1d4]] @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Sulfur Zombie]{Sulfur Zombies} (Moderate 6)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -181,7 +181,7 @@
         },
         {
             "_id": "BZSnq6ipmXSukpDu",
-            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Zombie Dragon] (Moderate 7)",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Zombie Dragon] (Moderate 7)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -259,7 +259,7 @@
         },
         {
             "_id": "nZfoc0fuEyTt09w2",
-            "description": "2 @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.Skeleton Infantry]{Skeleton Infantries} (Moderate 11)",
+            "description": "2 @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Skeleton Infantry]{Skeleton Infantries} (Moderate 11)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -272,7 +272,7 @@
         },
         {
             "_id": "vn8HaQ3qzxcmcZKt",
-            "description": "[[/r 1d3]] @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Viper Vine]{Viper Vines} (Moderate 12)",
+            "description": "[[/r 1d3]] @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Viper Vine]{Viper Vines} (Moderate 12)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",
@@ -285,7 +285,7 @@
         },
         {
             "_id": "jthRhs6AOauSAUt6",
-            "description": "1 @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.Wemmuth] (Moderate 13)",
+            "description": "1 @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.Wemmuth] (Moderate 13)",
             "drawn": false,
             "img": "icons/svg/d20-black.svg",
             "name": "",

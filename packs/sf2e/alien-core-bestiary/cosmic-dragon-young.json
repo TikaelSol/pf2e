@@ -44,6 +44,9 @@
         },
         {
             "_id": "gqJOfGmhjY2anPYG",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.R9xqCBblkS5KE4y7"
+            },
             "folder": "iDjm2cXyRAe4VZ35",
             "img": "systems/sf2e/icons/spells/sending.webp",
             "name": "Sending",
@@ -73,7 +76,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "planetary"
@@ -105,6 +108,9 @@
         },
         {
             "_id": "wW3iG2EYMceB91E4",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.SwUiVavHKMWG7t5K"
+            },
             "folder": "iDjm2cXyRAe4VZ35",
             "img": "systems/sf2e/icons/spells/tongues.webp",
             "name": "Truespeech (constant)",
@@ -134,7 +140,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "touch"
@@ -165,6 +171,9 @@
         },
         {
             "_id": "WKbjdRL8LmfP69IO",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.ShwUELLERVMtdjwE"
+            },
             "folder": "o04idOr2cgTUSO5w",
             "img": "systems/sf2e/icons/abilities/blue-heart-in-a-circle.webp",
             "name": "Life Seal (at will)",
@@ -593,7 +602,7 @@
                             "strike-damage"
                         ],
                         "text": "@Localize[PF2E.NPC.Abilities.Glossary.Knockdown]",
-                        "title": "@Localize[PF2E.AttackEffectKnockdown]  <span class=\"action-glyph\">1</span>",
+                        "title": "@Localize[PF2E.AttackEffectKnockdown] <span class=\"action-glyph\">1</span>",
                         "visibility": "owner"
                     },
                     {
@@ -644,7 +653,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>TThe dragon makes two claw Strikes and one tail Strike in any order.</p>"
+                    "value": "<p>The dragon makes two claw Strikes and one tail Strike in any order.</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -686,7 +695,7 @@
                         "outcome": [
                             "criticalSuccess"
                         ],
-                        "selector": "attack-roll",
+                        "selector": "strike-attack-roll",
                         "text": "{item|description}",
                         "title": "{item|name}",
                         "visibility": "owner"
@@ -774,7 +783,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The dragon imposes an effect on creatures within their attunement aura. The effect is based on the dragon's current attunement. The dragon can't use Stellar Pulse again for [[/gmr 1d4 #Recharge Stellar Pulse]]{1d4 rounds}.</p><ul><li>Graviton Each creature must succeed at a @Check[fortitude|dc:29] save or be @UUID[Compendium.sf2e.conditions.Item.Immobilized] for 1 round.</li><li><p>Photon Each creature becomes @UUID[Compendium.sf2e.conditions.Item.Quickened] and can use the extra action only to Stride or Strike.</p>\n</li></ul>"
+                    "value": "<p>The dragon imposes an effect on creatures within their attunement aura. The effect is based on the dragon's current attunement. The dragon can't use Stellar Pulse again for [[/gmr 1d4 #Recharge Stellar Pulse]]{1d4 rounds}.</p><ul><li><strong>Graviton</strong> Each creature must succeed at a @Check[fortitude|dc:29] save or be @UUID[Compendium.sf2e.conditions.Item.Immobilized] for 1 round.</li><li><p><strong>Photon</strong> Each creature becomes @UUID[Compendium.sf2e.conditions.Item.Quickened] and can use the extra action only to Stride or Strike.</p></li></ul>"
                 },
                 "publication": {
                     "license": "OGL",

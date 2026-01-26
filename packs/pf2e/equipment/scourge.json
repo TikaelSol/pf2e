@@ -45,8 +45,8 @@
             }
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
+            "license": "ORC",
+            "remaster": true,
             "title": "Pathfinder Battlecry!"
         },
         "quantity": 1,

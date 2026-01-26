@@ -2,8 +2,12 @@
     {
         "publication": null,
         "entries": {
-            "deities": ["Sarenrae"],
-            "equipment": ["Invisibility Potion"],
+            "deities": [
+                "Sarenrae"
+            ],
+            "equipment": [
+                "Invisibility Potion"
+            ],
             "spells": [
                 "Blessed Boundary",
                 "Divine Decree",
@@ -60,8 +64,10 @@
         "entries": {
             "actions": [
                 "Aid",
+                "Arrest a Fall",
                 "Avoid Notice",
-                "Balance",
+                "Burrow",
+                "Borrow an Arcane Spell",
                 "Cast a Spell",
                 "Change Shape",
                 "Climb",
@@ -72,16 +78,14 @@
                 "Crawl",
                 "Create a Diversion",
                 "Create Forgery",
-                "Decipher Writing",
                 "Defend",
                 "Delay",
                 "Demoralize",
                 "Detect Magic",
                 "Disarm",
+                "Dismiss",
                 "Dragon Breath (Dragon Form)",
-                "Drive",
                 "Drop Prone",
-                "Earn Income",
                 "Escape",
                 "Feint",
                 "Fly",
@@ -104,16 +108,17 @@
                 "Maneuver in Flight",
                 "Mount",
                 "Palm an Object",
-                "Perform",
                 "Point Out",
                 "Raise a Shield",
                 "Reactive Strike",
                 "Ready",
                 "Recall Knowledge",
-                "Repair",
+                "Refocus",
+                "Release",
+                "Repeat a Spell",
                 "Reposition",
+                "Retraining",
                 "Request",
-                "Research",
                 "Scout",
                 "Search",
                 "Seek",
@@ -126,7 +131,6 @@
                 "Step",
                 "Stride",
                 "Strike",
-                "Subsist",
                 "Sustain",
                 "Swim",
                 "Take Cover",
@@ -137,6 +141,13 @@
             "ancestry-features": [
                 "Constructed",
                 "Sharp Teeth"
+            ],
+            "backgrounds": [
+                "Artist",
+                "Cook",
+                "Laborer",
+                "Miner",
+                "Teacher"
             ],
             "conditions": [
                 "Blinded",
@@ -182,9 +193,6 @@
                 "Unnoticed",
                 "Wounded"
             ],
-            "equipment": [
-                "Repair Toolkit"
-            ],
             "equipment-effects": [
                 "Effect: Parry",
                 "Effect: Raise a Shield"
@@ -195,6 +203,8 @@
                 "Additional Lore",
                 "Adopted Ancestry",
                 "Advanced First Aid",
+                "Advanced Targeting System",
+                "Advanced General Training",
                 "Ancestral Paragon",
                 "Armor Proficiency",
                 "Assurance",
@@ -212,6 +222,7 @@
                 "Communal Crafting",
                 "Continual Recovery",
                 "Cooperative Nature",
+                "Cooperative Soul",
                 "Craft Anything",
                 "Diehard",
                 "Divine Guidance",
@@ -252,6 +263,7 @@
                 "Magical Crafting",
                 "Monster Crafting",
                 "Multilingual",
+                "Multitalented",
                 "Nanite Surge",
                 "Natural Ambition",
                 "Natural Skill",
@@ -264,6 +276,7 @@
                 "Planar Survival",
                 "Powerful Leap",
                 "Prescient Consumable",
+                "Protective Subroutine",
                 "Quick Climb",
                 "Quick Disguise",
                 "Quick Identification",
@@ -413,6 +426,7 @@
                 "Gate",
                 "Gentle Landing",
                 "Ghostly Carrier",
+                "Goblin Pox",
                 "Gouging Claw",
                 "Grease",
                 "Grim Tendrils",
@@ -680,6 +694,25 @@
             ],
             "macros": [
                 "Treat Wounds"
+            ]
+        }
+    },
+    {
+        "publication": "Starfinder GM Core",
+        "entries": {
+            "actions": [
+                "Board",
+                "Bribe Contact",
+                "Discover",
+                "Drive",
+                "Gain Contact",
+                "Gossip",
+                "Influence",
+                "Research",
+                "Run Over",
+                "Scout Location",
+                "Secure Disguises",
+                "Stop"
             ]
         }
     },

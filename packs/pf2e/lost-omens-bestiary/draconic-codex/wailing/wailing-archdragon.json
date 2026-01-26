@@ -613,7 +613,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p><strong>Trigger</strong> A foe within 90 feet uses an auditory or sonic effect</p><hr /><p><strong>Effect</strong> The young wailing dragon releases a burst of noise, attempting to drown out the triggering sound. It makes a counteract check against the effect (counteract rank 9, counteract modifier [[/r 1d20+32 #Counteract]]{+32}).</p>"
+                    "value": "<p><strong>Trigger</strong> A foe within 90 feet uses an auditory or sonic effect</p><hr /><p><strong>Effect</strong> The wailing archdragon releases a burst of noise, attempting to drown out the triggering sound. It makes a counteract check against the effect (counteract rank 9, counteract modifier [[/r 1d20+32 #Counteract]]{+32}).</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -645,14 +645,22 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>120 feet, A creature who enters or begins their turn in the area must attempt a @Check[fortitude|dc:37] save. Regardless of the result of the saving throw, the creature is temporarily immune to this dragon's subsonic drone for 1 minute.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 2}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 3}.</p>"
+                    "value": "<p>120 feet. A creature who enters or begins their turn in the area must attempt a @Check[fortitude|dc:37|options:area-effect,inflicts:sickened] save. Regardless of the result of the saving throw, the creature is temporarily immune to this dragon's subsonic drone for 1 minute.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 2}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 3}.</p>"
                 },
                 "publication": {
                     "license": "OGL",
                     "remaster": false,
                     "title": ""
                 },
-                "rules": [],
+                "rules": [
+                    {
+                        "key": "Aura",
+                        "radius": 120,
+                        "traits": [
+                            "auditory"
+                        ]
+                    }
+                ],
                 "slug": null,
                 "traits": {
                     "value": [
@@ -719,9 +727,10 @@
                         "outcome": [
                             "criticalSuccess"
                         ],
-                        "selector": "attack",
-                        "text": "{item|system.description.value}",
-                        "title": "{item|name}"
+                        "selector": "strike-attack-roll",
+                        "text": "{item|description}",
+                        "title": "{item|name}",
+                        "visibility": "owner"
                     }
                 ],
                 "slug": null,

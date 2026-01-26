@@ -1071,6 +1071,9 @@
         },
         {
             "_id": "IQ0tNiEe7G0fqihM",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.7P4eBdqWcgQJAFCa"
+            },
             "folder": "PUfxgisPd7TTDluV",
             "img": "systems/sf2e/icons/abilities/blue-laser-beam-rifle.webp",
             "name": "Shifting Surge",
@@ -1107,7 +1110,7 @@
                 },
                 "requirements": "",
                 "rules": [],
-                "slug": null,
+                "slug": "shifting-surge",
                 "target": {
                     "value": "one weapon held by you or a willing ally that deals acid, cold, electricity, fire, or sonic damage"
                 },
@@ -1130,6 +1133,9 @@
         },
         {
             "_id": "ZZm7CSXCn98TwqVw",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.Gb7SeieEvd0pL2Eh"
+            },
             "folder": "T8AzYUgNIAgTJ9Iz",
             "img": "icons/skills/melee/strike-blade-scimitar-gray-red.webp",
             "name": "Sure Strike",
@@ -1159,7 +1165,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": ""
@@ -1189,6 +1195,9 @@
         },
         {
             "_id": "UwYFIn9DJaesGXzq",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.zDJS8E66UI0himqV"
+            },
             "folder": "T8AzYUgNIAgTJ9Iz",
             "img": "systems/sf2e/icons/spells/shocking-grasp.webp",
             "name": "Thunderstrike",
@@ -1252,7 +1261,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "120 feet"
@@ -1284,6 +1293,9 @@
         },
         {
             "_id": "kkV4ZEeTJ7uPv7Tz",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.NkvRoN33RbDg3fl9"
+            },
             "folder": "9xujKNVgcczpuL4g",
             "img": "systems/sf2e/icons/abilities/pink-target-sign.webp",
             "name": "Analyze Target",
@@ -1297,7 +1309,7 @@
                 "damage": {},
                 "defense": null,
                 "description": {
-                    "value": "<p>You focus on the target, gathering data as magical holograms display information. When the casting is complete, you learn biometric information about the target, including its fingerprints, medical conditions, and other basic physiological information. You or anyone you advise about the analysis gains a +1 status bonus to checks to Impersonate the creature, to @UUID[Compendium.sf2e.actions.Item.Treat Wounds] on the creature, and to @UUID[Compendium.sf2e.actions.Item.Recall Knowledge] about it. If the target is illusory or under the effects of illusion magic, you detect this only if the effect's rank is lower than the rank of your analyze target spell.</p>\n<p>@UUID[Compendium.sf2e.spell-effects.Item.Spell Effect: Analyze Target]</p><hr /><p><strong>Heightened (3rd)</strong> The circumstance bonus increases to +2, and you can target up to 10 creatures.</p>\n<p><strong>Heightened (6th)</strong> The circumstance bonus increases to +3, and you can target any number of creatures.</p>"
+                    "value": "<p>You focus on the target, gathering data as magical holograms display information. When the casting is complete, you learn biometric information about the target, including its fingerprints, medical conditions, and other basic physiological information. You or anyone you advise about the analysis gains a +1 status bonus to checks to @UUID[Compendium.sf2e.actions.Item.Impersonate] the creature, to @UUID[Compendium.sf2e.actions.Item.Treat Wounds] on the creature, and to @UUID[Compendium.sf2e.actions.Item.Recall Knowledge] about it. If the target is illusory or under the effects of illusion magic, you detect this only if the effect's rank is lower than the rank of your analyze target spell.</p>\n<p>@UUID[Compendium.sf2e.spell-effects.Item.Spell Effect: Analyze Target]</p><hr /><p><strong>Heightened (3rd)</strong> The status bonus increases to +2, and you can target up to 10 creatures.</p>\n<p><strong>Heightened (6th)</strong> The status bonus increases to +3, and you can target any number of creatures.</p>"
                 },
                 "duration": {
                     "sustained": false,
@@ -1319,7 +1331,7 @@
                 },
                 "requirements": "",
                 "rules": [],
-                "slug": null,
+                "slug": "analyze-target",
                 "target": {
                     "value": "1 creature"
                 },
@@ -1346,6 +1358,9 @@
         },
         {
             "_id": "QMjKy4fpTt325yd8",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.MPxbKoR54gkYkqLO"
+            },
             "folder": "D7UVaOiB40wTR6kv",
             "img": "icons/creatures/claws/claw-hooked-curved.webp",
             "name": "Gouging Claw",
@@ -1409,6 +1424,9 @@
                             "damage": {
                                 "0": {
                                     "category": null,
+                                    "kinds": [
+                                        "damage"
+                                    ],
                                     "type": "piercing"
                                 }
                             },
@@ -1424,16 +1442,20 @@
                             "damage": {
                                 "0": {
                                     "category": null,
+                                    "kinds": [
+                                        "damage"
+                                    ],
                                     "type": "slashing"
                                 }
-                            }
+                            },
+                            "defense": null
                         }
                     }
                 },
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "touch"
@@ -1466,6 +1488,9 @@
         },
         {
             "_id": "32odwOs3r6Pr6F33",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.Qw3fnUlaUbnn7ipC"
+            },
             "folder": "D7UVaOiB40wTR6kv",
             "img": "icons/magic/symbols/runes-triangle-blue.webp",
             "name": "Prestidigitation",
@@ -1494,7 +1519,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "10 feet"
@@ -1527,6 +1552,9 @@
         },
         {
             "_id": "TTkLnFceMQk6zDbR",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.sXnWQOcGG2ELcxXb"
+            },
             "folder": "PUfxgisPd7TTDluV",
             "img": "systems/sf2e/icons/abilities/blue-galaxy.webp",
             "name": "Ricochet",
@@ -1537,18 +1565,7 @@
                     "value": ""
                 },
                 "counteraction": false,
-                "damage": {
-                    "IxEclWQHfqdivMNQ": {
-                        "applyMod": false,
-                        "category": null,
-                        "formula": "2d4",
-                        "kinds": [
-                            "damage"
-                        ],
-                        "materials": [],
-                        "type": "bludgeoning"
-                    }
-                },
+                "damage": {},
                 "defense": {
                     "save": {
                         "basic": true,
@@ -1562,14 +1579,6 @@
                     "sustained": false,
                     "value": ""
                 },
-                "heightening": {
-                    "area": 0,
-                    "damage": {
-                        "IxEclWQHfqdivMNQ": "1d4"
-                    },
-                    "interval": 1,
-                    "type": "interval"
-                },
                 "level": {
                     "value": 1
                 },
@@ -1577,31 +1586,57 @@
                     "value": "kEg204j5ScOrDOlz"
                 },
                 "overlays": {
-                    "br1AYCTToco9CFbh": {
+                    "9SFquoV10l0vCBx3": {
                         "name": "Ricochet (Bludgeoning)",
                         "overlayType": "override",
                         "sort": 1,
                         "system": {
                             "damage": {
-                                "IxEclWQHfqdivMNQ": {
-                                    "category": null
+                                "jDyOaf3hVw8NnEOE": {
+                                    "applyMod": false,
+                                    "category": null,
+                                    "formula": "2d4",
+                                    "kinds": [
+                                        "damage"
+                                    ],
+                                    "materials": [],
+                                    "type": "bludgeoning"
                                 }
+                            },
+                            "heightening": {
+                                "area": 0,
+                                "damage": {
+                                    "jDyOaf3hVw8NnEOE": "1d4"
+                                },
+                                "interval": 1,
+                                "type": "interval"
                             }
                         }
                     },
-                    "nZLY4xPlbMXARgd3": {
+                    "FlQr3ix5EROJM6jK": {
                         "name": "Ricochet (Slashing)",
                         "overlayType": "override",
                         "sort": 2,
                         "system": {
                             "damage": {
-                                "IxEclWQHfqdivMNQ": {
+                                "fqgYj9q7LZWoPKGz": {
+                                    "applyMod": false,
                                     "category": null,
+                                    "formula": "2d4",
                                     "kinds": [
                                         "damage"
                                     ],
+                                    "materials": [],
                                     "type": "slashing"
                                 }
+                            },
+                            "heightening": {
+                                "area": 0,
+                                "damage": {
+                                    "fqgYj9q7LZWoPKGz": "1d4"
+                                },
+                                "interval": 1,
+                                "type": "interval"
                             }
                         }
                     }
@@ -1616,7 +1651,7 @@
                 },
                 "requirements": "",
                 "rules": [],
-                "slug": null,
+                "slug": "ricochet",
                 "target": {
                     "value": "1 or 2 creatures"
                 },
@@ -1641,6 +1676,9 @@
         },
         {
             "_id": "4TvOUSW7XkRXgaRd",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.pwzdSlJgYqN7bs2w"
+            },
             "folder": "D7UVaOiB40wTR6kv",
             "img": "systems/sf2e/icons/spells/mage-hand.webp",
             "name": "Telekinetic Hand",
@@ -1689,7 +1727,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Player Core"
+                    "title": "Starfinder Player Core"
                 },
                 "range": {
                     "value": "30 feet"
@@ -1929,6 +1967,699 @@
                 "traits": {}
             },
             "type": "lore"
+        },
+        {
+            "_id": "Sm91qxatmsBLnlib",
+            "img": "systems/sf2e/icons/default-icons/spellcastingEntry.svg",
+            "name": "Arcane Focus Spells",
+            "sort": 0,
+            "system": {
+                "ability": {
+                    "value": "int"
+                },
+                "autoHeightenLevel": {
+                    "value": null
+                },
+                "description": {
+                    "value": ""
+                },
+                "prepared": {
+                    "value": "focus"
+                },
+                "proficiency": {
+                    "slug": "",
+                    "value": 1
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slots": {},
+                "slug": null,
+                "spelldc": {
+                    "dc": 0,
+                    "value": 0
+                },
+                "tradition": {
+                    "value": "arcane"
+                },
+                "traits": {}
+            },
+            "type": "spellcastingEntry"
+        },
+        {
+            "_id": "3Hi4C8GM6Jf6PwH8",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.KOkGLXwOBAIlczzk"
+            },
+            "folder": "AF5tLnq9AryanMqw",
+            "img": "systems/sf2e/icons/abilities/green-stock-market-chart.webp",
+            "name": "Warp Probability",
+            "sort": 0,
+            "system": {
+                "area": null,
+                "cost": {
+                    "value": ""
+                },
+                "counteraction": false,
+                "damage": {},
+                "defense": null,
+                "description": {
+                    "value": "<p><strong>Trigger</strong> You fail an attack roll or saving throw.</p><hr /><p>You open your mind to read the underlying probability of the multiverse. Reroll the failed check and take the better result.</p>"
+                },
+                "duration": {
+                    "sustained": false,
+                    "value": ""
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": {
+                    "value": "Sm91qxatmsBLnlib"
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "range": {
+                    "value": ""
+                },
+                "requirements": "",
+                "rules": [],
+                "slug": "warp-probability",
+                "target": {
+                    "value": ""
+                },
+                "time": {
+                    "value": "reaction"
+                },
+                "traits": {
+                    "rarity": "uncommon",
+                    "traditions": [],
+                    "value": [
+                        "anchoring",
+                        "concentrate",
+                        "focus",
+                        "fortune",
+                        "witchwarper"
+                    ]
+                }
+            },
+            "type": "spell"
+        },
+        {
+            "_id": "WHNHzbxwbuK42BwA",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.BANdFbfuD16lPHs4"
+            },
+            "folder": "jjcF0lfrc3ZIoKv1",
+            "img": "icons/equipment/chest/coat-leather-blue.webp",
+            "name": "Second Skin",
+            "sort": 0,
+            "system": {
+                "acBonus": 1,
+                "baseItem": "second-skin",
+                "bulk": {
+                    "value": 0.1
+                },
+                "category": "light",
+                "checkPenalty": -1,
+                "containerId": null,
+                "description": {
+                    "value": "<p><strong>Upgrades:</strong> 0</p><hr /><p>Soft but resilient fabric contours perfectly to the wearer's body, offering basic protection without sacrificing comfort. Second skin is commonly worn underneath casual clothing.</p>"
+                },
+                "dexCap": 4,
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "inSlot": true,
+                    "invested": null
+                },
+                "grade": "commercial",
+                "group": "polymer",
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 20
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "resilient": 0
+                },
+                "size": "med",
+                "slug": "second-skin",
+                "speedPenalty": 0,
+                "strength": 0,
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "comfort",
+                        "flexible",
+                        "tech"
+                    ]
+                }
+            },
+            "type": "armor"
+        },
+        {
+            "_id": "6KUzDUFxEmhrRSzP",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.qqjDcCW118ySAlAS"
+            },
+            "folder": "cJoNKs2FMCJkyEDK",
+            "img": "systems/sf2e/icons/equipment/other/battery-large.webp",
+            "name": "Hacking Toolkit (Commercial)",
+            "sort": 0,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "containerId": null,
+                "description": {
+                    "value": "<p>A hacking toolkit is required for Computers checks to Hack computers. You can use a hacking toolkit to access a computer without using a user interface, but this requires physical contact with the computer or contact via an infosphere or a similar linked network.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 20
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "hacking-toolkit-commercial",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "tech"
+                    ]
+                },
+                "usage": {
+                    "value": "held-in-one-or-two-hands"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "K3bGT6fla75DvAqF",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.qIgcUV22LaDCzmb2"
+            },
+            "folder": "V89RPpe7fyCFC6NS",
+            "img": "systems/sf2e/icons/equipment/weapons/pistol.webp",
+            "name": "Laser Pistol",
+            "sort": 0,
+            "system": {
+                "ammo": {
+                    "baseType": "battery",
+                    "builtIn": false,
+                    "capacity": 1
+                },
+                "baseItem": "laser-pistol",
+                "bonus": {
+                    "value": 0
+                },
+                "bonusDamage": {
+                    "value": 0
+                },
+                "bulk": {
+                    "value": 1
+                },
+                "category": "simple",
+                "containerId": null,
+                "damage": {
+                    "damageType": "fire",
+                    "dice": 1,
+                    "die": "d6"
+                },
+                "description": {
+                    "value": "<p><strong>Upgrades:</strong> 1</p><hr /><p>This compact pistol is the most popular sidearm in the Pact Worlds thanks to its reliability, durability, and affordability. Most common laser pistols have a lightweight polycarbon body ending in a long, slim barrel.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "expend": 2,
+                "grade": "commercial",
+                "group": "laser",
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 30
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 1,
+                "range": 40,
+                "reload": {
+                    "value": "1"
+                },
+                "rules": [],
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "striking": 0
+                },
+                "size": "med",
+                "slug": "laser-pistol",
+                "splashDamage": {
+                    "value": 0
+                },
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "tech"
+                    ]
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                }
+            },
+            "type": "weapon"
+        },
+        {
+            "_id": "l5TI6dHOq3inQTOZ",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.K0xFwEC6Zv7ghVFa"
+            },
+            "folder": "V89RPpe7fyCFC6NS",
+            "img": "systems/sf2e/icons/equipment/weapons/pictol-wrapped.webp",
+            "name": "Semi-Auto Pistol",
+            "sort": 0,
+            "system": {
+                "ammo": {
+                    "baseType": "projectile-ammo",
+                    "builtIn": false,
+                    "capacity": 10
+                },
+                "baseItem": "semi-auto-pistol",
+                "bonus": {
+                    "value": 0
+                },
+                "bonusDamage": {
+                    "value": 0
+                },
+                "bulk": {
+                    "value": 0.1
+                },
+                "category": "simple",
+                "containerId": null,
+                "damage": {
+                    "damageType": "piercing",
+                    "dice": 1,
+                    "die": "d6"
+                },
+                "description": {
+                    "value": "<p><strong>Upgrades:</strong> 1</p><hr /><p>This pistol automatically ejects used cartridges and loads new ammunition after every shot fired.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "expend": 1,
+                "grade": "commercial",
+                "group": "projectile",
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 30
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 1,
+                "range": 60,
+                "reload": {
+                    "value": "1"
+                },
+                "rules": [],
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "striking": 0
+                },
+                "size": "med",
+                "slug": "semi-auto-pistol",
+                "splashDamage": {
+                    "value": 0
+                },
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "analog"
+                    ]
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                }
+            },
+            "type": "weapon"
+        },
+        {
+            "_id": "iCbbnrfmM7Etj8XO",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.SzGr78zdpnnrorre"
+            },
+            "folder": "1zLXGqhSgBIthlcs",
+            "img": "systems/sf2e/icons/equipment/weapons/grenade-hand.webp",
+            "name": "Frag Grenade (Commercial)",
+            "sort": 0,
+            "system": {
+                "ammo": {
+                    "baseType": null,
+                    "builtIn": false
+                },
+                "baseItem": "grenade",
+                "bonus": {
+                    "value": 0
+                },
+                "bulk": {
+                    "value": 0.1
+                },
+                "category": "simple",
+                "containerId": null,
+                "damage": {
+                    "damageType": "piercing",
+                    "dice": 1,
+                    "die": "d8"
+                },
+                "description": {
+                    "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> Area Fire</p>\n<p><strong>Critical</strong> @Damage[1[bleed]]</p><hr /><p>These fragmentary grenades explode in a cloud of shrapnel and deal 1d8 piercing damage in a @Template[burst|distance:5] with a @Check[reflex|against:class|basic] save.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "expend": 1,
+                "grade": "commercial",
+                "group": "grenade",
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 10
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 1,
+                "range": 70,
+                "reload": {
+                    "value": "-"
+                },
+                "rules": [],
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "striking": 0
+                },
+                "size": "med",
+                "slug": "frag-grenade-commercial",
+                "splashDamage": {
+                    "value": 0
+                },
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "consumable",
+                        "grenade",
+                        "tech"
+                    ]
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                }
+            },
+            "type": "weapon"
+        },
+        {
+            "_id": "mKVOyaHQ1weNnkXF",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.0jSc8zqUPnAByMf9"
+            },
+            "folder": "F6h7fO0Z7cgQBVRD",
+            "img": "systems/sf2e/icons/equipment/other/green-battery.webp",
+            "name": "Battery (Commercial)",
+            "sort": 0,
+            "system": {
+                "baseItem": "battery",
+                "bulk": {
+                    "value": 0
+                },
+                "containerId": null,
+                "craftableAs": null,
+                "description": {
+                    "value": ""
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "per": 1,
+                    "value": {
+                        "sp": 10
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "battery-commercial",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "uses": {
+                    "autoDestroy": false,
+                    "max": 10,
+                    "value": 10
+                }
+            },
+            "type": "ammo"
+        },
+        {
+            "_id": "yq87pc2Rg8ogDMCU",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.JSS89QXZggfF3OHJ"
+            },
+            "folder": "F6h7fO0Z7cgQBVRD",
+            "img": "systems/sf2e/icons/equipment/weapons/red-rounds.webp",
+            "name": "Projectile Ammo",
+            "sort": 0,
+            "system": {
+                "baseItem": "projectile-ammo",
+                "bulk": {
+                    "value": 0
+                },
+                "containerId": null,
+                "craftableAs": null,
+                "description": {
+                    "value": ""
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "per": 10,
+                    "value": {
+                        "sp": 1
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 10,
+                "rules": [],
+                "size": "med",
+                "slug": "projectile-ammo",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "consumable"
+                    ]
+                },
+                "uses": {
+                    "autoDestroy": true,
+                    "max": 1,
+                    "value": 1
+                }
+            },
+            "type": "ammo"
+        },
+        {
+            "_id": "2PL55n5m3IaGcxR4",
+            "img": "icons/sundries/gaming/playing-cards-grey.webp",
+            "name": "Credstick",
+            "sort": 0,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0
+                },
+                "category": "credstick",
+                "containerId": null,
+                "description": {
+                    "value": "<p>Most people in Starfinder keep their wealth on a protected item known as a credstick. These devices are often flat and roughly the size of a human finger. They range in dimensions and quality, but at the end of the day, they're just a means of conveniently carrying and spending money. Usage of these devices is determined by the owner, and a credstick can accept or spend funds with as simple an action as tapping it near a suitable banking device. When more rigorous security is necessary, they can require audio or biometric imprints in order to activate. Some advanced credsticks even have a magical component that might require a mental password or the recitation of a specific spell to access stored funds.</p>\n<p>Credsticks aren't gateways to the entirety of one's wealth, and larger stores of credits are often kept secured in banks, personal vaults, or secure databases. Instead, a credstick is a safe and anonymous means of moving credits around without being traced. Adventurers and common citizens alike often keep a credstick on their person to handle any purchases they might be called upon to make, while also only keeping just enough credits on them that losing the credstick wouldn't result in bankruptcy.</p>\n<p>Individuals in the Pact Worlds often carry credsticks, and other civilizations that interact with the Pact often turn local funds into credits and thus carry them to spend their converted currency. Sometimes a person might carry several credsticks, dedicating each one to a different use, or simply trading the stick away if they want to make a purchase of a predefined amount. If ever the number of credsticks on a person becomes too cumbersome, it's easy enough to move the funds between individual sticks and discard emptied sticks to save on space, however a credstick always has a negligible bulk.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn"
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "per": 1,
+                    "value": {
+                        "sp": 29
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "credstick",
+                "temporary": false,
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "treasure"
         }
     ],
     "name": "“Nitpick” Bennit",
@@ -2030,6 +2761,9 @@
             "school": null
         },
         "resources": {
+            "focus": {
+                "value": 1
+            },
             "heroPoints": {
                 "max": 3,
                 "value": 1

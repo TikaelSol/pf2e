@@ -146,6 +146,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         return this.system.traits.value.some((t) => t === "magical" || setHasElement(MAGIC_TRADITIONS, t));
     }
 
+    /** Returns true if invested, false if not invested and requires investment, and otherwise null */
     get isInvested(): boolean | null {
         if (!this.system.traits.value.includes("invested")) return null;
         return (
@@ -270,7 +271,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         if (traits.includes("infused")) this.system.temporary = true;
 
         // Normalize and fill price data
-        this.system.price.value = new Coins(this.system.temporary ? {} : this.system.price.value);
+        this.system.price.value = new Coins(this.system.temporary ? {} : this.system.price.value).normalized();
         this.system.price.per = Math.max(1, this.system.price.per ?? 1);
         this.system.price.sizeSensitive ??= true;
 
@@ -324,7 +325,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         if (this.system.apex) {
             if (!this.traits.has("apex")) {
                 delete this.system.apex;
-            } else if (!this.isInvested) {
+            } else if (this.isInvested === false || (!this.isEquipped && this.isInvested === null)) {
                 this.system.apex.selected = false;
             }
         }
@@ -348,7 +349,9 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         };
 
         // Compute level, rarity, and price from factors like runes, precious material, shoddiness, and size
-        if (this.isMagical) this.system.price.sizeSensitive = false;
+        if (this.isMagical || this.system.traits.value.includes("tech")) {
+            this.system.price.sizeSensitive = false;
+        }
         const { level, rarity, price } = computeLevelRarityPrice(this);
         this.system.level.value = level;
         this.system.traits.rarity = rarity;
@@ -384,11 +387,13 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         }
 
         // Ensure that there is only one selected apex item, and all others are set to false
+        // Allow equipped non-invested OR any invested (invested apex weapons need not be equipped)
         if (this.system.apex) {
+            const isSufficientlyEquipped = this.isInvested || (this.isInvested === null && this.isEquipped);
             const otherApexData = this.actor.inventory.contents.flatMap((e) =>
                 e === this ? [] : (e.system.apex ?? []),
             );
-            if (this.system.apex.selected || (this.isInvested && otherApexData.every((d) => !d.selected))) {
+            if (this.system.apex.selected || (isSufficientlyEquipped && otherApexData.every((d) => !d.selected))) {
                 this.system.apex.selected = true;
                 for (const data of otherApexData) {
                     data.selected = false;
@@ -468,7 +473,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
     /** Attaches an item to this item as a subitem. If it is an ammo to a weapon, also performs reloading */
     async attach(
         item: PhysicalItemPF2e,
-        { quantity = 1, stack = false }: { quantity?: number; stack?: boolean } = {},
+        { quantity = 1, stack = false, render = true }: { quantity?: number; stack?: boolean; render?: boolean } = {},
     ): Promise<boolean> {
         if (!this._source.system.subitems) throw ErrorPF2e("This item does not accept attachments");
         const actor = this.actor;
@@ -546,12 +551,12 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
             if (newQuantity > 0) {
                 updates.itemUpdates.push({ _id: item.id, ...existingItemUpdate });
             }
-            await applyActorGroupUpdate(actor, updates);
+            await applyActorGroupUpdate(actor, updates, { render });
             return true;
         } else {
             const updated = await Promise.all([
-                newQuantity <= 0 ? item.delete() : item.update(existingItemUpdate),
-                this.update({ "system.subitems": subitems }),
+                newQuantity <= 0 ? item.delete({ render }) : item.update(existingItemUpdate, { render }),
+                this.update({ "system.subitems": subitems }, { render }),
             ]);
             return updated.every((u) => !!u);
         }

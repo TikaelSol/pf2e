@@ -4,6 +4,9 @@
     "items": [
         {
             "_id": "3W7vk1aqhkW3eMYv",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.qIgcUV22LaDCzmb2"
+            },
             "folder": "V89RPpe7fyCFC6NS",
             "img": "systems/sf2e/icons/equipment/weapons/pistol.webp",
             "name": "Integrated Commercial Laser Pistol",
@@ -94,6 +97,9 @@
         },
         {
             "_id": "HeaIERqr3jb1Dw1x",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.equipment.Item.0jSc8zqUPnAByMf9"
+            },
             "folder": "F6h7fO0Z7cgQBVRD",
             "img": "systems/sf2e/icons/equipment/other/green-battery.webp",
             "name": "Battery (Commercial)",
@@ -109,7 +115,8 @@
                     "value": ""
                 },
                 "equipped": {
-                    "carryType": "worn"
+                    "carryType": "worn",
+                    "handsHeld": 0
                 },
                 "hardness": 0,
                 "hp": {
@@ -143,7 +150,7 @@
                     "value": []
                 },
                 "uses": {
-                    "autoDestroy": true,
+                    "autoDestroy": false,
                     "max": 10,
                     "value": 10
                 }
@@ -248,7 +255,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>A cybernetic zombie's cybernetics can be disabled for 1 hour by a creature that succeeds at a DC 15 check to [[/act disable-device]] or Disable a System. Attempting to do so can typically be done only while within reach of the zombie and is a 2-action activity that has the manipulate trait. The cybernetics are also disabled for 1 hour if the zombie takes any electricity damage. A cybernetic zombie with disabled cybernetics is @UUID[Compendium.sf2e.conditions.Item.Slowed]{Slowed 1} and can't use any reactions.</p>"
+                    "value": "<p>A cybernetic zombie's cybernetics can be disabled for 1 hour by a creature that succeeds at a DC 15 check to [[/act disable-device dc=15]] or Disable a System. Attempting to do so can typically be done only while within reach of the zombie and is a 2-action activity that has the manipulate trait. The cybernetics are also disabled for 1 hour if the zombie takes any electricity damage. A cybernetic zombie with disabled cybernetics is @UUID[Compendium.sf2e.conditions.Item.Slowed]{Slowed 1} and can't use any reactions.</p>"
                 },
                 "publication": {
                     "license": "OGL",
