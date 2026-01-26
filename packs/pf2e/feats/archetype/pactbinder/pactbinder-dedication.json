@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>The first step toward forming a successful pact is an understanding of the magic behind it, along with skill at negotiation. It doesn't hurt that you also learned how to magically bind yourself to keep your word, enabling you to bargain more easily. You increase your proficiency from trained to expert in Diplomacy and in one of the following: Arcana, Nature, Occultism, or Religion.</p>\n<p>@UUID[Compendium.pf2e.actionspf2e.Item.Binding Vow]</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.0UrqPv7XLDDRwZ13]{Pactbinder}</p>"
+            "value": "<p>The first step toward forming a successful pact is an understanding of the magic behind it, along with skill at negotiation. It doesn't hurt that you also learned how to magically bind yourself to keep your word, enabling you to bargain more easily. You increase your proficiency from trained to expert in Diplomacy and in one of the following: Arcana, Nature, Occultism, or Religion. Many feats from this archetype involve swearing specific pacts. You typically can't retrain out of these feats.</p>\n<p>You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Binding Vow] action.</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.0UrqPv7XLDDRwZ13]{Pactbinder}</p>"
         },
         "level": {
             "value": 2
@@ -25,9 +25,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {

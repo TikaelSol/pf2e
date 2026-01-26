@@ -31,13 +31,14 @@
             }
         },
         "description": {
-            "value": "<p>You fling a mass of furious thoughts into the air, where they expand into numerous blades or other shapes that rain down. Any creature that's in the area or enters the area before the start of your next turn takes 4d4 bludgeoning or piercing damage (your choice), with a basic Reflex saving throw.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by 1d4.</p>"
+            "value": "<p>You fling a mass of furious thoughts into the air, where they expand into numerous blades or other shapes that rain down. Any creature that's in the area or enters the area before the start of your next turn takes 4d4 bludgeoning or piercing damage (your choice), with a basic Reflex saving throw.</p><hr /><p><strong>Heightened (+1)</strong> The damage increases by 1d4.</p>"
         },
         "duration": {
             "sustained": false,
             "value": ""
         },
         "heightening": {
+            "area": 0,
             "damage": {
                 "utw4ddumvvnvuqom": "1d4"
             },
@@ -49,13 +50,16 @@
         },
         "overlays": {
             "DoqHugNozok6ecgz": {
-                "_id": "DoqHugNozok6ecgz",
                 "name": "Astral Rain (Bludgeoning)",
                 "overlayType": "override",
                 "sort": 1,
                 "system": {
                     "damage": {
                         "utw4ddumvvnvuqom": {
+                            "category": null,
+                            "kinds": [
+                                "damage"
+                            ],
                             "type": "bludgeoning"
                         }
                     }
@@ -76,9 +80,9 @@
             }
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "range": {
             "value": "60 feet"

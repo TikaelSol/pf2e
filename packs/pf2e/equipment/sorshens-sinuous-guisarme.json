@@ -3,6 +3,7 @@
     "img": "systems/pf2e/icons/equipment/weapons/guisarme.webp",
     "name": "Sorshen's Sinuous Guisarme",
     "system": {
+        "ammo": null,
         "baseItem": "guisarme",
         "bonus": {
             "value": 0

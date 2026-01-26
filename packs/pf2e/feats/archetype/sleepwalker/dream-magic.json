@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>You learn dream-related magic to aid your studies. Choose @UUID[Compendium.pf2e.spells-srd.Item.Dream Message] or @UUID[Compendium.pf2e.spells-srd.Item.Sleep] upon taking this feat; you learn this spell as a 4th-rank innate occult spell. If you choose sleep, you can cast the spell only while in a Daydream Trance. You become trained in occult spell attack rolls and spell DCs, and your spellcasting ability for these spells is Wisdom.</p>\n<hr />\n<p><strong>Special</strong> You can take this feat twice, gaining the spell you didn't select initially the second time.</p>"
+            "value": "<p>You learn dream-related magic to aid your studies. Choose @UUID[Compendium.pf2e.spells-srd.Item.Dream Message] or @UUID[Compendium.pf2e.spells-srd.Item.Sleep] upon taking this feat; you learn this spell as a 4th-rank occult innate spell that you can cast once per day. If you choose <em>sleep</em>, you can cast the spell only while in a @UUID[Compendium.pf2e.actionspf2e.Item.Daydream Trance]. You become trained in the spell attack modifier and spell DC statistics, and your spellcasting attribute for these spells is Wisdom.</p><hr /><p><strong>Special</strong> You can take this feat twice, gaining the spell you didn't select initially the second time.</p>"
         },
         "level": {
             "value": 8
@@ -26,9 +26,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "subfeatures": {

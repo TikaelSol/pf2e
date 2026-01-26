@@ -18,13 +18,23 @@
             "sustained": false,
             "value": "1 round"
         },
+        "heightening": {
+            "levels": {
+                "6": {
+                    "target": {
+                        "value": "up to 4 willing creatures other than yourself"
+                    }
+                }
+            },
+            "type": "fixed"
+        },
         "level": {
             "value": 3
         },
         "publication": {
             "license": "ORC",
             "remaster": true,
-            "title": "Pathfinder Lost Omens Divine Mysteries"
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "range": {
             "value": "30 feet"

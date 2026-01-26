@@ -13,12 +13,12 @@
             "value": 1
         },
         "level": {
-            "value": 1
+            "value": 2
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {

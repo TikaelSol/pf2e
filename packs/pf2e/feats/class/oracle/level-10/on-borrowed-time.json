@@ -1,0 +1,69 @@
+{
+    "_id": "H1kZ8nqvHlAazM35",
+    "folder": "43MH6JznkjLMpQx3",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "On Borrowed Time",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You accelerate a foe's personal timestream, which causes them to experience time at a faster rate, putting a terrible strain on their mind and body. A creature you target within 30 feet takes @Damage[3d6[persistent,mental]] damage with a @Check[will|against:oracle|basic] save. At the end of the subject's turn, they take this persistent damage after all other persistent damage. Before they roll their flat check to end the persistent damage, an additional round passes for them; this affects the duration of all beneficial effects, negative effects, afflictions, conditions, and other persistent damage. The subject attempts saving throws, flat checks, and any other rolls and takes damage as if the time had passed. They don't take the persistent mental damage from On Borrowed Time more than once per round.</p>\n<p>If you are @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]{Cursebound 2} when you use On Borrowed Time, the persistent damage increases to 4d6. If you are @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]{Cursebound 3} when you use On Borrowed Time, the persistent damage increases to 5d6.</p>"
+        },
+        "level": {
+            "value": 10
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "time mystery"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
+        },
+        "rules": [
+            {
+                "key": "DamageAlteration",
+                "mode": "upgrade",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:condition:cursebound",
+                            2
+                        ]
+                    },
+                    "damage:category:persistent",
+                    "damage:type:mental"
+                ],
+                "property": "dice-number",
+                "selectors": [
+                    "{item|id}-inline-damage"
+                ],
+                "slug": "base",
+                "value": "clamp(2+@actor.conditions.cursebound.value,4,5)"
+            }
+        ],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "cursebound",
+                "divine",
+                "oracle"
+            ]
+        }
+    },
+    "type": "feat"
+}

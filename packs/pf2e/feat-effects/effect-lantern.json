@@ -16,9 +16,9 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {
@@ -31,18 +31,25 @@
                 "key": "FlatModifier",
                 "predicate": [
                     "lantern-implement-bonus",
-                    "action:recall-knowledge",
-                    {
-                        "or": [
-                            "check:statistic:perception",
-                            "item:trait:visual"
-                        ]
-                    }
+                    "action:recall-knowledge"
                 ],
                 "selector": [
-                    "perception",
                     "skill-check"
                 ],
+                "slug": "lantern-recall-knowledge",
+                "type": "status",
+                "value": 1
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "lantern-implement-bonus",
+                    "item:trait:visual"
+                ],
+                "selector": [
+                    "perception"
+                ],
+                "slug": "lantern-perception",
                 "type": "status",
                 "value": 1
             }

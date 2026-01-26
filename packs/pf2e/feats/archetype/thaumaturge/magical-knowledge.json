@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>Increase your proficiency rank in one of Arcana, Nature, Occultism, or Religion from expert to master and in another from trained to expert. You gain a skill feat associated with the skill you chose.</p>"
+            "value": "<p>Increase your proficiency rank in one of Arcana, Nature, Occultism, or Religion from expert to master and in another from trained to expert. You gain a skill feat associated with each of the skills you chose.</p>"
         },
         "level": {
             "value": 8
@@ -23,17 +23,14 @@
                     "value": "Thaumaturge Dedication"
                 },
                 {
-                    "value": "trained in one of Arcana, Nature, Occultism, or Religion"
-                },
-                {
-                    "value": "expert in another"
+                    "value": "trained in at least one of Arcana, Nature, Occultism, or Religion and expert in at least one other"
                 }
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "traits": {

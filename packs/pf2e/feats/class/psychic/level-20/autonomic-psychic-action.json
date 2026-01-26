@@ -1,0 +1,42 @@
+{
+    "_id": "21HVwklTxmo8Dwdp",
+    "folder": "ov71zQAYExU0Lwg3",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Autonomic Psychic Action",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Your power wants to be free. You're permanently @UUID[Compendium.pf2e.conditionitems.Item.Quickened], and can use the additional action only for psyche actions.</p>"
+        },
+        "level": {
+            "value": 20
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "psychic"
+            ]
+        }
+    },
+    "type": "feat"
+}

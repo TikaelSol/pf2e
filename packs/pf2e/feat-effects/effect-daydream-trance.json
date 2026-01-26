@@ -4,7 +4,7 @@
     "name": "Effect: Daydream Trance",
     "system": {
         "description": {
-            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Daydream Trance]</p>\n<p>You take a -1 penalty to Perception checks and initiative rolls and gain a +1 status bonus to Will saves. This bonus increases to +2 against mental effects. If you're legendary in Occultism, the bonus against mental effects increases to +3.</p>"
+            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Daydream Trance]</p>\n<p>You take a –1 penalty to Perception checks and initiative rolls and gain a +1 status bonus to Will saves. This bonus increases to +2 against mental effects. If you're legendary in Occultism, the bonus against mental effects increases to +3.</p>"
         },
         "duration": {
             "expiry": "turn-start",
@@ -13,12 +13,12 @@
             "value": 1
         },
         "level": {
-            "value": 1
+            "value": 4
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {
@@ -31,30 +31,20 @@
             },
             {
                 "key": "FlatModifier",
-                "predicate": [
-                    "item:trait:mental"
-                ],
                 "selector": "will",
-                "slug": "daydream-trance-mental",
-                "type": "status",
-                "value": 2
-            },
-            {
-                "key": "FlatModifier",
-                "selector": "will",
-                "slug": "daydream-trance-will",
+                "slug": "daydream-trance",
                 "type": "status",
                 "value": 1
             },
             {
                 "key": "AdjustModifier",
-                "mode": "override",
+                "mode": "upgrade",
                 "predicate": [
-                    "skill:occultism:rank:4"
+                    "item:trait:mental"
                 ],
                 "selector": "will",
-                "slug": "daydream-trance-mental",
-                "value": 3
+                "slug": "daydream-trance",
+                "value": "ternary(gte(@actor.skills.occultism.rank,4),3,2)"
             }
         ],
         "start": {

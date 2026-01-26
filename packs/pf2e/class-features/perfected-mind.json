@@ -1,0 +1,68 @@
+{
+    "_id": "HlRYDdBh8oydCWgj",
+    "img": "icons/magic/control/silhouette-hold-change-blue.webp",
+    "name": "Perfected Mind",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>Your unbelievable training grants you mental resiliency. Your proficiency rank for Will saves increases to legendary. When you roll a success at a Will save, you get a critical success. When you roll a critical failure at a Will save, you get a failure instead. When you roll a failure on a Will save against a damaging effect, you take half damage.</p>"
+        },
+        "level": {
+            "value": 13
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
+        },
+        "rules": [
+            {
+                "adjustment": {
+                    "criticalFailure": "to-failure"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "selector": "will"
+            },
+            {
+                "key": "Note",
+                "outcome": [
+                    "failure"
+                ],
+                "predicate": [
+                    "damaging-effect"
+                ],
+                "selector": [
+                    "will"
+                ],
+                "text": "PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Will",
+                "title": "{item|name}"
+            }
+        ],
+        "subfeatures": {
+            "proficiencies": {
+                "will": {
+                    "attribute": null,
+                    "rank": 4
+                }
+            },
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "thaumaturge"
+            ]
+        }
+    },
+    "type": "feat"
+}

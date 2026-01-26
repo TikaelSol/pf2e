@@ -25,9 +25,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
+            "license": "ORC",
             "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {
@@ -58,7 +58,8 @@
             "rarity": "rare",
             "value": [
                 "aftermath",
-                "fire"
+                "fire",
+                "primal"
             ]
         }
     },

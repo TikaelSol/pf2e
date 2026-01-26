@@ -11,7 +11,7 @@
         },
         "category": "classfeature",
         "description": {
-            "value": "<p><strong>Animist</strong> Spiritual energy reinforces your body, making you more resilient. Your proficiency rank for Fortitude saves increases to expert.</p>\n<p><strong>Bard, Commander, Investigator, Swashbuckler</strong> Your physique has grown hardy in your adventures. Your proficiency rank for Fortitude saves increases to expert.</p>\n<p><strong>Druid</strong> Adventures have made your physique more hardy. Your proficiency rank for Fortitude saves increases to expert.</p>"
+            "value": "<p><strong>Animist</strong> Spiritual energy reinforces your body, making you more resilient. Your proficiency rank for Fortitude saves increases to expert.</p>\n<p><strong>Bard, Commander, Investigator, Swashbuckler</strong> Your physique has grown hardy in your adventures. Your proficiency rank for Fortitude saves increases to expert.</p>\n<p><strong>Druid</strong> Adventures have made your physique more hardy. Your proficiency rank for Fortitude saves increases to expert.</p>\n<p><strong>Psychic</strong> Your mind holds your body to a subconscious mental image of yourself. Your proficiency rank for Fortitude saves increases to expert.</p>"
         },
         "level": {
             "value": 3
@@ -59,6 +59,7 @@
                 "commander",
                 "druid",
                 "investigator",
+                "psychic",
                 "swashbuckler"
             ]
         }
