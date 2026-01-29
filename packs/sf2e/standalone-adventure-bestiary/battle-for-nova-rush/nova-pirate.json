@@ -364,8 +364,7 @@
                     "value": ""
                 },
                 "equipped": {
-                    "carryType": "worn",
-                    "handsHeld": 0
+                    "carryType": "worn"
                 },
                 "hardness": 0,
                 "hp": {
@@ -426,8 +425,7 @@
                     "value": ""
                 },
                 "equipped": {
-                    "carryType": "worn",
-                    "handsHeld": 0
+                    "carryType": "worn"
                 },
                 "hardness": 0,
                 "hp": {
