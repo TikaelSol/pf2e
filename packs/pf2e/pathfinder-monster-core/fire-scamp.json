@@ -504,6 +504,10 @@
                 {
                     "exceptions": [],
                     "type": "sleep"
+                },
+                {
+                    "exceptions": [],
+                    "type": "fire"
                 }
             ],
             "speed": {
