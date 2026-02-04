@@ -15,9 +15,9 @@
             "value": "<p>The cryptid's eyes are distinctive; perhaps they burn bright red in the dark night. The rumored cryptid gains darkvision. If the base creature already has darkvision, it gains greater darkvision.</p>"
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "traits": {
