@@ -56,7 +56,10 @@
                 "Tremorsense",
                 "Void Healing",
                 "Wavesense"
-            ]
+            ],
+        "bestiary-effects": [
+            "Effect: Engulf and Swallow Whole"
+        ]
         }
     },
     {
@@ -218,6 +221,7 @@
                 "Charming Liar",
                 "Cheek Pouches",
                 "Clever Improviser",
+                "Cloud Jump",
                 "Combat Climber",
                 "Communal Crafting",
                 "Continual Recovery",
@@ -263,7 +267,6 @@
                 "Magical Crafting",
                 "Monster Crafting",
                 "Multilingual",
-                "Multitalented",
                 "Nanite Surge",
                 "Natural Ambition",
                 "Natural Skill",
@@ -433,6 +436,7 @@
                 "Guidance",
                 "Gust of Wind",
                 "Hallucination",
+                "Harm",
                 "Haste",
                 "Heal",
                 "Heroism",
@@ -550,7 +554,6 @@
                 "Subconscious Suggestion",
                 "Suggestion",
                 "Summon Animal",
-                "Summon Celestial",
                 "Summon Construct",
                 "Summon Dragon",
                 "Summon Elemental",
@@ -684,10 +687,13 @@
             "other-effects": [
                 "Effect: Adverse Subsist Situation",
                 "Effect: Aid",
+                "Effect: Aquatic Combat",
                 "Effect: Cover",
                 "Effect: Disarm (Bonus)",
                 "Effect: Disarm (Success)",
                 "Effect: Follow The Expert",
+                "Effect: Mounted",
+                "Effect: Remaining Air",
                 "Effect: Scout",
                 "Effect: Treat Disease",
                 "Effect: Treat Poison"

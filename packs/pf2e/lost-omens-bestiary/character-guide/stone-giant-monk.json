@@ -1,5 +1,6 @@
 {
     "_id": "401MnHX5aO21P2Y8",
+    "folder": "oR8PcPxUbRrekG8w",
     "img": "systems/pf2e/icons/default-icons/npc.svg",
     "items": [
         {
@@ -36,7 +37,8 @@
                 },
                 "tradition": {
                     "value": "divine"
-                }
+                },
+                "traits": {}
             },
             "type": "spellcastingEntry"
         },
@@ -237,9 +239,8 @@
             "name": "Fist",
             "sort": 500000,
             "system": {
-                "attack": {
-                    "value": ""
-                },
+                "action": "strike",
+                "area": null,
                 "attackEffects": {
                     "value": []
                 },
@@ -264,7 +265,7 @@
                 "rules": [],
                 "slug": null,
                 "traits": {
-                    "rarity": "common",
+                    "config": {},
                     "value": [
                         "agile",
                         "reach-10",
@@ -280,9 +281,8 @@
             "name": "Rock",
             "sort": 600000,
             "system": {
-                "attack": {
-                    "value": ""
-                },
+                "action": "strike",
+                "area": null,
                 "attackEffects": {
                     "value": []
                 },
@@ -310,7 +310,7 @@
                 "rules": [],
                 "slug": null,
                 "traits": {
-                    "rarity": "common",
+                    "config": {},
                     "value": [
                         "brutal"
                     ]
@@ -320,9 +320,6 @@
         },
         {
             "_id": "MKdjcAmWOXZkk2Pu",
-            "_stats": {
-                "compendiumSource": "Compendium.pf2e.bestiary-ability-glossary-srd.Item.uG0Z8PsyZtsYuvGR"
-            },
             "img": "systems/pf2e/icons/actions/Reaction.webp",
             "name": "Catch Rock",
             "sort": 700000,
@@ -363,7 +360,6 @@
                 ],
                 "slug": "catch-rock",
                 "traits": {
-                    "rarity": "common",
                     "value": []
                 }
             },
@@ -393,7 +389,6 @@
                 "rules": [],
                 "slug": null,
                 "traits": {
-                    "rarity": "common",
                     "value": []
                 }
             },
@@ -401,9 +396,6 @@
         },
         {
             "_id": "9PJJ2Aqeorbh7BnP",
-            "_stats": {
-                "compendiumSource": "Compendium.pf2e.bestiary-ability-glossary-srd.Item.a0tx6exmB9v9CUsj"
-            },
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Throw Rock",
             "sort": 900000,
@@ -426,7 +418,6 @@
                 "rules": [],
                 "slug": "throw-rock",
                 "traits": {
-                    "rarity": "common",
                     "value": []
                 }
             },
