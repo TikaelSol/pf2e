@@ -55,16 +55,12 @@ class DamageAlteration {
                 const currentFaces = damageDieSizeToFaces(damage.dieSize);
                 if (rule.mode === "downgrade") {
                     return tupleHasValue(DAMAGE_DICE_FACES, change)
-                        ? change <= currentFaces
-                            ? change
-                            : currentFaces
+                        ? Math.min(change, currentFaces)
                         : Number(nextDamageDieSize({ downgrade: damage.dieSize }).replace("d", ""));
                 }
                 if (rule.mode === "upgrade") {
                     return tupleHasValue(DAMAGE_DICE_FACES, change)
-                        ? change >= currentFaces
-                            ? change
-                            : currentFaces
+                        ? Math.max(change, currentFaces)
                         : Number(nextDamageDieSize({ upgrade: damage.dieSize }).replace("d", ""));
                 }
                 if (rule.mode === "override" && tupleHasValue(DAMAGE_DICE_FACES, change)) {
