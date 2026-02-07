@@ -49,6 +49,21 @@
                 "title": "PF2E.SpecificRule.ExemplaryFinisher.Name"
             },
             {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:slug:create-a-diversion",
+                            "item:slug:feint"
+                        ]
+                    }
+                ],
+                "property": "traits",
+                "value": "bravado"
+            },
+            {
                 "domain": "skill-check",
                 "key": "RollOption",
                 "option": "item:trait:bravado",

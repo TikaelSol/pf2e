@@ -15,9 +15,9 @@
             "value": "<p><strong>Requirements</strong> The rumored cryptid is @UUID[Compendium.pf2e.conditionitems.Item.Undetected]</p>\n<hr />\n<p><strong>Effect</strong> The rumored cryptid swiftly stalks prey from hiding. It Strides, then Strikes.</p>"
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "traits": {

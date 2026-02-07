@@ -5,14 +5,14 @@
     "name": "Illimitable Finisher",
     "system": {
         "actionType": {
-            "value": "passive"
+            "value": "action"
         },
         "actions": {
-            "value": null
+            "value": 1
         },
         "category": "class",
         "description": {
-            "value": "<p>Your strikes flow endlessly. Step and attempt a single one-action finisher. This Strike gains the bravado trait, possibly replenishing your panache; if you regain panache, you can immediately attempt another finisher as part of this action, ignoring the restriction of using actions with the attack trait after a finisher.</p>"
+            "value": "<p>Your strikes flow endlessly. Step and attempt a single one-action finisher. This Strike gains the bravado trait, possibly replenishing your @UUID[Compendium.pf2e.classfeatures.Item.Panache]; if you regain panache, you can immediately attempt another finisher as part of this action, ignoring the restriction of using actions with the attack trait after a finisher.</p>"
         },
         "level": {
             "value": 20
@@ -29,21 +29,23 @@
             {
                 "disabledIf": [
                     {
-                        "not": "self:effect:panache"
+                        "not": "finisher"
                     }
                 ],
+                "disabledValue": false,
                 "key": "RollOption",
                 "option": "finisher:illimitable",
+                "priority": 51,
                 "toggleable": true
             },
             {
-                "domain": "attack-roll",
-                "key": "RollOption",
-                "option": "item:trait:bravado",
+                "key": "AdjustStrike",
+                "mode": "add",
                 "predicate": [
                     "finisher:illimitable"
                 ],
-                "priority": 51
+                "property": "traits",
+                "value": "bravado"
             }
         ],
         "traits": {

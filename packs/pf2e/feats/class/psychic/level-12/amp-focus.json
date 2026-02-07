@@ -1,0 +1,42 @@
+{
+    "_id": "ikjPRBeBUWV6hYFF",
+    "folder": "IIBIBEz20aTBtYLg",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Amp Focus",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You've glimpsed the furthest recesses of your mind. When you Refocus, you regain all your Focus Points (even if you spent them on something other than amps).</p>"
+        },
+        "level": {
+            "value": 12
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "psychic"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -63,18 +63,6 @@
                 "name": "Unlimited Esoterica",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Unlimited Esoterica"
             },
-            "1a61p": {
-                "img": "icons/creatures/mammals/bull-horned-blue.webp",
-                "level": 15,
-                "name": "Juggernaut",
-                "uuid": "Compendium.pf2e.classfeatures.Item.Juggernaut"
-            },
-            "2waut": {
-                "img": "icons/magic/symbols/symbol-lightning-bolt.webp",
-                "level": 3,
-                "name": "Lightning Reflexes",
-                "uuid": "Compendium.pf2e.classfeatures.Item.Reflex Expertise"
-            },
             "3rn78": {
                 "img": "systems/pf2e/icons/features/classes/first-implement-and-esoterica.webp",
                 "level": 1,
@@ -117,6 +105,12 @@
                 "name": "Implement's Empowerment",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Implement's Empowerment"
             },
+            "Ahe8D": {
+                "img": "icons/magic/control/buff-strength-muscle-damage-orange.webp",
+                "level": 15,
+                "name": "Earned Resilience",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Earned Resilience"
+            },
             "EeAOX": {
                 "img": "systems/pf2e/icons/features/classes/implement-paragon.webp",
                 "level": 17,
@@ -135,23 +129,35 @@
                 "name": "Intensify Vulnerability",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Intensify Vulnerability"
             },
-            "Pr5fe": {
-                "img": "systems/pf2e/icons/features/classes/weapon-expertise.webp",
-                "level": 5,
-                "name": "Thaumaturge Weapon Expertise",
-                "uuid": "Compendium.pf2e.classfeatures.Item.Thaumaturge Weapon Expertise"
-            },
             "VjdCa": {
                 "img": "systems/pf2e/icons/features/classes/thaumaturgic-expertise.webp",
                 "level": 9,
                 "name": "Thaumaturgic Expertise",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Thaumaturgic Expertise"
             },
+            "WiLza": {
+                "img": "icons/skills/melee/hand-grip-sword-red.webp",
+                "level": 5,
+                "name": "Weapon Expertise",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Weapon Expertise"
+            },
             "anx17": {
                 "img": "systems/pf2e/icons/features/classes/second-implement.webp",
                 "level": 5,
                 "name": "Second Implement",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Second Implement"
+            },
+            "bifEL": {
+                "img": "icons/magic/perception/eye-tendrils-web-purple.webp",
+                "level": 9,
+                "name": "Perception Mastery",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Perception Mastery"
+            },
+            "dMcnT": {
+                "img": "icons/magic/control/silhouette-hold-change-blue.webp",
+                "level": 13,
+                "name": "Perfected Mind",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Perfected Mind"
             },
             "etPSx": {
                 "img": "systems/pf2e/icons/features/classes/implement-adept.webp",
@@ -177,29 +183,23 @@
                 "name": "Exploit Vulnerability",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Exploit Vulnerability"
             },
-            "ifvk8": {
-                "img": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp",
-                "level": 7,
-                "name": "Resolve",
-                "uuid": "Compendium.pf2e.classfeatures.Item.Resolve"
-            },
             "le5cj": {
                 "img": "icons/equipment/chest/breastplate-collared-steel.webp",
                 "level": 19,
                 "name": "Medium Armor Mastery",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Medium Armor Mastery"
             },
-            "oa3vk": {
-                "img": "systems/pf2e/icons/features/classes/greater-resolve.webp",
-                "level": 13,
-                "name": "Greater Resolve",
-                "uuid": "Compendium.pf2e.classfeatures.Item.Greater Resolve"
+            "o1UCf": {
+                "img": "icons/magic/symbols/symbol-lightning-bolt.webp",
+                "level": 3,
+                "name": "Reflex Expertise",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Reflex Expertise"
             },
-            "vd7eu": {
-                "img": "icons/magic/perception/eye-tendrils-web-purple.webp",
-                "level": 9,
-                "name": "Vigilant Senses",
-                "uuid": "Compendium.pf2e.classfeatures.Item.Perception Mastery"
+            "vgeGn": {
+                "img": "icons/magic/control/silhouette-aura-energy.webp",
+                "level": 7,
+                "name": "Disciplined Mind",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Disciplined Mind"
             }
         },
         "keyAbility": {
@@ -209,9 +209,9 @@
         },
         "perception": 2,
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "savingThrows": {

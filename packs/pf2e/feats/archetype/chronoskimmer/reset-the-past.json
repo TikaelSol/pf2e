@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You manipulate time to recharge one of your temporal techniques-by revising your past so you never used it in the first place. Select one of your chronoskimmer feats that has a frequency of once per day (or more frequent) that you've already used. You can use the feat again, as if you hadn't used it already.</p>"
+            "value": "<p><strong>Frequency</strong> once per day</p><hr /><p>You manipulate time to recharge one of your temporal techniques—by revising your past so you never used it in the first place. Select one of your chronoskimmer feats that has a frequency of once per day (or more frequent) that you've already used. You can use the feat again, as if you hadn't used it already.</p>"
         },
         "frequency": {
             "max": 1,
@@ -29,9 +29,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "traits": {

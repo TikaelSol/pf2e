@@ -54,6 +54,23 @@
                 "value": "2* @weapon.system.damage.dice"
             },
             {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:slug:grapple",
+                            "item:slug:reposition",
+                            "item:slug:shove",
+                            "item:slug:trip"
+                        ]
+                    }
+                ],
+                "property": "traits",
+                "value": "bravado"
+            },
+            {
                 "domain": "skill-check",
                 "key": "RollOption",
                 "option": "item:trait:bravado",

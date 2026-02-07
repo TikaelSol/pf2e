@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>You've found a new mental form. You gain another psi cantrip from your conscious mind: either the standard cantrip you didn't take with Psychic Dedication, or the unique surface psi cantrip. You gain the benefits and the amp for this second psi cantrip. Increase the number of Focus Points in your focus pool by 1.</p>"
+            "value": "<p>You've found a new mental form. You gain another psi cantrip from your conscious mind: either the standard cantrip you didn't take with Psychic Dedication, or the unique surface psi cantrip. You gain the psychic benefits for this second psi cantrip. You gain the ability to amp your psi cantrips. If you don't have one, you gain a focus pool of 1 Focus Point, which you can use to amp your psi cantrips, and you can Refocus by meditating on your new powers.</p>"
         },
         "level": {
             "value": 6
@@ -25,9 +25,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {
@@ -57,6 +57,34 @@
                 "priority": 19,
                 "property": "other-tags",
                 "value": "psi-cantrip"
+            },
+            {
+                "key": "RollOption",
+                "label": "PF2E.SpecificRule.Psychic.Amp.Toggle",
+                "option": "amp-spell",
+                "placement": "spellcasting",
+                "toggleable": true
+            },
+            {
+                "itemType": "spell",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "amp-spell",
+                    "item:tag:psi-cantrip"
+                ],
+                "property": "other-tags",
+                "value": "amped"
+            },
+            {
+                "itemType": "spell",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:tag:amped"
+                ],
+                "property": "focus-point-cost",
+                "value": 1
             }
         ],
         "traits": {

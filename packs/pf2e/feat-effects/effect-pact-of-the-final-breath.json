@@ -1,0 +1,42 @@
+{
+    "_id": "unMxC3XGviRjC1CH",
+    "img": "icons/magic/death/undead-skeleton-worn-blue.webp",
+    "name": "Effect: Pact of the Final Breath",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.Pact of the Final Breath]</p>\n<p>You gain fast healing equal to your level.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 3
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 12
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
+        },
+        "rules": [
+            {
+                "key": "FastHealing",
+                "value": "@actor.level"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

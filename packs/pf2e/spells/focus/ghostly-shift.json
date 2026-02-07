@@ -12,7 +12,7 @@
         "damage": {},
         "defense": null,
         "description": {
-            "value": "<p>Your body becomes insubstantial as you partially phase out. You gain resistance 2 to all damage (except force).</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Ghostly Shift]</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The resistance increases by 1.</p>"
+            "value": "<p>Your body becomes insubstantial as you partially phase out. You gain resistance 2 to all damage (except force).</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Ghostly Shift]</p><hr /><p><strong>Heightened (+2)</strong> The resistance increases by 1.</p>"
         },
         "duration": {
             "sustained": true,
@@ -22,9 +22,9 @@
             "value": 3
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "range": {
             "value": "30 feet"

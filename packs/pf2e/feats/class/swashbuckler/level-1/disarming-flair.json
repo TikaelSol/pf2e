@@ -27,6 +27,16 @@
         },
         "rules": [
             {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:disarm"
+                ],
+                "property": "traits",
+                "value": "bravado"
+            },
+            {
                 "key": "RollOption",
                 "option": "item:trait:bravado",
                 "predicate": [

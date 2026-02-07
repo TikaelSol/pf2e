@@ -4,7 +4,7 @@
     "name": "Effect: Calculate Threats",
     "system": {
         "description": {
-            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Calculate Threats].</p>\n<p>You gain a +2 circumstance bonus to AC and Reflex saves until the beginning of your next turn.</p>"
+            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Calculate Threats]</p>\n<p>You gain a +2 circumstance bonus to AC and Reflex saves until the beginning of your next turn.</p>"
         },
         "duration": {
             "expiry": "turn-start",
@@ -16,9 +16,9 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {

@@ -12,7 +12,7 @@
         "damage": {},
         "defense": null,
         "description": {
-            "value": "<p>The same abilities that let you raise or lower thermal energy also let you keep it at a safe medium. The target gains resistance 2 against fire damage and resistance 2 against cold damage.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Thermal Stasis]</p>\n<hr />\n<p><strong>Heightened (+1)</strong> Each resistance increases by 2.</p>"
+            "value": "<p>The same abilities that let you raise or lower thermal energy also let you keep it at a safe medium. The target gains resistance 2 against fire damage and resistance 2 against cold damage.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Thermal Stasis]</p><hr /><p><strong>Heightened (+1)</strong> Each resistance increases by 2.</p>"
         },
         "duration": {
             "sustained": false,
@@ -22,9 +22,9 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "range": {
             "value": "60 feet"

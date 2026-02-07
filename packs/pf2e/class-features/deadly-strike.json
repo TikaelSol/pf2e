@@ -26,43 +26,51 @@
         },
         "rules": [
             {
-                "definition": [
-                    "item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "adjustName": false,
+                "choices": [
                     {
-                        "or": [
-                            "item:trait:deadly-d10",
-                            "item:trait:deadly-d8"
-                        ]
+                        "label": "PF2E.TraitDeadlyD8",
+                        "predicate": [
+                            {
+                                "or": [
+                                    "weapon-innovation:trait:deadly-d4",
+                                    {
+                                        "not": "weapon-innovation:trait:deadly"
+                                    }
+                                ]
+                            }
+                        ],
+                        "value": "deadly-d8"
+                    },
+                    {
+                        "label": "PF2E.TraitDeadlyD10",
+                        "predicate": [
+                            "weapon-innovation:trait:deadly-d6"
+                        ],
+                        "value": "deadly-d10"
+                    },
+                    {
+                        "label": "PF2E.TraitDeadlyD12",
+                        "predicate": [
+                            {
+                                "or": [
+                                    "weapon-innovation:trait:deadly-d8",
+                                    "weapon-innovation:trait:deadly-d10"
+                                ]
+                            }
+                        ],
+                        "value": "deadly-d12"
                     }
                 ],
-                "key": "AdjustStrike",
-                "mode": "add",
-                "property": "weapon-traits",
-                "value": "deadly-d12"
+                "flag": "trait",
+                "key": "ChoiceSet"
             },
             {
-                "definition": [
-                    "item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}",
-                    "item:trait:deadly-d6"
-                ],
-                "key": "AdjustStrike",
+                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "key": "ItemAlteration",
                 "mode": "add",
-                "priority": 111,
-                "property": "weapon-traits",
-                "value": "deadly-d10"
-            },
-            {
-                "definition": [
-                    "item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}",
-                    {
-                        "not": "item:trait:deadly"
-                    }
-                ],
-                "key": "AdjustStrike",
-                "mode": "add",
-                "priority": 112,
-                "property": "weapon-traits",
-                "value": "deadly-d6"
+                "property": "traits",
+                "value": "{item|flags.pf2e.rulesSelections.trait}"
             }
         ],
         "traits": {
