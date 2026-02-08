@@ -137,10 +137,62 @@
             "type": "melee"
         },
         {
+            "_id": "TadIBHiTNFxw8tT9",
+            "flags": {
+                "sf2e": {
+                    "linkedWeapon": "rRDwVRmrvjNoOb4V"
+                }
+            },
+            "img": "systems/sf2e/icons/default-icons/melee.svg",
+            "name": "Incendiary Grenade",
+            "sort": 300000,
+            "system": {
+                "action": "area-fire",
+                "area": {
+                    "type": "burst"
+                },
+                "attackEffects": {
+                    "value": []
+                },
+                "bonus": {
+                    "value": 7
+                },
+                "damageRolls": {
+                    "KiSBQAnRyEiWc0A9": {
+                        "damage": "1d8",
+                        "damageType": "fire"
+                    }
+                },
+                "description": {
+                    "value": ""
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "range": {
+                    "increment": 70,
+                    "max": null
+                },
+                "rules": [],
+                "slug": "incendiary-grenade-commercial",
+                "traits": {
+                    "config": {},
+                    "value": [
+                        "consumable",
+                        "grenade",
+                        "tech"
+                    ]
+                }
+            },
+            "type": "melee"
+        },
+        {
             "_id": "x8rZ5pT6b50ZCELy",
             "img": "systems/sf2e/icons/default-icons/action.svg",
             "name": "Networked Nodocite",
-            "sort": 300000,
+            "sort": 400000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -169,7 +221,7 @@
             "_id": "YjYGvcGNaPJfCBap",
             "img": "systems/sf2e/icons/default-icons/action.svg",
             "name": "Block Path",
-            "sort": 400000,
+            "sort": 500000,
             "system": {
                 "actionType": {
                     "value": "reaction"
@@ -180,35 +232,6 @@
                 "category": "defensive",
                 "description": {
                     "value": "<p><strong>Trigger</strong> A creature within the nodocite's reach uses a move action or leaves a square during a move action it's using</p><hr /><p><strong>Effect</strong> The nodocite sentry makes a melee Strike against the triggering creature. On a hit, the target's movement is additionally disrupted.</p>"
-                },
-                "publication": {
-                    "license": "OGL",
-                    "remaster": false,
-                    "title": ""
-                },
-                "rules": [],
-                "slug": null,
-                "traits": {
-                    "value": []
-                }
-            },
-            "type": "action"
-        },
-        {
-            "_id": "qAT5VKxIEUCI5muC",
-            "img": "systems/sf2e/icons/default-icons/action.svg",
-            "name": "Area Fire",
-            "sort": 500000,
-            "system": {
-                "actionType": {
-                    "value": "action"
-                },
-                "actions": {
-                    "value": 1
-                },
-                "category": "offensive",
-                "description": {
-                    "value": "<p>Incendiary Grenade (@Template[type:burst|distance:5], range 70 feet)</p>\n<p><strong>Damage</strong> @Damage[1d8[fire]|options:area-damage] (@Check[reflex|dc:17|basic])</p>"
                 },
                 "publication": {
                     "license": "OGL",

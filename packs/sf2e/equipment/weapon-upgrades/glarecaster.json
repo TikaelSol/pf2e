@@ -1,0 +1,53 @@
+{
+    "_id": "raxz4fpTfjM0L1Qj",
+    "folder": "7JvVdcPLRxEK9sec",
+    "img": "systems/sf2e/icons/abilities/yellow-alien-tool.webp",
+    "name": "Glarecaster",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Mimicking the glare of sunlight on ice, a glarecaster creates a blinding flash when fired. On a critical hit, the target is @UUID[Compendium.sf2e.conditions.Item.Dazzled] for 1 round.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 5
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 1600
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Society Scenario #1-15: Ruins of the World Soul"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "magical",
+                "tech",
+                "visual"
+            ]
+        },
+        "usage": {
+            "value": "installed-in-a-weapon"
+        }
+    },
+    "type": "equipment"
+}
