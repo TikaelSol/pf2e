@@ -597,6 +597,20 @@ export const PF2ECONFIG = {
         20: "PF2E.Level20",
     },
 
+    ranks: {
+        cantrip: "PF2E.TraitCantrip",
+        1: "PF2E.Rank1",
+        2: "PF2E.Rank2",
+        3: "PF2E.Rank3",
+        4: "PF2E.Rank4",
+        5: "PF2E.Rank5",
+        6: "PF2E.Rank6",
+        7: "PF2E.Rank7",
+        8: "PF2E.Rank8",
+        9: "PF2E.Rank9",
+        10: "PF2E.Rank10",
+    },
+
     abilities,
 
     dcAdjustments: {
