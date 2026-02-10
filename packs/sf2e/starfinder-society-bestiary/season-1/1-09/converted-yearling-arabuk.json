@@ -233,9 +233,6 @@
         }
     ],
     "name": "Converted Yearling Arabuk",
-    "prototypeToken": {
-        "name": "Yearling Arabuk"
-    },
     "system": {
         "abilities": {
             "cha": {
