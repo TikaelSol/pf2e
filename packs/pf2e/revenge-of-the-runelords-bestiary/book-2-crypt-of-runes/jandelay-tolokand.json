@@ -1084,10 +1084,51 @@
             "type": "action"
         },
         {
+            "_id": "y6pe8tbGR2ptpxY8",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.bestiary-family-ability-glossary.Item.0zvUNv8hRTdwXmhF"
+            },
+            "folder": "63FzE1sSn3PK5yy4",
+            "img": "systems/pf2e/icons/actions/Passive.webp",
+            "name": "Mythic Resilience (Fortitude)",
+            "sort": 1900000,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "defensive",
+                "description": {
+                    "value": "<p>The creature treats its saving throws with the associated save as one degree of success better than it rolled. This is not cumulative with other effects that change their degree of success, like the incapacitation trait (except for rolling a natural 1 or 20). Each time the monster gains mythic resilience, choose one save. The ability should apply to the creature's highest saves first.</p>"
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder War of Immortals"
+                },
+                "rules": [
+                    {
+                        "adjustment": {
+                            "all": "one-degree-better"
+                        },
+                        "key": "AdjustDegreeOfSuccess",
+                        "selector": "fortitude"
+                    }
+                ],
+                "slug": "mythic-mythic-resilience",
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
             "_id": "mpDohzU1L0FfV4Tr",
             "img": "systems/pf2e/icons/actions/Passive.webp",
             "name": "Toxic Blood",
-            "sort": 1900000,
+            "sort": 2000000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -1116,7 +1157,7 @@
             "_id": "Na4ZinpZPOodP1WY",
             "img": "systems/pf2e/icons/actions/Passive.webp",
             "name": "Blighted Footfalls",
-            "sort": 2000000,
+            "sort": 2100000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -1149,7 +1190,7 @@
             "folder": "63FzE1sSn3PK5yy4",
             "img": "systems/pf2e/icons/actions/Passive.webp",
             "name": "Mythic Power",
-            "sort": 2100000,
+            "sort": 2200000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -1182,7 +1223,7 @@
             "folder": "63FzE1sSn3PK5yy4",
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Recharge",
-            "sort": 2200000,
+            "sort": 2300000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -1217,7 +1258,7 @@
             "folder": "63FzE1sSn3PK5yy4",
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Remove a Condition",
-            "sort": 2300000,
+            "sort": 2400000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -1248,7 +1289,7 @@
             "_id": "3ltFeU7t0v6ZbQqL",
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Sudden Destruction",
-            "sort": 2400000,
+            "sort": 2500000,
             "system": {
                 "actionType": {
                     "value": "action"
