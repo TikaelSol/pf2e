@@ -15,9 +15,9 @@
             "value": "<p>The cryptid is sustained by localized tales or reports from witnesses. As a result, its appearance morphs between different appearances. If all records of the rumored cryptid are destroyed or all witnesses die, the rumored cryptid ceases to exist.</p>"
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "traits": {

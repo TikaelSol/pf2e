@@ -11,7 +11,7 @@
         "containerId": null,
         "damage": null,
         "description": {
-            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> Interact</p>\n<p>A pickled lizard's tongue, tied into a knot, floats in this oily potion. When you drink it, you can speak and understand all spoken (but not written) languages for 1 hour. However, if you attempt to translate any spoken language, your translation is always erroneous in a way likely to cause substantial confusion or anger, typically reducing the listener's attitude toward you by one step. You aren't aware of your error, and any attempt to correct the mistake only compounds it.</p>"
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (manipulate)</p><hr /><p>A pickled lizard's tongue, tied into a knot, floats in this oily potion. When you drink it, you can speak and understand all spoken (but not written) languages for 1 hour. However, if you attempt to translate any spoken language, your translation is always erroneous in a way likely to cause substantial confusion or anger, typically reducing the listener's attitude toward you by one step. You aren't aware of your error, and any attempt to correct the mistake only compounds it.</p>"
         },
         "hardness": 0,
         "hp": {
@@ -26,18 +26,19 @@
             "type": null
         },
         "price": {
+            "per": 1,
             "value": {}
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "quantity": 1,
         "rules": [],
         "size": "med",
         "traits": {
-            "rarity": "common",
+            "rarity": "rare",
             "value": [
                 "consumable",
                 "cursed",

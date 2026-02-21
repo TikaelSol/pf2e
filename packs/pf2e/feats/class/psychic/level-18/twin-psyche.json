@@ -1,0 +1,37 @@
+{
+    "_id": "PTAdxHcTS7TjyBTg",
+    "folder": "P19urYa1hGzz2CcX",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Twin Psyche",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You've segmented your psyche so it can operate in tandem. When you Unleash your Psyche, you can double its duration.</p>"
+        },
+        "level": {
+            "value": 18
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "psychic"
+            ]
+        }
+    },
+    "type": "feat"
+}

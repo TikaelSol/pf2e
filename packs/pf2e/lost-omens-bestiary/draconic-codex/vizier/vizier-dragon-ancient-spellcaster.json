@@ -2990,7 +2990,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": 0,
+                        "radius": 90,
                         "slug": "frightful-presence",
                         "traits": [
                             "emotion",
@@ -3229,6 +3229,9 @@
         }
     ],
     "name": "Vizier Dragon (Ancient, Spellcaster)",
+    "prototypeToken": {
+        "name": "Vizier Dragon (Ancient)"
+    },
     "system": {
         "abilities": {
             "cha": {

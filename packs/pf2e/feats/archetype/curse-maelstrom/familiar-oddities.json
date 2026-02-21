@@ -12,7 +12,7 @@
         },
         "category": "skill",
         "description": {
-            "value": "<p>Perhaps due to the curse within you, curses occasionally perceive you as an extension of themselves and readily reveal themselves to you. You gain a +2 circumstance bonus to checks to Identify Magic on a cursed item or a spell that has the curse trait.</p>"
+            "value": "<p>Perhaps due to the curse within you, curses occasionally perceive you as an extension of themselves and readily reveal themselves to you. You gain a +2 circumstance bonus to checks to @UUID[Compendium.pf2e.actionspf2e.Item.Identify Magic] on a cursed item or a spell that has the curse trait.</p>"
         },
         "level": {
             "value": 2
@@ -28,11 +28,24 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:identify-magic",
+                    "familiar-oddities"
+                ],
+                "selector": [
+                    "skill-check"
+                ],
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": [

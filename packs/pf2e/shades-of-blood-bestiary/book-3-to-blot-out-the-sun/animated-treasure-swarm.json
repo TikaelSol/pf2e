@@ -208,6 +208,12 @@
                 "temp": 0,
                 "value": 85
             },
+            "immunities": [
+                {
+                    "exceptions": [],
+                    "type": "precision"
+                }
+            ],
             "speed": {
                 "otherSpeeds": [],
                 "value": 30

@@ -51,8 +51,7 @@
         },
         "traits": {
             "otherTags": [
-                "weapon-ikon-feat",
-                "worn-ikon-feat"
+                "body-ikon-feat"
             ],
             "rarity": "uncommon",
             "value": [

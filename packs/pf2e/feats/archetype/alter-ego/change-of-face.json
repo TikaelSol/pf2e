@@ -12,7 +12,7 @@
         },
         "category": "skill",
         "description": {
-            "value": "<p>You know that for the best disguise to work, one requires not only the right skills but also the right look-luckily you can copy both using special magical techniques. When you @UUID[Compendium.pf2e.actionspf2e.Item.Impersonate], you don't need a disguise kit; instead, simple illusions or temporary transmutations ripple over your body like mirror shards, providing the supplies that the kit ordinarily would. When you Impersonate in this way, your Impersonate activity gains the occult trait.</p>"
+            "value": "<p>You know that for the best disguise to work, one requires not only the right skills but also the right look—luckily you can copy both using special magical techniques. When you @UUID[Compendium.pf2e.actionspf2e.Item.Impersonate], you don't need a disguise kit; instead, simple illusions or temporary transformations ripple over your body like mirror shards, providing the supplies that the kit ordinarily would. When you Impersonate in this way, your Impersonate activity gains the occult trait.</p>"
         },
         "level": {
             "value": 4
@@ -25,9 +25,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "traits": {

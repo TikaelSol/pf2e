@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>You've dedicated your training to the most complex and weird weapons of your favorite group. Choose firearms or crossbows. You gain proficiency with all advanced firearms as if they were martial firearms or with all advanced crossbows as if they were martial crossbows.</p>"
+            "value": "<p>You've dedicated your training to mastering even the most complex and weird firearms and crossbows from across the world. You gain proficiency with all advanced firearms as if they were martial firearms and with all advanced crossbows as if they were martial crossbows.</p>"
         },
         "level": {
             "value": 6
@@ -25,7 +25,44 @@
             "remaster": true,
             "title": "Pathfinder Guns & Gears"
         },
-        "rules": [],
+        "rules": [
+            {
+                "definition": [
+                    "item:category:advanced",
+                    {
+                        "or": [
+                            "item:group:crossbow",
+                            "item:group:firearm"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "PF2E.SpecificRule.MartialProficiency.AdvancedFirearmsCrossbows",
+                "predicate": [
+                    "class:gunslinger"
+                ],
+                "priority": 50,
+                "value": "@actor.system.proficiencies.attacks.martial-firearms-crossbows.rank"
+            },
+            {
+                "definition": [
+                    "item:category:advanced",
+                    {
+                        "or": [
+                            "item:group:crossbow",
+                            "item:group:firearm"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "PF2E.SpecificRule.MartialProficiency.AdvancedFirearmsCrossbows",
+                "predicate": [
+                    "feat:gunslinger-dedication"
+                ],
+                "priority": 15,
+                "sameAs": "simple"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": [

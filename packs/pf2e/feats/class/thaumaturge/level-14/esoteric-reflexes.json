@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>Your bond to your implements is so strong that you can use their reactive abilities almost by instinct. At the start of your turn, you gain an additional reaction, which you can use for only the reactions granted by your implements.</p>"
+            "value": "<p>Reacting with an implement becomes instinct. At the start of your turn, you gain an additional reaction, which you can use for only reactions granted by your implements.</p>"
         },
         "level": {
             "value": 14
@@ -25,9 +25,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "traits": {

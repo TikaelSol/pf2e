@@ -4,6 +4,8 @@
     "name": "Effect: Curse Maelstrom State",
     "system": {
         "badge": {
+            "max": null,
+            "min": null,
             "type": "counter",
             "value": 1
         },
@@ -20,9 +22,9 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {

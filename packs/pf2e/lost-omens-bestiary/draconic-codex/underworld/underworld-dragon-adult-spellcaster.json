@@ -2099,7 +2099,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": 0,
+                        "radius": 90,
                         "slug": "frightful-presence",
                         "traits": [
                             "emotion",
@@ -2265,6 +2265,9 @@
         }
     ],
     "name": "Underworld Dragon (Adult, Spellcaster)",
+    "prototypeToken": {
+        "name": "Underworld Dragon (Adult)"
+    },
     "system": {
         "abilities": {
             "cha": {

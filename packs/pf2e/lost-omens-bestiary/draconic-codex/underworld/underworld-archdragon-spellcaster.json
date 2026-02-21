@@ -2956,7 +2956,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": 0,
+                        "radius": 90,
                         "slug": "frightful-presence",
                         "traits": [
                             "emotion",
@@ -3191,6 +3191,9 @@
         }
     ],
     "name": "Underworld Archdragon (Spellcaster)",
+    "prototypeToken": {
+        "name": "Underworld Archdragon"
+    },
     "system": {
         "abilities": {
             "cha": {

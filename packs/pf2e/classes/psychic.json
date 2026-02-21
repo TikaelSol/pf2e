@@ -116,12 +116,6 @@
                 "name": "Expert Spellcaster",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Expert Spellcaster"
             },
-            "erk9s": {
-                "img": "icons/magic/life/cross-explosion-burst-green.webp",
-                "level": 9,
-                "name": "Great Fortitude (Psychic)",
-                "uuid": "Compendium.pf2e.classfeatures.Item.Great Fortitude (Psychic)"
-            },
             "f5qsu": {
                 "img": "icons/magic/perception/eye-tendrils-web-purple.webp",
                 "level": 11,
@@ -139,6 +133,12 @@
                 "level": 13,
                 "name": "Personal Barrier",
                 "uuid": "Compendium.pf2e.classfeatures.Item.Personal Barrier"
+            },
+            "iqtpM": {
+                "img": "icons/magic/life/cross-explosion-burst-green.webp",
+                "level": 9,
+                "name": "Fortitude Expertise",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Fortitude Expertise"
             },
             "jl328": {
                 "img": "systems/pf2e/icons/features/classes/weapon-specialization.webp",
@@ -182,9 +182,9 @@
         },
         "perception": 1,
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "savingThrows": {

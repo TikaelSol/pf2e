@@ -1,0 +1,142 @@
+{
+    "_id": "f1aSwn3oGVxxilP8",
+    "folder": "WrOPzfQaJRZxgV40",
+    "img": "systems/pf2e/icons/default-icons/hazard.svg",
+    "items": [
+        {
+            "_id": "KoOQqC100eOq5B19",
+            "img": "systems/pf2e/icons/default-icons/action.svg",
+            "name": "Leaping Fang",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "reaction"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "defensive",
+                "description": {
+                    "value": "<p><strong>Trigger</strong> A creature interacts with the items in this room without first proclaiming their zeal</p><hr /><p><strong>Effect</strong> The haunt makes a fang Strike against the triggering creature, then rolls initiative.</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
+            "_id": "3uE6iPaOyUcfRAoy",
+            "img": "systems/pf2e/icons/default-icons/melee.svg",
+            "name": "Fang",
+            "sort": 0,
+            "system": {
+                "action": "strike",
+                "area": null,
+                "attackEffects": {
+                    "value": []
+                },
+                "bonus": {
+                    "value": 25
+                },
+                "damageRolls": {
+                    "U17agYpE3Vcukx2w": {
+                        "damage": "4d10+26",
+                        "damageType": "piercing"
+                    }
+                },
+                "description": {
+                    "value": "<p>no multiple attack penalty.</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "range": null,
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "config": {},
+                    "value": []
+                }
+            },
+            "type": "melee"
+        }
+    ],
+    "name": "Animated Fang",
+    "system": {
+        "attributes": {
+            "ac": {
+                "value": 28
+            },
+            "emitsSound": "encounter",
+            "hardness": 18,
+            "hp": {
+                "details": "",
+                "max": 20,
+                "temp": 0,
+                "value": 20
+            },
+            "immunities": [
+                {
+                    "exceptions": [],
+                    "type": "critical-hits"
+                },
+                {
+                    "exceptions": [],
+                    "type": "precision"
+                }
+            ],
+            "resistances": [],
+            "stealth": {
+                "details": "<p>(expert) to notice the residual animating magic in the fang</p>",
+                "value": 30
+            },
+            "weaknesses": []
+        },
+        "details": {
+            "description": "<p>The fang on the altar leaps up to stab at insufficiently zealous creatures.</p>",
+            "disable": "<p>The haunt is disabled once there aren't any creatures in the room that haven't sufficiently proclaimed their zeal (as described above).</p>",
+            "isComplex": true,
+            "level": {
+                "value": 9
+            },
+            "publication": {
+                "license": "ORC",
+                "remaster": true,
+                "title": "Pathfinder Society Scenario #7-13: Ancient Beyond Imagining"
+            },
+            "reset": "<p>If the fang is not destroyed, it returns to the altar and the haunt resets immediately.</p>",
+            "routine": "<p>(two-actions) The fang leaps around the room, flying up to 20 feet and making a fang Strike against a random creature in the room.</p>"
+        },
+        "saves": {
+            "fortitude": {
+                "value": 22
+            },
+            "reflex": {
+                "value": 22
+            },
+            "will": {
+                "value": 20
+            }
+        },
+        "traits": {
+            "rarity": "common",
+            "size": {
+                "value": "lg"
+            },
+            "value": [
+                "haunt"
+            ]
+        }
+    },
+    "type": "hazard"
+}

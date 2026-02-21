@@ -53,6 +53,16 @@
                 "title": "PF2E.SpecificRule.ExemplaryFinisher.Name"
             },
             {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:perform"
+                ],
+                "property": "traits",
+                "value": "bravado"
+            },
+            {
                 "domain": "skill-check",
                 "key": "RollOption",
                 "option": "item:trait:bravado",

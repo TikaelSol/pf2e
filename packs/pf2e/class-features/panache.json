@@ -32,9 +32,19 @@
                     "criticalSuccess"
                 ],
                 "predicate": [
-                    "item:trait:bravado",
                     {
-                        "not": "self:effect:panache"
+                        "or": [
+                            "item:trait:bravado",
+                            "self:action:trait:bravado"
+                        ]
+                    },
+                    {
+                        "or": [
+                            {
+                                "not": "self:effect:panache"
+                            },
+                            "finisher:illimitable"
+                        ]
                     }
                 ],
                 "selector": [
@@ -50,9 +60,19 @@
                     "failure"
                 ],
                 "predicate": [
-                    "item:trait:bravado",
                     {
-                        "not": "self:effect:panache"
+                        "or": [
+                            "item:trait:bravado",
+                            "self:action:trait:bravado"
+                        ]
+                    },
+                    {
+                        "or": [
+                            {
+                                "not": "self:effect:panache"
+                            },
+                            "finisher:illimitable"
+                        ]
                     }
                 ],
                 "selector": [
@@ -61,6 +81,16 @@
                 ],
                 "text": "PF2E.SpecificRule.Swashbuckler.PanacheFailure",
                 "title": "PF2E.Check.Result.Degree.Check.failure"
+            },
+            {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:tumble-through"
+                ],
+                "property": "traits",
+                "value": "bravado"
             },
             {
                 "key": "RollOption",

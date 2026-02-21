@@ -17,7 +17,7 @@
             "value": "1d4"
         },
         "description": {
-            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Cinder Gaze].</p>\n<ol>\n<li><strong>Terrible Danger</strong> You gain a +2 status bonus to your next initiative roll.</li>\n<li><strong>New Life</strong> The next time you take damage, just before taking the damage, you gain temporary Hit Points equal to 1 plus your spellcasting ability modifier.</li>\n<li><strong>Vivid Insight</strong> (fortune) The next time you attempt a check to Recall Knowledge, roll twice and take the higher result.</li>\n<li><strong>Good Fortune</strong> (fortune) The next time you attempt a saving throw, roll twice and take the better result.</li>\n</ol>"
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Cinder Gaze]</p><ol><li><strong>Terrible Danger</strong> You gain a +2 status bonus to your next initiative roll.</li><li><strong>New Life</strong> The next time you take damage, just before taking the damage, you gain temporary Hit Points.</li><li><strong>Vivid Insight</strong> (fortune) The next time you attempt a check to Recall Knowledge, roll twice and take the higher result.</li><li><strong>Good Fortune</strong> (fortune) The next time you attempt a saving throw, roll twice and take the better result.</li></ol>"
         },
         "duration": {
             "expiry": "turn-start",
@@ -29,19 +29,21 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {
                 "hideIfDisabled": true,
                 "key": "FlatModifier",
                 "predicate": [
-                    "self:effect:cinder-gaze:1"
+                    "parent:badge:value:1"
                 ],
                 "removeAfterRoll": "if-enabled",
-                "selector": "initiative",
+                "selector": [
+                    "initiative"
+                ],
                 "type": "status",
                 "value": 2
             },
@@ -49,9 +51,9 @@
                 "keep": "higher",
                 "key": "RollTwice",
                 "predicate": [
-                    "self:effect:cinder-gaze:4"
+                    "parent:badge:value:4"
                 ],
-                "removeAfterRoll": true,
+                "removeAfterRoll": "if-enabled",
                 "selector": "saving-throw"
             },
             {
@@ -59,17 +61,17 @@
                 "key": "RollTwice",
                 "predicate": [
                     "action:recall-knowledge",
-                    "self:effect:cinder-gaze:3"
+                    "parent:badge:value:3"
                 ],
-                "removeAfterRoll": true,
+                "removeAfterRoll": "if-enabled",
                 "selector": "skill-check"
             },
             {
                 "key": "TempHP",
                 "predicate": [
-                    "self:effect:cinder-gaze:2"
+                    "parent:badge:value:2"
                 ],
-                "value": "2 * @item.level - 1 + @item.system.context.origin.spellcasting.attribute.mod"
+                "value": "2*(@item.level + 2)"
             }
         ],
         "start": {

@@ -38,6 +38,7 @@
             {
                 "key": "FlatModifier",
                 "selector": "survival",
+                "slug": "sextant-base-bonus",
                 "type": "item",
                 "value": 1
             },
@@ -47,6 +48,7 @@
                     "action:sense-direction"
                 ],
                 "selector": "survival",
+                "slug": "sextant-sense-direction-bonus",
                 "type": "item",
                 "value": 2
             }

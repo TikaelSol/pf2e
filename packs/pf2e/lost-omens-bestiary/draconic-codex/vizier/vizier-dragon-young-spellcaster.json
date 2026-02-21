@@ -1605,7 +1605,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": 0,
+                        "radius": 90,
                         "slug": "frightful-presence",
                         "traits": [
                             "emotion",
@@ -1733,6 +1733,9 @@
         }
     ],
     "name": "Vizier Dragon (Young, Spellcaster)",
+    "prototypeToken": {
+        "name": "Vizier Dragon (Young)"
+    },
     "system": {
         "abilities": {
             "cha": {

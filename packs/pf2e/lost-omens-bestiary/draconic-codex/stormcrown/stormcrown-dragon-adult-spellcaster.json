@@ -2282,7 +2282,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": 0,
+                        "radius": 100,
                         "slug": "frightful-presence",
                         "traits": [
                             "emotion",
@@ -2457,6 +2457,9 @@
         }
     ],
     "name": "Stormcrown Dragon (Adult, Spellcaster)",
+    "prototypeToken": {
+        "name": "Stormcrown Dragon (Adult)"
+    },
     "system": {
         "abilities": {
             "cha": {

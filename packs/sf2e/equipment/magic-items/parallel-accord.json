@@ -1,0 +1,53 @@
+{
+    "_id": "xLxqq8NKbZsFt7EC",
+    "folder": "JlUS4L43QWp3cPhu",
+    "img": "systems/sf2e/icons/equipment/worn-items/other-worn-items/ring-of-sustenance.webp",
+    "name": "Parallel Accord",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>A parallel accord is a small metallic disk ringed with magical runes that transcend reality, serving as a nexus for a number of your parallel selves. When invested, a parallel accord hovers over your head like a crown.</p>\n<p><strong>Activate—Parallel Positioning</strong> <span class=\"action-glyph\">r</span> (concentration, teleportation)</p>\n<p><strong>Trigger</strong> You succeed at a saving throw against a spell or a Strike misses you</p>\n<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You tap into one of the alternate realities linked to your parallel accord, repositioning yourself into a location you occupy in another reality. You teleport to any unoccupied square you can see within 20 feet. If you critically succeeded at the triggering saving throw or were critically missed by the triggering Strike, you additionally become @UUID[Compendium.sf2e.conditions.Item.Concealed] until the beginning of your next turn, as your body is shrouded in fragmented reflections of other realities.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 2500
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Society Scenario #1-16: The Beasts of Bo: Part Two"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "invested",
+                "magical",
+                "tech"
+            ]
+        },
+        "usage": {
+            "value": "worn"
+        }
+    },
+    "type": "equipment"
+}

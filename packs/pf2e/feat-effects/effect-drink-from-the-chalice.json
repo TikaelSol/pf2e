@@ -4,7 +4,7 @@
     "name": "Effect: Drink from the Chalice",
     "system": {
         "description": {
-            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Drink from the Chalice]</p>\n<p>You gain temporary Hit Points equal to 2 + half the origin's level. If the origin is under the effects of the chalice's adept benefit, these temporary Hit Points increase to 2 + their Charisma modifier + their level.</p>"
+            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Drink from the Chalice]</p>\n<p>You gain temporary Hit Points equal to the origin's level (minimum 3). If the origin is under the effects of the chalice's adept benefit, these temporary Hit Points increase to twice their level.</p>"
         },
         "duration": {
             "expiry": "turn-end",
@@ -16,9 +16,9 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {
@@ -28,14 +28,14 @@
                         "not": "parent:origin:item:tag:chalice-adept-benefit"
                     }
                 ],
-                "value": "2+floor(@item.origin.level/2)"
+                "value": "max(3,@item.origin.level)"
             },
             {
                 "key": "TempHP",
                 "predicate": [
                     "parent:origin:item:tag:chalice-adept-benefit"
                 ],
-                "value": "2+ @item.origin.level + @item.origin.abilities.cha.mod"
+                "value": "2*@item.origin.level"
             }
         ],
         "start": {

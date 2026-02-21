@@ -1,0 +1,51 @@
+{
+    "_id": "udGP9jMEOyipkA7n",
+    "folder": "Z2psjbexrXEv0Dk6",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Spell Acceleration",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>Special time-weaving techniques let you compress your spellcasting gestures and incantations into a short burst so you can cast with incredible speed—though it causes temporal strain. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quickened Casting] feat. It applies to your cantrips and spells from the class you used to qualify for the @UUID[Compendium.pf2e.feats-srd.Item.Time Mage Dedication].</p>"
+        },
+        "level": {
+            "value": 12
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Time Mage Dedication"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
+        },
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.pf2e.feats-srd.Item.Quickened Casting"
+            }
+        ],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "archetype"
+            ]
+        }
+    },
+    "type": "feat"
+}

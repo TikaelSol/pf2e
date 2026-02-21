@@ -12,7 +12,7 @@
         },
         "category": "class",
         "description": {
-            "value": "<p>When the curse within you spills out, you can lay curses on others and claim them for yourself with ease. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Claim Curse]. At 10th level, you can also cast @UUID[Compendium.pf2e.spells-srd.Item.Seal Fate], and at 12th level, you can also cast @UUID[Compendium.pf2e.spells-srd.Item.Inevitable Disaster]. You can cast these spells once per day as occult innate spells, but only while within your curse maelstrom state. If you couldn't already cast occult spells, these spells use Wisdom as your spellcasting ability, and you become trained in spell attack rolls and spell DCs for occult spells.</p>"
+            "value": "<p>When the curse within you spills out, you can lay curses on others and claim them for yourself with ease. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Claim Curse]. At 10th level, you can also cast @UUID[Compendium.pf2e.spells-srd.Item.Seal Fate], and at 12th level, you can also cast @UUID[Compendium.pf2e.spells-srd.Item.Inevitable Disaster]. You can cast these spells once per day as occult innate spells, but only while within your curse maelstrom state. If you couldn't already cast occult spells, these spells use Wisdom as your spellcasting attribute, and you become trained in the spell attack modifier and spell DC statistics.</p>"
         },
         "level": {
             "value": 8
@@ -25,9 +25,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [],
         "subfeatures": {

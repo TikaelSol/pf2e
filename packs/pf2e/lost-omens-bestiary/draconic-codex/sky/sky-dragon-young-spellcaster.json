@@ -1855,7 +1855,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": 0,
+                        "radius": 90,
                         "slug": "frightful-presence",
                         "traits": [
                             "emotion",
@@ -1971,6 +1971,9 @@
         }
     ],
     "name": "Sky Dragon (Young, Spellcaster)",
+    "prototypeToken": {
+        "name": "Sky Dragon (Young)"
+    },
     "system": {
         "abilities": {
             "cha": {

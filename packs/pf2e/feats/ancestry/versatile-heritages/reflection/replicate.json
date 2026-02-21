@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You've learned to reshape your malleable form. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Illusory Disguise] once per day as an innate occult spell. This is a transmutation and morph effect, as your body physically transforms, rather than an illusion effect.</p>"
+            "value": "<p>You've learned to reshape your malleable form. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Illusory Disguise] once per day as an innate occult spell. This is a morph effect, as your body physically transforms, rather than an illusion effect.</p>"
         },
         "level": {
             "value": 5
@@ -25,9 +25,9 @@
             ]
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
             {

@@ -325,7 +325,7 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         if (this.system.apex) {
             if (!this.traits.has("apex")) {
                 delete this.system.apex;
-            } else if (!this.isInvested) {
+            } else if (this.isInvested === false || (!this.isEquipped && this.isInvested === null)) {
                 this.system.apex.selected = false;
             }
         }
@@ -349,7 +349,9 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         };
 
         // Compute level, rarity, and price from factors like runes, precious material, shoddiness, and size
-        if (this.isMagical) this.system.price.sizeSensitive = false;
+        if (this.isMagical || this.system.traits.value.includes("tech")) {
+            this.system.price.sizeSensitive = false;
+        }
         const { level, rarity, price } = computeLevelRarityPrice(this);
         this.system.level.value = level;
         this.system.traits.rarity = rarity;
@@ -385,11 +387,13 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         }
 
         // Ensure that there is only one selected apex item, and all others are set to false
+        // Allow equipped non-invested OR any invested (invested apex weapons need not be equipped)
         if (this.system.apex) {
+            const isSufficientlyEquipped = this.isInvested || (this.isInvested === null && this.isEquipped);
             const otherApexData = this.actor.inventory.contents.flatMap((e) =>
                 e === this ? [] : (e.system.apex ?? []),
             );
-            if (this.system.apex.selected || (this.isInvested && otherApexData.every((d) => !d.selected))) {
+            if (this.system.apex.selected || (isSufficientlyEquipped && otherApexData.every((d) => !d.selected))) {
                 this.system.apex.selected = true;
                 for (const data of otherApexData) {
                     data.selected = false;
@@ -840,15 +844,21 @@ abstract class PhysicalItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | n
         operation: Partial<Omit<DatabaseUpdateOperation<null>, "parent" | "pack">> = {},
     ): Promise<this | undefined> {
         if (this.parentItem) {
+            const changes = fu.expandObject(data) as DeepPartial<this["_source"]>;
+            changes._id = this.id;
+            if ((await this._preUpdate(changes, operation, game.user)) === false) {
+                return undefined;
+            }
+
             const parentItem = this.parentItem;
             const newSubitems = parentItem._source.system.subitems?.map((i) =>
-                i._id === this.id ? fu.mergeObject(i, data, { ...operation, inplace: false }) : i,
+                i._id === this.id ? fu.mergeObject(i, changes, { ...operation, inplace: false }) : i,
             );
             const parentContext = { ...operation, diff: true, recursive: true };
             const updated = await parentItem.update({ system: { subitems: newSubitems } }, parentContext);
             if (updated) {
                 this._onUpdate(
-                    data as DeepPartial<this["_source"]>,
+                    changes,
                     { action: "update", broadcast: false, updates: [], ...operation },
                     game.user.id,
                 );

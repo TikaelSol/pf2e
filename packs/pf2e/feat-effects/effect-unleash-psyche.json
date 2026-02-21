@@ -4,7 +4,7 @@
     "name": "Effect: Unleash Psyche",
     "system": {
         "description": {
-            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Unleash Psyche]</p>\n<p>When you cast a damaging spell, you gain a status bonus to its damage equal to double the spell's rank. This applies only to spells that don't have a duration and that you cast using psychic spellcasting.</p>"
+            "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.Unleash Psyche]</p>\n<p>When you cast a damaging spell using your psychic spellcasting, you gain a status bonus to its damage equal to double the spell's rank. This applies only to the initial damage the spell deals when cast, and an individual creature takes this damage only once per spell, even if the spell would damage that creature multiple times.</p>"
         },
         "duration": {
             "expiry": "turn-start",
@@ -16,16 +16,23 @@
             "value": 1
         },
         "publication": {
-            "license": "OGL",
-            "remaster": false,
-            "title": "Pathfinder Dark Archive"
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Dark Archive (Remastered)"
         },
         "rules": [
+            {
+                "key": "RollOption",
+                "label": "PF2E.SpecificRule.Psychic.UnleashPsyche.DamageLabel",
+                "option": "unleash-psyche-damage",
+                "placement": "spellcasting",
+                "toggleable": true,
+                "value": true
+            },
             {
                 "key": "FlatModifier",
                 "predicate": [
                     "unleash-psyche-damage",
-                    "item:duration:0",
                     "damaging-effect",
                     "spellcasting:tradition:occult",
                     {
@@ -35,17 +42,11 @@
                         ]
                     }
                 ],
-                "selector": "spell-damage",
+                "selector": [
+                    "spell-damage"
+                ],
                 "type": "status",
                 "value": "2*@spell.level"
-            },
-            {
-                "key": "RollOption",
-                "label": "PF2E.SpecificRule.Psychic.UnleashPsyche.DamageLabel",
-                "option": "unleash-psyche-damage",
-                "placement": "spellcasting",
-                "toggleable": true,
-                "value": true
             }
         ],
         "start": {
