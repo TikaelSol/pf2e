@@ -532,10 +532,58 @@
             "type": "action"
         },
         {
+            "_id": "hhkSH8eC3GHiTogn",
+            "_stats": {
+                "compendiumSource": "Compendium.pf2e.bestiary-family-ability-glossary.Item.0zvUNv8hRTdwXmhF"
+            },
+            "folder": "63FzE1sSn3PK5yy4",
+            "img": "systems/pf2e/icons/actions/Passive.webp",
+            "name": "Mythic Resilience (Fortitude and Will)",
+            "sort": 1100000,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "defensive",
+                "description": {
+                    "value": "<p>The creature treats its saving throws with the associated save as one degree of success better than it rolled. This is not cumulative with other effects that change their degree of success, like the incapacitation trait (except for rolling a natural 1 or 20). Each time the monster gains mythic resilience, choose one save. The ability should apply to the creature's highest saves first.</p>"
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder War of Immortals"
+                },
+                "rules": [
+                    {
+                        "adjustment": {
+                            "all": "one-degree-better"
+                        },
+                        "key": "AdjustDegreeOfSuccess",
+                        "selector": "fortitude"
+                    },
+                    {
+                        "adjustment": {
+                            "all": "one-degree-better"
+                        },
+                        "key": "AdjustDegreeOfSuccess",
+                        "selector": "will"
+                    }
+                ],
+                "slug": "mythic-mythic-resilience",
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
             "_id": "on5KfUlSOl4j5TOa",
             "img": "systems/pf2e/icons/default-icons/action.svg",
             "name": "Susceptible to Confusion",
-            "sort": 1100000,
+            "sort": 1200000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -568,7 +616,7 @@
             "folder": "63FzE1sSn3PK5yy4",
             "img": "systems/pf2e/icons/actions/FreeAction.webp",
             "name": "Undying Myth",
-            "sort": 1200000,
+            "sort": 1300000,
             "system": {
                 "actionType": {
                     "value": "free"
@@ -600,7 +648,7 @@
             },
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Constrict",
-            "sort": 1300000,
+            "sort": 1400000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -629,7 +677,7 @@
             "_id": "h0WHBV57PWi9FCKG",
             "img": "systems/pf2e/icons/default-icons/action.svg",
             "name": "Curse of Flawed History",
-            "sort": 1400000,
+            "sort": 1500000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -661,7 +709,7 @@
             "_id": "95k2q11INtOhFqCd",
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Double Attack",
-            "sort": 1500000,
+            "sort": 1600000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -690,7 +738,7 @@
             "_id": "heW1rCJfQ2KMmuqd",
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Ink Cloud",
-            "sort": 1600000,
+            "sort": 1700000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -722,7 +770,7 @@
             },
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Jet",
-            "sort": 1700000,
+            "sort": 1800000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -757,7 +805,7 @@
             "folder": "63FzE1sSn3PK5yy4",
             "img": "systems/pf2e/icons/actions/Passive.webp",
             "name": "Mythic Power",
-            "sort": 1800000,
+            "sort": 1900000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -790,7 +838,7 @@
             "folder": "63FzE1sSn3PK5yy4",
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Recharge",
-            "sort": 1900000,
+            "sort": 2000000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -821,7 +869,7 @@
             "_id": "EkSi5KM6hOWO5WxD",
             "img": "systems/pf2e/icons/actions/Passive.webp",
             "name": "Retrocognitive Ink",
-            "sort": 2000000,
+            "sort": 2100000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -856,7 +904,7 @@
             },
             "img": "systems/pf2e/icons/actions/OneAction.webp",
             "name": "Grab",
-            "sort": 2100000,
+            "sort": 2200000,
             "system": {
                 "actionType": {
                     "value": "action"

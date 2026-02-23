@@ -6,10 +6,9 @@ import type { ItemSourcePF2e } from "@item/base/data/index.ts";
 import { tupleHasValue } from "@util";
 import type { AbstractSublevel } from "abstract-level";
 import { ClassicLevel, type DatabaseOptions } from "classic-level";
-import fs from "fs";
 import * as R from "remeda";
 import { PackError } from "./helpers.ts";
-import { PackEntry } from "./types.ts";
+import { PackEntry, PackManifest } from "./types.ts";
 
 const DB_KEYS = ["actors", "items", "journal", "macros", "tables"] as const;
 
@@ -17,7 +16,7 @@ class LevelDatabase extends ClassicLevel<string, DBEntry> {
     constructor(location: string, options: LevelDatabaseOptions) {
         const dbOptions = options.dbOptions ?? { keyEncoding: "utf8", valueEncoding: "json" };
         super(location, dbOptions);
-        this.#systemId = options.systemId;
+        this.#manifest = options.manifest;
         const { dbKey, embeddedKey } = this.#getDBKeys(options.packName);
         this.#dbkey = dbKey;
         this.#embeddedKey = embeddedKey;
@@ -39,7 +38,7 @@ class LevelDatabase extends ClassicLevel<string, DBEntry> {
     #foldersDb: Sublevel<DBFolder>;
     #embeddedDb: Sublevel<EmbeddedEntry> | null = null;
 
-    #systemId: SystemId;
+    #manifest: PackManifest;
 
     static async connect(location: string, options: LevelDatabaseOptions): Promise<LevelDatabase> {
         const db = new LevelDatabase(location, options);
@@ -113,8 +112,7 @@ class LevelDatabase extends ClassicLevel<string, DBEntry> {
     }
 
     #getDBKeys(packName: string): { dbKey: DBKey; embeddedKey: EmbeddedKey | null } {
-        const systemJSON = JSON.parse(fs.readFileSync(`system.${this.#systemId}.json`, { encoding: "utf-8" }));
-        const metadata = systemJSON.packs.find((p: { path: string }) => p.path.endsWith(packName));
+        const metadata = this.#manifest.packs.find((p: { path: string }) => p.path.endsWith(packName));
         if (!metadata) {
             throw PackError(
                 `Error generating dbKeys: Compendium ${packName} has no metadata in the local system.json file.`,
@@ -183,7 +181,7 @@ interface DBFolder {
 }
 
 interface LevelDatabaseOptions {
-    systemId: SystemId;
+    manifest: PackManifest;
     packName: string;
     dbOptions?: DatabaseOptions<string, DBEntry>;
 }

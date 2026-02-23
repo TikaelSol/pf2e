@@ -1,0 +1,183 @@
+{
+    "_id": "SXxWMcVgAsN0gK2u",
+    "folder": "BbNA3gJaZ9p9eqFB",
+    "img": "systems/pf2e/icons/default-icons/hazard.svg",
+    "items": [
+        {
+            "_id": "ZWOZTzoMhLXgEuG5",
+            "img": "systems/pf2e/icons/default-icons/action.svg",
+            "name": "Crushing Horror",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "reaction"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "defensive",
+                "description": {
+                    "value": "<p><strong>Trigger</strong> The Heart breaks its planar bonds</p><hr /><p><strong>Effect</strong> Each creature in the area must attempt a @Check[will|dc:22] save. The Heart then rolls initiative.</p><hr /><p><strong>Success</strong> The creature shrugs of the infuence of the Heart.</p>\n<p><strong>Failure</strong> The creature takes @Damage[3d8[mental]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.Frightened]{Frightened 1}.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[6d8[mental]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.Frightened]{Frightened 2}. The creature can't reduce its frightened value below 1 for 1 minute.</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
+            "_id": "S2QvJu4Xq9reu9AR",
+            "img": "systems/pf2e/icons/default-icons/melee.svg",
+            "name": "Thorny Vine",
+            "sort": 0,
+            "system": {
+                "action": "strike",
+                "area": null,
+                "attackEffects": {
+                    "value": [
+                        "anguish"
+                    ]
+                },
+                "bonus": {
+                    "value": 17
+                },
+                "damageRolls": {
+                    "ylJZZcWlCOnkZWah": {
+                        "damage": "2d8+9",
+                        "damageType": "slashing"
+                    }
+                },
+                "description": {
+                    "value": ""
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "range": null,
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "config": {},
+                    "value": [
+                        "magical",
+                        "reach-20"
+                    ]
+                }
+            },
+            "type": "melee"
+        },
+        {
+            "_id": "l9RIfnleIIXm43C5",
+            "img": "systems/pf2e/icons/default-icons/action.svg",
+            "name": "Anguish",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "offensive",
+                "description": {
+                    "value": "<p>The vine squeezes and overwhelms the creature with fear. The target takes @Damage[4d4[mental]] damage with a @Check[will|dc:24|basic] save. On a critical failure, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.Frightened]{Frightened 1} and can't reduce its frightened value below 1 for 1 minute.</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "value": [
+                        "emotion",
+                        "fear",
+                        "mental"
+                    ]
+                }
+            },
+            "type": "action"
+        }
+    ],
+    "name": "Heart of Gloom",
+    "system": {
+        "attributes": {
+            "ac": {
+                "value": 24
+            },
+            "emitsSound": "encounter",
+            "hardness": 14,
+            "hp": {
+                "details": "",
+                "max": 56,
+                "temp": 0,
+                "value": 56
+            },
+            "immunities": [
+                {
+                    "exceptions": [],
+                    "type": "critical-hits"
+                },
+                {
+                    "exceptions": [],
+                    "type": "precision"
+                }
+            ],
+            "resistances": [],
+            "stealth": {
+                "details": "<p>(expert) to detect the fraying planes around it; noticing the Heart has a DC of 0</p>",
+                "value": 16
+            },
+            "weaknesses": []
+        },
+        "details": {
+            "description": "<p>Within this mockery of a tree is a large, beating growth pushing grotesque branches through jagged planar fssures.</p>",
+            "disable": "<p>@Check[arcana|dc:25] or @Check[occultism|dc:25] to close of a planar breach, @Check[athletics|dc:21] to snap one of the branches, or 4th-rank @UUID[Compendium.pf2e.spells-srd.Item.Planar Tether] to seal of a breach. For each branch snapped or breach sealed, remove one action from the Heart's routine. Once the Heart reaches 0 actions in its routine, it is disabled.</p>",
+            "isComplex": true,
+            "level": {
+                "value": 6
+            },
+            "publication": {
+                "license": "ORC",
+                "remaster": true,
+                "title": "Pathfinder Society Scenario #7-11: The Darkness Within"
+            },
+            "reset": "<p>The trap deactivates and resets after 1 minute<strong>.</strong></p>",
+            "routine": "<p>(3 actions) The Heart spends all of its actions making thorny vine Strikes against different creatures. The Heart doesn't take a multiple attack penalty.</p>"
+        },
+        "saves": {
+            "fortitude": {
+                "value": 17
+            },
+            "reflex": {
+                "value": 11
+            },
+            "will": {
+                "value": 0
+            }
+        },
+        "traits": {
+            "rarity": "unique",
+            "size": {
+                "value": "lg"
+            },
+            "value": [
+                "magical",
+                "shadow",
+                "trap",
+                "unholy"
+            ]
+        }
+    },
+    "type": "hazard"
+}

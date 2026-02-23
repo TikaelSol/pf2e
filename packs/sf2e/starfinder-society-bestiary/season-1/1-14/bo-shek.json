@@ -675,7 +675,7 @@
                 "slug": "painglaive",
                 "traits": {
                     "value": [
-                        "boost-1d10",
+                        "boost-2d10",
                         "powered",
                         "reach-10",
                         "tech"
