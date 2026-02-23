@@ -87,7 +87,7 @@
                 "value": 6
             },
             "will": {
-                "value": 0
+                "value": null
             }
         },
         "traits": {

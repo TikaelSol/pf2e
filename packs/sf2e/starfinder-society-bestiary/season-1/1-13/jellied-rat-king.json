@@ -323,7 +323,14 @@
             "speed": {
                 "otherSpeeds": [],
                 "value": 25
-            }
+            },
+            "weaknesses": [
+                {
+                    "exceptions": [],
+                    "type": "vitality",
+                    "value": 3
+                }
+            ]
         },
         "details": {
             "blurb": "",
