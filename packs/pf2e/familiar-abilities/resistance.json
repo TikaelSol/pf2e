@@ -115,25 +115,25 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.resistanceOne}",
+                "type": "{item|flags.system.rulesSelections.resistanceOne}",
                 "value": "max(1,floor(@actor.level/2))"
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.resistanceTwo}",
+                "type": "{item|flags.system.rulesSelections.resistanceTwo}",
                 "value": "max(1,floor(@actor.level/2))"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.resistance.resistanceOne",
-                "value": "{item|flags.pf2e.rulesSelections.resistanceOne}"
+                "path": "flags.system.resistance.resistanceOne",
+                "value": "{item|flags.system.rulesSelections.resistanceOne}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.resistance.resistanceTwo",
-                "value": "{item|flags.pf2e.rulesSelections.resistanceTwo}"
+                "path": "flags.system.resistance.resistanceTwo",
+                "value": "{item|flags.system.rulesSelections.resistanceTwo}"
             }
         ],
         "traits": {

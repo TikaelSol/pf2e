@@ -56,10 +56,10 @@
                     "feature:raging-resistance"
                 ],
                 "type": [
-                    "{item|flags.pf2e.rulesSelections.energy}",
+                    "{item|flags.system.rulesSelections.energy}",
                     "bludgeoning"
                 ],
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "key": "AdjustModifier",

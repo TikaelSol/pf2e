@@ -218,19 +218,19 @@
                     "item:type:spell",
                     {
                         "or": [
-                            "item:trait:{item|flags.pf2e.rulesSelections.ragingResistance.resistanceOne}",
-                            "item:trait:{item|flags.pf2e.rulesSelections.ragingResistance.resistanceTwo}"
+                            "item:trait:{item|flags.system.rulesSelections.ragingResistance.resistanceOne}",
+                            "item:trait:{item|flags.system.rulesSelections.ragingResistance.resistanceTwo}"
                         ]
                     }
                 ],
                 "key": "Resistance",
-                "label": "{item|flags.pf2e.rulesSelections.ragingResistance.label}",
+                "label": "{item|flags.system.rulesSelections.ragingResistance.label}",
                 "predicate": [
                     "self:effect:rage",
                     "feature:raging-resistance"
                 ],
                 "type": "custom",
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             }
         ],
         "traits": {

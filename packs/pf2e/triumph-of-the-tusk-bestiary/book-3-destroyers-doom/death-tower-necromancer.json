@@ -2375,7 +2375,7 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.damageType}",
+                        "type": "{item|flags.system.rulesSelections.damageType}",
                         "value": 5
                     }
                 ],

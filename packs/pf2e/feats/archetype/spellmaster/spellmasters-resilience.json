@@ -55,13 +55,13 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.featSpellmastersResilience}",
+                "type": "{item|flags.system.rulesSelections.featSpellmastersResilience}",
                 "value": 5
             },
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "{item|flags.pf2e.rulesSelections.featSpellmastersResilience}"
+                    "{item|flags.system.rulesSelections.featSpellmastersResilience}"
                 ],
                 "selector": "saving-throw",
                 "type": "circumstance",

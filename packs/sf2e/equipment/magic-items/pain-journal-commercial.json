@@ -57,7 +57,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.sf2e.rulesSelections.skill}",
+                "selector": "{item|flags.system.rulesSelections.skill}",
                 "type": "item",
                 "value": 1
             }

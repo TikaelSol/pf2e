@@ -40,7 +40,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.livingMonolith.archetypeFeatCount",
+                "path": "flags.system.livingMonolith.archetypeFeatCount",
                 "value": 1
             },
             {
@@ -51,7 +51,7 @@
                     "item:id:{item|id}"
                 ],
                 "property": "frequency-max",
-                "value": "@actor.flags.pf2e.livingMonolith.archetypeFeatCount"
+                "value": "@actor.flags.system.livingMonolith.archetypeFeatCount"
             }
         ],
         "traits": {

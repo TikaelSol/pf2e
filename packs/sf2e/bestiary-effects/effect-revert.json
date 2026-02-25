@@ -24,7 +24,7 @@
         "rules": [
             {
                 "key": "TempHP",
-                "value": "@actor.flags.sf2e.revertTempHP"
+                "value": "@actor.flags.system.revertTempHP"
             }
         ],
         "start": {

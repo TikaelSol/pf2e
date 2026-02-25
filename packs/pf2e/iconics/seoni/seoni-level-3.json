@@ -1761,7 +1761,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1773,7 +1773,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -2350,7 +2350,7 @@
                     {
                         "flag": "bloodlineImperial",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.bloodline}"
+                        "uuid": "{item|flags.system.rulesSelections.bloodline}"
                     }
                 ],
                 "slug": "bloodline",

@@ -26,21 +26,21 @@
         },
         "rules": [
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "backstabber"
             },
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "versatile-p"
             },
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [

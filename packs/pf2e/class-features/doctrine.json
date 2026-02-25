@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.doctrine}"
+                "uuid": "{item|flags.system.rulesSelections.doctrine}"
             }
         ],
         "traits": {

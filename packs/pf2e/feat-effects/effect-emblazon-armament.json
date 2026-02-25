@@ -67,7 +67,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.shield}",
+                "itemId": "{item|flags.system.rulesSelections.shield}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
@@ -81,7 +81,7 @@
                 "predicate": [
                     "emblazon-armament:item:weapon"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage",
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage",
                 "type": "status",
                 "value": 1
             }

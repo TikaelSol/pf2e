@@ -635,7 +635,7 @@
                     {
                         "key": "DamageDice",
                         "override": {
-                            "damageType": "{item|flags.pf2e.rulesSelections.alchemicalGrenade}",
+                            "damageType": "{item|flags.system.rulesSelections.alchemicalGrenade}",
                             "diceNumber": 2,
                             "dieSize": "d6"
                         },
@@ -643,7 +643,7 @@
                     },
                     {
                         "damageCategory": "splash",
-                        "damageType": "{item|flags.pf2e.rulesSelections.alchemicalGrenade}",
+                        "damageType": "{item|flags.system.rulesSelections.alchemicalGrenade}",
                         "key": "FlatModifier",
                         "label": "PF2E.TraitSplash",
                         "selector": "{item|_id}-damage",
@@ -651,7 +651,7 @@
                     },
                     {
                         "damageCategory": "persistent",
-                        "damageType": "{item|flags.pf2e.rulesSelections.alchemicalGrenade}",
+                        "damageType": "{item|flags.system.rulesSelections.alchemicalGrenade}",
                         "key": "FlatModifier",
                         "label": "PF2E.ConditionTypePersistent",
                         "selector": "{item|_id}-damage",

@@ -1592,7 +1592,7 @@
                     {
                         "flag": "combatClimber",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "pitborn",
@@ -2058,7 +2058,7 @@
                     {
                         "flag": "nobleBranch",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.firstIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.firstIkon}"
                     },
                     {
                         "adjustName": false,
@@ -2081,7 +2081,7 @@
                         "predicate": [
                             "class:exemplar"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.secondIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.secondIkon}"
                     },
                     {
                         "adjustName": false,
@@ -2104,12 +2104,12 @@
                         "predicate": [
                             "class:exemplar"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.thirdIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.thirdIkon}"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "priority": 10,
                         "value": []
                     }
@@ -2291,7 +2291,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "value": {
                             "label": "PF2E.SpecificRule.Exemplar.Ikon.NobleBranch.Label",
                             "predicate": [
@@ -2388,7 +2388,7 @@
                         "predicate": [
                             "noble-branch-origin:granted"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.grantedIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.grantedIkon}"
                     },
                     {
                         "itemType": "weapon",
@@ -2400,7 +2400,7 @@
                                     {
                                         "and": [
                                             "noble-branch-origin:existing",
-                                            "item:id:{item|flags.pf2e.rulesSelections.existingIkon}"
+                                            "item:id:{item|flags.system.rulesSelections.existingIkon}"
                                         ]
                                     },
                                     {
@@ -2425,7 +2425,7 @@
                                     {
                                         "and": [
                                             "noble-branch-origin:existing",
-                                            "item:id:{item|flags.pf2e.rulesSelections.existingIkon}"
+                                            "item:id:{item|flags.system.rulesSelections.existingIkon}"
                                         ]
                                     },
                                     {
@@ -2624,7 +2624,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "value": {
                             "label": "PF2E.SpecificRule.Exemplar.Ikon.SkybearersBelt.Label",
                             "predicate": [
@@ -2692,14 +2692,14 @@
                         "selection": "ap3N3P09CF3K5gxM"
                     },
                     {
-                        "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                        "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "other-tags",
                         "value": "physical-ikon"
                     },
                     {
-                        "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                        "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "other-tags",
@@ -2769,7 +2769,7 @@
                         ]
                     },
                     {
-                        "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                        "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "traits",
@@ -2895,7 +2895,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "value": {
                             "label": "PF2E.SpecificRule.Exemplar.Ikon.ScarOfTheSurvivor.Label",
                             "predicate": [
@@ -3338,7 +3338,7 @@
                             "inline-damage",
                             "strike-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.energizedSparkDamage}"
+                        "value": "{item|flags.system.rulesSelections.energizedSparkDamage}"
                     }
                 ],
                 "slug": "energized-spark",

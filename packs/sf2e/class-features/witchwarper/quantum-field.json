@@ -31,7 +31,7 @@
                     {
                         "mode": "add",
                         "property": "traits",
-                        "value": "{actor|flags.sf2e.witchwarper.tradition}"
+                        "value": "{actor|flags.system.witchwarper.tradition}"
                     }
                 ],
                 "key": "GrantItem",

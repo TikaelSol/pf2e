@@ -34,7 +34,7 @@
             {
                 "key": "SubstituteRoll",
                 "removeAfterRoll": "if-enabled",
-                "selector": "{actor|flags.pf2e.ancestralGeometry}",
+                "selector": "{actor|flags.system.ancestralGeometry}",
                 "slug": "ancestral-geometry",
                 "value": "@item.badge.value"
             }

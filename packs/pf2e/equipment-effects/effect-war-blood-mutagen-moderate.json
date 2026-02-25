@@ -34,7 +34,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.effectWarBloodMutagenModerate}-attack",
+                "selector": "{item|flags.system.rulesSelections.effectWarBloodMutagenModerate}-attack",
                 "type": "item",
                 "value": 2
             },

@@ -28,8 +28,8 @@
         "rules": [
             {
                 "category": "precision",
-                "diceNumber": "@actor.flags.pf2e.sneakAttackDamage.number",
-                "dieSize": "d{actor|flags.pf2e.sneakAttackDamage.faces}",
+                "diceNumber": "@actor.flags.system.sneakAttackDamage.number",
+                "dieSize": "d{actor|flags.system.sneakAttackDamage.faces}",
                 "key": "DamageDice",
                 "predicate": [
                     "item:trait:attack",

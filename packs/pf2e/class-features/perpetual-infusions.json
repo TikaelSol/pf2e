@@ -27,7 +27,7 @@
         "rules": [
             {
                 "key": "GrantItem",
-                "uuid": "{actor|flags.pf2e.alchemist.perpetualInfusions}"
+                "uuid": "{actor|flags.system.alchemist.perpetualInfusions}"
             }
         ],
         "traits": {

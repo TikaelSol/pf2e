@@ -38,16 +38,16 @@
                 "prompt": "PF2E.SpecificRule.Prompt.DamageType"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.bespellStrikesDamage}",
+                "damageType": "{item|flags.system.rulesSelections.bespellStrikesDamage}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage",
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage",
                 "slug": "bespell-strikes"
             },
             {
                 "definition": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:slug:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",
@@ -65,7 +65,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:id:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",
@@ -83,7 +83,7 @@
             },
             {
                 "definition": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:slug:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",
@@ -95,7 +95,7 @@
             },
             {
                 "definition": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:slug:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",
@@ -110,7 +110,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:slug:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "property": "other-tags",
                 "value": "bespell-strikes"

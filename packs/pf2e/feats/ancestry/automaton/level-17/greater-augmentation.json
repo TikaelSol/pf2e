@@ -27,14 +27,14 @@
         },
         "rules": [
             {
-                "choices": "flags.pf2e.automaton.enhancements.greater",
+                "choices": "flags.system.automaton.enhancements.greater",
                 "flag": "greaterAugmentation",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Automaton.Enhancement.AugmentationPrompt",
                 "rollOption": "enhancement"
             },
             {
-                "choices": "flags.pf2e.automaton.enhancements.lesser",
+                "choices": "flags.system.automaton.enhancements.lesser",
                 "flag": "greaterAugmentation",
                 "key": "ChoiceSet",
                 "predicate": [

@@ -101,7 +101,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.entitySkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.entitySkill}.rank",
                 "value": 1
             },
             {
@@ -116,7 +116,7 @@
                 "predicate": [
                     "entity-is-aiding"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.entitySkill}",
+                "selector": "{item|flags.system.rulesSelections.entitySkill}",
                 "type": "circumstance",
                 "value": 1
             },
@@ -128,7 +128,7 @@
                 "predicate": [
                     "entity-is-aiding"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.entitySkill}",
+                "selector": "{item|flags.system.rulesSelections.entitySkill}",
                 "text": "PF2E.SpecificRule.MechanicalSymbiosis.FailureNote"
             },
             {
@@ -139,7 +139,7 @@
                 "predicate": [
                     "entity-is-aiding"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.entitySkill}",
+                "selector": "{item|flags.system.rulesSelections.entitySkill}",
                 "text": "PF2E.SpecificRule.MechanicalSymbiosis.CriticalFailureNote"
             }
         ],

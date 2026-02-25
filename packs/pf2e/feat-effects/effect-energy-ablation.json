@@ -79,8 +79,8 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.energyAblationType}",
-                "value": "@item.flags.pf2e.rulesSelections.energyAblationRank"
+                "type": "{item|flags.system.rulesSelections.energyAblationType}",
+                "value": "@item.flags.system.rulesSelections.energyAblationRank"
             }
         ],
         "start": {

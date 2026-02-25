@@ -2454,7 +2454,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.gleamingArmorMod",
+                        "path": "flags.system.gleamingArmorMod",
                         "value": 15
                     }
                 ],

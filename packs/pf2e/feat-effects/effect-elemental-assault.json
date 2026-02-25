@@ -86,7 +86,7 @@
                 "rollOption": "elemental-assault"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.element}",
+                "damageType": "{item|flags.system.rulesSelections.element}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",

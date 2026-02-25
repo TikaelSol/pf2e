@@ -27,7 +27,7 @@
         "rules": [
             {
                 "definition": [
-                    "item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}"
+                    "item:id:{actor|flags.system.trackedItems.weaponInnovation}"
                 ],
                 "key": "MartialProficiency",
                 "sameAs": "martial"

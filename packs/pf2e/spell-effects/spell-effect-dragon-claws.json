@@ -42,7 +42,7 @@
                 ]
             },
             {
-                "damageType": "{actor|flags.pf2e.dragonBloodline.damageType}",
+                "damageType": "{actor|flags.system.dragonBloodline.damageType}",
                 "diceNumber": "ternary(gte(@item.level, 9), 3, ternary(gte(@item.level, 5), 2, 1))",
                 "dieSize": "d6",
                 "key": "DamageDice",
@@ -51,7 +51,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{actor|flags.pf2e.dragonBloodline.damageType}",
+                "type": "{actor|flags.system.dragonBloodline.damageType}",
                 "value": "ternary(gte(@item.level, 9), 15, ternary(gte(@item.level, 5), 10, 5))"
             }
         ],

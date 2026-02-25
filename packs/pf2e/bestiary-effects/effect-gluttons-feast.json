@@ -7,7 +7,7 @@
             "evaluate": true,
             "reevaluate": null,
             "type": "formula",
-            "value": "(@actor.flags.pf2e.gluttonsFeast)d4"
+            "value": "(@actor.flags.system.gluttonsFeast)d4"
         },
         "description": {
             "value": "<p>The ogre glutton gains 1d4 temporary hit points, or 2d4 following glutton's rush.</p>"

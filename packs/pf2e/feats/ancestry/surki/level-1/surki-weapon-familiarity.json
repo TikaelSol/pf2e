@@ -60,7 +60,7 @@
                             },
                             {
                                 "and": [
-                                    "item:base:{item|flags.pf2e.rulesSelections.weapon}",
+                                    "item:base:{item|flags.system.rulesSelections.weapon}",
                                     "item:category:martial"
                                 ]
                             },
@@ -80,7 +80,7 @@
                     {
                         "or": [
                             "item:group:pick",
-                            "item:base:{item|flags.pf2e.rulesSelections.weapon}"
+                            "item:base:{item|flags.system.rulesSelections.weapon}"
                         ]
                     },
                     "item:category:advanced"
@@ -102,7 +102,7 @@
                     {
                         "or": [
                             "item:group:pick",
-                            "item:base:{item|flags.pf2e.rulesSelections.weapon}",
+                            "item:base:{item|flags.system.rulesSelections.weapon}",
                             "item:base:light-hammer",
                             "item:base:sickle",
                             "item:base:scythe"

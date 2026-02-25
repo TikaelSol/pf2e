@@ -126,7 +126,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],
@@ -1931,14 +1931,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {
                         "flag": "assurance",
                         "key": "GrantItem",
                         "preselectChoices": {
-                            "assurance": "{item|flags.pf2e.rulesSelections.skill}"
+                            "assurance": "{item|flags.system.rulesSelections.skill}"
                         },
                         "uuid": "Compendium.pf2e.feats-srd.Item.Assurance"
                     }
@@ -2081,7 +2081,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -2093,7 +2093,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -3191,7 +3191,7 @@
                     {
                         "flag": "spellSubstitution",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneThesis}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneThesis}"
                     }
                 ],
                 "slug": "arcane-thesis",
@@ -3261,7 +3261,7 @@
                     {
                         "flag": "schoolOfBattleMagic",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneSchool}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneSchool}"
                     }
                 ],
                 "slug": "arcane-school",

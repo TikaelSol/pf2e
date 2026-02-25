@@ -112,7 +112,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.sf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],
@@ -488,7 +488,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.sf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {
@@ -673,7 +673,7 @@
                     {
                         "flag": "gunsBlazing",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.style}"
+                        "uuid": "{item|flags.system.rulesSelections.style}"
                     }
                 ],
                 "slug": "leadership-style",
@@ -1688,7 +1688,7 @@
                     {
                         "flag": "watchOut",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",

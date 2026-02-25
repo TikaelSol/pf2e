@@ -46,7 +46,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.evolutionFeat}"
+                "uuid": "{item|flags.system.rulesSelections.evolutionFeat}"
             }
         ],
         "traits": {

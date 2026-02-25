@@ -1721,7 +1721,7 @@
                                 "not": "deity"
                             }
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.deity}"
+                        "uuid": "{item|flags.system.rulesSelections.deity}"
                     },
                     {
                         "adjustName": false,
@@ -1969,7 +1969,7 @@
                         "allowDuplicate": false,
                         "flag": "justice",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.cause}"
+                        "uuid": "{item|flags.system.rulesSelections.cause}"
                     }
                 ],
                 "slug": "cause",
@@ -2052,7 +2052,7 @@
                         "allowDuplicate": false,
                         "flag": "blessedShield",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.blessing}"
+                        "uuid": "{item|flags.system.rulesSelections.blessing}"
                     }
                 ],
                 "slug": "blessing-of-the-devoted",
@@ -2398,7 +2398,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.champion.aura",
+                        "path": "flags.system.champion.aura",
                         "value": 15
                     },
                     {
@@ -2409,7 +2409,7 @@
                                 "not": "self:condition:unconscious"
                             }
                         ],
-                        "radius": "@actor.flags.pf2e.champion.aura"
+                        "radius": "@actor.flags.system.champion.aura"
                     }
                 ],
                 "slug": "champions-aura",
@@ -2688,7 +2688,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skillOne}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skillOne}.rank",
                         "value": 1
                     },
                     {
@@ -2814,7 +2814,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skillTwo}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skillTwo}.rank",
                         "value": 1
                     }
                 ],

@@ -2162,7 +2162,7 @@
                             "item:defense:ac"
                         ],
                         "property": "defense-passive",
-                        "value": "{item|flags.pf2e.rulesSelections.shadowSignet}"
+                        "value": "{item|flags.system.rulesSelections.shadowSignet}"
                     },
                     {
                         "key": "Note",

@@ -7,7 +7,7 @@
             "evaluate": true,
             "reevaluate": null,
             "type": "formula",
-            "value": "(@actor.flags.pf2e.siphonLife)d8"
+            "value": "(@actor.flags.system.siphonLife)d8"
         },
         "description": {
             "value": "<p>You gain temporary Hit Points.</p>"

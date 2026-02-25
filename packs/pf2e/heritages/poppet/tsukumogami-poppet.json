@@ -46,7 +46,7 @@
                         "not": "feat:insulated-poppet"
                     }
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.weakness}",
+                "type": "{item|flags.system.rulesSelections.weakness}",
                 "value": "max(1,floor(@actor.level/3))"
             }
         ],

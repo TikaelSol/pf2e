@@ -86,7 +86,7 @@
                 "value": 5
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.energy}",
+                "damageType": "{item|flags.system.rulesSelections.energy}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
@@ -99,7 +99,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.energy}",
+                "type": "{item|flags.system.rulesSelections.energy}",
                 "value": 15
             }
         ],

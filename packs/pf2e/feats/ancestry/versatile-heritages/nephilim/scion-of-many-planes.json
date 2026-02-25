@@ -41,7 +41,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.lineage}"
+                "uuid": "{item|flags.system.rulesSelections.lineage}"
             }
         ],
         "traits": {

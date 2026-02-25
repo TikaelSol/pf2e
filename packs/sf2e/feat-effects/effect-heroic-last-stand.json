@@ -24,7 +24,7 @@
         "rules": [
             {
                 "key": "TempHP",
-                "value": "@actor.flags.sf2e.dragonkin.heroicTempHp"
+                "value": "@actor.flags.system.dragonkin.heroicTempHp"
             },
             {
                 "key": "FlatModifier",

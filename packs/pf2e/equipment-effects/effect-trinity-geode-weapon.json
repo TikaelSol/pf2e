@@ -89,7 +89,7 @@
                 "predicate": [
                     "trinity-geode:trinity-geode"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectTrinityGeodeWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectTrinityGeodeWeapon}-damage"
             },
             {
                 "damageType": "bludgeoning",
@@ -100,7 +100,7 @@
                 "predicate": [
                     "trinity-geode:trinity-geode-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectTrinityGeodeWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectTrinityGeodeWeapon}-damage"
             },
             {
                 "damageType": "bludgeoning",
@@ -111,7 +111,7 @@
                 "predicate": [
                     "trinity-geode:trinity-geode-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectTrinityGeodeWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectTrinityGeodeWeapon}-damage"
             }
         ],
         "start": {

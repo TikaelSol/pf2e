@@ -74,7 +74,7 @@
                 "label": "PF2E.ItemBonusLabel",
                 "selector": "{item|id}-damage",
                 "type": "item",
-                "value": "@weapon.flags.pf2e.attackItemBonus"
+                "value": "@weapon.flags.system.attackItemBonus"
             }
         ],
         "traits": {

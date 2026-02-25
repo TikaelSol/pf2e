@@ -69,14 +69,14 @@
                 "predicate": [
                     "invoke-rune:destruction"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack",
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack",
                 "text": "PF2E.NPCAbility.RuneGiant.InvokeRune.RuneOfDestruction.Text",
                 "title": "PF2E.NPCAbility.RuneGiant.InvokeRune.RuneOfDestruction.Label",
                 "visibility": "owner"
             },
             {
                 "definition": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.weapon}",
+                    "item:slug:{item|flags.system.rulesSelections.weapon}",
                     {
                         "or": [
                             "item:slug:greatsword",
@@ -95,7 +95,7 @@
             },
             {
                 "definition": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.weapon}",
+                    "item:slug:{item|flags.system.rulesSelections.weapon}",
                     "item:slug:longspear"
                 ],
                 "itemType": "weapon",
@@ -116,7 +116,7 @@
                 "predicate": [
                     "invoke-rune:flames"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "key": "Note",
@@ -127,7 +127,7 @@
                 "predicate": [
                     "invoke-rune:smiting"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack",
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack",
                 "text": "PF2E.NPCAbility.RuneGiant.InvokeRune.RuneOfSmiting.Text",
                 "title": "PF2E.NPCAbility.RuneGiant.InvokeRune.RuneOfSmiting.Label",
                 "visibility": "owner"

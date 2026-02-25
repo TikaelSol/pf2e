@@ -2051,13 +2051,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolPenalty",
+                        "path": "flags.system.shiningSymbolPenalty",
                         "value": -1
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolWeakness",
+                        "path": "flags.system.shiningSymbolWeakness",
                         "value": 0
                     }
                 ],

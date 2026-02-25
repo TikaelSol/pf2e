@@ -82,7 +82,7 @@
                     "alpha": 0.1,
                     "animation": {},
                     "bright": 0,
-                    "color": "{item|flags.pf2e.rulesSelections.iivlarWeavingLit}",
+                    "color": "{item|flags.system.rulesSelections.iivlarWeavingLit}",
                     "dim": 10,
                     "luminosity": 0.15
                 }

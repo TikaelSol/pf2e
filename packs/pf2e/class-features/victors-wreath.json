@@ -41,7 +41,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.exemplar.ikons",
+                "path": "flags.system.exemplar.ikons",
                 "value": {
                     "label": "PF2E.SpecificRule.Exemplar.Ikon.VictorsWreath.Label",
                     "predicate": [
@@ -105,14 +105,14 @@
                 ]
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "other-tags",
                 "value": "physical-ikon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "other-tags",
@@ -178,7 +178,7 @@
                 ]
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

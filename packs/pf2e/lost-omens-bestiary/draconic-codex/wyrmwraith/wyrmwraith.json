@@ -1108,13 +1108,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.ectoplasmicFormAC",
+                        "path": "flags.system.ectoplasmicFormAC",
                         "value": 43
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.ectoplasmicFormTempHP",
+                        "path": "flags.system.ectoplasmicFormTempHP",
                         "value": 100
                     }
                 ],

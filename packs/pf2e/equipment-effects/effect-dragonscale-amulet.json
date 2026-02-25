@@ -50,7 +50,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.effectDragonscaleAmulet}",
+                "type": "{item|flags.system.rulesSelections.effectDragonscaleAmulet}",
                 "value": 20
             }
         ],

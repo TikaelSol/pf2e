@@ -43,7 +43,7 @@
                             "not": {
                                 "eq": [
                                     "{choice|value}",
-                                    "{item|flags.pf2e.rulesSelections.untrainedSkillOne}"
+                                    "{item|flags.system.rulesSelections.untrainedSkillOne}"
                                 ]
                             }
                         }
@@ -79,19 +79,19 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.untrainedSkillOne}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.untrainedSkillOne}.rank",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.untrainedSkillTwo}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.untrainedSkillTwo}.rank",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.trainedSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.trainedSkill}.rank",
                 "value": 1
             }
         ],

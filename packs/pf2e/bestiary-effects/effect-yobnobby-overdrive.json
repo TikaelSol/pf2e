@@ -41,7 +41,7 @@
                 "key": "FlatModifier",
                 "selector": "strike-damage",
                 "slug": "overdrive",
-                "value": "@item.flags.pf2e.rulesSelections.damage"
+                "value": "@item.flags.system.rulesSelections.damage"
             }
         ],
         "start": {

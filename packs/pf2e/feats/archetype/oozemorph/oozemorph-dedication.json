@@ -44,7 +44,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.oozemorphDedicationCount",
+                "path": "flags.system.oozemorphDedicationCount",
                 "value": 1
             },
             {
@@ -60,7 +60,7 @@
                 ],
                 "selector": "diplomacy",
                 "type": "circumstance",
-                "value": "max(-1 * @actor.flags.pf2e.oozemorphDedicationCount, -4)"
+                "value": "max(-1 * @actor.flags.system.oozemorphDedicationCount, -4)"
             }
         ],
         "traits": {

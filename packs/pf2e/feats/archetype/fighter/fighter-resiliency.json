@@ -36,13 +36,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.fighterDedicationCount",
+                "path": "flags.system.fighterDedicationCount",
                 "value": 1
             },
             {
                 "key": "FlatModifier",
                 "selector": "hp",
-                "value": "3 * @actor.flags.pf2e.fighterDedicationCount"
+                "value": "3 * @actor.flags.system.fighterDedicationCount"
             }
         ],
         "traits": {

@@ -485,7 +485,7 @@
                     {
                         "flag": "schoolOfUnifiedMagicalTheory",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneSchool}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneSchool}"
                     }
                 ],
                 "slug": "arcane-school",
@@ -555,7 +555,7 @@
                     {
                         "flag": "experimentalSpellshaping",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneThesis}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneThesis}"
                     }
                 ],
                 "slug": "arcane-thesis",
@@ -840,7 +840,7 @@
                     {
                         "flag": "reachSpell",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "school-of-unified-magical-theory",
@@ -1057,7 +1057,7 @@
                     {
                         "flag": "widenSpell",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "experimental-spellshaping",
@@ -3601,7 +3601,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],

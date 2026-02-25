@@ -42,7 +42,7 @@
                     "fire",
                     "slashing"
                 ],
-                "value": "floor(@item.level/2)*{item|flags.pf2e.rulesSelections.fungalInfestation}"
+                "value": "floor(@item.level/2)*{item|flags.system.rulesSelections.fungalInfestation}"
             }
         ],
         "start": {

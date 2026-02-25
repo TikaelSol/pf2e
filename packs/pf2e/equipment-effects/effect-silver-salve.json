@@ -38,7 +38,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.effectSilverSalve}"
+                    "item:id:{item|flags.system.rulesSelections.effectSilverSalve}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

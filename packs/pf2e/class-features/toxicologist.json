@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.alchemist",
+                "path": "flags.system.alchemist",
                 "value": {
                     "advancedVials": "Compendium.pf2e.classfeatures.Item.Advanced Vials (Toxicologist)",
                     "fieldDiscovery": "Compendium.pf2e.classfeatures.Item.Field Discovery (Toxicologist)",

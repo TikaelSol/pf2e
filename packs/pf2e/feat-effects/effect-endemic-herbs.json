@@ -69,7 +69,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "endemic-herbs:{item|flags.pf2e.rulesSelections.endemicHerbs.terrain}"
+                "option": "endemic-herbs:{item|flags.system.rulesSelections.endemicHerbs.terrain}"
             },
             {
                 "key": "FlatModifier",
@@ -84,9 +84,9 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.endemicHerbs.selector}",
+                "selector": "{item|flags.system.rulesSelections.endemicHerbs.selector}",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.endemicHerbs.bonus"
+                "value": "@item.flags.system.rulesSelections.endemicHerbs.bonus"
             }
         ],
         "start": {

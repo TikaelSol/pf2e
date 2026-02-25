@@ -40,7 +40,7 @@
                 "key": "AdjustModifier",
                 "mode": "subtract",
                 "predicate": [
-                    "item:id:{actor|flags.pf2e.weaponSiphonWeapon}"
+                    "item:id:{actor|flags.system.weaponSiphonWeapon}"
                 ],
                 "selector": "strike-attack-roll",
                 "slug": "multiple-attack-penalty",

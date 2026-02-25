@@ -32,7 +32,7 @@
                 "uuid": "Compendium.pf2e.equipment-srd.Item.Reinforced Chassis"
             },
             {
-                "itemId": "{item|flags.pf2e.itemGrants.reinforcedChassis.id}",
+                "itemId": "{item|flags.system.itemGrants.reinforcedChassis.id}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
@@ -49,7 +49,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.automaton.enhancements.lesser",
+                "path": "flags.system.automaton.enhancements.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.Automaton.EnhanceableFeats.ReinforcedChassis",
                     "predicate": [
@@ -63,7 +63,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.automaton.enhancements.greater",
+                "path": "flags.system.automaton.enhancements.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.Automaton.EnhanceableFeats.ReinforcedChassis",
                     "predicate": [

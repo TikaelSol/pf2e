@@ -621,7 +621,7 @@
                     {
                         "flag": "coordinatingManeuvers",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.firstTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.firstTactic}"
                     },
                     {
                         "adjustName": false,
@@ -645,7 +645,7 @@
                     {
                         "flag": "gatherToMe",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.secondTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.secondTactic}"
                     },
                     {
                         "adjustName": false,
@@ -669,7 +669,7 @@
                     {
                         "flag": "pincerAttack",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.thirdTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.thirdTactic}"
                     },
                     {
                         "adjustName": false,
@@ -693,7 +693,7 @@
                     {
                         "flag": "protectiveScreen",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.fourthTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.fourthTactic}"
                     },
                     {
                         "adjustName": false,
@@ -717,7 +717,7 @@
                     {
                         "flag": "strikeHard",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.fifthTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.fifthTactic}"
                     }
                 ],
                 "slug": "tactics",

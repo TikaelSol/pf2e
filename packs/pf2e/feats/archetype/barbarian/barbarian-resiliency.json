@@ -36,13 +36,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.barbarian.archetypeFeatCount",
+                "path": "flags.system.barbarian.archetypeFeatCount",
                 "value": 1
             },
             {
                 "key": "FlatModifier",
                 "selector": "hp",
-                "value": "3 * @actor.flags.pf2e.barbarian.archetypeFeatCount"
+                "value": "3 * @actor.flags.system.barbarian.archetypeFeatCount"
             }
         ],
         "traits": {

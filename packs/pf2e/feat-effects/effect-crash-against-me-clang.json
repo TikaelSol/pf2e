@@ -36,7 +36,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.clangingWeapon}-attack-roll",
+                "selector": "{item|flags.system.rulesSelections.clangingWeapon}-attack-roll",
                 "type": "circumstance",
                 "value": -2
             }

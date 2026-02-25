@@ -51,7 +51,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.element}",
+                "type": "{item|flags.system.rulesSelections.element}",
                 "value": "max(1,floor(@actor.level/2))"
             }
         ],

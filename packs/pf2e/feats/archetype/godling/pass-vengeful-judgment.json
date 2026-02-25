@@ -41,7 +41,7 @@
                 "selectors": [
                     "pass-vengeful-judgment-inline-damage"
                 ],
-                "value": "{actor|flags.pf2e.godlingDomainDamage}"
+                "value": "{actor|flags.system.godlingDomainDamage}"
             }
         ],
         "traits": {

@@ -33,7 +33,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "property": "runes-potency",
@@ -47,7 +47,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:id:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",
@@ -67,7 +67,7 @@
                 "predicate": [
                     "target:metal"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "key": "Note",
@@ -77,7 +77,7 @@
                 "predicate": [
                     "target:metal"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage",
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage",
                 "text": "PF2E.WeaponPropertyRune.shock.Note.criticalSuccess",
                 "title": "PF2E.WeaponPropertyRune.shock.Name"
             }

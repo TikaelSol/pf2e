@@ -46,7 +46,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.way}"
+                "uuid": "{item|flags.system.rulesSelections.way}"
             },
             {
                 "definition": [

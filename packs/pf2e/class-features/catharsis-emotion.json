@@ -119,26 +119,26 @@
                 "property": "description",
                 "value": [
                     {
-                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.pf2e.rulesSelections.catharticMageDedication.label}.Description"
+                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.system.rulesSelections.catharticMageDedication.label}.Description"
                     },
                     {
-                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.pf2e.rulesSelections.catharticMageDedication.label}.Trigger",
+                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.system.rulesSelections.catharticMageDedication.label}.Trigger",
                         "title": "PF2E.SpecificRule.CatharticMage.EmotionalState.Trigger"
                     },
                     {
-                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.pf2e.rulesSelections.catharticMageDedication.label}.Activation",
+                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.system.rulesSelections.catharticMageDedication.label}.Activation",
                         "title": "PF2E.SpecificRule.CatharticMage.EmotionalState.Activation"
                     },
                     {
-                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.pf2e.rulesSelections.catharticMageDedication.label}.Fervor",
+                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.system.rulesSelections.catharticMageDedication.label}.Fervor",
                         "title": "PF2E.SpecificRule.CatharticMage.EmotionalState.Fervor"
                     },
                     {
-                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.pf2e.rulesSelections.catharticMageDedication.label}.Fallout",
+                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.system.rulesSelections.catharticMageDedication.label}.Fallout",
                         "title": "PF2E.SpecificRule.CatharticMage.EmotionalState.Fallout"
                     },
                     {
-                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.pf2e.rulesSelections.catharticMageDedication.label}.Focus",
+                        "text": "PF2E.SpecificRule.CatharticMage.{item|flags.system.rulesSelections.catharticMageDedication.label}.Focus",
                         "title": "PF2E.SpecificRule.CatharticMage.EmotionalState.Focus"
                     }
                 ]
@@ -146,12 +146,12 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.emotionalCatharsis.emotion",
-                "value": "{item|flags.pf2e.rulesSelections.catharticMageDedication}"
+                "path": "flags.system.emotionalCatharsis.emotion",
+                "value": "{item|flags.system.rulesSelections.catharticMageDedication}"
             },
             {
                 "key": "RollOption",
-                "option": "emotional-catharsis:{item|flags.pf2e.rulesSelections.catharticMageDedication.option}"
+                "option": "emotional-catharsis:{item|flags.system.rulesSelections.catharticMageDedication.option}"
             },
             {
                 "key": "RollOption",

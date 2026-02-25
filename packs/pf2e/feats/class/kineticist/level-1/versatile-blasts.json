@@ -29,7 +29,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elementalBlast.air.damageTypes",
+                "path": "flags.system.kineticist.elementalBlast.air.damageTypes",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     "kinetic-gate:air"
@@ -39,7 +39,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elementalBlast.earth.damageTypes",
+                "path": "flags.system.kineticist.elementalBlast.earth.damageTypes",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     "kinetic-gate:earth"
@@ -49,7 +49,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elementalBlast.fire.damageTypes",
+                "path": "flags.system.kineticist.elementalBlast.fire.damageTypes",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     "kinetic-gate:fire"
@@ -59,7 +59,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elementalBlast.metal.damageTypes",
+                "path": "flags.system.kineticist.elementalBlast.metal.damageTypes",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     "kinetic-gate:metal"
@@ -69,7 +69,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elementalBlast.water.damageTypes",
+                "path": "flags.system.kineticist.elementalBlast.water.damageTypes",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     "kinetic-gate:water"
@@ -79,7 +79,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elementalBlast.wood.damageTypes",
+                "path": "flags.system.kineticist.elementalBlast.wood.damageTypes",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     "kinetic-gate:wood"

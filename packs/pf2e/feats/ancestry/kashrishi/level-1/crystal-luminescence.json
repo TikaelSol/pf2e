@@ -36,9 +36,9 @@
                     "animation": {
                         "type": "torch"
                     },
-                    "bright": "@actor.flags.pf2e.crystalLuminescence.dimRadius",
-                    "color": "{item|flags.pf2e.rulesSelections.color}",
-                    "dim": "@actor.flags.pf2e.crystalLuminescence.brightRadius"
+                    "bright": "@actor.flags.system.crystalLuminescence.dimRadius",
+                    "color": "{item|flags.system.rulesSelections.color}",
+                    "dim": "@actor.flags.system.crystalLuminescence.brightRadius"
                 }
             },
             {
@@ -49,13 +49,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.crystalLuminescence.brightRadius",
+                "path": "flags.system.crystalLuminescence.brightRadius",
                 "value": 20
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.crystalLuminescence.dimRadius",
+                "path": "flags.system.crystalLuminescence.dimRadius",
                 "value": 40
             },
             {

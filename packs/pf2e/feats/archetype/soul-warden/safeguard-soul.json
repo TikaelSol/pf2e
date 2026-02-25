@@ -55,7 +55,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.soulWarden.featCount",
+                "path": "flags.system.soulWarden.featCount",
                 "value": 1
             }
         ],

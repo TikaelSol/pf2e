@@ -73,7 +73,7 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "{item|flags.sf2e.rulesSelections.element}"
+                    "{item|flags.system.rulesSelections.element}"
                 ],
                 "selector": [
                     "attack",
@@ -86,10 +86,10 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "self:trait:{item|flags.sf2e.rulesSelections.element}",
+                    "self:trait:{item|flags.system.rulesSelections.element}",
                     "self:trait:elemental",
                     {
-                        "not": "{item|flags.sf2e.rulesSelections.element}"
+                        "not": "{item|flags.system.rulesSelections.element}"
                     }
                 ],
                 "selector": [

@@ -46,7 +46,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.rageTempHP",
+                "path": "flags.system.rageTempHP",
                 "phase": "beforeDerived",
                 "predicate": [
                     "instinct-crown-quick-tempered"

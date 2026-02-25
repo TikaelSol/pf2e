@@ -42,7 +42,7 @@
                 "predicate": [
                     "self:effect:rage"
                 ],
-                "value": "floor(@actor.level/@item.flags.pf2e.rulesSelections.outcome) + @actor.abilities.con.mod"
+                "value": "floor(@actor.level/@item.flags.system.rulesSelections.outcome) + @actor.abilities.con.mod"
             }
         ],
         "start": {

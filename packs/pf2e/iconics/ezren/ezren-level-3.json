@@ -1661,7 +1661,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],
@@ -2001,7 +2001,7 @@
                     {
                         "flag": "experimentalSpellshaping",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneThesis}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneThesis}"
                     }
                 ],
                 "slug": "arcane-thesis",
@@ -2071,7 +2071,7 @@
                     {
                         "flag": "schoolOfUnifiedMagicalTheory",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneSchool}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneSchool}"
                     }
                 ],
                 "slug": "arcane-school",
@@ -2391,7 +2391,7 @@
                     {
                         "flag": "widenSpell",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "experimental-spellshaping",
@@ -2557,7 +2557,7 @@
                     {
                         "flag": "reachSpell",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "school-of-unified-magical-theory",
@@ -2691,7 +2691,7 @@
                     {
                         "flag": "naturalAmbition",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.ancestralParagon}"
+                        "uuid": "{item|flags.system.rulesSelections.ancestralParagon}"
                     }
                 ],
                 "slug": "ancestral-paragon",
@@ -2843,7 +2843,7 @@
                     {
                         "flag": "counterspellPrepared",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",

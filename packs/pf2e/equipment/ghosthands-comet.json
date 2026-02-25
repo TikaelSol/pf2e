@@ -102,7 +102,7 @@
                     "{item|id}-damage"
                 ],
                 "slug": "base",
-                "value": "{item|flags.pf2e.rulesSelections.ghosthandsCometDamage}"
+                "value": "{item|flags.system.rulesSelections.ghosthandsCometDamage}"
             }
         ],
         "runes": {

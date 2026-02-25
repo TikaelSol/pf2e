@@ -94,7 +94,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     }
                 ],
@@ -348,7 +348,7 @@
                     {
                         "flag": "lessonOfVengeance",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.lesson}"
+                        "uuid": "{item|flags.system.rulesSelections.lesson}"
                     }
                 ],
                 "slug": "basic-lesson",
@@ -619,7 +619,7 @@
                     {
                         "flag": "koboldBreath",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.ancestralParagon}"
+                        "uuid": "{item|flags.system.rulesSelections.ancestralParagon}"
                     }
                 ],
                 "slug": "ancestral-paragon",

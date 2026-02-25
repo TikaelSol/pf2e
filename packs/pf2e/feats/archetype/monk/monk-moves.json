@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.monkDedicationCount",
+                "path": "flags.system.monkDedicationCount",
                 "value": 1
             },
             {

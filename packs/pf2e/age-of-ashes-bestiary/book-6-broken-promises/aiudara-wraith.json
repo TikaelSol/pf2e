@@ -212,7 +212,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.drainLifeTempHP",
+                        "path": "flags.system.drainLifeTempHP",
                         "value": 18
                     }
                 ],

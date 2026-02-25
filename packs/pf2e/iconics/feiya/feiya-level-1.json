@@ -483,7 +483,7 @@
                     {
                         "flag": "theResentment",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.patron}"
+                        "uuid": "{item|flags.system.rulesSelections.patron}"
                     }
                 ],
                 "slug": "patron",
@@ -781,7 +781,7 @@
                     {
                         "flag": "cackle",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -3415,7 +3415,7 @@
                     {
                         "flag": "oddityIdentification",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-human",

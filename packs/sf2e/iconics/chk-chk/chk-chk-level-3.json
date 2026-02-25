@@ -707,7 +707,7 @@
                     {
                         "flag": "shadow",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.connection}"
+                        "uuid": "{item|flags.system.rulesSelections.connection}"
                     }
                 ],
                 "slug": "connection",
@@ -814,7 +814,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.mystic.tradition",
+                        "path": "flags.system.mystic.tradition",
                         "value": "divine"
                     },
                     {

@@ -48,13 +48,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.gunslinger.slingersReload",
+                "path": "flags.system.gunslinger.slingersReload",
                 "value": "Compendium.pf2e.actionspf2e.Item.Covered Reload"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.gunslinger.initialDeed",
+                "path": "flags.system.gunslinger.initialDeed",
                 "value": "Compendium.pf2e.actionspf2e.Item.One Shot, One Kill"
             }
         ],

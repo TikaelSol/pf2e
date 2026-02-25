@@ -50,7 +50,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.resistEnergyType}",
+                "type": "{item|flags.system.rulesSelections.resistEnergyType}",
                 "value": "ternary(gte(@item.level,7),15,ternary(gte(@item.level,4),10,5))"
             }
         ],

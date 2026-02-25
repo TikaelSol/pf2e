@@ -85,7 +85,7 @@
                 "property": "description",
                 "value": [
                     {
-                        "text": "PF2E.SpecificRule.Spellshape.CodexofDestructionAndRenewal.Note.{item|flags.pf2e.rulesSelections.spellType}"
+                        "text": "PF2E.SpecificRule.Spellshape.CodexofDestructionAndRenewal.Note.{item|flags.system.rulesSelections.spellType}"
                     }
                 ]
             },
@@ -104,7 +104,7 @@
                 "property": "description",
                 "value": [
                     {
-                        "text": "PF2E.SpecificRule.Spellshape.CodexofDestructionAndRenewal.Note.{item|flags.pf2e.rulesSelections.spellType}"
+                        "text": "PF2E.SpecificRule.Spellshape.CodexofDestructionAndRenewal.Note.{item|flags.system.rulesSelections.spellType}"
                     }
                 ]
             }

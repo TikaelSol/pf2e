@@ -89,7 +89,7 @@
                 "predicate": [
                     "pickled-demon-tongue:pickled-demon-tongue"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "damageType": "acid",
@@ -100,7 +100,7 @@
                 "predicate": [
                     "pickled-demon-tongue:pickled-demon-tongue-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "damageType": "acid",
@@ -111,7 +111,7 @@
                 "predicate": [
                     "pickled-demon-tongue:pickled-demon-tongue-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

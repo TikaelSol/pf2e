@@ -93,8 +93,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.manifestWillTradition",
-                "value": "{item|flags.pf2e.rulesSelections.manifestWillTradition}"
+                "path": "flags.system.manifestWillTradition",
+                "value": "{item|flags.system.rulesSelections.manifestWillTradition}"
             },
             {
                 "itemType": "spell",
@@ -104,7 +104,7 @@
                     "item:slug:manifest-will"
                 ],
                 "property": "other-tags",
-                "value": "manifest-will:{item|flags.pf2e.rulesSelections.manifestWillTradition}"
+                "value": "manifest-will:{item|flags.system.rulesSelections.manifestWillTradition}"
             },
             {
                 "effects": [

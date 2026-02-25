@@ -53,7 +53,7 @@
             {
                 "add": [
                     "elemental",
-                    "{item|flags.pf2e.rulesSelections.element}"
+                    "{item|flags.system.rulesSelections.element}"
                 ],
                 "key": "ActorTraits",
                 "remove": [
@@ -67,7 +67,7 @@
                     "paralyzed",
                     "poison",
                     "sleep",
-                    "{item|flags.pf2e.rulesSelections.element}"
+                    "{item|flags.system.rulesSelections.element}"
                 ]
             }
         ],

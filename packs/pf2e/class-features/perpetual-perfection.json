@@ -27,7 +27,7 @@
         "rules": [
             {
                 "key": "GrantItem",
-                "uuid": "{actor|flags.pf2e.alchemist.perpetualPerfection}"
+                "uuid": "{actor|flags.system.alchemist.perpetualPerfection}"
             }
         ],
         "traits": {

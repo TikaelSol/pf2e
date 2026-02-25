@@ -1516,7 +1516,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],
@@ -1706,7 +1706,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1718,7 +1718,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -2185,7 +2185,7 @@
                     },
                     {
                         "definition": [
-                            "item:group:{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                            "item:group:{item|flags.system.rulesSelections.fighterWeaponMastery}",
                             {
                                 "or": [
                                     "item:category:unarmed",
@@ -2195,17 +2195,17 @@
                             }
                         ],
                         "key": "MartialProficiency",
-                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.SimpleMartial.{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.SimpleMartial.{item|flags.system.rulesSelections.fighterWeaponMastery}",
                         "slug": "weapon-mastery-simple-martial",
                         "value": 3
                     },
                     {
                         "definition": [
                             "item:category:advanced",
-                            "item:group:{item|flags.pf2e.rulesSelections.fighterWeaponMastery}"
+                            "item:group:{item|flags.system.rulesSelections.fighterWeaponMastery}"
                         ],
                         "key": "MartialProficiency",
-                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.Advanced.{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.Advanced.{item|flags.system.rulesSelections.fighterWeaponMastery}",
                         "slug": "weapon-mastery-advanced",
                         "value": 2
                     },
@@ -2406,7 +2406,7 @@
                     {
                         "flag": "reactiveShield",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",

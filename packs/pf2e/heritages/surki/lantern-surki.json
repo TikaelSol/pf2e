@@ -21,7 +21,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.surki.evolutions",
+                "path": "flags.system.surki.evolutions",
                 "value": {
                     "label": "PF2E.SpecificRule.Surki.Evolutions.LanternBeam",
                     "predicate": [
@@ -35,7 +35,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.surki.evolutions",
+                "path": "flags.system.surki.evolutions",
                 "value": {
                     "label": "PF2E.SpecificRule.Surki.Evolutions.LanternStrobe",
                     "predicate": [
@@ -102,7 +102,7 @@
                 "value": {
                     "alpha": 0.1,
                     "bright": 20,
-                    "color": "{item|flags.pf2e.rulesSelections.lanternSurkiLit}",
+                    "color": "{item|flags.system.rulesSelections.lanternSurkiLit}",
                     "dim": 40,
                     "luminosity": 0.15
                 }

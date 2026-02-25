@@ -33,11 +33,11 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "damageType": "{item|origin.flags.pf2e.inventor.offensiveBoost}",
+                "damageType": "{item|origin.flags.system.inventor.offensiveBoost}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.helpfulTinkeringWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.helpfulTinkeringWeapon}-damage"
             }
         ],
         "start": {

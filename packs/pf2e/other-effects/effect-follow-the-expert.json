@@ -122,17 +122,17 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.followTheExpertSkill}",
+                "selector": "{item|flags.system.rulesSelections.followTheExpertSkill}",
                 "slug": "follow-the-expert-proficiency",
                 "type": "proficiency",
                 "value": "@actor.level"
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.followTheExpertSkill}",
+                "selector": "{item|flags.system.rulesSelections.followTheExpertSkill}",
                 "slug": "follow-the-expert-circumstance",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.followTheExpertProficiency"
+                "value": "@item.flags.system.rulesSelections.followTheExpertProficiency"
             }
         ],
         "start": {

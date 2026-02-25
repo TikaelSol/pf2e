@@ -409,7 +409,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.rageTempHP",
+                        "path": "flags.system.rageTempHP",
                         "phase": "beforeDerived",
                         "priority": 70,
                         "value": 0

@@ -70,8 +70,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.sf2e.rulesSelections.skill.slug}.rank",
-                "value": "@item.flags.sf2e.rulesSelections.skill.rank"
+                "path": "system.skills.{item|flags.system.rulesSelections.skill.slug}.rank",
+                "value": "@item.flags.system.rulesSelections.skill.rank"
             }
         ],
         "trainedSkills": {

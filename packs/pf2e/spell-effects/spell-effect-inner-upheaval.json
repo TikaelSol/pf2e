@@ -135,7 +135,7 @@
                 "value": 1
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damage}",
+                "damageType": "{item|flags.system.rulesSelections.damage}",
                 "diceNumber": "ceil(@item.level/4)",
                 "dieSize": "d6",
                 "key": "DamageDice",

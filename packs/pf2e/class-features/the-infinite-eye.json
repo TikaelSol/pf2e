@@ -201,7 +201,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.psychic.dedication.psiCantrips",
+                "path": "flags.system.psychic.dedication.psiCantrips",
                 "predicate": [
                     "feat:psychic-dedication"
                 ],
@@ -236,7 +236,7 @@
             },
             {
                 "adjustName": false,
-                "choices": "flags.pf2e.psychic.dedication.psiCantrips",
+                "choices": "flags.system.psychic.dedication.psiCantrips",
                 "flag": "dedicationCantrip",
                 "key": "ChoiceSet",
                 "predicate": [
@@ -252,7 +252,7 @@
                 "predicate": [
                     "feat:psychic-dedication",
                     "spellcasting:tradition:occult",
-                    "item:slug:{item|flags.pf2e.rulesSelections.dedicationCantrip}"
+                    "item:slug:{item|flags.system.rulesSelections.dedicationCantrip}"
                 ],
                 "priority": 19,
                 "property": "other-tags",

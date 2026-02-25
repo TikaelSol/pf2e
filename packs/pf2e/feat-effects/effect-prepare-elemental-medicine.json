@@ -140,14 +140,14 @@
                 ],
                 "selector": "saving-throw",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.value"
+                "value": "@item.flags.system.rulesSelections.value"
             },
             {
                 "key": "Resistance",
                 "predicate": [
                     "prepare-elemental-medicine:skill:occultism"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.prepareElementalMedicine.resistance}",
+                "type": "{item|flags.system.rulesSelections.prepareElementalMedicine.resistance}",
                 "value": "ternary(gte(@item.origin.skills.occultism.rank,4),8,ternary(gte(@item.origin.skills.occultism.rank,3),4,2))"
             },
             {
@@ -155,12 +155,12 @@
                 "predicate": [
                     "prepare-elemental-medicine:skill:occultism"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.prepareElementalMedicine.weakness}",
+                "type": "{item|flags.system.rulesSelections.prepareElementalMedicine.weakness}",
                 "value": "ternary(gte(@item.origin.skills.occultism.rank,4),8,ternary(gte(@item.origin.skills.occultism.rank,3),4,2))"
             },
             {
                 "key": "RollOption",
-                "option": "prepare-elemental-medicine:{item|flags.pf2e.rulesSelections.prepareElementalMedicine.element}",
+                "option": "prepare-elemental-medicine:{item|flags.system.rulesSelections.prepareElementalMedicine.element}",
                 "predicate": [
                     "feat:intensified-element-stance"
                 ]
@@ -168,11 +168,11 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.prepareElementalMedicine.skillRank",
+                "path": "flags.system.prepareElementalMedicine.skillRank",
                 "predicate": [
                     "feat:intensified-element-stance"
                 ],
-                "value": "@item.origin.skills.{item|flags.pf2e.rulesSelections.skill}.rank"
+                "value": "@item.origin.skills.{item|flags.system.rulesSelections.skill}.rank"
             }
         ],
         "start": {

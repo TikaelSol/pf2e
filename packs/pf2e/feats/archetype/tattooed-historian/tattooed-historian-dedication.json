@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.tattooedHistorian.archetypeFeatCount",
+                "path": "flags.system.tattooedHistorian.archetypeFeatCount",
                 "value": 1
             },
             {

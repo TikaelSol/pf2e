@@ -42,7 +42,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.wildShapeForms",
+                "path": "flags.system.wildShapeForms",
                 "predicate": [
                     "feat:untamed-form"
                 ],
@@ -53,7 +53,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.wildShapeForms",
+                "path": "flags.system.wildShapeForms",
                 "predicate": [
                     "feat:untamed-form"
                 ],
@@ -64,7 +64,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.wildShapeForms",
+                "path": "flags.system.wildShapeForms",
                 "predicate": [
                     "feat:untamed-form",
                     "feat:insect-shape"
@@ -76,7 +76,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.wildShapeForms",
+                "path": "flags.system.wildShapeForms",
                 "predicate": [
                     "feat:untamed-form",
                     "feat:ferocious-shape"

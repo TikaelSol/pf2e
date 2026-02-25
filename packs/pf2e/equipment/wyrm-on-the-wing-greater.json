@@ -64,7 +64,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.wotw}",
+                "type": "{item|flags.system.rulesSelections.wotw}",
                 "value": 10
             }
         ],

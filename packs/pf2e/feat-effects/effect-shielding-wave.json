@@ -53,8 +53,8 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.resistance}",
-                "value": "floor(@actor.level/@item.flags.pf2e.rulesSelections.value)"
+                "type": "{item|flags.system.rulesSelections.resistance}",
+                "value": "floor(@actor.level/@item.flags.system.rulesSelections.value)"
             }
         ],
         "start": {

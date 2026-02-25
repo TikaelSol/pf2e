@@ -313,7 +313,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.disableABP",
+                        "path": "flags.system.disableABP",
                         "priority": 10,
                         "value": true
                     },

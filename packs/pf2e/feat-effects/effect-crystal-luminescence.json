@@ -24,13 +24,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.crystalLuminescence.brightRadius",
+                "path": "flags.system.crystalLuminescence.brightRadius",
                 "value": 10
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.crystalLuminescence.dimRadius",
+                "path": "flags.system.crystalLuminescence.dimRadius",
                 "value": 10
             }
         ],

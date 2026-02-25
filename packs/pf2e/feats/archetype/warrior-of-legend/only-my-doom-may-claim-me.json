@@ -39,7 +39,7 @@
                         ]
                     },
                     {
-                        "not": "damage:type:{actor|flags.pf2e.warriorOfLegendCursedWeakness}"
+                        "not": "damage:type:{actor|flags.system.warriorOfLegendCursedWeakness}"
                     }
                 ],
                 "key": "Resistance",

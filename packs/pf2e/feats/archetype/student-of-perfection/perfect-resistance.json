@@ -32,7 +32,7 @@
         "rules": [
             {
                 "key": "Resistance",
-                "type": "{actor|flags.pf2e.houseOfPerfection.element}",
+                "type": "{actor|flags.system.houseOfPerfection.element}",
                 "value": "floor(@actor.level/2)"
             }
         ],

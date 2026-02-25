@@ -186,12 +186,12 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.energyOne}",
+                "type": "{item|flags.system.rulesSelections.energyOne}",
                 "value": 20
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.energyTwo}",
+                "type": "{item|flags.system.rulesSelections.energyTwo}",
                 "value": 20
             },
             {

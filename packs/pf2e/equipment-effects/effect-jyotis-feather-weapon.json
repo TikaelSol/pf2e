@@ -84,8 +84,8 @@
                 "definition": [
                     {
                         "or": [
-                            "item:category:{item|flags.pf2e.rulesSelections.effectJyotisFeatherWeapon}",
-                            "item:id:{item|flags.pf2e.rulesSelections.effectJyotisFeatherWeapon}"
+                            "item:category:{item|flags.system.rulesSelections.effectJyotisFeatherWeapon}",
+                            "item:id:{item|flags.system.rulesSelections.effectJyotisFeatherWeapon}"
                         ]
                     }
                 ],
@@ -106,8 +106,8 @@
                 "definition": [
                     {
                         "or": [
-                            "item:category:{item|flags.pf2e.rulesSelections.effectJyotisFeatherWeapon}",
-                            "item:id:{item|flags.pf2e.rulesSelections.effectJyotisFeatherWeapon}"
+                            "item:category:{item|flags.system.rulesSelections.effectJyotisFeatherWeapon}",
+                            "item:id:{item|flags.system.rulesSelections.effectJyotisFeatherWeapon}"
                         ]
                     }
                 ],

@@ -239,7 +239,7 @@
                         "category": "unarmed",
                         "damage": {
                             "base": {
-                                "damageType": "{item|flags.pf2e.rulesSelections.damage}",
+                                "damageType": "{item|flags.system.rulesSelections.damage}",
                                 "dice": 1,
                                 "die": "d4"
                             }
@@ -1784,7 +1784,7 @@
                     {
                         "flag": "flurry",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.huntersEdge}"
+                        "uuid": "{item|flags.system.rulesSelections.huntersEdge}"
                     }
                 ],
                 "slug": "hunters-edge",

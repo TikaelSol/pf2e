@@ -42,7 +42,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.exemplar.ikons",
+                "path": "flags.system.exemplar.ikons",
                 "value": {
                     "label": "PF2E.SpecificRule.Exemplar.Ikon.GazeSharpAsSteel.Label",
                     "predicate": [

@@ -1449,7 +1449,7 @@
                             {
                                 "mode": "override",
                                 "property": "badge-value",
-                                "value": "{item|flags.pf2e.rulesSelections.brainBlistersStupefied}"
+                                "value": "{item|flags.system.rulesSelections.brainBlistersStupefied}"
                             }
                         ],
                         "inMemoryOnly": true,
@@ -1457,7 +1457,7 @@
                         "predicate": [
                             {
                                 "gt": [
-                                    "{item|flags.pf2e.rulesSelections.brainBlistersStupefied}",
+                                    "{item|flags.system.rulesSelections.brainBlistersStupefied}",
                                     0
                                 ]
                             }
@@ -1670,7 +1670,7 @@
                         "predicate": [
                             "shifting-iridescence"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.shiftingIridescence}",
+                        "type": "{item|flags.system.rulesSelections.shiftingIridescence}",
                         "value": "ternary(gte(@actor.level,17),15,ternary(gte(@actor.level,9),10,5))"
                     }
                 ],

@@ -89,7 +89,7 @@
                 "predicate": [
                     "rime-crystal:rime-crystal"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.rimeCrystalWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.rimeCrystalWeapon}-damage"
             },
             {
                 "damageType": "cold",
@@ -100,7 +100,7 @@
                 "predicate": [
                     "rime-crystal:rime-crystal-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.rimeCrystalWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.rimeCrystalWeapon}-damage"
             },
             {
                 "damageType": "cold",
@@ -111,7 +111,7 @@
                 "predicate": [
                     "rime-crystal:rime-crystal-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.rimeCrystalWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.rimeCrystalWeapon}-damage"
             }
         ],
         "start": {

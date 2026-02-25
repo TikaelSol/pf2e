@@ -39,8 +39,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.thermalNimbus",
-                "value": "{item|flags.pf2e.rulesSelections.thermalNimbus}"
+                "path": "flags.system.kineticist.thermalNimbus",
+                "value": "{item|flags.system.rulesSelections.thermalNimbus}"
             },
             {
                 "effects": [
@@ -53,7 +53,7 @@
                 "predicate": [
                     "self:effect:kinetic-aura"
                 ],
-                "radius": "@actor.flags.pf2e.kineticist.auraRadius",
+                "radius": "@actor.flags.system.kineticist.auraRadius",
                 "slug": "kinetic-aura",
                 "traits": [
                     "primal",

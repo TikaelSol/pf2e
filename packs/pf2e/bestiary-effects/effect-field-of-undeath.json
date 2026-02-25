@@ -28,7 +28,7 @@
                     "self:negative-healing"
                 ],
                 "type": "fast-healing",
-                "value": "@item.origin.flags.pf2e.fieldOfUndeathFastHealing"
+                "value": "@item.origin.flags.system.fieldOfUndeathFastHealing"
             }
         ],
         "start": {

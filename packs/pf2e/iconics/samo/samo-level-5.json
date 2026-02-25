@@ -530,7 +530,7 @@
                     {
                         "flag": "seer",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.animisticPractice}"
+                        "uuid": "{item|flags.system.rulesSelections.animisticPractice}"
                     }
                 ],
                 "slug": "animistic-practice",
@@ -4729,13 +4729,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolPenalty",
+                        "path": "flags.system.shiningSymbolPenalty",
                         "value": -1
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolWeakness",
+                        "path": "flags.system.shiningSymbolWeakness",
                         "value": 0
                     }
                 ],

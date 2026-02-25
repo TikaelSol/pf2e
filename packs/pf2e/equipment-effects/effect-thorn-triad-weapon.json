@@ -89,7 +89,7 @@
                 "predicate": [
                     "thorn-triad:thorn-triad"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectThornTriadWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectThornTriadWeapon}-damage"
             },
             {
                 "damageType": "bleed",
@@ -99,7 +99,7 @@
                 "predicate": [
                     "thorn-triad:thorn-triad-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectThornTriadWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectThornTriadWeapon}-damage"
             },
             {
                 "damageType": "bleed",
@@ -109,7 +109,7 @@
                 "predicate": [
                     "thorn-triad:thorn-triad-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectThornTriadWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectThornTriadWeapon}-damage"
             }
         ],
         "start": {

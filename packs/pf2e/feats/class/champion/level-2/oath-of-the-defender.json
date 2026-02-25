@@ -68,10 +68,10 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.oathOfTheDefender",
+                "path": "flags.system.oathOfTheDefender",
                 "phase": "beforeDerived",
                 "priority": 51,
-                "value": "{item|flags.pf2e.rulesSelections.oathOfTheDefender}"
+                "value": "{item|flags.system.rulesSelections.oathOfTheDefender}"
             },
             {
                 "effects": [
@@ -88,7 +88,7 @@
                         "not": "self:condition:unconscious"
                     }
                 ],
-                "radius": "@actor.flags.pf2e.champion.aura"
+                "radius": "@actor.flags.system.champion.aura"
             }
         ],
         "traits": {

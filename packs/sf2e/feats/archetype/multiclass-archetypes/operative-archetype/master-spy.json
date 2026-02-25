@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.operative.archetypeFeatCount",
+                "path": "flags.system.operative.archetypeFeatCount",
                 "value": 1
             }
         ],

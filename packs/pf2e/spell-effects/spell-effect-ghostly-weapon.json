@@ -34,7 +34,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.spellEffectGhostlyWeapon}"
+                    "item:id:{item|flags.system.rulesSelections.spellEffectGhostlyWeapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",
@@ -43,7 +43,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.spellEffectGhostlyWeapon}"
+                    "item:id:{item|flags.system.rulesSelections.spellEffectGhostlyWeapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

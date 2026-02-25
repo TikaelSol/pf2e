@@ -102,16 +102,16 @@
                 "prompt": "SF2E.SpecificRule.Prompt.WeaponOrGrenade"
             },
             {
-                "damageType": "{item|flags.sf2e.rulesSelections.damageType}",
+                "damageType": "{item|flags.system.rulesSelections.damageType}",
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.sf2e.rulesSelections.weapon}-damage",
-                    "{item|flags.sf2e.rulesSelections.weapon}-inline-damage"
+                    "{item|flags.system.rulesSelections.weapon}-damage",
+                    "{item|flags.system.rulesSelections.weapon}-inline-damage"
                 ],
-                "value": "@item.flags.sf2e.rulesSelections.rank"
+                "value": "@item.flags.system.rulesSelections.rank"
             },
             {
-                "itemId": "{item|flags.sf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

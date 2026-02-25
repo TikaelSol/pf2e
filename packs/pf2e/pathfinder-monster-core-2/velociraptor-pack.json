@@ -113,7 +113,7 @@
                         "selectors": [
                             "{item|id}-inline-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.bitesTalons}"
+                        "value": "{item|flags.system.rulesSelections.bitesTalons}"
                     }
                 ],
                 "slug": null,
@@ -205,7 +205,7 @@
                         "selectors": [
                             "{item|id}-inline-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.raptorLeap}"
+                        "value": "{item|flags.system.rulesSelections.raptorLeap}"
                     }
                 ],
                 "slug": null,

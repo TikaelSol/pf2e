@@ -56,7 +56,7 @@
                 "key": "ChoiceSet"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.energyDamage}",
+                "damageType": "{item|flags.system.rulesSelections.energyDamage}",
                 "diceNumber": 2,
                 "dieSize": "d6",
                 "key": "DamageDice",

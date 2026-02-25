@@ -51,7 +51,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.sf2e.rulesSelections.basicDistortion}"
+                "uuid": "{item|flags.system.rulesSelections.basicDistortion}"
             }
         ],
         "subfeatures": {

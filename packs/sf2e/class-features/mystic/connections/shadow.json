@@ -35,7 +35,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.mystic.tradition",
+                "path": "flags.system.mystic.tradition",
                 "value": "divine"
             },
             {

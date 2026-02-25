@@ -258,14 +258,14 @@
                     {
                         "key": "DamageDice",
                         "override": {
-                            "diceNumber": "3*@item.flags.pf2e.rulesSelections.shockingBurst"
+                            "diceNumber": "3*@item.flags.system.rulesSelections.shockingBurst"
                         },
                         "selector": "{item|id}-inline-damage"
                     },
                     {
                         "key": "FlatModifier",
                         "selector": "{item|id}-inline-dc",
-                        "value": "@item.flags.pf2e.rulesSelections.shockingBurst -1"
+                        "value": "@item.flags.system.rulesSelections.shockingBurst -1"
                     }
                 ],
                 "slug": null,

@@ -935,7 +935,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.archonsProtection",
+                        "path": "flags.system.archonsProtection",
                         "value": 20
                     }
                 ],

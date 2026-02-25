@@ -35,7 +35,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{actor|flags.pf2e.magiphage.skill}.rank",
+                "path": "system.skills.{actor|flags.system.magiphage.skill}.rank",
                 "value": 1
             },
             {

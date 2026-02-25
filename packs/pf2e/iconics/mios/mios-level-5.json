@@ -133,7 +133,7 @@
                     {
                         "flag": "arcaneSense",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-human",
@@ -520,7 +520,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.thaumaturge.adeptChoices",
+                        "path": "flags.system.thaumaturge.adeptChoices",
                         "priority": 10,
                         "value": []
                     },
@@ -539,7 +539,7 @@
                     {
                         "flag": "lantern",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.implement}"
+                        "uuid": "{item|flags.system.rulesSelections.implement}"
                     }
                 ],
                 "slug": "first-implement-and-esoterica",
@@ -753,7 +753,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.thaumaturge.initiateBenefit",
+                        "path": "flags.system.thaumaturge.initiateBenefit",
                         "predicate": [
                             "feat:thaumaturge-dedication"
                         ],
@@ -770,7 +770,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.thaumaturge.adeptChoices",
+                        "path": "flags.system.thaumaturge.adeptChoices",
                         "predicate": [
                             "class:thaumaturge"
                         ],
@@ -930,7 +930,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.thaumaturge.lantern",
+                        "path": "flags.system.thaumaturge.lantern",
                         "value": 20
                     },
                     {
@@ -945,9 +945,9 @@
                                 "speed": 3,
                                 "type": "pulse"
                             },
-                            "bright": "@actor.flags.pf2e.thaumaturge.lantern",
+                            "bright": "@actor.flags.system.thaumaturge.lantern",
                             "color": "#fff285",
-                            "dim": "2*@actor.flags.pf2e.thaumaturge.lantern"
+                            "dim": "2*@actor.flags.system.thaumaturge.lantern"
                         }
                     },
                     {
@@ -961,7 +961,7 @@
                         "predicate": [
                             "light-lantern-implement"
                         ],
-                        "radius": "@actor.flags.pf2e.thaumaturge.lantern",
+                        "radius": "@actor.flags.system.thaumaturge.lantern",
                         "traits": [
                             "light",
                             "magical"
@@ -1250,14 +1250,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {
                         "flag": "assurance",
                         "key": "GrantItem",
                         "preselectChoices": {
-                            "assurance": "{item|flags.pf2e.rulesSelections.skill}"
+                            "assurance": "{item|flags.system.rulesSelections.skill}"
                         },
                         "uuid": "Compendium.pf2e.feats-srd.Item.Assurance"
                     }
@@ -1342,7 +1342,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1354,7 +1354,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -1487,7 +1487,7 @@
                     {
                         "flag": "rootToLife",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -3357,7 +3357,7 @@
                     {
                         "flag": "weapon",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.implement}"
+                        "uuid": "{item|flags.system.rulesSelections.implement}"
                     }
                 ],
                 "slug": "second-implement",
@@ -3453,14 +3453,14 @@
                         "flag": "weaponImplement",
                         "key": "GrantItem",
                         "track": true,
-                        "uuid": "{item|flags.pf2e.rulesSelections.weaponImplement}"
+                        "uuid": "{item|flags.system.rulesSelections.weaponImplement}"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.thaumaturge.weaponImplement",
+                        "path": "flags.system.thaumaturge.weaponImplement",
                         "priority": 5,
-                        "value": "{item|flags.pf2e.itemGrants.weaponImplement.id}"
+                        "value": "{item|flags.system.itemGrants.weaponImplement.id}"
                     },
                     {
                         "key": "RollOption",
@@ -3477,7 +3477,7 @@
                         ]
                     },
                     {
-                        "itemId": "{item|flags.pf2e.itemGrants.weaponImplement.id}",
+                        "itemId": "{item|flags.system.itemGrants.weaponImplement.id}",
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "description",
@@ -3491,7 +3491,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.thaumaturge.initiateBenefit",
+                        "path": "flags.system.thaumaturge.initiateBenefit",
                         "predicate": [
                             "feat:thaumaturge-dedication"
                         ],
@@ -3508,7 +3508,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.thaumaturge.adeptChoices",
+                        "path": "flags.system.thaumaturge.adeptChoices",
                         "predicate": [
                             "class:thaumaturge"
                         ],
@@ -3596,7 +3596,7 @@
                     {
                         "key": "CriticalSpecialization",
                         "predicate": [
-                            "item:id:{actor|flags.pf2e.thaumaturge.weaponImplement}",
+                            "item:id:{actor|flags.system.thaumaturge.weaponImplement}",
                             "feature:thaumaturge-weapon-expertise"
                         ]
                     }

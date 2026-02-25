@@ -84,7 +84,7 @@
                     "empower:weapon"
                 ],
                 "property": "property-runes",
-                "value": "{item|flags.pf2e.rulesSelections.rune}"
+                "value": "{item|flags.system.rulesSelections.rune}"
             }
         ],
         "start": {

@@ -27,13 +27,13 @@
         "rules": [
             {
                 "adjustName": false,
-                "choices": "flags.pf2e.thaumaturge.paragonChoices",
+                "choices": "flags.system.thaumaturge.paragonChoices",
                 "flag": "implementParagon",
                 "key": "ChoiceSet"
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.implementParagon}"
+                "uuid": "{item|flags.system.rulesSelections.implementParagon}"
             }
         ],
         "traits": {

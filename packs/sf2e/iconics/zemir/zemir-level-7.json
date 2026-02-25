@@ -127,7 +127,7 @@
                     {
                         "flag": "featherStep",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-human",
@@ -603,7 +603,7 @@
                     {
                         "flag": "anomaly",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.paradox}"
+                        "uuid": "{item|flags.system.rulesSelections.paradox}"
                     }
                 ],
                 "slug": "paradox",
@@ -670,7 +670,7 @@
                             {
                                 "mode": "add",
                                 "property": "traits",
-                                "value": "{actor|flags.sf2e.witchwarper.tradition}"
+                                "value": "{actor|flags.system.witchwarper.tradition}"
                             }
                         ],
                         "flag": "warpReality",
@@ -753,7 +753,7 @@
                     {
                         "flag": "tangibleObject",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.anchor}"
+                        "uuid": "{item|flags.system.rulesSelections.anchor}"
                     }
                 ],
                 "slug": "anchor",
@@ -818,7 +818,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.witchwarper.tradition",
+                        "path": "flags.system.witchwarper.tradition",
                         "value": "arcane"
                     }
                 ],
@@ -2413,7 +2413,7 @@
                     {
                         "flag": "anchoringStrike",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -2802,7 +2802,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.sf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -2814,7 +2814,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.sf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],

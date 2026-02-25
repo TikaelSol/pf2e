@@ -542,7 +542,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.dragonBloodline.skill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.dragonBloodline.skill}.rank",
                 "predicate": [
                     {
                         "not": "parent:granter:slug:crossblooded-evolution"
@@ -552,7 +552,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "feature:bloodline:draconic:{item|flags.pf2e.rulesSelections.dragonBloodline.slug}"
+                "option": "feature:bloodline:draconic:{item|flags.system.rulesSelections.dragonBloodline.slug}"
             },
             {
                 "itemType": "spell",
@@ -574,7 +574,7 @@
                                 "and": [
                                     "item:spell-slot",
                                     "spellcasting:category:spontaneous",
-                                    "spellcasting:tradition:{item|flags.pf2e.rulesSelections.dragonBloodline.tradition}",
+                                    "spellcasting:tradition:{item|flags.system.rulesSelections.dragonBloodline.tradition}",
                                     {
                                         "or": [
                                             {
@@ -1315,7 +1315,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "feature:bloodline:tradition:{item|flags.pf2e.rulesSelections.dragonBloodline.tradition}",
+                "option": "feature:bloodline:tradition:{item|flags.system.rulesSelections.dragonBloodline.tradition}",
                 "predicate": [
                     {
                         "not": "parent:granter:slug:crossblooded-evolution"

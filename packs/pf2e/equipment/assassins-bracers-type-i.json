@@ -51,7 +51,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.assassinsBracersBonus",
+                "path": "flags.system.assassinsBracersBonus",
                 "value": 1
             }
         ],

@@ -526,7 +526,7 @@
                         "allowDuplicate": false,
                         "flag": "sarenrae",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.deity}"
+                        "uuid": "{item|flags.system.rulesSelections.deity}"
                     },
                     {
                         "adjustName": false,
@@ -609,7 +609,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "flags.pf2e.favoredWeaponRank",
+                        "path": "flags.system.favoredWeaponRank",
                         "predicate": [
                             "class:cleric"
                         ],
@@ -683,7 +683,7 @@
                     {
                         "flag": "cloisteredCleric",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.doctrine}"
+                        "uuid": "{item|flags.system.rulesSelections.doctrine}"
                     }
                 ],
                 "slug": "doctrine",
@@ -851,7 +851,7 @@
                     {
                         "flag": "firstDoctrineCloisteredCleric",
                         "key": "GrantItem",
-                        "uuid": "{actor|flags.pf2e.cleric.firstDoctrine}"
+                        "uuid": "{actor|flags.system.cleric.firstDoctrine}"
                     }
                 ],
                 "slug": "first-doctrine",
@@ -974,7 +974,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.cleric",
+                        "path": "flags.system.cleric",
                         "value": {
                             "fifthDoctrine": "Compendium.pf2e.classfeatures.Item.Fifth Doctrine (Cloistered Cleric)",
                             "finalDoctrine": "Compendium.pf2e.classfeatures.Item.Final Doctrine (Cloistered Cleric)",
@@ -3370,7 +3370,7 @@
                     {
                         "flag": "armorProficiency",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-human",
@@ -3462,7 +3462,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.proficiencies.defenses.{item|flags.pf2e.rulesSelections.armorProficiency}.rank",
+                        "path": "system.proficiencies.defenses.{item|flags.system.rulesSelections.armorProficiency}.rank",
                         "value": "ternary(gte(@actor.level,13),2,1)"
                     }
                 ],

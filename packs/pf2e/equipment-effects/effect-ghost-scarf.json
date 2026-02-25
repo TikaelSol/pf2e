@@ -57,7 +57,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:id:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

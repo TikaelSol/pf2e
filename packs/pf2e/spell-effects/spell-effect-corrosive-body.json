@@ -59,7 +59,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.corrosiveBody.rank",
+                "path": "flags.system.corrosiveBody.rank",
                 "value": "@item.level"
             }
         ],

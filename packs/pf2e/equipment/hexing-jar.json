@@ -108,7 +108,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.hexingJarSelection}",
+                "selector": "{item|flags.system.rulesSelections.hexingJarSelection}",
                 "type": "item",
                 "value": 2
             }

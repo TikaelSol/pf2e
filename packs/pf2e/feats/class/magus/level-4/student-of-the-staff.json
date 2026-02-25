@@ -65,7 +65,7 @@
                     "melee-strike-damage"
                 ],
                 "slug": "deadly-d6",
-                "value": "{actor|flags.pf2e.arcaneCascade.damageType}"
+                "value": "{actor|flags.system.arcaneCascade.damageType}"
             }
         ],
         "traits": {

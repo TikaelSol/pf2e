@@ -46,7 +46,7 @@
                     "feature:raging-resistance"
                 ],
                 "type": "poison",
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "definition": [
@@ -59,7 +59,7 @@
                     "feature:raging-resistance"
                 ],
                 "type": "custom",
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "damageType": "poison",

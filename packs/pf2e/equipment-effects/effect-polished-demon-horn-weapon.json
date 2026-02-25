@@ -88,7 +88,7 @@
                 "predicate": [
                     "polished-demon-horn:polished-demon-horn"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "damageType": "mental",
@@ -98,7 +98,7 @@
                 "predicate": [
                     "polished-demon-horn:polished-demon-horn-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "damageType": "mental",
@@ -108,7 +108,7 @@
                 "predicate": [
                     "polished-demon-horn:polished-demon-horn-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

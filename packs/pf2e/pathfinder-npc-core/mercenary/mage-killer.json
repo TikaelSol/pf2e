@@ -625,7 +625,7 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.shiftEnergyRunes}",
+                        "type": "{item|flags.system.rulesSelections.shiftEnergyRunes}",
                         "value": 10
                     }
                 ],

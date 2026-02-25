@@ -39,7 +39,7 @@
             },
             {
                 "key": "TempHP",
-                "value": "@item.flags.sf2e.rulesSelections.hp"
+                "value": "@item.flags.system.rulesSelections.hp"
             }
         ],
         "start": {

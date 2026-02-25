@@ -45,7 +45,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.EnergyType"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.fulminatingShot}",
+                "damageType": "{item|flags.system.rulesSelections.fulminatingShot}",
                 "diceNumber": "ternary(gte(@actor.level,18),3,ternary(gte(@actor.level,12),2,1))",
                 "dieSize": "d6",
                 "key": "DamageDice",

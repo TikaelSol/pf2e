@@ -23,7 +23,7 @@
         "rules": [
             {
                 "definition": [
-                    "origin:trait:{item|origin.flags.pf2e.oathOfTheDefender}"
+                    "origin:trait:{item|origin.flags.system.oathOfTheDefender}"
                 ],
                 "key": "Resistance",
                 "label": "PF2E.IWR.Custom.DamageFromSwornCreatures",
@@ -37,7 +37,7 @@
             },
             {
                 "definition": [
-                    "origin:trait:{item|origin.flags.pf2e.oathOfTheDefender}"
+                    "origin:trait:{item|origin.flags.system.oathOfTheDefender}"
                 ],
                 "key": "Resistance",
                 "label": "PF2E.IWR.Custom.DamageFromSwornCreatures",

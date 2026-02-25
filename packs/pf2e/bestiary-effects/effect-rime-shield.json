@@ -30,7 +30,7 @@
             },
             {
                 "key": "TempHP",
-                "value": "@item.origin.flags.pf2e.rimeShieldTempHP"
+                "value": "@item.origin.flags.system.rimeShieldTempHP"
             }
         ],
         "start": {

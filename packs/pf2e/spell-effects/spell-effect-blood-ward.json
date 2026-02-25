@@ -86,7 +86,7 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "origin:trait:{item|flags.pf2e.rulesSelections.blood}"
+                    "origin:trait:{item|flags.system.rulesSelections.blood}"
                 ],
                 "selector": [
                     "ac",

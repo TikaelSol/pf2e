@@ -41,7 +41,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.automaton.enhancements.lesser",
+                "path": "flags.system.automaton.enhancements.lesser",
                 "predicate": [
                     {
                         "not": "enhancement:automaton-lore"
@@ -55,7 +55,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.automaton.enhancements.greater",
+                "path": "flags.system.automaton.enhancements.greater",
                 "predicate": [
                     {
                         "not": "enhancement:automaton-lore"

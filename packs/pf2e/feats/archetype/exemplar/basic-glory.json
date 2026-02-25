@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.exemplar.archetypeFeatCount",
+                "path": "flags.system.exemplar.archetypeFeatCount",
                 "value": 1
             },
             {
@@ -57,7 +57,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicGlory}"
+                "uuid": "{item|flags.system.rulesSelections.basicGlory}"
             }
         ],
         "traits": {

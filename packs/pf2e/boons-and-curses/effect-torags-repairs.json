@@ -35,7 +35,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Item"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.item}",
+                "itemId": "{item|flags.system.rulesSelections.item}",
                 "key": "ItemAlteration",
                 "mode": "multiply",
                 "property": "hardness",

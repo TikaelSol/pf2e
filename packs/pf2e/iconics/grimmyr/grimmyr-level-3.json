@@ -959,7 +959,7 @@
                             "alpha": 0.1,
                             "animation": {},
                             "bright": 0,
-                            "color": "{item|flags.pf2e.rulesSelections.iivlarWeavingLit}",
+                            "color": "{item|flags.system.rulesSelections.iivlarWeavingLit}",
                             "dim": 10,
                             "luminosity": 0.15
                         }
@@ -1120,7 +1120,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1132,7 +1132,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],

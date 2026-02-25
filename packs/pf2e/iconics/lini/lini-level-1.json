@@ -568,7 +568,7 @@
                     {
                         "flag": "animalOrder",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.druidicOrder}"
+                        "uuid": "{item|flags.system.rulesSelections.druidicOrder}"
                     }
                 ],
                 "slug": "druidic-order",
@@ -641,7 +641,7 @@
                     {
                         "flag": "animalEmpathy",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "voice-of-nature",
@@ -1353,7 +1353,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1365,7 +1365,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],

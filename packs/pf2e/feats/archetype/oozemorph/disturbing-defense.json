@@ -33,13 +33,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.oozemorphDedicationCount",
+                "path": "flags.system.oozemorphDedicationCount",
                 "value": 1
             },
             {
                 "key": "Resistance",
                 "type": "precision",
-                "value": "@actor.flags.pf2e.oozemorphDedicationCount+2"
+                "value": "@actor.flags.system.oozemorphDedicationCount+2"
             },
             {
                 "key": "Resistance",
@@ -47,7 +47,7 @@
                     "feat:peculiar-anatomy"
                 ],
                 "type": "precision",
-                "value": "@actor.flags.pf2e.oozemorphDedicationCount+7"
+                "value": "@actor.flags.system.oozemorphDedicationCount+7"
             },
             {
                 "itemType": "condition",

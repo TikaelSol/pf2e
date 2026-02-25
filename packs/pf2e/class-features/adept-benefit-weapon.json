@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.thaumaturge.paragonChoices",
+                "path": "flags.system.thaumaturge.paragonChoices",
                 "priority": 20,
                 "value": {
                     "label": "PF2E.SpecificRule.Thaumaturge.Implement.Weapon.Label",
@@ -43,7 +43,7 @@
                 "predicate": [
                     "implements-interruption"
                 ],
-                "selector": "{actor|flags.pf2e.thaumaturge.weaponImplement}-attack",
+                "selector": "{actor|flags.system.thaumaturge.weaponImplement}-attack",
                 "text": "PF2E.SpecificRule.Thaumaturge.Implement.Weapon.Adept.Note",
                 "title": "PF2E.SpecificRule.Thaumaturge.Implement.Adept.Label"
             }

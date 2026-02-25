@@ -2817,7 +2817,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.tenguFamiliarSword",
+                        "path": "flags.system.tenguFamiliarSword",
                         "predicate": [
                             {
                                 "not": "self:effect:sword-practice"
@@ -2832,7 +2832,7 @@
                             {
                                 "or": [
                                     "item:trait:tengu",
-                                    "item:id:{actor|flags.pf2e.tenguFamiliarSword}"
+                                    "item:id:{actor|flags.system.tenguFamiliarSword}"
                                 ]
                             }
                         ],
@@ -2851,7 +2851,7 @@
                                     "item:base:khakkara",
                                     "item:base:temple-sword",
                                     "item:base:wakazashi",
-                                    "item:id:{actor|flags.pf2e.tenguFamiliarSword}"
+                                    "item:id:{actor|flags.system.tenguFamiliarSword}"
                                 ]
                             }
                         ],
@@ -2876,7 +2876,7 @@
                                     "item:base:khakkara",
                                     "item:base:temple-sword",
                                     "item:base:wakazashi",
-                                    "item:id:{actor|flags.pf2e.tenguFamiliarSword}"
+                                    "item:id:{actor|flags.system.tenguFamiliarSword}"
                                 ]
                             }
                         ]
@@ -2949,7 +2949,7 @@
                     {
                         "flag": "tempest",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.mystery}"
+                        "uuid": "{item|flags.system.rulesSelections.mystery}"
                     }
                 ],
                 "slug": "mystery",

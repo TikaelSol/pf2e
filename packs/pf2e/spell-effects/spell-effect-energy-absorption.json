@@ -23,7 +23,7 @@
         "rules": [
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.energyAbsorption}",
+                "type": "{item|flags.system.rulesSelections.energyAbsorption}",
                 "value": "5*(@item.level - 1)"
             },
             {

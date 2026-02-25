@@ -33,7 +33,7 @@
             {
                 "acuity": "precise",
                 "key": "Sense",
-                "range": "@actor.flags.sf2e.contemplative.impreciseThoughtsenseRange",
+                "range": "@actor.flags.system.contemplative.impreciseThoughtsenseRange",
                 "selector": "thoughtsense"
             }
         ],

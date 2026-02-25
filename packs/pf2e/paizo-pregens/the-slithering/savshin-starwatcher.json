@@ -336,14 +336,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.scholar}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.scholar}.rank",
                         "value": 1
                     },
                     {
                         "flag": "assurance",
                         "key": "GrantItem",
                         "preselectChoices": {
-                            "assurance": "{item|flags.pf2e.rulesSelections.scholar}"
+                            "assurance": "{item|flags.system.rulesSelections.scholar}"
                         },
                         "uuid": "Compendium.pf2e.feats-srd.Item.Assurance"
                     }
@@ -486,7 +486,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -498,7 +498,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -3902,7 +3902,7 @@
                         "allowDuplicate": false,
                         "flag": "cosmos",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.mystery}"
+                        "uuid": "{item|flags.system.rulesSelections.mystery}"
                     }
                 ],
                 "slug": "mystery",

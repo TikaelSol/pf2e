@@ -41,7 +41,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.exemplar.ikons",
+                "path": "flags.system.exemplar.ikons",
                 "value": {
                     "label": "PF2E.SpecificRule.Exemplar.Ikon.SkinHardAsHorn.Label",
                     "predicate": [
@@ -80,7 +80,7 @@
                 "predicate": [
                     "divine-spark:skin-hard-as-horn"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.skinHardAsHorn}",
+                "type": "{item|flags.system.rulesSelections.skinHardAsHorn}",
                 "value": "floor(@actor.level/2)"
             },
             {

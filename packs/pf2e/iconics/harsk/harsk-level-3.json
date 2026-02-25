@@ -2160,7 +2160,7 @@
                     {
                         "flag": "flurry",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.huntersEdge}"
+                        "uuid": "{item|flags.system.rulesSelections.huntersEdge}"
                     }
                 ],
                 "slug": "hunters-edge",
@@ -2702,7 +2702,7 @@
                     {
                         "key": "FlatModifier",
                         "predicate": [
-                            "terrain:{item|flags.pf2e.rulesSelections.terrain}"
+                            "terrain:{item|flags.system.rulesSelections.terrain}"
                         ],
                         "selector": "survival",
                         "type": "circumstance",

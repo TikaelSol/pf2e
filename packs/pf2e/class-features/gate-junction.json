@@ -27,7 +27,7 @@
         "rules": [
             {
                 "adjustName": false,
-                "choices": "flags.pf2e.kineticist.elements",
+                "choices": "flags.system.kineticist.elements",
                 "flag": "element",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Kineticist.KineticGate.Prompt.ExpandElement"
@@ -38,7 +38,7 @@
                         "label": "PF2E.SpecificRule.Kineticist.KineticGate.Junction.Aura",
                         "predicate": [
                             {
-                                "not": "junction:{item|flags.pf2e.rulesSelections.element}:aura"
+                                "not": "junction:{item|flags.system.rulesSelections.element}:aura"
                             }
                         ],
                         "value": "aura"
@@ -47,7 +47,7 @@
                         "label": "PF2E.SpecificRule.Kineticist.KineticGate.Junction.CriticalBlast",
                         "predicate": [
                             {
-                                "not": "junction:{item|flags.pf2e.rulesSelections.element}:critical"
+                                "not": "junction:{item|flags.system.rulesSelections.element}:critical"
                             }
                         ],
                         "value": "critical"
@@ -56,7 +56,7 @@
                         "label": "PF2E.SpecificRule.Kineticist.KineticGate.Junction.ElementalResistance",
                         "predicate": [
                             {
-                                "not": "junction:{item|flags.pf2e.rulesSelections.element}:resistance"
+                                "not": "junction:{item|flags.system.rulesSelections.element}:resistance"
                             }
                         ],
                         "value": "resistance"
@@ -65,7 +65,7 @@
                         "label": "PF2E.SpecificRule.Kineticist.KineticGate.Junction.Impulse",
                         "predicate": [
                             {
-                                "not": "junction:{item|flags.pf2e.rulesSelections.element}:impulse"
+                                "not": "junction:{item|flags.system.rulesSelections.element}:impulse"
                             }
                         ],
                         "value": "impulse"
@@ -74,7 +74,7 @@
                         "label": "PF2E.SpecificRule.Kineticist.KineticGate.Junction.Skill",
                         "predicate": [
                             {
-                                "not": "junction:{item|flags.pf2e.rulesSelections.element}:skill"
+                                "not": "junction:{item|flags.system.rulesSelections.element}:skill"
                             }
                         ],
                         "value": "skill"
@@ -86,7 +86,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "junction:{item|flags.pf2e.rulesSelections.element}:{item|flags.pf2e.rulesSelections.junction}",
+                "option": "junction:{item|flags.system.rulesSelections.element}:{item|flags.system.rulesSelections.junction}",
                 "priority": 39
             }
         ],

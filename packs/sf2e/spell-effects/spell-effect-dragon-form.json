@@ -71,11 +71,11 @@
             },
             {
                 "key": "RollOption",
-                "option": "dragon-form:{item|flags.sf2e.rulesSelections.dragonForm.dragonType}"
+                "option": "dragon-form:{item|flags.system.rulesSelections.dragonForm.dragonType}"
             },
             {
                 "key": "RollOption",
-                "option": "dragon-form-tradition:{item|flags.sf2e.rulesSelections.dragonForm.tradition}"
+                "option": "dragon-form-tradition:{item|flags.system.rulesSelections.dragonForm.tradition}"
             },
             {
                 "brackets": [
@@ -168,7 +168,7 @@
                     "hasHands": true,
                     "resistances": [
                         {
-                            "type": "{item|flags.sf2e.rulesSelections.dragonForm.damageType}",
+                            "type": "{item|flags.system.rulesSelections.dragonForm.damageType}",
                             "value": 10
                         }
                     ],
@@ -283,18 +283,18 @@
                 "uuid": "Compendium.sf2e.actions.Item.Dragon Breath (Dragon Form)"
             },
             {
-                "itemId": "{item|flags.sf2e.itemGrants.dragonBreath.id}",
+                "itemId": "{item|flags.system.itemGrants.dragonBreath.id}",
                 "key": "ItemAlteration",
                 "mode": "override",
                 "property": "description",
                 "value": [
                     {
-                        "text": "PF2E.SpecificRule.DragonForm.DragonBreath.{item|flags.sf2e.rulesSelections.dragonForm.breathShape}.{item|flags.sf2e.rulesSelections.dragonForm.saveType}"
+                        "text": "PF2E.SpecificRule.DragonForm.DragonBreath.{item|flags.system.rulesSelections.dragonForm.breathShape}.{item|flags.system.rulesSelections.dragonForm.saveType}"
                     }
                 ]
             },
             {
-                "itemId": "{item|flags.sf2e.itemGrants.dragonBreath.id}",
+                "itemId": "{item|flags.system.itemGrants.dragonBreath.id}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
@@ -303,23 +303,23 @@
                     }
                 ],
                 "property": "traits",
-                "value": "{item|flags.sf2e.rulesSelections.dragonForm.damageType}"
+                "value": "{item|flags.system.rulesSelections.dragonForm.damageType}"
             },
             {
-                "itemId": "{item|flags.sf2e.itemGrants.dragonBreath.id}",
+                "itemId": "{item|flags.system.itemGrants.dragonBreath.id}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
-                "value": "{item|flags.sf2e.rulesSelections.dragonForm.tradition}"
+                "value": "{item|flags.system.rulesSelections.dragonForm.tradition}"
             },
             {
                 "key": "DamageAlteration",
                 "mode": "override",
                 "property": "damage-type",
                 "selectors": [
-                    "{item|flags.sf2e.itemGrants.dragonBreath.id}-inline-damage"
+                    "{item|flags.system.itemGrants.dragonBreath.id}-inline-damage"
                 ],
-                "value": "{item|flags.sf2e.rulesSelections.dragonForm.damageType}"
+                "value": "{item|flags.system.rulesSelections.dragonForm.damageType}"
             },
             {
                 "key": "DamageAlteration",
@@ -334,12 +334,12 @@
                 ],
                 "property": "dice-number",
                 "selectors": [
-                    "{item|flags.sf2e.itemGrants.dragonBreath.id}-inline-damage"
+                    "{item|flags.system.itemGrants.dragonBreath.id}-inline-damage"
                 ],
                 "value": 4
             },
             {
-                "damageType": "{item|flags.sf2e.rulesSelections.dragonForm.damageType}",
+                "damageType": "{item|flags.system.rulesSelections.dragonForm.damageType}",
                 "diceNumber": 2,
                 "dieSize": "d6",
                 "key": "DamageDice",

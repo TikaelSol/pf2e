@@ -40,8 +40,8 @@
             {
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.pf2e.rulesSelections.save}",
-                    "{item|flags.pf2e.rulesSelections.skill}"
+                    "{item|flags.system.rulesSelections.save}",
+                    "{item|flags.system.rulesSelections.skill}"
                 ],
                 "type": "status",
                 "value": "ternary(gte(@item.level,7),3,ternary(gte(@item.level,4),2,1))"

@@ -26,7 +26,7 @@
                 "mode": "subtract",
                 "selector": "ac",
                 "slug": "cover",
-                "value": "@item.origin.flags.pf2e.bombersEyeElixir"
+                "value": "@item.origin.flags.system.bombersEyeElixir"
             },
             {
                 "key": "AdjustModifier",

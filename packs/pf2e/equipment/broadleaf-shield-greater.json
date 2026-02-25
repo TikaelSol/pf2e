@@ -63,7 +63,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.broadleafShieldResistance}",
+                "type": "{item|flags.system.rulesSelections.broadleafShieldResistance}",
                 "value": 4
             },
             {
@@ -71,7 +71,7 @@
                 "predicate": [
                     "self:shield:raised"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.broadleafShieldResistance}",
+                "type": "{item|flags.system.rulesSelections.broadleafShieldResistance}",
                 "value": 8
             }
         ],

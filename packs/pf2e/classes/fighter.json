@@ -186,7 +186,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.fighterSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.fighterSkill}.rank",
                 "value": 1
             }
         ],

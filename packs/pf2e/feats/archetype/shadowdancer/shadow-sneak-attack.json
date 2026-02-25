@@ -33,14 +33,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.sneakAttackDamage.number",
+                "path": "flags.system.sneakAttackDamage.number",
                 "priority": 49,
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.sneakAttackDamage.faces",
+                "path": "flags.system.sneakAttackDamage.faces",
                 "priority": 49,
                 "value": 6
             },

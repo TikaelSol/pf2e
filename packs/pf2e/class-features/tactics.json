@@ -45,7 +45,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.firstTactic}"
+                "uuid": "{item|flags.system.rulesSelections.firstTactic}"
             },
             {
                 "adjustName": false,
@@ -67,7 +67,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.secondTactic}"
+                "uuid": "{item|flags.system.rulesSelections.secondTactic}"
             },
             {
                 "adjustName": false,
@@ -95,7 +95,7 @@
                 "predicate": [
                     "class:commander"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.thirdTactic}"
+                "uuid": "{item|flags.system.rulesSelections.thirdTactic}"
             },
             {
                 "adjustName": false,
@@ -123,7 +123,7 @@
                 "predicate": [
                     "class:commander"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.fourthTactic}"
+                "uuid": "{item|flags.system.rulesSelections.fourthTactic}"
             },
             {
                 "adjustName": false,
@@ -151,7 +151,7 @@
                 "predicate": [
                     "class:commander"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.fifthTactic}"
+                "uuid": "{item|flags.system.rulesSelections.fifthTactic}"
             }
         ],
         "subfeatures": {

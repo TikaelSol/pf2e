@@ -43,7 +43,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.multitalented}"
+                "uuid": "{item|flags.system.rulesSelections.multitalented}"
             }
         ],
         "traits": {

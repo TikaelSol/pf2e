@@ -47,7 +47,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.revelInRetribution",
+                "path": "flags.system.revelInRetribution",
                 "value": "-1+@item.level"
             }
         ],

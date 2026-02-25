@@ -118,7 +118,7 @@
                 "selectors": [
                     "spell-damage"
                 ],
-                "value": "{actor|flags.pf2e.starlitSentinelDedication.damageType}"
+                "value": "{actor|flags.system.starlitSentinelDedication.damageType}"
             }
         ],
         "target": {

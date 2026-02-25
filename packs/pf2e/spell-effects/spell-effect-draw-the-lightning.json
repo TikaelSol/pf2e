@@ -47,7 +47,7 @@
                 "predicate": [
                     "draw-the-lightning"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

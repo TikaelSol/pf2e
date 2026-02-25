@@ -30,7 +30,7 @@
             {
                 "key": "Resistance",
                 "type": "energy",
-                "value": "@actor.flags.pf2e.gleamingArmorMod"
+                "value": "@actor.flags.system.gleamingArmorMod"
             }
         ],
         "start": {

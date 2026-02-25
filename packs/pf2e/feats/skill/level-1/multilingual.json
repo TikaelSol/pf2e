@@ -40,14 +40,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.multilingualTaken",
+                "path": "flags.system.multilingualTaken",
                 "priority": 19,
                 "value": 0
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.multilingualTaken",
+                "path": "flags.system.multilingualTaken",
                 "value": 1
             }
         ],

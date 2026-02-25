@@ -47,7 +47,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.lesson}"
+                "uuid": "{item|flags.system.rulesSelections.lesson}"
             }
         ],
         "traits": {

@@ -35,7 +35,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.witchwarper.tradition",
+                "path": "flags.system.witchwarper.tradition",
                 "value": "occult"
             }
         ],

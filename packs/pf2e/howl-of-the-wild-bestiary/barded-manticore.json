@@ -1144,7 +1144,7 @@
                         "predicate": [
                             "arrange-scales"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.arrangeScales}",
+                        "type": "{item|flags.system.rulesSelections.arrangeScales}",
                         "value": 15
                     }
                 ],

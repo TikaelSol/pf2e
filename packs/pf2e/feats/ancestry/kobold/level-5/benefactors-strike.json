@@ -43,7 +43,7 @@
             {
                 "critical": true,
                 "damageCategory": "persistent",
-                "damageType": "{actor|flags.pf2e.draconicBenefactor.breathDamage}",
+                "damageType": "{actor|flags.system.draconicBenefactor.breathDamage}",
                 "key": "FlatModifier",
                 "selector": [
                     "unarmed-damage"

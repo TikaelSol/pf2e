@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.fighterDedicationCount",
+                "path": "flags.system.fighterDedicationCount",
                 "value": 1
             },
             {

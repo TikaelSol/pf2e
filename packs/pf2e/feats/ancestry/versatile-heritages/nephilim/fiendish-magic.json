@@ -57,7 +57,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.spell}",
+                    "item:slug:{item|flags.system.rulesSelections.spell}",
                     "spellcasting:innate"
                 ],
                 "property": "other-tags",
@@ -68,7 +68,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.spell}",
+                    "item:slug:{item|flags.system.rulesSelections.spell}",
                     "spellcasting:innate"
                 ],
                 "property": "other-tags",

@@ -89,7 +89,7 @@
                 "predicate": [
                     "flaming-star:flaming-star"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectFlamingStarWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectFlamingStarWeapon}-damage"
             },
             {
                 "damageType": "fire",
@@ -100,7 +100,7 @@
                 "predicate": [
                     "flaming-star:flaming-star-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectFlamingStarWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectFlamingStarWeapon}-damage"
             },
             {
                 "damageType": "fire",
@@ -111,7 +111,7 @@
                 "predicate": [
                     "flaming-star:flaming-star-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectFlamingStarWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectFlamingStarWeapon}-damage"
             }
         ],
         "start": {

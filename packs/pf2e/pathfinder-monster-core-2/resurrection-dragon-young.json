@@ -793,7 +793,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.siphonLife",
+                        "path": "flags.system.siphonLife",
                         "value": 1
                     }
                 ],

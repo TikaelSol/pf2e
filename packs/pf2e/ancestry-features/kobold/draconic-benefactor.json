@@ -879,27 +879,27 @@
             },
             {
                 "key": "RollOption",
-                "option": "draconic-benefactor:{actor|flags.pf2e.draconicBenefactor.dragon}"
+                "option": "draconic-benefactor:{actor|flags.system.draconicBenefactor.dragon}"
             },
             {
                 "key": "RollOption",
-                "option": "draconic-benefactor:breath-damage:{actor|flags.pf2e.draconicBenefactor.breathDamage}"
+                "option": "draconic-benefactor:breath-damage:{actor|flags.system.draconicBenefactor.breathDamage}"
             },
             {
                 "key": "RollOption",
-                "option": "draconic-benefactor:breath-shape:{actor|flags.pf2e.draconicBenefactor.breathShape}"
+                "option": "draconic-benefactor:breath-shape:{actor|flags.system.draconicBenefactor.breathShape}"
             },
             {
                 "key": "RollOption",
-                "option": "draconic-benefactor:save:{actor|flags.pf2e.draconicBenefactor.save}"
+                "option": "draconic-benefactor:save:{actor|flags.system.draconicBenefactor.save}"
             },
             {
                 "key": "RollOption",
-                "option": "draconic-benefactor:speed:{actor|flags.pf2e.draconicBenefactor.speed}"
+                "option": "draconic-benefactor:speed:{actor|flags.system.draconicBenefactor.speed}"
             },
             {
                 "key": "RollOption",
-                "option": "draconic-benefactor:tradition:{actor|flags.pf2e.draconicBenefactor.tradition}"
+                "option": "draconic-benefactor:tradition:{actor|flags.system.draconicBenefactor.tradition}"
             }
         ],
         "subfeatures": {

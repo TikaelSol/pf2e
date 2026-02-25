@@ -279,7 +279,7 @@
                 "category": "unarmed",
                 "damage": {
                     "base": {
-                        "damageType": "{item|flags.pf2e.rulesSelections.objectDamageType}",
+                        "damageType": "{item|flags.system.rulesSelections.objectDamageType}",
                         "dice": 1,
                         "die": "d8"
                     }

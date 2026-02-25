@@ -32,7 +32,7 @@
             {
                 "key": "CriticalSpecialization",
                 "predicate": [
-                    "item:id:{actor|flags.pf2e.thaumaturge.weaponImplement}",
+                    "item:id:{actor|flags.system.thaumaturge.weaponImplement}",
                     "feature:thaumaturge-weapon-expertise"
                 ]
             }

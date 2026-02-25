@@ -714,7 +714,7 @@
                     {
                         "flag": "bloodlineDraconic",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.bloodline}"
+                        "uuid": "{item|flags.system.rulesSelections.bloodline}"
                     }
                 ],
                 "slug": "bloodline",
@@ -1088,7 +1088,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.dragonBloodline.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.dragonBloodline.skill}.rank",
                         "predicate": [
                             {
                                 "not": "parent:granter:slug:crossblooded-evolution"
@@ -1098,7 +1098,7 @@
                     },
                     {
                         "key": "RollOption",
-                        "option": "feature:bloodline:draconic:{item|flags.pf2e.rulesSelections.dragonBloodline.slug}"
+                        "option": "feature:bloodline:draconic:{item|flags.system.rulesSelections.dragonBloodline.slug}"
                     },
                     {
                         "itemType": "spell",
@@ -1120,7 +1120,7 @@
                                         "and": [
                                             "item:spell-slot",
                                             "spellcasting:category:spontaneous",
-                                            "spellcasting:tradition:{item|flags.pf2e.rulesSelections.dragonBloodline.tradition}",
+                                            "spellcasting:tradition:{item|flags.system.rulesSelections.dragonBloodline.tradition}",
                                             {
                                                 "or": [
                                                     {
@@ -1457,7 +1457,7 @@
                     },
                     {
                         "key": "RollOption",
-                        "option": "feature:bloodline:tradition:{item|flags.pf2e.rulesSelections.dragonBloodline.tradition}",
+                        "option": "feature:bloodline:tradition:{item|flags.system.rulesSelections.dragonBloodline.tradition}",
                         "predicate": [
                             {
                                 "not": "parent:granter:slug:crossblooded-evolution"
@@ -4086,7 +4086,7 @@
                 "requirements": "",
                 "rules": [
                     {
-                        "damageType": "{actor|flags.pf2e.dragonBloodline.damageType}",
+                        "damageType": "{actor|flags.system.dragonBloodline.damageType}",
                         "diceNumber": "@item.level",
                         "dieSize": "d4",
                         "hideIfDisabled": true,
@@ -4196,7 +4196,7 @@
                             "spell-damage"
                         ],
                         "slug": "base",
-                        "value": "{actor|flags.pf2e.dragonBloodline.damageType}"
+                        "value": "{actor|flags.system.dragonBloodline.damageType}"
                     }
                 ],
                 "slug": "dragon-breath",
@@ -4390,7 +4390,7 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.damageType}",
+                        "type": "{item|flags.system.rulesSelections.damageType}",
                         "value": 10
                     }
                 ],
@@ -4763,7 +4763,7 @@
                             "item:defense:ac"
                         ],
                         "property": "defense-passive",
-                        "value": "{item|flags.pf2e.rulesSelections.shadowSignet}"
+                        "value": "{item|flags.system.rulesSelections.shadowSignet}"
                     },
                     {
                         "key": "Note",
@@ -5012,7 +5012,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "flags.pf2e.scalyHideBonus",
+                        "path": "flags.system.scalyHideBonus",
                         "priority": 19,
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     },
@@ -5025,7 +5025,7 @@
                         ],
                         "selector": "ac",
                         "type": "item",
-                        "value": "@actor.flags.pf2e.scalyHideBonus"
+                        "value": "@actor.flags.system.scalyHideBonus"
                     },
                     {
                         "key": "AdjustModifier",
@@ -5038,7 +5038,7 @@
                         "relabel": "PF2E.SpecificRule.Dragonblood.ScalyHide.BracersOfArmor",
                         "selector": "ac",
                         "slug": "bands-of-force",
-                        "value": "@actor.flags.pf2e.scalyHideBonus"
+                        "value": "@actor.flags.system.scalyHideBonus"
                     },
                     {
                         "key": "AdjustModifier",
@@ -5051,7 +5051,7 @@
                         "relabel": "PF2E.SpecificRule.Dragonblood.ScalyHide.ExplorersClothing",
                         "selector": "ac",
                         "slug": "explorers-clothing",
-                        "value": "@actor.flags.pf2e.scalyHideBonus"
+                        "value": "@actor.flags.system.scalyHideBonus"
                     },
                     {
                         "key": "AdjustModifier",
@@ -5064,7 +5064,7 @@
                         "relabel": "PF2E.SpecificRule.Dragonblood.ScalyHide.MageArmor",
                         "selector": "ac",
                         "slug": "mage-armor",
-                        "value": "@actor.flags.pf2e.scalyHideBonus"
+                        "value": "@actor.flags.system.scalyHideBonus"
                     }
                 ],
                 "slug": "scaly-hide",
@@ -5774,7 +5774,7 @@
                     {
                         "key": "FlatModifier",
                         "predicate": [
-                            "terrain:{item|flags.pf2e.rulesSelections.terrain}"
+                            "terrain:{item|flags.system.rulesSelections.terrain}"
                         ],
                         "selector": "survival",
                         "type": "circumstance",
@@ -5981,7 +5981,7 @@
                     },
                     {
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.ancestralParagon}"
+                        "uuid": "{item|flags.system.rulesSelections.ancestralParagon}"
                     }
                 ],
                 "slug": "ancestral-paragon",

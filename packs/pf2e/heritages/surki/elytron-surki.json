@@ -21,7 +21,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.surki.evolutions",
+                "path": "flags.system.surki.evolutions",
                 "value": {
                     "label": "PF2E.SpecificRule.Surki.Evolutions.GlowingWings",
                     "predicate": [
@@ -35,7 +35,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.surki.evolutions",
+                "path": "flags.system.surki.evolutions",
                 "value": {
                     "label": "PF2E.SpecificRule.Surki.Evolutions.ResonatingMembranes",
                     "predicate": [

@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.championDedicationCount",
+                "path": "flags.system.championDedicationCount",
                 "value": 1
             },
             {
@@ -63,7 +63,7 @@
             {
                 "allowDuplicate": false,
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.divineAlly}"
+                "uuid": "{item|flags.system.rulesSelections.divineAlly}"
             }
         ],
         "traits": {

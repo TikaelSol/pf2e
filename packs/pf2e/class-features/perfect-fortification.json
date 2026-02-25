@@ -28,7 +28,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}"
+                    "armor:id:{actor|flags.system.innovationId}"
                 ],
                 "type": "precision",
                 "value": "2 + floor(@actor.level / 2)"

@@ -23,7 +23,7 @@
         "rules": [
             {
                 "key": "Weakness",
-                "type": "{item|flags.pf2e.rulesSelections.wishTwistedFormDamageType}",
+                "type": "{item|flags.system.rulesSelections.wishTwistedFormDamageType}",
                 "value": "@item.level"
             },
             {

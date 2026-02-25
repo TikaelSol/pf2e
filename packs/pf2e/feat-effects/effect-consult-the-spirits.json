@@ -30,7 +30,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.skill}",
+                "selector": "{item|flags.system.rulesSelections.skill}",
                 "type": "status",
                 "value": 1
             },

@@ -37,14 +37,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.vigilantBenedition.count",
+                "path": "flags.system.vigilantBenedition.count",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
                 "path": "system.proficiencies.spellcasting.rank",
-                "value": "min(2,@actor.flags.pf2e.vigilantBenedition.count)"
+                "value": "min(2,@actor.flags.system.vigilantBenedition.count)"
             }
         ],
         "traits": {

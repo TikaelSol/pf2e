@@ -50,7 +50,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.cloisterRobeResistance",
+                "path": "flags.system.cloisterRobeResistance",
                 "value": "floor(@item.level/2)"
             }
         ],

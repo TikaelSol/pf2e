@@ -412,7 +412,7 @@
                         "selectors": [
                             "{item|id}-inline-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.infectedJawsClaws}"
+                        "value": "{item|flags.system.rulesSelections.infectedJawsClaws}"
                     }
                 ],
                 "slug": null,

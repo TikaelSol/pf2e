@@ -555,7 +555,7 @@
                         "category": "simple",
                         "damage": {
                             "base": {
-                                "damageType": "{item|flags.pf2e.rulesSelections.elementalGatewayChoice}",
+                                "damageType": "{item|flags.system.rulesSelections.elementalGatewayChoice}",
                                 "dice": 4,
                                 "die": "d10",
                                 "modifier": 19
@@ -725,7 +725,7 @@
                         ],
                         "selector": "attack",
                         "type": "circumstance",
-                        "value": "{item|flags.pf2e.rulesSelections.walkTheSpiral}"
+                        "value": "{item|flags.system.rulesSelections.walkTheSpiral}"
                     }
                 ],
                 "slug": null,

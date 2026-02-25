@@ -35,7 +35,7 @@
                     "target:mark:aim"
                 ],
                 "selector": "strike-damage",
-                "value": "@actor.flags.sf2e.operative.aim.diceNumber"
+                "value": "@actor.flags.system.operative.aim.diceNumber"
             }
         ],
         "subfeatures": {

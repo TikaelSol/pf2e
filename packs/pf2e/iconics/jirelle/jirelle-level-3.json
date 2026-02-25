@@ -2547,7 +2547,7 @@
                     {
                         "flag": "fencer",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.swashbucklersStyle}"
+                        "uuid": "{item|flags.system.rulesSelections.swashbucklersStyle}"
                     }
                 ],
                 "slug": "swashbucklers-style",
@@ -3083,7 +3083,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.swashbuckler.preciseStrike",
+                        "path": "flags.system.swashbuckler.preciseStrike",
                         "predicate": [
                             "class:swashbuckler"
                         ],
@@ -3117,11 +3117,11 @@
                         ],
                         "selector": "strike-damage",
                         "slug": "precise-strike",
-                        "value": "@actor.flags.pf2e.swashbuckler.preciseStrike"
+                        "value": "@actor.flags.system.swashbuckler.preciseStrike"
                     },
                     {
                         "category": "precision",
-                        "diceNumber": "@actor.flags.pf2e.swashbuckler.preciseStrike",
+                        "diceNumber": "@actor.flags.system.swashbuckler.preciseStrike",
                         "dieSize": "d6",
                         "key": "DamageDice",
                         "predicate": [

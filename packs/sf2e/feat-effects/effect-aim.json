@@ -34,8 +34,8 @@
             },
             {
                 "category": "precision",
-                "diceNumber": "@actor.flags.sf2e.operative.aim.diceNumber",
-                "dieSize": "d{actor|flags.sf2e.operative.aim.dieSize}",
+                "diceNumber": "@actor.flags.system.operative.aim.diceNumber",
+                "dieSize": "d{actor|flags.system.operative.aim.dieSize}",
                 "key": "DamageDice",
                 "predicate": [
                     "item:tag:aim",
@@ -45,7 +45,7 @@
                             {
                                 "lte": [
                                     "target:range-increment",
-                                    "{actor|flags.sf2e.operative.aim.rangeIncrement}"
+                                    "{actor|flags.system.operative.aim.rangeIncrement}"
                                 ]
                             },
                             "item:melee"

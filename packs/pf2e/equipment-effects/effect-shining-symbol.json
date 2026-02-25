@@ -28,7 +28,7 @@
                     "stealth"
                 ],
                 "type": "status",
-                "value": "@item.origin.flags.pf2e.shiningSymbolPenalty"
+                "value": "@item.origin.flags.system.shiningSymbolPenalty"
             }
         ],
         "start": {

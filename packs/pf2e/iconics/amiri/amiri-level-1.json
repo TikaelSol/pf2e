@@ -79,7 +79,7 @@
                     {
                         "flag": "diehard",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-heritage",
@@ -1390,7 +1390,7 @@
                     {
                         "flag": "ragingIntimidation",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -1858,7 +1858,7 @@
                         "allowDuplicate": false,
                         "flag": "giantInstinct",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.instinct}"
+                        "uuid": "{item|flags.system.rulesSelections.instinct}"
                     }
                 ],
                 "slug": "instinct",
@@ -2000,7 +2000,7 @@
                             "self:effect:rage",
                             "feature:raging-resistance"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.energy}",
+                        "type": "{item|flags.system.rulesSelections.energy}",
                         "value": "@actor.abilities.con.mod+3"
                     },
                     {

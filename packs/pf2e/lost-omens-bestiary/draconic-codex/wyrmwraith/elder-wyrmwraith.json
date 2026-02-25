@@ -1245,7 +1245,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.drainLifeTempHP",
+                        "path": "flags.system.drainLifeTempHP",
                         "value": 20
                     }
                 ],
@@ -1310,13 +1310,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.ectoplasmicFormAC",
+                        "path": "flags.system.ectoplasmicFormAC",
                         "value": 52
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.ectoplasmicFormTempHP",
+                        "path": "flags.system.ectoplasmicFormTempHP",
                         "value": 125
                     }
                 ],

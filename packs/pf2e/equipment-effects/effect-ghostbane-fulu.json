@@ -39,7 +39,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.ghostbaneFuluWeapon}"
+                    "item:id:{item|flags.system.rulesSelections.ghostbaneFuluWeapon}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

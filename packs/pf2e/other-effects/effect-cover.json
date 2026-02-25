@@ -65,11 +65,11 @@
             },
             {
                 "key": "RollOption",
-                "option": "self:cover-bonus:{item|flags.pf2e.rulesSelections.cover.bonus}"
+                "option": "self:cover-bonus:{item|flags.system.rulesSelections.cover.bonus}"
             },
             {
                 "key": "RollOption",
-                "option": "self:cover-level:{item|flags.pf2e.rulesSelections.cover.level}"
+                "option": "self:cover-level:{item|flags.system.rulesSelections.cover.level}"
             },
             {
                 "key": "FlatModifier",
@@ -90,7 +90,7 @@
                 ],
                 "selector": "ac",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.cover.bonus"
+                "value": "@item.flags.system.rulesSelections.cover.bonus"
             },
             {
                 "key": "FlatModifier",
@@ -102,7 +102,7 @@
                 ],
                 "selector": "reflex",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.cover.bonus"
+                "value": "@item.flags.system.rulesSelections.cover.bonus"
             },
             {
                 "key": "FlatModifier",
@@ -120,7 +120,7 @@
                 ],
                 "selector": "stealth",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.cover.bonus"
+                "value": "@item.flags.system.rulesSelections.cover.bonus"
             },
             {
                 "key": "FlatModifier",
@@ -132,7 +132,7 @@
                 ],
                 "selector": "initiative",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.cover.bonus"
+                "value": "@item.flags.system.rulesSelections.cover.bonus"
             }
         ],
         "start": {
