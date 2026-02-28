@@ -23,7 +23,7 @@
         "rules": [
             {
                 "key": "TempHP",
-                "value": "@actor.flags.pf2e.revelInRetribution"
+                "value": "@actor.flags.system.revelInRetribution"
             }
         ],
         "start": {

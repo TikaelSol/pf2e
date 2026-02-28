@@ -38,7 +38,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.effectColdIronBlanchGreater}"
+                    "item:id:{item|flags.system.rulesSelections.effectColdIronBlanchGreater}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

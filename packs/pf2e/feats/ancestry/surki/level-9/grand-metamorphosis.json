@@ -28,7 +28,7 @@
         },
         "rules": [
             {
-                "choices": "flags.pf2e.surki.evolutions",
+                "choices": "flags.system.surki.evolutions",
                 "flag": "evolution",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Surki.Evolutions.Prompt",

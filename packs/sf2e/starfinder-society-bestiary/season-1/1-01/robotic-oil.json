@@ -179,9 +179,19 @@
                 "temp": 0,
                 "value": 20
             },
+            "immunities": [
+                {
+                    "exceptions": [],
+                    "type": "critical-hits"
+                },
+                {
+                    "exceptions": [],
+                    "type": "mental"
+                }
+            ],
             "speed": {
                 "otherSpeeds": [],
-                "value": 25
+                "value": 20
             }
         },
         "details": {

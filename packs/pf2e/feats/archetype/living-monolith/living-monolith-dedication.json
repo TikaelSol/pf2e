@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.livingMonolith.archetypeFeatCount",
+                "path": "flags.system.livingMonolith.archetypeFeatCount",
                 "value": 1
             }
         ],

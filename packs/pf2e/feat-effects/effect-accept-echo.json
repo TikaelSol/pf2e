@@ -33,15 +33,15 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{actor|flags.pf2e.echoSkill}.rank",
+                "path": "system.skills.{actor|flags.system.echoSkill}.rank",
                 "value": "ternary(gte(@actor.level,15),4,ternary(gte(@actor.level,7),3,2))"
             },
             {
                 "definition": [
-                    "item:base:{actor|flags.pf2e.echoWeapon}"
+                    "item:base:{actor|flags.system.echoWeapon}"
                 ],
                 "key": "MartialProficiency",
-                "label": "PF2E.Weapon.Base.{actor|flags.pf2e.echoWeapon}",
+                "label": "PF2E.Weapon.Base.{actor|flags.system.echoWeapon}",
                 "value": "ternary(gte(@actor.level,13),2,1)"
             }
         ],

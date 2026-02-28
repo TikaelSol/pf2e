@@ -69,7 +69,7 @@
                 "override": {
                     "upgrade": true
                 },
-                "selector": "{item|flags.pf2e.rulesSelections.mutateWeaponTarget}-damage"
+                "selector": "{item|flags.system.rulesSelections.mutateWeaponTarget}-damage"
             },
             {
                 "choices": [
@@ -92,7 +92,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:{item|flags.pf2e.rulesSelections.mutateWeaponTarget}",
+                    "item:{item|flags.system.rulesSelections.mutateWeaponTarget}",
                     "mutate-weapon-bonus:reach"
                 ],
                 "property": "traits",
@@ -104,7 +104,7 @@
                 "predicate": [
                     "mutate-weapon-bonus:accuracy"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.mutateWeaponTarget}-attack-roll",
+                "selector": "{item|flags.system.rulesSelections.mutateWeaponTarget}-attack-roll",
                 "type": "status",
                 "value": 1
             }

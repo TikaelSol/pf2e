@@ -1,7 +1,7 @@
 {
     "_id": "OlR1ZpTMxfZd0nq5",
     "folder": "2dNKIDtAolwi1hJv",
-    "img": "systems/pf2e/icons/iconics/LiniFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/lini.webp",
     "items": [
         {
             "_id": "NimM8csExNjhJz7E",
@@ -568,7 +568,7 @@
                     {
                         "flag": "animalOrder",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.druidicOrder}"
+                        "uuid": "{item|flags.system.rulesSelections.druidicOrder}"
                     }
                 ],
                 "slug": "druidic-order",
@@ -641,7 +641,7 @@
                     {
                         "flag": "animalEmpathy",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "voice-of-nature",
@@ -1353,7 +1353,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1365,7 +1365,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -3564,8 +3564,17 @@
     "name": "Lini (Level 1)",
     "prototypeToken": {
         "name": "Lini",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 2,
+                "texture": "systems/pf2e/icons/iconics/subjects/lini.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Lini.webp"
+            "scaleX": 1.6,
+            "scaleY": 1.6,
+            "src": "systems/pf2e/icons/iconics/tokens/lini.webp"
         }
     },
     "system": {

@@ -1077,7 +1077,7 @@
                     {
                         "flag": "actionHero",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.fightingStyle}"
+                        "uuid": "{item|flags.system.rulesSelections.fightingStyle}"
                     }
                 ],
                 "slug": "soldier-fighting-style",

@@ -49,7 +49,7 @@
                 ],
                 "selector": "perception-dc",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.pointedQuestion"
+                "value": "@item.flags.system.rulesSelections.pointedQuestion"
             },
             {
                 "key": "EphemeralEffect",

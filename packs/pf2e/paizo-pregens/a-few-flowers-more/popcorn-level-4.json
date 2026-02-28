@@ -1518,7 +1518,7 @@
                         "allowDuplicate": false,
                         "flag": "dragonInstinct",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.instinct}"
+                        "uuid": "{item|flags.system.rulesSelections.instinct}"
                     }
                 ],
                 "slug": "instinct",
@@ -1818,32 +1818,32 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.barbarian.instinct.dragon.breath.size",
-                        "value": "{item|flags.pf2e.rulesSelections.dragon.breath.size}"
+                        "path": "flags.system.barbarian.instinct.dragon.breath.size",
+                        "value": "{item|flags.system.rulesSelections.dragon.breath.size}"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.barbarian.instinct.dragon.breath.type",
-                        "value": "{item|flags.pf2e.rulesSelections.dragon.breath.type}"
+                        "path": "flags.system.barbarian.instinct.dragon.breath.type",
+                        "value": "{item|flags.system.rulesSelections.dragon.breath.type}"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.barbarian.instinct.dragon.category",
-                        "value": "{item|flags.pf2e.rulesSelections.dragon.category}"
+                        "path": "flags.system.barbarian.instinct.dragon.category",
+                        "value": "{item|flags.system.rulesSelections.dragon.category}"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.barbarian.instinct.dragon.color",
-                        "value": "{item|flags.pf2e.rulesSelections.dragon.color}"
+                        "path": "flags.system.barbarian.instinct.dragon.color",
+                        "value": "{item|flags.system.rulesSelections.dragon.color}"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.barbarian.instinct.dragon.damageType",
-                        "value": "{item|flags.pf2e.rulesSelections.dragon.damageType}"
+                        "path": "flags.system.barbarian.instinct.dragon.damageType",
+                        "value": "{item|flags.system.rulesSelections.dragon.damageType}"
                     },
                     {
                         "key": "RollOption",
@@ -1861,7 +1861,7 @@
                         "value": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.dragon.damageType}",
+                        "damageType": "{item|flags.system.rulesSelections.dragon.damageType}",
                         "key": "AdjustModifier",
                         "mode": "upgrade",
                         "predicate": [
@@ -1921,7 +1921,7 @@
                             "self:effect:rage",
                             "feature:raging-resistance"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.dragon.damageType}",
+                        "type": "{item|flags.system.rulesSelections.dragon.damageType}",
                         "value": "@actor.abilities.con.mod+3"
                     }
                 ],

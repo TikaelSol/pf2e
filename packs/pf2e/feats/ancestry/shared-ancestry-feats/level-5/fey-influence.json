@@ -92,7 +92,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "fey-influence:{item|flags.pf2e.rulesSelections.feyInfluence.creature}"
+                "option": "fey-influence:{item|flags.system.rulesSelections.feyInfluence.creature}"
             },
             {
                 "add": [
@@ -105,7 +105,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.feyInfluence.spell}",
+                    "item:slug:{item|flags.system.rulesSelections.feyInfluence.spell}",
                     "spellcasting:innate"
                 ],
                 "property": "other-tags",

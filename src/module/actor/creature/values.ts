@@ -236,6 +236,7 @@ const UNCOMMON_SF_LANGUAGES = [
     "osharu",
     "petran",
     "prelurian",
+    "primacy",
     "pyric",
     "raxi",
     "rodnarthian",

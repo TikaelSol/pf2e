@@ -1,7 +1,7 @@
 {
     "_id": "kVIl6Pl2YbThZAMd",
     "folder": "goYEWNMCjV6MvG3V",
-    "img": "systems/pf2e/icons/iconics/DajiFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/daji.webp",
     "items": [
         {
             "_id": "yKVG2JGXq4N9pi4t",
@@ -159,8 +159,15 @@
     "name": "Daji (Level 3)",
     "prototypeToken": {
         "name": "Daji",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 1,
+                "texture": "systems/pf2e/icons/iconics/subjects/daji.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Daji.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/daji.webp"
         }
     },
     "system": {

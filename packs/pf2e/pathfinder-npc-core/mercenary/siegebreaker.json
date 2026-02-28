@@ -459,7 +459,7 @@
                             "alchemical-grenade-damage"
                         ],
                         "slug": "base",
-                        "value": "{item|flags.pf2e.rulesSelections.alchemicalGrenades}"
+                        "value": "{item|flags.system.rulesSelections.alchemicalGrenades}"
                     }
                 ],
                 "slug": null,

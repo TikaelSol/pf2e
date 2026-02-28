@@ -37,7 +37,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.spellEffectWeaponSurge}-attack",
+                "selector": "{item|flags.system.rulesSelections.spellEffectWeaponSurge}-attack",
                 "type": "status",
                 "value": 1
             },
@@ -46,11 +46,11 @@
                 "diceNumber": "ternary(gte(@item.level,9),3,ternary(gte(@item.level,5),2,1))",
                 "dieSize": "d6",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.spellEffectWeaponSurge}-damage"
+                "selector": "{item|flags.system.rulesSelections.spellEffectWeaponSurge}-damage"
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.spellEffectWeaponSurge}"
+                    "item:id:{item|flags.system.rulesSelections.spellEffectWeaponSurge}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

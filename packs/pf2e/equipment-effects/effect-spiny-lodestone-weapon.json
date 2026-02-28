@@ -89,7 +89,7 @@
                 "predicate": [
                     "spiny-lodestone:spiny-lodestone"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectSpinyLodestoneWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectSpinyLodestoneWeapon}-damage"
             },
             {
                 "damageType": "piercing",
@@ -100,7 +100,7 @@
                 "predicate": [
                     "spiny-lodestone:spiny-lodestone-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectSpinyLodestoneWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectSpinyLodestoneWeapon}-damage"
             },
             {
                 "damageType": "piercing",
@@ -111,7 +111,7 @@
                 "predicate": [
                     "spiny-lodestone:spiny-lodestone-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectSpinyLodestoneWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectSpinyLodestoneWeapon}-damage"
             }
         ],
         "start": {

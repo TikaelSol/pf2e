@@ -23,8 +23,8 @@
         "rules": [
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.element}",
-                "value": "@actor.flags.pf2e.resistanceMod"
+                "type": "{item|flags.system.rulesSelections.element}",
+                "value": "@actor.flags.system.resistanceMod"
             },
             {
                 "choices": [

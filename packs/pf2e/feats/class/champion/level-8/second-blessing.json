@@ -71,7 +71,7 @@
             {
                 "allowDuplicate": false,
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.blessing}"
+                "uuid": "{item|flags.system.rulesSelections.blessing}"
             }
         ],
         "traits": {

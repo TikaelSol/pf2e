@@ -1218,7 +1218,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.resistanceMod",
+                        "path": "flags.system.resistanceMod",
                         "value": 1
                     }
                 ],

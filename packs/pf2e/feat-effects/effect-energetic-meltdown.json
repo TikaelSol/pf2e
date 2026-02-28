@@ -43,7 +43,7 @@
                         ]
                     }
                 ],
-                "type": "{actor|flags.pf2e.deviantAbilities.dragon.damageType}",
+                "type": "{actor|flags.system.deviantAbilities.dragon.damageType}",
                 "value": "floor(@actor.level/3)"
             }
         ],

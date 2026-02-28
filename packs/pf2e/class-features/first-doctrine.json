@@ -27,7 +27,7 @@
         "rules": [
             {
                 "key": "GrantItem",
-                "uuid": "{actor|flags.pf2e.cleric.firstDoctrine}"
+                "uuid": "{actor|flags.system.cleric.firstDoctrine}"
             }
         ],
         "traits": {

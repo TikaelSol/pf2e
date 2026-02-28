@@ -194,7 +194,7 @@
                     "spirits-mercy:spirit-remnant"
                 ],
                 "type": "custom",
-                "value": "3*@item.flags.pf2e.rulesSelections.spiritRemnant"
+                "value": "3*@item.flags.system.rulesSelections.spiritRemnant"
             }
         ],
         "start": {

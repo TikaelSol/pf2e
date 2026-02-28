@@ -52,7 +52,7 @@
                 ],
                 "selector": "attack-roll",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.number"
+                "value": "@item.flags.system.rulesSelections.number"
             }
         ],
         "start": {

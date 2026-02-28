@@ -28,7 +28,7 @@
         "rules": [
             {
                 "key": "RollOption",
-                "option": "draconic-resistance:{actor|flags.pf2e.dragonblood.damageType}"
+                "option": "draconic-resistance:{actor|flags.system.dragonblood.damageType}"
             },
             {
                 "choices": [
@@ -77,7 +77,7 @@
                         ]
                     }
                 ],
-                "type": "{actor|flags.pf2e.dragonblood.damageType}",
+                "type": "{actor|flags.system.dragonblood.damageType}",
                 "value": "max(1,floor(@actor.level/2))"
             },
             {
@@ -91,7 +91,7 @@
                         ]
                     }
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.resistance}",
+                "type": "{item|flags.system.rulesSelections.resistance}",
                 "value": "max(1,floor(@actor.level/2))"
             }
         ],

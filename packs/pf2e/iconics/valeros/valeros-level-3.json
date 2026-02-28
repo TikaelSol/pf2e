@@ -1,7 +1,7 @@
 {
     "_id": "vmLKgEKk0a7DpJDP",
     "folder": "mQZ9emBv92JSPIWv",
-    "img": "systems/pf2e/icons/iconics/ValerosFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/valeros.webp",
     "items": [
         {
             "_id": "4QKHaQdbGltG9HsO",
@@ -1599,7 +1599,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],
@@ -1789,7 +1789,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1801,7 +1801,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -2402,7 +2402,7 @@
                     {
                         "flag": "reactiveShield",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -2682,8 +2682,17 @@
     "name": "Valeros (Level 3)",
     "prototypeToken": {
         "name": "Valeros",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 2,
+                "texture": "systems/pf2e/icons/iconics/subjects/valeros.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Valeros.webp"
+            "scaleX": 2,
+            "scaleY": 2,
+            "src": "systems/pf2e/icons/iconics/tokens/valeros.webp"
         }
     },
     "system": {

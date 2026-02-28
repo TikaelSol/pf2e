@@ -89,7 +89,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.championDedicationCount",
+                "path": "flags.system.championDedicationCount",
                 "value": 1
             },
             {
@@ -134,13 +134,13 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.cause}"
+                "uuid": "{item|flags.system.rulesSelections.cause}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
                 "path": "system.proficiencies.classDCs.champion.attribute",
-                "value": "{item|flags.pf2e.rulesSelections.attribute}"
+                "value": "{item|flags.system.rulesSelections.attribute}"
             },
             {
                 "key": "ActiveEffectLike",

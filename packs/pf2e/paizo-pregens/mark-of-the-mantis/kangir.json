@@ -2785,7 +2785,7 @@
                     },
                     {
                         "definition": [
-                            "item:group:{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                            "item:group:{item|flags.system.rulesSelections.fighterWeaponMastery}",
                             {
                                 "or": [
                                     "item:category:unarmed",
@@ -2795,17 +2795,17 @@
                             }
                         ],
                         "key": "MartialProficiency",
-                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.SimpleMartial.{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.SimpleMartial.{item|flags.system.rulesSelections.fighterWeaponMastery}",
                         "slug": "weapon-mastery-simple-martial",
                         "value": 3
                     },
                     {
                         "definition": [
                             "item:category:advanced",
-                            "item:group:{item|flags.pf2e.rulesSelections.fighterWeaponMastery}"
+                            "item:group:{item|flags.system.rulesSelections.fighterWeaponMastery}"
                         ],
                         "key": "MartialProficiency",
-                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.Advanced.{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.Advanced.{item|flags.system.rulesSelections.fighterWeaponMastery}",
                         "slug": "weapon-mastery-advanced",
                         "value": 2
                     },

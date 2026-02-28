@@ -28,7 +28,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     {
                         "not": "self:negative-healing"
                     }
@@ -39,7 +39,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "self:negative-healing"
                 ],
                 "type": "vitality",
@@ -48,7 +48,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}"
+                    "armor:id:{actor|flags.system.innovationId}"
                 ],
                 "type": "spirit",
                 "value": "3 + floor(@actor.level / 2)"
@@ -56,7 +56,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "sanctification:unholy"
                 ],
                 "type": [
@@ -67,7 +67,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "sanctification:holy"
                 ],
                 "type": [

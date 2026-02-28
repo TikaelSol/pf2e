@@ -241,12 +241,12 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.chromaticArmorFirst}",
+                "type": "{item|flags.system.rulesSelections.chromaticArmorFirst}",
                 "value": "5+5*floor((@item.level - 4) / 3)"
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.chromaticArmorSecond}",
+                "type": "{item|flags.system.rulesSelections.chromaticArmorSecond}",
                 "value": "5+5*floor((@item.level - 4) / 3)"
             },
             {
@@ -254,7 +254,7 @@
                 "predicate": [
                     "actions-used:three"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.chromaticArmorThird}",
+                "type": "{item|flags.system.rulesSelections.chromaticArmorThird}",
                 "value": "5+5*floor((@item.level - 4) / 3)"
             },
             {

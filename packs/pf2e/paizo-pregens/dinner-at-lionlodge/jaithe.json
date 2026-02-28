@@ -530,14 +530,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "priority": 19,
                         "value": 0
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "value": 1
                     }
                 ],
@@ -2947,7 +2947,7 @@
                     },
                     {
                         "key": "CreatureSize",
-                        "value": "{item|flags.pf2e.rulesSelections.fleshwarpSize}"
+                        "value": "{item|flags.system.rulesSelections.fleshwarpSize}"
                     }
                 ],
                 "size": "med",
@@ -3168,7 +3168,7 @@
                     {
                         "flag": "bloodlineAberrant",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.bloodline}"
+                        "uuid": "{item|flags.system.rulesSelections.bloodline}"
                     }
                 ],
                 "slug": "bloodline",

@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.sf2e.operative.aim.rangeIncrement",
+                "path": "flags.system.operative.aim.rangeIncrement",
                 "priority": 51,
                 "value": 1
             },

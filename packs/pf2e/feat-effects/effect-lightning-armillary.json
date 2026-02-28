@@ -52,9 +52,9 @@
             {
                 "damageType": "electricity",
                 "diceNumber": 1,
-                "dieSize": "{item|flags.pf2e.rulesSelections.dieSize}",
+                "dieSize": "{item|flags.system.rulesSelections.dieSize}",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

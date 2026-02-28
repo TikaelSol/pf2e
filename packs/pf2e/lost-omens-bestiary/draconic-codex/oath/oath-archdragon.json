@@ -774,13 +774,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.hearteningAuraAttackDamage",
+                        "path": "flags.system.hearteningAuraAttackDamage",
                         "value": 2
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.hearteningAuraFastHealing",
+                        "path": "flags.system.hearteningAuraFastHealing",
                         "value": 20
                     },
                     {

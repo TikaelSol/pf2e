@@ -1,7 +1,7 @@
 {
     "_id": "AwZRZftsnX2fIpwV",
     "folder": "T4DZ5rHocJyoWABr",
-    "img": "systems/pf2e/icons/iconics/GrimmyrFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/grimmyr.webp",
     "items": [
         {
             "_id": "9a0c4XQ1v281kjFw",
@@ -959,7 +959,7 @@
                             "alpha": 0.1,
                             "animation": {},
                             "bright": 0,
-                            "color": "{item|flags.pf2e.rulesSelections.iivlarWeavingLit}",
+                            "color": "{item|flags.system.rulesSelections.iivlarWeavingLit}",
                             "dim": 10,
                             "luminosity": 0.15
                         }
@@ -1120,7 +1120,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1132,7 +1132,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -2612,13 +2612,13 @@
             "enabled": true,
             "subject": {
                 "scale": 2,
-                "texture": "systems/pf2e/icons/iconics/GrimmyrSubject.webp"
+                "texture": "systems/pf2e/icons/iconics/subjects/grimmyr.webp"
             }
         },
         "texture": {
             "scaleX": 2,
             "scaleY": 2,
-            "src": "systems/pf2e/icons/iconics/Grimmyr.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/grimmyr.webp"
         }
     },
     "system": {

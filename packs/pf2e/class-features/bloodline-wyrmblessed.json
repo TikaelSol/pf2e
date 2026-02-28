@@ -198,7 +198,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "feature:bloodline:wyrmblessed:{item|flags.pf2e.rulesSelections.dragonBloodline.slug}"
+                "option": "feature:bloodline:wyrmblessed:{item|flags.system.rulesSelections.dragonBloodline.slug}"
             },
             {
                 "itemType": "spell",

@@ -41,7 +41,7 @@
                     "item:id:{item|id}"
                 ],
                 "property": "traits",
-                "value": "{actor|flags.pf2e.mesmerizingGaze}"
+                "value": "{actor|flags.system.mesmerizingGaze}"
             }
         ],
         "traits": {

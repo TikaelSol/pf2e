@@ -2192,7 +2192,7 @@
                     },
                     {
                         "key": "FlatModifier",
-                        "selector": "{item|flags.pf2e.rulesSelections.entertainersCinctureSkill}",
+                        "selector": "{item|flags.system.rulesSelections.entertainersCinctureSkill}",
                         "type": "item",
                         "value": 2
                     }

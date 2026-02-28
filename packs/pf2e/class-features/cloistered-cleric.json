@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.cleric",
+                "path": "flags.system.cleric",
                 "value": {
                     "fifthDoctrine": "Compendium.pf2e.classfeatures.Item.Fifth Doctrine (Cloistered Cleric)",
                     "finalDoctrine": "Compendium.pf2e.classfeatures.Item.Final Doctrine (Cloistered Cleric)",

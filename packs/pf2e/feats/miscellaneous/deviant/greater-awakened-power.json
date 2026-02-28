@@ -28,7 +28,7 @@
         },
         "rules": [
             {
-                "choices": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "choices": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "flag": "greaterAwakenedPower",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.Prompt",

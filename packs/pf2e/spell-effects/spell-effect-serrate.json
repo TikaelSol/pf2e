@@ -37,7 +37,7 @@
                 "diceNumber": "ceil(@item.level/2)",
                 "dieSize": "d4",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.serrateWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.serrateWeapon}-damage"
             }
         ],
         "start": {

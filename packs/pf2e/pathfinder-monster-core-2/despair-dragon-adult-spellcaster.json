@@ -2270,7 +2270,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>60 feet @Check[will|dc:33]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>60 feet. @Check[will|dc:33|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "ORC",
@@ -2402,6 +2402,9 @@
         }
     ],
     "name": "Despair Dragon (Adult, Spellcaster)",
+    "prototypeToken": {
+        "name": "Despair Dragon (Adult)"
+    },
     "system": {
         "abilities": {
             "cha": {

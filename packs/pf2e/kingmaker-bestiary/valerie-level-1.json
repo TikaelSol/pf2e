@@ -53,7 +53,7 @@
                         "flag": "versatileHeritage",
                         "grantedId": "LF7YEcDsf9yvX54m",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-heritage",
@@ -1225,7 +1225,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {

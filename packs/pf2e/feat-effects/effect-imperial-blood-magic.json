@@ -37,7 +37,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.defense}",
+                "selector": "{item|flags.system.rulesSelections.defense}",
                 "type": "status",
                 "value": 1
             }

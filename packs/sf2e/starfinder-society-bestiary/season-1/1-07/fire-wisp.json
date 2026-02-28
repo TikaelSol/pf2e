@@ -259,16 +259,16 @@
         "attributes": {
             "ac": {
                 "details": "",
-                "value": 15
+                "value": 16
             },
             "allSaves": {
                 "value": ""
             },
             "hp": {
                 "details": "",
-                "max": 15,
+                "max": 18,
                 "temp": 0,
-                "value": 15
+                "value": 18
             },
             "immunities": [
                 {

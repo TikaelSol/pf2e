@@ -43,7 +43,7 @@
                     "success",
                     "criticalSuccess"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.save}",
+                "selector": "{item|flags.system.rulesSelections.save}",
                 "text": "{item|description}",
                 "title": "{item|name}"
             }

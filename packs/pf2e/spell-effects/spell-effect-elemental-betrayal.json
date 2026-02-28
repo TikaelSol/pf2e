@@ -54,7 +54,7 @@
             },
             {
                 "key": "Weakness",
-                "type": "{item|flags.pf2e.rulesSelections.elementalBetrayal}",
+                "type": "{item|flags.system.rulesSelections.elementalBetrayal}",
                 "value": "ceil(@item.level/2)+1"
             }
         ],

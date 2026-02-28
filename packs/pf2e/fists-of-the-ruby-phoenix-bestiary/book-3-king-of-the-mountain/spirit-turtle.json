@@ -1086,7 +1086,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.environmentalBalance}",
+                        "damageType": "{item|flags.system.rulesSelections.environmentalBalance}",
                         "diceNumber": 2,
                         "dieSize": "d6",
                         "key": "DamageDice",
@@ -1102,7 +1102,7 @@
                         "selectors": [
                             "unbalancing-stomp-inline-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.environmentalBalance}"
+                        "value": "{item|flags.system.rulesSelections.environmentalBalance}"
                     }
                 ],
                 "slug": null,

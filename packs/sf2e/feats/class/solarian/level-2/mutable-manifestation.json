@@ -60,7 +60,7 @@
                     "mutable-manifestation"
                 ],
                 "property": "damage-type",
-                "value": "{item|flags.sf2e.rulesSelections.mutableManifestation}"
+                "value": "{item|flags.system.rulesSelections.mutableManifestation}"
             }
         ],
         "subfeatures": {

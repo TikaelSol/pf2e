@@ -48,7 +48,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.bombersEyeElixir",
+                "path": "flags.system.bombersEyeElixir",
                 "predicate": [
                     "bombers-eye-elixir:bombers-eye-elixir-lesser"
                 ],
@@ -57,7 +57,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.bombersEyeElixir",
+                "path": "flags.system.bombersEyeElixir",
                 "predicate": [
                     "bombers-eye-elixir:bombers-eye-elixir-greater"
                 ],

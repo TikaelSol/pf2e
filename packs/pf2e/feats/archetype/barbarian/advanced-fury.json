@@ -34,7 +34,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.barbarian.archetypeFeatCount",
+                "path": "flags.system.barbarian.archetypeFeatCount",
                 "value": 1
             }
         ],

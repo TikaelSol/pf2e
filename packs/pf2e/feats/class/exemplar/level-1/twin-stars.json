@@ -27,7 +27,7 @@
         },
         "rules": [
             {
-                "choices": "flags.pf2e.exemplar.ikons",
+                "choices": "flags.system.exemplar.ikons",
                 "flag": "ikon",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Exemplar.Ikon.Prompt"
@@ -43,7 +43,7 @@
                 "mode": "add",
                 "predicate": [
                     "item:usage:hands:1",
-                    "item:tag:physical-ikon:{item|flags.pf2e.rulesSelections.ikon}",
+                    "item:tag:physical-ikon:{item|flags.system.rulesSelections.ikon}",
                     "twin-stars"
                 ],
                 "property": "traits",

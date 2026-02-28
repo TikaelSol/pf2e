@@ -36,8 +36,8 @@
                     "item:magical",
                     {
                         "or": [
-                            "item:trait:{actor|flags.pf2e.dragonblood.tradition}",
-                            "spellcasting:{actor|flags.pf2e.dragonblood.tradition}"
+                            "item:trait:{actor|flags.system.dragonblood.tradition}",
+                            "spellcasting:{actor|flags.system.dragonblood.tradition}"
                         ]
                     }
                 ],

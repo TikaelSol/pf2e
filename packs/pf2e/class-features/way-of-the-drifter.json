@@ -48,13 +48,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.gunslinger.slingersReload",
+                "path": "flags.system.gunslinger.slingersReload",
                 "value": "Compendium.pf2e.actionspf2e.Item.Reloading Strike"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.gunslinger.initialDeed",
+                "path": "flags.system.gunslinger.initialDeed",
                 "value": "Compendium.pf2e.actionspf2e.Item.Into the Fray"
             }
         ],

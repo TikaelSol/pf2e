@@ -39,8 +39,8 @@
                 "predicate": [
                     {
                         "or": [
-                            "item:trait:{item|origin.flags.pf2e.exemplar.peltOfTheBeastDamage}",
-                            "origin:trait:{item|origin.flags.pf2e.exemplar.peltOfTheBeastDamage}"
+                            "item:trait:{item|origin.flags.system.exemplar.peltOfTheBeastDamage}",
+                            "origin:trait:{item|origin.flags.system.exemplar.peltOfTheBeastDamage}"
                         ]
                     }
                 ],

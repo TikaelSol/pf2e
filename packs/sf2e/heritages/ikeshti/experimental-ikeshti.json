@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.sf2e.rulesSelections.augmentation}"
+                "uuid": "{item|flags.system.rulesSelections.augmentation}"
             }
         ],
         "traits": {

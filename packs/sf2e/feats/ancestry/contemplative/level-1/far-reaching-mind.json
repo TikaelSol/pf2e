@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.contemplative.vagueThoughtsenseRange",
+                "path": "flags.system.contemplative.vagueThoughtsenseRange",
                 "value": 10
             },
             {

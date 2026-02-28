@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.thaumaturge.adeptChoices",
+                "path": "flags.system.thaumaturge.adeptChoices",
                 "priority": 10,
                 "value": []
             },
@@ -45,7 +45,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.implement}"
+                "uuid": "{item|flags.system.rulesSelections.implement}"
             }
         ],
         "traits": {

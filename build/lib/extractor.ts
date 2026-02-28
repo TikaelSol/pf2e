@@ -145,7 +145,8 @@ class PackExtractor {
         console.log(`Extracting pack: ${packDirectory} (Presorting: ${this.disablePresort ? "Disabled" : "Enabled"})`);
         const outPath = path.resolve(this.tempDataPath, packDirectory);
 
-        const db = await LevelDatabase.connect(filePath, { packName: packDirectory, systemId: this.systemId });
+        const manifest = this.systemId === "pf2e" ? systemPF2eJSON : systemSF2eJSON;
+        const db = await LevelDatabase.connect(filePath, { packName: packDirectory, manifest });
         const { packSources, folders } = await db.getEntries();
 
         // Prepare subfolder data if it exists or if its needed to prevent git from deleting the folder
@@ -464,11 +465,9 @@ class PackExtractor {
                         } else if (docSource.prototypeToken) {
                             const { name, ring, texture } = docSource.prototypeToken;
                             const prototypeToken: DeepPartial<foundry.data.PrototypeTokenSource> = { name };
-                            // Iconics have special tokens
-                            if (docSource.img?.includes("iconics")) {
-                                prototypeToken.texture = {
-                                    src: docSource.img.replace("Full", "") as ImageFilePath,
-                                };
+                            // Iconics may have tokens
+                            if (texture?.src?.includes("iconics")) {
+                                prototypeToken.texture = { src: texture.src };
                                 const scale = texture?.scaleX ?? 1;
                                 if (scale !== 1) {
                                     prototypeToken.texture.scaleX = scale;

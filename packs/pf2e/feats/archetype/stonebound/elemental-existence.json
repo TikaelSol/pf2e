@@ -59,12 +59,12 @@
             {
                 "allowDuplicate": false,
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.elementalExistence}"
+                "uuid": "{item|flags.system.rulesSelections.elementalExistence}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.stoneboundArchetype.featCount",
+                "path": "flags.system.stoneboundArchetype.featCount",
                 "value": 1
             }
         ],

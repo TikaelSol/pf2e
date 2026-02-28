@@ -27,7 +27,7 @@
                 "mode": "subtract",
                 "selector": "ac",
                 "slug": "cover",
-                "value": "@item.origin.flags.sf2e.operative.aimCoverReduction"
+                "value": "@item.origin.flags.system.operative.aimCoverReduction"
             },
             {
                 "key": "AdjustModifier",

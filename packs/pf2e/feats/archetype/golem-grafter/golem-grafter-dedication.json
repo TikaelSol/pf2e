@@ -38,7 +38,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.golemGrafter.featCount",
+                "path": "flags.system.golemGrafter.featCount",
                 "value": 1
             },
             {
@@ -47,7 +47,7 @@
                 ],
                 "key": "Resistance",
                 "type": "physical",
-                "value": "@actor.flags.pf2e.golemGrafter.featCount"
+                "value": "@actor.flags.system.golemGrafter.featCount"
             }
         ],
         "traits": {

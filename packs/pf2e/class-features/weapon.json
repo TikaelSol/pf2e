@@ -56,14 +56,14 @@
                 "flag": "weaponImplement",
                 "key": "GrantItem",
                 "track": true,
-                "uuid": "{item|flags.pf2e.rulesSelections.weaponImplement}"
+                "uuid": "{item|flags.system.rulesSelections.weaponImplement}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.thaumaturge.weaponImplement",
+                "path": "flags.system.thaumaturge.weaponImplement",
                 "priority": 5,
-                "value": "{item|flags.pf2e.itemGrants.weaponImplement.id}"
+                "value": "{item|flags.system.itemGrants.weaponImplement.id}"
             },
             {
                 "key": "RollOption",
@@ -80,7 +80,7 @@
                 ]
             },
             {
-                "itemId": "{item|flags.pf2e.itemGrants.weaponImplement.id}",
+                "itemId": "{item|flags.system.itemGrants.weaponImplement.id}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "description",
@@ -94,7 +94,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.thaumaturge.initiateBenefit",
+                "path": "flags.system.thaumaturge.initiateBenefit",
                 "predicate": [
                     "feat:thaumaturge-dedication"
                 ],
@@ -110,7 +110,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.thaumaturge.adeptChoices",
+                "path": "flags.system.thaumaturge.adeptChoices",
                 "predicate": [
                     "class:thaumaturge"
                 ],

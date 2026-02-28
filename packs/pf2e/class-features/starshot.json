@@ -41,7 +41,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.exemplar.ikons",
+                "path": "flags.system.exemplar.ikons",
                 "value": {
                     "label": "PF2E.SpecificRule.Exemplar.Ikon.Starshot.Label",
                     "predicate": [
@@ -96,7 +96,7 @@
                 "predicate": [
                     "starshot-origin:granted"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.grantedIkon}"
+                "uuid": "{item|flags.system.rulesSelections.grantedIkon}"
             },
             {
                 "adjustName": false,
@@ -128,7 +128,7 @@
                             {
                                 "and": [
                                     "starshot-origin:existing",
-                                    "item:id:{item|flags.pf2e.rulesSelections.existingIkon}"
+                                    "item:id:{item|flags.system.rulesSelections.existingIkon}"
                                 ]
                             },
                             {
@@ -153,7 +153,7 @@
                             {
                                 "and": [
                                     "starshot-origin:existing",
-                                    "item:id:{item|flags.pf2e.rulesSelections.existingIkon}"
+                                    "item:id:{item|flags.system.rulesSelections.existingIkon}"
                                 ]
                             },
                             {

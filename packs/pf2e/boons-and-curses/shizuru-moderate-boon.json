@@ -39,7 +39,7 @@
                 "toggleable": true
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.shizuruModerateBoon}",
+                "damageType": "{item|flags.system.rulesSelections.shizuruModerateBoon}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",

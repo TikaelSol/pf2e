@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.championDedicationCount",
+                "path": "flags.system.championDedicationCount",
                 "value": 1
             },
             {
@@ -57,7 +57,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicDevotion}"
+                "uuid": "{item|flags.system.rulesSelections.basicDevotion}"
             }
         ],
         "traits": {

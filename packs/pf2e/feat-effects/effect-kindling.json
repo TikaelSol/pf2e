@@ -76,7 +76,7 @@
                 ],
                 "selector": "spell-damage",
                 "type": "status",
-                "value": "2*@item.flags.pf2e.rulesSelections.rank"
+                "value": "2*@item.flags.system.rulesSelections.rank"
             }
         ],
         "start": {

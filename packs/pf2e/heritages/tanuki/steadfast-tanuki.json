@@ -34,7 +34,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.steadfastTanuki}"
+                "uuid": "{item|flags.system.rulesSelections.steadfastTanuki}"
             }
         ],
         "traits": {

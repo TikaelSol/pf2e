@@ -54,7 +54,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicSynergy}"
+                "uuid": "{item|flags.system.rulesSelections.basicSynergy}"
             }
         ],
         "traits": {

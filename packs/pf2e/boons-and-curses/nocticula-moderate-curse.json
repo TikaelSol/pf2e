@@ -99,7 +99,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.nocticulaSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.nocticulaSkill}.rank",
                 "value": 0
             }
         ],

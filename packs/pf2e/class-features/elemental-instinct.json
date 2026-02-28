@@ -128,7 +128,7 @@
                 "rollOption": "elemental-instinct:damage"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.elementalInstinctDamage}",
+                "damageType": "{item|flags.system.rulesSelections.elementalInstinctDamage}",
                 "key": "AdjustModifier",
                 "mode": "upgrade",
                 "predicate": [
@@ -182,7 +182,7 @@
                     "electricity",
                     "slashing"
                 ],
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "key": "Resistance",
@@ -200,7 +200,7 @@
                     "bludgeoning",
                     "piercing"
                 ],
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "key": "Resistance",
@@ -210,7 +210,7 @@
                     "elemental-instinct:fire"
                 ],
                 "type": "fire",
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "key": "Resistance",
@@ -223,7 +223,7 @@
                     "piercing",
                     "slashing"
                 ],
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "key": "Resistance",
@@ -236,11 +236,11 @@
                     "bludgeoning",
                     "cold"
                 ],
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "definition": [
-                    "origin:trait:{item|flags.pf2e.rulesSelections.elementalInstinctElement}"
+                    "origin:trait:{item|flags.system.rulesSelections.elementalInstinctElement}"
                 ],
                 "key": "Resistance",
                 "label": "PF2E.IWR.Custom.ElementalInstinct",
@@ -249,7 +249,7 @@
                     "feature:raging-resistance"
                 ],
                 "type": "custom",
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             }
         ],
         "traits": {

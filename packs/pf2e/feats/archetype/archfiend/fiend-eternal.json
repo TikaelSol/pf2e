@@ -39,7 +39,7 @@
             },
             {
                 "key": "Immunity",
-                "type": "{actor|flags.pf2e.realmDamage}"
+                "type": "{actor|flags.system.realmDamage}"
             },
             {
                 "domain": "skill-check",

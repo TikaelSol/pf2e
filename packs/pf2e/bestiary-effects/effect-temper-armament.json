@@ -35,7 +35,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Item"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.temperArmament}",
+                "itemId": "{item|flags.system.rulesSelections.temperArmament}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
@@ -62,7 +62,7 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.temperArmament}-damage",
+                "selector": "{item|flags.system.rulesSelections.temperArmament}-damage",
                 "type": "circumstance",
                 "value": 1
             }

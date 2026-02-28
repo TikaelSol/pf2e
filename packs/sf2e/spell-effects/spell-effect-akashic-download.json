@@ -130,7 +130,7 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.sf2e.rulesSelections.skill}",
+                "selector": "{item|flags.system.rulesSelections.skill}",
                 "type": "status",
                 "value": 1
             },
@@ -149,7 +149,7 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.sf2e.rulesSelections.skill}",
+                "selector": "{item|flags.system.rulesSelections.skill}",
                 "type": "skill"
             }
         ],

@@ -48,21 +48,21 @@
                 "key": "ChoiceSet"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damage}",
+                "damageType": "{item|flags.system.rulesSelections.damage}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
                 "selector": "holy-greatsword-damage"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damage}",
+                "damageType": "{item|flags.system.rulesSelections.damage}",
                 "diceNumber": 2,
                 "dieSize": "d6",
                 "key": "DamageDice",
                 "selector": "light-ray-damage"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damage}",
+                "damageType": "{item|flags.system.rulesSelections.damage}",
                 "key": "FlatModifier",
                 "selector": "light-ray-damage",
                 "value": 6
@@ -96,7 +96,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.resistance}",
+                "type": "{item|flags.system.rulesSelections.resistance}",
                 "value": 15
             }
         ],

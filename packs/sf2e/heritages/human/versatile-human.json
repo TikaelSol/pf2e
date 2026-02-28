@@ -33,7 +33,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.sf2e.rulesSelections.versatileHeritage}"
+                "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
             }
         ],
         "traits": {

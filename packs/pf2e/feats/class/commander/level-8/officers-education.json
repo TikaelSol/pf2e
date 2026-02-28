@@ -41,7 +41,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.firstTrainedSkill}",
+                "path": "system.skills.{item|flags.system.rulesSelections.firstTrainedSkill}",
                 "value": 1
             },
             {
@@ -58,7 +58,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.secondTrainedSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.secondTrainedSkill}.rank",
                 "value": 1
             },
             {
@@ -75,7 +75,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.expertSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.expertSkill}.rank",
                 "value": 2
             },
             {
@@ -97,7 +97,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                "uuid": "{item|flags.system.rulesSelections.feat}"
             }
         ],
         "subfeatures": {

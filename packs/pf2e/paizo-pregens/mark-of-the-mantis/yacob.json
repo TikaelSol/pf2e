@@ -103,7 +103,7 @@
                     {
                         "flag": "fleet",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-heritage",
@@ -367,7 +367,7 @@
                     {
                         "flag": "dragonStance",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -807,7 +807,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -819,7 +819,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],

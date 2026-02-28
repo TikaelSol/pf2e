@@ -29,7 +29,7 @@
                     "damage"
                 ],
                 "type": "status",
-                "value": "@item.origin.flags.pf2e.hearteningAuraAttackDamage"
+                "value": "@item.origin.flags.system.hearteningAuraAttackDamage"
             },
             {
                 "key": "FastHealing",
@@ -37,7 +37,7 @@
                     "binding-oath:origin:signature:{item|origin.signature}"
                 ],
                 "type": "fast-healing",
-                "value": "@item.origin.flags.pf2e.hearteningAuraFastHealing"
+                "value": "@item.origin.flags.system.hearteningAuraFastHealing"
             }
         ],
         "start": {

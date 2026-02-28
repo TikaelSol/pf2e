@@ -117,21 +117,21 @@
                 "key": "FlatModifier",
                 "predicate": [
                     "emblazon-energy:item:shield",
-                    "item:damage:type:{item|flags.pf2e.rulesSelections.damage}"
+                    "item:damage:type:{item|flags.system.rulesSelections.damage}"
                 ],
                 "selector": "saving-throw",
                 "type": "circumstance",
                 "value": "@actor.heldShield.acBonus"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damage}",
+                "damageType": "{item|flags.system.rulesSelections.damage}",
                 "diceNumber": 1,
-                "dieSize": "{item|flags.pf2e.rulesSelections.dieSize}",
+                "dieSize": "{item|flags.system.rulesSelections.dieSize}",
                 "key": "DamageDice",
                 "predicate": [
                     "emblazon-energy:item:weapon"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

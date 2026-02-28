@@ -1,7 +1,7 @@
 {
     "_id": "XI1j0hr3An6W5gAe",
     "folder": "xl1tFpbdYGCP0bjK",
-    "img": "systems/pf2e/icons/iconics/EzrenFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/ezren.webp",
     "items": [
         {
             "_id": "J20vhrflAsamCq4H",
@@ -1511,7 +1511,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],
@@ -2092,7 +2092,7 @@
                     {
                         "flag": "naturalAmbition",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.ancestralParagon}"
+                        "uuid": "{item|flags.system.rulesSelections.ancestralParagon}"
                     }
                 ],
                 "slug": "ancestral-paragon",
@@ -2244,7 +2244,7 @@
                     {
                         "flag": "counterspellPrepared",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -2412,7 +2412,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skillOne}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skillOne}.rank",
                         "value": 1
                     },
                     {
@@ -2538,7 +2538,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skillTwo}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skillTwo}.rank",
                         "value": 1
                     }
                 ],
@@ -5389,7 +5389,7 @@
                     {
                         "flag": "experimentalSpellshaping",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneThesis}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneThesis}"
                     }
                 ],
                 "slug": "arcane-thesis",
@@ -5459,7 +5459,7 @@
                     {
                         "flag": "schoolOfUnifiedMagicalTheory",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneSchool}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneSchool}"
                     }
                 ],
                 "slug": "arcane-school",
@@ -5641,7 +5641,7 @@
                     {
                         "flag": "reachSpell",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "experimental-spellshaping",
@@ -5807,7 +5807,7 @@
                     {
                         "flag": "widenSpell",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "school-of-unified-magical-theory",
@@ -6154,8 +6154,15 @@
     "name": "Ezren (Level 5)",
     "prototypeToken": {
         "name": "Ezren",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 1,
+                "texture": "systems/pf2e/icons/iconics/subjects/ezren.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Ezren.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/ezren.webp"
         }
     },
     "system": {

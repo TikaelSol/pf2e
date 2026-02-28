@@ -335,7 +335,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": "@actor.flags.pf2e.bioluminescentMaelstrom.radius",
+                        "radius": "@actor.flags.system.bioluminescentMaelstrom.radius",
                         "traits": [
                             "primal",
                             "visual",
@@ -345,7 +345,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.bioluminescentMaelstrom.radius",
+                        "path": "flags.system.bioluminescentMaelstrom.radius",
                         "priority": 1,
                         "value": 30
                     }

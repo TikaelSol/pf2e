@@ -113,7 +113,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.drainLifeTempHP",
+                        "path": "flags.system.drainLifeTempHP",
                         "value": 3
                     }
                 ],
@@ -198,7 +198,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.rageTempHP",
+                        "path": "flags.system.rageTempHP",
                         "value": 8
                     }
                 ],

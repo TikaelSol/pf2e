@@ -2042,7 +2042,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.chooseWeaknessDamage}",
+                        "damageType": "{item|flags.system.rulesSelections.chooseWeaknessDamage}",
                         "diceNumber": 1,
                         "dieSize": "d6",
                         "key": "DamageDice",
@@ -2052,7 +2052,7 @@
                         "selector": "holy-greatsword-damage"
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.chooseWeaknessDamage}",
+                        "damageType": "{item|flags.system.rulesSelections.chooseWeaknessDamage}",
                         "diceNumber": 2,
                         "dieSize": "d6",
                         "key": "DamageDice",
@@ -2062,7 +2062,7 @@
                         "selector": "light-ray-damage"
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.chooseWeaknessDamage}",
+                        "damageType": "{item|flags.system.rulesSelections.chooseWeaknessDamage}",
                         "key": "FlatModifier",
                         "predicate": [
                             "choose-weakness-damage"
@@ -2075,7 +2075,7 @@
                         "predicate": [
                             "choose-weakness-resistance"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.chooseWeaknessResistance}",
+                        "type": "{item|flags.system.rulesSelections.chooseWeaknessResistance}",
                         "value": 15
                     },
                     {

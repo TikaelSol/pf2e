@@ -32,7 +32,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.arcaneCascade.damageType",
+                "path": "flags.system.arcaneCascade.damageType",
                 "priority": -100,
                 "value": "untyped"
             }

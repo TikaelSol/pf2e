@@ -78,12 +78,12 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.element.firstResistance}",
+                "type": "{item|flags.system.rulesSelections.element.firstResistance}",
                 "value": "5 * floor((@item.level - 2) / 2)"
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.element.secondResistance}",
+                "type": "{item|flags.system.rulesSelections.element.secondResistance}",
                 "value": "5 * floor((@item.level - 2) / 2)"
             }
         ],

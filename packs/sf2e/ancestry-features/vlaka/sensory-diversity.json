@@ -58,7 +58,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "sensory-diversity:{item|flags.sf2e.rulesSelections.sensoryDiversity}"
+                "option": "sensory-diversity:{item|flags.system.rulesSelections.sensoryDiversity}"
             },
             {
                 "acuity": "precise",

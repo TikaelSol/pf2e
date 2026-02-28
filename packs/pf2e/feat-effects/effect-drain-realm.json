@@ -22,7 +22,7 @@
         },
         "rules": [
             {
-                "damageType": "{actor|flags.pf2e.realmDamage}",
+                "damageType": "{actor|flags.system.realmDamage}",
                 "diceNumber": 1,
                 "dieSize": "d8",
                 "key": "DamageDice",

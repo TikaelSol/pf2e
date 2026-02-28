@@ -35,7 +35,7 @@
                 "toggleable": true
             },
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
@@ -45,7 +45,7 @@
                 "value": "concealable"
             },
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

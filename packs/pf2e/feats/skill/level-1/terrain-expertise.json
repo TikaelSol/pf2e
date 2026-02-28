@@ -77,7 +77,7 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "terrain:{item|flags.pf2e.rulesSelections.terrain}"
+                    "terrain:{item|flags.system.rulesSelections.terrain}"
                 ],
                 "selector": "survival",
                 "type": "circumstance",

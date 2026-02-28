@@ -47,7 +47,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.contemplative.shieldingArroganceDiceCount",
+                "path": "flags.system.contemplative.shieldingArroganceDiceCount",
                 "value": "floor((@actor.level -1)/4)"
             }
         ],

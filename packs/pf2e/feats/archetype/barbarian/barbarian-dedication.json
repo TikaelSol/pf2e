@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.barbarian.archetypeFeatCount",
+                "path": "flags.system.barbarian.archetypeFeatCount",
                 "value": 1
             },
             {
@@ -55,7 +55,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.instinct}"
+                "uuid": "{item|flags.system.rulesSelections.instinct}"
             },
             {
                 "key": "GrantItem",

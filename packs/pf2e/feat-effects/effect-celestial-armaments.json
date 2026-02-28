@@ -55,12 +55,12 @@
                 "diceNumber": 1,
                 "dieSize": "d8",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "key": "CriticalSpecialization",
                 "predicate": [
-                    "item:id:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:id:{item|flags.system.rulesSelections.weapon}"
                 ]
             },
             {
@@ -68,7 +68,7 @@
                 "outcome": [
                     "criticalSuccess"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack",
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack",
                 "text": "PF2E.SpecificRule.AscendedCelestial.CelestialArmaments.Note",
                 "title": "{item|name}"
             }

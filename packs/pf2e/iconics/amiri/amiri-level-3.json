@@ -1,7 +1,7 @@
 {
     "_id": "aEjJRh8Ru91DfVVN",
     "folder": "1WXM4QjXtoKLanZp",
-    "img": "systems/pf2e/icons/iconics/AmiriFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/amiri.webp",
     "items": [
         {
             "_id": "ERgsYE6JqjO71Dgd",
@@ -79,7 +79,7 @@
                     {
                         "flag": "diehard",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-heritage",
@@ -1652,7 +1652,7 @@
                     {
                         "flag": "ragingIntimidation",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -1922,7 +1922,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1934,7 +1934,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -2315,7 +2315,7 @@
                         "allowDuplicate": false,
                         "flag": "giantInstinct",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.instinct}"
+                        "uuid": "{item|flags.system.rulesSelections.instinct}"
                     }
                 ],
                 "slug": "instinct",
@@ -2457,7 +2457,7 @@
                             "self:effect:rage",
                             "feature:raging-resistance"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.energy}",
+                        "type": "{item|flags.system.rulesSelections.energy}",
                         "value": "@actor.abilities.con.mod+3"
                     },
                     {
@@ -3065,8 +3065,17 @@
     "name": "Amiri (Level 3)",
     "prototypeToken": {
         "name": "Amiri",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 2,
+                "texture": "systems/pf2e/icons/iconics/subjects/amiri.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Amiri.webp"
+            "scaleX": 2,
+            "scaleY": 2,
+            "src": "systems/pf2e/icons/iconics/tokens/amiri.webp"
         }
     },
     "system": {

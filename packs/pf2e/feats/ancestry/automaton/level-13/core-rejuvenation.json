@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.automaton.enhancements.greater",
+                "path": "flags.system.automaton.enhancements.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.Automaton.EnhanceableFeats.CoreRejuvenation",
                     "value": "core-rejuvenation"

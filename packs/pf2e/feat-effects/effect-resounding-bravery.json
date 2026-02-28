@@ -41,11 +41,11 @@
                 "key": "FlatModifier",
                 "selector": "saving-throw",
                 "type": "status",
-                "value": "@item.flags.pf2e.rulesSelections.bonus"
+                "value": "@item.flags.system.rulesSelections.bonus"
             },
             {
                 "key": "TempHP",
-                "value": "floor((@item.flags.pf2e.rulesSelections.bonus * @actor.level) / 2)"
+                "value": "floor((@item.flags.system.rulesSelections.bonus * @actor.level) / 2)"
             }
         ],
         "start": {

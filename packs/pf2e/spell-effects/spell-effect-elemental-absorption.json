@@ -55,7 +55,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.elementalAbsorption}",
+                "type": "{item|flags.system.rulesSelections.elementalAbsorption}",
                 "value": "5*floor(@item.level/3)"
             },
             {

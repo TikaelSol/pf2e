@@ -67,18 +67,18 @@
             {
                 "key": "DamageDice",
                 "override": {
-                    "damageType": "{item|flags.pf2e.rulesSelections.energy}"
+                    "damageType": "{item|flags.system.rulesSelections.energy}"
                 },
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "category": "persistent",
                 "critical": true,
-                "damageType": "{item|flags.pf2e.rulesSelections.energy}",
+                "damageType": "{item|flags.system.rulesSelections.energy}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

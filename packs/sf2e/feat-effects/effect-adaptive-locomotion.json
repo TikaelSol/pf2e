@@ -39,7 +39,7 @@
             },
             {
                 "key": "BaseSpeed",
-                "selector": "{item|flags.sf2e.rulesSelections.adaptation}",
+                "selector": "{item|flags.system.rulesSelections.adaptation}",
                 "value": 20
             }
         ],

@@ -51,12 +51,12 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.sf2e.rulesSelections.basicStellarAttunement}"
+                "uuid": "{item|flags.system.rulesSelections.basicStellarAttunement}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.solarian.archetypeFeatCount",
+                "path": "flags.system.solarian.archetypeFeatCount",
                 "value": 1
             }
         ],

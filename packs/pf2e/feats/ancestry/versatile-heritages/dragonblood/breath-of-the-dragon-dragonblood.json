@@ -31,15 +31,15 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
-                "value": "{actor|flags.pf2e.dragonblood.tradition}"
+                "value": "{actor|flags.system.dragonblood.tradition}"
             },
             {
                 "key": "RollOption",
-                "option": "breath-of-the-dragon:{actor|flags.pf2e.dragonblood.shape}"
+                "option": "breath-of-the-dragon:{actor|flags.system.dragonblood.shape}"
             },
             {
                 "key": "RollOption",
-                "option": "breath-of-the-dragon:{actor|flags.pf2e.dragonblood.save}"
+                "option": "breath-of-the-dragon:{actor|flags.system.dragonblood.save}"
             },
             {
                 "itemId": "{item|id}",

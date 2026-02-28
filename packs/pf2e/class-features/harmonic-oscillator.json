@@ -28,7 +28,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}"
+                    "armor:id:{actor|flags.system.innovationId}"
                 ],
                 "type": [
                     "force",
@@ -39,7 +39,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     {
                         "or": [
                             "self:effect:overdrive-success",

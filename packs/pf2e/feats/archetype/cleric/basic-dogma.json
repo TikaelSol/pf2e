@@ -51,7 +51,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicDogma}"
+                "uuid": "{item|flags.system.rulesSelections.basicDogma}"
             }
         ],
         "traits": {

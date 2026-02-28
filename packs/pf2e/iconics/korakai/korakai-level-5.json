@@ -1,7 +1,7 @@
 {
     "_id": "zLOVCrRwZhL46vLI",
     "folder": "bdgRkbHSsYAkipJs",
-    "img": "systems/pf2e/icons/iconics/KorakaiFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/korakai.webp",
     "items": [
         {
             "_id": "lqgEM7WoDD5ci28s",
@@ -3760,13 +3760,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolPenalty",
+                        "path": "flags.system.shiningSymbolPenalty",
                         "value": -1
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolWeakness",
+                        "path": "flags.system.shiningSymbolWeakness",
                         "value": 0
                     }
                 ],
@@ -4419,7 +4419,7 @@
                     {
                         "flag": "tempest",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.mystery}"
+                        "uuid": "{item|flags.system.rulesSelections.mystery}"
                     }
                 ],
                 "slug": "mystery",
@@ -5002,7 +5002,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.tenguFamiliarSword",
+                        "path": "flags.system.tenguFamiliarSword",
                         "predicate": [
                             {
                                 "not": "self:effect:sword-practice"
@@ -5017,7 +5017,7 @@
                             {
                                 "or": [
                                     "item:trait:tengu",
-                                    "item:id:{actor|flags.pf2e.tenguFamiliarSword}"
+                                    "item:id:{actor|flags.system.tenguFamiliarSword}"
                                 ]
                             }
                         ],
@@ -5036,7 +5036,7 @@
                                     "item:base:khakkara",
                                     "item:base:temple-sword",
                                     "item:base:wakazashi",
-                                    "item:id:{actor|flags.pf2e.tenguFamiliarSword}"
+                                    "item:id:{actor|flags.system.tenguFamiliarSword}"
                                 ]
                             }
                         ],
@@ -5061,7 +5061,7 @@
                                     "item:base:khakkara",
                                     "item:base:temple-sword",
                                     "item:base:wakazashi",
-                                    "item:id:{actor|flags.pf2e.tenguFamiliarSword}"
+                                    "item:id:{actor|flags.system.tenguFamiliarSword}"
                                 ]
                             }
                         ]
@@ -5265,8 +5265,17 @@
     "name": "Korakai (Level 5)",
     "prototypeToken": {
         "name": "Korakai",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 2,
+                "texture": "systems/pf2e/icons/iconics/subjects/korakai.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Korakai.webp"
+            "scaleX": 2,
+            "scaleY": 2,
+            "src": "systems/pf2e/icons/iconics/tokens/korakai.webp"
         }
     },
     "system": {

@@ -96,7 +96,7 @@
                 ],
                 "selector": [
                     "saving-throw",
-                    "{item|flags.pf2e.rulesSelections.skill}"
+                    "{item|flags.system.rulesSelections.skill}"
                 ],
                 "type": "status",
                 "value": "ternary(gte(@item.level,8),3,ternary(gte(@item.level,4),2,1))"

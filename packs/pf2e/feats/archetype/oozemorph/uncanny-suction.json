@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.oozemorphDedicationCount",
+                "path": "flags.system.oozemorphDedicationCount",
                 "value": 1
             },
             {

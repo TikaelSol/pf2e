@@ -3583,7 +3583,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.siphonLife",
+                        "path": "flags.system.siphonLife",
                         "value": 4
                     }
                 ],
@@ -3745,6 +3745,9 @@
         }
     ],
     "name": "Resurrection Archdragon (Spellcaster)",
+    "prototypeToken": {
+        "name": "Resurrection Archdragon"
+    },
     "system": {
         "abilities": {
             "cha": {

@@ -38,7 +38,7 @@
                             "or": [
                                 {
                                     "and": [
-                                        "item:slug:{actor|flags.pf2e.dragonetHeritage}",
+                                        "item:slug:{actor|flags.system.dragonetHeritage}",
                                         "dragonet-heritage-determined"
                                     ]
                                 },
@@ -60,7 +60,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.heritage}"
+                "uuid": "{item|flags.system.rulesSelections.heritage}"
             }
         ],
         "subfeatures": {

@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.sf2e.dragonkin.heroicTempHp",
+                "path": "flags.system.dragonkin.heroicTempHp",
                 "value": "@actor.level * 2"
             }
         ],

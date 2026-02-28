@@ -172,7 +172,7 @@
                             "{item|id}-inline-damage",
                             "brutal-retaliation-inline-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.frenzyFleshwarp}"
+                        "value": "{item|flags.system.rulesSelections.frenzyFleshwarp}"
                     }
                 ],
                 "slug": null,

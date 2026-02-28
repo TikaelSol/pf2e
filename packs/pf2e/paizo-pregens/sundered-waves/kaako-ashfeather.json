@@ -598,7 +598,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -610,7 +610,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -836,7 +836,7 @@
                     {
                         "flag": "squawk",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.ancestralParagon}"
+                        "uuid": "{item|flags.system.rulesSelections.ancestralParagon}"
                     }
                 ],
                 "slug": "ancestral-paragon",
@@ -2753,7 +2753,7 @@
                     {
                         "flag": "thief",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.roguesRacket}"
+                        "uuid": "{item|flags.system.rulesSelections.roguesRacket}"
                     }
                 ],
                 "slug": "rogues-racket",
@@ -2801,7 +2801,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.sneakAttackDamage.number",
+                        "path": "flags.system.sneakAttackDamage.number",
                         "predicate": [
                             "class:rogue"
                         ],
@@ -2810,7 +2810,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.sneakAttackDamage.faces",
+                        "path": "flags.system.sneakAttackDamage.faces",
                         "predicate": [
                             "class:rogue"
                         ],
@@ -2818,8 +2818,8 @@
                     },
                     {
                         "category": "precision",
-                        "diceNumber": "@actor.flags.pf2e.sneakAttackDamage.number",
-                        "dieSize": "d{actor|flags.pf2e.sneakAttackDamage.faces}",
+                        "diceNumber": "@actor.flags.system.sneakAttackDamage.number",
+                        "dieSize": "d{actor|flags.system.sneakAttackDamage.faces}",
                         "key": "DamageDice",
                         "predicate": [
                             "target:condition:off-guard",

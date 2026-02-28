@@ -90,7 +90,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Item"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.item}",
+                "itemId": "{item|flags.system.rulesSelections.item}",
                 "key": "ItemAlteration",
                 "mode": "override",
                 "predicate": [
@@ -104,10 +104,10 @@
                     }
                 ],
                 "property": "material-type",
-                "value": "{item|flags.pf2e.rulesSelections.material}"
+                "value": "{item|flags.system.rulesSelections.material}"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.item}",
+                "itemId": "{item|flags.system.rulesSelections.item}",
                 "key": "ItemAlteration",
                 "mode": "override",
                 "predicate": [
@@ -123,7 +123,7 @@
                 "value": 1
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.item}",
+                "itemId": "{item|flags.system.rulesSelections.item}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [

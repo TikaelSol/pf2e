@@ -33,7 +33,7 @@
             {
                 "key": "BaseSpeed",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}"
+                    "armor:id:{actor|flags.system.innovationId}"
                 ],
                 "selector": "swim",
                 "value": "@actor.system.movement.speeds.land.value"

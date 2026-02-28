@@ -697,7 +697,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.ironCommand}",
+                        "damageType": "{item|flags.system.rulesSelections.ironCommand}",
                         "key": "FlatModifier",
                         "predicate": [
                             "iron-command"

@@ -70,7 +70,7 @@
                         "not": "deity"
                     }
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.deity}"
+                "uuid": "{item|flags.system.rulesSelections.deity}"
             },
             {
                 "fist": true,
@@ -82,7 +82,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.favoredWeaponRank",
+                "path": "flags.system.favoredWeaponRank",
                 "value": "@actor.system.proficiencies.attacks.simple.rank"
             },
             {

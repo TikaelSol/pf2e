@@ -56,7 +56,7 @@
                 "predicate": [
                     "class:kineticist"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.impulseOne}"
+                "uuid": "{item|flags.system.rulesSelections.impulseOne}"
             },
             {
                 "adjustName": false,
@@ -83,7 +83,7 @@
                     "kinetic-gate:initial:single-gate",
                     "kinetic-gate:first-element:air-gate"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.impulseTwo}"
+                "uuid": "{item|flags.system.rulesSelections.impulseTwo}"
             },
             {
                 "key": "RollOption",
@@ -93,7 +93,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elements",
+                "path": "flags.system.kineticist.elements",
                 "value": {
                     "label": "PF2E.TraitAir",
                     "value": "air"
@@ -110,7 +110,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.one",
+                "path": "flags.system.kineticist.gate.one",
                 "predicate": [
                     {
                         "or": [
@@ -124,7 +124,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.two",
+                "path": "flags.system.kineticist.gate.two",
                 "predicate": [
                     {
                         "or": [
@@ -138,7 +138,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.three",
+                "path": "flags.system.kineticist.gate.three",
                 "predicate": [
                     "parent:granter:slug:gates-threshold"
                 ],
@@ -147,7 +147,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.four",
+                "path": "flags.system.kineticist.gate.four",
                 "predicate": [
                     "parent:granter:slug:second-gates-threshold"
                 ],
@@ -156,7 +156,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.five",
+                "path": "flags.system.kineticist.gate.five",
                 "predicate": [
                     "parent:granter:slug:third-gates-threshold"
                 ],
@@ -165,7 +165,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.six",
+                "path": "flags.system.kineticist.gate.six",
                 "predicate": [
                     "parent:granter:slug:fourth-gates-threshold"
                 ],
@@ -284,7 +284,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.air",
+                "path": "flags.system.kineticist.elementalBlast.air",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     {
@@ -321,7 +321,7 @@
                     "junction:air:aura"
                 ],
                 "priority": 99,
-                "radius": "@actor.flags.pf2e.kineticist.auraRadius",
+                "radius": "@actor.flags.system.kineticist.auraRadius",
                 "slug": "kinetic-aura",
                 "traits": [
                     "primal"

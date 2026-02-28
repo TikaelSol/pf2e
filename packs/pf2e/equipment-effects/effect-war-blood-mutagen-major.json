@@ -34,7 +34,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.effectWarBloodMutagenMajor}-attack",
+                "selector": "{item|flags.system.rulesSelections.effectWarBloodMutagenMajor}-attack",
                 "type": "item",
                 "value": 4
             },

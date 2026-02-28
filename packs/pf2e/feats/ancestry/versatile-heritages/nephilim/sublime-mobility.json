@@ -43,7 +43,7 @@
             },
             {
                 "key": "BaseSpeed",
-                "selector": "{item|flags.pf2e.rulesSelections.sublimeMobility}",
+                "selector": "{item|flags.system.rulesSelections.sublimeMobility}",
                 "value": 10
             }
         ],

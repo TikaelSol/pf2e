@@ -82,7 +82,7 @@
                     },
                     {
                         "key": "Immunity",
-                        "type": "{item|flags.pf2e.rulesSelections.immunity}"
+                        "type": "{item|flags.system.rulesSelections.immunity}"
                     }
                 ],
                 "slug": null,

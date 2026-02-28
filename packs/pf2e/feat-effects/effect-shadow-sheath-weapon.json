@@ -60,7 +60,7 @@
                 "predicate": [
                     "divine-spark:shadow-sheath"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.shadowSheathWeapon}-damage",
+                "selector": "{item|flags.system.rulesSelections.shadowSheathWeapon}-damage",
                 "slug": "shadow-sheath-immanence-damage",
                 "tags": [
                     "exemplar"
@@ -73,26 +73,26 @@
                 "predicate": [
                     "target:condition:off-guard"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.shadowSheathWeapon}-damage",
+                "selector": "{item|flags.system.rulesSelections.shadowSheathWeapon}-damage",
                 "slug": "shadow-sheath-immanence-damage",
                 "value": 1.5
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.shadowSheathWeapon}",
+                "itemId": "{item|flags.system.rulesSelections.shadowSheathWeapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "other-tags",
                 "value": "physical-ikon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.shadowSheathWeapon}",
+                "itemId": "{item|flags.system.rulesSelections.shadowSheathWeapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "other-tags",
                 "value": "physical-ikon:shadow-sheath"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.shadowSheathWeapon}",
+                "itemId": "{item|flags.system.rulesSelections.shadowSheathWeapon}",
                 "key": "ItemAlteration",
                 "label": "PF2E.SpecificRule.Exemplar.Ikon.ShadowSheath.Label",
                 "mode": "add",
@@ -104,7 +104,7 @@
                 ]
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.shadowSheathWeapon}",
+                "itemId": "{item|flags.system.rulesSelections.shadowSheathWeapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

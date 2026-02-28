@@ -52,7 +52,7 @@
             },
             {
                 "key": "RollOption",
-                "option": "{item|flags.pf2e.rulesSelections.dynamo}"
+                "option": "{item|flags.system.rulesSelections.dynamo}"
             },
             {
                 "category": "unarmed",

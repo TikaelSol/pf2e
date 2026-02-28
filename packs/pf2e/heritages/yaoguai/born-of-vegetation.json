@@ -35,7 +35,7 @@
             },
             {
                 "add": [
-                    "{item|flags.pf2e.rulesSelections.trait}"
+                    "{item|flags.system.rulesSelections.trait}"
                 ],
                 "key": "ActorTraits"
             },

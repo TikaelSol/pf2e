@@ -23,7 +23,7 @@
         },
         "rules": [
             {
-                "damageType": "{actor|flags.pf2e.dragonblood.damage}",
+                "damageType": "{actor|flags.system.dragonblood.damage}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",

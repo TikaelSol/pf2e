@@ -70,7 +70,7 @@
                 "predicate": [
                     "harrow-chosen:true-match"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.save}",
+                "selector": "{item|flags.system.rulesSelections.save}",
                 "type": "circumstance",
                 "value": 1
             },
@@ -109,7 +109,7 @@
                 "predicate": [
                     "harrow-chosen:partial-match"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.resistance}",
+                "type": "{item|flags.system.rulesSelections.resistance}",
                 "value": "@actor.level"
             },
             {

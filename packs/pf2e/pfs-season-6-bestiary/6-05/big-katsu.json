@@ -317,7 +317,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.gluttonsFeast",
+                        "path": "flags.system.gluttonsFeast",
                         "value": 1
                     }
                 ],
@@ -358,7 +358,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.gluttonsFeast",
+                        "path": "flags.system.gluttonsFeast",
                         "predicate": [
                             "gluttons-rush"
                         ],

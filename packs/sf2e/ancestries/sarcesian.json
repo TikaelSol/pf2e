@@ -1,6 +1,6 @@
 {
     "_id": "i1fnTVBTRYSqFY2c",
-    "img": "systems/sf2e/icons/default-icons/ancestry.svg",
+    "img": "systems/sf2e/icons/ancestries/sarcesian.webp",
     "name": "Sarcesian",
     "system": {
         "additionalLanguages": {
@@ -48,6 +48,12 @@
                 "level": 1,
                 "name": "Energy Wings",
                 "uuid": "Compendium.sf2e.ancestry-features.Item.Energy Wings"
+            },
+            "nMNH8": {
+                "img": "systems/sf2e/icons/spells/vacuum.webp",
+                "level": 1,
+                "name": "Suspended Respiration",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Suspended Respiration"
             }
         },
         "languages": {

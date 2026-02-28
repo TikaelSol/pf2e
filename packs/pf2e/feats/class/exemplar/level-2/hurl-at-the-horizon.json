@@ -27,7 +27,7 @@
         },
         "rules": [
             {
-                "choices": "flags.pf2e.exemplar.ikons",
+                "choices": "flags.system.exemplar.ikons",
                 "flag": "ikon",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Exemplar.Ikon.Prompt"
@@ -37,8 +37,8 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:tag:physical-ikon:{item|flags.pf2e.rulesSelections.ikon}",
-                    "divine-spark:{item|flags.pf2e.rulesSelections.ikon}",
+                    "item:tag:physical-ikon:{item|flags.system.rulesSelections.ikon}",
+                    "divine-spark:{item|flags.system.rulesSelections.ikon}",
                     {
                         "not": "item:trait:thrown"
                     }
@@ -59,7 +59,7 @@
             {
                 "definition": [
                     "item:thrown",
-                    "item:tag:physical-ikon:{item|flags.pf2e.rulesSelections.ikon}",
+                    "item:tag:physical-ikon:{item|flags.system.rulesSelections.ikon}",
                     {
                         "not": "item:tag:thrown-from-hurl-at-the-horizon"
                     }
@@ -67,7 +67,7 @@
                 "key": "AdjustStrike",
                 "mode": "add",
                 "predicate": [
-                    "divine-spark:{item|flags.pf2e.rulesSelections.ikon}"
+                    "divine-spark:{item|flags.system.rulesSelections.ikon}"
                 ],
                 "property": "range-increment",
                 "value": 10

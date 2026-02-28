@@ -40,7 +40,7 @@
                 ],
                 "selector": "skill-check",
                 "slug": "follow-the-expert-circumstance",
-                "value": "@actor.flags.pf2e.followTheExpertProficiency+1"
+                "value": "@actor.flags.system.followTheExpertProficiency+1"
             }
         ],
         "traits": {

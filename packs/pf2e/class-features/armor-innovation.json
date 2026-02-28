@@ -58,14 +58,14 @@
                 "allowDuplicate": false,
                 "flag": "armorInnovation",
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.armorInnovation}"
+                "uuid": "{item|flags.system.rulesSelections.armorInnovation}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.innovationId",
+                "path": "flags.system.innovationId",
                 "priority": 5,
-                "value": "{item|flags.pf2e.itemGrants.armorInnovation.id}"
+                "value": "{item|flags.system.itemGrants.armorInnovation.id}"
             },
             {
                 "adjustName": false,
@@ -104,7 +104,7 @@
                 "allowDuplicate": false,
                 "flag": "initialModification",
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.initialModification}"
+                "uuid": "{item|flags.system.rulesSelections.initialModification}"
             }
         ],
         "traits": {

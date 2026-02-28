@@ -131,7 +131,7 @@
                     "melee-strike-damage"
                 ],
                 "slug": "arcane-cascade-extra-damage",
-                "value": "{item|flags.pf2e.rulesSelections.stanceArcaneCascade}"
+                "value": "{item|flags.system.rulesSelections.stanceArcaneCascade}"
             },
             {
                 "key": "AdjustModifier",
@@ -156,8 +156,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.arcaneCascade.damageType",
-                "value": "{item|flags.pf2e.rulesSelections.stanceArcaneCascade}"
+                "path": "flags.system.arcaneCascade.damageType",
+                "value": "{item|flags.system.rulesSelections.stanceArcaneCascade}"
             }
         ],
         "start": {

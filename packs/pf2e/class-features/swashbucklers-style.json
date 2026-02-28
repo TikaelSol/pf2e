@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.swashbucklersStyle}"
+                "uuid": "{item|flags.system.rulesSelections.swashbucklersStyle}"
             }
         ],
         "traits": {

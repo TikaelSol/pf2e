@@ -142,12 +142,12 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.jannsLightOne}",
+                "type": "{item|flags.system.rulesSelections.jannsLightOne}",
                 "value": 5
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.jannsLightTwo}",
+                "type": "{item|flags.system.rulesSelections.jannsLightTwo}",
                 "value": 5
             }
         ],

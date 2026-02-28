@@ -198,14 +198,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "priority": 19,
                         "value": 0
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "value": 1
                     }
                 ],
@@ -1748,7 +1748,7 @@
                     {
                         "flag": "scoundrel",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.roguesRacket}"
+                        "uuid": "{item|flags.system.rulesSelections.roguesRacket}"
                     }
                 ],
                 "slug": "rogues-racket",
@@ -1796,7 +1796,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.sneakAttackDamage.number",
+                        "path": "flags.system.sneakAttackDamage.number",
                         "predicate": [
                             "class:rogue"
                         ],
@@ -1805,7 +1805,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.sneakAttackDamage.faces",
+                        "path": "flags.system.sneakAttackDamage.faces",
                         "predicate": [
                             "class:rogue"
                         ],
@@ -1813,8 +1813,8 @@
                     },
                     {
                         "category": "precision",
-                        "diceNumber": "@actor.flags.pf2e.sneakAttackDamage.number",
-                        "dieSize": "d{actor|flags.pf2e.sneakAttackDamage.faces}",
+                        "diceNumber": "@actor.flags.system.sneakAttackDamage.number",
+                        "dieSize": "d{actor|flags.system.sneakAttackDamage.faces}",
                         "key": "DamageDice",
                         "predicate": [
                             "target:condition:off-guard",

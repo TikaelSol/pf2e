@@ -24,7 +24,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "value": {
                     "damageTypes": [
                         "bludgeoning",
@@ -37,7 +37,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:melee:agile"
                 ],
@@ -56,7 +56,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:melee:backswing"
                 ],
@@ -75,7 +75,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:melee:forceful"
                 ],
@@ -94,7 +94,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:melee:reach"
                 ],
@@ -113,7 +113,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:melee:sweep"
                 ],
@@ -132,7 +132,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:ranged:volley-30"
                 ],
@@ -154,7 +154,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:ranged:propulsive"
                 ],
@@ -176,7 +176,7 @@
                 "key": "ActiveEffectLike",
                 "merge": true,
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.infusion",
+                "path": "flags.system.kineticist.elementalBlast.infusion",
                 "predicate": [
                     "weapon-infusion:ranged:thrown"
                 ],

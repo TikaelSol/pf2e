@@ -303,14 +303,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "priority": 19,
                         "value": 0
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "value": 1
                     }
                 ],
@@ -2079,7 +2079,7 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.ringOfEnergyResistance}",
+                        "type": "{item|flags.system.rulesSelections.ringOfEnergyResistance}",
                         "value": 5
                     }
                 ],
@@ -2614,7 +2614,7 @@
                         "flag": "naturalAmbition",
                         "grantedId": "CmCTwhYRNTgqyyr9",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -3253,14 +3253,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "priority": 19,
                         "value": 0
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.multilingualTaken",
+                        "path": "flags.system.multilingualTaken",
                         "value": 1
                     }
                 ],
@@ -4842,7 +4842,7 @@
                         "allowDuplicate": false,
                         "flag": "sarenrae",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.deity}"
+                        "uuid": "{item|flags.system.rulesSelections.deity}"
                     },
                     {
                         "fist": true,
@@ -4855,7 +4855,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "flags.pf2e.favoredWeaponRank",
+                        "path": "flags.system.favoredWeaponRank",
                         "predicate": [
                             "class:cleric"
                         ],
@@ -4940,7 +4940,7 @@
                     {
                         "flag": "cloisteredCleric",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.doctrine}"
+                        "uuid": "{item|flags.system.rulesSelections.doctrine}"
                     }
                 ],
                 "slug": "doctrine",
@@ -5124,7 +5124,7 @@
                     {
                         "flag": "firstDoctrineCloisteredCleric",
                         "key": "GrantItem",
-                        "uuid": "{actor|flags.pf2e.cleric.firstDoctrine}"
+                        "uuid": "{actor|flags.system.cleric.firstDoctrine}"
                     }
                 ],
                 "slug": "first-doctrine",
@@ -5497,7 +5497,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.cleric",
+                        "path": "flags.system.cleric",
                         "value": {
                             "fifthDoctrine": "Compendium.pf2e.classfeatures.Item.Fifth Doctrine (Cloistered Cleric)",
                             "finalDoctrine": "Compendium.pf2e.classfeatures.Item.Final Doctrine (Cloistered Cleric)",

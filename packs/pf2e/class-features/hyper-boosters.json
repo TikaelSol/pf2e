@@ -28,7 +28,7 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}"
+                    "armor:id:{actor|flags.system.innovationId}"
                 ],
                 "selector": "land-speed",
                 "slug": "hyper-boosters",

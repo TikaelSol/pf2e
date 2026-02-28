@@ -1,7 +1,7 @@
 {
     "_id": "WNX5OQKPh4uaV7mW",
     "folder": "tP19Pzv2NSTf8Omm",
-    "img": "systems/pf2e/icons/iconics/EzrenFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/ezren.webp",
     "items": [
         {
             "_id": "xUskUL0PaH3N58W5",
@@ -126,7 +126,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": "ternary(gte(@actor.level,5),2,1)"
                     }
                 ],
@@ -1931,14 +1931,14 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {
                         "flag": "assurance",
                         "key": "GrantItem",
                         "preselectChoices": {
-                            "assurance": "{item|flags.pf2e.rulesSelections.skill}"
+                            "assurance": "{item|flags.system.rulesSelections.skill}"
                         },
                         "uuid": "Compendium.pf2e.feats-srd.Item.Assurance"
                     }
@@ -2081,7 +2081,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -2093,7 +2093,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -3191,7 +3191,7 @@
                     {
                         "flag": "spellSubstitution",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneThesis}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneThesis}"
                     }
                 ],
                 "slug": "arcane-thesis",
@@ -3261,7 +3261,7 @@
                     {
                         "flag": "schoolOfBattleMagic",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.arcaneSchool}"
+                        "uuid": "{item|flags.system.rulesSelections.arcaneSchool}"
                     }
                 ],
                 "slug": "arcane-school",
@@ -3538,8 +3538,15 @@
     "name": "Ezren (Beginner Box)",
     "prototypeToken": {
         "name": "Ezren",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 1,
+                "texture": "systems/pf2e/icons/iconics/subjects/ezren.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Ezren.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/ezren.webp"
         }
     },
     "system": {

@@ -197,7 +197,7 @@
                         "predicate": [
                             "heat-mirage"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.heatMirage}"
+                        "uuid": "{item|flags.system.rulesSelections.heatMirage}"
                     }
                 ],
                 "slug": null,

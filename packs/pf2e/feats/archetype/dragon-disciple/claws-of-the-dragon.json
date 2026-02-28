@@ -90,7 +90,7 @@
                         ]
                     }
                 ],
-                "type": "{actor|flags.pf2e.dragonBloodline.damageType}",
+                "type": "{actor|flags.system.dragonBloodline.damageType}",
                 "value": "ternary(gte(@actor.level, 17), 20, ternary(gte(@actor.level, 9), 15, 10))"
             }
         ],

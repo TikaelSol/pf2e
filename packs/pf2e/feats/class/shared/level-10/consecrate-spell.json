@@ -92,7 +92,7 @@
                 "value": 1
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.consecrateSpellDamage}",
+                "damageType": "{item|flags.system.rulesSelections.consecrateSpellDamage}",
                 "key": "FlatModifier",
                 "predicate": [
                     "spellshape:consecrate-spell"

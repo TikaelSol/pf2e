@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.wildShapeForms",
+                "path": "flags.system.wildShapeForms",
                 "priority": 10,
                 "value": [
                     {
@@ -44,7 +44,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.wildShapeForms",
+                "path": "flags.system.wildShapeForms",
                 "predicate": [
                     {
                         "gte": [

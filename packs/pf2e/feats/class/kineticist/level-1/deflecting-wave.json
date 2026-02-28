@@ -62,7 +62,7 @@
                         "not": "self:condition:off-guard"
                     }
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.deflectingWave}",
+                "type": "{item|flags.system.rulesSelections.deflectingWave}",
                 "value": "@actor.level"
             },
             {
@@ -78,7 +78,7 @@
                         "not": "self:condition:off-guard"
                     }
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.deflectingWave}",
+                "type": "{item|flags.system.rulesSelections.deflectingWave}",
                 "value": "@actor.level*2"
             }
         ],

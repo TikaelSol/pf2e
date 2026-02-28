@@ -178,21 +178,21 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.energyGland.type",
-                        "value": "{item|flags.pf2e.rulesSelections.rapidEvolutionEnergyGland}"
+                        "path": "flags.system.energyGland.type",
+                        "value": "{item|flags.system.rulesSelections.rapidEvolutionEnergyGland}"
                     },
                     {
                         "key": "Resistance",
                         "predicate": [
                             "rapid-evolution-energy-gland"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.rapidEvolutionEnergyGland}",
+                        "type": "{item|flags.system.rulesSelections.rapidEvolutionEnergyGland}",
                         "value": 15
                     },
                     {
                         "key": "DamageDice",
                         "override": {
-                            "damageType": "{item|flags.pf2e.rulesSelections.rapidEvolutionEnergyGland}"
+                            "damageType": "{item|flags.system.rulesSelections.rapidEvolutionEnergyGland}"
                         },
                         "predicate": [
                             "rapid-evolution-energy-gland"
@@ -224,13 +224,13 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.rapidEvolutionHusk}",
+                        "type": "{item|flags.system.rulesSelections.rapidEvolutionHusk}",
                         "value": 15
                     },
                     {
                         "key": "DamageDice",
                         "override": {
-                            "damageType": "{item|flags.pf2e.rulesSelections.rapidEvolutionHusk}"
+                            "damageType": "{item|flags.system.rulesSelections.rapidEvolutionHusk}"
                         },
                         "selector": "weapon-arm-damage"
                     },
@@ -338,7 +338,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.pf2e.energyGland.type]|options:area-damage] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Effect: Vent Energy]</p>"
+                    "value": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.system.energyGland.type]|options:area-damage] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Effect: Vent Energy]</p>"
                 },
                 "publication": {
                     "license": "OGL",

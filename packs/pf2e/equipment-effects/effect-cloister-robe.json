@@ -30,7 +30,7 @@
                 "key": "Resistance",
                 "label": "PF2E.IWR.Custom.AllDamageFromDivineSpells",
                 "type": "custom",
-                "value": "@item.origin.flags.pf2e.cloisterRobeResistance"
+                "value": "@item.origin.flags.system.cloisterRobeResistance"
             }
         ],
         "start": {

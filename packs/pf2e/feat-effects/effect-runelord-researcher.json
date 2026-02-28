@@ -160,7 +160,7 @@
                             {
                                 "and": [
                                     "thassilonian-school:wrath",
-                                    "item:damage:type:{item|flags.pf2e.rulesSelections.damageType}"
+                                    "item:damage:type:{item|flags.system.rulesSelections.damageType}"
                                 ]
                             }
                         ]

@@ -42,7 +42,7 @@
                 "label": "PF2E.SpecificRule.Prompt.DamageType"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.ironCommandDamage}",
+                "damageType": "{item|flags.system.rulesSelections.ironCommandDamage}",
                 "key": "FlatModifier",
                 "predicate": [
                     "target:mark:iron-command-extra-damage"

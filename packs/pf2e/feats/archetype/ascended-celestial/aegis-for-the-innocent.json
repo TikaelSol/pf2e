@@ -46,7 +46,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "downgrade",
-                "path": "flags.pf2e.ascendedCelestial.aura",
+                "path": "flags.system.ascendedCelestial.aura",
                 "predicate": [
                     "aegis-for-the-innocent-halve-aura"
                 ],

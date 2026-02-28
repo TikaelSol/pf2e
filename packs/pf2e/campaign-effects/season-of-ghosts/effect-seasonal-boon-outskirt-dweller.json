@@ -94,7 +94,7 @@
                 "key": "FlatModifier",
                 "selector": "initiative",
                 "type": "status",
-                "value": "@item.flags.pf2e.rulesSelections.season"
+                "value": "@item.flags.system.rulesSelections.season"
             }
         ],
         "start": {

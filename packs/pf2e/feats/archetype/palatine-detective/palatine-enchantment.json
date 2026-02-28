@@ -52,7 +52,7 @@
                     "palatine-enchantment"
                 ],
                 "property": "property-runes",
-                "value": "{item|flags.pf2e.rulesSelections.palatineEnchantment}"
+                "value": "{item|flags.system.rulesSelections.palatineEnchantment}"
             }
         ],
         "traits": {

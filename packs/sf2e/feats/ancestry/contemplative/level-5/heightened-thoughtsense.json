@@ -33,13 +33,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.contemplative.vagueThoughtsenseRange",
+                "path": "flags.system.contemplative.vagueThoughtsenseRange",
                 "value": 10
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.contemplative.impreciseThoughtsenseRange",
+                "path": "flags.system.contemplative.impreciseThoughtsenseRange",
                 "predicate": [
                     {
                         "lt": [
@@ -53,7 +53,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.contemplative.impreciseThoughtsenseRange",
+                "path": "flags.system.contemplative.impreciseThoughtsenseRange",
                 "predicate": [
                     {
                         "gte": [
@@ -62,12 +62,12 @@
                         ]
                     }
                 ],
-                "value": "@actor.flags.sf2e.contemplative.vagueThoughtsenseRange"
+                "value": "@actor.flags.system.contemplative.vagueThoughtsenseRange"
             },
             {
                 "acuity": "imprecise",
                 "key": "Sense",
-                "range": "@actor.flags.sf2e.contemplative.impreciseThoughtsenseRange",
+                "range": "@actor.flags.system.contemplative.impreciseThoughtsenseRange",
                 "selector": "thoughtsense"
             }
         ],

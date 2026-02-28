@@ -46,7 +46,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.effectColdIronBlanchModerate}"
+                    "item:id:{item|flags.system.rulesSelections.effectColdIronBlanchModerate}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

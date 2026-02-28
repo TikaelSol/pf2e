@@ -67,7 +67,7 @@
                 ],
                 "selector": "strike-damage",
                 "slug": "united-assault",
-                "value": "@item.flags.pf2e.rulesSelections.unitedAssault"
+                "value": "@item.flags.system.rulesSelections.unitedAssault"
             }
         ],
         "traits": {

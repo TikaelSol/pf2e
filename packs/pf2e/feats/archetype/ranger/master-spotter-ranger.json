@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.rangerDedicationCount",
+                "path": "flags.system.rangerDedicationCount",
                 "value": 1
             }
         ],

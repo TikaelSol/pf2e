@@ -64,7 +64,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.proficiencies.defenses.{item|flags.pf2e.rulesSelections.armorProficiency}.rank",
+                "path": "system.proficiencies.defenses.{item|flags.system.rulesSelections.armorProficiency}.rank",
                 "value": "ternary(gte(@actor.level,13),2,1)"
             }
         ],

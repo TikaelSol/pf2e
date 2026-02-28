@@ -53,7 +53,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.stageMagiciansCloak}",
+                "selector": "{item|flags.system.rulesSelections.stageMagiciansCloak}",
                 "type": "item",
                 "value": 2
             }

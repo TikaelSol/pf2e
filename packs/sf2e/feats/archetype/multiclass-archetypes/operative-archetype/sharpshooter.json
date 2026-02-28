@@ -33,14 +33,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.operative.aim.diceNumber",
+                "path": "flags.system.operative.aim.diceNumber",
                 "priority": 60,
                 "value": "ternary(gte(@actor.level,5),2,1)"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.operative.archetypeFeatCount",
+                "path": "flags.system.operative.archetypeFeatCount",
                 "value": 1
             }
         ],

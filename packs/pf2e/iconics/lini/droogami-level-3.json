@@ -1,7 +1,7 @@
 {
     "_id": "HLULxhxrF8g96BRk",
     "folder": "2dNKIDtAolwi1hJv",
-    "img": "systems/pf2e/icons/iconics/DroogamiFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/lini.webp",
     "items": [
         {
             "_id": "OFJDVugaNu5WIJ5R",
@@ -313,7 +313,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.disableABP",
+                        "path": "flags.system.disableABP",
                         "priority": 10,
                         "value": true
                     },
@@ -389,8 +389,15 @@
     "name": "Droogami (Level 3)",
     "prototypeToken": {
         "name": "Droogami",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 1,
+                "texture": "systems/pf2e/icons/iconics/subjects/droogami.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Droogami.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/droogami.webp"
         }
     },
     "system": {

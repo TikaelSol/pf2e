@@ -81,7 +81,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectPotencyCrystal}",
+                "itemId": "{item|flags.system.rulesSelections.effectPotencyCrystal}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [
@@ -91,7 +91,7 @@
                 "value": 1
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectPotencyCrystal}",
+                "itemId": "{item|flags.system.rulesSelections.effectPotencyCrystal}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [
@@ -101,7 +101,7 @@
                 "value": 2
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectPotencyCrystal}",
+                "itemId": "{item|flags.system.rulesSelections.effectPotencyCrystal}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [
@@ -111,7 +111,7 @@
                 "value": 3
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectPotencyCrystal}",
+                "itemId": "{item|flags.system.rulesSelections.effectPotencyCrystal}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [
@@ -121,7 +121,7 @@
                 "value": 1
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectPotencyCrystal}",
+                "itemId": "{item|flags.system.rulesSelections.effectPotencyCrystal}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [
@@ -131,7 +131,7 @@
                 "value": 2
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectPotencyCrystal}",
+                "itemId": "{item|flags.system.rulesSelections.effectPotencyCrystal}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [

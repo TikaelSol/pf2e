@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.tattooedHistorian.archetypeFeatCount",
+                "path": "flags.system.tattooedHistorian.archetypeFeatCount",
                 "value": 1
             },
             {
@@ -60,7 +60,7 @@
                     "spirit",
                     "void"
                 ],
-                "value": "2*@actor.flags.pf2e.tattooedHistorian.archetypeFeatCount"
+                "value": "2*@actor.flags.system.tattooedHistorian.archetypeFeatCount"
             }
         ],
         "traits": {

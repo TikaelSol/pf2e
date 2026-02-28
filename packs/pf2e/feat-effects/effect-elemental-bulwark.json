@@ -105,13 +105,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.elementalBulwark.value",
+                "path": "flags.system.elementalBulwark.value",
                 "value": 5
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.elementalBulwark.value",
+                "path": "flags.system.elementalBulwark.value",
                 "predicate": [
                     "feat:improved-elemental-bulwark"
                 ],
@@ -120,7 +120,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.elementalBulwark.value",
+                "path": "flags.system.elementalBulwark.value",
                 "predicate": [
                     "feat:dualborn"
                 ],
@@ -128,8 +128,8 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.element}",
-                "value": "{actor|flags.pf2e.elementalBulwark.value}"
+                "type": "{item|flags.system.rulesSelections.element}",
+                "value": "{actor|flags.system.elementalBulwark.value}"
             }
         ],
         "start": {

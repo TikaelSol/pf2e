@@ -2440,7 +2440,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.bespellStrikes}",
+                        "damageType": "{item|flags.system.rulesSelections.bespellStrikes}",
                         "diceNumber": 2,
                         "dieSize": "d6",
                         "key": "DamageDice",

@@ -56,13 +56,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.deviantAbilities.dragon.damageType",
-                "value": "{item|flags.pf2e.rulesSelections.energy}"
+                "path": "flags.system.deviantAbilities.dragon.damageType",
+                "value": "{item|flags.system.rulesSelections.energy}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices",
+                "path": "flags.system.deviantAbilities.awakenedChoices",
                 "priority": 10,
                 "value": {
                     "greater": [],
@@ -72,7 +72,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsLine",
                     "predicate": [
@@ -87,7 +87,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsAgile",
                     "predicate": [
@@ -102,7 +102,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsLine",
                     "predicate": [
@@ -117,7 +117,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsAgile",
                     "predicate": [
@@ -132,7 +132,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyRange",
                     "predicate": [
@@ -147,7 +147,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyStrikes",
                     "predicate": [
@@ -162,7 +162,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyRange",
                     "predicate": [
@@ -177,7 +177,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyStrikes",
                     "predicate": [
@@ -192,7 +192,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.StormingBreathProne",
                     "predicate": [
@@ -207,7 +207,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.StormingBreathEscape",
                     "predicate": [
@@ -222,7 +222,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.PropulsiveLeapSpeed",
                     "predicate": [
@@ -237,7 +237,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.PropulsiveLeapWeapon",
                     "predicate": [

@@ -60,7 +60,7 @@
                 "key": "AdjustModifier",
                 "mode": "add",
                 "predicate": [
-                    "bonus:slug:{item|flags.pf2e.rulesSelections.spell}",
+                    "bonus:slug:{item|flags.system.rulesSelections.spell}",
                     {
                         "or": [
                             "empowered-onslaught:benediction",
@@ -78,7 +78,7 @@
                 "key": "AdjustModifier",
                 "mode": "remove",
                 "predicate": [
-                    "penalty:slug:{item|flags.pf2e.rulesSelections.spell}",
+                    "penalty:slug:{item|flags.system.rulesSelections.spell}",
                     {
                         "or": [
                             "empowered-onslaught:bane",

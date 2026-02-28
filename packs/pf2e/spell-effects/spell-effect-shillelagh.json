@@ -41,14 +41,14 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Shillelagh"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.spellEffectShillelagh}",
+                "itemId": "{item|flags.system.rulesSelections.spellEffectShillelagh}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "property": "runes-potency",
                 "value": 1
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.spellEffectShillelagh}",
+                "itemId": "{item|flags.system.rulesSelections.spellEffectShillelagh}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "property": "runes-striking",
@@ -67,7 +67,7 @@
                 "predicate": [
                     "shillelagh-third-die"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.spellEffectShillelagh}-damage"
+                "selector": "{item|flags.system.rulesSelections.spellEffectShillelagh}-damage"
             }
         ],
         "start": {

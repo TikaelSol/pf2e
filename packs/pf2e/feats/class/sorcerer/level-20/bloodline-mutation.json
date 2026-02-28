@@ -181,18 +181,18 @@
                 "predicate": [
                     "bloodline-mutation-benefit:resistance"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.damageType}",
+                "type": "{item|flags.system.rulesSelections.damageType}",
                 "value": 20
             },
             {
                 "add": [
-                    "{item|flags.pf2e.rulesSelections.traitOne}"
+                    "{item|flags.system.rulesSelections.traitOne}"
                 ],
                 "key": "ActorTraits"
             },
             {
                 "add": [
-                    "{item|flags.pf2e.rulesSelections.traitTwo}"
+                    "{item|flags.system.rulesSelections.traitTwo}"
                 ],
                 "key": "ActorTraits",
                 "predicate": [

@@ -204,7 +204,7 @@
                         "key": "FlatModifier",
                         "predicate": [
                             "action:craft",
-                            "{item|flags.pf2e.rulesSelections.specialtyCrafting}"
+                            "{item|flags.system.rulesSelections.specialtyCrafting}"
                         ],
                         "selector": "crafting",
                         "type": "circumstance",
@@ -2321,7 +2321,7 @@
                     {
                         "flag": "enigma",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.muses}"
+                        "uuid": "{item|flags.system.rulesSelections.muses}"
                     }
                 ],
                 "slug": "muses",

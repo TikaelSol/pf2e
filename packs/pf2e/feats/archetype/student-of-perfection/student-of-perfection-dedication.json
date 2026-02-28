@@ -68,8 +68,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.houseOfPerfection.element",
-                "value": "{item|flags.pf2e.rulesSelections.houseOfPerfectionElement}"
+                "path": "flags.system.houseOfPerfection.element",
+                "value": "{item|flags.system.rulesSelections.houseOfPerfectionElement}"
             }
         ],
         "traits": {

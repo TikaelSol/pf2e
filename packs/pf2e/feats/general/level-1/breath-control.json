@@ -48,7 +48,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.remainingAir.rounds",
+                "path": "flags.system.remainingAir.rounds",
                 "value": "25 * (5 + @actor.abilities.con.mod)"
             }
         ],

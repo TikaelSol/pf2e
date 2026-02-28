@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.sf2e.kalo.bioluminescence.range",
+                "path": "flags.system.kalo.bioluminescence.range",
                 "value": 50
             }
         ],

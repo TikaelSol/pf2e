@@ -128,7 +128,7 @@
                 "predicate": [
                     "action:recall-knowledge"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.insightCoffee}",
+                "selector": "{item|flags.system.rulesSelections.insightCoffee}",
                 "slug": "insight-coffee-bonus",
                 "type": "item",
                 "value": 2
@@ -139,7 +139,7 @@
                 "predicate": [
                     "insight-coffee:insight-coffee-moderate"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.insightCoffee}",
+                "selector": "{item|flags.system.rulesSelections.insightCoffee}",
                 "slug": "insight-coffee-bonus",
                 "value": 3
             },
@@ -149,7 +149,7 @@
                 "predicate": [
                     "insight-coffee:insight-coffee-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.insightCoffee}",
+                "selector": "{item|flags.system.rulesSelections.insightCoffee}",
                 "slug": "insight-coffee-bonus",
                 "value": 4
             }

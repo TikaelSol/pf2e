@@ -75,7 +75,7 @@
                 "damageType": "spirit",
                 "key": "FlatModifier",
                 "predicate": [
-                    "target:trait:{item|flags.pf2e.rulesSelections.oathOfTheSlayer}",
+                    "target:trait:{item|flags.system.rulesSelections.oathOfTheSlayer}",
                     {
                         "or": [
                             "action:strike",

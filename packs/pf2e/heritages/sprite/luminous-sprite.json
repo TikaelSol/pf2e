@@ -75,7 +75,7 @@
                     "alpha": 0.1,
                     "animation": {},
                     "bright": 20,
-                    "color": "{item|flags.pf2e.rulesSelections.luminousSpriteLit}",
+                    "color": "{item|flags.system.rulesSelections.luminousSpriteLit}",
                     "dim": 40,
                     "luminosity": 0.15
                 }

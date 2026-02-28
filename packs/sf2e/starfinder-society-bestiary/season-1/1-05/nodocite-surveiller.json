@@ -210,6 +210,12 @@
                 "temp": 0,
                 "value": 8
             },
+            "immunities": [
+                {
+                    "exceptions": [],
+                    "type": "mental"
+                }
+            ],
             "speed": {
                 "otherSpeeds": [
                     {

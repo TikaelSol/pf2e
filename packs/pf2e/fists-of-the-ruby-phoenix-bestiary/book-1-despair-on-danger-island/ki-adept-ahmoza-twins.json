@@ -990,7 +990,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.channelElement}",
+                        "damageType": "{item|flags.system.rulesSelections.channelElement}",
                         "diceNumber": 1,
                         "dieSize": "d8",
                         "key": "DamageDice",

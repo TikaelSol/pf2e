@@ -8,6 +8,7 @@ import type {
     DatabaseCreateCallbackOptions,
     DatabaseCreateOperation,
     DatabaseDeleteCallbackOptions,
+    DatabaseDeleteOperation,
     DatabaseUpdateCallbackOptions,
 } from "@common/abstract/_types.d.mts";
 import type EmbeddedCollection from "@common/abstract/embedded-collection.d.mts";
@@ -111,13 +112,8 @@ class EncounterPF2e extends Combat {
     ): Promise<CombatantPF2e<this, TokenDocumentPF2e<ScenePF2e>>[]> {
         const createData = data.filter((datum) => {
             const token = canvas.tokens.placeables.find((canvasToken) => canvasToken.id === datum.tokenId);
-            if (!token) return false;
-
-            const { actor } = token;
-            if (!actor) {
-                ui.notifications.warn(`${token.name} has no associated actor.`);
-                return false;
-            }
+            const actor = token?.actor;
+            if (!actor) return true; // Nothing to check, may be a troop actor or a module combatant
 
             const actorTraits = actor.system.traits?.value ?? [];
             if (actor.type === "loot" || ["minion", "eidolon"].some((t) => actorTraits.includes(t))) {
@@ -232,6 +228,20 @@ class EncounterPF2e extends Combat {
                 .filter(R.isNonNull),
         );
         resetActors(actors, { sheets: false, tokens: true });
+    }
+
+    /** Updates turn markers for tokens, including troop segments */
+    protected override _updateTurnMarkers(): void {
+        if (!canvas.ready) return;
+        const currentTokens = this.combatant?.tokens.map((t) => t.object).filter((o) => !!o) ?? [];
+        for (const token of canvas.tokens.turnMarkers) {
+            if (!currentTokens.includes(token)) token.renderFlags.set({ refreshTurnMarker: true });
+        }
+        if (this.isView) {
+            for (const token of currentTokens) {
+                token.renderFlags.set({ refreshTurnMarker: true });
+            }
+        }
     }
 
     /* -------------------------------------------- */
@@ -352,6 +362,12 @@ interface EncounterPF2e extends Combat {
     scene: ScenePF2e;
 
     rollNPC(options: RollInitiativeOptionsPF2e): Promise<this>;
+
+    deleteEmbeddedDocuments(
+        embeddedName: "Combatant",
+        dataId: string[],
+        operation?: Partial<DatabaseDeleteOperation<this>>,
+    ): Promise<CombatantPF2e<this>[]>;
 }
 
 interface EncounterMetrics {

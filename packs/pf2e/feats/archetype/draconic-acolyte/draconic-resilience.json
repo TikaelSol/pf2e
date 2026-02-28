@@ -35,7 +35,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
-                "value": "{actor|flags.pf2e.draconicBenefactor.tradition}"
+                "value": "{actor|flags.system.draconicBenefactor.tradition}"
             }
         ],
         "selfEffect": {

@@ -223,7 +223,7 @@
                     {
                         "flag": "suddenCharge",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -279,7 +279,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.rollOptions.all.sudden-charge",
+                        "path": "flags.system.rollOptions.all.sudden-charge",
                         "priority": 10,
                         "value": true
                     }
@@ -453,7 +453,7 @@
                     },
                     {
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.deity}"
+                        "uuid": "{item|flags.system.rulesSelections.deity}"
                     },
                     {
                         "key": "ActiveEffectLike",
@@ -464,7 +464,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.championDedicationCount",
+                        "path": "flags.system.championDedicationCount",
                         "value": 1
                     },
                     {
@@ -490,7 +490,7 @@
                         "path": "system.proficiencies.classDCs.champion",
                         "priority": 39,
                         "value": {
-                            "ability": "{item|flags.pf2e.rulesSelections.keyAbility}",
+                            "ability": "{item|flags.system.rulesSelections.keyAbility}",
                             "label": "PF2E.TraitChampion",
                             "rank": 1
                         }
@@ -561,7 +561,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.championDedicationCount",
+                        "path": "flags.system.championDedicationCount",
                         "value": 1
                     }
                 ],
@@ -2715,7 +2715,7 @@
                     },
                     {
                         "definition": [
-                            "item:group:{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                            "item:group:{item|flags.system.rulesSelections.fighterWeaponMastery}",
                             {
                                 "or": [
                                     "item:category:unarmed",
@@ -2725,17 +2725,17 @@
                             }
                         ],
                         "key": "MartialProficiency",
-                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.SimpleMartial.{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.SimpleMartial.{item|flags.system.rulesSelections.fighterWeaponMastery}",
                         "slug": "weapon-mastery-simple-martial",
                         "value": 3
                     },
                     {
                         "definition": [
                             "item:category:advanced",
-                            "item:group:{item|flags.pf2e.rulesSelections.fighterWeaponMastery}"
+                            "item:group:{item|flags.system.rulesSelections.fighterWeaponMastery}"
                         ],
                         "key": "MartialProficiency",
-                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.Advanced.{item|flags.pf2e.rulesSelections.fighterWeaponMastery}",
+                        "label": "PF2E.SpecificRule.FighterWeaponMasteryLegend.Advanced.{item|flags.system.rulesSelections.fighterWeaponMastery}",
                         "slug": "weapon-mastery-advanced",
                         "value": 2
                     },

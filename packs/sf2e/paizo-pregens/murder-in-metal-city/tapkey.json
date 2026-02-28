@@ -1236,7 +1236,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.sf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {
@@ -1427,7 +1427,7 @@
                     {
                         "flag": "fromTheShadows",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.style}"
+                        "uuid": "{item|flags.system.rulesSelections.style}"
                     }
                 ],
                 "slug": "leadership-style",
@@ -1688,7 +1688,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.sf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -1700,7 +1700,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.sf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],

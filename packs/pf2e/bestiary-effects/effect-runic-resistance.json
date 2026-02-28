@@ -89,7 +89,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.runicResistance}",
+                "type": "{item|flags.system.rulesSelections.runicResistance}",
                 "value": 5
             }
         ],

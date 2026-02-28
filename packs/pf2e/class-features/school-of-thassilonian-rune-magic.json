@@ -56,7 +56,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.sin}"
+                "uuid": "{item|flags.system.rulesSelections.sin}"
             },
             {
                 "itemType": "spell",

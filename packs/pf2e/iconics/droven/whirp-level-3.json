@@ -1,7 +1,7 @@
 {
     "_id": "A8V7p0zRihnK5SQ3",
     "folder": "tGeUjZSz1jENiPBT",
-    "img": "systems/pf2e/icons/iconics/WhirpFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/whirp.webp",
     "items": [
         {
             "_id": "Xe5Y6OzpFXrp4s1n",
@@ -88,7 +88,7 @@
                         "key": "ActiveEffectLike",
                         "mode": "override",
                         "path": "system.traits.size.value",
-                        "value": "{item|flags.pf2e.rulesSelections.companionSize}"
+                        "value": "{item|flags.system.rulesSelections.companionSize}"
                     },
                     {
                         "adjustName": false,
@@ -120,7 +120,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.disableABP",
+                        "path": "flags.system.disableABP",
                         "priority": 10,
                         "value": true
                     }
@@ -442,7 +442,7 @@
                         "category": "unarmed",
                         "damage": {
                             "base": {
-                                "damageType": "{item|flags.pf2e.rulesSelections.damageChoice}",
+                                "damageType": "{item|flags.system.rulesSelections.damageChoice}",
                                 "dice": 1,
                                 "die": "d6"
                             }
@@ -525,8 +525,15 @@
     "name": "Whirp (Level 3)",
     "prototypeToken": {
         "name": "Whirp",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 1,
+                "texture": "systems/pf2e/icons/iconics/subjects/whirp.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Whirp.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/whirp.webp"
         }
     },
     "system": {

@@ -70,7 +70,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.backgroundEnergyScarred}",
+                "type": "{item|flags.system.rulesSelections.backgroundEnergyScarred}",
                 "value": "max(1,floor(@actor.level/2))"
             }
         ],

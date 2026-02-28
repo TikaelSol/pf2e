@@ -42,7 +42,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.firstIkon}"
+                "uuid": "{item|flags.system.rulesSelections.firstIkon}"
             },
             {
                 "adjustName": false,
@@ -63,7 +63,7 @@
                 "predicate": [
                     "class:exemplar"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.secondIkon}"
+                "uuid": "{item|flags.system.rulesSelections.secondIkon}"
             },
             {
                 "adjustName": false,
@@ -84,12 +84,12 @@
                 "predicate": [
                     "class:exemplar"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.thirdIkon}"
+                "uuid": "{item|flags.system.rulesSelections.thirdIkon}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.exemplar.ikons",
+                "path": "flags.system.exemplar.ikons",
                 "priority": 10,
                 "value": []
             }

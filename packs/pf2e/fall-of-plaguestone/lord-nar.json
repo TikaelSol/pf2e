@@ -531,7 +531,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.rageTempHP",
+                        "path": "flags.system.rageTempHP",
                         "value": 8
                     },
                     {

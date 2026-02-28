@@ -2420,7 +2420,7 @@
                     {
                         "inMemoryOnly": true,
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.incurableCurse}"
+                        "uuid": "{item|flags.system.rulesSelections.incurableCurse}"
                     }
                 ],
                 "slug": null,

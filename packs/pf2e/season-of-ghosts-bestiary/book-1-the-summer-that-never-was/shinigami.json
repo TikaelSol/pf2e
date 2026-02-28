@@ -904,7 +904,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>60 feet @Check[will|dc:35]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>60 feet. @Check[will|dc:35|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "ORC",
@@ -1070,7 +1070,7 @@
                         "selectors": [
                             "{item|id}-inline-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.releaseSoul}"
+                        "value": "{item|flags.system.rulesSelections.releaseSoul}"
                     }
                 ],
                 "slug": null,

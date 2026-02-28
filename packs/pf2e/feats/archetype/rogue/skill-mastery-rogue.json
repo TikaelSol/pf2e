@@ -275,13 +275,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.skillExpert}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.skillExpert}.rank",
                 "value": 2
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.skillMaster}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.skillMaster}.rank",
                 "value": 3
             },
             {
@@ -298,7 +298,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.skillMasteryRogue}"
+                "uuid": "{item|flags.system.rulesSelections.skillMasteryRogue}"
             }
         ],
         "traits": {

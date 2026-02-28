@@ -161,7 +161,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.invincibleArmyDamageFirst}",
+                "type": "{item|flags.system.rulesSelections.invincibleArmyDamageFirst}",
                 "value": 5
             },
             {
@@ -169,7 +169,7 @@
                 "predicate": [
                     "invincible-army:very-hard"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.invincibleArmyDamageSecond}",
+                "type": "{item|flags.system.rulesSelections.invincibleArmyDamageSecond}",
                 "value": 5
             }
         ],

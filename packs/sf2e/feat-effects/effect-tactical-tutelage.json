@@ -32,7 +32,7 @@
             {
                 "key": "EphemeralEffect",
                 "selectors": [
-                    "{item|flags.sf2e.rulesSelections.mobileAim}-attack-roll"
+                    "{item|flags.system.rulesSelections.mobileAim}-attack-roll"
                 ],
                 "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Mobile Aim (Ephemeral)"
             }

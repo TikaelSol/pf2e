@@ -89,7 +89,7 @@
                 "predicate": [
                     "sanguine-fang:sanguine-fang"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectSanguineFangWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectSanguineFangWeapon}-damage"
             },
             {
                 "damageType": "bleed",
@@ -100,7 +100,7 @@
                 "predicate": [
                     "sanguine-fang:sanguine-fang-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectSanguineFangWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectSanguineFangWeapon}-damage"
             },
             {
                 "damageType": "bleed",
@@ -111,7 +111,7 @@
                 "predicate": [
                     "sanguine-fang:sanguine-fang-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectSanguineFangWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectSanguineFangWeapon}-damage"
             }
         ],
         "start": {

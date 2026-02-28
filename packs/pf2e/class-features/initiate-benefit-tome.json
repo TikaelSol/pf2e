@@ -161,7 +161,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.firstTomeSkill}.rank",
                 "phase": "beforeDerived",
                 "priority": 50,
                 "value": "ternary(gte(@actor.level,3),2,1)"
@@ -169,7 +169,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.firstTomeSkill}.rank",
                 "phase": "beforeDerived",
                 "predicate": [
                     "feature:adept-benefit-tome"
@@ -180,7 +180,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.firstTomeSkill}.rank",
                 "phase": "beforeDerived",
                 "predicate": [
                     "feature:paragon-benefit-tome"
@@ -191,7 +191,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.secondTomeSkill}.rank",
                 "phase": "beforeDerived",
                 "priority": 50,
                 "value": "ternary(gte(@actor.level,5),2,1)"
@@ -199,7 +199,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.secondTomeSkill}.rank",
                 "phase": "beforeDerived",
                 "predicate": [
                     "feature:adept-benefit-tome",
@@ -216,7 +216,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.secondTomeSkill}.rank",
                 "phase": "beforeDerived",
                 "predicate": [
                     "feature:paragon-benefit-tome"

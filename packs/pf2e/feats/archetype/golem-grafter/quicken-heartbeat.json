@@ -37,7 +37,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.golemGrafter.featCount",
+                "path": "flags.system.golemGrafter.featCount",
                 "value": 1
             }
         ],

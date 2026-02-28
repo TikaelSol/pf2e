@@ -37,13 +37,13 @@
                 "force": true,
                 "hideIfDisabled": true,
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage",
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage",
                 "type": "ability"
             },
             {
                 "key": "CriticalSpecialization",
                 "predicate": [
-                    "item:id:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:id:{item|flags.system.rulesSelections.weapon}"
                 ]
             }
         ],

@@ -73,7 +73,7 @@
                 "selectors": [
                     "strike-damage"
                 ],
-                "value": "{item|flags.sf2e.rulesSelections.damageType}"
+                "value": "{item|flags.system.rulesSelections.damageType}"
             }
         ],
         "start": {

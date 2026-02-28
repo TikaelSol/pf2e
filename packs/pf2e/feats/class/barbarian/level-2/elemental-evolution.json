@@ -227,7 +227,7 @@
                 "value": true
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.evolutionDamage}",
+                "damageType": "{item|flags.system.rulesSelections.evolutionDamage}",
                 "key": "AdjustModifier",
                 "mode": "upgrade",
                 "predicate": [

@@ -99,7 +99,7 @@
                 "property": "description",
                 "value": [
                     {
-                        "text": "PF2E.SpecificRule.Spellshape.ChaoticSpell.{item|flags.pf2e.rulesSelections.chaoticSpell}"
+                        "text": "PF2E.SpecificRule.Spellshape.ChaoticSpell.{item|flags.system.rulesSelections.chaoticSpell}"
                     },
                     {
                         "predicate": [
@@ -129,7 +129,7 @@
                 "selectors": [
                     "spell-damage"
                 ],
-                "value": "{item|flags.pf2e.rulesSelections.chaoticSpell}"
+                "value": "{item|flags.system.rulesSelections.chaoticSpell}"
             }
         ],
         "traits": {

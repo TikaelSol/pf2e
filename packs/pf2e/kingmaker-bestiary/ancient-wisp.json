@@ -253,7 +253,7 @@
                         "predicate": [
                             "go-dark"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.goDark}"
+                        "uuid": "{item|flags.system.rulesSelections.goDark}"
                     }
                 ],
                 "slug": null,

@@ -508,7 +508,7 @@
             {
                 "allowDuplicate": false,
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.revolutionaryModification}"
+                "uuid": "{item|flags.system.rulesSelections.revolutionaryModification}"
             }
         ],
         "traits": {

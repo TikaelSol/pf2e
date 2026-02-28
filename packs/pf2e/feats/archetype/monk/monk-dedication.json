@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.monkDedicationCount",
+                "path": "flags.system.monkDedicationCount",
                 "value": 1
             },
             {
@@ -63,7 +63,7 @@
                 "key": "ActiveEffectLike",
                 "mode": "override",
                 "path": "system.proficiencies.classDCs.monk.ability",
-                "value": "{item|flags.pf2e.rulesSelections.attribute}"
+                "value": "{item|flags.system.rulesSelections.attribute}"
             }
         ],
         "subfeatures": {

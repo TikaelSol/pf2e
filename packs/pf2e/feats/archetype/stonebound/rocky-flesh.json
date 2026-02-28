@@ -36,12 +36,12 @@
                 ],
                 "key": "Resistance",
                 "type": "physical",
-                "value": "@actor.flags.pf2e.stoneboundArchetype.featCount"
+                "value": "@actor.flags.system.stoneboundArchetype.featCount"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.stoneboundArchetype.featCount",
+                "path": "flags.system.stoneboundArchetype.featCount",
                 "value": 1
             }
         ],
