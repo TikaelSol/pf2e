@@ -521,14 +521,14 @@
         {
             "_id": "nhUYrkLsg48GE4iO",
             "img": "systems/pf2e/icons/default-icons/action.svg",
-            "name": "+3 Status to Reflex Saves vs. Area Effects",
+            "name": "+3 to Reflex Saves vs. Area Effects",
             "sort": 900000,
             "system": {
                 "actionType": {
-                    "value": "action"
+                    "value": "passive"
                 },
                 "actions": {
-                    "value": 1
+                    "value": null
                 },
                 "category": "defensive",
                 "description": {
@@ -731,7 +731,7 @@
                 "value": 21
             },
             "allSaves": {
-                "value": "+12 Ref vs. area effects"
+                "value": "+12 Reflex vs. area effects"
             },
             "hp": {
                 "details": "",
