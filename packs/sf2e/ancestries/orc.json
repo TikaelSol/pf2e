@@ -1,0 +1,73 @@
+{
+    "_id": "VsrLmFkekJXItxcd",
+    "img": "systems/sf2e/icons/ancestries/orc-sf2e.webp",
+    "name": "Orc",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "cha",
+                    "con",
+                    "dex",
+                    "int",
+                    "str",
+                    "wis"
+                ]
+            },
+            "1": {
+                "value": [
+                    "cha",
+                    "con",
+                    "dex",
+                    "int",
+                    "str",
+                    "wis"
+                ]
+            },
+            "2": {
+                "value": []
+            }
+        },
+        "description": {
+            "value": "<p><em>The few and ferocious orcs of the Pact Worlds believe many of their kin are still fighting alongside Torag against a terrible foe. Beyond those who hail from lost Golarion are orcs from the planet Marixah of the Gideron Authority. Orcs have a plethora of powerful feats at their disposal to help them smash through enemies and shake off even the most fatal of blows, proving that even in the age of lasers and starships they're a force to be reckoned with.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": []
+            }
+        },
+        "hands": 2,
+        "hp": 10,
+        "items": {},
+        "languages": {
+            "custom": "",
+            "value": [
+                "common",
+                "orcish"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "humanoid",
+                "orc"
+            ]
+        },
+        "vision": "darkvision"
+    },
+    "type": "ancestry"
+}

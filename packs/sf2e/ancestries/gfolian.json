@@ -1,0 +1,79 @@
+{
+    "_id": "fqn2WK47MN0gqax3",
+    "img": "systems/sf2e/icons/ancestries/gfolian.webp",
+    "name": "G'folian",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "con"
+                ]
+            },
+            "1": {
+                "value": [
+                    "wis"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>These philosophical hexapods from Kazmurg’s Absurdity can breathe fire and grow a variety of shells.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "str"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 8,
+        "items": {
+            "oxdlo": {
+                "img": "icons/magic/fire/beam-jet-stream-embers.webp",
+                "level": 1,
+                "name": "Fire Breath",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Fire Breath"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "amphibious",
+                "beast",
+                "gfolian"
+            ]
+        },
+        "vision": "low-light-vision"
+    },
+    "type": "ancestry"
+}

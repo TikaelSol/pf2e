@@ -1,0 +1,71 @@
+{
+    "_id": "klv5A13hq2juAD2f",
+    "img": "systems/sf2e/icons/ancestries/elf-sf2e.webp",
+    "name": "Elf",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "dex"
+                ]
+            },
+            "1": {
+                "value": [
+                    "int"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>A multiplanetary species long before the Gap, Castrovel's native elves are a natural fit for any Starfinder campaign. This section introduces heritages for telepathic Asanan elves and for Sovyrian elves raised to navigate the complex political landscape found on Castrovel. It also includes various options for elves native to other worlds, such as azrinaran elves from Apostae. Additionally, there are a number of feats for elves who want to hone their long memories—or satisfy their ancient grudges!</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "con"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 6,
+        "items": {},
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 30,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "elf",
+                "humanoid"
+            ]
+        },
+        "vision": "low-light-vision"
+    },
+    "type": "ancestry"
+}

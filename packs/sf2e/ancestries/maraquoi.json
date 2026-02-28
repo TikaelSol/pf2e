@@ -1,0 +1,85 @@
+{
+    "_id": "XcmRKGimGvezRawa",
+    "img": "systems/sf2e/icons/ancestries/maraquoi.webp",
+    "name": "Maraquoi",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "cha",
+                    "con",
+                    "dex",
+                    "int",
+                    "str",
+                    "wis"
+                ]
+            },
+            "1": {
+                "value": [
+                    "cha",
+                    "con",
+                    "dex",
+                    "int",
+                    "str",
+                    "wis"
+                ]
+            },
+            "2": {
+                "value": []
+            }
+        },
+        "description": {
+            "value": "<p><em>Maraquois are a bipedal species from the Brethedan moon of Marata known for their fine artisanal creations and excellent climbing.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": []
+            }
+        },
+        "hands": 2,
+        "hp": 8,
+        "items": {
+            "uXUMt": {
+                "img": "icons/commodities/biological/tail-rodent-orange.webp",
+                "level": 1,
+                "name": "Prehensile Tail",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Prehensile Tail"
+            },
+            "wb4qk": {
+                "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+                "level": 1,
+                "name": "Dermal Hearing",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Dermal Hearing"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "humanoid",
+                "maraquoi"
+            ]
+        },
+        "vision": "low-light-vision"
+    },
+    "type": "ancestry"
+}

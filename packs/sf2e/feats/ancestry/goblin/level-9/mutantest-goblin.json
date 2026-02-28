@@ -1,0 +1,42 @@
+{
+    "_id": "YGnbJwYlMfJsyOnL",
+    "folder": "ulf2B9v1P78HkTvv",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Mutantest Goblin",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>You continue to mutate your body further to gain even more strange powers. You gain one mutation from the @UUID[Compendium.sf2e.heritages.Item.Mutant Goblin] heritage.</p><hr /><p><strong>Special</strong> If you have @UUID[Compendium.sf2e.feats.Item.Mutanter Goblin], you also gain the @UUID[Compendium.sf2e.feats.Item.Augmented Body] general feat but must choose a biotech augmentation.</p>"
+        },
+        "level": {
+            "value": 9
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "goblin"
+            ]
+        }
+    },
+    "type": "feat"
+}

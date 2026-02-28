@@ -1,0 +1,71 @@
+{
+    "_id": "6jZ55zVCy4pbOL4g",
+    "img": "systems/sf2e/icons/ancestries/goblin-sf2e.webp",
+    "name": "Goblin",
+    "system": {
+        "additionalLanguages": {
+            "count": 1,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "dex"
+                ]
+            },
+            "1": {
+                "value": [
+                    "cha"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>The dangers of space haven't slowed down the mischievous goblins! Whether by learning how to work with only occasionally explosive technology, mutating their own bodies in bizarre ways, or even becoming infused with the power of solar flames after living on the sun, the goblins of the Pact Worlds have managed to adapt to their changing circumstances. There are options in this section for the loyal and tough tankmeat goblins of the Gideron Authority, for goblins who have taken to trolling the infosphere, and for radioactive goblins who have eaten too much nuclear waste.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "wis"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 6,
+        "items": {},
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "sm",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "goblin",
+                "humanoid"
+            ]
+        },
+        "vision": "darkvision"
+    },
+    "type": "ancestry"
+}

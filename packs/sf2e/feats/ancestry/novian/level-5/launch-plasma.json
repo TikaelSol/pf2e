@@ -1,0 +1,49 @@
+{
+    "_id": "wqZskSzuG9Pege6u",
+    "folder": "uZzdsoVMfGoN2zBV",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Launch Plasma",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 2
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p><strong>Frequency</strong> once per day</p><hr /><p>You can launch a ball of plasma and stellar ejecta across the battlefield that explodes on impact, raining plasma and flame in a small area. Launch Plasma deals @Damage[3d6[fire]] damage in a 5-foot-radius burst within 60 feet. Each creature in the area must attempt a basic Reflex save against the higher of your class DC or spell DC. On a critical failure, a creature also takes 3 persistent electricity damage.</p>\n<p>At 7th level and every 2 levels thereafter, the fire damage increases by 1d6, and the persistent electricity damage increases by 1. At 17th level, the area increases to a 10-foot-radius burst.</p><hr /><p><strong>Special</strong> If you're a volatile novian, Launch Plasma and @UUID[Compendium.sf2e.actions.Item.Mini-Nova]{Mini-Nova's} damage dice are both increased to d8s.</p>"
+        },
+        "frequency": {
+            "max": 1,
+            "per": "day"
+        },
+        "level": {
+            "value": 5
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "electricity",
+                "fire",
+                "novian",
+                "primal"
+            ]
+        }
+    },
+    "type": "feat"
+}

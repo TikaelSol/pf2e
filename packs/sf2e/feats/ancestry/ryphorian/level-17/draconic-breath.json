@@ -1,0 +1,46 @@
+{
+    "_id": "RSZ9IVp3S0xbAV0y",
+    "folder": "LU4geSJAUtpVNp6o",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Draconic Breath",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 2
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p><strong>Frequency</strong> once per day</p><hr /><p>Beyond emulating dragonkin's energy breath, you've now learned to channel the power of a true dragon, able to spew forth its potent energy. Choose a type of damage that corresponds to a specific dragon. You can exhale this energy as a @Template[type:cone|distance:15] or @Template[type:line|distance:30] that deals @Damage[14d6[untyped]|options:area-damage] damage plus 4d6 persistent damage of the chosen type (basic Reflex save using the higher of your class DC or spell DC). On a critical failure, a target also becomes @UUID[Compendium.sf2e.conditions.Item.Frightened]{Frightened 2}.</p>"
+        },
+        "frequency": {
+            "max": 1,
+            "per": "day"
+        },
+        "level": {
+            "value": 17
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "ryphorian"
+            ]
+        }
+    },
+    "type": "feat"
+}

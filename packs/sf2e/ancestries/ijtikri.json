@@ -1,0 +1,79 @@
+{
+    "_id": "RP7fqj4Rpu0IBf6t",
+    "img": "systems/sf2e/icons/ancestries/ijtikri.webp",
+    "name": "Ijtikri",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "con"
+                ]
+            },
+            "1": {
+                "value": [
+                    "wis"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>The stone-faced squid people from Vesk-2 are an aquatic species who have adapted to an amphibious lifestyle.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "cha"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 8,
+        "items": {
+            "DLSU2": {
+                "img": "icons/commodities/biological/shell-conch-gray.webp",
+                "level": 1,
+                "name": "Mantle",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Mantle"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common",
+                "vesk"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "aberration",
+                "ijtikri"
+            ]
+        },
+        "vision": "darkvision"
+    },
+    "type": "ancestry"
+}

@@ -1,0 +1,71 @@
+{
+    "_id": "Fhhxk7toaVGjwoMY",
+    "img": "systems/sf2e/icons/ancestries/talphi.webp",
+    "name": "Talphi",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "dex"
+                ]
+            },
+            "1": {
+                "value": [
+                    "cha"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>Talphis are members of a mole-like humanoid species from Vesk-4 who specialize in burrowing, gravity attunement, and elemental earth magic.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "wis"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 6,
+        "items": {},
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 20,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "humanoid",
+                "talphi"
+            ]
+        },
+        "vision": "normal"
+    },
+    "type": "ancestry"
+}

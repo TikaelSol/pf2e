@@ -1,0 +1,78 @@
+{
+    "_id": "4Yw9X0SD3Mr3DtnW",
+    "img": "systems/sf2e/icons/ancestries/halfling-sf2e.webp",
+    "name": "Halfling",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "dex"
+                ]
+            },
+            "1": {
+                "value": [
+                    "wis"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>Halflings are brave and plucky spacefarers who spread their humor and charm to the furthest reaches of the galaxy. Heritages in this section include options that let halflings squeeze and sneak around starships, which are supplemented with feats that let them navigate zero gravity and break into locked quarters. Even the Pact Worlds' largest ancestries had better take care not to underestimate a halfling, lest they soon learn the truth of that old adage—the bigger they are, the harder they fall.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "str"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 6,
+        "items": {
+            "UewCA": {
+                "img": "systems/pf2e/icons/features/ancestry/keen-eyes.webp",
+                "level": 1,
+                "name": "Keen Eyes",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Keen Eyes"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "sm",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "halfling",
+                "humanoid"
+            ]
+        },
+        "vision": "normal"
+    },
+    "type": "ancestry"
+}

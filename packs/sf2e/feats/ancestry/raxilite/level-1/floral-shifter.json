@@ -1,0 +1,42 @@
+{
+    "_id": "rzIqdNslqg0kR8Od",
+    "folder": "BYaf9Ovo97hBejda",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Floral Shifter",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>When you change between your flowering and seeding states, you perform other subtle alterations to your body to enhance your abilities. You can change between a flowering state and a seeding state by spending 1 week of downtime.</p>\n<p>If you're flowering, your pleasant aroma makes you more charming. You gain a +1 circumstance bonus to Diplomacy checks to [[/act make-an-impression]]; this effect has the olfactory trait. The bonus increases to +2 if you're a master in Diplomacy. If you're seeding, you instead gain immunity to falling damage whenever you're in an atmosphere.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "raxilite"
+            ]
+        }
+    },
+    "type": "feat"
+}

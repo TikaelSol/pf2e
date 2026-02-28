@@ -1,0 +1,27 @@
+{
+    "_id": "Al0kW5lh60VJGmdx",
+    "folder": "JEyupHR1W9yfaksj",
+    "img": "systems/sf2e/icons/default-icons/heritage.svg",
+    "name": "Tankmeat Goblin",
+    "system": {
+        "ancestry": {
+            "name": "Goblin",
+            "slug": "goblin",
+            "uuid": "Compendium.sf2e.ancestries.Item.6jZ55zVCy4pbOL4g"
+        },
+        "description": {
+            "value": "<p>You're genetically modified cannon fodder loyal to the Gideron Authority. While you're wounded, you gain a +5 status bonus to your Speeds and melee Strikes, and your ranged Strikes with thrown weapons deal persistent bleed damage equal to your combined wounded and doomed value.</p>"
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "heritage"
+}

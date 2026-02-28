@@ -1,0 +1,85 @@
+{
+    "_id": "waaL4y6dUPzy8Emb",
+    "img": "systems/sf2e/icons/ancestries/novian.webp",
+    "name": "Novian",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "str"
+                ]
+            },
+            "1": {
+                "value": [
+                    "cha"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>Novians are miniature compressed suns who exist as tiny flying motes of stellar energy or black holes. Many novians develop a natural stellar attunement.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "wis"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 6,
+        "items": {
+            "du8Km": {
+                "img": "icons/magic/symbols/ring-circle-smoke-blue.webp",
+                "level": 1,
+                "name": "Gravitational Hands",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Gravitational Hands"
+            },
+            "ush2w": {
+                "img": "icons/magic/light/beam-rays-yellow.webp",
+                "level": 1,
+                "name": "Solar Luminance",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Solar Luminance"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common",
+                "pyric"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "tiny",
+        "speed": 20,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "cosmic",
+                "novian"
+            ]
+        },
+        "vision": "normal"
+    },
+    "type": "ancestry"
+}

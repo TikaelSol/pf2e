@@ -1,0 +1,78 @@
+{
+    "_id": "dDsYoohxyRNgtR4u",
+    "img": "systems/sf2e/icons/ancestries/dwarf-sf2e.webp",
+    "name": "Dwarf",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "con"
+                ]
+            },
+            "1": {
+                "value": [
+                    "wis"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>The clans of lost Golarion have spread across the Pact Worlds and become some of the premier manufacturers of everything from drinks to mechs. The heritages presented in this section will allow you to prosper in this brave new galaxy whether you're Crafting new goods or mining rare starmetal from asteroids whizzing through space. You'll find options for hryngars, subterranean dwarves of lost Golarion, as well as for dwarves found in the mysterious artificial moon known as Salvation's End.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "cha"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 10,
+        "items": {
+            "ARyHr": {
+                "img": "icons/commodities/treasure/glass-crystal-green.webp",
+                "level": 1,
+                "name": "Clan Crystal",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Clan Crystal"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 20,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "dwarf",
+                "humanoid"
+            ]
+        },
+        "vision": "darkvision"
+    },
+    "type": "ancestry"
+}

@@ -1,0 +1,46 @@
+{
+    "_id": "pBMGaS0WcG4GlN9F",
+    "folder": "ITpaw6J6U3w9oGJa",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Plentiful Bile",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>You have an unending supply of toxins and bile. Select one of the following abilities you possess: Coat in Bile, Slitherskin, or Spew Acidic Bile. If you selected Coat in Bile or Spew Acidic Bile, the frequency of the selected ability becomes once per 10 minutes, rather than once per day. If you selected Slitherskin, the frequency of Slitherskin becomes once per 10 minutes, rather than once per hour.</p><hr /><p><strong>Special</strong> You can take this feat more than once, selecting a different ability you possess each time.</p>"
+        },
+        "level": {
+            "value": 13
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Coat in Bile, slitherskin orocoran heritage, or Spew Acidic Bile"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "orocoran"
+            ]
+        }
+    },
+    "type": "feat"
+}

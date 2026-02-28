@@ -1,0 +1,42 @@
+{
+    "_id": "0JrCGJWNoSKhgJAL",
+    "folder": "9o0XU6D3nXxbv6Il",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Soulfire",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>Your understanding of your own emotions and soul deepens profoundly. You gain additional benefits depending on your current soulfeel attunement. Fury: You gain a +2 circumstance bonus to your Athletics checks. Joy: You gain a fly Speed of 20 feet. Sorrow: You gain a burrow Speed of 10 feet. Wonder: You gain a +2 circumstance bonus to your Perception checks.</p><hr /><p><strong>Special</strong> If you have @UUID[Compendium.sf2e.feats.Item.Mascot Power!], the summoned minion gains the same benefits of Soulfire as you.</p>"
+        },
+        "level": {
+            "value": 13
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "moyishuu"
+            ]
+        }
+    },
+    "type": "feat"
+}

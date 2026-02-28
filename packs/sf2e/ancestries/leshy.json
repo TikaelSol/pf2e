@@ -1,0 +1,78 @@
+{
+    "_id": "2VaJHHfoMisPwNOQ",
+    "img": "systems/sf2e/icons/ancestries/leshy-sf2e.webp",
+    "name": "Leshy",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "con"
+                ]
+            },
+            "1": {
+                "value": [
+                    "wis"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>As nature spirits, leshies can be incarnated on any planet, taking on the features of bizarre alien flora unknown to the druids of lost Golarion. These include the glowing moonflower leshies, the quadrapetal ksarik leshies, and even leshies who naturally absorb dangerous radiation! Other options include fungal leshies who produce dangerous spores, feats that let photosynthetic leshies absorb lasers, and the ability to permanently grow into a Large leshy.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "int"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 8,
+        "items": {
+            "BremY": {
+                "img": "icons/magic/nature/root-vine-beanstolk-green.webp",
+                "level": 1,
+                "name": "Plant Nourishment",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Plant Nourishment"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "sm",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "leshy",
+                "plant"
+            ]
+        },
+        "vision": "low-light-vision"
+    },
+    "type": "ancestry"
+}

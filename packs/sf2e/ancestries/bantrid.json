@@ -1,0 +1,84 @@
+{
+    "_id": "FeoOVtm7zVhgxXtg",
+    "img": "systems/sf2e/icons/ancestries/bantrid.webp",
+    "name": "Bantrid",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": []
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "con"
+                ]
+            },
+            "1": {
+                "value": [
+                    "dex"
+                ]
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>Bantrids are abberations who move using an organ shaped like a rotating ball. They woke up 10 years ago on Hibb with no memories.</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": [
+                    "wis"
+                ]
+            }
+        },
+        "hands": 2,
+        "hp": 6,
+        "items": {
+            "JgNSE": {
+                "img": "icons/skills/movement/figure-running-gray.webp",
+                "level": 1,
+                "name": "Restless",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Restless"
+            },
+            "cmvHI": {
+                "img": "icons/skills/targeting/target-strike-gray.webp",
+                "level": 1,
+                "name": "Anosmatic",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Anosmatic"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "sm",
+        "speed": 25,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "aberration",
+                "bantrid"
+            ]
+        },
+        "vision": "darkvision"
+    },
+    "type": "ancestry"
+}

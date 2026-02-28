@@ -22,6 +22,7 @@ const SENSE_TYPES = new Set([
     "bloodsense",
     "darkvision",
     "echolocation",
+    "electromagnetic-sense",
     "greater-darkvision",
     "infrared-vision",
     "lifesense",

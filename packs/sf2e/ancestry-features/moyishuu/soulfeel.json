@@ -1,0 +1,40 @@
+{
+    "_id": "GTu6cVQbHXvIsRRl",
+    "folder": "93ihC6zf11zcGP3s",
+    "img": "icons/magic/perception/orb-eye-scrying.webp",
+    "name": "Soulfeel",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestryfeature",
+        "description": {
+            "value": "<p>Moyishuus are connected to their dominant emotion so deeply that it grants them the ability to project the raw feelings of that emotion. During your daily preparations, choose one of fury, joy, sorrow, and wonder. You become more acutely tuned to that emotion, allowing you to detect creatures feeling that emotion with emotionsense up to 60 feet away. You can distinguish when creatures you detect with emotionsense are experiencing that emotion, giving you a +2 circumstance bonus to Perception checks to [[/act sense-motive]] against creatures experiencing that emotion.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "feat"
+}
