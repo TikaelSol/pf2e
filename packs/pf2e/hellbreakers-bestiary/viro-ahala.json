@@ -553,7 +553,7 @@
                         "selector": [
                             "reflex"
                         ],
-                        "type": "status",
+                        "type": "untyped",
                         "value": 3
                     }
                 ],
