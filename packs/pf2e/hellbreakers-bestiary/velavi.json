@@ -1425,7 +1425,7 @@
                 "value": 17
             },
             "allSaves": {
-                "value": ""
+                "value": "+1 status to all saves vs. magic"
             },
             "hp": {
                 "details": "",
@@ -1450,7 +1450,6 @@
                 }
             ],
             "speed": {
-                "details": "+1 status to all saves vs. magic",
                 "otherSpeeds": [],
                 "value": 25
             },

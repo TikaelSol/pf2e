@@ -1279,7 +1279,7 @@
             },
             "img": "icons/equipment/chest/breastplate-banded-simple-leather-brown.webp",
             "name": "Leather Armor",
-            "sort": 300000,
+            "sort": 1700000,
             "system": {
                 "acBonus": 1,
                 "baseItem": "leather-armor",
