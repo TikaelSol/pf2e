@@ -13,7 +13,22 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "flags.system.standardizedAncestryFeats",
+                "priority": 10,
+                "value": {
+                    "standardizedAncestryFeats": {
+                        "ancestralSkills": {
+                            "skillOne": "crafting",
+                            "skillTwo": "society"
+                        }
+                    }
+                }
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

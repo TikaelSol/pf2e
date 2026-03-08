@@ -60,6 +60,81 @@
                 "key": "BaseSpeed",
                 "selector": "burrow",
                 "value": 15
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "flags.system.standardizedAncestryFeats",
+                "priority": 10,
+                "value": {
+                    "ancestralResistance": [
+                        {
+                            "label": "PF2E.TraitPoison",
+                            "predicate": [
+                                {
+                                    "not": "ancestral-resistance:poison"
+                                }
+                            ],
+                            "value": "poison"
+                        }
+                    ],
+                    "standardizedAncestryFeats": {
+                        "ancestralSkills": {
+                            "skillOne": "crafting",
+                            "skillTwo": "society"
+                        },
+                        "ancestralUnarmedAttack": {
+                            "choices": [
+                                {
+                                    "label": "PF2E.BattleForm.Attack.Claw",
+                                    "predicate": [
+                                        {
+                                            "not": "ancestral-unarmed-attack:claw"
+                                        }
+                                    ],
+                                    "value": "claw"
+                                }
+                            ]
+                        },
+                        "burrowingSpecialist": {
+                            "speed": 25
+                        }
+                    }
+                }
+            },
+            {
+                "damage": {
+                    "base": {
+                        "damageType": "slashing",
+                        "dice": 1,
+                        "die": "d6"
+                    }
+                },
+                "group": "brawling",
+                "img": "icons/commodities/claws/claw-canine-brown-grey.webp",
+                "key": "Strike",
+                "label": "PF2E.BattleForm.Attack.Claw",
+                "predicate": [
+                    "ancestral-unarmed-attack:claw"
+                ],
+                "slug": "claw",
+                "traits": [
+                    "agile",
+                    "finesse",
+                    "unarmed"
+                ]
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    "item:id:{item|id}"
+                ]
             }
         ],
         "size": "med",

@@ -75,6 +75,66 @@
                 "key": "BaseSpeed",
                 "selector": "climb",
                 "value": 15
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "flags.system.standardizedAncestryFeats",
+                "priority": 10,
+                "value": {
+                    "standardizedAncestryFeats": {
+                        "ancestralSkills": {
+                            "skillOne": "society",
+                            "skillTwo": "survival"
+                        },
+                        "ancestralUnarmedAttack": {
+                            "choices": [
+                                {
+                                    "label": "PF2E.BattleForm.Attack.Jaws",
+                                    "predicate": [
+                                        {
+                                            "not": "ancestral-unarmed-attack:jaws"
+                                        }
+                                    ],
+                                    "value": "jaws"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "damage": {
+                    "base": {
+                        "damageType": "piercing",
+                        "dice": 1,
+                        "die": "d6"
+                    }
+                },
+                "group": "brawling",
+                "img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
+                "key": "Strike",
+                "label": "PF2E.BattleForm.Attack.Jaws",
+                "predicate": [
+                    "ancestral-unarmed-attack:jaws"
+                ],
+                "slug": "jaws",
+                "traits": [
+                    "grapple",
+                    "unarmed"
+                ]
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    "item:id:{item|id}"
+                ]
             }
         ],
         "size": "med",

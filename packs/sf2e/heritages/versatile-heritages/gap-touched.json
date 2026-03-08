@@ -13,7 +13,29 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "flags.system.standardizedAncestryFeats.ancestralResistance",
+                "priority": 1,
+                "value": []
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "add",
+                "path": "flags.system.standardizedAncestryFeats.ancestralResistance",
+                "value": {
+                    "label": "PF2E.TraitMental",
+                    "predicate": [
+                        {
+                            "not": "ancestral-resistance:mental"
+                        }
+                    ],
+                    "value": "mental"
+                }
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

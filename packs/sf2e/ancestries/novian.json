@@ -74,6 +74,110 @@
                 "key": "BaseSpeed",
                 "selector": "fly",
                 "value": 20
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "flags.system.standardizedAncestryFeats",
+                "priority": 10,
+                "value": {
+                    "standardizedAncestryFeats": {
+                        "ancestralResistance": [
+                            {
+                                "label": "PF2E.TraitFire",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-resistance:fire"
+                                    }
+                                ],
+                                "value": "fire"
+                            }
+                        ],
+                        "ancestralSkills": {
+                            "skillOne": "intimidation",
+                            "skillTwo": "nature"
+                        },
+                        "ancestralUnarmedAttack": {
+                            "choices": [
+                                {
+                                    "label": "PF2E.BattleForm.Attack.BurningTendril",
+                                    "predicate": [
+                                        {
+                                            "not": "ancestral-unarmed-attack:burning-tendril"
+                                        }
+                                    ],
+                                    "value": "burning-tendril"
+                                },
+                                {
+                                    "label": "PF2E.BattleForm.Attack.SolarFlare",
+                                    "predicate": [
+                                        {
+                                            "not": "ancestral-unarmed-attack:solar-flare"
+                                        }
+                                    ],
+                                    "value": "solar-flare"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "damage": {
+                    "base": {
+                        "damageType": "fire",
+                        "dice": 1,
+                        "die": "d6"
+                    }
+                },
+                "group": "flame",
+                "img": "icons/magic/fire/beam-strike-whip-red.webp",
+                "key": "Strike",
+                "label": "PF2E.BattleForm.Attack.BurningTendril",
+                "predicate": [
+                    "ancestral-unarmed-attack:burning-tendril"
+                ],
+                "slug": "burning-tendril",
+                "traits": [
+                    "agile",
+                    "finesse",
+                    "unarmed"
+                ]
+            },
+            {
+                "damage": {
+                    "base": {
+                        "damageType": "fire",
+                        "dice": 1,
+                        "die": "d4"
+                    }
+                },
+                "group": "flame",
+                "img": "icons/magic/fire/explosion-flame-lightning-strike.webp",
+                "key": "Strike",
+                "label": "PF2E.BattleForm.Attack.SolarFlare",
+                "predicate": [
+                    "ancestral-unarmed-attack:solar-flare"
+                ],
+                "range": {
+                    "increment": 30
+                },
+                "slug": "solar-flare",
+                "traits": [
+                    "unarmed"
+                ]
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    "item:id:{item|id}"
+                ]
             }
         ],
         "size": "tiny",

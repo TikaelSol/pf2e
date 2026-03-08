@@ -69,6 +69,10 @@
                 "key": "BaseSpeed",
                 "selector": "climb",
                 "value": 5
+            },
+            {
+                "key": "RollOption",
+                "option": "no-ancestral-skills"
             }
         ],
         "size": "sm",
