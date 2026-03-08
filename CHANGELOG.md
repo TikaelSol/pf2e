@@ -1,3 +1,37 @@
+## 7.11.2
+
+### Bugfixes
+
+- (Supe) Fixed pinging and delete confirmations for non-troop combatants
+- (Supe) Remove throttle for troop thresholds
+
+### Data Updates
+
+- (Ambrose) Add Hellbreakers Player's Guide backgrounds
+- (Ambrose) Remove heightened 4th rank Enlarge spell effect
+- (Ambrose) Rename Gripli and Gnoll folders to remaster Tripkee and Kholo
+- (digitalshadowhawk) Fix class or spell dc not calculating in Dragon Breath
+- (Dire Weasel) Add automation for Elemental Inferno's Blue Flames
+- (Dire Weasel) Add inline damage rolls and spell effect to Murmuration
+- (Dire Weasel) Add options to some inline rolls
+- (iDantar) Convert all boons and curses to feats
+- (Tikael) Move Pactbinder Dragon Breath action to the correct folder
+
+## 7.11.1
+
+### Bugfixes
+
+- (Supe) Fix troop tokens with custom scaling such as from art modules
+
+### Data Updates
+
+- (Ambrose) Correct Elemental Sheathe links in Wyldheart journal page
+- (Ambrose) Correct level of Thunderclap Spell feat
+- (Cuingamehtar) Fix Cloak of Thirsty Fronds and Cloak of Devouring Thorns activation frequency
+- (Dire Weasel) Brush up Flare Beacons
+- (Longstrider) Implement minor creature fixes and "grappled" blanket fix
+- (Tikael) Fix automation of Keen Eyes and Eye of the Arclords
+
 ## 7.11.0
 
 ### System Improvements

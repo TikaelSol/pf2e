@@ -2705,8 +2705,8 @@
                             "target:within-30-feet",
                             {
                                 "or": [
-                                    "target:hidden",
-                                    "target:undetected"
+                                    "target:condition:hidden",
+                                    "target:condition:undetected"
                                 ]
                             }
                         ],
