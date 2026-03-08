@@ -25,7 +25,25 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "dwarvatronic-weight-strike",
+                "toggleable": true
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "dwarvatronic-weight-strike",
+                    "item:damage:category:physical",
+                    "item:melee"
+                ],
+                "selector": [
+                    "weapon-damage"
+                ],
+                "value": "@weapon.system.damage.dice"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

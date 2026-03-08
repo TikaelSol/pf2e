@@ -25,7 +25,16 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "exceptions": [
+                    "adamantine"
+                ],
+                "key": "Resistance",
+                "type": "physical",
+                "value": "max(1,floor(@actor.level/4))"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

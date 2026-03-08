@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You've managed to hone your prior experience in the tunnels of Apostae and can employ them when faced with almost any hazard or environmental threat. You can use your Apostae delver heritage to reroll on traps every hour instead of every day. In addition, you can use this reroll against any effect caused by a hazard, instead of just traps.</p>"
+            "value": "<p>You've managed to hone your prior experience in the tunnels of Apostae and can employ them when faced with almost any hazard or environmental threat. You can use your @UUID[Compendium.sf2e.heritages.Item.Apostae Delver Orc]{Apostae delver} heritage to reroll on traps every hour instead of every day. In addition, you can use this reroll against any effect caused by a hazard, instead of just traps.</p>"
         },
         "level": {
             "value": 13

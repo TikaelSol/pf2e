@@ -29,6 +29,17 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Charming Liar"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "deception"
+                ],
+                "selector": [
+                    "initiative"
+                ],
+                "type": "circumstance",
+                "value": 1
             }
         ],
         "subfeatures": {

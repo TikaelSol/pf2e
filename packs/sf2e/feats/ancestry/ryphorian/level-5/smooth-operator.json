@@ -29,7 +29,42 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "adjustment": {
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "action:escape"
+                ],
+                "selector": "attack-roll"
+            },
+            {
+                "adjustment": {
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    {
+                        "or": [
+                            "inflicts:grabbed",
+                            "inflicts:immobolized",
+                            "inflicts:restrained"
+                        ]
+                    }
+                ],
+                "selector": "saving-throw"
+            },
+            {
+                "affects": "origin",
+                "key": "EphemeralEffect",
+                "selectors": [
+                    "athletics"
+                ],
+                "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Smooth Operator"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

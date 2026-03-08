@@ -25,7 +25,20 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Mutant Goblin Mutation"
+            },
+            {
+                "key": "GrantItem",
+                "predicate": [
+                    "feat:mutanter-goblin"
+                ],
+                "reevaluateOnUpdate": true,
+                "uuid": "Compendium.sf2e.feats.Item.Augmented Body"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

@@ -17,7 +17,20 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "opensky-gfolian",
+                    "action:recall-knowledge"
+                ],
+                "selector": [
+                    "religion"
+                ],
+                "type": "circumstance",
+                "value": 1
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

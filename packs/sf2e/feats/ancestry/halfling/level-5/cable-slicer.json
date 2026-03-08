@@ -25,7 +25,21 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:disable-a-device",
+                    "target:trait:tech"
+                ],
+                "selector": [
+                    "computers",
+                    "crafting"
+                ],
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

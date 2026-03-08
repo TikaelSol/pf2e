@@ -25,7 +25,27 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "fist": true,
+                "img": "systems/pf2e/icons/features/classes/powerful-fist.webp",
+                "key": "Strike"
+            },
+            {
+                "itemId": "xxxxxxFISTxxxxxx",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "property": "traits",
+                "value": "shove"
+            },
+            {
+                "itemId": "xxxxxxFISTxxxxxx",
+                "key": "ItemAlteration",
+                "mode": "remove",
+                "property": "traits",
+                "value": "nonlethal"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

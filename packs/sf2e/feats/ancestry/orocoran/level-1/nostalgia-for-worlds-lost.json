@@ -27,6 +27,16 @@
         },
         "rules": [
             {
+                "adjustment": {
+                    "criticalFailure": "to-failure"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "item:trait:emotion"
+                ],
+                "selector": "saving-throw"
+            },
+            {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Thoughts of a Lost Home"
             }

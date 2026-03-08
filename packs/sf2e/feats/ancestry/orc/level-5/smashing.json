@@ -25,7 +25,23 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "smashing-active",
+                "toggleable": true
+            },
+            {
+                "itemType": "weapon",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "smashing-active"
+                ],
+                "property": "traits",
+                "value": "razing"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

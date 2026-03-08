@@ -23,7 +23,24 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "toxic-tear",
+                "toggleable": true
+            },
+            {
+                "category": "persistent",
+                "damageType": "poison",
+                "diceNumber": "@weapon.system.damage.dice",
+                "dieSize": "d4",
+                "key": "DamageDice",
+                "predicate": [
+                    "toxic-tear"
+                ],
+                "selector": "beak-damage"
+            }
+        ],
         "traits": {
             "value": [
                 "poison"

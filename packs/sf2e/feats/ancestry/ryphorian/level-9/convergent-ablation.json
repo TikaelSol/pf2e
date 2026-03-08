@@ -34,6 +34,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Convergent Ablation",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Convergent Ablation"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

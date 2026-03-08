@@ -1,6 +1,6 @@
 {
     "_id": "9p9GNLHDRocLlKVU",
-    "img": "systems/sf2e/icons/default-icons/ancestry.svg",
+    "img": "systems/sf2e/icons/ancestries/brenneri.webp",
     "name": "Brenneri",
     "system": {
         "additionalLanguages": {
@@ -59,7 +59,8 @@
         "languages": {
             "custom": "",
             "value": [
-                "common"
+                "common",
+                "brenneri"
             ]
         },
         "publication": {
@@ -68,7 +69,13 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "reach": 5,
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "value": 20
+            }
+        ],
         "size": "med",
         "speed": 25,
         "traits": {

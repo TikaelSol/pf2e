@@ -17,7 +17,130 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "adjustName": false,
+                "choices": [
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:aggressive-antlers"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Aggressive Antlers"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:armored-shell"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Armored Shell"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:coral-fists"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Coral Fists"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:copaxi-scent"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Copaxi Scent"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:four-armed-copaxi"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Four-Armed Copaxi"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:multi-legged-copaxi"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Multi-Legged Copaxi"
+                    }
+                ],
+                "flag": "featOne",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.Feat",
+                "rollOption": "self-focus-feat-one"
+            },
+            {
+                "adjustName": false,
+                "choices": [
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:aggressive-antlers"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Aggressive Antlers"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:armored-shell"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Armored Shell"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:coral-fists"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Coral Fists"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:copaxi-scent"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Copaxi Scent"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:four-armed-copaxi"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Four-Armed Copaxi"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "not": "feat:multi-legged-copaxi"
+                            }
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Multi-Legged Copaxi"
+                    }
+                ],
+                "flag": "featTwo",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.Feat",
+                "rollOption": "self-focus-feat-two"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.system.rulesSelections.featOne}"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.system.rulesSelections.featTwo}"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

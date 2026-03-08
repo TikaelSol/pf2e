@@ -25,7 +25,13 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Resistance",
+                "type": "sonic",
+                "value": 5
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

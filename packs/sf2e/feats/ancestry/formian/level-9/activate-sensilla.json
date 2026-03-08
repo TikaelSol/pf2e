@@ -26,6 +26,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Activate Sensilla",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Activate Sensilla"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

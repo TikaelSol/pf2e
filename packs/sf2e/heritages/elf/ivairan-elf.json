@@ -17,12 +17,7 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [
-            {
-                "key": "GrantItem",
-                "uuid": "Compendium.sf2e.feats.Item.Additional Lore"
-            }
-        ],
+        "rules": [],
         "traits": {
             "rarity": "common",
             "value": []

@@ -25,7 +25,45 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "category": "unarmed",
+                "damage": {
+                    "base": {
+                        "damageType": "fire",
+                        "dice": 1,
+                        "die": "d4"
+                    }
+                },
+                "group": "brawling",
+                "img": "icons/magic/fire/blast-jet-stream-splash.webp",
+                "key": "Strike",
+                "label": "Flame Belch",
+                "range": 30,
+                "slug": "flame-belch"
+            },
+            {
+                "critical": true,
+                "damageCategory": "persistent",
+                "damageType": "fire",
+                "key": "FlatModifier",
+                "selector": [
+                    "flame-belch-damage"
+                ],
+                "value": "max(1,floor(@actor.level/2))"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "fire-breath-used"
+                ],
+                "selector": [
+                    "flame-belch-attack-roll"
+                ],
+                "type": "circumstance",
+                "value": -2
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

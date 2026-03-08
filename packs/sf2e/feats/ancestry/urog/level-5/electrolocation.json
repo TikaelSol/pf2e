@@ -25,10 +25,22 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "acuity": "imprecise",
+                "key": "Sense",
+                "range": 15,
+                "selector": "electromagnetic-sense"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
-            "senses": {},
+            "senses": {
+                "electromagnetic-sense": {
+                    "acuity": "imprecise",
+                    "range": 15
+                }
+            },
             "suppressedFeatures": []
         },
         "traits": {

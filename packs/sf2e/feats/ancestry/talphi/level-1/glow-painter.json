@@ -25,7 +25,37 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "glow-painter",
+                "toggleable": true
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "perform",
+                    "glow-painter"
+                ],
+                "selector": [
+                    "performance"
+                ],
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "key": "TokenLight",
+                "predicate": [
+                    "glow-painter"
+                ],
+                "value": {
+                    "alpha": 0.2,
+                    "bright": 0,
+                    "color": "#e49449",
+                    "dim": 15
+                }
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

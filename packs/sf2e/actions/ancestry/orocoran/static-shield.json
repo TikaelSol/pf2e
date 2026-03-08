@@ -20,6 +20,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Static Shield",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Static Shield"
+        },
         "traits": {
             "value": []
         }

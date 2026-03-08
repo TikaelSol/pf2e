@@ -29,7 +29,21 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "predicate": [
+                    "action:feint"
+                ],
+                "selector": [
+                    "deception"
+                ],
+                "text": "The target is also @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard]{Off-Guard} to melee and ranged attacks that you or your bonded partner attempt against it until the end of your next turn."
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

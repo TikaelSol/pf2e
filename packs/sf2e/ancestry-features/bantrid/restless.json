@@ -25,7 +25,16 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "inMemoryOnly": true,
+                "key": "GrantItem",
+                "predicate": [
+                    "self:condition:immobilized"
+                ],
+                "uuid": "Compendium.sf2e.conditions.Item.Frightened"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

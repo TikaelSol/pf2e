@@ -25,10 +25,27 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "smelling-brain"
+                ],
+                "selector": [
+                    "perception"
+                ],
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
-            "senses": {},
+            "senses": {
+                "scent": {
+                    "acuity": "imprecise",
+                    "range": 30
+                }
+            },
             "suppressedFeatures": []
         },
         "traits": {

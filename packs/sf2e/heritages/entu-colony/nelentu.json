@@ -17,7 +17,14 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "climb-speed",
+                "slug": "nelentu-climb-speed",
+                "value": "@actor.system.movement.speeds.land.value"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

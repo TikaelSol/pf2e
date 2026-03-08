@@ -21,6 +21,12 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Battle Gobbing"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.computers.rank",
+                "value": 1
             }
         ],
         "traits": {

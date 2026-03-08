@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>Your skill at flying allows you to do it as easily as other species might walk. Whenever you Stride, you can Fly or use Basic Flight instead.</p>"
+            "value": "<p>Your skill at flying allows you to do it as easily as other species might walk. Whenever you Stride, you can Fly or use @UUID[Compendium.sf2e.feats.Item.Basic Flight] instead.</p>"
         },
         "level": {
             "value": 5

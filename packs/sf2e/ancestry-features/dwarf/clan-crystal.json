@@ -25,7 +25,28 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "adjustName": false,
+                "choices": {
+                    "filter": [
+                        "item:category:simple",
+                        "item:usage:hands:1",
+                        {
+                            "not": "item:trait:consumable"
+                        }
+                    ],
+                    "itemType": "weapon"
+                },
+                "flag": "weapon",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.Weapon"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.system.rulesSelections.weapon}"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},
@@ -33,7 +54,9 @@
         },
         "traits": {
             "rarity": "common",
-            "value": []
+            "value": [
+                "dwarf"
+            ]
         }
     },
     "type": "feat"

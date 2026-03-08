@@ -17,7 +17,19 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.athletics.rank",
+                "value": 1
+            },
+            {
+                "key": "BaseSpeed",
+                "selector": "climb",
+                "value": 20
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

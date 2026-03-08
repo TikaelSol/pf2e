@@ -25,7 +25,25 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "category": "unarmed",
+                "damage": {
+                    "base": {
+                        "damageType": "piercing",
+                        "dice": 1,
+                        "die": "d4"
+                    }
+                },
+                "group": "brawling",
+                "key": "Strike",
+                "label": "SF2E.SpecificRule.Copaxi.AggressiveAntlersStrike",
+                "traits": [
+                    "finesse",
+                    "unarmed"
+                ]
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

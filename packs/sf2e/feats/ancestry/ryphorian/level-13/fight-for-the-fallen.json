@@ -26,6 +26,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Fight for the Fallen",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Fight for the Fallen"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

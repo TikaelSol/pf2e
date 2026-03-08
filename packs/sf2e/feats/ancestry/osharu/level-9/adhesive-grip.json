@@ -25,7 +25,26 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "adjustment": {
+                    "criticalFailure": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "action:grapple"
+                ],
+                "selector": "athletics"
+            },
+            {
+                "affects": "origin",
+                "key": "EphemeralEffect",
+                "selectors": [
+                    "attack-roll"
+                ],
+                "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Adhesive Grip"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

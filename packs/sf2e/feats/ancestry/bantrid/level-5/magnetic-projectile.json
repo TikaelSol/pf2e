@@ -29,7 +29,28 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "category": "unarmed",
+                "damage": {
+                    "base": {
+                        "damageType": "bludgeoning",
+                        "dice": 1,
+                        "die": "d4"
+                    }
+                },
+                "group": "brawling",
+                "img": "icons/skills/ranged/bullets-triple-ball-yellow.webp",
+                "key": "Strike",
+                "range": {
+                    "max": 30
+                },
+                "traits": [
+                    "versatile-s",
+                    "versatile-p"
+                ]
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

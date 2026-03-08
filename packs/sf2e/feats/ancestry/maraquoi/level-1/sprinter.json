@@ -25,7 +25,16 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "all-speeds"
+                ],
+                "slug": "sprinter-bonus",
+                "value": 5
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

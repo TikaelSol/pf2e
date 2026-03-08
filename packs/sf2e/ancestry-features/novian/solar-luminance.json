@@ -25,7 +25,23 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "TokenLight",
+                "predicate": [
+                    {
+                        "not": "heritage:black-hole-novian"
+                    }
+                ],
+                "value": {
+                    "alpha": 0.1,
+                    "bright": 20,
+                    "color": "#e9b80e",
+                    "dim": 40,
+                    "luminosity": 0.15
+                }
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},
@@ -33,7 +49,11 @@
         },
         "traits": {
             "rarity": "common",
-            "value": []
+            "value": [
+                "light",
+                "novian",
+                "primal"
+            ]
         }
     },
     "type": "feat"

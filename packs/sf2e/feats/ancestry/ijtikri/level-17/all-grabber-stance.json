@@ -29,12 +29,11 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [
-            {
-                "key": "GrantItem",
-                "uuid": "Compendium.sf2e.actions.Item.Hug the World"
-            }
-        ],
+        "rules": [],
+        "selfEffect": {
+            "name": "Stance: All-Grabber Stance",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Stance: All-Grabber Stance"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

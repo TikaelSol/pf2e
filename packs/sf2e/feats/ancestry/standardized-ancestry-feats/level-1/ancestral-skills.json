@@ -27,6 +27,18 @@
         },
         "rules": [
             {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.{actor|flags.system.standardizedAncestryFeats.ancestralSkills.skillOne}.rank",
+                "value": 1
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.{actor|flags.system.standardizedAncestryFeats.ancestralSkills.skillTwo}.rank",
+                "value": 1
+            },
+            {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Additional Lore"
             }

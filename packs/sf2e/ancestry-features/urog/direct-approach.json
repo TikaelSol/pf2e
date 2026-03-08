@@ -1,7 +1,7 @@
 {
     "_id": "6P6aYbBM60Utfpvb",
     "folder": "gbbPPt86WwQ8erW6",
-    "img": "icons/magic/symbols/question-stone-yellow.webp",
+    "img": "icons/skills/social/diplomacy-writing-letter.webp",
     "name": "Direct Approach",
     "system": {
         "actionType": {
@@ -25,7 +25,17 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "deception",
+                    "diplomacy"
+                ],
+                "type": "circumstance",
+                "value": -1
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},
@@ -33,7 +43,9 @@
         },
         "traits": {
             "rarity": "common",
-            "value": []
+            "value": [
+                "urog"
+            ]
         }
     },
     "type": "feat"

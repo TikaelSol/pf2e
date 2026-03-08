@@ -25,7 +25,18 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "melee",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:category:unarmed"
+                ],
+                "property": "traits",
+                "value": "razing"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

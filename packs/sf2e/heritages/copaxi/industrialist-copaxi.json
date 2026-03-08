@@ -21,6 +21,18 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Management Material"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.society.rank",
+                "value": 1
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "add",
+                "path": "system.build.languages.max",
+                "value": "1"
             }
         ],
         "traits": {

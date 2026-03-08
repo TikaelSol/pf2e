@@ -25,7 +25,27 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "the-hunter-not-the-hunted",
+                    {
+                        "or": [
+                            "action:hide",
+                            "action:sneak",
+                            "action:track"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "stealth",
+                    "survival"
+                ],
+                "type": "circumstance",
+                "value": 1
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

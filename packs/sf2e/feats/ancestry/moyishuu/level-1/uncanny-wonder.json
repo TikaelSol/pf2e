@@ -29,7 +29,18 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemId": "{item|id}",
+                "key": "ItemAlteration",
+                "mode": "override",
+                "predicate": [
+                    "soulfeel:wonder"
+                ],
+                "property": "frequency-per",
+                "value": "PT1M"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

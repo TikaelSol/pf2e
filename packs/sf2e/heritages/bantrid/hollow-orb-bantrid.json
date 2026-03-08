@@ -10,14 +10,20 @@
             "uuid": "Compendium.sf2e.ancestries.Item.FeoOVtm7zVhgxXtg"
         },
         "description": {
-            "value": "<p>You or your parent lived for years on a low-calorie but high-protein diet. This caused your foot orb to gain a hollow, lattice-like cell structure that makes it lighter and capable of floating in water. You gain a 20-foot swim Speed. While moving atop the surface of any liquid, you have a swim Speed equal to your Speed (or 20 feet, if higher).</p>"
+            "value": "<p>You or your parent lived for years on a low-calorie but high-protein diet. This caused your foot orb to gain a hollow, lattice-like cell structure that makes it lighter and capable of floating in water.</p>\n<p>You gain a 20-foot swim Speed. While moving atop the surface of any liquid, you have a swim Speed equal to your Speed (or 20 feet, if higher).</p>"
         },
         "publication": {
             "license": "ORC",
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "value": 20
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

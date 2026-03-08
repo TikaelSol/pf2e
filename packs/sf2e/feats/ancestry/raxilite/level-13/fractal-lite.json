@@ -30,6 +30,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Fractal-Lite",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Fractal-Lite"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

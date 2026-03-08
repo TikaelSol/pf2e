@@ -33,6 +33,12 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Electrical Engineer"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.crafting.rank",
+                "value": 1
             }
         ],
         "subfeatures": {

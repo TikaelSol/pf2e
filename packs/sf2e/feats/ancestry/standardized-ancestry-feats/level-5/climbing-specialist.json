@@ -25,7 +25,16 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "predicate": [
+                    "basic-flight"
+                ],
+                "selector": "climb",
+                "value": "@actor.flags.system.standardizedAncestryFeats.climbingSpecialist.speed"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

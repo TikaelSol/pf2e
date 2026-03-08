@@ -30,6 +30,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Unleashed Anger",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Unleashed Anger"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

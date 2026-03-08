@@ -63,7 +63,14 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "reach": 5,
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "slug": "ijtikri-swim-speed",
+                "value": 10
+            }
+        ],
         "size": "med",
         "speed": 25,
         "traits": {

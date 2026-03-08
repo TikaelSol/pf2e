@@ -25,7 +25,25 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "EphemeralEffect",
+                "selectors": [
+                    "perception"
+                ],
+                "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Stone-Faced Inscrutability"
+            },
+            {
+                "adjustment": {
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "item:trait:emotion"
+                ],
+                "selector": "saving-throw"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

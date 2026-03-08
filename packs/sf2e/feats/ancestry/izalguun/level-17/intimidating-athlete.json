@@ -29,6 +29,26 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Intimidating Glare"
+            },
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "predicate": [
+                    {
+                        "or": [
+                            "action:grapple",
+                            "action:reposition",
+                            "action:shove",
+                            "action:trip"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "athletics"
+                ],
+                "text": "You can attempt an [[/act demoralize skill=athletics]]{Athletics} or Intimidation check to [[/act demoralize]] one creature within 30 feet.</p>"
             }
         ],
         "subfeatures": {

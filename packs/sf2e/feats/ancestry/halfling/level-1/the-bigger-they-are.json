@@ -25,7 +25,27 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "predicate": [
+                    {
+                        "gte": [
+                            "target:size",
+                            3
+                        ]
+                    }
+                ],
+                "selector": [
+                    "ranged-strike-attack-roll"
+                ],
+                "text": "{item|description}",
+                "title": "{item|name}"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

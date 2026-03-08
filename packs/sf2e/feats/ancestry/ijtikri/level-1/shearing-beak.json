@@ -25,7 +25,48 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "category": "unarmed",
+                "damage": {
+                    "base": {
+                        "damageType": "slashing",
+                        "dice": 1,
+                        "die": "d8"
+                    }
+                },
+                "group": "brawling",
+                "img": "systems/sf2e/icons/unarmed-attacks/beak.webp",
+                "key": "Strike",
+                "label": "PF2E.BattleForm.Attack.Beak",
+                "range": null,
+                "slug": "beak",
+                "traits": [
+                    "backstabber",
+                    "grapple",
+                    "razing",
+                    "unarmed"
+                ]
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "nor": [
+                            "target:condition:grabbed",
+                            "target:condition:immobilized",
+                            "target:condition:prone",
+                            "target:condition:grabbed"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "beak-attack-roll"
+                ],
+                "type": "circumstance",
+                "value": -2
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

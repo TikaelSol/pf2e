@@ -29,6 +29,24 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Self Soothe"
+            },
+            {
+                "key": "RollOption",
+                "option": "personal-trinket",
+                "toggleable": true
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "personal-trinket",
+                    "item:trait:fear"
+                ],
+                "selector": [
+                    "saving-throw",
+                    "will-dc"
+                ],
+                "type": "circumstance",
+                "value": 1
             }
         ],
         "subfeatures": {

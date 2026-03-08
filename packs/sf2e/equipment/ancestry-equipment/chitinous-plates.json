@@ -45,14 +45,15 @@
             "property": [],
             "resilient": 0
         },
-        "size": "med",
+        "size": "lg",
         "speedPenalty": 0,
         "strength": 3,
         "traits": {
             "rarity": "common",
             "value": [
                 "analog",
-                "comfort"
+                "comfort",
+                "exposed"
             ]
         }
     },

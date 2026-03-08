@@ -29,7 +29,22 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemId": "{item|id}",
+                "key": "ItemAlteration",
+                "mode": "override",
+                "predicate": [
+                    "soulfeel:fury"
+                ],
+                "property": "frequency-per",
+                "value": "PT1M"
+            }
+        ],
+        "selfEffect": {
+            "name": "Effect: Unforgiving Fury",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Unforgiving Fury"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

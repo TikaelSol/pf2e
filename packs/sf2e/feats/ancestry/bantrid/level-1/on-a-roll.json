@@ -25,7 +25,34 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "label": "SF2E.SpecificRule.Bantrid.OnARollPrompt",
+                "option": "moved-last-turn",
+                "toggleable": true
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "moved-last-turn",
+                    {
+                        "or": [
+                            "inflicts:fatigued",
+                            "inflicts:immobilized",
+                            "inflicts:paralyzed",
+                            "inflicts:slowed",
+                            "inflicts:suppressed"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

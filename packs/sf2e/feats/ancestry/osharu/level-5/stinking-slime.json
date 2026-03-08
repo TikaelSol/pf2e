@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>Your slime assails the olfactory receptors. Non-osharu creatures that begin their turn adjacent to any square affected by @UUID[Compendium.sf2e.ancestry-features.Item.Slime Squirt] or @UUID[Compendium.sf2e.feats.Item.Slime Spray] must attempt a Fortitude save against the higher of your class DC or spell DC. On a failure, they become @UUID[Compendium.sf2e.conditions.Item.Sickened]{Sickened 1} (@UUID[Compendium.sf2e.conditions.Item.Sickened]{Sickened 2} on a critical failure).</p>"
+            "value": "<p>Your slime assails the olfactory receptors. Non-osharu creatures that begin their turn adjacent to any square affected by @UUID[Compendium.sf2e.ancestry-features.Item.Slime Squirt] or @UUID[Compendium.sf2e.feats.Item.Slime Spray] must attempt a @Check[fortitude|against:class-spell] save against the higher of your class DC or spell DC. On a failure, they become @UUID[Compendium.sf2e.conditions.Item.Sickened]{Sickened 1} (@UUID[Compendium.sf2e.conditions.Item.Sickened]{Sickened 2} on a critical failure).</p>"
         },
         "level": {
             "value": 5
@@ -25,7 +25,36 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "feat",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:slime-squirt"
+                ],
+                "property": "description",
+                "value": [
+                    {
+                        "text": "{item|description}"
+                    }
+                ]
+            },
+            {
+                "itemType": "feat",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:slime-spray"
+                ],
+                "property": "description",
+                "value": [
+                    {
+                        "text": "{item|description}"
+                    }
+                ]
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

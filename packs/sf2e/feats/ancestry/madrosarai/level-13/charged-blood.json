@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You invoke your arcane blood so that it can revitalize and energize your body. You regain @Damage[6d6[healing]] Hit Points. You also gain the @UUID[Compendium.sf2e.conditions.Item.Quickened] condition until the end of your next turn and can use the extra action to only Stride or Strike.</p>"
+            "value": "<p><strong>Frequency</strong> once per day</p><hr /><p>You invoke your arcane blood so that it can revitalize and energize your body. You regain @Damage[6d6[healing]] Hit Points. You also gain the @UUID[Compendium.sf2e.conditions.Item.Quickened] condition until the end of your next turn and can use the extra action to only Stride or Strike.</p>"
         },
         "frequency": {
             "max": 1,

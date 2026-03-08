@@ -25,7 +25,13 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "burrow",
+                "value": "@actor.flags.system.standardizedAncestryFeats.burrowingSpecialist.speed"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

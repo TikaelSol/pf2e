@@ -29,7 +29,68 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "armor",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:chitinous-plates"
+                ],
+                "property": "ac-bonus",
+                "value": 1
+            },
+            {
+                "itemType": "armor",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:chitinous-plates"
+                ],
+                "property": "speed-penalty",
+                "value": -10
+            },
+            {
+                "itemType": "armor",
+                "key": "ItemAlteration",
+                "mode": "override",
+                "predicate": [
+                    "item:slug:chitinous-plates"
+                ],
+                "property": "category",
+                "value": "heavy"
+            },
+            {
+                "itemType": "armor",
+                "key": "ItemAlteration",
+                "mode": "override",
+                "predicate": [
+                    "item:slug:chitinous-plates"
+                ],
+                "property": "bulk",
+                "value": 3
+            },
+            {
+                "itemType": "armor",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:chitinous-plates"
+                ],
+                "property": "traits",
+                "value": "bulwark"
+            },
+            {
+                "itemType": "armor",
+                "key": "ItemAlteration",
+                "mode": "remove",
+                "predicate": [
+                    "item:slug:chitinous-plates"
+                ],
+                "property": "traits",
+                "value": "analog"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

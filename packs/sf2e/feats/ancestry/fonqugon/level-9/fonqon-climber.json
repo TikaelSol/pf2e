@@ -25,7 +25,16 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "climb-speed"
+                ],
+                "slug": "fonqon-climber-bonus",
+                "value": 15
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

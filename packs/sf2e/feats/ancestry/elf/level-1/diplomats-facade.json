@@ -29,6 +29,12 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Lie to Me"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.deception.rank",
+                "value": 1
             }
         ],
         "subfeatures": {

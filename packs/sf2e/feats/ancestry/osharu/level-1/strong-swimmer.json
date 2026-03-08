@@ -29,7 +29,14 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "slug": "strong-swimmer",
+                "value": 30
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

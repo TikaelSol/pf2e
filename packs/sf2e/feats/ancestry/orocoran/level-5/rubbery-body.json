@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>Your body is rubbery, and you bounce against surfaces. When you fall, reduce the falling damage you take as though you'd fallen half the distance. In addition, you gain the Bounce Back reaction.</p>"
+            "value": "<p>Your body is rubbery, and you bounce against surfaces. When you fall, reduce the falling damage you take as though you'd fallen half the distance. In addition, you gain the @UUID[Compendium.sf2e.actions.Item.Bounce Back] reaction.</p>"
         },
         "level": {
             "value": 5
@@ -29,7 +29,12 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.sf2e.actions.Item.Bounce Back"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

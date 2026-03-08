@@ -29,7 +29,17 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "predicate": [
+                    "posture:quadrupedal"
+                ],
+                "selector": "land-speed",
+                "slug": "consistently-quadrupedal-speed",
+                "value": 35
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

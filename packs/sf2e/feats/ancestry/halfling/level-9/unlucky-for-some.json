@@ -29,7 +29,12 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.sf2e.actions.Item.Lucky Break"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

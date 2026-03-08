@@ -17,7 +17,18 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "acuity": "precise",
+                "key": "Sense",
+                "range": 30,
+                "selector": "scent"
+            },
+            {
+                "key": "CreatureSize",
+                "value": "tiny"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

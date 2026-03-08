@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>Formian queens are famous for their ability to psychically call upon the various components of their hive to fight, defend, or flee as they desire. You can channel your queen's telepathic power to motivate your own allies into a battle frenzy. Up to 10 willing allies within range of your telepathy become @UUID[Compendium.sf2e.conditions.Item.Quickened] for 1 minute and can use the extra action only to Stride or Strike. While quickened in this way, they have a +2 status bonus to saving throws against mental effects.</p>"
+            "value": "<p>Formian queens are famous for their ability to psychically call upon the various components of their hive to fight, defend, or flee as they desire. You can channel your queen's telepathic power to motivate your own allies into a battle frenzy. Up to 10 willing allies within range of your telepathy become @UUID[Compendium.sf2e.conditions.Item.Quickened] for 1 minute and can use the extra action only to Stride or Strike. While quickened in this way, they have a +2 status bonus to saving throws against mental effects.</p>\n<p>@UUID[Compendium.sf2e.feat-effects.Item.Effect: For the Queen!]</p>"
         },
         "frequency": {
             "max": 1,

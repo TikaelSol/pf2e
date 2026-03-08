@@ -33,6 +33,12 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Trick Magic Item"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.{actor|flags.system.jeweledOrbBantrid.skill}.rank",
+                "value": 1
             }
         ],
         "subfeatures": {

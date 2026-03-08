@@ -25,7 +25,15 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.attributes.reach.base",
+                "phase": "afterDerived",
+                "value": 10
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

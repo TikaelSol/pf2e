@@ -25,7 +25,33 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "not": "on-home-world"
+                    },
+                    {
+                        "or": [
+                            "item:trait:disease",
+                            "item:trait:poison"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "key": "RollOption",
+                "label": "SF2E.SpecificRule.Leshy.InexorableToggle",
+                "option": "on-home-world",
+                "toggleable": true
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

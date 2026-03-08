@@ -69,7 +69,13 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "reach": 5,
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "fly",
+                "value": 20
+            }
+        ],
         "size": "tiny",
         "speed": 20,
         "traits": {

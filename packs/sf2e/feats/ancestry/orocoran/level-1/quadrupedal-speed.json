@@ -25,7 +25,16 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "predicate": [
+                    "hands-free:2"
+                ],
+                "selector": "land",
+                "value": 30
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

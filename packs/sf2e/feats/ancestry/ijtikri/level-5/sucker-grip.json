@@ -25,7 +25,50 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:force-open"
+                ],
+                "selector": [
+                    "athletics"
+                ],
+                "slug": "sucker-grip-force-open-bonus",
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:disarm",
+                            "action:reposition",
+                            "action:shove",
+                            "action:trip"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "fortitude-dc",
+                    "refiex-dc"
+                ],
+                "slug": "sucker-grip-defense-bonus",
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "adjustment": {
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "action:force-open"
+                ],
+                "selector": "athletics"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

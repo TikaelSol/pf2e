@@ -21,6 +21,16 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Linguistic Prodigy"
+            },
+            {
+                "adjustment": {
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "inflicts:controlled"
+                ],
+                "selector": "saving-throw"
             }
         ],
         "traits": {

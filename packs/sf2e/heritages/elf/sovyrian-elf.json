@@ -17,7 +17,37 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "sense-motive"
+                ],
+                "selector": [
+                    "perception"
+                ],
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "hideIfDisabled": true,
+                "key": "FlatModifier",
+                "label": "Identify Magic or Decipher Writing",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:identify-magic",
+                            "action:decipher-writing"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "skill-check"
+                ],
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

@@ -21,6 +21,25 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Feign Prone"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:trip",
+                            "action:shove",
+                            "inflicts-prone"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "reflex-dc",
+                    "fortitude-dc",
+                    "saving-throw"
+                ],
+                "type": "circumstance",
+                "value": 2
             }
         ],
         "traits": {

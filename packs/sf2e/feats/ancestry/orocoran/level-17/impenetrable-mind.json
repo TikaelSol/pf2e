@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You resist mental control with supernatural skill. You become immune to the @UUID[Compendium.sf2e.conditions.Item.Confused] and controlled conditions. Whenever you gain the stupefied condition, you immediately reduce the value of the condition by 1. This feat doesn't apply if you impose the condition on yourself.</p>"
+            "value": "<p>You resist mental control with supernatural skill. You become immune to the @UUID[Compendium.sf2e.conditions.Item.Confused] and @UUID[Compendium.sf2e.conditions.Item.Controlled] conditions. Whenever you gain the @UUID[Compendium.sf2e.conditions.Item.Stupefied] condition, you immediately reduce the value of the condition by 1. This feat doesn't apply if you impose the condition on yourself.</p>"
         },
         "level": {
             "value": 17
@@ -29,7 +29,15 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Immunity",
+                "type": [
+                    "controlled",
+                    "confused"
+                ]
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

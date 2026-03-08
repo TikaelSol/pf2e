@@ -25,7 +25,30 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "item:trait:emotion"
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "affects": "origin",
+                "key": "EphemeralEffect",
+                "predicate": [
+                    "action:sense-motive"
+                ],
+                "selectors": [
+                    "perception"
+                ],
+                "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Contained Emotions"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},
@@ -33,7 +56,9 @@
         },
         "traits": {
             "rarity": "common",
-            "value": []
+            "value": [
+                "madrosarai"
+            ]
         }
     },
     "type": "feat"

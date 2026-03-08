@@ -25,7 +25,57 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "admixture-breath",
+                "suboptions": [
+                    {
+                        "label": "PF2E.TraitAcid",
+                        "value": "acid"
+                    },
+                    {
+                        "label": "PF2E.TraitBludgeoning",
+                        "predicate": [
+                            "feature:elemental"
+                        ],
+                        "value": "bludgeoning"
+                    },
+                    {
+                        "label": "PF2E.TraitCold",
+                        "value": "cold"
+                    },
+                    {
+                        "label": "PF2E.TraitElectricity",
+                        "predicate": [
+                            "feature:elemental"
+                        ],
+                        "value": "electricity"
+                    },
+                    {
+                        "label": "PF2E.TraitPoison",
+                        "predicate": [
+                            "feature:elemental"
+                        ],
+                        "value": "poison"
+                    }
+                ],
+                "toggleable": true
+            },
+            {
+                "key": "DamageAlteration",
+                "mode": "override",
+                "predicate": [
+                    "admixture-breath"
+                ],
+                "property": "damage-type",
+                "selectors": [
+                    "fire-breath-inline-damage",
+                    "flame-belch-damage"
+                ],
+                "value": "{item|flags.system.rulesSelections.admixtureBreath}"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

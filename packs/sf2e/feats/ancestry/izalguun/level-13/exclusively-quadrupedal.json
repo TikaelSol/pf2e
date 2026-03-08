@@ -34,6 +34,14 @@
                 "allowDuplicate": false,
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Solid Stance"
+            },
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "land-speed"
+                ],
+                "slug": "consistently-quadrupedal-speed",
+                "value": 5
             }
         ],
         "subfeatures": {

@@ -17,7 +17,20 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "swim-speed",
+                "slug": "karapentu-swim-speed",
+                "value": "@actor.system.movement.speeds.land.value"
+            },
+            {
+                "add": [
+                    "amphibious"
+                ],
+                "key": "ActorTraits"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

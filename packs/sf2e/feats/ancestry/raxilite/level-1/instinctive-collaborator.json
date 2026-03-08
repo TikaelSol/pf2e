@@ -25,7 +25,28 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:aid"
+                ],
+                "selector": [
+                    "skill-check",
+                    "attack-roll"
+                ],
+                "type": "circumstance",
+                "value": 2
+            },
+            {
+                "key": "EphemeralEffect",
+                "selectors": [
+                    "skill-check",
+                    "attack-roll"
+                ],
+                "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Instinctive Collaborator"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

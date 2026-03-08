@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You've learned to distill your blood into a potent pharmaceutical. During your daily preparations, you can create one dose of this medicine, which is a unique consumable serum with the effects of both a tactical medpatch and an advanced hypopen. This medicine remains potent until your next daily preparations, at which point it breaks down and is useless. You can never sell the medicine created in this way. At 13th level, your medicine instead functions as both an advanced medpatch and a superior hypopen. At 17th level, your medicine instead functions as both a superior medpatch and an elite hypopen.</p>"
+            "value": "<p>You've learned to distill your blood into a potent pharmaceutical. During your daily preparations, you can create one dose of this medicine, which is a unique consumable serum with the effects of both a @UUID[Compendium.sf2e.equipment.Item.Medpatch (Tactical)]{tactical medpatch} and an @UUID[Compendium.sf2e.equipment.Item.Hypopen (Advanced)]{advanced hypopen}. This medicine remains potent until your next daily preparations, at which point it breaks down and is useless. You can never sell the medicine created in this way. At 13th level, your medicine instead functions as both an @UUID[Compendium.sf2e.equipment.Item.Medpatch (Advanced)]{advanced medpatch} and a @UUID[Compendium.sf2e.equipment.Item.Hypopen (Superior)]{superior hypopen}. At 17th level, your medicine instead functions as both a @UUID[Compendium.sf2e.equipment.Item.Medpatch (Superior)]{superior medpatch} and an @UUID[Compendium.sf2e.equipment.Item.Hypopen (Elite)]{elite hypopen}.</p>"
         },
         "level": {
             "value": 9

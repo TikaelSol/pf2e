@@ -29,7 +29,18 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "feat",
+                "key": "ItemAlteration",
+                "mode": "downgrade",
+                "predicate": [
+                    "item:slug:frenzy"
+                ],
+                "property": "frequency-per",
+                "value": "PT1H"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

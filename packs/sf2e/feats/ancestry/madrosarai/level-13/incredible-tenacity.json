@@ -29,7 +29,18 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "action",
+                "key": "ItemAlteration",
+                "mode": "downgrade",
+                "predicate": [
+                    "item:slug:madrosarai-tenacity"
+                ],
+                "property": "frequency-per",
+                "value": "PT1H"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

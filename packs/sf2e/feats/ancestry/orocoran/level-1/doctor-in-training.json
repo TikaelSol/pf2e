@@ -25,7 +25,47 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.medicine.rank",
+                "value": 1
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:administer-first-aid",
+                            "action:treat-disease",
+                            "action:treat-poison"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "medicine"
+                ],
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "adjustment": {
+                    "criticalFailure": "to-failure"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:administer-first-aid",
+                            "action:treat-disease",
+                            "action:treat-poison"
+                        ]
+                    }
+                ],
+                "selector": "medicine"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

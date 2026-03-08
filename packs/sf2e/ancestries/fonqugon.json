@@ -53,7 +53,9 @@
         "languages": {
             "custom": "",
             "value": [
-                "common"
+                "common",
+                "rodnarthian",
+                "szandite"
             ]
         },
         "publication": {
@@ -62,7 +64,13 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "reach": 5,
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "climb",
+                "value": 5
+            }
+        ],
         "size": "sm",
         "speed": 25,
         "traits": {

@@ -39,6 +39,29 @@
                 "slug": "frenzy-ac-penalty",
                 "type": "status",
                 "value": -2
+            },
+            {
+                "hideIfDisabled": true,
+                "key": "FlatModifier",
+                "predicate": [
+                    "feat:monstrous-frenzy"
+                ],
+                "selector": [
+                    "attack-damage"
+                ],
+                "slug": "frenzy-damage-bonus",
+                "type": "status",
+                "value": 2
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "downgrade",
+                "predicate": [
+                    "feat:monstrous-frenzy"
+                ],
+                "selector": "ac",
+                "slug": "frenzy-ac-penalty",
+                "value": -3
             }
         ],
         "start": {

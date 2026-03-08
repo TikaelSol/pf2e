@@ -25,7 +25,50 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "adjustName": false,
+                "choices": {
+                    "filter": [
+                        "item:level:1",
+                        "item:category:class",
+                        "item:trait:{actor|system.details.class.trait}",
+                        {
+                            "or": [
+                                "feature:dragon-instinct",
+                                {
+                                    "not": "item:draconic-arrogance"
+                                }
+                            ]
+                        },
+                        {
+                            "nor": [
+                                "item:animal-companion",
+                                "item:animal-companion-druid",
+                                "item:bardic-lore",
+                                "item:fire-lung",
+                                "item:lingering-composition",
+                                "item:leshy-familiar",
+                                "item:martial-performance",
+                                "item:shore-step",
+                                "item:steadying-stone",
+                                "item:storm-born",
+                                "item:versatile-performance",
+                                "item:untamed-form"
+                            ]
+                        }
+                    ],
+                    "itemType": "feat"
+                },
+                "flag": "dedicatedTraining",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.LevelOneClassFeat"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.system.rulesSelections.dedicatedTraining}"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

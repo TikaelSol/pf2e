@@ -29,7 +29,33 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "forgiving-anatomy",
+                "toggleable": true
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "forgiving-anatomy",
+                    "feat:"
+                ],
+                "type": "all-damage",
+                "value": 10
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "forgiving-anatomy",
+                    {
+                        "not": "feat:ancestral-resistance"
+                    }
+                ],
+                "type": "all-damage",
+                "value": 10
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

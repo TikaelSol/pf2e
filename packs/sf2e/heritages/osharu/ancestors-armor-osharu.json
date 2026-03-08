@@ -21,6 +21,10 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.bestiary-ability-glossary-srd.Item.Shield Block"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.sf2e.equipment.Item.Armplates"
             }
         ],
         "traits": {

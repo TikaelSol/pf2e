@@ -17,7 +17,18 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "CreatureSize",
+                "value": "small"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "system.attributes.ancestryhp",
+                "value": 10
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

@@ -12,7 +12,7 @@
         },
         "category": "ancestryfeature",
         "description": {
-            "value": "<p>You gain the Prehensile Limbs (tail) standardized ancestry feat, even if you don't meet the prerequisites.</p>"
+            "value": "<p>You gain the @UUID[Compendium.sf2e.feats.Item.Prehensile Limbs] (tail) standardized ancestry feat, even if you don't meet the prerequisites.</p>"
         },
         "level": {
             "value": 1
@@ -25,7 +25,12 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.sf2e.feats.Item.Prehensile Limbs"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},
@@ -33,7 +38,9 @@
         },
         "traits": {
             "rarity": "common",
-            "value": []
+            "value": [
+                "maraquoi"
+            ]
         }
     },
     "type": "feat"

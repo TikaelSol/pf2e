@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p><strong>Frequency</strong> once per minute</p>\n<p>You Fly. If you don't have a fly Speed, you gain a fly Speed equal to your ancestry's Flight Specialist entry for this action. If you aren't on solid ground at the end of this movement, you fall.</p>"
+            "value": "<p><strong>Frequency</strong> once per minute</p><hr /><p>You Fly. If you don't have a fly Speed, you gain a fly Speed equal to your ancestry's Flight Specialist entry for this action. If you aren't on solid ground at the end of this movement, you fall.</p>"
         },
         "frequency": {
             "max": 1,
@@ -29,7 +29,28 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "basic-flight",
+                "predicate": [
+                    {
+                        "nor": [
+                            "feat:flight-specialist"
+                        ]
+                    }
+                ],
+                "toggleable": true
+            },
+            {
+                "key": "BaseSpeed",
+                "predicate": [
+                    "basic-flight"
+                ],
+                "selector": "fly",
+                "value": "@actor.flags.system.standardizedAncestryFeats.flightSpecialist.speed"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

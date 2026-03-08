@@ -25,7 +25,20 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.athletics.rank",
+                "value": 1
+            },
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "slug": "coastal-adaptation-swim-speed",
+                "value": 5
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

@@ -29,7 +29,32 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "choices": [
+                    {
+                        "label": "PF2E.PreciousMaterialColdIron",
+                        "value": "cold-iron"
+                    },
+                    {
+                        "label": "PF2E.PreciousMaterialSilver",
+                        "value": "silver"
+                    }
+                ],
+                "flag": "material",
+                "key": "ChoiceSet"
+            },
+            {
+                "definition": [
+                    "item:trait:unarmed"
+                ],
+                "key": "AdjustStrike",
+                "mode": "add",
+                "property": "materials",
+                "selector": "melee-strike-damage",
+                "value": "{item|flags.system.rulesSelections.material}"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

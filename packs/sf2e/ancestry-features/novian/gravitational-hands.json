@@ -12,7 +12,7 @@
         },
         "category": "ancestryfeature",
         "description": {
-            "value": ""
+            "value": "<p>You can direct your gravitational field to manipulate objects and interact with your surroundings. You have two hands with a reach of 5 feet, save that you use gravity to manipulate objects and your surroundings, rather than a physical appendage. These limbs appear as tangible tendrils of energy.</p>"
         },
         "level": {
             "value": 1
@@ -33,7 +33,9 @@
         },
         "traits": {
             "rarity": "common",
-            "value": []
+            "value": [
+                "novian"
+            ]
         }
     },
     "type": "feat"

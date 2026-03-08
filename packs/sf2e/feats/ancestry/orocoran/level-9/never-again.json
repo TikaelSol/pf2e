@@ -12,17 +12,13 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You refuse to surrender your autonomy ever again, and you've trained your mind to instinctively shake off mental control. Attempt a @Check[flat|dc:17]. On a success, you don't gain the triggering condition.</p>"
+            "value": "<p><strong>Trigger</strong> You're about to gain the @UUID[Compendium.sf2e.conditions.Item.Confused] or @UUID[Compendium.sf2e.conditions.Item.Controlled] condition.</p><hr /><p>You refuse to surrender your autonomy ever again, and you've trained your mind to instinctively shake off mental control. Attempt a @Check[flat|dc:17]. On a success, you don't gain the triggering condition.</p>"
         },
         "level": {
             "value": 9
         },
         "prerequisites": {
-            "value": [
-                {
-                    "value": "You’re about to gain the confused or controlled condition."
-                }
-            ]
+            "value": []
         },
         "publication": {
             "license": "ORC",

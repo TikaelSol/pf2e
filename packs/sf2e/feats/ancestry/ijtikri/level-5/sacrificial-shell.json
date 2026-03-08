@@ -29,7 +29,31 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "label": "Sacrificial Shell - Block Damage",
+                "option": "sacrificial-shell",
+                "predicate": [
+                    {
+                        "not": "self:effect:sacrificial-shell"
+                    }
+                ],
+                "toggleable": true
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "sacrificial-shell"
+                ],
+                "type": "all-damage",
+                "value": "@actor.level + @actor.abilities.con.mod"
+            }
+        ],
+        "selfEffect": {
+            "name": "Effect: Sacrificial Shell",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Sacrificial Shell"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

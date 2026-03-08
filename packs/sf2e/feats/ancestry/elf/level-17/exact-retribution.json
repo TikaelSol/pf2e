@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p><strong>Trigger</strong> You @UUID[Compendium.sf2e.feats.Item.Swear Vengeance].</p><hr /><p>You riposte as you're almost brought low. Make a single Strike against the triggering creature. If this Strike brings a foe to 0 Hit Points, the triggering activation of Swear Vengeance doesn't count against its frequency, and your wounded condition decreases by 1.</p>"
+            "value": "<p><strong>Trigger</strong> You @UUID[Compendium.sf2e.feats.Item.Swear Vengeance].</p><hr /><p>You riposte as you're almost brought low. Make a single Strike against the triggering creature. If this Strike brings a foe to 0 Hit Points, the triggering activation of Swear Vengeance doesn't count against its frequency, and your @UUID[Compendium.sf2e.conditions.Item.Wounded] condition decreases by 1.</p>"
         },
         "level": {
             "value": 17

@@ -25,7 +25,26 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:disarm"
+                ],
+                "selector": [
+                    "reflex-dc"
+                ],
+                "type": "circumstance",
+                "value": 2
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "upgrade",
+                "selector": "weapon-attack-roll",
+                "slug": "disarm-penalty",
+                "value": -1
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

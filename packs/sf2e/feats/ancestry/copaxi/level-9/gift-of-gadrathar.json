@@ -34,6 +34,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Gift of Gadrathar",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Gift of Gadrathar"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

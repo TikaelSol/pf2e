@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You have excellent light control and can strobe so fast that it makes would-be attackers sick. If a creature fails its flat check to hit you due to concealment caused by @UUID[Compendium.sf2e.feats.Item.Strobe Light], it becomes @UUID[Compendium.sf2e.conditions.Item.Sickened]{Sickened 1}.</p>"
+            "value": "<p>You have excellent light control and can strobe so fast that it makes would-be attackers sick. If a creature fails its flat check to hit you due to concealment caused by Strobe Light, it becomes @UUID[Compendium.sf2e.conditions.Item.Sickened]{Sickened 1}.</p>"
         },
         "level": {
             "value": 13
@@ -29,7 +29,22 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "itemType": "feat",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:slug:strobe-light"
+                ],
+                "property": "description",
+                "value": [
+                    {
+                        "text": "{item|description}"
+                    }
+                ]
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

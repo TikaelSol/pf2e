@@ -30,6 +30,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Electrify LFAN",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Electrify LFAN"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

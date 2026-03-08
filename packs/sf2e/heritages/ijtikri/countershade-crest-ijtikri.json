@@ -17,7 +17,22 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "swim-speed"
+                ],
+                "slug": "ijtikri-swim-speed",
+                "value": 10
+            },
+            {
+                "add": [
+                    "amphibious"
+                ],
+                "key": "ActorTraits"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

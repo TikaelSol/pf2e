@@ -25,7 +25,12 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.sf2e.equipment.Item.Armored Copi Exoskeleton"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

@@ -17,7 +17,14 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "land-speed",
+                "slug": "next-gen-raxilite",
+                "value": 30
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

@@ -17,7 +17,20 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "slug": "gengen-osharu-base-speed",
+                "value": 20
+            },
+            {
+                "add": [
+                    "amphibious"
+                ],
+                "key": "ActorTraits"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

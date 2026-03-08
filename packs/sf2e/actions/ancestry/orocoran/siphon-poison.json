@@ -12,7 +12,7 @@
         },
         "category": "offensive",
         "description": {
-            "value": "<p><strong>Effect</strong> You suck some of the poison out of an adjacent willing ally. Your ally can attempt a @Check[flat|dc:10] to end any persistent poison damage they're taking. On a critical failure, you take the same amount of persistent poison damage.</p>"
+            "value": "<p>You suck some of the poison out of an adjacent willing ally. Your ally can attempt a @Check[flat|dc:10] to end any persistent poison damage they're taking. On a critical failure, you take the same amount of persistent poison damage.</p>"
         },
         "publication": {
             "license": "ORC",

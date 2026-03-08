@@ -28,7 +28,12 @@
         "rules": [],
         "subfeatures": {
             "proficiencies": {},
-            "senses": {},
+            "senses": {
+                "scent": {
+                    "acuity": "imprecise",
+                    "range": 30
+                }
+            },
             "suppressedFeatures": []
         },
         "traits": {

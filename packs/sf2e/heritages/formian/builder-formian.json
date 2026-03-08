@@ -17,7 +17,20 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.crafting.rank",
+                "value": 1
+            },
+            {
+                "key": "BaseSpeed",
+                "selector": "burrow",
+                "slug": "builder-formian-burrow-speed",
+                "value": 5
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

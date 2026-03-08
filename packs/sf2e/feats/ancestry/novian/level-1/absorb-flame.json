@@ -26,6 +26,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Absorb Flame",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Absorb Flame"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

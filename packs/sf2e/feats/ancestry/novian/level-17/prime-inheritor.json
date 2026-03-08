@@ -29,6 +29,29 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Unleash Majesty"
+            },
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "diplomacy",
+                    "intimidation"
+                ],
+                "slug": "prime-inheritor",
+                "type": "status",
+                "value": 1
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "upgrade",
+                "predicate": [
+                    "target:trait:novian"
+                ],
+                "selectors": [
+                    "diplomacy",
+                    "intimidation"
+                ],
+                "slug": "prime-inheritor",
+                "value": 4
             }
         ],
         "subfeatures": {

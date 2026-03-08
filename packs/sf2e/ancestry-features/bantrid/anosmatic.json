@@ -25,7 +25,12 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Immunity",
+                "type": "olfactory"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

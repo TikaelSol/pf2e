@@ -25,7 +25,25 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "AdjustModifier",
+                "mode": "add",
+                "selector": "skill-check",
+                "slug": "follow-the-expert-circumstance",
+                "value": 1
+            },
+            {
+                "adjustment": {
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    "inflicts:controlled"
+                ],
+                "selector": "saving-throw"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>Light is nourishment for you, even if it comes in the form of highly concentrated beams. You gain resistance 5 against laser weapons and effects with the light trait. You can also use the photon accelerator activity.</p>"
+            "value": "<p>Light is nourishment for you, even if it comes in the form of highly concentrated beams. You gain resistance 5 against laser weapons and effects with the light trait. You can also use the @UUID[Compendium.sf2e.actions.Item.Photon Accelerator] activity.</p>"
         },
         "level": {
             "value": 9
@@ -29,7 +29,12 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.sf2e.actions.Item.Photon Accelerator"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

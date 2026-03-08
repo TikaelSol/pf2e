@@ -17,7 +17,55 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:trait:fire",
+                            "item:trait:cold"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "slug": "liminal-ryphorian-save-bonus",
+                "type": "circumstance",
+                "value": "ternary(gte(@actor.level,13),2,1)"
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "upgrade",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            13
+                        ]
+                    }
+                ],
+                "selector": "saving-throw",
+                "slug": "liminal-ryphorian-save-bonus",
+                "value": 2
+            },
+            {
+                "itemType": "condition",
+                "key": "ItemAlteration",
+                "mode": "downgrade",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:damage:type:fire",
+                            "item:damage:type:cold"
+                        ]
+                    }
+                ],
+                "property": "pd-recovery-dc",
+                "value": 10
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

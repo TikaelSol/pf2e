@@ -30,6 +30,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Invoke the Leviathan",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Invoke the Leviathan"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

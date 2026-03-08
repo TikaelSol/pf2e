@@ -17,7 +17,24 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "item:trait:mental"
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "key": "Resistance",
+                "type": "mental",
+                "value": "max(1,floor(@actor.level/2))"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

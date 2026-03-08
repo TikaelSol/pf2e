@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>Hylax teaches peace, even when bloodshed seems inevitable in a given situation, and that diffusing a fight is always worth a try. Before you reach the point of no return, you make one last overture to your foe using all the wisdom that you've learned from the elders, your religion, or your family. You gain the @UUID[Compendium.sf2e.feats.Item.Legendary Negotiation] feat even if you don't meet the feat's prerequisites. If you are in combat and haven't struck the opponent you're attempting to negotiate with, the penalty to your Diplomacy check is reduced to –2.</p>"
+            "value": "<p>You've trained your vestigial limbs for combat, and once you have control of an enemy with your larger and more powerful limbs, the smaller, sneakier ones go to work. You're permanently @UUID[Compendium.sf2e.conditions.Item.Quickened]. You can this extra action only to [[/act disarm]], [[/act grapple]]{grab}, or [[/act trip]] a creature.</p>"
         },
         "level": {
             "value": 17

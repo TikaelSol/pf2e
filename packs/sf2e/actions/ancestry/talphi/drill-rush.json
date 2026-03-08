@@ -19,7 +19,24 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "strike-from-the-worlds-core",
+                "toggleable": true
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "strike-from-the-worlds-core"
+                ],
+                "selector": [
+                    "all-speeds"
+                ],
+                "type": "status",
+                "value": 10
+            }
+        ],
         "traits": {
             "value": [
                 "traversal"

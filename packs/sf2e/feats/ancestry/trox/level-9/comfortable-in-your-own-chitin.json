@@ -27,7 +27,11 @@
         },
         "rules": [],
         "subfeatures": {
-            "proficiencies": {},
+            "proficiencies": {
+                "light": {
+                    "rank": 1
+                }
+            },
             "senses": {},
             "suppressedFeatures": []
         },

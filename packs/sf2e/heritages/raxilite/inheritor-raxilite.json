@@ -17,7 +17,76 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "choices": [
+                    {
+                        "label": "Bioengineer",
+                        "value": {
+                            "feat": "Compendium.sf2e.feats.Item.Specialty Crafting",
+                            "skill": "crafting"
+                        }
+                    },
+                    {
+                        "label": "Daredevil",
+                        "value": {
+                            "feat": "Compendium.sf2e.feats.Item.Diehard",
+                            "skill": "daredevil"
+                        }
+                    },
+                    {
+                        "label": "Emissary",
+                        "value": {
+                            "feat": "Compendium.sf2e.feats.Item.Digital Ambassador",
+                            "skill": "society"
+                        }
+                    },
+                    {
+                        "label": "Interstellar Pilot",
+                        "value": {
+                            "feat": "Compendium.sf2e.feats.Item.Express Driver",
+                            "skill": "piloting"
+                        }
+                    },
+                    {
+                        "label": "Physician",
+                        "value": {
+                            "feat": "Compendium.sf2e.feats.Item.Battle Medicine",
+                            "skill": "medicine"
+                        }
+                    },
+                    {
+                        "label": "Software Architect",
+                        "value": {
+                            "feat": "Compendium.sf2e.feats.Item.Phreaker",
+                            "skill": "computers"
+                        }
+                    }
+                ],
+                "flag": "inheritorRaxilite",
+                "key": "ChoiceSet",
+                "prompt": "Choose a field"
+            },
+            {
+                "key": "RollOption",
+                "option": "inheritor-field:{item|flags.system.rulesSelections.inheritorRaxilite.skill}"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.{item|flags.system.rulesSelections.inheritorRaxilite.skill}.rank",
+                "predicate": [
+                    {
+                        "not": "inheritor-field:daredevil"
+                    }
+                ],
+                "value": 1
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.system.rulesSelections.inheritorRaxilite.feat}"
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

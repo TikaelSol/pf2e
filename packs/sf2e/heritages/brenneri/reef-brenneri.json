@@ -21,6 +21,10 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Big Wet Eye Blink"
+            },
+            {
+                "key": "CreatureSize",
+                "value": "small"
             }
         ],
         "traits": {

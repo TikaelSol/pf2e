@@ -25,7 +25,27 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "predicate": [
+                    {
+                        "or": [
+                            "action:maneuver-in-flight",
+                            "action:high-jump"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "athletics",
+                    "acrobatics"
+                ],
+                "text": "Your target is @UUID[Compendium.sf2e.conditions.Item.Off-Guard] to this attack."
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

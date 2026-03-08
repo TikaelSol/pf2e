@@ -29,7 +29,37 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "category": "unarmed",
+                "damage": {
+                    "base": {
+                        "damageType": "slashing",
+                        "dice": 1,
+                        "die": "d6"
+                    }
+                },
+                "group": "brawling",
+                "img": "icons/magic/unholy/hand-claw-fire-blue.webp",
+                "key": "Strike",
+                "label": "Mageslayer Claw",
+                "range": null,
+                "slug": "mageslayer-claw",
+                "traits": [
+                    "finesse",
+                    "primal",
+                    "unarmed"
+                ]
+            },
+            {
+                "key": "Note",
+                "selector": [
+                    "{item|id}-attack"
+                ],
+                "text": "A creature you Strike with your mageslayer claw must attempt a @Check[will|against:class-spell] save against the higher of your class DC or spell DC. On a failure, the creature becomes @UUID[Compendium.sf2e.conditions.Item.Stupefied]{stupefied 1} for 1 minute (or @UUID[Compendium.sf2e.conditions.Item.Stupefied]{stupefied 2} on a critical failure).",
+                "title": "Mageslayer"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

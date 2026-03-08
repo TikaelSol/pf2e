@@ -25,7 +25,77 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "adjustName": false,
+                "choices": [
+                    {
+                        "label": "PF2E.Skill.Diplomacy",
+                        "predicate": [
+                            "skill:diplomacy:rank:0"
+                        ],
+                        "value": "diplomacy"
+                    },
+                    {
+                        "label": "PF2E.Skill.Performance",
+                        "predicate": [
+                            "skill:performance:rank:0"
+                        ],
+                        "value": "performance"
+                    }
+                ],
+                "flag": "skill",
+                "key": "ChoiceSet",
+                "predicate": [
+                    {
+                        "or": [
+                            "skill:diplomacy:rank:0",
+                            "skill:performance:rank:0"
+                        ]
+                    }
+                ],
+                "prompt": "PF2E.SpecificRule.Prompt.Skill",
+                "rollOption": "roll-model"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
+                "predicate": [
+                    {
+                        "or": [
+                            "roll-model:deception",
+                            "roll-model:diplomacy"
+                        ]
+                    }
+                ],
+                "value": 1
+            },
+            {
+                "adjustName": false,
+                "choices": [
+                    {
+                        "predicate": [
+                            "roll-model:diplomacy"
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Group Impression"
+                    },
+                    {
+                        "predicate": [
+                            "roll-model:performance"
+                        ],
+                        "value": "Compendium.sf2e.feats.Item.Impressive Performance"
+                    }
+                ],
+                "flag": "feat",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.SkillFeat"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.system.rulesSelections.feat}"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

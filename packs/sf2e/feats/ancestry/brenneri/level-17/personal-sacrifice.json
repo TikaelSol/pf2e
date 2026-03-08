@@ -22,7 +22,11 @@
             "value": 17
         },
         "prerequisites": {
-            "value": []
+            "value": [
+                {
+                    "value": "Personal Trinket"
+                }
+            ]
         },
         "publication": {
             "license": "ORC",

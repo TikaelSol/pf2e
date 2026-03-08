@@ -45,12 +45,13 @@
             "property": [],
             "resilient": 0
         },
-        "size": "med",
+        "size": "lg",
         "speedPenalty": 0,
         "strength": 0,
         "traits": {
             "rarity": "common",
             "value": [
+                "archaic",
                 "comfort",
                 "flexible"
             ]

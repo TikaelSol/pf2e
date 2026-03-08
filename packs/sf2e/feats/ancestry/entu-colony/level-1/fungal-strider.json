@@ -25,7 +25,19 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "track"
+                ],
+                "selector": [
+                    "survival-dc"
+                ],
+                "type": "circumstance",
+                "value": -2
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

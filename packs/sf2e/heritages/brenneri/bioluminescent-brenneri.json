@@ -17,7 +17,24 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "TokenLight",
+                "predicate": [
+                    "bioluminescence-active"
+                ],
+                "value": {
+                    "alpha": 0.15,
+                    "bright": 4,
+                    "dim": 8
+                }
+            },
+            {
+                "key": "RollOption",
+                "option": "bioluminescence-active",
+                "toggleable": true
+            }
+        ],
         "traits": {
             "rarity": "common",
             "value": []

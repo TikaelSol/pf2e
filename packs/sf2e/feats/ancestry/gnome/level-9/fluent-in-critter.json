@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You're obsessed with animals and communicating with them, consuming countless videos, recordings, and first-person accounts to hone your ability to speak with them. When you attempt a Diplomacy check to [[/act make-an-impression]] on or make a Request of an animal, roll twice and take the better result.</p>"
+            "value": "<p>You're obsessed with animals and communicating with them, consuming countless videos, recordings, and first-person accounts to hone your ability to speak with them. When you attempt a Diplomacy check to [[/act make-an-impression]] on or make a [[/act request]] of an animal, roll twice and take the better result.</p>"
         },
         "level": {
             "value": 9
@@ -29,7 +29,22 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "keep": "higher",
+                "key": "RollTwice",
+                "predicate": [
+                    "target:trait:animal",
+                    {
+                        "or": [
+                            "action:make-an-impression",
+                            "action:request"
+                        ]
+                    }
+                ],
+                "selector": "diplomacy"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

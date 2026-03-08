@@ -29,7 +29,14 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "fly",
+                "slug": "glide-fly",
+                "value": 20
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

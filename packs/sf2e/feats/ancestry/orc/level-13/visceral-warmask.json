@@ -26,6 +26,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Visceral Warmask",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Visceral Warmask"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

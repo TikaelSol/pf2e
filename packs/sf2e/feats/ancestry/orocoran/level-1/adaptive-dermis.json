@@ -30,6 +30,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Adaptive Dermis",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Adaptive Dermis"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

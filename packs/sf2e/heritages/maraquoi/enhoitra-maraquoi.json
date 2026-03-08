@@ -21,6 +21,12 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.feats.Item.Breath Control"
+            },
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "slug": "enhoitra-maraquoi-swim",
+                "value": 25
             }
         ],
         "traits": {

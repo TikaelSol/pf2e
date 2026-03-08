@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p><strong>Requirements</strong> Your target is larger than you.</p><hr /><p>You cling to a target with a sticky grasp. Attempt an Athletics check against the target's Fortitude DC.</p>\n<p><strong>Critical Success</strong> The target is @UUID[Compendium.sf2e.conditions.Item.Blinded] until the end of your next turn, unless you move or your target Escapes. If the target moves, you move with them.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.sf2e.conditions.Item.Dazzled] until the end of your next turn, unless you move or your target Escapes. If the target moves, you move with them.</p>\n<p><strong>Failure</strong> You miss the target.</p>\n<p><strong>Critical Failure</strong> You miss the target and land @UUID[Compendium.sf2e.conditions.Item.Prone].</p>"
+            "value": "<p><strong>Requirements</strong> Your target is larger than you.</p><hr /><p>You cling to a target with a sticky grasp. Attempt an @Check[athletics|against:fortitude] check against the target's Fortitude DC.</p>\n<p><strong>Critical Success</strong> The target is @UUID[Compendium.sf2e.conditions.Item.Blinded] until the end of your next turn, unless you move or your target Escapes. If the target moves, you move with them.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.sf2e.conditions.Item.Dazzled] until the end of your next turn, unless you move or your target Escapes. If the target moves, you move with them.</p>\n<p><strong>Failure</strong> You miss the target.</p>\n<p><strong>Critical Failure</strong> You miss the target and land @UUID[Compendium.sf2e.conditions.Item.Prone].</p>"
         },
         "level": {
             "value": 9

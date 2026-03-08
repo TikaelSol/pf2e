@@ -48,12 +48,19 @@
                 "level": 1,
                 "name": "Soulfeel",
                 "uuid": "Compendium.sf2e.ancestry-features.Item.Soulfeel"
+            },
+            "uyucM": {
+                "img": "icons/magic/perception/third-eye-blue-red.webp",
+                "level": 1,
+                "name": "Emotionsense",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Emotionsense"
             }
         },
         "languages": {
             "custom": "",
             "value": [
-                "common"
+                "common",
+                "fey"
             ]
         },
         "publication": {

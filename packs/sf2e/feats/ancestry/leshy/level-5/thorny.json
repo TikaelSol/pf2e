@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p><strong>Frequency</strong> once every 10 minutes</p><hr /><p>Your body is covered in thorns, spines, or other sharp protrusions, which you can position defensively. For 1 minute, adjacent creatures that hit you with a melee attack, as well as creatures that hit you with melee unarmed attacks, take an amount of piercing damage equal to your level.</p>"
+            "value": "<p><strong>Frequency</strong> once every 10 minutes</p><hr /><p>Your body is covered in thorns, spines, or other sharp protrusions, which you can position defensively. For 1 minute, adjacent creatures that hit you with a melee attack, as well as creatures that hit you with melee unarmed attacks, take @Damage[@actor.level[piercing]] damage equal to your level.</p>"
         },
         "frequency": {
             "max": 1,

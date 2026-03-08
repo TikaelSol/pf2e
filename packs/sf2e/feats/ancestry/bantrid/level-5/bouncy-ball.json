@@ -29,7 +29,35 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "hideIfDisabled": true,
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:high-jump",
+                            "action:long-jump"
+                        ]
+                    },
+                    "second-jump"
+                ],
+                "selector": [
+                    "athletics"
+                ],
+                "type": "circumstance",
+                "value": 2
+            },
+            {
+                "key": "RollOption",
+                "label": "SF2E.SpecificRule.Bantrid.BouncyBall.SecondJump",
+                "option": "second-jump",
+                "predicate": [
+                    "feat:quick-jump"
+                ],
+                "toggleable": true
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

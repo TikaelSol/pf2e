@@ -24,6 +24,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Shifthide Camouflage",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Shifthide Camouflage"
+        },
         "traits": {
             "value": [
                 "morph",

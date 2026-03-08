@@ -29,7 +29,21 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "orbital-defense",
+                "toggleable": true
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "orbital-defense"
+                ],
+                "type": "all-damage",
+                "value": "floor(@actor.level/2)"
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

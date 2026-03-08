@@ -26,6 +26,10 @@
             "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
+        "selfEffect": {
+            "name": "Effect: Wide Field of View",
+            "uuid": "Compendium.sf2e.feat-effects.Item.Effect: Wide Field of View"
+        },
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

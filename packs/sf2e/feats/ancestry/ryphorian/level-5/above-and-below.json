@@ -12,7 +12,7 @@
         },
         "category": "ancestry",
         "description": {
-            "value": "<p>You and your partner outmaneuver your foes by taking advantage of your difference in size. When you and your ally who's a different size than you flank the same enemy, that enemy takes a –2 circumstance penalty to its DCs against [[/act disarm]], [[/act feint]], [[/act reposition]], [[/act shove]], [[/act trip]], and [[/act tumble-through]] attempts.</p>"
+            "value": "<p>You and your partner outmaneuver your foes by taking advantage of your difference in size. When you and your ally who's a different size than you flank the same enemy, that enemy takes a –2 circumstance penalty to its DCs against [[/act disarm]], [[/act feint]], [[/act reposition]], [[/act shove]], [[/act trip]], and [[/act tumble-through]] attempts.</p>\n<p>@UUID[Compendium.sf2e.feat-effects.Item.Effect: Above and Below]</p>"
         },
         "level": {
             "value": 5

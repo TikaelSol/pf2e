@@ -33,6 +33,21 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Toxic Tear"
+            },
+            {
+                "critical": false,
+                "damageCategory": "persistent",
+                "damageType": "poison",
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "not": "toxic-tear"
+                    }
+                ],
+                "selector": [
+                    "beak-damage"
+                ],
+                "value": "ternary(gte(@weapon.system.damage.dice,3),2,1)"
             }
         ],
         "subfeatures": {

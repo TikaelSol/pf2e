@@ -29,7 +29,25 @@
             "remaster": true,
             "title": "Starfinder Galactic Ancestries"
         },
-        "rules": [],
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "apocalypse-burst",
+                "toggleable": true
+            },
+            {
+                "key": "DamageAlteration",
+                "mode": "upgrade",
+                "predicate": [
+                    "apocalypse-burst"
+                ],
+                "property": "dice-faces",
+                "selectors": [
+                    "fire-breath-inline-damage"
+                ],
+                "value": 10
+            }
+        ],
         "subfeatures": {
             "proficiencies": {},
             "senses": {},

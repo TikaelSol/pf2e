@@ -29,6 +29,16 @@
             {
                 "key": "GrantItem",
                 "uuid": "Compendium.sf2e.actions.Item.Drill Rush"
+            },
+            {
+                "itemType": "feat",
+                "key": "ItemAlteration",
+                "mode": "downgrade",
+                "predicate": [
+                    "item:slug:channel-the-worlds-core"
+                ],
+                "property": "frequency-per",
+                "value": "PT1M"
             }
         ],
         "subfeatures": {
