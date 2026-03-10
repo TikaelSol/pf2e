@@ -1,14 +1,14 @@
 {
-    "_id": "z4ksxU9VIivyxUZP",
+    "_id": "nyqLruVq5fyZAzwF",
     "folder": "6MTWumQFoXrDW8Jx",
     "img": "systems/sf2e/icons/default-icons/background.svg",
-    "name": "Clansworn",
+    "name": "Eoxian Local",
     "system": {
         "boosts": {
             "0": {
                 "value": [
-                    "con",
-                    "str"
+                    "cha",
+                    "con"
                 ]
             },
             "1": {
@@ -23,14 +23,14 @@
             }
         },
         "description": {
-            "value": "<p>Your allegiance lies with Ulrikka Clanholdings. You are a member of a dwarven clan or one of their retainers. You might be a laborer on a mining rig, a long-distance delivery pilot, or the blood relative of a director or other prominent figure.</p>\n<p>Choose two attribute boosts. One must be <strong>Constitution</strong> or <strong>Strength</strong>, and one is a free attribute boost.</p>\n<p>You are trained in the Athletics skill and the Mining Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Hefty Hauler] skill feat.</p>"
+            "value": "<p>You grew up on Eox or spent a significant amount of time there learning about the macabre customs and decadent culture of the grave world. Perhaps you're a survivor of the Hall of the Living, an Arcanamirium exchange student learning necromantic magic in Pact Port, or an aspiring necrovite's apprentice hoping for a chance at immortality.</p>\n<p>Choose two attribute boosts. One must be <strong>Charisma</strong> or <strong>Constitution</strong>, and one is a free attribute boost.</p>\n<p>You're trained in the Society skill and the Eoxian Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Streetwise] skill feat.</p>"
         },
         "items": {
-            "RUQmk": {
+            "vavUY": {
                 "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
                 "level": 1,
-                "name": "Hefty Hauler",
-                "uuid": "Compendium.sf2e.feats.Item.Hefty Hauler"
+                "name": "Streetwise",
+                "uuid": "Compendium.sf2e.feats.Item.Streetwise"
             }
         },
         "publication": {
@@ -41,14 +41,14 @@
         "rules": [],
         "trainedSkills": {
             "lore": [
-                "Mining Lore"
+                "Eoxian Lore"
             ],
             "value": [
-                "athletics"
+                "society"
             ]
         },
         "traits": {
-            "rarity": "uncommon",
+            "rarity": "common",
             "value": []
         }
     },

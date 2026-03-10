@@ -2952,6 +2952,7 @@
                     "value": [
                         "agile",
                         "nonlethal",
+                        "professional-performance",
                         "tech"
                     ]
                 }
@@ -3251,9 +3252,6 @@
                 "value": 357
             },
             "immunities": [
-                {
-                    "type": "bleed"
-                },
                 {
                     "exceptions": [],
                     "type": "death-effects"

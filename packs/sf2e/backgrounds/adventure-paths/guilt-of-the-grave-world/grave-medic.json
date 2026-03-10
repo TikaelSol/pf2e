@@ -1,14 +1,14 @@
 {
-    "_id": "z4ksxU9VIivyxUZP",
+    "_id": "KeTuBS1LUAb0USEg",
     "folder": "6MTWumQFoXrDW8Jx",
     "img": "systems/sf2e/icons/default-icons/background.svg",
-    "name": "Clansworn",
+    "name": "Grave Medic",
     "system": {
         "boosts": {
             "0": {
                 "value": [
-                    "con",
-                    "str"
+                    "int",
+                    "wis"
                 ]
             },
             "1": {
@@ -23,14 +23,14 @@
             }
         },
         "description": {
-            "value": "<p>Your allegiance lies with Ulrikka Clanholdings. You are a member of a dwarven clan or one of their retainers. You might be a laborer on a mining rig, a long-distance delivery pilot, or the blood relative of a director or other prominent figure.</p>\n<p>Choose two attribute boosts. One must be <strong>Constitution</strong> or <strong>Strength</strong>, and one is a free attribute boost.</p>\n<p>You are trained in the Athletics skill and the Mining Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Hefty Hauler] skill feat.</p>"
+            "value": "<p>You're a healer who doesn't keep people alive. Your specialty is treating undead patients. You might be undead yourself, a compassionate ally of the unliving, or maybe you've forced yourself to learn macabre protocols so you can stitch your friends back together. Whatever the case, you're experienced treating the mental and physical ailments of undead creatures.</p>\n<p>Choose two attribute boosts. One must be to <strong>Intelligence</strong> or <strong>Wisdom</strong>, and one is a free attribute boost.</p>\n<p>You're trained in the Medicine skill and the Undead Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Stitch Flesh] skill feat.</p>"
         },
         "items": {
-            "RUQmk": {
+            "CDqMF": {
                 "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
                 "level": 1,
-                "name": "Hefty Hauler",
-                "uuid": "Compendium.sf2e.feats.Item.Hefty Hauler"
+                "name": "Stitch Flesh",
+                "uuid": "Compendium.sf2e.feats.Item.Stitch Flesh"
             }
         },
         "publication": {
@@ -41,14 +41,14 @@
         "rules": [],
         "trainedSkills": {
             "lore": [
-                "Mining Lore"
+                "Undead Lore"
             ],
             "value": [
-                "athletics"
+                "medicine"
             ]
         },
         "traits": {
-            "rarity": "uncommon",
+            "rarity": "common",
             "value": []
         }
     },

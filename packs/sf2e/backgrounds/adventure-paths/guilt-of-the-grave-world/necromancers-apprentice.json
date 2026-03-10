@@ -1,14 +1,14 @@
 {
-    "_id": "z4ksxU9VIivyxUZP",
+    "_id": "GKTLyFo9IcM0PSVx",
     "folder": "6MTWumQFoXrDW8Jx",
     "img": "systems/sf2e/icons/default-icons/background.svg",
-    "name": "Clansworn",
+    "name": "Necromancer's Apprentice",
     "system": {
         "boosts": {
             "0": {
                 "value": [
                     "con",
-                    "str"
+                    "int"
                 ]
             },
             "1": {
@@ -23,14 +23,14 @@
             }
         },
         "description": {
-            "value": "<p>Your allegiance lies with Ulrikka Clanholdings. You are a member of a dwarven clan or one of their retainers. You might be a laborer on a mining rig, a long-distance delivery pilot, or the blood relative of a director or other prominent figure.</p>\n<p>Choose two attribute boosts. One must be <strong>Constitution</strong> or <strong>Strength</strong>, and one is a free attribute boost.</p>\n<p>You are trained in the Athletics skill and the Mining Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Hefty Hauler] skill feat.</p>"
+            "value": "<p>You apprenticed under a necromancer—a hard education in a field where a cadaver you were dissecting could suddenly animate and every magical artifact seemed deadly. Now on your own, you're grateful you learned to identify magical threats quickly and thoroughly.</p>\n<p>Choose two attribute boosts. One must be to <strong>Constitution</strong> or <strong>Intelligence</strong>, and one is a free attribute boost.</p>\n<p>You're trained in the Arcana skill and the Necromancy Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Quick Identification] skill feat.</p>"
         },
         "items": {
-            "RUQmk": {
+            "2T6nd": {
                 "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
                 "level": 1,
-                "name": "Hefty Hauler",
-                "uuid": "Compendium.sf2e.feats.Item.Hefty Hauler"
+                "name": "Quick Identification",
+                "uuid": "Compendium.sf2e.feats.Item.Quick Identification"
             }
         },
         "publication": {
@@ -41,14 +41,14 @@
         "rules": [],
         "trainedSkills": {
             "lore": [
-                "Mining Lore"
+                "Necromancy Lore"
             ],
             "value": [
-                "athletics"
+                "arcana"
             ]
         },
         "traits": {
-            "rarity": "uncommon",
+            "rarity": "common",
             "value": []
         }
     },

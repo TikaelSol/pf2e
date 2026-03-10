@@ -1,14 +1,14 @@
 {
-    "_id": "z4ksxU9VIivyxUZP",
+    "_id": "C31476Mc8HXz5m9L",
     "folder": "6MTWumQFoXrDW8Jx",
     "img": "systems/sf2e/icons/default-icons/background.svg",
-    "name": "Clansworn",
+    "name": "Acolyte (Grave World)",
     "system": {
         "boosts": {
             "0": {
                 "value": [
                     "con",
-                    "str"
+                    "wis"
                 ]
             },
             "1": {
@@ -23,14 +23,14 @@
             }
         },
         "description": {
-            "value": "<p>Your allegiance lies with Ulrikka Clanholdings. You are a member of a dwarven clan or one of their retainers. You might be a laborer on a mining rig, a long-distance delivery pilot, or the blood relative of a director or other prominent figure.</p>\n<p>Choose two attribute boosts. One must be <strong>Constitution</strong> or <strong>Strength</strong>, and one is a free attribute boost.</p>\n<p>You are trained in the Athletics skill and the Mining Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Hefty Hauler] skill feat.</p>"
+            "value": "<p>You've joined the Xenowardens because you care deeply about nature and conserving natural resources. You find ways to connect with nature in even the most unlikely places, and you're an advocate for helpless creatures.</p>\n<p>Choose two attribute boosts. One must be <strong>Constitution</strong> or <strong>Wisdom</strong>, and one is a free attribute boost.</p>\n<p>You are trained in the Survival skill and either the Cooking or Life Science Lore skill. You gain the @UUID[Compendium.sf2e.feats.Item.Urban Survivalist] skill feat.</p>"
         },
         "items": {
-            "RUQmk": {
+            "hZsiQ": {
                 "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
                 "level": 1,
-                "name": "Hefty Hauler",
-                "uuid": "Compendium.sf2e.feats.Item.Hefty Hauler"
+                "name": "Urban Survivalist",
+                "uuid": "Compendium.sf2e.feats.Item.Urban Survivalist"
             }
         },
         "publication": {
@@ -40,11 +40,9 @@
         },
         "rules": [],
         "trainedSkills": {
-            "lore": [
-                "Mining Lore"
-            ],
+            "lore": [],
             "value": [
-                "athletics"
+                "survival"
             ]
         },
         "traits": {
