@@ -25,7 +25,7 @@
                 "damageType": "spirit",
                 "key": "FlatModifier",
                 "selector": "strike-damage",
-                "value": "1+floor(@actor.flags.pf2e.tattooedHistorian.archetypeFeatCount/2)"
+                "value": "1+floor(@actor.flags.system.tattooedHistorian.archetypeFeatCount/2)"
             }
         ],
         "start": {

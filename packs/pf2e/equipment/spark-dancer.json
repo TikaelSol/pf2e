@@ -83,7 +83,7 @@
                 "selectors": [
                     "{item|id}-damage"
                 ],
-                "value": "{item|flags.pf2e.rulesSelections.sparkDancer}"
+                "value": "{item|flags.system.rulesSelections.sparkDancer}"
             }
         ],
         "runes": {

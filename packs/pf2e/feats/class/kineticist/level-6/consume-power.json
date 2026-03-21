@@ -55,7 +55,7 @@
                 "predicate": [
                     "consume-power"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.consumePower}",
+                "type": "{item|flags.system.rulesSelections.consumePower}",
                 "value": "@actor.level"
             }
         ],

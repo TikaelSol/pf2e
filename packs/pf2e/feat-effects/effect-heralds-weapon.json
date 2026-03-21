@@ -34,7 +34,7 @@
                 "mode": "override",
                 "property": "damage-type",
                 "selectors": [
-                    "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                    "{item|flags.system.rulesSelections.weapon}-damage"
                 ],
                 "slug": "base",
                 "value": "spirit"
@@ -44,14 +44,14 @@
                 "diceNumber": 2,
                 "dieSize": "d4",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "itemType": "weapon",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:slug:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "property": "traits",
                 "value": "sanctified"

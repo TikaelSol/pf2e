@@ -37,25 +37,25 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.operative.aim.diceNumber",
+                "path": "flags.system.operative.aim.diceNumber",
                 "value": "ternary(gte(@actor.level,17),4,ternary(gte(@actor.level,11),3,ternary(gte(@actor.level,5),2,1)))"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.operative.aim.dieSize",
+                "path": "flags.system.operative.aim.dieSize",
                 "value": 4
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.operative.aim.coverReduction",
+                "path": "flags.system.operative.aim.coverReduction",
                 "value": "ternary(gte(@actor.level,17),4,ternary(gte(@actor.level,11),2,1))"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.operative.aim.rangeIncrement",
+                "path": "flags.system.operative.aim.rangeIncrement",
                 "value": 1
             }
         ],

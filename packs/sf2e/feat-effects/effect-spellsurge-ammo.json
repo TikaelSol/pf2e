@@ -24,51 +24,12 @@
         "rules": [
             {
                 "adjustName": false,
-                "choices": [
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.First",
-                        "value": 1
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Second",
-                        "value": 2
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Third",
-                        "value": 3
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Fourth",
-                        "value": 4
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Fifth",
-                        "value": 5
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Sixth",
-                        "value": 6
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Seventh",
-                        "value": 7
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Eighth",
-                        "value": 8
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Ninth",
-                        "value": 9
-                    },
-                    {
-                        "label": "PF2E.SpecificRule.SpellRank.Tenth",
-                        "value": 10
-                    }
-                ],
+                "choices": {
+                    "config": "rank"
+                },
                 "flag": "rank",
                 "key": "ChoiceSet",
-                "prompt": "PF2E.SpecificRule.SpellRank.Prompt"
+                "prompt": "PF2E.SpecificRule.Prompt.Rank"
             },
             {
                 "adjustName": false,
@@ -102,16 +63,16 @@
                 "prompt": "SF2E.SpecificRule.Prompt.WeaponOrGrenade"
             },
             {
-                "damageType": "{item|flags.sf2e.rulesSelections.damageType}",
+                "damageType": "{item|flags.system.rulesSelections.damageType}",
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.sf2e.rulesSelections.weapon}-damage",
-                    "{item|flags.sf2e.rulesSelections.weapon}-inline-damage"
+                    "{item|flags.system.rulesSelections.weapon}-damage",
+                    "{item|flags.system.rulesSelections.weapon}-inline-damage"
                 ],
-                "value": "@item.flags.sf2e.rulesSelections.rank"
+                "value": "@item.flags.system.rulesSelections.rank"
             },
             {
-                "itemId": "{item|flags.sf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

@@ -40,14 +40,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.animalSkinBonus",
+                "path": "flags.system.animalSkinBonus",
                 "priority": 19,
                 "value": 2
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.animalSkinBonus",
+                "path": "flags.system.animalSkinBonus",
                 "predicate": [
                     "feature:greater-juggernaut"
                 ],
@@ -63,7 +63,7 @@
                 ],
                 "selector": "ac",
                 "type": "item",
-                "value": "@actor.flags.pf2e.animalSkinBonus"
+                "value": "@actor.flags.system.animalSkinBonus"
             },
             {
                 "key": "AdjustModifier",
@@ -74,7 +74,7 @@
                 "relabel": "PF2E.SpecificRule.AnimalSkin.BracersOfArmor",
                 "selector": "ac",
                 "slug": "bands-of-force",
-                "value": "@actor.flags.pf2e.animalSkinBonus"
+                "value": "@actor.flags.system.animalSkinBonus"
             },
             {
                 "key": "AdjustModifier",
@@ -85,7 +85,7 @@
                 "relabel": "PF2E.SpecificRule.AnimalSkin.ExplorersClothing",
                 "selector": "ac",
                 "slug": "explorers-clothing",
-                "value": "@actor.flags.pf2e.animalSkinBonus"
+                "value": "@actor.flags.system.animalSkinBonus"
             },
             {
                 "key": "AdjustModifier",
@@ -96,7 +96,7 @@
                 "relabel": "PF2E.SpecificRule.AnimalSkin.MageArmor",
                 "selector": "ac",
                 "slug": "mage-armor",
-                "value": "@actor.flags.pf2e.animalSkinBonus"
+                "value": "@actor.flags.system.animalSkinBonus"
             }
         ],
         "subfeatures": {

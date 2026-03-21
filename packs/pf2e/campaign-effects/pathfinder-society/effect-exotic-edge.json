@@ -39,7 +39,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.bonusType}",
+                "selector": "{item|flags.system.rulesSelections.bonusType}",
                 "type": "circumstance",
                 "value": 1
             }

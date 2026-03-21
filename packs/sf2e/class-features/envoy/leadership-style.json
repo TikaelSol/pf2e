@@ -39,7 +39,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.sf2e.rulesSelections.style}"
+                "uuid": "{item|flags.system.rulesSelections.style}"
             }
         ],
         "subfeatures": {

@@ -45,7 +45,7 @@
                     {
                         "or": [
                             "item:trait:emotion",
-                            "item:trait:{item|flags.pf2e.rulesSelections.soothing}"
+                            "item:trait:{item|flags.system.rulesSelections.soothing}"
                         ]
                     }
                 ],

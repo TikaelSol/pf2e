@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.thaumaturge.lantern",
+                "path": "flags.system.thaumaturge.lantern",
                 "priority": 51,
                 "value": 40
             }

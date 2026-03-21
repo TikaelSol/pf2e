@@ -80,7 +80,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Material"
             },
             {
-                "damageType": "{item|flags.sf2e.rulesSelections.energyDamageType}",
+                "damageType": "{item|flags.system.rulesSelections.energyDamageType}",
                 "diceNumber": 2,
                 "dieSize": "d6",
                 "key": "DamageDice",
@@ -107,7 +107,7 @@
                     "seep-in:physical:precious-material"
                 ],
                 "property": "materials",
-                "value": "{item|flags.sf2e.rulesSelections.preciousMaterial}"
+                "value": "{item|flags.system.rulesSelections.preciousMaterial}"
             }
         ],
         "start": {

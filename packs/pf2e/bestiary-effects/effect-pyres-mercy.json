@@ -1,0 +1,46 @@
+{
+    "_id": "u3Qy9t7RuE4wKV0O",
+    "img": "icons/magic/fire/flame-burning-skull-orange.webp",
+    "name": "Effect: Pyre's Mercy",
+    "system": {
+        "description": {
+            "value": "<p>You gain fire weakness 5 while frightened.</p>"
+        },
+        "duration": {
+            "expiry": null,
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Adventure Path: Hellbreakers"
+        },
+        "rules": [
+            {
+                "key": "Weakness",
+                "predicate": [
+                    "self:condition:frightened"
+                ],
+                "type": "fire",
+                "value": 5
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

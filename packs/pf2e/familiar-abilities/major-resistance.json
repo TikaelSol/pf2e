@@ -21,12 +21,12 @@
         "rules": [
             {
                 "key": "Resistance",
-                "type": "{actor|flags.pf2e.resistance.resistanceOne}",
+                "type": "{actor|flags.system.resistance.resistanceOne}",
                 "value": "@actor.level"
             },
             {
                 "key": "Resistance",
-                "type": "{actor|flags.pf2e.resistance.resistanceTwo}",
+                "type": "{actor|flags.system.resistance.resistanceTwo}",
                 "value": "@actor.level"
             }
         ],

@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.guardianDedicationCount",
+                "path": "flags.system.guardianDedicationCount",
                 "value": 1
             },
             {
@@ -57,7 +57,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                "uuid": "{item|flags.system.rulesSelections.feat}"
             }
         ],
         "subfeatures": {

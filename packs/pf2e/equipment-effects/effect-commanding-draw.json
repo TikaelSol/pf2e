@@ -36,7 +36,7 @@
             {
                 "keep": "higher",
                 "key": "RollTwice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack"
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack"
             }
         ],
         "start": {

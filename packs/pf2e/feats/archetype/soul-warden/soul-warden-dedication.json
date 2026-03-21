@@ -39,9 +39,9 @@
                     "undead-nearby"
                 ],
                 "value": {
-                    "bright": "ternary(gte(@actor.flags.pf2e.soulWarden.featCount,3),10,0)",
+                    "bright": "ternary(gte(@actor.flags.system.soulWarden.featCount,3),10,0)",
                     "color": "#0056a1",
-                    "dim": "ternary(gte(@actor.flags.pf2e.soulWarden.featCount,3),20,10)",
+                    "dim": "ternary(gte(@actor.flags.system.soulWarden.featCount,3),20,10)",
                     "luminosity": 0.4
                 }
             },
@@ -54,7 +54,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.soulWarden.featCount",
+                "path": "flags.system.soulWarden.featCount",
                 "value": 1
             }
         ],

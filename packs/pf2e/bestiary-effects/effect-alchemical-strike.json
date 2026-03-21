@@ -45,7 +45,7 @@
                 "prompt": "PF2E.UI.RuleElements.ChoiceSet.Prompt"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damageType}",
+                "damageType": "{item|flags.system.rulesSelections.damageType}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",

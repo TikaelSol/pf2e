@@ -104,7 +104,7 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectBeastmastersSigilRangedWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectBeastmastersSigilRangedWeapon}-damage"
             },
             {
                 "critical": true,
@@ -117,7 +117,7 @@
                     "adjacent-sigil-summon",
                     "beastmasters-sigil:beastmasters-sigil-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectBeastmastersSigilRangedWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectBeastmastersSigilRangedWeapon}-damage"
             }
         ],
         "start": {

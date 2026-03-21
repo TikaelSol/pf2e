@@ -2150,7 +2150,7 @@
                     {
                         "flag": "analyst",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.paradox}"
+                        "uuid": "{item|flags.system.rulesSelections.paradox}"
                     }
                 ],
                 "slug": "paradox",
@@ -2220,7 +2220,7 @@
                             {
                                 "mode": "add",
                                 "property": "traits",
-                                "value": "{actor|flags.sf2e.witchwarper.tradition}"
+                                "value": "{actor|flags.system.witchwarper.tradition}"
                             }
                         ],
                         "flag": "warpReality",
@@ -2306,7 +2306,7 @@
                     {
                         "flag": "tangibleObject",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.anchor}"
+                        "uuid": "{item|flags.system.rulesSelections.anchor}"
                     }
                 ],
                 "slug": "anchor",
@@ -2374,7 +2374,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.witchwarper.tradition",
+                        "path": "flags.system.witchwarper.tradition",
                         "value": "arcane"
                     }
                 ],

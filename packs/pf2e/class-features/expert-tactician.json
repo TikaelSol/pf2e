@@ -47,7 +47,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.firstTactic}"
+                "uuid": "{item|flags.system.rulesSelections.firstTactic}"
             },
             {
                 "adjustName": false,
@@ -70,7 +70,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.secondTactic}"
+                "uuid": "{item|flags.system.rulesSelections.secondTactic}"
             }
         ],
         "subfeatures": {

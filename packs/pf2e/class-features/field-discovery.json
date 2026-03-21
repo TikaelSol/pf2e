@@ -27,7 +27,7 @@
         "rules": [
             {
                 "key": "GrantItem",
-                "uuid": "{actor|flags.pf2e.alchemist.fieldDiscovery}"
+                "uuid": "{actor|flags.system.alchemist.fieldDiscovery}"
             }
         ],
         "traits": {

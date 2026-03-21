@@ -57,13 +57,13 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.energyDamage}",
+                "type": "{item|flags.system.rulesSelections.energyDamage}",
                 "value": 15
             },
             {
                 "key": "DamageDice",
                 "override": {
-                    "damageType": "{item|flags.pf2e.rulesSelections.energyDamage}"
+                    "damageType": "{item|flags.system.rulesSelections.energyDamage}"
                 },
                 "selector": "energy-ray-damage"
             }

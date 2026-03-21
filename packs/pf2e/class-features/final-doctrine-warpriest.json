@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.favoredWeaponRank",
+                "path": "flags.system.favoredWeaponRank",
                 "value": 3
             }
         ],

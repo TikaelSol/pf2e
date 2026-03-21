@@ -227,7 +227,7 @@
                         "key": "FlatModifier",
                         "predicate": [
                             "action:craft",
-                            "{item|flags.pf2e.rulesSelections.specialtyCrafting}"
+                            "{item|flags.system.rulesSelections.specialtyCrafting}"
                         ],
                         "selector": "crafting",
                         "type": "circumstance",
@@ -3161,7 +3161,7 @@
                         "allowDuplicate": false,
                         "flag": "nocticula",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.deity}"
+                        "uuid": "{item|flags.system.rulesSelections.deity}"
                     },
                     {
                         "fist": true,
@@ -3174,7 +3174,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "flags.pf2e.favoredWeaponRank",
+                        "path": "flags.system.favoredWeaponRank",
                         "predicate": [
                             "class:cleric"
                         ],
@@ -3259,7 +3259,7 @@
                     {
                         "flag": "cloisteredCleric",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.doctrine}"
+                        "uuid": "{item|flags.system.rulesSelections.doctrine}"
                     }
                 ],
                 "slug": "doctrine",
@@ -3443,7 +3443,7 @@
                     {
                         "flag": "firstDoctrineCloisteredCleric",
                         "key": "GrantItem",
-                        "uuid": "{actor|flags.pf2e.cleric.firstDoctrine}"
+                        "uuid": "{actor|flags.system.cleric.firstDoctrine}"
                     }
                 ],
                 "slug": "first-doctrine",
@@ -3633,7 +3633,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.cleric",
+                        "path": "flags.system.cleric",
                         "value": {
                             "fifthDoctrine": "Compendium.pf2e.classfeatures.Item.Fifth Doctrine (Cloistered Cleric)",
                             "finalDoctrine": "Compendium.pf2e.classfeatures.Item.Final Doctrine (Cloistered Cleric)",

@@ -6,12 +6,6 @@
         "description": {
             "value": "<p>Shizuru's light flows through your blade. Your weapons and unarmed attacks deal an additional 1d6 fire damage or 1d6 spirit damage; you choose each time you make an attack.</p>"
         },
-        "duration": {
-            "expiry": null,
-            "sustained": false,
-            "unit": "unlimited",
-            "value": -1
-        },
         "level": {
             "value": 0
         },
@@ -39,24 +33,27 @@
                 "toggleable": true
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.shizuruModerateBoon}",
+                "damageType": "{item|flags.system.rulesSelections.shizuruModerateBoon}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
                 "selector": "strike-damage"
             }
         ],
-        "start": {
-            "initiative": null,
-            "value": 0
-        },
-        "tokenIcon": {
-            "show": false
-        },
         "traits": {
             "rarity": "common",
             "value": []
+        },
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "deityboon",
+        "prerequisites": {
+            "value": []
         }
     },
-    "type": "effect"
+    "type": "feat"
 }

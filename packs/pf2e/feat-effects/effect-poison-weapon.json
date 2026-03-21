@@ -54,7 +54,7 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectPoisonWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectPoisonWeapon}-damage"
             },
             {
                 "damageType": "poison",
@@ -67,7 +67,7 @@
                         "not": "feat:deadly-poison-weapon"
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectPoisonWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectPoisonWeapon}-damage"
             },
             {
                 "damageType": "poison",
@@ -77,7 +77,7 @@
                 "predicate": [
                     "feat:deadly-poison-weapon"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectPoisonWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectPoisonWeapon}-damage"
             }
         ],
         "start": {

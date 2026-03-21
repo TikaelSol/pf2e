@@ -28,14 +28,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elements",
+                "path": "flags.system.kineticist.elements",
                 "priority": 19,
                 "value": []
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate",
+                "path": "flags.system.kineticist.gate",
                 "priority": 49,
                 "value": {
                     "five": null,
@@ -76,7 +76,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.elementOne}"
+                "uuid": "{item|flags.system.rulesSelections.elementOne}"
             },
             {
                 "adjustName": false,
@@ -95,7 +95,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.elementTwo}"
+                "uuid": "{item|flags.system.rulesSelections.elementTwo}"
             }
         ],
         "traits": {

@@ -25,7 +25,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.solarian.solarShield.hp",
+                "path": "flags.system.solarian.solarShield.hp",
                 "value": "5 + 2*(@actor.level)"
             },
             {
@@ -90,8 +90,8 @@
                     }
                 ],
                 "value": {
-                    "max": "{actor|flags.sf2e.solarian.solarShield.hp}",
-                    "value": "{actor|flags.sf2e.solarian.solarShield.hp}"
+                    "max": "{actor|flags.system.solarian.solarShield.hp}",
+                    "value": "{actor|flags.system.solarian.solarShield.hp}"
                 }
             },
             {

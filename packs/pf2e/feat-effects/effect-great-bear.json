@@ -60,10 +60,10 @@
                     "self:effect:ursine-avenger-form"
                 ],
                 "reach": {
-                    "override": "{item|flags.pf2e.rulesSelections.enlarge.reach}"
+                    "override": "{item|flags.system.rulesSelections.enlarge.reach}"
                 },
                 "resizeEquipment": true,
-                "value": "{item|flags.pf2e.rulesSelections.enlarge.size}"
+                "value": "{item|flags.system.rulesSelections.enlarge.size}"
             },
             {
                 "inMemoryOnly": true,
@@ -80,7 +80,7 @@
                 ],
                 "selector": "melee-damage",
                 "type": "status",
-                "value": "{item|flags.pf2e.rulesSelections.enlarge.damage}"
+                "value": "{item|flags.system.rulesSelections.enlarge.damage}"
             }
         ],
         "start": {

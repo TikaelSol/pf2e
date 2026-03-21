@@ -52,9 +52,9 @@
             {
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.pf2e.rulesSelections.skillOne}",
-                    "{item|flags.pf2e.rulesSelections.skillTwo}",
-                    "{item|flags.pf2e.rulesSelections.skillThree}"
+                    "{item|flags.system.rulesSelections.skillOne}",
+                    "{item|flags.system.rulesSelections.skillTwo}",
+                    "{item|flags.system.rulesSelections.skillThree}"
                 ],
                 "type": "item",
                 "value": 1

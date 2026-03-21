@@ -129,7 +129,7 @@
                 "value": 3
             },
             "will": {
-                "value": 0
+                "value": null
             }
         },
         "traits": {

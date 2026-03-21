@@ -1,7 +1,7 @@
 {
     "_id": "wDOBOJcJFGpQg8jt",
     "folder": "AM4TBeNjXb3I6Go7",
-    "img": "systems/pf2e/icons/iconics/NahoaFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/nahoa.webp",
     "items": [
         {
             "_id": "0d9pbe4lWhcXmBCH",
@@ -2016,7 +2016,7 @@
                     {
                         "flag": "combatClimber",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "pitborn",
@@ -2148,7 +2148,7 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.featCelestialResistance}",
+                        "type": "{item|flags.system.rulesSelections.featCelestialResistance}",
                         "value": 5
                     }
                 ],
@@ -2461,7 +2461,7 @@
                     {
                         "flag": "nobleBranch",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.firstIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.firstIkon}"
                     },
                     {
                         "adjustName": false,
@@ -2484,7 +2484,7 @@
                         "predicate": [
                             "class:exemplar"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.secondIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.secondIkon}"
                     },
                     {
                         "adjustName": false,
@@ -2507,12 +2507,12 @@
                         "predicate": [
                             "class:exemplar"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.thirdIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.thirdIkon}"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "priority": 10,
                         "value": []
                     }
@@ -2583,7 +2583,7 @@
                     {
                         "flag": "theBrave",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.rootEpithet}"
+                        "uuid": "{item|flags.system.rulesSelections.rootEpithet}"
                     }
                 ],
                 "slug": "root-epithet",
@@ -2762,7 +2762,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "value": {
                             "label": "PF2E.SpecificRule.Exemplar.Ikon.NobleBranch.Label",
                             "predicate": [
@@ -2859,7 +2859,7 @@
                         "predicate": [
                             "noble-branch-origin:granted"
                         ],
-                        "uuid": "{item|flags.pf2e.rulesSelections.grantedIkon}"
+                        "uuid": "{item|flags.system.rulesSelections.grantedIkon}"
                     },
                     {
                         "itemType": "weapon",
@@ -2871,7 +2871,7 @@
                                     {
                                         "and": [
                                             "noble-branch-origin:existing",
-                                            "item:id:{item|flags.pf2e.rulesSelections.existingIkon}"
+                                            "item:id:{item|flags.system.rulesSelections.existingIkon}"
                                         ]
                                     },
                                     {
@@ -2896,7 +2896,7 @@
                                     {
                                         "and": [
                                             "noble-branch-origin:existing",
-                                            "item:id:{item|flags.pf2e.rulesSelections.existingIkon}"
+                                            "item:id:{item|flags.system.rulesSelections.existingIkon}"
                                         ]
                                     },
                                     {
@@ -3094,7 +3094,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "value": {
                             "label": "PF2E.SpecificRule.Exemplar.Ikon.SkybearersBelt.Label",
                             "predicate": [
@@ -3162,14 +3162,14 @@
                         "selection": "2WCLei8RNkw1FuOH"
                     },
                     {
-                        "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                        "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "other-tags",
                         "value": "physical-ikon"
                     },
                     {
-                        "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                        "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "other-tags",
@@ -3239,7 +3239,7 @@
                         ]
                     },
                     {
-                        "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                        "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "traits",
@@ -3364,7 +3364,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.exemplar.ikons",
+                        "path": "flags.system.exemplar.ikons",
                         "value": {
                             "label": "PF2E.SpecificRule.Exemplar.Ikon.ScarOfTheSurvivor.Label",
                             "predicate": [
@@ -4008,7 +4008,7 @@
                             "inline-damage",
                             "strike-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.energizedSparkDamage}"
+                        "value": "{item|flags.system.rulesSelections.energizedSparkDamage}"
                     }
                 ],
                 "slug": "energized-spark",
@@ -4055,7 +4055,7 @@
                 },
                 "rules": [
                     {
-                        "choices": "flags.pf2e.exemplar.ikons",
+                        "choices": "flags.system.exemplar.ikons",
                         "flag": "ikon",
                         "key": "ChoiceSet",
                         "prompt": "PF2E.SpecificRule.Exemplar.Ikon.Prompt",
@@ -4065,7 +4065,7 @@
                         "flag": "quickJump",
                         "key": "GrantItem",
                         "predicate": [
-                            "divine-spark:{item|flags.pf2e.rulesSelections.ikon}"
+                            "divine-spark:{item|flags.system.rulesSelections.ikon}"
                         ],
                         "reevaluateOnUpdate": true,
                         "uuid": "Compendium.pf2e.feats-srd.Item.Quick Jump"
@@ -4074,7 +4074,7 @@
                         "flag": "powerfulLeap",
                         "key": "GrantItem",
                         "predicate": [
-                            "divine-spark:{item|flags.pf2e.rulesSelections.ikon}"
+                            "divine-spark:{item|flags.system.rulesSelections.ikon}"
                         ],
                         "reevaluateOnUpdate": true,
                         "uuid": "Compendium.pf2e.feats-srd.Item.Powerful Leap"
@@ -4138,7 +4138,7 @@
                 },
                 "rules": [
                     {
-                        "choices": "flags.pf2e.exemplar.ikons",
+                        "choices": "flags.system.exemplar.ikons",
                         "flag": "ikon",
                         "key": "ChoiceSet",
                         "prompt": "PF2E.SpecificRule.Exemplar.Ikon.Prompt",
@@ -4154,7 +4154,7 @@
                         "key": "ItemAlteration",
                         "mode": "add",
                         "property": "other-tags",
-                        "value": "chosen-ikon:{item|flags.pf2e.rulesSelections.ikon}"
+                        "value": "chosen-ikon:{item|flags.system.rulesSelections.ikon}"
                     }
                 ],
                 "slug": "steel-on-steel",
@@ -4223,12 +4223,11 @@
         "ring": {
             "enabled": true,
             "subject": {
-                "scale": 1,
-                "texture": "systems/pf2e/icons/iconics/Nahoa.webp"
+                "texture": "systems/pf2e/icons/iconics/subjects/nahoa.webp"
             }
         },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Nahoa.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/nahoa.webp"
         }
     },
     "system": {

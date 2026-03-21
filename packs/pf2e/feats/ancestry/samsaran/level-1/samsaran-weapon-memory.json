@@ -49,8 +49,8 @@
                     "item:category:martial",
                     {
                         "or": [
-                            "item:base:{item|flags.pf2e.rulesSelections.weaponOne}",
-                            "item:base:{item|flags.pf2e.rulesSelections.weaponTwo}"
+                            "item:base:{item|flags.system.rulesSelections.weaponOne}",
+                            "item:base:{item|flags.system.rulesSelections.weaponTwo}"
                         ]
                     }
                 ],
@@ -64,8 +64,8 @@
                     "item:category:advanced",
                     {
                         "or": [
-                            "item:base:{item|flags.pf2e.rulesSelections.weaponOne}",
-                            "item:base:{item|flags.pf2e.rulesSelections.weaponTwo}"
+                            "item:base:{item|flags.system.rulesSelections.weaponOne}",
+                            "item:base:{item|flags.system.rulesSelections.weaponTwo}"
                         ]
                     }
                 ],
@@ -79,8 +79,8 @@
                 "predicate": [
                     {
                         "or": [
-                            "item:base:{item|flags.pf2e.rulesSelections.weaponOne}",
-                            "item:base:{item|flags.pf2e.rulesSelections.weaponTwo}"
+                            "item:base:{item|flags.system.rulesSelections.weaponOne}",
+                            "item:base:{item|flags.system.rulesSelections.weaponTwo}"
                         ]
                     },
                     {

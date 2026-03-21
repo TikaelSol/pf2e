@@ -39,7 +39,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.thaumaturge.lantern",
+                "path": "flags.system.thaumaturge.lantern",
                 "value": 20
             },
             {
@@ -54,9 +54,9 @@
                         "speed": 3,
                         "type": "pulse"
                     },
-                    "bright": "@actor.flags.pf2e.thaumaturge.lantern",
+                    "bright": "@actor.flags.system.thaumaturge.lantern",
                     "color": "#fff285",
-                    "dim": "2*@actor.flags.pf2e.thaumaturge.lantern"
+                    "dim": "2*@actor.flags.system.thaumaturge.lantern"
                 }
             },
             {
@@ -70,7 +70,7 @@
                 "predicate": [
                     "light-lantern-implement"
                 ],
-                "radius": "@actor.flags.pf2e.thaumaturge.lantern",
+                "radius": "@actor.flags.system.thaumaturge.lantern",
                 "traits": [
                     "light",
                     "magical"

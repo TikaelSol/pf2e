@@ -132,13 +132,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.clan.skillOne}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.clan.skillOne}.rank",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.clan.skillTwo}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.clan.skillTwo}.rank",
                 "value": 1
             }
         ],

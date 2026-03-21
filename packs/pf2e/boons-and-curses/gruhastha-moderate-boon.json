@@ -6,12 +6,6 @@
         "description": {
             "value": "<p>The Keeper speeds your path toward learning new talents. You become permanently trained in two additional skills of your choice. Additionally, you can select a skill you are already trained in and permanently increase your proficiency rank in that skill, following the usual rules for skill increases.</p>"
         },
-        "duration": {
-            "expiry": null,
-            "sustained": false,
-            "unit": "unlimited",
-            "value": -1
-        },
         "level": {
             "value": 0
         },
@@ -43,7 +37,7 @@
                             "not": {
                                 "eq": [
                                     "{choice|value}",
-                                    "{item|flags.pf2e.rulesSelections.untrainedSkillOne}"
+                                    "{item|flags.system.rulesSelections.untrainedSkillOne}"
                                 ]
                             }
                         }
@@ -79,33 +73,36 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.untrainedSkillOne}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.untrainedSkillOne}.rank",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.untrainedSkillTwo}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.untrainedSkillTwo}.rank",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.trainedSkill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.trainedSkill}.rank",
                 "value": 1
             }
         ],
-        "start": {
-            "initiative": null,
-            "value": 0
-        },
-        "tokenIcon": {
-            "show": false
-        },
         "traits": {
             "rarity": "common",
             "value": []
+        },
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "deityboon",
+        "prerequisites": {
+            "value": []
         }
     },
-    "type": "effect"
+    "type": "feat"
 }

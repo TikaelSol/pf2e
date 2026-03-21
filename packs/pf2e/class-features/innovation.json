@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.innovation}"
+                "uuid": "{item|flags.system.rulesSelections.innovation}"
             }
         ],
         "traits": {

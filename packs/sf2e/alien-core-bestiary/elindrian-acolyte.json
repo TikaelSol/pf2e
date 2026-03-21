@@ -810,9 +810,12 @@
             "type": "melee"
         },
         {
-            "_id": "RwNY58b7Xc1oAFDg",
+            "_id": "WR1xUisgFlap4mFV",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.bestiary-ability-glossary-srd.Item.kdhbPaBMK1d1fpbA"
+            },
             "img": "systems/sf2e/icons/actions/Passive.webp",
-            "name": "Husk Mind",
+            "name": "Telepathy",
             "sort": 1100000,
             "system": {
                 "actionType": {
@@ -823,7 +826,40 @@
                 },
                 "category": "interaction",
                 "description": {
-                    "value": "<p>Elindrians can communicate nearly instantaneously via a primal bond similar to a formian hive mind. While within telepathic range of at least one other elindrian with husk mind, an elindrian acolyte gains a +2 circumstance bonus to initiative rolls, Perception checks, and saving throws against mental effects. If one elindrian is aware of a combatant, all members of the husk mind within range are aware of it.</p>\n<p>The elindrian's husk mind is integrated with their scent; for purposes of detecting other elindrians, formians, undead, or corpses, their scent is a precise sense, rather than imprecise.</p>\n<p>An elindrian always knows the precise distance and direction to the Terror of Ukulam, so long as they're on the same plane of existence.</p>"
+                    "value": "<p>60 feet</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Telepathy]</p>"
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Starfinder Alien Core"
+                },
+                "rules": [],
+                "slug": "telepathy",
+                "traits": {
+                    "value": [
+                        "aura",
+                        "magical",
+                        "mental"
+                    ]
+                }
+            },
+            "type": "action"
+        },
+        {
+            "_id": "RwNY58b7Xc1oAFDg",
+            "img": "systems/sf2e/icons/actions/Passive.webp",
+            "name": "Husk Mind",
+            "sort": 1200000,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "interaction",
+                "description": {
+                    "value": "<p>Elindrians can communicate nearly instantaneously via a primal bond similar to a formian hive mind. While within telepathic range of at least one other elindrian with husk mind, an elindrian acolyte gains a +2 circumstance bonus to initiative rolls, Perception checks, and saving throws against mental effects. If one elindrian is aware of a combatant, all members of the husk mind within range are aware of it.</p>\n<p>The elindrian's husk mind is integrated with their scent; for purposes of detecting other elindrians, formians, undead, or corpses, their scent is a precise sense, rather than imprecise.</p>\n<p>An elindrian always knows the precise distance and direction to the @UUID[Compendium.sf2e.alien-core-bestiary.Actor.Terror of Ukulam], so long as they're on the same plane of existence.</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -844,7 +880,7 @@
             "_id": "j5hWIfZMDWiH8LEz",
             "img": "systems/sf2e/icons/actions/Passive.webp",
             "name": "Unfetter Allies",
-            "sort": 1200000,
+            "sort": 1300000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -868,6 +904,32 @@
                 }
             },
             "type": "action"
+        },
+        {
+            "_id": "CsuFdDLTN4vd7e9f",
+            "img": "systems/sf2e/icons/default-icons/lore.svg",
+            "name": "Elindrian Lore",
+            "sort": 1400000,
+            "system": {
+                "description": {
+                    "value": ""
+                },
+                "mod": {
+                    "value": 4
+                },
+                "proficient": {
+                    "value": 0
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {}
+            },
+            "type": "lore"
         }
     ],
     "name": "Elindrian Acolyte",
@@ -923,9 +985,9 @@
         "details": {
             "blurb": "",
             "languages": {
-                "details": "Elindrian, Telepathy 60 feet page 210",
+                "details": "Telepathy 60 feet",
                 "value": [
-                    "formian"
+                    "elindrian"
                 ]
             },
             "level": {

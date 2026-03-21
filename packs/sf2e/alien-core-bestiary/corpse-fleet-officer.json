@@ -656,7 +656,7 @@
                     },
                     {
                         "damageType": "void",
-                        "diceNumber": "@item.flags.sf2e.rulesSelections.leadSalvo",
+                        "diceNumber": "@item.flags.system.rulesSelections.leadSalvo",
                         "dieSize": "d4",
                         "key": "DamageDice",
                         "predicate": [

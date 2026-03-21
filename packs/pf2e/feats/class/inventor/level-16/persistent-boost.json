@@ -42,7 +42,7 @@
             },
             {
                 "category": "persistent",
-                "damageType": "{actor|flags.pf2e.inventor.offensiveBoost}",
+                "damageType": "{actor|flags.system.inventor.offensiveBoost}",
                 "diceNumber": 1,
                 "dieSize": "d8",
                 "hideIfDisabled": true,
@@ -53,7 +53,7 @@
                             {
                                 "and": [
                                     "feature:weapon-innovation",
-                                    "item:id:{actor|flags.pf2e.innovationId}"
+                                    "item:id:{actor|flags.system.innovationId}"
                                 ]
                             },
                             {

@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.druidicOrder}"
+                "uuid": "{item|flags.system.rulesSelections.druidicOrder}"
             }
         ],
         "traits": {

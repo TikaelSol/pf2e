@@ -31,11 +31,11 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "damageType": "{actor|flags.pf2e.deviantAbilities.dragon.damageType}",
+                "damageType": "{actor|flags.system.deviantAbilities.dragon.damageType}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.strike}-damage"
+                "selector": "{item|flags.system.rulesSelections.strike}-damage"
             }
         ],
         "start": {

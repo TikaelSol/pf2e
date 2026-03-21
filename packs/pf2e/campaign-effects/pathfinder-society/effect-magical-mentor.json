@@ -48,7 +48,7 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "spellcasting:{item|flags.pf2e.rulesSelections.magicalMentor}"
+                    "spellcasting:{item|flags.system.rulesSelections.magicalMentor}"
                 ],
                 "selector": "spell-dc",
                 "value": 1

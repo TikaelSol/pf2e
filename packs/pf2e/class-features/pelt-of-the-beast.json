@@ -41,14 +41,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.exemplar.peltOfTheBeastDamage",
+                "path": "flags.system.exemplar.peltOfTheBeastDamage",
                 "priority": 51,
-                "value": "{item|flags.pf2e.rulesSelections.peltOfTheBeastDamage}"
+                "value": "{item|flags.system.rulesSelections.peltOfTheBeastDamage}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.exemplar.ikons",
+                "path": "flags.system.exemplar.ikons",
                 "value": {
                     "label": "PF2E.SpecificRule.Exemplar.Ikon.PeltOfTheBeast.Label",
                     "predicate": [
@@ -112,14 +112,14 @@
                 ]
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "other-tags",
                 "value": "physical-ikon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
@@ -180,7 +180,7 @@
                 "predicate": [
                     "divine-spark:pelt-of-the-beast"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.peltOfTheBeastDamage}",
+                "type": "{item|flags.system.rulesSelections.peltOfTheBeastDamage}",
                 "value": "floor(@actor.level/2)"
             },
             {
@@ -208,7 +208,7 @@
                 ]
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.existingIkon}",
+                "itemId": "{item|flags.system.rulesSelections.existingIkon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

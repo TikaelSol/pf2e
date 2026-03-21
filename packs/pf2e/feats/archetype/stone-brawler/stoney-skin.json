@@ -36,12 +36,12 @@
                 ],
                 "key": "Resistance",
                 "type": "physical",
-                "value": "@actor.flags.pf2e.stoneBrawlerArchetype.featCount"
+                "value": "@actor.flags.system.stoneBrawlerArchetype.featCount"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.stoneBrawlerArchetype.featCount",
+                "path": "flags.system.stoneBrawlerArchetype.featCount",
                 "value": 1
             }
         ],

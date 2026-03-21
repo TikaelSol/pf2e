@@ -44,7 +44,7 @@
                     "success": "one-degree-better"
                 },
                 "key": "AdjustDegreeOfSuccess",
-                "selector": "{item|flags.pf2e.rulesSelections.resilient}"
+                "selector": "{item|flags.system.rulesSelections.resilient}"
             }
         ],
         "traits": {

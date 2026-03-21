@@ -63,7 +63,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.diverseMystery}"
+                    "item:slug:{item|flags.system.rulesSelections.diverseMystery}"
                 ],
                 "property": "traits",
                 "value": "cursebound"
@@ -73,7 +73,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.diverseMystery}"
+                    "item:slug:{item|flags.system.rulesSelections.diverseMystery}"
                 ],
                 "property": "description",
                 "value": [

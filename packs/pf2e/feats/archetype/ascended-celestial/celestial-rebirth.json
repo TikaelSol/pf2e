@@ -57,7 +57,7 @@
                 "add": [
                     "celestial",
                     "holy",
-                    "{item|flags.pf2e.rulesSelections.celestialTrait}"
+                    "{item|flags.system.rulesSelections.celestialTrait}"
                 ],
                 "key": "ActorTraits"
             },

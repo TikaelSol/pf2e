@@ -295,7 +295,7 @@
                         ],
                         "selector": "diplomacy",
                         "type": "circumstance",
-                        "value": "{item|flags.pf2e.rulesSelections.swayJudgeAndJury}"
+                        "value": "{item|flags.system.rulesSelections.swayJudgeAndJury}"
                     }
                 ],
                 "slug": null,

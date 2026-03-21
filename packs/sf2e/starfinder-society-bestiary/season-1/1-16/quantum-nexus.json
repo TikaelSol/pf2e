@@ -1226,9 +1226,13 @@
                             "damage": {
                                 "0": {
                                     "category": null,
+                                    "kinds": [
+                                        "damage"
+                                    ],
                                     "type": "bludgeoning"
                                 }
-                            }
+                            },
+                            "defense": null
                         }
                     },
                     "cUFX7ExSLeoa3vIF": {
@@ -1240,9 +1244,13 @@
                             "damage": {
                                 "0": {
                                     "category": null,
+                                    "kinds": [
+                                        "damage"
+                                    ],
                                     "type": "piercing"
                                 }
-                            }
+                            },
+                            "defense": null
                         }
                     },
                     "zFWsMjoeCnLxqJaV": {
@@ -1254,9 +1262,13 @@
                             "damage": {
                                 "0": {
                                     "category": null,
+                                    "kinds": [
+                                        "damage"
+                                    ],
                                     "type": "slashing"
                                 }
-                            }
+                            },
+                            "defense": null
                         }
                     }
                 },
@@ -1735,10 +1747,72 @@
             "type": "melee"
         },
         {
+            "_id": "52JyB9DUuHbnVPGd",
+            "img": "systems/sf2e/icons/default-icons/action.svg",
+            "name": "Quantum Pulse",
+            "sort": 2500000,
+            "system": {
+                "actionType": {
+                    "value": "free"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "defensive",
+                "description": {
+                    "value": "<p><strong>Trigger</strong> Quantum Nexus rolls initiative</p><hr /><p><strong>Effect</strong> Quantum Nexus releases a burst of energy and uses Warp Reality.</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
+            "_id": "j7Xy554qVqKoutuX",
+            "img": "systems/sf2e/icons/default-icons/action.svg",
+            "name": "Quantum Recycle",
+            "sort": 2600000,
+            "system": {
+                "actionType": {
+                    "value": "reaction"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "defensive",
+                "description": {
+                    "value": "<p><strong>Trigger</strong> Quantum Nexus casts a 2nd-rank spell, and the spell targets a creature or area within her quantum field</p><hr /><p><strong>Effect</strong> Quantum Nexus manipulates her quantum field to preserve some spell energy and regains an expended 1st-rank spell slot.</p>"
+                },
+                "frequency": {
+                    "max": 1,
+                    "per": "day"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "value": []
+                }
+            },
+            "type": "action"
+        },
+        {
             "_id": "kgzdV0BoX6UMmtmH",
             "img": "systems/sf2e/icons/default-icons/action.svg",
             "name": "Harmonic Blink",
-            "sort": 2500000,
+            "sort": 2700000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -1774,7 +1848,7 @@
             "_id": "mON1Hrm7IePhtYTE",
             "img": "systems/sf2e/icons/default-icons/action.svg",
             "name": "Warp Reality",
-            "sort": 2600000,
+            "sort": 2800000,
             "system": {
                 "actionType": {
                     "value": "action"
@@ -1804,8 +1878,8 @@
         {
             "_id": "xy9aXYc1Y8mGWzU3",
             "img": "systems/sf2e/icons/default-icons/action.svg",
-            "name": "Witchwarper Paradox",
-            "sort": 2700000,
+            "name": "Witchwarper Paradox: Analyst",
+            "sort": 2900000,
             "system": {
                 "actionType": {
                     "value": "passive"
@@ -1815,7 +1889,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>analyst</p>"
+                    "value": ""
                 },
                 "publication": {
                     "license": "OGL",
@@ -1876,8 +1950,14 @@
                 }
             ],
             "speed": {
-                "otherSpeeds": [],
-                "value": 25
+                "details": "Hover",
+                "otherSpeeds": [
+                    {
+                        "type": "fly",
+                        "value": 20
+                    }
+                ],
+                "value": 5
             }
         },
         "details": {

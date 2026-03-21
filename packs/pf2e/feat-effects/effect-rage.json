@@ -24,13 +24,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.rageTempHP",
+                "path": "flags.system.rageTempHP",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.rageTempHP",
+                "path": "flags.system.rageTempHP",
                 "phase": "beforeDerived",
                 "predicate": [
                     {
@@ -45,7 +45,7 @@
             },
             {
                 "key": "TempHP",
-                "value": "@actor.flags.pf2e.rageTempHP"
+                "value": "@actor.flags.system.rageTempHP"
             },
             {
                 "key": "RollOption",

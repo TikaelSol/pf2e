@@ -51,7 +51,7 @@
                         ]
                     }
                 ],
-                "type": "{actor|flags.pf2e.draconicBenefactor.breathDamage}",
+                "type": "{actor|flags.system.draconicBenefactor.breathDamage}",
                 "value": "floor(@actor.level / 2)"
             },
             {
@@ -101,7 +101,7 @@
                         ]
                     }
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.nonPhysicalResistance}",
+                "type": "{item|flags.system.rulesSelections.nonPhysicalResistance}",
                 "value": "floor(@actor.level / 2)"
             }
         ],

@@ -132,7 +132,7 @@
                 "key": "FlatModifier",
                 "predicate": [
                     "action:craft",
-                    "{item|flags.sf2e.rulesSelections.specialtyCrafting}"
+                    "{item|flags.system.rulesSelections.specialtyCrafting}"
                 ],
                 "selector": "crafting",
                 "type": "circumstance",

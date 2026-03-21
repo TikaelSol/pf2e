@@ -29,7 +29,7 @@
                 "key": "CriticalSpecialization",
                 "predicate": [
                     "feature:weapon-innovation",
-                    "item:id:{actor|flags.pf2e.innovationId}"
+                    "item:id:{actor|flags.system.innovationId}"
                 ]
             }
         ],

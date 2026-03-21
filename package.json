@@ -1,6 +1,6 @@
 {
     "name": "foundry-pf2e",
-    "version": "7.10.1",
+    "version": "7.11.3",
     "description": "",
     "private": true,
     "type": "module",
@@ -10,6 +10,7 @@
         "build:packs": "tsx ./build/build-packs.ts",
         "build:packs:json": "tsx ./build/build-packs.ts --json",
         "build:conditions": "tsx ./build/conditions.ts",
+        "build:anachronism": "tsx ./build/anachronism.ts",
         "watch": "npm run build:packs && vite build --watch --mode development",
         "hot": "tsx ./build/hmr.ts",
         "link": "tsx ./build/link-foundry.ts",

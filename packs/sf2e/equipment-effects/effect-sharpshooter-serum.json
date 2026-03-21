@@ -58,7 +58,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.sharpshooterSerum.coverReduction",
+                "path": "flags.system.sharpshooterSerum.coverReduction",
                 "predicate": [
                     "sharpshooter-serum:sharpshooter-serum-commercial"
                 ],
@@ -67,7 +67,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.sharpshooterSerum.coverReduction",
+                "path": "flags.system.sharpshooterSerum.coverReduction",
                 "predicate": [
                     "sharpshooter-serum:sharpshooter-serum-tactical"
                 ],

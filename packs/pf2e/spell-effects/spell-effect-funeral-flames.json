@@ -36,7 +36,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "property": "runes-potency",
@@ -47,7 +47,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:id:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:id:{item|flags.system.rulesSelections.weapon}"
                 ],
                 "property": "traits",
                 "value": "versatile-fire"
@@ -82,7 +82,7 @@
                 "predicate": [
                     "dismiss-funeral-flames"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage",
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage",
                 "slug": "funeral-flames"
             },
             {
@@ -93,7 +93,7 @@
                 ],
                 "property": "dice-faces",
                 "selectors": [
-                    "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                    "{item|flags.system.rulesSelections.weapon}-damage"
                 ],
                 "slug": "funeral-flames",
                 "value": "8"

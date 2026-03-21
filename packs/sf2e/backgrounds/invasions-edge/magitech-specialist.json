@@ -27,7 +27,7 @@
         },
         "items": {
             "dCrmA": {
-                "img": "icons/sundries/books/book-red-exclamation.webp",
+                "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
                 "level": 1,
                 "name": "Quick Identification",
                 "uuid": "Compendium.sf2e.feats.Item.Quick Identification"
@@ -70,8 +70,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.sf2e.rulesSelections.skill.slug}.rank",
-                "value": "@item.flags.sf2e.rulesSelections.skill.rank"
+                "path": "system.skills.{item|flags.system.rulesSelections.skill.slug}.rank",
+                "value": "@item.flags.system.rulesSelections.skill.rank"
             }
         ],
         "trainedSkills": {

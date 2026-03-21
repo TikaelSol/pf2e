@@ -1261,7 +1261,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "flags.pf2e.proteanResistance",
+                        "path": "flags.system.proteanResistance",
                         "value": 15
                     }
                 ],

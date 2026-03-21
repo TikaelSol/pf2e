@@ -39,7 +39,7 @@
             },
             {
                 "key": "TempHP",
-                "value": "max(floor(@item.origin.level/@item.flags.pf2e.rulesSelections.outcome),1)"
+                "value": "max(floor(@item.origin.level/@item.flags.system.rulesSelections.outcome),1)"
             }
         ],
         "start": {

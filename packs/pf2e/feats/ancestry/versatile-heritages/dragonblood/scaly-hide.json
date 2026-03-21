@@ -38,7 +38,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.scalyHideBonus",
+                "path": "flags.system.scalyHideBonus",
                 "priority": 19,
                 "value": "ternary(gte(@actor.level,5),2,1)"
             },
@@ -51,7 +51,7 @@
                 ],
                 "selector": "ac",
                 "type": "item",
-                "value": "@actor.flags.pf2e.scalyHideBonus"
+                "value": "@actor.flags.system.scalyHideBonus"
             },
             {
                 "key": "AdjustModifier",
@@ -64,7 +64,7 @@
                 "relabel": "PF2E.SpecificRule.Dragonblood.ScalyHide.BracersOfArmor",
                 "selector": "ac",
                 "slug": "bands-of-force",
-                "value": "@actor.flags.pf2e.scalyHideBonus"
+                "value": "@actor.flags.system.scalyHideBonus"
             },
             {
                 "key": "AdjustModifier",
@@ -77,7 +77,7 @@
                 "relabel": "PF2E.SpecificRule.Dragonblood.ScalyHide.ExplorersClothing",
                 "selector": "ac",
                 "slug": "explorers-clothing",
-                "value": "@actor.flags.pf2e.scalyHideBonus"
+                "value": "@actor.flags.system.scalyHideBonus"
             },
             {
                 "key": "AdjustModifier",
@@ -90,7 +90,7 @@
                 "relabel": "PF2E.SpecificRule.Dragonblood.ScalyHide.MageArmor",
                 "selector": "ac",
                 "slug": "mage-armor",
-                "value": "@actor.flags.pf2e.scalyHideBonus"
+                "value": "@actor.flags.system.scalyHideBonus"
             }
         ],
         "traits": {

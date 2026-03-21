@@ -1,6 +1,6 @@
 {
     "_id": "i1fnTVBTRYSqFY2c",
-    "img": "systems/sf2e/icons/default-icons/ancestry.svg",
+    "img": "systems/sf2e/icons/ancestries/sarcesian.webp",
     "name": "Sarcesian",
     "system": {
         "additionalLanguages": {
@@ -43,6 +43,12 @@
         "hands": 2,
         "hp": 8,
         "items": {
+            "nMNH8": {
+                "img": "systems/sf2e/icons/spells/vacuum.webp",
+                "level": 1,
+                "name": "Suspended Respiration",
+                "uuid": "Compendium.sf2e.ancestry-features.Item.Suspended Respiration"
+            },
             "ujoK6": {
                 "img": "icons/commodities/biological/wing-insect-blue.webp",
                 "level": 1,

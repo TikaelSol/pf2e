@@ -27,7 +27,7 @@
         },
         "rules": [
             {
-                "choices": "flags.pf2e.automaton.enhancements.lesser",
+                "choices": "flags.system.automaton.enhancements.lesser",
                 "flag": "lesserAugmentation",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Automaton.Enhancement.AugmentationPrompt",
@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.automaton.enhancements.greater",
+                "path": "flags.system.automaton.enhancements.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.Automaton.EnhanceableFeats.LesserAugmentation",
                     "value": "lesser-augmentation"

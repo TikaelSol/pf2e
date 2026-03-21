@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.livingMonolith.archetypeFeatCount",
+                "path": "flags.system.livingMonolith.archetypeFeatCount",
                 "value": 1
             },
             {
@@ -42,7 +42,7 @@
                 ],
                 "key": "Resistance",
                 "type": "physical",
-                "value": "@actor.flags.pf2e.livingMonolith.archetypeFeatCount"
+                "value": "@actor.flags.system.livingMonolith.archetypeFeatCount"
             }
         ],
         "traits": {

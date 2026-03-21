@@ -50,14 +50,14 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.resistance}",
+                "type": "{item|flags.system.rulesSelections.resistance}",
                 "value": "@actor.level"
             },
             {
                 "affects": "origin",
                 "key": "EphemeralEffect",
                 "predicate": [
-                    "item:damage:type:{item|flags.pf2e.rulesSelections.resistance}"
+                    "item:damage:type:{item|flags.system.rulesSelections.resistance}"
                 ],
                 "selectors": [
                     "strike-attack-roll",

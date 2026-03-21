@@ -51,7 +51,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicArcana}"
+                "uuid": "{item|flags.system.rulesSelections.basicArcana}"
             }
         ],
         "traits": {

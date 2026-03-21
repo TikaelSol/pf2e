@@ -44,7 +44,7 @@
                     }
                 ],
                 "key": "Aura",
-                "radius": "@item.flags.pf2e.rulesSelections.auraRadius",
+                "radius": "@item.flags.system.rulesSelections.auraRadius",
                 "slug": "marshals-aura",
                 "traits": [
                     "emotion",

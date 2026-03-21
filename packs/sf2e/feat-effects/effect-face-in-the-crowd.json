@@ -25,7 +25,7 @@
             {
                 "choices": [
                     {
-                        "label": "At least 10 creatures",
+                        "label": "SF2E.SpecificRule.SkillFeat.FaceInTheCrowd.CrowdSize.Ten",
                         "predicate": [
                             {
                                 "lte": [
@@ -37,7 +37,7 @@
                         "value": 2
                     },
                     {
-                        "label": "At least 5 creatures",
+                        "label": "SF2E.SpecificRule.SkillFeat.FaceInTheCrowd.CrowdSize.Five",
                         "predicate": [
                             {
                                 "gte": [
@@ -49,19 +49,19 @@
                         "value": 2
                     },
                     {
-                        "label": "At least 100 creatures",
+                        "label": "SF2E.SpecificRule.SkillFeat.FaceInTheCrowd.CrowdSize.Hundred",
                         "value": 4
                     }
                 ],
                 "flag": "crowdSizeBonus",
                 "key": "ChoiceSet",
-                "prompt": "Select a crowd size"
+                "prompt": "SF2E.SpecificRule.SkillFeat.FaceInTheCrowd.Prompt"
             },
             {
                 "key": "FlatModifier",
                 "selector": "stealth",
                 "type": "circumstance",
-                "value": "@item.flags.sf2e.rulesSelections.crowdSizeBonus"
+                "value": "@item.flags.system.rulesSelections.crowdSizeBonus"
             }
         ],
         "start": {

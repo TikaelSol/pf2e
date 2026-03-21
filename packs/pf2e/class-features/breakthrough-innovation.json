@@ -327,7 +327,7 @@
                 "allowDuplicate": false,
                 "flag": "breakthroughModification",
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.breakthroughModification}"
+                "uuid": "{item|flags.system.rulesSelections.breakthroughModification}"
             }
         ],
         "traits": {

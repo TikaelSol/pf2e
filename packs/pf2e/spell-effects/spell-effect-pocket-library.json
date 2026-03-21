@@ -129,7 +129,7 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.skill}",
+                "selector": "{item|flags.system.rulesSelections.skill}",
                 "type": "status",
                 "value": "1+floor(@item.level/3)"
             },
@@ -148,7 +148,7 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.skill}",
+                "selector": "{item|flags.system.rulesSelections.skill}",
                 "type": "skill"
             }
         ],

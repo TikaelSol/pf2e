@@ -31,6 +31,10 @@
                 "uuid": "Compendium.pf2e.actionspf2e.Item.Bless Ally"
             },
             {
+                "disabledIf": [
+                    "self:effect:channel-divine-spark"
+                ],
+                "disabledValue": true,
                 "key": "RollOption",
                 "label": "PF2E.SpecificRule.AscendedCelestial.Dedication.NimbusToggle",
                 "option": "ascended-celestial-nimbus",
@@ -45,7 +49,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.ascendedCelestial.aura",
+                "path": "flags.system.ascendedCelestial.aura",
                 "value": 30
             },
             {
@@ -60,7 +64,7 @@
                 "predicate": [
                     "ascended-celestial-nimbus"
                 ],
-                "radius": "@actor.flags.pf2e.ascendedCelestial.aura",
+                "radius": "@actor.flags.system.ascendedCelestial.aura",
                 "slug": "ascended-celestial-nimbus"
             },
             {
@@ -73,9 +77,9 @@
                     "animation": {
                         "type": "starlight"
                     },
-                    "bright": "@actor.flags.pf2e.ascendedCelestial.aura",
+                    "bright": "@actor.flags.system.ascendedCelestial.aura",
                     "color": "#ffc629",
-                    "dim": "2*@actor.flags.pf2e.ascendedCelestial.aura"
+                    "dim": "2*@actor.flags.system.ascendedCelestial.aura"
                 }
             },
             {

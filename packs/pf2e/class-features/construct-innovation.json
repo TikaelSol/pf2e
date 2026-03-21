@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.innovationId",
+                "path": "flags.system.innovationId",
                 "value": null
             }
         ],

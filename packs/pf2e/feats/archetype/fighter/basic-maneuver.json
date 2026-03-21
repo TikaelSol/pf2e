@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.fighterDedicationCount",
+                "path": "flags.system.fighterDedicationCount",
                 "value": 1
             },
             {
@@ -57,7 +57,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicManeuver}"
+                "uuid": "{item|flags.system.rulesSelections.basicManeuver}"
             }
         ],
         "traits": {

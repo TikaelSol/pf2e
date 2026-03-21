@@ -3076,7 +3076,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>120 feet @Check[will|dc:39]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>120 feet. @Check[will|dc:39|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "ORC",
@@ -3121,7 +3121,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>20 feet. After the dragon uses their Poison Breath, a cloud of poison gas continues to emanate from their body for 1 round. Any creature that ends its turn in the miasma takes @Damage[5d6[poison]] damage (@Check[fortitude|dc:39|basic] save).</p>\n<p>Any creature in the miasma is @UUID[Compendium.pf2e.conditionitems.Item.Concealed] and treats other creatures as concealed. The dragon can see through this concealment.</p>"
+                    "value": "<p>20 feet. After the dragon uses their Poison Breath, a cloud of poison gas continues to emanate from their body for 1 round. Any creature that ends its turn in the miasma takes @Damage[5d6[poison]|options:area-damage] damage (@Check[fortitude|dc:39|basic|options:area-effect] save).</p>\n<p>Any creature in the miasma is @UUID[Compendium.pf2e.conditionitems.Item.Concealed] and treats other creatures as concealed. The dragon can see through this concealment.</p>"
                 },
                 "publication": {
                     "license": "ORC",

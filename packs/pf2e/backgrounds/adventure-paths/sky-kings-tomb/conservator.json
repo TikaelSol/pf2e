@@ -56,7 +56,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.conservator.skill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.conservator.skill}.rank",
                 "value": 1
             },
             {
@@ -65,7 +65,7 @@
                 "preselectChoices": {
                     "assurance": "thievery"
                 },
-                "uuid": "{item|flags.pf2e.rulesSelections.conservator.feat}"
+                "uuid": "{item|flags.system.rulesSelections.conservator.feat}"
             }
         ],
         "trainedSkills": {

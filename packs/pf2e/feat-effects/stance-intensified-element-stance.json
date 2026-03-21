@@ -79,8 +79,8 @@
                 "toggleable": true
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damageType}",
-                "diceNumber": "ternary(gte(@actor.flags.pf2e.prepareElementalMedicine.skillRank,4),2,1)",
+                "damageType": "{item|flags.system.rulesSelections.damageType}",
+                "diceNumber": "ternary(gte(@actor.flags.system.prepareElementalMedicine.skillRank,4),2,1)",
                 "dieSize": "d6",
                 "key": "DamageDice",
                 "predicate": [

@@ -559,11 +559,11 @@
                             "runic-breath-inline-damage",
                             "detonating-rune-inline-damage"
                         ],
-                        "value": "{item|flags.pf2e.rulesSelections.shiftingRunes}"
+                        "value": "{item|flags.system.rulesSelections.shiftingRunes}"
                     },
                     {
                         "key": "Immunity",
-                        "type": "{item|flags.pf2e.rulesSelections.shiftingRunes}"
+                        "type": "{item|flags.system.rulesSelections.shiftingRunes}"
                     }
                 ],
                 "slug": null,

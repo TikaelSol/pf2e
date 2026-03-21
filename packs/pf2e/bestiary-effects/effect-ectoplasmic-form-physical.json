@@ -31,11 +31,11 @@
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
                 "path": "system.attributes.ac.value",
-                "value": "@actor.flags.pf2e.ectoplasmicFormAC"
+                "value": "@actor.flags.system.ectoplasmicFormAC"
             },
             {
                 "key": "TempHP",
-                "value": "@actor.flags.pf2e.ectoplasmicFormTempHP"
+                "value": "@actor.flags.system.ectoplasmicFormTempHP"
             },
             {
                 "key": "DamageDice",

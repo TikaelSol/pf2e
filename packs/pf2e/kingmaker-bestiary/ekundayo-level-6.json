@@ -161,7 +161,7 @@
                         "key": "FlatModifier",
                         "predicate": [
                             "action:craft",
-                            "{item|flags.pf2e.rulesSelections.specialtyCrafting}"
+                            "{item|flags.system.rulesSelections.specialtyCrafting}"
                         ],
                         "selector": "crafting",
                         "type": "circumstance",
@@ -344,7 +344,7 @@
                     },
                     {
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.generalTraining}"
+                        "uuid": "{item|flags.system.rulesSelections.generalTraining}"
                     }
                 ],
                 "slug": "general-training",
@@ -1984,7 +1984,7 @@
                     },
                     {
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -2696,7 +2696,7 @@
                     {
                         "flag": "precision",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.huntersEdge}"
+                        "uuid": "{item|flags.system.rulesSelections.huntersEdge}"
                     }
                 ],
                 "slug": "hunters-edge",

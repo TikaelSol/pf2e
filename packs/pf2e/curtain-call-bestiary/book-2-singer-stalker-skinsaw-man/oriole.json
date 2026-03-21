@@ -3786,7 +3786,7 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.ganziResistance}",
+                        "type": "{item|flags.system.rulesSelections.ganziResistance}",
                         "value": "15"
                     }
                 ],

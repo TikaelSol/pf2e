@@ -23,12 +23,12 @@
         "rules": [
             {
                 "key": "TempHP",
-                "value": "@actor.level + @actor.abilities.con.mod + @actor.flags.pf2e.frenzyMod"
+                "value": "@actor.level + @actor.abilities.con.mod + @actor.flags.system.frenzyMod"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.frenzyMod",
+                "path": "flags.system.frenzyMod",
                 "value": 0
             }
         ],

@@ -112,7 +112,7 @@
                     "impossible-riposte"
                 ],
                 "property": "damage-type",
-                "value": "{item|flags.pf2e.rulesSelections.impossibleRiposte}"
+                "value": "{item|flags.system.rulesSelections.impossibleRiposte}"
             },
             {
                 "key": "DamageAlteration",
@@ -124,7 +124,7 @@
                 "selectors": [
                     "strike-damage"
                 ],
-                "value": "{item|flags.pf2e.rulesSelections.impossibleRiposte}"
+                "value": "{item|flags.system.rulesSelections.impossibleRiposte}"
             }
         ],
         "traits": {

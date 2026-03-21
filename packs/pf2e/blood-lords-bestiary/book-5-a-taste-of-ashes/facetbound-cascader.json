@@ -2512,11 +2512,11 @@
                     },
                     {
                         "key": "Resistance",
-                        "type": "{item|flags.pf2e.rulesSelections.energyWard}",
+                        "type": "{item|flags.system.rulesSelections.energyWard}",
                         "value": 15
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.energyWard}",
+                        "damageType": "{item|flags.system.rulesSelections.energyWard}",
                         "diceNumber": "4",
                         "dieSize": "d10",
                         "key": "DamageDice",

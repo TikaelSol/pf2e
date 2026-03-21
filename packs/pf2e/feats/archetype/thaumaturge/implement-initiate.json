@@ -32,7 +32,7 @@
         "rules": [
             {
                 "key": "GrantItem",
-                "uuid": "{actor|flags.pf2e.thaumaturge.initiateBenefit}"
+                "uuid": "{actor|flags.system.thaumaturge.initiateBenefit}"
             }
         ],
         "traits": {

@@ -42,7 +42,7 @@
             },
             {
                 "key": "Weakness",
-                "type": "{item|flags.pf2e.rulesSelections.viciousDebilitations}",
+                "type": "{item|flags.system.rulesSelections.viciousDebilitations}",
                 "value": 5
             }
         ],

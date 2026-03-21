@@ -242,7 +242,7 @@
                     {
                         "flag": "dangerousSorcery",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -2093,7 +2093,7 @@
                     {
                         "flag": "bloodlineFey",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.bloodline}"
+                        "uuid": "{item|flags.system.rulesSelections.bloodline}"
                     }
                 ],
                 "slug": "bloodline",

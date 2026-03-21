@@ -1065,7 +1065,7 @@
                         "value": 1
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.stanceArcaneCascade}",
+                        "damageType": "{item|flags.system.rulesSelections.stanceArcaneCascade}",
                         "key": "FlatModifier",
                         "selector": "strike-damage",
                         "slug": "arcane-cascade-extra-damage",

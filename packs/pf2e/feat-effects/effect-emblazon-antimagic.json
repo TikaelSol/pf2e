@@ -85,7 +85,7 @@
                 "predicate": [
                     "emblazon-antimagic:item:weapon"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack",
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack",
                 "text": "PF2E.SpecificRule.Cleric.EmblazonAntimagic.WeaponNote",
                 "title": "{item|name}"
             }

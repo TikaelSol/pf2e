@@ -62,7 +62,7 @@
                 "predicate": [
                     "withstand-the-storm"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.withstandTheStorm}",
+                "type": "{item|flags.system.rulesSelections.withstandTheStorm}",
                 "value": "@actor.level"
             }
         ],

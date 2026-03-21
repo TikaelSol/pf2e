@@ -53,7 +53,7 @@
                 "prompt": "PF2E.NPCAbility.MarilithFocusedAssault.Prompt"
             },
             {
-                "diceNumber": "{item|flags.pf2e.rulesSelections.focusedAssault}",
+                "diceNumber": "{item|flags.system.rulesSelections.focusedAssault}",
                 "dieSize": "d8",
                 "key": "DamageDice",
                 "selector": "cold-iron-silver-longsword-damage"

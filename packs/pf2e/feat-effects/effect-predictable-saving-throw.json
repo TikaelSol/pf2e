@@ -29,7 +29,7 @@
                 "removeAfterRoll": "if-enabled",
                 "selector": "saving-throw",
                 "type": "circumstance",
-                "value": "@actor.flags.pf2e.predictable"
+                "value": "@actor.flags.system.predictable"
             }
         ],
         "start": {

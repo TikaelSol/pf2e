@@ -2596,7 +2596,7 @@
                     {
                         "flag": "empiricismMethodology",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.methodology}"
+                        "uuid": "{item|flags.system.rulesSelections.methodology}"
                     }
                 ],
                 "slug": "methodology",
@@ -3133,7 +3133,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     }
                 ],

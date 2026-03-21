@@ -934,7 +934,7 @@
                 },
                 "items": {
                     "IMF2d": {
-                        "img": "icons/sundries/books/book-red-exclamation.webp",
+                        "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
                         "level": 2,
                         "name": "Express Driver",
                         "uuid": "Compendium.sf2e.feats.Item.Express Driver"
@@ -1422,7 +1422,7 @@
                     {
                         "flag": "infiltrator",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.specialization}"
+                        "uuid": "{item|flags.system.rulesSelections.specialization}"
                     }
                 ],
                 "slug": "operatives-specialization",
@@ -1491,25 +1491,25 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.diceNumber",
+                        "path": "flags.system.operative.aim.diceNumber",
                         "value": "ternary(gte(@actor.level,17),4,ternary(gte(@actor.level,11),3,ternary(gte(@actor.level,5),2,1)))"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.dieSize",
+                        "path": "flags.system.operative.aim.dieSize",
                         "value": 4
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.coverReduction",
+                        "path": "flags.system.operative.aim.coverReduction",
                         "value": "ternary(gte(@actor.level,17),4,ternary(gte(@actor.level,11),2,1))"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.rangeIncrement",
+                        "path": "flags.system.operative.aim.rangeIncrement",
                         "value": 1
                     }
                 ],
@@ -1601,7 +1601,7 @@
                     {
                         "flag": "catFall",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     },
                     {
                         "allowDuplicate": false,

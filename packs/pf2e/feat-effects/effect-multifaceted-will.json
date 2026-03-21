@@ -24,7 +24,7 @@
             {
                 "key": "FlatModifier",
                 "predicate": [
-                    "spellcasting:tradition:{item|origin.flags.pf2e.manifestWillTradition}"
+                    "spellcasting:tradition:{item|origin.flags.system.manifestWillTradition}"
                 ],
                 "selector": "saving-throw",
                 "type": "status",

@@ -37,7 +37,7 @@
                 ]
             },
             {
-                "damageType": "{item|origin.flags.pf2e.stanceArcaneCascade}",
+                "damageType": "{item|origin.flags.system.stanceArcaneCascade}",
                 "hideIfDisabled": true,
                 "key": "FlatModifier",
                 "predicate": [

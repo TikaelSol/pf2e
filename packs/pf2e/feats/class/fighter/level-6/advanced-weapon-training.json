@@ -36,7 +36,7 @@
             },
             {
                 "definition": [
-                    "item:group:{item|flags.pf2e.rulesSelections.group}",
+                    "item:group:{item|flags.system.rulesSelections.group}",
                     "item:category:advanced"
                 ],
                 "key": "MartialProficiency",

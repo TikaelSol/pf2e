@@ -37,7 +37,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.sovereigntyEpithet}"
+                "uuid": "{item|flags.system.rulesSelections.sovereigntyEpithet}"
             }
         ],
         "traits": {

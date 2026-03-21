@@ -24,12 +24,12 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.fireShield.resistance",
+                "path": "flags.system.fireShield.resistance",
                 "value": "cold"
             },
             {
                 "key": "Resistance",
-                "type": "{actor|flags.pf2e.fireShield.resistance}",
+                "type": "{actor|flags.system.fireShield.resistance}",
                 "value": "5 + 5*floor((@item.level -4)/2)"
             },
             {

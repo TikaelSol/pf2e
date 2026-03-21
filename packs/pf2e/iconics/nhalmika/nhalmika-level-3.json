@@ -1,7 +1,7 @@
 {
     "_id": "zrvdHuefzqUaxttP",
     "folder": "4WX1ZDHltfevDZjz",
-    "img": "systems/pf2e/icons/iconics/NhalmikaFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/nhalmika.webp",
     "items": [
         {
             "_id": "czTdyMxPKvbeL5LE",
@@ -402,7 +402,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {
@@ -842,7 +842,7 @@
                     {
                         "flag": "wayOfTheVanguard",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.way}"
+                        "uuid": "{item|flags.system.rulesSelections.way}"
                     }
                 ],
                 "slug": "gunslingers-way",
@@ -2998,10 +2998,17 @@
     "name": "Nhalmika (Level 3)",
     "prototypeToken": {
         "name": "Nhalmika",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 2,
+                "texture": "systems/pf2e/icons/iconics/subjects/nhalmika.webp"
+            }
+        },
         "texture": {
-            "scaleX": 1.2,
-            "scaleY": 1.2,
-            "src": "systems/pf2e/icons/iconics/Nhalmika.webp"
+            "scaleX": 2,
+            "scaleY": 2,
+            "src": "systems/pf2e/icons/iconics/tokens/nhalmika.webp"
         }
     },
     "system": {

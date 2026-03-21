@@ -1,7 +1,7 @@
 {
     "_id": "czQ0MaZBu3BqMpce",
     "folder": "PZgEOOGnBdtKOjQj",
-    "img": "systems/pf2e/icons/iconics/MerisielFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/merisiel.webp",
     "items": [
         {
             "_id": "UiFBg6Eav0Dlrzms",
@@ -600,7 +600,7 @@
                     {
                         "flag": "thief",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.roguesRacket}"
+                        "uuid": "{item|flags.system.rulesSelections.roguesRacket}"
                     }
                 ],
                 "slug": "rogues-racket",
@@ -648,7 +648,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.sneakAttackDamage.number",
+                        "path": "flags.system.sneakAttackDamage.number",
                         "predicate": [
                             "class:rogue"
                         ],
@@ -657,7 +657,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.sneakAttackDamage.faces",
+                        "path": "flags.system.sneakAttackDamage.faces",
                         "predicate": [
                             "class:rogue"
                         ],
@@ -671,8 +671,8 @@
                     },
                     {
                         "category": "precision",
-                        "diceNumber": "@actor.flags.pf2e.sneakAttackDamage.number",
-                        "dieSize": "d{actor|flags.pf2e.sneakAttackDamage.faces}",
+                        "diceNumber": "@actor.flags.system.sneakAttackDamage.number",
+                        "dieSize": "d{actor|flags.system.sneakAttackDamage.faces}",
                         "key": "DamageDice",
                         "predicate": [
                             "target:condition:off-guard",
@@ -2531,8 +2531,17 @@
     "name": "Merisiel (Level 1)",
     "prototypeToken": {
         "name": "Merisiel",
+        "ring": {
+            "enabled": true,
+            "subject": {
+                "scale": 2,
+                "texture": "systems/pf2e/icons/iconics/subjects/merisiel.webp"
+            }
+        },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Merisiel.webp"
+            "scaleX": 2,
+            "scaleY": 2,
+            "src": "systems/pf2e/icons/iconics/tokens/merisiel.webp"
         }
     },
     "system": {

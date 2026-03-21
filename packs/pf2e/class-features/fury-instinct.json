@@ -50,7 +50,7 @@
                 "predicate": [
                     "class:barbarian"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.furyInstinct}"
+                "uuid": "{item|flags.system.rulesSelections.furyInstinct}"
             },
             {
                 "key": "AdjustModifier",
@@ -104,7 +104,7 @@
                     "feature:raging-resistance"
                 ],
                 "type": "physical",
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "key": "AdjustModifier",

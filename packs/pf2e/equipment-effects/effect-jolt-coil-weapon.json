@@ -88,7 +88,7 @@
                 "predicate": [
                     "jolt-coil:jolt-coil"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectJoltCoilWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectJoltCoilWeapon}-damage"
             },
             {
                 "damageType": "electricity",
@@ -98,7 +98,7 @@
                 "predicate": [
                     "jolt-coil:jolt-coil-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectJoltCoilWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectJoltCoilWeapon}-damage"
             },
             {
                 "damageType": "electricity",
@@ -108,7 +108,7 @@
                 "predicate": [
                     "jolt-coil:jolt-coil-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectJoltCoilWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectJoltCoilWeapon}-damage"
             }
         ],
         "start": {

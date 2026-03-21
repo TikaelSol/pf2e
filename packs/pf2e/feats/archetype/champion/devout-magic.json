@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.championDedicationCount",
+                "path": "flags.system.championDedicationCount",
                 "value": 1
             }
         ],

@@ -26,21 +26,21 @@
         },
         "rules": [
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "parry"
             },
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "ranged-trip"
             },
             {
-                "itemId": "{actor|flags.pf2e.trackedItems.weaponInnovation}",
+                "itemId": "{actor|flags.system.trackedItems.weaponInnovation}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

@@ -24,7 +24,7 @@
             {
                 "key": "Weakness",
                 "type": "spirit",
-                "value": "@item.origin.flags.pf2e.shiningSymbolWeakness"
+                "value": "@item.origin.flags.system.shiningSymbolWeakness"
             }
         ],
         "start": {

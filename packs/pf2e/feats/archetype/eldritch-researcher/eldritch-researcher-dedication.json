@@ -63,14 +63,14 @@
                         ]
                     }
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.eldritch.name}",
+                "selector": "{item|flags.system.rulesSelections.eldritch.name}",
                 "type": "circumstance",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.eldritch.value}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.eldritch.value}.rank",
                 "value": 2
             }
         ],

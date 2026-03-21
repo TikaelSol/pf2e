@@ -2166,7 +2166,7 @@
                 },
                 "category": "interaction",
                 "description": {
-                    "value": "<p>Snow doesn't impair a white dragon's vision; it ignores concealment from snowfall.</p>"
+                    "value": "<p>Snow doesn't impair a white dragon's vision; it ignores @UUID[Compendium.pf2e.conditionitems.Item.Concealed]{Concealment} from snowfall.</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -2286,7 +2286,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>10 feet. @Damage[3d6[cold]] damage (@Check[reflex|dc:34|basic] save)</p>"
+                    "value": "<p>10 feet. @Damage[3d6[cold]|options:area-damage] damage (@Check[reflex|dc:34|basic|options:area-effect] save)</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -2366,7 +2366,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>90 feet. @Check[will|dc:34]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>90 feet. @Check[will|dc:34|options:area-effect,inflicts:frightened]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "OGL",

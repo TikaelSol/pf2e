@@ -129,7 +129,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     },
                     {
@@ -2172,7 +2172,7 @@
                     {
                         "flag": "braggart",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.swashbucklersStyle}"
+                        "uuid": "{item|flags.system.rulesSelections.swashbucklersStyle}"
                     }
                 ],
                 "slug": "swashbucklers-style",
@@ -2403,7 +2403,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.swashbuckler.preciseStrike",
+                        "path": "flags.system.swashbuckler.preciseStrike",
                         "predicate": [
                             "class:swashbuckler"
                         ],

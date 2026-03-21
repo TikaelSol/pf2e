@@ -7,10 +7,10 @@
             "value": "<p>Granted by @UUID[Compendium.sf2e.actions.Item.Aim]</p>\n<p>You mark a creature. Your ranged Strikes against your mark using the required ranged weapon deal additional precision damage and reduce the circumstance bonus to AC your mark gains from cover. These benefits only apply if your mark is within your weapon's first range increment.</p>"
         },
         "duration": {
-            "expiry": "turn-end",
+            "expiry": "turn-start",
             "sustained": false,
             "unit": "rounds",
-            "value": 0
+            "value": 1
         },
         "fromSpell": false,
         "level": {
@@ -34,8 +34,8 @@
             },
             {
                 "category": "precision",
-                "diceNumber": "@actor.flags.sf2e.operative.aim.diceNumber",
-                "dieSize": "d{actor|flags.sf2e.operative.aim.dieSize}",
+                "diceNumber": "@actor.flags.system.operative.aim.diceNumber",
+                "dieSize": "d{actor|flags.system.operative.aim.dieSize}",
                 "key": "DamageDice",
                 "predicate": [
                     "item:tag:aim",
@@ -45,7 +45,7 @@
                             {
                                 "lte": [
                                     "target:range-increment",
-                                    "{actor|flags.sf2e.operative.aim.rangeIncrement}"
+                                    "{actor|flags.system.operative.aim.rangeIncrement}"
                                 ]
                             },
                             "item:melee"

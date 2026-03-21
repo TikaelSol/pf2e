@@ -23,7 +23,7 @@
         "rules": [
             {
                 "adjustName": false,
-                "choices": "flags.pf2e.wildShapeForms",
+                "choices": "flags.system.wildShapeForms",
                 "flag": "formEffect",
                 "key": "ChoiceSet",
                 "predicate": [
@@ -40,7 +40,7 @@
                 "predicate": [
                     "feat:untamed-form"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.formEffect}"
+                "uuid": "{item|flags.system.rulesSelections.formEffect}"
             },
             {
                 "key": "FlatModifier",
@@ -81,7 +81,7 @@
                 "predicate": [
                     "feat:dragon-shape"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.dragonShapeResistance}",
+                "type": "{item|flags.system.rulesSelections.dragonShapeResistance}",
                 "value": 5
             }
         ],

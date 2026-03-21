@@ -2805,7 +2805,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.siphonLife",
+                        "path": "flags.system.siphonLife",
                         "value": 2
                     }
                 ],
@@ -2931,6 +2931,9 @@
         }
     ],
     "name": "Resurrection Dragon (Adult, Spellcaster)",
+    "prototypeToken": {
+        "name": "Resurrection Dragon (Adult)"
+    },
     "system": {
         "abilities": {
             "cha": {

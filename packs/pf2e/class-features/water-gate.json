@@ -56,7 +56,7 @@
                 "predicate": [
                     "class:kineticist"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.impulseOne}"
+                "uuid": "{item|flags.system.rulesSelections.impulseOne}"
             },
             {
                 "adjustName": false,
@@ -83,7 +83,7 @@
                     "kinetic-gate:initial:single-gate",
                     "kinetic-gate:first-element:water-gate"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.impulseTwo}"
+                "uuid": "{item|flags.system.rulesSelections.impulseTwo}"
             },
             {
                 "key": "RollOption",
@@ -93,7 +93,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.kineticist.elements",
+                "path": "flags.system.kineticist.elements",
                 "value": {
                     "label": "PF2E.TraitWater",
                     "value": "water"
@@ -110,7 +110,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.one",
+                "path": "flags.system.kineticist.gate.one",
                 "predicate": [
                     "kinetic-gate:first-element:water-gate"
                 ],
@@ -119,7 +119,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.two",
+                "path": "flags.system.kineticist.gate.two",
                 "predicate": [
                     "kinetic-gate:second-element:water-gate"
                 ],
@@ -128,7 +128,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.three",
+                "path": "flags.system.kineticist.gate.three",
                 "predicate": [
                     "parent:granter:gates-threshold"
                 ],
@@ -137,7 +137,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.four",
+                "path": "flags.system.kineticist.gate.four",
                 "predicate": [
                     "parent:granter:second-gates-threshold"
                 ],
@@ -146,7 +146,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.five",
+                "path": "flags.system.kineticist.gate.five",
                 "predicate": [
                     "parent:granter:third-gates-threshold"
                 ],
@@ -155,7 +155,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.gate.six",
+                "path": "flags.system.kineticist.gate.six",
                 "predicate": [
                     "parent:granter:fourth-gates-threshold"
                 ],
@@ -273,7 +273,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.kineticist.elementalBlast.water",
+                "path": "flags.system.kineticist.elementalBlast.water",
                 "predicate": [
                     "self:effect:kinetic-aura",
                     {
@@ -306,7 +306,7 @@
                     "junction:water:aura"
                 ],
                 "priority": 99,
-                "radius": "@actor.flags.pf2e.kineticist.auraRadius",
+                "radius": "@actor.flags.system.kineticist.auraRadius",
                 "slug": "kinetic-aura",
                 "traits": [
                     "primal"

@@ -58,7 +58,7 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.tradition}",
+                "selector": "{item|flags.system.rulesSelections.tradition}",
                 "type": "item",
                 "value": 1
             }

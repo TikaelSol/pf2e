@@ -44,7 +44,7 @@
                 ],
                 "slug": "pact-broker-penalty",
                 "type": "status",
-                "value": "@item.flags.pf2e.rulesSelections.pactBroker"
+                "value": "@item.flags.system.rulesSelections.pactBroker"
             }
         ],
         "start": {

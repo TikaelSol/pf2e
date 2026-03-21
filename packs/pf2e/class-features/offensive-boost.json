@@ -62,7 +62,7 @@
                 "rollOption": "offensive-boost"
             },
             {
-                "damageType": "{actor|flags.pf2e.inventor.offensiveBoost}",
+                "damageType": "{actor|flags.system.inventor.offensiveBoost}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "hideIfDisabled": true,
@@ -74,7 +74,7 @@
                             {
                                 "and": [
                                     "feature:weapon-innovation",
-                                    "item:id:{actor|flags.pf2e.innovationId}"
+                                    "item:id:{actor|flags.system.innovationId}"
                                 ]
                             },
                             {
@@ -91,8 +91,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.inventor.offensiveBoost",
-                "value": "{item|flags.pf2e.rulesSelections.offensiveBoostDamage}"
+                "path": "flags.system.inventor.offensiveBoost",
+                "value": "{item|flags.system.rulesSelections.offensiveBoostDamage}"
             }
         ],
         "traits": {

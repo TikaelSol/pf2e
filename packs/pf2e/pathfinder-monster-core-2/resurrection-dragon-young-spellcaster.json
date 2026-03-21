@@ -2122,7 +2122,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.siphonLife",
+                        "path": "flags.system.siphonLife",
                         "value": 1
                     }
                 ],
@@ -2215,6 +2215,9 @@
         }
     ],
     "name": "Resurrection Dragon (Young, Spellcaster)",
+    "prototypeToken": {
+        "name": "Resurrection Dragon (Young)"
+    },
     "system": {
         "abilities": {
             "cha": {

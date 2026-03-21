@@ -7,7 +7,7 @@
             "evaluate": true,
             "reevaluate": null,
             "type": "formula",
-            "value": "(ternary(gte(@actor.flags.pf2e.corrosiveBody.rank,9),5,3))d6"
+            "value": "(ternary(gte(@actor.flags.system.corrosiveBody.rank,9),5,3))d6"
         },
         "description": {
             "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Corrosive Body]</p>\n<p>You gain temporary Hit Points.</p>"

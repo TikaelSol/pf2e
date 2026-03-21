@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.hybridStudy}"
+                "uuid": "{item|flags.system.rulesSelections.hybridStudy}"
             }
         ],
         "traits": {

@@ -39,12 +39,12 @@
                 "diceNumber": "ceil((@item.level - 2)/2)",
                 "dieSize": "d8",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.blinkCharge",
+                "path": "flags.system.blinkCharge",
                 "value": "@item.level"
             },
             {
@@ -52,7 +52,7 @@
                 "outcome": [
                     "failure"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack",
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack",
                 "text": "PF2E.SpecificRule.BlinkCharge.Note.Failure",
                 "title": "{item|name}"
             },
@@ -61,7 +61,7 @@
                 "outcome": [
                     "criticalFailure"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack",
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack",
                 "text": "PF2E.SpecificRule.BlinkCharge.Note.CriticalFailure",
                 "title": "{item|name}"
             }

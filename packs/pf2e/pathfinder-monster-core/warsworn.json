@@ -135,8 +135,8 @@
                     {
                         "key": "DamageDice",
                         "override": {
-                            "damageType": "{item|flags.pf2e.rulesSelections.animatedWeaponDamage}",
-                            "dieSize": "{item|flags.pf2e.rulesSelections.animatedWeaponDice}"
+                            "damageType": "{item|flags.system.rulesSelections.animatedWeaponDamage}",
+                            "dieSize": "{item|flags.system.rulesSelections.animatedWeaponDice}"
                         },
                         "selector": "animated-weapon-damage"
                     }
@@ -260,7 +260,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>100 feet @Check[will|dc:35]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>100 feet. @Check[will|dc:35|options:area-effect,inflicts:frightened]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "ORC",

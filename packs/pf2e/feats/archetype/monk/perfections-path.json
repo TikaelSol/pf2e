@@ -36,7 +36,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.monkDedicationCount",
+                "path": "flags.system.monkDedicationCount",
                 "value": 1
             },
             {
@@ -52,7 +52,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.saves.{item|flags.pf2e.rulesSelections.save}.rank",
+                "path": "system.saves.{item|flags.system.rulesSelections.save}.rank",
                 "value": 3
             }
         ],

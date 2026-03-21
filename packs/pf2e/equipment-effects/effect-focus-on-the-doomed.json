@@ -38,7 +38,7 @@
                 ],
                 "selector": "skill-check",
                 "type": "item",
-                "value": "@item.origin.flags.pf2e.assassinsBracersBonus"
+                "value": "@item.origin.flags.system.assassinsBracersBonus"
             }
         ],
         "start": {

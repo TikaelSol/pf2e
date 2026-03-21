@@ -43,7 +43,7 @@
             },
             {
                 "adjustName": "PF2E.SpecificRule.Kineticist.KineticGate.ExpandThePortal.Rename",
-                "choices": "flags.pf2e.kineticist.elements",
+                "choices": "flags.system.kineticist.elements",
                 "flag": "element",
                 "key": "ChoiceSet",
                 "predicate": [
@@ -57,7 +57,7 @@
                     "kinetic-gate:second-threshold:expand"
                 ],
                 "preselectChoices": {
-                    "element": "{item|flags.pf2e.rulesSelections.element}"
+                    "element": "{item|flags.system.rulesSelections.element}"
                 },
                 "uuid": "Compendium.pf2e.classfeatures.Item.Gate Junction"
             },
@@ -78,7 +78,7 @@
             {
                 "allowDuplicate": false,
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.elementFork}"
+                "uuid": "{item|flags.system.rulesSelections.elementFork}"
             },
             {
                 "adjustName": false,
@@ -98,12 +98,12 @@
                                     "and": [
                                         {
                                             "or": [
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.one}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.two}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.three}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.four}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.five}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.six}"
+                                                "item:trait:{actor|flags.system.kineticist.gate.one}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.two}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.three}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.four}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.five}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.six}"
                                             ]
                                         },
                                         {
@@ -116,23 +116,23 @@
                                         {
                                             "not": {
                                                 "xor": [
-                                                    "item:trait:{actor|flags.pf2e.kineticist.gate.one}",
-                                                    "item:trait:{actor|flags.pf2e.kineticist.gate.two}",
-                                                    "item:trait:{actor|flags.pf2e.kineticist.gate.three}",
-                                                    "item:trait:{actor|flags.pf2e.kineticist.gate.four}",
-                                                    "item:trait:{actor|flags.pf2e.kineticist.gate.five}",
-                                                    "item:trait:{actor|flags.pf2e.kineticist.gate.six}"
+                                                    "item:trait:{actor|flags.system.kineticist.gate.one}",
+                                                    "item:trait:{actor|flags.system.kineticist.gate.two}",
+                                                    "item:trait:{actor|flags.system.kineticist.gate.three}",
+                                                    "item:trait:{actor|flags.system.kineticist.gate.four}",
+                                                    "item:trait:{actor|flags.system.kineticist.gate.five}",
+                                                    "item:trait:{actor|flags.system.kineticist.gate.six}"
                                                 ]
                                             }
                                         },
                                         {
                                             "or": [
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.one}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.two}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.three}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.four}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.five}",
-                                                "item:trait:{actor|flags.pf2e.kineticist.gate.six}"
+                                                "item:trait:{actor|flags.system.kineticist.gate.one}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.two}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.three}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.four}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.five}",
+                                                "item:trait:{actor|flags.system.kineticist.gate.six}"
                                             ]
                                         }
                                     ]
@@ -152,7 +152,7 @@
             {
                 "allowDuplicate": false,
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.impulseExpand}"
+                "uuid": "{item|flags.system.rulesSelections.impulseExpand}"
             }
         ],
         "traits": {

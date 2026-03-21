@@ -42,23 +42,23 @@
             },
             {
                 "definition": [
-                    "item:base:{actor|flags.pf2e.godlingWeapon}"
+                    "item:base:{actor|flags.system.godlingWeapon}"
                 ],
                 "key": "MartialProficiency",
-                "label": "PF2E.Weapon.Base.{actor|flags.pf2e.godlingWeapon}",
+                "label": "PF2E.Weapon.Base.{actor|flags.system.godlingWeapon}",
                 "sameAs": "simple"
             },
             {
-                "damageType": "{actor|flags.pf2e.godlingDomainDamage}",
+                "damageType": "{actor|flags.system.godlingDomainDamage}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "key": "DamageDice",
-                "selector": "{actor|flags.pf2e.godlingWeapon}-damage"
+                "selector": "{actor|flags.system.godlingWeapon}-damage"
             },
             {
                 "key": "CriticalSpecialization",
                 "predicate": [
-                    "item:base:{actor|flags.pf2e.godlingWeapon}"
+                    "item:base:{actor|flags.system.godlingWeapon}"
                 ]
             }
         ],

@@ -69,11 +69,11 @@
                 "prompt": "PF2E.SpecificRule.Prompt.EnergyType"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.energyType}",
+                "damageType": "{item|flags.system.rulesSelections.energyType}",
                 "diceNumber": 1,
                 "dieSize": "d8",
                 "key": "DamageDice",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

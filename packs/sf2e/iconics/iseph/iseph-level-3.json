@@ -704,7 +704,7 @@
                     {
                         "flag": "skirmisher",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.specialization}"
+                        "uuid": "{item|flags.system.rulesSelections.specialization}"
                     }
                 ],
                 "slug": "operatives-specialization",
@@ -770,25 +770,25 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.diceNumber",
+                        "path": "flags.system.operative.aim.diceNumber",
                         "value": "ternary(gte(@actor.level,17),4,ternary(gte(@actor.level,11),3,ternary(gte(@actor.level,5),2,1)))"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.dieSize",
+                        "path": "flags.system.operative.aim.dieSize",
                         "value": 4
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.coverReduction",
+                        "path": "flags.system.operative.aim.coverReduction",
                         "value": "ternary(gte(@actor.level,17),4,ternary(gte(@actor.level,11),2,1))"
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.rangeIncrement",
+                        "path": "flags.system.operative.aim.rangeIncrement",
                         "value": 1
                     }
                 ],
@@ -873,7 +873,7 @@
                     {
                         "flag": "steadyBalance",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.feat}"
+                        "uuid": "{item|flags.system.rulesSelections.feat}"
                     }
                 ],
                 "slug": "skirmisher",
@@ -1179,7 +1179,7 @@
                     },
                     {
                         "key": "RollOption",
-                        "label": "Comm Unit - Flashlight",
+                        "label": "SF2E.SpecificRule.Equipment.CommUnit.Flashlight",
                         "option": "flashlight",
                         "toggleable": true
                     },
@@ -2127,7 +2127,7 @@
                     {
                         "flag": "nightvisionAdaptation",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.ancestralParagon}"
+                        "uuid": "{item|flags.system.rulesSelections.ancestralParagon}"
                     }
                 ],
                 "slug": "ancestral-paragon",
@@ -2316,7 +2316,7 @@
         "texture": {
             "scaleX": 1.2,
             "scaleY": 1.2,
-            "src": "systems/sf2e/icons/iconics/portraits/iseph.webp"
+            "src": "systems/sf2e/icons/iconics/tokens/iseph.webp"
         }
     },
     "system": {

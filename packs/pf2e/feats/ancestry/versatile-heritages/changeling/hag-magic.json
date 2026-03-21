@@ -104,7 +104,7 @@
                 "mode": "add",
                 "predicate": [
                     "spellcasting:innate",
-                    "item:slug:{item|flags.pf2e.rulesSelections.hagMagic}"
+                    "item:slug:{item|flags.system.rulesSelections.hagMagic}"
                 ],
                 "property": "other-tags",
                 "value": "ancestral-spell"
@@ -115,7 +115,7 @@
                 "mode": "add",
                 "predicate": [
                     "spellcasting:innate",
-                    "item:slug:{item|flags.pf2e.rulesSelections.hagMagic}"
+                    "item:slug:{item|flags.system.rulesSelections.hagMagic}"
                 ],
                 "property": "other-tags",
                 "value": "ancestral-spell:changeling"

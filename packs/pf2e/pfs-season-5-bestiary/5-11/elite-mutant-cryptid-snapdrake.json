@@ -352,7 +352,7 @@
                         "predicate": [
                             "shifting-iridescence"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.shiftingIridescence}",
+                        "type": "{item|flags.system.rulesSelections.shiftingIridescence}",
                         "value": "ternary(gte(@actor.level,17),15,ternary(gte(@actor.level,9),10,5))"
                     }
                 ],

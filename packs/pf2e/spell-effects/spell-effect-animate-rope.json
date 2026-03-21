@@ -39,7 +39,7 @@
                 "key": "FlatModifier",
                 "selector": "land-speed",
                 "type": "circumstance",
-                "value": "@item.flags.pf2e.rulesSelections.speedPenalty"
+                "value": "@item.flags.system.rulesSelections.speedPenalty"
             }
         ],
         "start": {

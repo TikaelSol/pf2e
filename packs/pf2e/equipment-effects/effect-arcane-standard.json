@@ -87,7 +87,7 @@
                 "predicate": [
                     "arcane-standard:arcane-standard"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.damage}",
+                "type": "{item|flags.system.rulesSelections.damage}",
                 "value": 5
             },
             {
@@ -95,7 +95,7 @@
                 "predicate": [
                     "arcane-standard:arcane-standard-greater"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.damage}",
+                "type": "{item|flags.system.rulesSelections.damage}",
                 "value": 10
             }
         ],

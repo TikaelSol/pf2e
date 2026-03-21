@@ -160,7 +160,7 @@
                     },
                     {
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-heritage",
@@ -336,7 +336,7 @@
                     },
                     {
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -525,7 +525,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.rollOptions.all.sudden-charge",
+                        "path": "flags.system.rollOptions.all.sudden-charge",
                         "priority": 10,
                         "value": true
                     }
@@ -2988,7 +2988,7 @@
                         "allowDuplicate": false,
                         "flag": "giantInstinct",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.instinct}"
+                        "uuid": "{item|flags.system.rulesSelections.instinct}"
                     }
                 ],
                 "slug": "instinct",
@@ -3534,7 +3534,7 @@
                             "self:effect:rage",
                             "feature:raging-resistance"
                         ],
-                        "type": "{item|flags.pf2e.rulesSelections.energy}",
+                        "type": "{item|flags.system.rulesSelections.energy}",
                         "value": "@actor.abilities.con.mod+3"
                     },
                     {

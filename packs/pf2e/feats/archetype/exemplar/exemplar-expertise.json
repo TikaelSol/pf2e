@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.exemplar.archetypeFeatCount",
+                "path": "flags.system.exemplar.archetypeFeatCount",
                 "value": 1
             }
         ],

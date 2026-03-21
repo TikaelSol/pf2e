@@ -48,7 +48,7 @@
             },
             {
                 "key": "Weakness",
-                "type": "{actor|flags.pf2e.warriorOfLegendCursedWeakness}",
+                "type": "{actor|flags.system.warriorOfLegendCursedWeakness}",
                 "value": "max(1,floor(@actor.level/2))"
             },
             {

@@ -2096,7 +2096,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>5 feet, @Damage[3d6[fire]|options:area-damage] damage (@Check[reflex|dc:30|basic|options:area-effect] save)</p>"
+                    "value": "<p>5 feet. @Damage[3d6[fire]|options:area-damage] damage (@Check[reflex|dc:30|basic|options:area-effect] save)</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -2105,7 +2105,6 @@
                 },
                 "rules": [
                     {
-                        "effects": [],
                         "key": "Aura",
                         "traits": [
                             "fire",
@@ -2138,7 +2137,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>90 feet @Check[will|dc:32]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>90 feet. @Check[will|dc:32|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "ORC",
@@ -2147,7 +2146,6 @@
                 },
                 "rules": [
                     {
-                        "effects": [],
                         "key": "Aura",
                         "radius": 90,
                         "slug": "frightful-presence",
@@ -2265,6 +2263,9 @@
         }
     ],
     "name": "Cinder Dragon (Adult, Spellcaster)",
+    "prototypeToken": {
+        "name": "Cinder Dragon (Adult)"
+    },
     "system": {
         "abilities": {
             "cha": {

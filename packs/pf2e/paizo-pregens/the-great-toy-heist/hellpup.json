@@ -550,7 +550,7 @@
                     {
                         "flag": "faithsFlamekeeper",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.patron}"
+                        "uuid": "{item|flags.system.rulesSelections.patron}"
                     }
                 ],
                 "slug": "patron",
@@ -906,7 +906,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                         "value": 1
                     }
                 ],
@@ -2694,7 +2694,7 @@
                     {
                         "flag": "lessonOfProtection",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.lesson}"
+                        "uuid": "{item|flags.system.rulesSelections.lesson}"
                     }
                 ],
                 "slug": "basic-lesson",

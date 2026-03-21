@@ -53,7 +53,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.firstEnergy}",
+                "type": "{item|flags.system.rulesSelections.firstEnergy}",
                 "value": "max(1,floor(@actor.level/2))"
             },
             {
@@ -102,7 +102,7 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.secondEnergy}",
+                "type": "{item|flags.system.rulesSelections.secondEnergy}",
                 "value": "max(1,floor(@actor.level/2))"
             }
         ],

@@ -834,7 +834,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>90 feet. @Check[will|dc:36]</p>\n<p>On a critical failure, a creature is also paralyzed until the start of their next turn.</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>90 feet. @Check[will|dc:36|options:area-effect,inflicts:frightened,inflicts:paralyzed]</p>\n<p>On a critical failure, a creature is also @UUID[Compendium.pf2e.conditionitems.Item.Paralyzed] until the start of their next turn.</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -1108,13 +1108,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.ectoplasmicFormAC",
+                        "path": "flags.system.ectoplasmicFormAC",
                         "value": 43
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.ectoplasmicFormTempHP",
+                        "path": "flags.system.ectoplasmicFormTempHP",
                         "value": 100
                     }
                 ],

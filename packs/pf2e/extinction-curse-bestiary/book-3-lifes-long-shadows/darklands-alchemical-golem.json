@@ -298,7 +298,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.alchemicalInjection}",
+                        "damageType": "{item|flags.system.rulesSelections.alchemicalInjection}",
                         "diceNumber": 2,
                         "dieSize": "d6",
                         "key": "DamageDice",

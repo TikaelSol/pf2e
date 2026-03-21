@@ -237,6 +237,12 @@
                 "temp": 0,
                 "value": 10
             },
+            "immunities": [
+                {
+                    "exceptions": [],
+                    "type": "mental"
+                }
+            ],
             "speed": {
                 "otherSpeeds": [],
                 "value": 25

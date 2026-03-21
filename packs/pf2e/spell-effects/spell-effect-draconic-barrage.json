@@ -46,7 +46,7 @@
                 "toggleable": true
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.draconicBarrage}",
+                "damageType": "{item|flags.system.rulesSelections.draconicBarrage}",
                 "key": "FlatModifier",
                 "selector": "strike-damage",
                 "value": "@item.level"
@@ -61,7 +61,7 @@
                 "selectors": [
                     "spell-damage"
                 ],
-                "value": "{item|flags.pf2e.rulesSelections.draconicBarrage}"
+                "value": "{item|flags.system.rulesSelections.draconicBarrage}"
             }
         ],
         "start": {

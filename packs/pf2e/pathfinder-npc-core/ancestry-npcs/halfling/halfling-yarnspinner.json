@@ -1981,8 +1981,8 @@
                             },
                             {
                                 "or": [
-                                    "target:hidden",
-                                    "target:undetected"
+                                    "target:condition:hidden",
+                                    "target:condition:undetected"
                                 ]
                             }
                         ],
@@ -2115,7 +2115,7 @@
                         "predicate": [
                             "mesmerizing-tale"
                         ],
-                        "radius": "{item|flags.pf2e.rulesSelections.mesmerizingTale}",
+                        "radius": "{item|flags.system.rulesSelections.mesmerizingTale}",
                         "slug": "mesmerizing-tale",
                         "traits": [
                             "auditory",

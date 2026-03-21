@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices",
+                "path": "flags.system.deviantAbilities.awakenedChoices",
                 "priority": 10,
                 "value": {
                     "greater": [],
@@ -38,7 +38,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.EerieFlickerTerrify",
                     "predicate": [
@@ -53,7 +53,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.EerieFlickerCompress",
                     "predicate": [
@@ -68,7 +68,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.EerieFlickerTerrify",
                     "predicate": [
@@ -83,7 +83,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.EerieFlickerCompress",
                     "predicate": [
@@ -98,7 +98,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.GhostlyGraspGrab",
                     "predicate": [
@@ -113,7 +113,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.GhostlyGraspPush",
                     "predicate": [
@@ -128,7 +128,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.GhostlyGraspGrab",
                     "predicate": [
@@ -143,7 +143,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.GhostlyGraspPush",
                     "predicate": [
@@ -158,7 +158,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.EnervatingWailSilent",
                     "predicate": [
@@ -173,7 +173,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.EnervatingWailEnfeebling",
                     "predicate": [
@@ -188,7 +188,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.DistantWanderingFly",
                     "predicate": [
@@ -203,7 +203,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.DistantWanderingQuick",
                     "predicate": [

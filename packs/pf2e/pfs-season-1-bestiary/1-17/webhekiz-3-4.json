@@ -1286,7 +1286,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.bespellPrimalWeapon}",
+                        "damageType": "{item|flags.system.rulesSelections.bespellPrimalWeapon}",
                         "diceNumber": 1,
                         "dieSize": "d6",
                         "key": "DamageDice",

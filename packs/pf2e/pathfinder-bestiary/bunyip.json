@@ -191,7 +191,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "add",
-                        "path": "flags.pf2e.frenzyMod",
+                        "path": "flags.system.frenzyMod",
                         "value": 1
                     }
                 ],

@@ -41,13 +41,13 @@
             },
             {
                 "key": "Resistance",
-                "type": "{item|flags.pf2e.rulesSelections.physicalDamage}",
+                "type": "{item|flags.system.rulesSelections.physicalDamage}",
                 "value": 15
             },
             {
                 "key": "DamageDice",
                 "override": {
-                    "damageType": "{item|flags.pf2e.rulesSelections.physicalDamage}"
+                    "damageType": "{item|flags.system.rulesSelections.physicalDamage}"
                 },
                 "selector": "weapon-arm-damage"
             }

@@ -146,7 +146,7 @@
                 "predicate": [
                     "background:magical-experiment:resistant-skin"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.energy1}",
+                "type": "{item|flags.system.rulesSelections.energy1}",
                 "value": "max(1,floor(@actor.level/2))"
             },
             {
@@ -154,7 +154,7 @@
                 "predicate": [
                     "background:magical-experiment:resistant-skin"
                 ],
-                "type": "{item|flags.pf2e.rulesSelections.energy2}",
+                "type": "{item|flags.system.rulesSelections.energy2}",
                 "value": "max(1,floor(@actor.level/2))"
             },
             {

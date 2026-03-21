@@ -2353,7 +2353,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p><strong>Trigger</strong> The avatar fails or critically fails a saving throw <strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> Walkena's will attempts to undo his avatar's fate. The avatar rerolls the saving throw and takes the better result.</p>"
+                    "value": "<p><strong>Trigger</strong> The avatar fails or critically fails a saving throw</p>\n<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> Walkena's will attempts to undo his avatar's fate. The avatar rerolls the saving throw and takes the better result.</p>"
                 },
                 "frequency": {
                     "max": 1,
@@ -2393,7 +2393,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>60 feet. @Check[will|dc:38]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>60 feet. @Check[will|dc:38|options:area-effect,inflicts:frightened]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "OGL",

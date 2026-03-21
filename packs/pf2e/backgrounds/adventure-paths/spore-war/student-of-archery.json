@@ -64,7 +64,7 @@
                 "definition": [
                     {
                         "or": [
-                            "item:base:{item|flags.pf2e.rulesSelections.weapon}",
+                            "item:base:{item|flags.system.rulesSelections.weapon}",
                             "item:category:martial"
                         ]
                     }
@@ -78,7 +78,7 @@
                 "definition": [
                     {
                         "or": [
-                            "item:base:{item|flags.pf2e.rulesSelections.weapon}",
+                            "item:base:{item|flags.system.rulesSelections.weapon}",
                             "item:category:advanced"
                         ]
                     }
@@ -97,7 +97,7 @@
                             5
                         ]
                     },
-                    "item:base:{item|flags.pf2e.rulesSelections.weapon}"
+                    "item:base:{item|flags.system.rulesSelections.weapon}"
                 ]
             }
         ],

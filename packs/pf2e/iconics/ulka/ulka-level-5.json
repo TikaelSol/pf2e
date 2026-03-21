@@ -1,7 +1,7 @@
 {
     "_id": "gPQFd6gJEMxtgi8x",
     "folder": "9codKitjOjlK2ZPf",
-    "img": "systems/pf2e/icons/iconics/UlkaFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/ulka.webp",
     "items": [
         {
             "_id": "YEK5qaOu776Ob8Ma",
@@ -621,7 +621,7 @@
                     {
                         "flag": "coordinatingManeuvers",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.firstTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.firstTactic}"
                     },
                     {
                         "adjustName": false,
@@ -645,7 +645,7 @@
                     {
                         "flag": "gatherToMe",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.secondTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.secondTactic}"
                     },
                     {
                         "adjustName": false,
@@ -669,7 +669,7 @@
                     {
                         "flag": "pincerAttack",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.thirdTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.thirdTactic}"
                     },
                     {
                         "adjustName": false,
@@ -693,7 +693,7 @@
                     {
                         "flag": "protectiveScreen",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.fourthTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.fourthTactic}"
                     },
                     {
                         "adjustName": false,
@@ -717,7 +717,7 @@
                     {
                         "flag": "strikeHard",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.fifthTactic}"
+                        "uuid": "{item|flags.system.rulesSelections.fifthTactic}"
                     }
                 ],
                 "slug": "tactics",
@@ -3260,13 +3260,13 @@
             "enabled": true,
             "subject": {
                 "scale": 2,
-                "texture": "systems/pf2e/icons/iconics/UlkaSubject.webp"
+                "texture": "systems/pf2e/icons/iconics/subjects/ulka.webp"
             }
         },
         "texture": {
             "scaleX": 2,
             "scaleY": 2,
-            "src": "systems/pf2e/icons/iconics/Ulka.webp"
+            "src": "systems/pf2e/icons/iconics/tokens/ulka.webp"
         }
     },
     "system": {

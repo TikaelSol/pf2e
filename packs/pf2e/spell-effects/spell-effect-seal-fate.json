@@ -66,7 +66,7 @@
             },
             {
                 "key": "Weakness",
-                "type": "{item|flags.pf2e.rulesSelections.damageType}",
+                "type": "{item|flags.system.rulesSelections.damageType}",
                 "value": "floor(@item.level/2)"
             }
         ],

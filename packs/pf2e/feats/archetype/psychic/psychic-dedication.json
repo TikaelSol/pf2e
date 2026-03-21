@@ -52,7 +52,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.consciousMind}"
+                "uuid": "{item|flags.system.rulesSelections.consciousMind}"
             }
         ],
         "subfeatures": {

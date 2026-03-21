@@ -34,7 +34,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectMercifulBalmWeapon}",
+                "itemId": "{item|flags.system.rulesSelections.effectMercifulBalmWeapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

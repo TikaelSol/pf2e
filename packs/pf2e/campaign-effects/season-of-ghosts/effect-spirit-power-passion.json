@@ -80,7 +80,7 @@
                         "type": "flame"
                     },
                     "bright": 40,
-                    "color": "{item|flags.pf2e.rulesSelections.color}",
+                    "color": "{item|flags.system.rulesSelections.color}",
                     "dim": 80,
                     "luminosity": 0.05,
                     "saturation": 0.1

@@ -36,7 +36,7 @@
                     "intimidation"
                 ],
                 "type": "circumstance",
-                "value": "@actor.flags.sf2e.contemplative.telepredict"
+                "value": "@actor.flags.system.contemplative.telepredict"
             },
             {
                 "key": "FlatModifier",
@@ -46,7 +46,7 @@
                 ],
                 "selector": "saving-throw",
                 "type": "circumstance",
-                "value": "@actor.flags.sf2e.contemplative.telepredict"
+                "value": "@actor.flags.system.contemplative.telepredict"
             },
             {
                 "key": "FlatModifier",
@@ -56,12 +56,12 @@
                 ],
                 "selector": "will",
                 "type": "circumstance",
-                "value": "@actor.flags.sf2e.contemplative.telepredict"
+                "value": "@actor.flags.system.contemplative.telepredict"
             },
             {
                 "domain": "all",
                 "key": "RollOption",
-                "label": "Dealt Mental Damage to target of Telepredict",
+                "label": "SF2E.SpecificRule.Contemplative.Telepredict.Toggle",
                 "option": "mental-damage",
                 "toggleable": true,
                 "value": true
@@ -69,13 +69,13 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.sf2e.contemplative.telepredict",
+                "path": "flags.system.contemplative.telepredict",
                 "value": 1
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.sf2e.contemplative.telepredict",
+                "path": "flags.system.contemplative.telepredict",
                 "predicate": [
                     "mental-damage"
                 ],

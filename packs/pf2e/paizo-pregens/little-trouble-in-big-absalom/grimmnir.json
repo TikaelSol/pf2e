@@ -3069,7 +3069,7 @@
                     {
                         "flag": "bloodlineDemonic",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.bloodline}"
+                        "uuid": "{item|flags.system.rulesSelections.bloodline}"
                     }
                 ],
                 "slug": "bloodline",

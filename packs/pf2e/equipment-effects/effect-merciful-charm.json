@@ -34,7 +34,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectMercifulCharm}",
+                "itemId": "{item|flags.system.rulesSelections.effectMercifulCharm}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",

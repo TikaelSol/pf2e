@@ -2971,7 +2971,7 @@
                     },
                     {
                         "category": "precision",
-                        "diceNumber": "@item.flags.pf2e.rulesSelections.predictiveBlows",
+                        "diceNumber": "@item.flags.system.rulesSelections.predictiveBlows",
                         "dieSize": "d6",
                         "key": "DamageDice",
                         "predicate": [

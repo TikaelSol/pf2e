@@ -27,7 +27,7 @@
                 "mode": "subtract",
                 "selector": "ac",
                 "slug": "cover",
-                "value": "@item.origin.flags.sf2e.sharpshooterSerum.coverReduction"
+                "value": "@item.origin.flags.system.sharpshooterSerum.coverReduction"
             },
             {
                 "key": "AdjustModifier",

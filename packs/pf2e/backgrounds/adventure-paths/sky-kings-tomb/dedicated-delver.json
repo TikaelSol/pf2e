@@ -56,7 +56,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.pf2e.rulesSelections.dedicatedDiver.skill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.dedicatedDiver.skill}.rank",
                 "value": 1
             },
             {
@@ -64,7 +64,7 @@
                 "preselectChoices": {
                     "assurance": "underground"
                 },
-                "uuid": "{item|flags.pf2e.rulesSelections.dedicatedDiver.feat}"
+                "uuid": "{item|flags.system.rulesSelections.dedicatedDiver.feat}"
             }
         ],
         "trainedSkills": {

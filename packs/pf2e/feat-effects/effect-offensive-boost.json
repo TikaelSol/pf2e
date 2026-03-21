@@ -36,7 +36,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "damageType": "{item|origin.flags.pf2e.inventor.offensiveBoost}",
+                "damageType": "{item|origin.flags.system.inventor.offensiveBoost}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "hideIfDisabled": true,
@@ -47,7 +47,7 @@
                 "selector": "strike-damage"
             },
             {
-                "damageType": "{item|origin.flags.pf2e.inventor.offensiveBoost}",
+                "damageType": "{item|origin.flags.system.inventor.offensiveBoost}",
                 "diceNumber": 1,
                 "dieSize": "d6",
                 "hideIfDisabled": true,
@@ -55,11 +55,11 @@
                 "predicate": [
                     "feature:armor-innovation"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             },
             {
                 "category": "persistent",
-                "damageType": "{item|origin.flags.pf2e.inventor.offensiveBoost}",
+                "damageType": "{item|origin.flags.system.inventor.offensiveBoost}",
                 "diceNumber": 1,
                 "dieSize": "d8",
                 "hideIfDisabled": true,
@@ -73,7 +73,7 @@
             },
             {
                 "category": "persistent",
-                "damageType": "{item|origin.flags.pf2e.inventor.offensiveBoost}",
+                "damageType": "{item|origin.flags.system.inventor.offensiveBoost}",
                 "diceNumber": 1,
                 "dieSize": "d8",
                 "hideIfDisabled": true,
@@ -83,7 +83,7 @@
                     "feature:armor-innovation",
                     "feat:persistent-boost"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.weapon}-damage"
             }
         ],
         "start": {

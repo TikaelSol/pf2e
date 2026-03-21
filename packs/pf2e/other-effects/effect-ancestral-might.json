@@ -48,14 +48,14 @@
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.firstBoost}-based",
+                "selector": "{item|flags.system.rulesSelections.firstBoost}-based",
                 "slug": "ancestral-might-first",
                 "type": "status",
                 "value": 2
             },
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.secondBoost}-based",
+                "selector": "{item|flags.system.rulesSelections.secondBoost}-based",
                 "slug": "ancestral-might-second",
                 "type": "status",
                 "value": 2

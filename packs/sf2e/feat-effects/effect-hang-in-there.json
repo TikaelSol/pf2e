@@ -120,7 +120,7 @@
             },
             {
                 "key": "TempHP",
-                "value": "(@item.flags.sf2e.rulesSelections.degreeOfSuccess * @actor.level) + @item.origin.abilities.cha.mod + @item.flags.sf2e.rulesSelections.proficiencyRank"
+                "value": "(@item.flags.system.rulesSelections.degreeOfSuccess * @actor.level) + @item.origin.abilities.cha.mod + @item.flags.system.rulesSelections.proficiencyRank"
             }
         ],
         "start": {

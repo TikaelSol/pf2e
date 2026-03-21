@@ -48,7 +48,7 @@
             {
                 "category": "persistent",
                 "damageType": "bleed",
-                "diceNumber": "@actor.flags.pf2e.swashbuckler.preciseStrike",
+                "diceNumber": "@actor.flags.system.swashbuckler.preciseStrike",
                 "dieSize": "d6",
                 "key": "DamageDice",
                 "predicate": [

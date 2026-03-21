@@ -36,11 +36,11 @@
                 "prompt": "PF2E.SpecificRule.Prompt.EnergyType"
             },
             {
-                "damageType": "{item|flags.pf2e.rulesSelections.damage}",
+                "damageType": "{item|flags.system.rulesSelections.damage}",
                 "diceNumber": 1,
                 "dieSize": "d4",
                 "key": "DamageDice",
-                "selector": "{actor|flags.pf2e.weaponSiphonWeapon}-damage"
+                "selector": "{actor|flags.system.weaponSiphonWeapon}-damage"
             }
         ],
         "start": {

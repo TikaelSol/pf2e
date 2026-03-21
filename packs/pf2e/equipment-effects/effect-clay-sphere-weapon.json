@@ -34,21 +34,21 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "versatile-b"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "versatile-p"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
@@ -57,8 +57,8 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.claySphere.weapon",
-                "value": "{item|flags.pf2e.rulesSelections.weapon}"
+                "path": "flags.system.claySphere.weapon",
+                "value": "{item|flags.system.rulesSelections.weapon}"
             },
             {
                 "key": "GrantItem",

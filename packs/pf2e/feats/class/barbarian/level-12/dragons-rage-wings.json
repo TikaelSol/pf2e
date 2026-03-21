@@ -35,7 +35,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
-                "value": "{actor|flags.pf2e.barbarian.instinct.dragon.tradition}"
+                "value": "{actor|flags.system.barbarian.instinct.dragon.tradition}"
             }
         ],
         "selfEffect": {

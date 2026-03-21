@@ -28,7 +28,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "feature:dense-plating"
                 ],
                 "type": "slashing",
@@ -37,7 +37,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "feature:layered-mesh"
                 ],
                 "type": "piercing",
@@ -46,7 +46,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "feature:tensile-absorption"
                 ],
                 "type": "bludgeoning",

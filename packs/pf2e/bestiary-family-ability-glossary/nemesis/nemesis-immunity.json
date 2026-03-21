@@ -134,11 +134,11 @@
             },
             {
                 "key": "Immunity",
-                "type": "{item|flags.pf2e.rulesSelections.immunityOne}"
+                "type": "{item|flags.system.rulesSelections.immunityOne}"
             },
             {
                 "key": "Immunity",
-                "type": "{item|flags.pf2e.rulesSelections.immunityTwo}"
+                "type": "{item|flags.system.rulesSelections.immunityTwo}"
             }
         ],
         "traits": {

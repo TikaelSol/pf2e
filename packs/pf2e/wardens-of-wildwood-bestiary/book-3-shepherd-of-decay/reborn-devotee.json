@@ -166,7 +166,7 @@
                         "value": true
                     },
                     {
-                        "diceNumber": "(@item.flags.pf2e.rulesSelections.stalkNumber)-1",
+                        "diceNumber": "(@item.flags.system.rulesSelections.stalkNumber)-1",
                         "dieSize": "d8",
                         "key": "DamageDice",
                         "predicate": [

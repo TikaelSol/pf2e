@@ -84,7 +84,7 @@
                     "gem-twist"
                 ],
                 "property": "property-runes",
-                "value": "{item|flags.pf2e.rulesSelections.gemTwist}"
+                "value": "{item|flags.system.rulesSelections.gemTwist}"
             },
             {
                 "key": "DamageAlteration",

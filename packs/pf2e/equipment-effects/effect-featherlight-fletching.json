@@ -37,7 +37,7 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "multiply",
                 "property": "range-increment",

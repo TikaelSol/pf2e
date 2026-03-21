@@ -55,7 +55,7 @@
                     "piercing",
                     "slashing"
                 ],
-                "value": "@actor.flags.pf2e.ragingResistance"
+                "value": "@actor.flags.system.ragingResistance"
             },
             {
                 "key": "Weakness",

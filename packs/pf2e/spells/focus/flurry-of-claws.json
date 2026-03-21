@@ -51,7 +51,7 @@
         "requirements": "",
         "rules": [
             {
-                "damageType": "{actor|flags.pf2e.dragonBloodline.damageType}",
+                "damageType": "{actor|flags.system.dragonBloodline.damageType}",
                 "diceNumber": "@item.level",
                 "dieSize": "d4",
                 "hideIfDisabled": true,

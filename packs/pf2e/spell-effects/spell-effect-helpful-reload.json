@@ -44,7 +44,7 @@
             {
                 "key": "FlatModifier",
                 "removeAfterRoll": "if-enabled",
-                "selector": "{item|flags.pf2e.rulesSelections.weapon}-attack",
+                "selector": "{item|flags.system.rulesSelections.weapon}-attack",
                 "type": "status",
                 "value": 1
             }

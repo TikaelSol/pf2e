@@ -325,7 +325,7 @@
                         "mode": "add",
                         "predicate": [
                             "aim-weapon",
-                            "item:{item|flags.sf2e.rulesSelections.aimWeapon}"
+                            "item:{item|flags.system.rulesSelections.aimWeapon}"
                         ],
                         "property": "other-tags",
                         "value": "aim"
@@ -333,25 +333,25 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.diceNumber",
+                        "path": "flags.system.operative.aim.diceNumber",
                         "value": 1
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.dieSize",
+                        "path": "flags.system.operative.aim.dieSize",
                         "value": 4
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.coverReduction",
+                        "path": "flags.system.operative.aim.coverReduction",
                         "value": 1
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.operative.aim.rangeIncrement",
+                        "path": "flags.system.operative.aim.rangeIncrement",
                         "value": 1
                     }
                 ],

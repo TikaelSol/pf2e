@@ -23,15 +23,15 @@
         "rules": [
             {
                 "key": "Immunity",
-                "type": "{item|origin.flags.pf2e.creatureOfMythDamageType}"
+                "type": "{item|origin.flags.system.creatureOfMythDamageType}"
             },
             {
                 "key": "FlatModifier",
                 "predicate": [
                     {
                         "or": [
-                            "origin:trait:{item|origin.flags.pf2e.creatureOfMythDamageType}",
-                            "item:trait:{item|origin.flags.pf2e.creatureOfMythDamageType}"
+                            "origin:trait:{item|origin.flags.system.creatureOfMythDamageType}",
+                            "item:trait:{item|origin.flags.system.creatureOfMythDamageType}"
                         ]
                     }
                 ],

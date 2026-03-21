@@ -67,7 +67,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.surki.evolutions",
+                "path": "flags.system.surki.evolutions",
                 "priority": 10,
                 "value": []
             }

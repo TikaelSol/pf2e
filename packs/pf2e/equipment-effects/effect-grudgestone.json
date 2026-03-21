@@ -76,7 +76,7 @@
                 "predicate": [
                     "target:mark:grudgestone"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectGrudgestone}-damage",
+                "selector": "{item|flags.system.rulesSelections.effectGrudgestone}-damage",
                 "slug": "grudgestone-bonus",
                 "type": "status",
                 "value": 3
@@ -87,7 +87,7 @@
                 "predicate": [
                     "grudgestone:grudgestone-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectGrudgestone}-damage",
+                "selector": "{item|flags.system.rulesSelections.effectGrudgestone}-damage",
                 "slug": "grudgestone-bonus",
                 "value": 5
             }

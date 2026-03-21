@@ -42,7 +42,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "flags.pf2e.champion.aura",
+                "path": "flags.system.champion.aura",
                 "predicate": [
                     "expand-aura"
                 ],

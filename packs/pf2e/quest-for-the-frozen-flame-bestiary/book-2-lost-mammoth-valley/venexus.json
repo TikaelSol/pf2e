@@ -689,7 +689,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>90 feet. @Check[will|dc:25]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>90 feet. @Check[will|dc:25|options:area-effect,inflicts:frightened]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -779,7 +779,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>Inclement weather doesn't impair Venexus's vision; she ignores concealment from fog, mist, rain, and snowfall.</p>"
+                    "value": "<p>Inclement weather doesn't impair Venexus's vision; she ignores @UUID[Compendium.pf2e.conditionitems.Item.Concealed]{Concealment} from fog, mist, rain, and snowfall.</p>"
                 },
                 "publication": {
                     "license": "OGL",

@@ -77,7 +77,7 @@
                 "predicate": [
                     "class:wizard"
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.wizardElmentalistSchool}"
+                "uuid": "{item|flags.system.rulesSelections.wizardElmentalistSchool}"
             },
             {
                 "adjustName": false,

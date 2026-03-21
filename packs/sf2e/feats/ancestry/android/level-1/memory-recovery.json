@@ -42,7 +42,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.sf2e.rulesSelections.memoryRecovery}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.memoryRecovery}.rank",
                 "phase": "beforeDerived",
                 "priority": 60,
                 "value": 1

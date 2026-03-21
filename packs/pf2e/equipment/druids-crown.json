@@ -37,7 +37,7 @@
         "rules": [
             {
                 "key": "FlatModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.druidCrownType}",
+                "selector": "{item|flags.system.rulesSelections.druidCrownType}",
                 "type": "item",
                 "value": 1
             },

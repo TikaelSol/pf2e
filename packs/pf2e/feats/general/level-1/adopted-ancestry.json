@@ -44,13 +44,13 @@
                 "key": "ActiveEffectLike",
                 "mode": "override",
                 "path": "system.details.ancestry.adopted",
-                "value": "{item|flags.pf2e.rulesSelections.ancestry}"
+                "value": "{item|flags.system.rulesSelections.ancestry}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
                 "path": "system.details.ancestry.countsAs",
-                "value": "{item|flags.pf2e.rulesSelections.ancestry}"
+                "value": "{item|flags.system.rulesSelections.ancestry}"
             }
         ],
         "traits": {

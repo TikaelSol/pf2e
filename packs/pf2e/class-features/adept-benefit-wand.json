@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.thaumaturge.paragonChoices",
+                "path": "flags.system.thaumaturge.paragonChoices",
                 "priority": 20,
                 "value": {
                     "label": "PF2E.SpecificRule.Thaumaturge.Implement.Wand.Label",

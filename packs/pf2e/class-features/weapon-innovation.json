@@ -58,14 +58,14 @@
                 "flag": "weaponInnovation",
                 "key": "GrantItem",
                 "track": true,
-                "uuid": "{item|flags.pf2e.rulesSelections.weaponInnovation}"
+                "uuid": "{item|flags.system.rulesSelections.weaponInnovation}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.innovationId",
+                "path": "flags.system.innovationId",
                 "priority": 5,
-                "value": "{item|flags.pf2e.itemGrants.weaponInnovation.id}"
+                "value": "{item|flags.system.itemGrants.weaponInnovation.id}"
             },
             {
                 "adjustName": false,
@@ -193,7 +193,7 @@
                         "not": "weapon-innovation:category:advanced"
                     }
                 ],
-                "uuid": "{item|flags.pf2e.rulesSelections.initialModification}"
+                "uuid": "{item|flags.system.rulesSelections.initialModification}"
             },
             {
                 "key": "RollOption",
@@ -224,7 +224,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.itemGrants.weaponInnovation.id}"
+                    "item:id:{item|flags.system.itemGrants.weaponInnovation.id}"
                 ],
                 "key": "MartialProficiency",
                 "predicate": [

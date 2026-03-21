@@ -229,7 +229,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.inventor.explode",
+                "path": "flags.system.inventor.explode",
                 "priority": 49,
                 "value": "fire"
             },

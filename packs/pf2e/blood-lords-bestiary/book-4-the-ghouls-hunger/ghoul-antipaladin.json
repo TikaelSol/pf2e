@@ -741,7 +741,7 @@
                         "toggleable": true
                     },
                     {
-                        "damageType": "{item|flags.pf2e.rulesSelections.destructiveVengeance}",
+                        "damageType": "{item|flags.system.rulesSelections.destructiveVengeance}",
                         "key": "FlatModifier",
                         "predicate": [
                             "destructive-vengeance"

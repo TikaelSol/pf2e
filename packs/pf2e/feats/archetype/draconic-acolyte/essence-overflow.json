@@ -35,7 +35,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
-                "value": "{actor|flags.pf2e.draconicBenefactor.tradition}"
+                "value": "{actor|flags.system.draconicBenefactor.tradition}"
             },
             {
                 "key": "DamageAlteration",
@@ -44,7 +44,7 @@
                 "selectors": [
                     "{item|id}-inline-damage"
                 ],
-                "value": "{actor|flags.pf2e.draconicBenefactor.breathDamage}"
+                "value": "{actor|flags.system.draconicBenefactor.breathDamage}"
             }
         ],
         "subfeatures": {

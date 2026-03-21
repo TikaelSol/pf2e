@@ -34,14 +34,14 @@
                 "prompt": "PF2E.SpecificRule.Prompt.Weapon"
             },
             {
-                "itemId": "{item|flags.sf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "property": "grade",
                 "value": "advanced"
             },
             {
-                "itemId": "{item|flags.sf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [
@@ -56,7 +56,7 @@
                 "value": "elite"
             },
             {
-                "itemId": "{item|flags.sf2e.rulesSelections.weapon}",
+                "itemId": "{item|flags.system.rulesSelections.weapon}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [

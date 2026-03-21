@@ -928,7 +928,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "flags.pf2e.rageTempHP",
+                        "path": "flags.system.rageTempHP",
                         "phase": "beforeDerived",
                         "value": 20
                     },

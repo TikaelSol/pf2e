@@ -3045,7 +3045,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>5 feet, @Damage[5d6[fire]] damage (@Check[reflex|dc:40|basic] save)</p>"
+                    "value": "<p>5 feet. @Damage[5d6[fire]|options:area-damage] damage (@Check[reflex|dc:40|basic|options:area-effect] save)</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -3054,7 +3054,6 @@
                 },
                 "rules": [
                     {
-                        "effects": [],
                         "key": "Aura",
                         "traits": [
                             "fire",
@@ -3064,7 +3063,11 @@
                 ],
                 "slug": null,
                 "traits": {
-                    "value": []
+                    "value": [
+                        "aura",
+                        "fire",
+                        "primal"
+                    ]
                 }
             },
             "type": "action"
@@ -3083,7 +3086,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>90 feet @Check[will|dc:42]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>90 feet. @Check[will|dc:42|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "ORC",
@@ -3092,7 +3095,6 @@
                 },
                 "rules": [
                     {
-                        "effects": [],
                         "key": "Aura",
                         "radius": 90,
                         "slug": "frightful-presence",
@@ -3272,6 +3274,9 @@
         }
     ],
     "name": "Cinder Archdragon (Spellcaster)",
+    "prototypeToken": {
+        "name": "Cinder Archdragon"
+    },
     "system": {
         "abilities": {
             "cha": {

@@ -3682,6 +3682,9 @@
         }
     ],
     "name": "Phase Archdragon (Spellcaster)",
+    "prototypeToken": {
+        "name": "Phase Archdragon"
+    },
     "system": {
         "abilities": {
             "cha": {
@@ -3762,7 +3765,7 @@
             "statistic": "perception"
         },
         "perception": {
-            "details": "darkvision, scent (imprecise) 60 feet",
+            "details": "",
             "mod": 38,
             "senses": [
                 {

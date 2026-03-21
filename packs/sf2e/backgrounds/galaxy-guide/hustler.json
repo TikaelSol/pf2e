@@ -27,7 +27,7 @@
         },
         "items": {
             "psojE": {
-                "img": "icons/sundries/books/book-red-exclamation.webp",
+                "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
                 "level": 1,
                 "name": "Experienced Professional",
                 "uuid": "Compendium.sf2e.feats.Item.Experienced Professional"
@@ -50,7 +50,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.skills.{item|flags.sf2e.rulesSelections.skill}.rank",
+                "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
                 "value": 1
             }
         ],

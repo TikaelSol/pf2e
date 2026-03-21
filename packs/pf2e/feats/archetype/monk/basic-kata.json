@@ -33,7 +33,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.monkDedicationCount",
+                "path": "flags.system.monkDedicationCount",
                 "value": 1
             },
             {
@@ -57,7 +57,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicKata}"
+                "uuid": "{item|flags.system.rulesSelections.basicKata}"
             }
         ],
         "traits": {

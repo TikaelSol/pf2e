@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.roguesRacket}"
+                "uuid": "{item|flags.system.rulesSelections.roguesRacket}"
             }
         ],
         "traits": {

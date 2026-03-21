@@ -1,7 +1,7 @@
 {
     "_id": "MXaiGw43wkdJRheX",
     "folder": "SslkooAZ1KPHrImJ",
-    "img": "systems/pf2e/icons/iconics/SamoFull.webp",
+    "img": "systems/pf2e/icons/iconics/portraits/samo.webp",
     "items": [
         {
             "_id": "bbclERv6I2uajeCf",
@@ -530,7 +530,7 @@
                     {
                         "flag": "seer",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.animisticPractice}"
+                        "uuid": "{item|flags.system.rulesSelections.animisticPractice}"
                     }
                 ],
                 "slug": "animistic-practice",
@@ -4729,13 +4729,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolPenalty",
+                        "path": "flags.system.shiningSymbolPenalty",
                         "value": -1
                     },
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.shiningSymbolWeakness",
+                        "path": "flags.system.shiningSymbolWeakness",
                         "value": 0
                     }
                 ],
@@ -4831,12 +4831,14 @@
         "ring": {
             "enabled": true,
             "subject": {
-                "scale": 1,
-                "texture": "systems/pf2e/icons/iconics/Samo.webp"
+                "scale": 2,
+                "texture": "systems/pf2e/icons/iconics/subjects/samo.webp"
             }
         },
         "texture": {
-            "src": "systems/pf2e/icons/iconics/Samo.webp"
+            "scaleX": 2,
+            "scaleY": 2,
+            "src": "systems/pf2e/icons/iconics/tokens/samo.webp"
         }
     },
     "system": {

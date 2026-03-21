@@ -1417,7 +1417,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.rimeShieldTempHP",
+                        "path": "flags.system.rimeShieldTempHP",
                         "value": 5
                     }
                 ],
@@ -1489,6 +1489,9 @@
         }
     ],
     "name": "Rime Dragon (Young, Spellcaster)",
+    "prototypeToken": {
+        "name": "Rime Dragon (Young)"
+    },
     "system": {
         "abilities": {
             "cha": {

@@ -60,7 +60,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.effectAzarim}"
+                    "item:id:{item|flags.system.rulesSelections.effectAzarim}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",
@@ -76,7 +76,7 @@
                 "value": "anarchic"
             },
             {
-                "itemId": "{item|flags.pf2e.rulesSelections.effectAzarim}",
+                "itemId": "{item|flags.system.rulesSelections.effectAzarim}",
                 "key": "ItemAlteration",
                 "mode": "upgrade",
                 "predicate": [

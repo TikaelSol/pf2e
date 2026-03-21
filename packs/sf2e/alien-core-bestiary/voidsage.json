@@ -1097,7 +1097,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.sf2e.revertTempHP",
+                        "path": "flags.system.revertTempHP",
                         "value": 50
                     }
                 ],

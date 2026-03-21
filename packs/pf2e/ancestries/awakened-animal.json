@@ -107,14 +107,14 @@
             },
             {
                 "key": "CreatureSize",
-                "value": "{item|flags.pf2e.rulesSelections.choice.size}"
+                "value": "{item|flags.system.rulesSelections.choice.size}"
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
                 "path": "system.attributes.ancestryhp",
                 "priority": 51,
-                "value": "{item|flags.pf2e.rulesSelections.choice.hitPoints}"
+                "value": "{item|flags.system.rulesSelections.choice.hitPoints}"
             },
             {
                 "key": "BaseSpeed",

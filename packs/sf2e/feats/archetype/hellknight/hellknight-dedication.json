@@ -64,7 +64,7 @@
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
                 "path": "system.skills.intimidation.rank",
-                "value": "@item.flags.sf2e.rulesSelections.rank"
+                "value": "@item.flags.system.rulesSelections.rank"
             },
             {
                 "key": "FlatModifier",

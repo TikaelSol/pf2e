@@ -29,7 +29,7 @@
                 "key": "RollOption",
                 "option": "multisensory-mask",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}"
+                    "armor:id:{actor|flags.system.innovationId}"
                 ],
                 "toggleable": true
             },

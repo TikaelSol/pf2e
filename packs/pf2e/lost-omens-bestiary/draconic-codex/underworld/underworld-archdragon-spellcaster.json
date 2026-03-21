@@ -2946,7 +2946,7 @@
                 },
                 "category": "defensive",
                 "description": {
-                    "value": "<p>90 feet @Check[will|dc:42]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "value": "<p>90 feet. @Check[will|dc:42|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "publication": {
                     "license": "ORC",
@@ -2956,7 +2956,7 @@
                 "rules": [
                     {
                         "key": "Aura",
-                        "radius": 0,
+                        "radius": 90,
                         "slug": "frightful-presence",
                         "traits": [
                             "emotion",
@@ -3191,6 +3191,9 @@
         }
     ],
     "name": "Underworld Archdragon (Spellcaster)",
+    "prototypeToken": {
+        "name": "Underworld Archdragon"
+    },
     "system": {
         "abilities": {
             "cha": {

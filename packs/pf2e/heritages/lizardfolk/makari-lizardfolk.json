@@ -41,7 +41,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.cantrip}",
+                    "item:slug:{item|flags.system.rulesSelections.cantrip}",
                     "spellcasting:innate"
                 ],
                 "property": "other-tags",
@@ -52,7 +52,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.cantrip}",
+                    "item:slug:{item|flags.system.rulesSelections.cantrip}",
                     "spellcasting:innate"
                 ],
                 "property": "other-tags",
@@ -63,7 +63,7 @@
                 "key": "ItemAlteration",
                 "mode": "remove",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.cantrip}",
+                    "item:slug:{item|flags.system.rulesSelections.cantrip}",
                     "spellcasting:innate"
                 ],
                 "property": "traits",

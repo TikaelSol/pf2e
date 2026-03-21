@@ -38,7 +38,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.subconsciousMind}"
+                "uuid": "{item|flags.system.rulesSelections.subconsciousMind}"
             }
         ],
         "traits": {

@@ -27,7 +27,7 @@
         "rules": [
             {
                 "definition": [
-                    "item:id:{actor|flags.pf2e.innovationId}"
+                    "item:id:{actor|flags.system.innovationId}"
                 ],
                 "key": "MartialProficiency",
                 "kind": "defense",
@@ -35,14 +35,14 @@
                 "sameAs": "medium"
             },
             {
-                "itemId": "{actor|flags.pf2e.innovationId}",
+                "itemId": "{actor|flags.system.innovationId}",
                 "key": "ItemAlteration",
                 "mode": "override",
                 "property": "category",
                 "value": "heavy"
             },
             {
-                "itemId": "{actor|flags.pf2e.innovationId}",
+                "itemId": "{actor|flags.system.innovationId}",
                 "key": "ItemAlteration",
                 "mode": "override",
                 "predicate": [
@@ -57,35 +57,35 @@
                 "value": -10
             },
             {
-                "itemId": "{actor|flags.pf2e.innovationId}",
+                "itemId": "{actor|flags.system.innovationId}",
                 "key": "ItemAlteration",
                 "mode": "override",
                 "property": "strength",
                 "value": 3
             },
             {
-                "itemId": "{actor|flags.pf2e.innovationId}",
+                "itemId": "{actor|flags.system.innovationId}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "bulwark"
             },
             {
-                "itemId": "{actor|flags.pf2e.innovationId}",
+                "itemId": "{actor|flags.system.innovationId}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "entrench-melee"
             },
             {
-                "itemId": "{actor|flags.pf2e.innovationId}",
+                "itemId": "{actor|flags.system.innovationId}",
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "traits",
                 "value": "entrench-ranged"
             },
             {
-                "itemId": "{actor|flags.pf2e.innovationId}",
+                "itemId": "{actor|flags.system.innovationId}",
                 "key": "ItemAlteration",
                 "mode": "override",
                 "property": "bulk",

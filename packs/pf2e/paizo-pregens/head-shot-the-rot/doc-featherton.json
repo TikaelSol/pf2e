@@ -78,7 +78,7 @@
                     {
                         "flag": "lengthyDiversion",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.versatileHeritage}"
+                        "uuid": "{item|flags.system.rulesSelections.versatileHeritage}"
                     }
                 ],
                 "slug": "versatile-heritage",
@@ -365,7 +365,7 @@
                     {
                         "flag": "hitTheDirt",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.naturalAmbition}"
+                        "uuid": "{item|flags.system.rulesSelections.naturalAmbition}"
                     }
                 ],
                 "slug": "natural-ambition",
@@ -2073,7 +2073,7 @@
                     {
                         "flag": "wayOfTheDrifter",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.way}"
+                        "uuid": "{item|flags.system.rulesSelections.way}"
                     }
                 ],
                 "slug": "gunslingers-way",

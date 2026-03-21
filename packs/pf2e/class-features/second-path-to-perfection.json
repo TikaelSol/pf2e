@@ -62,7 +62,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "upgrade",
-                "path": "system.saves.{item|flags.pf2e.rulesSelections.pathToPerfection}.rank",
+                "path": "system.saves.{item|flags.system.rulesSelections.pathToPerfection}.rank",
                 "value": 3
             },
             {
@@ -70,11 +70,11 @@
                     "success": "one-degree-better"
                 },
                 "key": "AdjustDegreeOfSuccess",
-                "selector": "{item|flags.pf2e.rulesSelections.pathToPerfection}"
+                "selector": "{item|flags.system.rulesSelections.pathToPerfection}"
             },
             {
                 "key": "RollOption",
-                "option": "self:path-to-perfection:{item|flags.pf2e.rulesSelections.pathToPerfection}"
+                "option": "self:path-to-perfection:{item|flags.system.rulesSelections.pathToPerfection}"
             }
         ],
         "traits": {

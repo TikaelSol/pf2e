@@ -33,7 +33,7 @@
             {
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.sf2e.rulesSelections.skill}"
+                    "{item|flags.system.rulesSelections.skill}"
                 ],
                 "type": "status",
                 "value": -4

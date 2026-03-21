@@ -36,7 +36,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.attack}"
+                    "item:slug:{item|flags.system.rulesSelections.attack}"
                 ],
                 "property": "traits",
                 "value": "magical"
@@ -46,7 +46,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.attack}"
+                    "item:slug:{item|flags.system.rulesSelections.attack}"
                 ],
                 "property": "traits",
                 "value": "reach"
@@ -56,14 +56,14 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "predicate": [
-                    "item:slug:{item|flags.pf2e.rulesSelections.attack}"
+                    "item:slug:{item|flags.system.rulesSelections.attack}"
                 ],
                 "property": "traits",
                 "value": "water"
             },
             {
                 "key": "AdjustModifier",
-                "selector": "{item|flags.pf2e.rulesSelections.attack}-attack-roll",
+                "selector": "{item|flags.system.rulesSelections.attack}-attack-roll",
                 "slug": "aquatic-combat",
                 "suppress": true
             },

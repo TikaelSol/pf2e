@@ -1,0 +1,56 @@
+{
+    "_id": "iFPNXFOCYHIxIKBw",
+    "img": "icons/sundries/documents/document-symbol-circle-gold-red.webp",
+    "name": "Effect: Shroud of Burning Pages",
+    "system": {
+        "description": {
+            "value": "<p>You are concealed and take a –2 circumstance penalty to Perception checks.</p>"
+        },
+        "duration": {
+            "expiry": null,
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Adventure Path: Hellbreakers"
+        },
+        "rules": [
+            {
+                "inMemoryOnly": true,
+                "key": "GrantItem",
+                "uuid": "Compendium.pf2e.conditionitems.Item.Concealed"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "not": "fevered-consciousness"
+                    }
+                ],
+                "selector": [
+                    "perception"
+                ],
+                "type": "circumstance",
+                "value": -2
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

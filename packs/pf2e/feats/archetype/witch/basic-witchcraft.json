@@ -58,7 +58,7 @@
             },
             {
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.basicWitchcraft}"
+                "uuid": "{item|flags.system.rulesSelections.basicWitchcraft}"
             }
         ],
         "traits": {

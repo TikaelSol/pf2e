@@ -46,7 +46,7 @@
             },
             {
                 "definition": [
-                    "item:id:{item|flags.pf2e.rulesSelections.effectColdIronBlanchLesser}"
+                    "item:id:{item|flags.system.rulesSelections.effectColdIronBlanchLesser}"
                 ],
                 "key": "AdjustStrike",
                 "mode": "add",

@@ -77,13 +77,13 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "upgrade",
-                        "path": "system.skills.{item|flags.pf2e.rulesSelections.scholar}.rank",
+                        "path": "system.skills.{item|flags.system.rulesSelections.scholar}.rank",
                         "value": 1
                     },
                     {
                         "key": "GrantItem",
                         "preselectChoices": {
-                            "assurance": "{item|flags.pf2e.rulesSelections.scholar}"
+                            "assurance": "{item|flags.system.rulesSelections.scholar}"
                         },
                         "uuid": "Compendium.pf2e.feats-srd.Item.Assurance"
                     }
@@ -226,7 +226,7 @@
                     {
                         "key": "SubstituteRoll",
                         "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "slug": "assurance",
                         "value": 10
                     },
@@ -238,7 +238,7 @@
                                 "not": "bonus:type:proficiency"
                             }
                         ],
-                        "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+                        "selector": "{item|flags.system.rulesSelections.assurance}",
                         "suppress": true
                     }
                 ],
@@ -2410,7 +2410,7 @@
                     {
                         "flag": "bomber",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.pf2e.rulesSelections.researchField}"
+                        "uuid": "{item|flags.system.rulesSelections.researchField}"
                     }
                 ],
                 "slug": "research-field",
@@ -2620,7 +2620,7 @@
                     {
                         "key": "ActiveEffectLike",
                         "mode": "override",
-                        "path": "flags.pf2e.alchemist",
+                        "path": "flags.system.alchemist",
                         "value": {
                             "fieldDiscovery": "Compendium.pf2e.classfeatures.Item.Field Discovery (Bomber)",
                             "greaterFieldDiscovery": "Compendium.pf2e.classfeatures.Item.Greater Field Discovery (Bomber)",

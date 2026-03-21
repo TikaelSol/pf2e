@@ -47,8 +47,8 @@
                                 {
                                     "not": "item:trait:impulse"
                                 },
-                                "item:trait:{actor|flags.pf2e.kineticist.gate.one}",
-                                "item:trait:{actor|flags.pf2e.kineticist.gate.two}"
+                                "item:trait:{actor|flags.system.kineticist.gate.one}",
+                                "item:trait:{actor|flags.system.kineticist.gate.two}"
                             ]
                         }
                     ],
@@ -61,7 +61,7 @@
             {
                 "allowDuplicate": false,
                 "key": "GrantItem",
-                "uuid": "{item|flags.pf2e.rulesSelections.throughTheGate}"
+                "uuid": "{item|flags.system.rulesSelections.throughTheGate}"
             }
         ],
         "traits": {

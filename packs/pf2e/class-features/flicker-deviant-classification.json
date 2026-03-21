@@ -28,7 +28,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices",
+                "path": "flags.system.deviantAbilities.awakenedChoices",
                 "priority": 10,
                 "value": {
                     "greater": [],
@@ -38,7 +38,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.SonicDashSonicBoom",
                     "predicate": [
@@ -53,7 +53,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.SonicDashSlipstream",
                     "predicate": [
@@ -68,7 +68,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.SonicDashSonicBoom",
                     "predicate": [
@@ -83,7 +83,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.SonicDashSlipstream",
                     "predicate": [
@@ -98,7 +98,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.OverclockSensesFocus",
                     "predicate": [
@@ -113,7 +113,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.lesser",
+                "path": "flags.system.deviantAbilities.awakenedChoices.lesser",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.OverclockSensesReact",
                     "predicate": [
@@ -128,7 +128,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.OverclockSensesFocus",
                     "predicate": [
@@ -143,7 +143,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.OverclockSensesReact",
                     "predicate": [
@@ -158,7 +158,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.UnstableGearshiftBlur",
                     "predicate": [
@@ -173,7 +173,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.UnstableGearshiftPhaseOut",
                     "predicate": [
@@ -188,7 +188,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.LightspeedAssaultTeleport",
                     "predicate": [
@@ -203,7 +203,7 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.pf2e.deviantAbilities.awakenedChoices.greater",
+                "path": "flags.system.deviantAbilities.awakenedChoices.greater",
                 "value": {
                     "label": "PF2E.SpecificRule.DeviantAbilities.AwakenedPower.LightspeedAssaultFlankingAssault",
                     "predicate": [

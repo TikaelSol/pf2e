@@ -27,7 +27,7 @@
         },
         "rules": [
             {
-                "choices": "flags.pf2e.exemplar.ikons",
+                "choices": "flags.system.exemplar.ikons",
                 "flag": "ikon",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Exemplar.Ikon.Prompt"
@@ -41,7 +41,7 @@
                 "key": "ItemAlteration",
                 "mode": "add",
                 "property": "other-tags",
-                "value": "chosen-ikon:{item|flags.pf2e.rulesSelections.ikon}"
+                "value": "chosen-ikon:{item|flags.system.rulesSelections.ikon}"
             },
             {
                 "key": "RollOption",
@@ -61,7 +61,7 @@
                 "affects": "origin",
                 "key": "EphemeralEffect",
                 "predicate": [
-                    "divine-spark:{item|flags.pf2e.rulesSelections.ikon}"
+                    "divine-spark:{item|flags.system.rulesSelections.ikon}"
                 ],
                 "selectors": [
                     "melee-strike-attack-roll"

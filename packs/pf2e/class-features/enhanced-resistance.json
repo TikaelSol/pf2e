@@ -60,7 +60,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:harmonic-oscillator"
                 ],
                 "type": [
@@ -72,7 +72,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:harmonic-oscillator",
                     {
                         "or": [
@@ -90,7 +90,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:metallic-reactance"
                 ],
                 "type": [
@@ -102,7 +102,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:metallic-reactance",
                     {
                         "or": [
@@ -120,7 +120,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:otherworldly-protection",
                     "self:negative-healing"
                 ],
@@ -130,7 +130,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:otherworldly-protection",
                     {
                         "not": "self:negative-healing"
@@ -142,7 +142,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:otherworldly-protection"
                 ],
                 "type": "spirit",
@@ -151,7 +151,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:otherworldly-protection",
                     "sanctification:unholy"
                 ],
@@ -161,7 +161,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:otherworldly-protection",
                     "sanctification:holy"
                 ],
@@ -171,7 +171,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:phlogistonic-regulator"
                 ],
                 "type": [
@@ -183,7 +183,7 @@
             {
                 "key": "Resistance",
                 "predicate": [
-                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "armor:id:{actor|flags.system.innovationId}",
                     "enhanced-resistance:phlogistonic-regulator",
                     {
                         "or": [

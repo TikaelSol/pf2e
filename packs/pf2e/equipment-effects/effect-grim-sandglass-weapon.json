@@ -89,7 +89,7 @@
                 "predicate": [
                     "grim-sandglass:grim-sandglass"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectGrimSandglassWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectGrimSandglassWeapon}-damage"
             },
             {
                 "damageType": "void",
@@ -100,7 +100,7 @@
                 "predicate": [
                     "grim-sandglass:grim-sandglass-greater"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectGrimSandglassWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectGrimSandglassWeapon}-damage"
             },
             {
                 "damageType": "void",
@@ -111,7 +111,7 @@
                 "predicate": [
                     "grim-sandglass:grim-sandglass-major"
                 ],
-                "selector": "{item|flags.pf2e.rulesSelections.effectGrimSandglassWeapon}-damage"
+                "selector": "{item|flags.system.rulesSelections.effectGrimSandglassWeapon}-damage"
             }
         ],
         "start": {

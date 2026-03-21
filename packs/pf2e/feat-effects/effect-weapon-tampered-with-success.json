@@ -35,8 +35,8 @@
             {
                 "key": "FlatModifier",
                 "selector": [
-                    "{item|flags.pf2e.rulesSelections.effectWeaponTamperedWithSuccess}-attack",
-                    "{item|flags.pf2e.rulesSelections.effectWeaponTamperedWithSuccess}-damage"
+                    "{item|flags.system.rulesSelections.effectWeaponTamperedWithSuccess}-attack",
+                    "{item|flags.system.rulesSelections.effectWeaponTamperedWithSuccess}-damage"
                 ],
                 "type": "circumstance",
                 "value": -2

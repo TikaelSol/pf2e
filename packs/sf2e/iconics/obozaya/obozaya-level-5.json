@@ -519,7 +519,7 @@
                     {
                         "flag": "bombard",
                         "key": "GrantItem",
-                        "uuid": "{item|flags.sf2e.rulesSelections.fightingStyle}"
+                        "uuid": "{item|flags.system.rulesSelections.fightingStyle}"
                     }
                 ],
                 "slug": "soldier-fighting-style",
@@ -983,7 +983,7 @@
                     },
                     {
                         "key": "RollOption",
-                        "label": "Comm Unit - Flashlight",
+                        "label": "SF2E.SpecificRule.Equipment.CommUnit.Flashlight",
                         "option": "flashlight",
                         "toggleable": true
                     },
@@ -2247,7 +2247,7 @@
         "texture": {
             "scaleX": 1.2,
             "scaleY": 1.2,
-            "src": "systems/sf2e/icons/iconics/portraits/oobozaya.webp"
+            "src": "systems/sf2e/icons/iconics/tokens/oobozaya.webp"
         }
     },
     "system": {
