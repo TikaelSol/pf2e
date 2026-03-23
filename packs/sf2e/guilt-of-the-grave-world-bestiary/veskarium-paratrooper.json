@@ -205,7 +205,7 @@
                     "carryType": "worn",
                     "invested": null
                 },
-                "grade": "commercial",
+                "grade": "tactical",
                 "group": "composite",
                 "hardness": 0,
                 "hp": {
@@ -353,7 +353,9 @@
                 "traits": {
                     "value": [
                         "analog",
-                        "parry"
+                        "parry",
+                        "unwieldy",
+                        "vesk"
                     ]
                 }
             },
@@ -394,27 +396,80 @@
                     "value": [
                         "sweep",
                         "trip",
-                        "unarmed"
+                        "unarmed",
+                        "vesk"
                     ]
                 }
             },
             "type": "melee"
         },
         {
-            "_id": "R45bpNpzZr6y3HA8",
-            "img": "systems/sf2e/icons/default-icons/action.svg",
-            "name": "Area Fire",
+            "_id": "mmJov9O2U39hscV3",
+            "flags": {
+                "sf2e": {
+                    "linkedWeapon": "mCsjdJzyi6MuFkj9"
+                }
+            },
+            "img": "systems/sf2e/icons/default-icons/melee.svg",
+            "name": "Flamethrower",
             "sort": 700000,
             "system": {
+                "action": "area-fire",
+                "area": {
+                    "type": "cone",
+                    "value": 15
+                },
+                "attackEffects": {
+                    "value": []
+                },
+                "bonus": {
+                    "value": 6
+                },
+                "damageRolls": {
+                    "w5thuCGCS5aovVdg": {
+                        "damage": "1d10",
+                        "damageType": "fire"
+                    }
+                },
+                "description": {
+                    "value": ""
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "range": null,
+                "rules": [],
+                "slug": "flamethrower",
+                "traits": {
+                    "config": {},
+                    "value": [
+                        "area-cone",
+                        "reload-1",
+                        "tech",
+                        "tracking-1",
+                        "unwieldy"
+                    ]
+                }
+            },
+            "type": "melee"
+        },
+        {
+            "_id": "DxRMdV5r0UnaT2eq",
+            "img": "systems/sf2e/icons/default-icons/action.svg",
+            "name": "Quick Step",
+            "sort": 800000,
+            "system": {
                 "actionType": {
-                    "value": "action"
+                    "value": "reaction"
                 },
                 "actions": {
-                    "value": 2
+                    "value": null
                 },
-                "category": "offensive",
+                "category": "defensive",
                 "description": {
-                    "value": "<p><strong>Flamethrower</strong> (tech, unwieldy), @Template[type:cone|distance:15]</p>\n<p><strong>Damage</strong> @Damage[1d10[fire]|options:area-damage], @Check[reflex|dc:16|basic|traits:tech,unwieldy|options:area-effect]</p>"
+                    "value": "<p><strong>Trigger</strong> A creature within the paratrooper’s reach leaves a square during a move action it’s using</p><hr /><p><strong>Effect</strong> The paratrooper Steps twice.</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -433,7 +488,7 @@
             "_id": "K03zN0wBxOQaPEY5",
             "img": "systems/sf2e/icons/default-icons/lore.svg",
             "name": "Warfare Lore",
-            "sort": 800000,
+            "sort": 900000,
             "system": {
                 "description": {
                     "value": ""

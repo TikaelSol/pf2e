@@ -43,7 +43,7 @@
             "emitsSound": "encounter",
             "hardness": 10,
             "hp": {
-                "details": "",
+                "details": "Mortar Tube",
                 "max": 40,
                 "temp": 0,
                 "value": 40
@@ -88,7 +88,7 @@
                 "value": 6
             },
             "will": {
-                "value": 0
+                "value": null
             }
         },
         "traits": {

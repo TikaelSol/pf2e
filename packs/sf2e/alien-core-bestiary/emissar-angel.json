@@ -324,6 +324,9 @@
         },
         {
             "_id": "WazXMnAXUoiruQc0",
+            "_stats": {
+                "compendiumSource": "Compendium.sf2e.spells.Item.joEruBVz31Uxczzq"
+            },
             "folder": "6JF73zNhT8zbp1qC",
             "img": "systems/sf2e/icons/spells/angelic-messenger.webp",
             "name": "Angelic Messenger",
@@ -337,7 +340,7 @@
                 "damage": {},
                 "defense": null,
                 "description": {
-                    "value": "<p>You transport yourself to either a celestial plane or a world in the Universe where worshippers of your patron can be found. You must be of no higher level than double angelic messenger's spell rank.</p>\n<hr />\n<p><strong>Critical Success</strong> As success, but if you've never visited that plane or world before, you appear right in front of the message's intended recipient.</p>\n<p><strong>Success</strong> You arrive on the target plane or world at the last location you visited on that plane or world, or to a random location within [[/r 10d10 #Miles Off]] miles of your message's intended recipient if you've never visited that plane or world before.</p>\n<p><strong>Failure</strong> You don't travel.</p>\n<p><strong>Critical Failure</strong> You accidentally travel to the wrong plane, possibly a dangerous plane.</p>"
+                    "value": "<p>You transport yourself to either a celestial plane or a world in the Universe where worshippers of your patron can be found. You must be of no higher level than double <em>angelic messenger</em>'s spell rank.</p>\n<hr />\n<p><strong>Critical Success</strong> As success, but if you've never visited that plane or world before, you appear right in front of the message's intended recipient.</p>\n<p><strong>Success</strong> You arrive on the target plane or world at the last location you visited on that plane or world, or to a random location within [[/r 10d10 #Miles Off]] miles of your message's intended recipient if you've never visited that plane or world before.</p>\n<p><strong>Failure</strong> You don't travel.</p>\n<p><strong>Critical Failure</strong> You accidentally travel to the wrong plane, possibly a dangerous plane.</p>"
                 },
                 "duration": {
                     "sustained": false,
@@ -352,7 +355,7 @@
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
-                    "title": "Pathfinder Monster Core"
+                    "title": "Starfinder Alien Core"
                 },
                 "range": {
                     "value": ""
@@ -418,7 +421,7 @@
                     }
                 },
                 "description": {
-                    "value": "<p>You channel vital energy to heal the living or damage the undead. If the target is a willing living creature, you restore 1d8 Hit Points. If the target is undead, you deal that amount of vitality damage to it, and it gets a basic Fortitude save. The number of actions you spend when Casting this Spell determines its targets, range, area, and other parameters.</p>\n<p><span class=\"action-glyph\">1</span> The spell has a range of touch.</p>\n<p><span class=\"action-glyph\">2</span> <strong>(concentrate)</strong> The spell has a range of 30 feet. If you're healing a living creature, increase the Hit Points restored by 8.</p>\n<p><span class=\"action-glyph\">3</span> <strong>(concentrate)</strong> You disperse vital energy in a @Template[emanation|distance:30]. This targets all living and undead creatures in the burst.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The amount of healing or damage increases by 1d8, and the extra healing for the 2-action version increases by 8.</p>"
+                    "value": "<p>You channel vital energy to heal the living or damage the undead. If the target is a willing living creature, you restore 1d8 Hit Points. If the target is undead, you deal that amount of vitality damage to it, and it gets a basic Fortitude save. The number of actions you spend when Casting this Spell determines its targets, range, area, and other parameters.</p>\n<p><span class=\"action-glyph\">1</span> The spell has a range of touch.</p>\n<p><span class=\"action-glyph\">2</span> (concentrate) The spell has a range of 30 feet. If you're healing a living creature, increase the Hit Points restored by 8.</p>\n<p><span class=\"action-glyph\">3</span> (concentrate) You disperse vital energy in a @Template[emanation|distance:30]. This targets all living and undead creatures in the burst.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The amount of healing or damage increases by 1d8, and the extra healing for the 2-action version increases by 8.</p>"
                 },
                 "duration": {
                     "sustained": false,
@@ -828,11 +831,17 @@
                 "damage": {},
                 "defense": null,
                 "description": {
-                    "value": ""
+                    "value": "<p>You materialize a handheld @UUID[Compendium.sf2e.equipment.Item.Musical Instrument (Handheld, Commercial)] in your grasp. The instrument is typical for its type, but it plays for only you. It vanishes when the spell ends. If you cast summon instrument again, any instrument you previously summoned disappears.</p><hr /><p><strong>Heightened (3rd)</strong> The instrument is instead a @UUID[Compendium.sf2e.equipment.Item.Musical Instrument (Handheld, Tactical)].</p>"
                 },
                 "duration": {
                     "sustained": false,
                     "value": "1 hour"
+                },
+                "heightening": {
+                    "levels": {
+                        "5": {}
+                    },
+                    "type": "fixed"
                 },
                 "level": {
                     "value": 1
@@ -840,6 +849,7 @@
                 "location": {
                     "value": "EmtZN0FUAx6r0aVl"
                 },
+                "overlays": {},
                 "publication": {
                     "license": "ORC",
                     "remaster": true,
@@ -1071,8 +1081,28 @@
                     "remaster": false,
                     "title": ""
                 },
-                "rules": [],
-                "slug": null,
+                "rules": [
+                    {
+                        "key": "RollOption",
+                        "option": "morale-boost",
+                        "toggleable": true
+                    },
+                    {
+                        "effects": [
+                            {
+                                "affects": "allies",
+                                "removeOnExit": false,
+                                "uuid": "Compendium.sf2e.bestiary-effects.Item.Effect: Morale Boost"
+                            }
+                        ],
+                        "key": "Aura",
+                        "predicate": [
+                            "morale-boost"
+                        ],
+                        "radius": 100
+                    }
+                ],
+                "slug": "morale-boost",
                 "traits": {
                     "value": []
                 }
@@ -1093,7 +1123,7 @@
                 },
                 "category": "offensive",
                 "description": {
-                    "value": "<p>The emissar commands an ally within 30 feet to ignore a harmful effect and keep fighting. The target gains 2d10 temporary Hit Points for 1 minute and suppresses one condition that's currently affecting it for the next [[/gmr 1d4 #rounds]]{1d4 rounds}, chosen from the following list: @UUID[Compendium.sf2e.conditions.Item.Confused], @UUID[Compendium.sf2e.conditions.Item.Fatigued], @UUID[Compendium.sf2e.conditions.Item.Fleeing], frightened, or stupefied. The target is then temporarily immune to Spin Doctor for 1 hour.</p>"
+                    "value": "<p>The emissar commands an ally within 30 feet to ignore a harmful effect and keep fighting. The target gains 2d10 temporary Hit Points for 1 minute and suppresses one condition that's currently affecting it for the next [[/gmr 1d4 #rounds]]{1d4 rounds}, chosen from the following list: @UUID[Compendium.sf2e.conditions.Item.Confused], @UUID[Compendium.sf2e.conditions.Item.Fatigued], @UUID[Compendium.sf2e.conditions.Item.Fleeing], @UUID[Compendium.sf2e.conditions.Item.Frightened], or @UUID[Compendium.sf2e.conditions.Item.Stupefied]. The target is then temporarily immune to Spin Doctor for 1 hour.</p>\n<p>@UUID[Compendium.sf2e.bestiary-effects.Item.Effect: Spin Doctor]</p>"
                 },
                 "publication": {
                     "license": "OGL",
@@ -1101,7 +1131,7 @@
                     "title": ""
                 },
                 "rules": [],
-                "slug": null,
+                "slug": "spin-doctor",
                 "traits": {
                     "value": [
                         "healing",
