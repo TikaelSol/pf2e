@@ -1,6 +1,6 @@
 {
     "_id": "zMKqpHwEYiMk3dX8",
-    "folder": "Gk6XU0nT8OauWiiS",
+    "folder": "ByPqmVDMvxGRLk79",
     "img": "systems/pf2e/icons/default-icons/hazard.svg",
     "items": [
         {
@@ -24,7 +24,43 @@
                     "remaster": false,
                     "title": ""
                 },
-                "rules": [],
+                "rules": [
+                    {
+                        "key": "FlatModifier",
+                        "selector": [
+                            "inline-dc"
+                        ],
+                        "value": -1
+                    },
+                    {
+                        "key": "FlatModifier",
+                        "selector": [
+                            "ac",
+                            "attack"
+                        ],
+                        "value": -2
+                    },
+                    {
+                        "key": "FlatModifier",
+                        "selector": [
+                            "time-drain-damage"
+                        ],
+                        "value": -3
+                    },
+                    {
+                        "key": "FlatModifier",
+                        "selector": [
+                            "hp"
+                        ],
+                        "value": -8
+                    },
+                    {
+                        "key": "ActiveEffectLike",
+                        "mode": "subtract",
+                        "path": "system.attributes.hardness.value",
+                        "value": 2
+                    }
+                ],
                 "slug": null,
                 "traits": {
                     "value": []
@@ -99,7 +135,7 @@
                         "value": 0
                     }
                 ],
-                "slug": null,
+                "slug": "time-drain",
                 "traits": {
                     "config": {},
                     "value": [
