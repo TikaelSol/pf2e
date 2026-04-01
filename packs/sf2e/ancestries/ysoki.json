@@ -71,17 +71,15 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "society",
-                            "skillTwo": "stealth"
-                        },
-                        "burrowingSpecialist": {
-                            "speed": 10
-                        },
-                        "climbingSpecialist": {
-                            "speed": 10
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "society",
+                        "skillTwo": "stealth"
+                    },
+                    "burrowingSpecialist": {
+                        "speed": 10
+                    },
+                    "climbingSpecialist": {
+                        "speed": 10
                     }
                 }
             }

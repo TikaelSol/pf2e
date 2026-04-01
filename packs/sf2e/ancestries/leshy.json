@@ -70,36 +70,34 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "nature",
-                            "skillTwo": "stealth"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Thorn",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:thorn"
-                                        }
-                                    ],
-                                    "value": "thorn"
-                                },
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Branch",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:branch"
-                                        }
-                                    ],
-                                    "value": "branch"
-                                }
-                            ]
-                        },
-                        "climbingSpecialist": {
-                            "speed": 25
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "nature",
+                        "skillTwo": "stealth"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Thorn",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:thorn"
+                                    }
+                                ],
+                                "value": "thorn"
+                            },
+                            {
+                                "label": "PF2E.BattleForm.Attack.Branch",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:branch"
+                                    }
+                                ],
+                                "value": "branch"
+                            }
+                        ]
+                    },
+                    "climbingSpecialist": {
+                        "speed": 25
                     }
                 }
             },

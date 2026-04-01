@@ -70,8 +70,8 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralResistance": [
+                    "ancestralResistance": {
+                        "choices": [
                             {
                                 "label": "PF2E.TraitMental",
                                 "predicate": [
@@ -81,36 +81,36 @@
                                 ],
                                 "value": "mental"
                             }
-                        ],
-                        "ancestralSkills": {
-                            "skillOne": "deception",
-                            "skillTwo": "occult"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Proboscis",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:proboscis"
-                                        }
-                                    ],
-                                    "value": "proboscis"
-                                },
-                                {
-                                    "label": "PF2E.BattleForm.Attack.ProjectileVomit",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:projectile-vomit"
-                                        }
-                                    ],
-                                    "value": "projectile-vomit"
-                                }
-                            ]
-                        },
-                        "climbingSpecialist": {
-                            "speed": 20
-                        }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "deception",
+                        "skillTwo": "occultism"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Proboscis",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:proboscis"
+                                    }
+                                ],
+                                "value": "proboscis"
+                            },
+                            {
+                                "label": "PF2E.BattleForm.Attack.ProjectileVomit",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:projectile-vomit"
+                                    }
+                                ],
+                                "value": "projectile-vomit"
+                            }
+                        ]
+                    },
+                    "climbingSpecialist": {
+                        "speed": 20
                     }
                 }
             },

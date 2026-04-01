@@ -23,7 +23,7 @@
         "publication": {
             "license": "ORC",
             "remaster": true,
-            "title": "Starfinder Player Core"
+            "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
         "subfeatures": {
@@ -33,9 +33,7 @@
         },
         "traits": {
             "rarity": "common",
-            "value": [
-                "shirren"
-            ]
+            "value": []
         }
     },
     "type": "feat"

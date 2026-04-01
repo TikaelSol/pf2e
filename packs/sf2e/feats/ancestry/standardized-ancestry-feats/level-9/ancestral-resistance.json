@@ -29,6 +29,7 @@
         "rules": [
             {
                 "choices": "flags.system.standardizedAncestryFeats.ancestralResistance.choices",
+                "flag": "resistance",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Prompt.Resistance",
                 "rollOption": "ancestral-resistance"

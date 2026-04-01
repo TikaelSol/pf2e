@@ -10,20 +10,24 @@
         "actions": {
             "value": null
         },
-        "category": "bonus",
+        "category": "ancestry",
         "description": {
-            "value": "<p>You can pack into tight spaces with other small creatures. As long as you're Small, you can end your movement in the same square as a Small ally. Only two creatures total can share the same space when using this ability or a similar one.</p>"
+            "value": "<p>For as long as you are Small or smaller, you can end your movement in the same square as a Small or smaller ally. Only two creatures total can share the same space when using this ability or a similar one.</p>"
         },
         "level": {
             "value": 9
         },
         "prerequisites": {
-            "value": []
+            "value": [
+                {
+                    "value": "Small size or smaller"
+                }
+            ]
         },
         "publication": {
             "license": "ORC",
             "remaster": true,
-            "title": "Starfinder Player Core"
+            "title": "Starfinder Galactic Ancestries"
         },
         "rules": [],
         "subfeatures": {
@@ -33,9 +37,7 @@
         },
         "traits": {
             "rarity": "common",
-            "value": [
-                "ratfolk"
-            ]
+            "value": []
         }
     },
     "type": "feat"

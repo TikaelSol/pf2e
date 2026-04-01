@@ -70,16 +70,65 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "acrobatics",
-                            "skillTwo": "stealth"
-                        },
-                        "climbingSpecialist": {
-                            "speed": 15
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "acrobatics",
+                        "skillTwo": "stealth"
+                    },
+                    "climbingSpecialist": {
+                        "speed": 15
                     }
                 }
+            },
+            {
+                "definition": [
+                    "item:category:martial",
+                    {
+                        "or": [
+                            "item:trait:halfling",
+                            "item:base:crossbolter",
+                            "item:base:nano-edge-rapier"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Halfling.WeaponFamiliarity.MartialWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "simple",
+                "slug": "martial-halfling-weapons"
+            },
+            {
+                "definition": [
+                    "item:trait:halfling",
+                    "item:category:advanced"
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Dwarf.WeaponFamiliarity.AdvancedWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "martial",
+                "slug": "advanced-halfling-weapons"
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:halfling",
+                            "item:base:crossbolter",
+                            "item:base:nano-edge-rapier"
+                        ]
+                    },
+                    "feat:ancestral-weapon-familiarity"
+                ]
             }
         ],
         "size": "sm",

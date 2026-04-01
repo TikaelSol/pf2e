@@ -28,9 +28,6 @@
         "rules": [
             {
                 "key": "BaseSpeed",
-                "predicate": [
-                    "basic-flight"
-                ],
                 "selector": "climb",
                 "value": "@actor.flags.system.standardizedAncestryFeats.climbingSpecialist.speed"
             }

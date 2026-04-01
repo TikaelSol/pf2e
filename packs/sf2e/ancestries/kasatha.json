@@ -70,8 +70,8 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralResistance": [
+                    "ancestralResistance": {
+                        "choices": [
                             {
                                 "label": "PF2E.TraitFire",
                                 "predicate": [
@@ -90,11 +90,11 @@
                                 ],
                                 "value": "cold"
                             }
-                        ],
-                        "ancestralSkills": {
-                            "skillOne": "diplomacy",
-                            "skillTwo": "society"
-                        }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "diplomacy",
+                        "skillTwo": "society"
                     }
                 }
             },

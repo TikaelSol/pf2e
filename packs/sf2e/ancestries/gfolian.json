@@ -70,32 +70,64 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "crafting",
-                            "skillTwo": "intimidation"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Pincer",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:pincer"
-                                        }
-                                    ],
-                                    "value": "pincer"
-                                }
-                            ]
-                        },
-                        "climbingSpecialist": {
-                            "speed": 15
-                        },
-                        "swimmingSpecialist": {
-                            "speed": 20
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "crafting",
+                        "skillTwo": "intimidation"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Pincer",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:pincer"
+                                    }
+                                ],
+                                "value": "pincer"
+                            }
+                        ]
+                    },
+                    "climbingSpecialist": {
+                        "speed": 15
+                    },
+                    "swimmingSpecialist": {
+                        "speed": 20
                     }
                 }
+            },
+            {
+                "damage": {
+                    "base": {
+                        "damageType": "slashing",
+                        "dice": 1,
+                        "die": "d6"
+                    }
+                },
+                "group": "brawling",
+                "img": "icons/commodities/claws/claw-pincer-red.webp",
+                "key": "Strike",
+                "label": "PF2E.BattleForm.Attack.Pincer",
+                "predicate": [
+                    "ancestral-unarmed-attack:pincer"
+                ],
+                "slug": "jaws",
+                "traits": [
+                    "agile",
+                    "finesse",
+                    "unarmed"
+                ]
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    "item:id:{item|id}"
+                ]
             }
         ],
         "size": "med",

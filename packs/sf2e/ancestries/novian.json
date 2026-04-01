@@ -81,8 +81,8 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralResistance": [
+                    "ancestralResistance": {
+                        "choices": [
                             {
                                 "label": "PF2E.TraitFire",
                                 "predicate": [
@@ -92,33 +92,33 @@
                                 ],
                                 "value": "fire"
                             }
-                        ],
-                        "ancestralSkills": {
-                            "skillOne": "intimidation",
-                            "skillTwo": "nature"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.BurningTendril",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:burning-tendril"
-                                        }
-                                    ],
-                                    "value": "burning-tendril"
-                                },
-                                {
-                                    "label": "PF2E.BattleForm.Attack.SolarFlare",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:solar-flare"
-                                        }
-                                    ],
-                                    "value": "solar-flare"
-                                }
-                            ]
-                        }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "intimidation",
+                        "skillTwo": "nature"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.BurningTendril",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:burning-tendril"
+                                    }
+                                ],
+                                "value": "burning-tendril"
+                            },
+                            {
+                                "label": "PF2E.BattleForm.Attack.SolarFlare",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:solar-flare"
+                                    }
+                                ],
+                                "value": "solar-flare"
+                            }
+                        ]
                     }
                 }
             },

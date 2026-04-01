@@ -64,33 +64,31 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "athletics",
-                            "skillTwo": "survival"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Tusks",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:tusks"
-                                        }
-                                    ],
-                                    "value": "tusks"
-                                },
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Fist",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:fist"
-                                        }
-                                    ],
-                                    "value": "fist"
-                                }
-                            ]
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "athletics",
+                        "skillTwo": "survival"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Tusks",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:tusks"
+                                    }
+                                ],
+                                "value": "tusks"
+                            },
+                            {
+                                "label": "PF2E.BattleForm.Attack.Fist",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:fist"
+                                    }
+                                ],
+                                "value": "fist"
+                            }
+                        ]
                     }
                 }
             },
@@ -149,6 +147,55 @@
                         ]
                     },
                     "item:id:{item|id}"
+                ]
+            },
+            {
+                "definition": [
+                    "item:category:martial",
+                    {
+                        "or": [
+                            "item:trait:orc",
+                            "item:group:axe"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Orc.WeaponFamiliarity.MartialWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "simple",
+                "slug": "martial-orc-weapons"
+            },
+            {
+                "definition": [
+                    "item:trait:orc",
+                    "item:category:advanced"
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Dwarf.WeaponFamiliarity.AdvancedWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "martial",
+                "slug": "advanced-orc-weapons"
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:orc",
+                            "item:group:axe"
+                        ]
+                    },
+                    "feat:ancestral-weapon-familiarity"
                 ]
             }
         ],

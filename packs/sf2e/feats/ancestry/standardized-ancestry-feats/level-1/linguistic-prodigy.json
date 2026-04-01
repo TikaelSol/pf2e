@@ -18,7 +18,11 @@
             "value": 1
         },
         "prerequisites": {
-            "value": []
+            "value": [
+                {
+                    "value": "trained in Society"
+                }
+            ]
         },
         "publication": {
             "license": "ORC",
@@ -41,15 +45,16 @@
             }
         ],
         "subfeatures": {
+            "languages": {
+                "slots": 2
+            },
             "proficiencies": {},
             "senses": {},
             "suppressedFeatures": []
         },
         "traits": {
             "rarity": "common",
-            "value": [
-                "shirren"
-            ]
+            "value": []
         }
     },
     "type": "feat"

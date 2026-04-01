@@ -76,8 +76,8 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralResistance": [
+                    "ancestralResistance": {
+                        "choices": [
                             {
                                 "label": "PF2E.TraitPiercing",
                                 "predicate": [
@@ -87,14 +87,14 @@
                                 ],
                                 "value": "piercing"
                             }
-                        ],
-                        "ancestralSkills": {
-                            "skillOne": "athletics",
-                            "skillTwo": "crafting"
-                        },
-                        "climbingSpecialist": {
-                            "speed": 20
-                        }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "athletics",
+                        "skillTwo": "crafting"
+                    },
+                    "climbingSpecialist": {
+                        "speed": 20
                     }
                 }
             }

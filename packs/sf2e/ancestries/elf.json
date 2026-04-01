@@ -63,13 +63,62 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "arcana",
-                            "skillTwo": "nature"
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "arcana",
+                        "skillTwo": "nature"
                     }
                 }
+            },
+            {
+                "definition": [
+                    "item:category:martial",
+                    {
+                        "or": [
+                            "item:trait:elf",
+                            "item:group:bow",
+                            "item:base:nano-edge-rapier"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Elf.WeaponFamiliarity.MartialWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "simple",
+                "slug": "martial-elf-weapons"
+            },
+            {
+                "definition": [
+                    "item:trait:elf",
+                    "item:category:advanced"
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Elf.WeaponFamiliarity.AdvancedWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "martial",
+                "slug": "advanced-elf-weapons"
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:elf",
+                            "item:group:bow",
+                            "item:base:nano-edge-rapier"
+                        ]
+                    },
+                    "feat:ancestral-weapon-familiarity"
+                ]
             }
         ],
         "size": "med",

@@ -81,14 +81,12 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "athletics",
-                            "skillTwo": "society"
-                        },
-                        "climbingSpecialist": {
-                            "speed": 20
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "athletics",
+                        "skillTwo": "society"
+                    },
+                    "climbingSpecialist": {
+                        "speed": 15
                     }
                 }
             }

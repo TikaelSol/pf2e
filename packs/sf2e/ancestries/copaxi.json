@@ -76,11 +76,9 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "diplomacy",
-                            "skillTwo": "society"
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "diplomacy",
+                        "skillTwo": "society"
                     }
                 }
             }

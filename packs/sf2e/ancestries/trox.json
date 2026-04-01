@@ -69,24 +69,22 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "diplomacy",
-                            "skillTwo": "intimidation"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Mandible",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:mandible"
-                                        }
-                                    ],
-                                    "value": "mandible"
-                                }
-                            ]
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "diplomacy",
+                        "skillTwo": "intimidation"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Mandibles",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:mandible"
+                                    }
+                                ],
+                                "value": "mandible"
+                            }
+                        ]
                     }
                 }
             },
@@ -103,9 +101,9 @@
                 "key": "Strike",
                 "label": "PF2E.BattleForm.Attack.Mandibles",
                 "predicate": [
-                    "ancestral-unarmed-attack:mandibles"
+                    "ancestral-unarmed-attack:mandible"
                 ],
-                "slug": "mandibles",
+                "slug": "mandible",
                 "traits": [
                     "unarmed",
                     "versatile-b"

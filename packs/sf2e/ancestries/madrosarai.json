@@ -70,11 +70,9 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "acana",
-                            "skillTwo": "intimidation"
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "acana",
+                        "skillTwo": "intimidation"
                     }
                 }
             }

@@ -67,38 +67,38 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "ancestralResistance": [
-                        {
-                            "label": "PF2E.TraitPoison",
-                            "predicate": [
-                                {
-                                    "not": "ancestral-resistance:poison"
-                                }
-                            ],
-                            "value": "poison"
-                        }
-                    ],
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "crafting",
-                            "skillTwo": "society"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Claw",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:claw"
-                                        }
-                                    ],
-                                    "value": "claw"
-                                }
-                            ]
-                        },
-                        "burrowingSpecialist": {
-                            "speed": 25
-                        }
+                    "ancestralResistance": {
+                        "choices": [
+                            {
+                                "label": "PF2E.TraitPoison",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-resistance:poison"
+                                    }
+                                ],
+                                "value": "poison"
+                            }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "crafting",
+                        "skillTwo": "society"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Claw",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:claw"
+                                    }
+                                ],
+                                "value": "claw"
+                            }
+                        ]
+                    },
+                    "burrowingSpecialist": {
+                        "speed": 25
                     }
                 }
             },
@@ -134,6 +134,55 @@
                         ]
                     },
                     "item:id:{item|id}"
+                ]
+            },
+            {
+                "definition": [
+                    "item:category:martial",
+                    {
+                        "or": [
+                            "item:trait:talphi",
+                            "item:group:pick"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Talphi.WeaponFamiliarity.MartialWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "simple",
+                "slug": "martial-talphi-weapons"
+            },
+            {
+                "definition": [
+                    "item:trait:talphi",
+                    "item:category:advanced"
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Talphi.WeaponFamiliarity.AdvancedWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "martial",
+                "slug": "advanced-talphi-weapons"
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:talphi",
+                            "item:group:pick"
+                        ]
+                    },
+                    "feat:ancestral-weapon-familiarity"
                 ]
             }
         ],

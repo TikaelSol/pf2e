@@ -69,14 +69,12 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "crafting",
-                            "skillTwo": "piloting"
-                        },
-                        "flightSpecialist": {
-                            "speed": 20
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "crafting",
+                        "skillTwo": "piloting"
+                    },
+                    "flightSpecialist": {
+                        "speed": 20
                     }
                 }
             },

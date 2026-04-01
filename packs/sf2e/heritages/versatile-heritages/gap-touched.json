@@ -17,14 +17,14 @@
             {
                 "key": "ActiveEffectLike",
                 "mode": "override",
-                "path": "flags.system.standardizedAncestryFeats.ancestralResistance",
+                "path": "flags.system.standardizedAncestryFeats.ancestralResistance.choices",
                 "priority": 1,
                 "value": []
             },
             {
                 "key": "ActiveEffectLike",
                 "mode": "add",
-                "path": "flags.system.standardizedAncestryFeats.ancestralResistance",
+                "path": "flags.system.standardizedAncestryFeats.ancestralResistance.choices",
                 "value": {
                     "label": "PF2E.TraitMental",
                     "predicate": [

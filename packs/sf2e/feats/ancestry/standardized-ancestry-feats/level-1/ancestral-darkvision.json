@@ -32,7 +32,16 @@
         "rules": [],
         "subfeatures": {
             "proficiencies": {},
-            "senses": {},
+            "senses": {
+                "darkvision": {
+                    "range": null,
+                    "special": {
+                        "ancestry": false,
+                        "llv": false,
+                        "second": false
+                    }
+                }
+            },
             "suppressedFeatures": []
         },
         "traits": {

@@ -71,33 +71,86 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "ancestralResistance": [
-                        {
-                            "label": "PF2E.TraitFire",
-                            "predicate": [
-                                {
-                                    "not": "ancestral-resistance:fire"
-                                }
-                            ],
-                            "value": "fire"
-                        },
-                        {
-                            "label": "PF2E.TraitCold",
-                            "predicate": [
-                                {
-                                    "not": "ancestral-resistance:cold"
-                                }
-                            ],
-                            "value": "cold"
-                        }
-                    ],
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "nature",
-                            "skillTwo": "survival"
-                        }
+                    "ancestralResistance": {
+                        "choices": [
+                            {
+                                "label": "PF2E.TraitFire",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-resistance:fire"
+                                    }
+                                ],
+                                "value": "fire"
+                            },
+                            {
+                                "label": "PF2E.TraitCold",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-resistance:cold"
+                                    }
+                                ],
+                                "value": "cold"
+                            }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "nature",
+                        "skillTwo": "survival"
                     }
                 }
+            },
+            {
+                "definition": [
+                    "item:category:martial",
+                    {
+                        "or": [
+                            "item:trait:ryphorian",
+                            "item:base:cryopike",
+                            "item:base:skyfire-sword",
+                            "item:base:zero-cannon"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Ryphorian.WeaponFamiliarity.MartialWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "simple",
+                "slug": "martial-ryphorian-weapons"
+            },
+            {
+                "definition": [
+                    "item:trait:ryphorian",
+                    "item:category:advanced"
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Ryphorian.WeaponFamiliarity.AdvancedWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "martial",
+                "slug": "advanced-ryphorian-weapons"
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:ryphorian",
+                            "item:base:cryopike",
+                            "item:base:skyfire-sword",
+                            "item:base:zero-cannon"
+                        ]
+                    },
+                    "feat:ancestral-weapon-familiarity"
+                ]
             }
         ],
         "size": "med",

@@ -76,11 +76,9 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "acrobatics",
-                            "skillTwo": "performance"
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "acrobatics",
+                        "skillTwo": "performance"
                     }
                 }
             }

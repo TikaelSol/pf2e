@@ -70,13 +70,70 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "crafting",
-                            "skillTwo": "religion"
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "crafting",
+                        "skillTwo": "religion"
                     }
                 }
+            },
+            {
+                "definition": [
+                    "item:category:martial",
+                    {
+                        "or": [
+                            "item:trait:dwarf",
+                            "item:base:artillery-laser",
+                            "item:base:breaching-gun",
+                            "item:base:hammer",
+                            "item:base:machine-gun",
+                            "item:base:rotolaser",
+                            "item:base:stellar-cannon"
+                        ]
+                    }
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Dwarf.WeaponFamiliarity.MartialWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "simple",
+                "slug": "martial-dwarf-weapons"
+            },
+            {
+                "definition": [
+                    "item:trait:dwarf",
+                    "item:category:advanced"
+                ],
+                "key": "MartialProficiency",
+                "label": "SF2E.SpecificRule.Dwarf.WeaponFamiliarity.AdvancedWeapons",
+                "predicate": [
+                    "feat:ancestral-weapon-familiarity"
+                ],
+                "sameAs": "martial",
+                "slug": "advanced-dwarf-weapons"
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:dwarf",
+                            "item:base:artillery-laser",
+                            "item:base:breaching-gun",
+                            "item:base:hammer",
+                            "item:base:machine-gun",
+                            "item:base:rotolaser",
+                            "item:base:stellar-cannon"
+                        ]
+                    },
+                    "feat:ancestral-weapon-familiarity"
+                ]
             }
         ],
         "size": "med",

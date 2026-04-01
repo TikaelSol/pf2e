@@ -82,26 +82,57 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "arcana",
-                            "skillTwo": "nature"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Beak",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:beak"
-                                        }
-                                    ],
-                                    "value": "beak"
-                                }
-                            ]
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "arcana",
+                        "skillTwo": "nature"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Beak",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:beak"
+                                    }
+                                ],
+                                "value": "beak"
+                            }
+                        ]
                     }
                 }
+            },
+            {
+                "damage": {
+                    "base": {
+                        "damageType": "piercing",
+                        "dice": 1,
+                        "die": "d6"
+                    }
+                },
+                "group": "brawling",
+                "img": "systems/sf2e/icons/unarmed-attacks/beak.webp",
+                "key": "Strike",
+                "label": "PF2E.BattleForm.Attack.Beak",
+                "predicate": [
+                    "ancestral-unarmed-attack:beak"
+                ],
+                "slug": "beak",
+                "traits": [
+                    "finesse",
+                    "unarmed"
+                ]
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    {
+                        "gte": [
+                            "self:level",
+                            5
+                        ]
+                    },
+                    "item:id:{item|id}"
+                ]
             }
         ],
         "size": "lg",

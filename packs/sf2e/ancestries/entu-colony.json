@@ -70,41 +70,41 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "ancestralResistance": [
-                        {
-                            "label": "PF2E.TraitAcid",
-                            "predicate": [
-                                {
-                                    "not": "ancestral-resistance:acid"
-                                }
-                            ],
-                            "value": "acid"
-                        }
-                    ],
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "nature",
-                            "skillTwo": "survival"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Tentacle",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:tentacle"
-                                        }
-                                    ],
-                                    "value": "tentacle"
-                                }
-                            ]
-                        },
-                        "climbingSpecialist": {
-                            "speed": 25
-                        },
-                        "flightSpecialist": {
-                            "speed": 20
-                        }
+                    "ancestralResistance": {
+                        "choices": [
+                            {
+                                "label": "PF2E.TraitAcid",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-resistance:acid"
+                                    }
+                                ],
+                                "value": "acid"
+                            }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "nature",
+                        "skillTwo": "survival"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Tentacle",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:tentacle"
+                                    }
+                                ],
+                                "value": "tentacle"
+                            }
+                        ]
+                    },
+                    "climbingSpecialist": {
+                        "speed": 25
+                    },
+                    "flightSpecialist": {
+                        "speed": 20
                     }
                 }
             },

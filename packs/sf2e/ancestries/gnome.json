@@ -64,11 +64,9 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "crafting",
-                            "skillTwo": "crafting"
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "crafting",
+                        "skillTwo": "crafting"
                     }
                 }
             }

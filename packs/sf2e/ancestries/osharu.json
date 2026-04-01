@@ -69,8 +69,8 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralResistance": [
+                    "ancestralResistance": {
+                        "choices": [
                             {
                                 "label": "PF2E.TraitBludgeoning",
                                 "predicate": [
@@ -89,17 +89,17 @@
                                 ],
                                 "value": "sonic"
                             }
-                        ],
-                        "ancestralSkills": {
-                            "skillOne": "religion",
-                            "skillTwo": "religion"
-                        },
-                        "climbingSpecialist": {
-                            "speed": 25
-                        },
-                        "swimmingSpecialist": {
-                            "speed": 20
-                        }
+                        ]
+                    },
+                    "ancestralSkills": {
+                        "skillOne": "religion",
+                        "skillTwo": "religion"
+                    },
+                    "climbingSpecialist": {
+                        "speed": 25
+                    },
+                    "swimmingSpecialist": {
+                        "speed": 20
                     }
                 }
             }

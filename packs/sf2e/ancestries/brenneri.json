@@ -81,27 +81,25 @@
                 "path": "flags.system.standardizedAncestryFeats",
                 "priority": 10,
                 "value": {
-                    "standardizedAncestryFeats": {
-                        "ancestralSkills": {
-                            "skillOne": "diplomacy",
-                            "skillTwo": "society"
-                        },
-                        "ancestralUnarmedAttack": {
-                            "choices": [
-                                {
-                                    "label": "PF2E.BattleForm.Attack.Claw",
-                                    "predicate": [
-                                        {
-                                            "not": "ancestral-unarmed-attack:claw"
-                                        }
-                                    ],
-                                    "value": "claw"
-                                }
-                            ]
-                        },
-                        "swimmingSpecialist": {
-                            "speed": 30
-                        }
+                    "ancestralSkills": {
+                        "skillOne": "diplomacy",
+                        "skillTwo": "society"
+                    },
+                    "ancestralUnarmedAttack": {
+                        "choices": [
+                            {
+                                "label": "PF2E.BattleForm.Attack.Claw",
+                                "predicate": [
+                                    {
+                                        "not": "ancestral-unarmed-attack:claw"
+                                    }
+                                ],
+                                "value": "claw"
+                            }
+                        ]
+                    },
+                    "swimmingSpecialist": {
+                        "speed": 30
                     }
                 }
             },

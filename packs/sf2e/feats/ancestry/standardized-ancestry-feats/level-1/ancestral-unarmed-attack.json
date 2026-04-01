@@ -29,7 +29,7 @@
         "rules": [
             {
                 "choices": "flags.system.standardizedAncestryFeats.ancestralUnarmedAttack.choices",
-                "flag": "resistance",
+                "flag": "ancestralUnarmedAttack",
                 "key": "ChoiceSet",
                 "prompt": "PF2E.SpecificRule.Prompt.UnarmedAttack",
                 "rollOption": "ancestral-unarmed-attack"
