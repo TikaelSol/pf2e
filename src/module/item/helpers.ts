@@ -67,7 +67,7 @@ let mdConverter: Converter | null = null;
 
 function markdownToHTML(markdown: string): string {
     const converter = (mdConverter ??= new showdown.Converter());
-    const htmlStripped = createHTMLElement("div", { innerHTML: game.i18n.localize(markdown).trim() }).innerText;
+    const htmlStripped = createHTMLElement("div", { innerHTML: _loc(markdown).trim() }).innerText;
     // Prevent markdown converter from treating Foundry content links as markdown links
     const withSubbedBrackets = htmlStripped.replaceAll("[", "⟦").replaceAll("]", "⟧");
     const stringyHTML = converter
@@ -203,7 +203,7 @@ function _expectedValueOf(annotation: string): number {
 
 function createEffectAreaLabel(areaData: { type: EffectAreaShape; value: number }): string {
     const formatString = "PF2E.Item.Spell.Area";
-    const shape = game.i18n.localize(`PF2E.Area.Shape.${areaData.type}`);
+    const shape = _loc(`PF2E.Area.Shape.${areaData.type}`);
 
     // Handle special cases of very large areas
     const largeAreaLabel = {
@@ -212,15 +212,15 @@ function createEffectAreaLabel(areaData: { type: EffectAreaShape; value: number 
         5280: "1",
     }[areaData.value];
     if (largeAreaLabel) {
-        const size = game.i18n.localize(largeAreaLabel);
-        const unit = game.i18n.localize("PF2E.Area.Size.Mile");
-        return game.i18n.format(formatString, { shape, size, unit, units: unit });
+        const size = _loc(largeAreaLabel);
+        const unit = _loc("PF2E.Area.Size.Mile");
+        return _loc(formatString, { shape, size, unit, units: unit });
     }
 
     const size = Number(areaData.value);
-    const unit = game.i18n.localize("PF2E.Foot.Label");
-    const units = game.i18n.localize("PF2E.Foot.Plural");
-    return game.i18n.format(formatString, { shape, size, unit, units });
+    const unit = _loc("PF2E.Foot.Label");
+    const units = _loc("PF2E.Foot.Plural");
+    return _loc(formatString, { shape, size, unit, units });
 }
 
 function placeItemTemplate(

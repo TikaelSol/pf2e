@@ -41,8 +41,8 @@ class AfflictionPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extend
             max: this.maxStage,
             labels: null,
             label: this.system.status.onset
-                ? game.i18n.localize("PF2E.Item.Affliction.OnsetLabel")
-                : game.i18n.format("PF2E.Item.Affliction.Stage", { stage: this.stage }),
+                ? _loc("PF2E.Item.Affliction.OnsetLabel")
+                : _loc("PF2E.Item.Affliction.Stage", { stage: this.stage }),
         };
     }
 
@@ -110,7 +110,7 @@ class AfflictionPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extend
             });
 
             const roll = new DamageRoll(formula);
-            const stageLabel = game.i18n.format("PF2E.Item.Affliction.Stage", { stage: this.stage });
+            const stageLabel = _loc("PF2E.Item.Affliction.Stage", { stage: this.stage });
             const template: AfflictionDamageTemplate = {
                 name: `${this.name} - ${stageLabel}`,
                 damage: { roll, breakdown },

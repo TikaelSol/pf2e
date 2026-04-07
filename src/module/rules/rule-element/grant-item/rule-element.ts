@@ -145,7 +145,7 @@ class GrantItemRuleElement extends RuleElement<GrantItemSchema> {
             this.#setGrantFlags(itemSource, existingItem, itemUpdates);
 
             ui.notifications.info(
-                game.i18n.format("PF2E.UI.RuleElements.GrantItem.AlreadyHasItem", {
+                _loc("PF2E.UI.RuleElements.GrantItem.AlreadyHasItem", {
                     actor: this.actor.name,
                     item: grantedItem.name,
                 }),

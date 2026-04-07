@@ -28,7 +28,7 @@ class AfflictionSheetPF2e extends ItemSheetPF2e<AfflictionPF2e> {
 
         return {
             ...sheetData,
-            itemType: game.i18n.localize(definingTrait ? CONFIG.PF2E.actionTraits[definingTrait] : "PF2E.LevelLabel"),
+            itemType: _loc(definingTrait ? CONFIG.PF2E.actionTraits[definingTrait] : "PF2E.LevelLabel"),
             conditionTypes: R.omit(CONFIG.PF2E.conditionTypes, ["persistent-damage"]),
             damageTypes: CONFIG.PF2E.damageTypes,
             damageCategories: R.pick(CONFIG.PF2E.damageCategories, ["precision", "persistent", "splash"]),
@@ -39,7 +39,7 @@ class AfflictionSheetPF2e extends ItemSheetPF2e<AfflictionPF2e> {
             stageOptions: Object.fromEntries(
                 Array.fromRange(this.item.maxStage, 1).map((s) => [
                     s.toString(),
-                    game.i18n.format("PF2E.Item.Affliction.Stage", { stage: s }),
+                    _loc("PF2E.Item.Affliction.Stage", { stage: s }),
                 ]),
             ),
         };

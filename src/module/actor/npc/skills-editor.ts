@@ -27,7 +27,7 @@ export class NPCSkillsEditor extends appv1.api.DocumentSheet<NPCPF2e> {
     }
 
     override get title(): string {
-        return game.i18n.format("PF2E.Actor.NPC.SkillsEditor.Title", { actor: this.actor.name });
+        return _loc("PF2E.Actor.NPC.SkillsEditor.Title", { actor: this.actor.name });
     }
 
     /** Prepare data to be sent to HTML. */
@@ -153,7 +153,7 @@ export class NPCSkillsEditor extends appv1.api.DocumentSheet<NPCPF2e> {
                     if (special.predicate?.length === 0) {
                         delete special.predicate;
                     } else if (!Array.isArray(special.predicate)) {
-                        throw Error(game.i18n.localize("PF2E.Actor.NPC.SkillsEditor.Error.PredicateArray"));
+                        throw Error(_loc("PF2E.Actor.NPC.SkillsEditor.Error.PredicateArray"));
                     }
                 }
             }

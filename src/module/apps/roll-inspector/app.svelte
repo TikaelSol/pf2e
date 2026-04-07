@@ -24,15 +24,13 @@
     });
 
     function getCriticalLabel(critical: boolean | null | undefined) {
-        return typeof critical === "boolean"
-            ? game.i18n.localize(`PF2E.RuleEditor.General.CriticalBehavior.${critical}`)
-            : null;
+        return typeof critical === "boolean" ? _loc(`PF2E.RuleEditor.General.CriticalBehavior.${critical}`) : null;
     }
 
     /** Shows the roll options for a specific modifier */
     async function showOptionsTooltip(element: HTMLElement, object: Modifier | DamageDicePF2e) {
         const rollOptions = R.sortBy(object.getRollOptions().sort(), (o) => o.includes(":"));
-        const description = game.i18n.localize("PF2E.ChatRollDetails.DiceRollOptionsHint");
+        const description = _loc("PF2E.ChatRollDetails.DiceRollOptionsHint");
         const content = await fa.handlebars.renderTemplate(
             `systems/${SYSTEM_ID}/templates/system/roll-options-tooltip.hbs`,
             { description, rollOptions },

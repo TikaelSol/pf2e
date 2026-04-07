@@ -54,7 +54,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
 
         return {
             ...sheetData,
-            itemType: game.i18n.localize(feat.isFeature ? "PF2E.LevelLabel" : "PF2E.Item.Feat.LevelLabel"),
+            itemType: _loc(feat.isFeature ? "PF2E.LevelLabel" : "PF2E.Item.Feat.LevelLabel"),
             actionsNumber: CONFIG.PF2E.actionsNumber,
             actionTypes: CONFIG.PF2E.actionTypes,
             acuityOptions: CONFIG.PF2E.senseAcuities,
@@ -92,7 +92,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
     #getLanguageOptions(): LanguageOptions {
         const subfeatures = this.item.system.subfeatures;
         const languages = R.keys(CONFIG.PF2E.languages)
-            .map((slug) => ({ slug, label: game.i18n.localize(CONFIG.PF2E.languages[slug]) }))
+            .map((slug) => ({ slug, label: _loc(CONFIG.PF2E.languages[slug]) }))
             .sort((a, b) => a.label.localeCompare(b.label));
 
         return {
@@ -117,12 +117,12 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
                 options: [
                     {
                         slug: "perception",
-                        label: game.i18n.localize("PF2E.PerceptionLabel"),
+                        label: _loc("PF2E.PerceptionLabel"),
                         rank: selectedIncreases.perception?.rank ?? null,
                     },
                     {
                         slug: "spellcasting",
-                        label: game.i18n.localize("PF2E.Actor.Creature.Spellcasting.ShortLabel"),
+                        label: _loc("PF2E.Actor.Creature.Spellcasting.ShortLabel"),
                         rank: selectedIncreases.spellcasting?.rank ?? null,
                     },
                     ...invalidKeys.map((slug) => ({
@@ -138,7 +138,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
                 options: R.entries(CONFIG.PF2E.saves)
                     .map(([slug, label]) => ({
                         slug,
-                        label: game.i18n.localize(label),
+                        label: _loc(label),
                         rank: selectedIncreases[slug]?.rank ?? null,
                     }))
                     .sort((a, b) => a.label.localeCompare(b.label)),
@@ -149,7 +149,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
                     .map(([slug, categoryLabel]) => {
                         const label = tupleHasValue(WEAPON_CATEGORIES, slug)
                             ? localize(`Proficiency.Attack.${sluggify(slug, { camel: "bactrian" })}`)
-                            : game.i18n.localize(categoryLabel);
+                            : _loc(categoryLabel);
                         return {
                             slug,
                             label,
@@ -164,7 +164,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
                     .map(([slug, categoryLabel]) => {
                         const label = tupleHasValue(ARMOR_CATEGORIES, slug)
                             ? localize(`Proficiency.Defense.${sluggify(slug, { camel: "bactrian" })}`)
-                            : game.i18n.localize(categoryLabel);
+                            : _loc(categoryLabel);
                         return {
                             slug,
                             label,
@@ -178,7 +178,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
                 options: R.entries(CONFIG.PF2E.classTraits)
                     .map(([slug, label]) => ({
                         slug,
-                        label: game.i18n.localize(label),
+                        label: _loc(label),
                         attribute: selectedIncreases[slug]?.attribute ?? null,
                         rank: selectedIncreases[slug]?.rank ?? null,
                     }))
@@ -197,7 +197,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
                 const selection = selections[slug];
                 return {
                     slug,
-                    label: game.i18n.localize(CONFIG.PF2E.senses[slug]),
+                    label: _loc(CONFIG.PF2E.senses[slug]),
                     acuity: SENSES_WITH_MANDATORY_ACUITIES[slug] ?? selection?.acuity ?? "precise",
                     range: sensesWithUnlimitedRange.includes(slug) ? null : (selection?.range ?? null),
                     special: slug === "darkvision" ? (selection?.special ?? null) : null,

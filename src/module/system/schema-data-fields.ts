@@ -4,11 +4,12 @@ import type {
     ArrayFieldOptions,
     DataFieldOptions,
     DataFieldValidationOptions,
+    DataModelCleaningOptions,
+    DataModelUpdateState,
     ObjectFieldOptions,
     StringFieldOptions,
 } from "@common/data/_types.d.mts";
 import type {
-    CleanFieldOptions,
     MaybeSchemaProp,
     ModelPropFromDataField,
     SourceFromDataField,
@@ -50,36 +51,21 @@ class PrunedSchemaField<
     }
 }
 
-/** A `SchemaField` that preserves fields not declared in its `DataSchema` */
-class LaxSchemaField<TDataSchema extends DataSchema> extends fields.SchemaField<TDataSchema> {
-    protected override _cleanType(
-        data: Record<string, unknown>,
-        options: CleanFieldOptions = {},
-    ): SourceFromSchema<TDataSchema> {
-        options.source = options.source ?? data;
-
-        // Clean each field that belongs to the schema
-        for (const [name, field] of this.entries()) {
-            if (!(name in data) && options.partial) continue;
-            data[name] = field.clean(data[name], options);
-            if (data[name] === undefined) delete data[name];
-        }
-
-        return data as SourceFromSchema<TDataSchema>;
-    }
-}
-
 /** A `SchemaField` that does not cast the source value to an object */
 class StrictSchemaField<TDataSchema extends DataSchema> extends fields.SchemaField<TDataSchema> {
     protected override _cast(value: unknown): SourceFromSchema<TDataSchema> {
         return value as SourceFromSchema<TDataSchema>;
     }
 
-    protected override _cleanType(data: object, options?: CleanFieldOptions): SourceFromSchema<TDataSchema> {
+    protected override _cleanType(
+        data: object,
+        options: DataModelCleaningOptions,
+        _state: DataModelUpdateState,
+    ): SourceFromSchema<TDataSchema> {
         if (!R.isPlainObject(data)) {
             throw Error(`${this.name} is not an object`);
         }
-        return super._cleanType(data, options);
+        return super._cleanType(data, options, _state);
     }
 }
 
@@ -128,8 +114,8 @@ class NullableBooleanField<
         if (!this.nullable) return super._toInput(config);
         const value = String(config.value ?? null);
         const options = [
-            { value: "true", label: game.i18n.localize("Yes"), selected: value === "true" },
-            { value: "false", label: game.i18n.localize("No"), selected: value === "false" },
+            { value: "true", label: _loc("Yes"), selected: value === "true" },
+            { value: "false", label: _loc("No"), selected: value === "false" },
             { value: "null", label: "", selected: value === "null" },
         ];
         return fa.fields.createSelectInput(fu.mergeObject(config, { value, options, dataset: { data: "JSON" } }));
@@ -161,8 +147,12 @@ class StrictArrayField<
     }
 
     /** Parent method assumes array-wrapping: pass through unchanged */
-    protected override _cleanType(value: unknown): unknown {
-        return Array.isArray(value) ? super._cleanType(value) : value;
+    protected override _cleanType(
+        value: unknown,
+        options: DataModelCleaningOptions,
+        _state: DataModelUpdateState,
+    ): unknown {
+        return Array.isArray(value) ? super._cleanType(value, options, _state) : value;
     }
 
     override initialize(
@@ -323,7 +313,8 @@ class DataUnionField<
      */
     override clean(
         value: unknown,
-        options?: CleanFieldOptions | undefined,
+        options?: DataModelCleaningOptions,
+        _state?: DataModelUpdateState,
     ): MaybeUnionSchemaProp<TField, TRequired, TNullable, THasInitial> {
         type MaybeProp = MaybeUnionSchemaProp<TField, TRequired, TNullable, THasInitial>;
         if (Array.isArray(value) && this.fields.some((f) => f instanceof fields.ArrayField)) {
@@ -338,8 +329,7 @@ class DataUnionField<
             }
             return value as MaybeProp;
         }
-
-        return super.clean(value, options) as MaybeProp;
+        return super.clean(value, options, _state) as MaybeProp;
     }
 
     protected override _validateType(
@@ -420,10 +410,15 @@ class SlugField<
 
     protected override _cleanType(
         value: Maybe<string>,
-        options?: CleanFieldOptions,
+        options: DataModelCleaningOptions,
+        _state: DataModelUpdateState,
     ): MaybeSchemaProp<string, TRequired, TNullable, THasInitial>;
-    protected override _cleanType(value: Maybe<string>, options?: CleanFieldOptions): unknown {
-        const slug = super._cleanType(value, options);
+    protected override _cleanType(
+        value: Maybe<string>,
+        options: DataModelCleaningOptions,
+        _state: DataModelUpdateState,
+    ): unknown {
+        const slug = super._cleanType(value, options, _state);
         const camel = this.options.camel ?? null;
         return typeof slug === "string" ? sluggify(slug, { camel }) : slug;
     }
@@ -620,10 +615,12 @@ class RecordField<
 
     protected override _cleanType(
         values: Record<string, unknown>,
-        options?: CleanFieldOptions | undefined,
+        options: DataModelCleaningOptions,
+        _state: DataModelUpdateState,
     ): Record<string, unknown> {
         for (const [key, value] of Object.entries(values)) {
-            if (key.startsWith("-=")) continue; // Don't attempt to clean deletion entries
+            // Don't attempt to clean deletion entries
+            if (value instanceof foundry.data.operators.ForcedDeletion) continue;
             values[key] = this.valueField.clean(value, options);
         }
         return values;
@@ -686,7 +683,6 @@ export {
     AnyChoiceField,
     DataUnionField,
     LaxArrayField,
-    LaxSchemaField,
     NullableBooleanField,
     NullField,
     PredicateField,

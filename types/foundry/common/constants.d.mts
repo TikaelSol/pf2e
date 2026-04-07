@@ -398,31 +398,6 @@ export const DOCUMENT_LINK_TYPES: readonly [
 ];
 
 /**
- * The supported dice roll visibility modes
- * @see https://foundryvtt.com/article/dice/
- */
-export const DICE_ROLL_MODES: Readonly<{
-    /**
-     * This roll is visible to all players.
-     */
-    PUBLIC: "publicroll";
-    /**
-     * Rolls of this type are only visible to the player that rolled and any Game Master users.
-     */
-    PRIVATE: "gmroll";
-    /**
-     * A private dice roll only visible to Game Master users. The rolling player will not see the result of their own roll.
-     */
-    BLIND: "blindroll";
-    /**
-     * A private dice roll which is only visible to the user who rolled it.
-     */
-    SELF: "selfroll";
-}>;
-
-export type RollMode = (typeof DICE_ROLL_MODES)[keyof typeof DICE_ROLL_MODES];
-
-/**
  * The allowed fill types which a Drawing object may display
  * @see https://foundryvtt.com/article/drawings/
  */
@@ -2052,6 +2027,8 @@ export const COMBAT_ANNOUNCEMENTS: readonly ["startEncounter", "nextUp", "yourTu
  * The fit modes of {@link foundry.data.TextureData}.
  */
 export const TEXTURE_DATA_FIT_MODES: readonly ["fill", "contain", "cover", "width", "height"];
+
+export type TextureDataFitMode = (typeof TEXTURE_DATA_FIT_MODES)[number];
 
 /**
  * The maximum depth to recurse to when embedding enriched text.

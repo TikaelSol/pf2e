@@ -113,7 +113,7 @@ export class SpellSheetPF2e extends ItemSheetPF2e<SpellPF2e> {
             materials: CONFIG.PF2E.materialDamageEffects,
             heightenIntervals: R.range(1, 5).map((i) => ({
                 value: `${i}`,
-                label: game.i18n.format("PF2E.SpellScalingInterval.Selection", { interval: i }),
+                label: _loc("PF2E.SpellScalingInterval.Selection", { interval: i }),
             })),
             heightenOverlays: this.#prepareHeighteningLevels(),
             canHeighten: this.isEditable && this.getAvailableHeightenLevels().length > 0,
@@ -129,7 +129,7 @@ export class SpellSheetPF2e extends ItemSheetPF2e<SpellPF2e> {
 
     override get title(): string {
         return this.item.isVariant
-            ? game.i18n.format("PF2E.Item.Spell.Variants.SheetTitle", { originalName: this.item.original?.name ?? "" })
+            ? _loc("PF2E.Item.Spell.Variants.SheetTitle", { originalName: this.item.original?.name ?? "" })
             : super.title;
     }
 
@@ -294,21 +294,21 @@ export class SpellSheetPF2e extends ItemSheetPF2e<SpellPF2e> {
                         );
                     }
                     new foundry.appv1.api.Dialog({
-                        title: game.i18n.localize("PF2E.Item.Spell.Variants.DeleteDialogTitle"),
-                        content: `<p>${game.i18n.format("PF2E.Item.Spell.Variants.DeleteDialogText", {
+                        title: _loc("PF2E.Item.Spell.Variants.DeleteDialogTitle"),
+                        content: `<p>${_loc("PF2E.Item.Spell.Variants.DeleteDialogText", {
                             variantName: variant.name,
                         })}</p>`,
                         buttons: {
                             delete: {
                                 icon: fontAwesomeIcon("fa-trash").outerHTML,
-                                label: game.i18n.localize("PF2E.DeleteShortLabel"),
+                                label: _loc("PF2E.DeleteShortLabel"),
                                 callback: () => {
                                     this.item.overlays.deleteOverlay(id);
                                 },
                             },
                             cancel: {
                                 icon: fontAwesomeIcon("fa-times").outerHTML,
-                                label: game.i18n.localize("Cancel"),
+                                label: _loc("Cancel"),
                             },
                         },
                         default: "cancel",
@@ -482,7 +482,7 @@ export class SpellSheetPF2e extends ItemSheetPF2e<SpellPF2e> {
                 missing,
                 heightenLevels: availableLevels.map((l) => ({
                     value: `${l}`,
-                    label: game.i18n.format("PF2E.SpellScalingOverlay.Selection", { level: ordinalString(l) }),
+                    label: _loc("PF2E.SpellScalingOverlay.Selection", { level: ordinalString(l) }),
                 })),
                 traits: layer.system.traits?.value
                     ? createTagifyTraits(layer.system.traits.value, { record: CONFIG.PF2E.spellTraits })

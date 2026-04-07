@@ -84,13 +84,13 @@ export class InlineRollLinks {
                 link.parentElement?.dataset?.pf2Checkgroup !== undefined ? "fa-comment-alt-dots" : "fa-comment-alt";
             newButton.classList.add("fa-solid", icon);
             newButton.dataset.pf2Repost = "";
-            newButton.title = game.i18n.localize("PF2E.Repost");
+            newButton.title = _loc("PF2E.Repost");
             link.appendChild(newButton);
         }
     }
 
     static #makeRepostHtml(target: HTMLElement, defaultVisibility: string): string {
-        const flavor = game.i18n.localize(target.dataset.pf2RepostFlavor ?? "");
+        const flavor = _loc(target.dataset.pf2RepostFlavor ?? "");
         const showDC = target.dataset.pf2ShowDc ?? defaultVisibility;
         return (flavor ? `<span data-visibility="${showDC}">${flavor}</span> ` : "") + `${target.outerHTML}`.trim();
     }
@@ -211,9 +211,7 @@ export class InlineRollLinks {
             return { actor, statistic: actor.getStatistic(pf2Check, { item: relatedItem }) };
         });
         if (!actorStatistics.some(({ statistic }) => !!statistic)) {
-            ui.notifications.error(
-                game.i18n.format("PF2E.ErrorMessage.MissingStatisticSelected", { statistic: pf2Check }),
-            );
+            ui.notifications.error(_loc("PF2E.ErrorMessage.MissingStatisticSelected", { statistic: pf2Check }));
             return;
         }
 
@@ -271,7 +269,7 @@ export class InlineRollLinks {
                         return {
                             label:
                                 defenseStat.dc.label ??
-                                game.i18n.format("PF2E.InlineCheck.DCWithName", { name: defenseStat.label }),
+                                _loc("PF2E.InlineCheck.DCWithName", { name: defenseStat.label }),
                             statistic: defenseStat.dc,
                             scope: "check",
                             value: defenseStat.dc.value,
@@ -306,7 +304,7 @@ export class InlineRollLinks {
                     `systems/${SYSTEM_ID}/templates/chat/action/header.hbs`,
                     {
                         glyph: getActionGlyph(item.actionCost),
-                        subtitle: game.i18n.format(subtitleLocKey, { type: statistic.label }),
+                        subtitle: _loc(subtitleLocKey, { type: statistic.label }),
                         title: item.name,
                     },
                 );

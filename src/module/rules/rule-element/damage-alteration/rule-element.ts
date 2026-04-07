@@ -33,6 +33,7 @@ class DamageAlterationRuleElement extends RuleElement<DamageAlterationSchema> {
                 initial: null,
                 validate: (value, options): boolean | DataModelValidationFailure => {
                     if (typeof value === "string" && /^\{\w+\|.+\}$/.test(value)) return true;
+                    if (!R.isPlainObject(options.source)) throw Error("unexpected missing source object");
                     switch (options.source?.property) {
                         case "damage-type":
                             if (!setHasElement(DAMAGE_TYPES, value)) {

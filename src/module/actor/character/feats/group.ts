@@ -71,7 +71,7 @@ class FeatGroup<TActor extends ActorPF2e = ActorPF2e, TItem extends FeatLike = F
                 const slot: FeatSlot<TItem> = {
                     ...slotObject,
                     id: slotObject.id ?? `${this.id}-${slotObject.level}`,
-                    label: game.i18n.localize(String(slotObject.label ?? slotObject.level)),
+                    label: _loc(String(slotObject.label ?? slotObject.level)),
                     level: slotObject.level ?? null,
                     placeholder: slotObject.placeholder ?? data.placeholder ?? "PF2E.EmptySlot",
                     children: [],
@@ -166,8 +166,8 @@ class FeatGroup<TActor extends ActorPF2e = ActorPF2e, TItem extends FeatLike = F
                 system: { location, level: { taken: slot?.level ?? this.actor.level } },
             });
             changed.push(...(await this.actor.createEmbeddedDocuments("Item", [source])));
-            const label = game.i18n.localize(this.label);
-            ui.notifications.info(game.i18n.format("PF2E.Item.Feat.Info.Added", { item: feat.name, category: label }));
+            const label = _loc(this.label);
+            ui.notifications.info(_loc("PF2E.Item.Feat.Info.Added", { item: feat.name, category: label }));
         }
 
         // Determine what feats we have to move around

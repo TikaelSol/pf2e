@@ -356,7 +356,7 @@ abstract class CreaturePF2e<
         if (this.isOfType("character", "npc")) {
             attributes.shield = {
                 itemId: null,
-                name: game.i18n.localize("PF2E.ArmorTypeShield"),
+                name: _loc("PF2E.ArmorTypeShield"),
                 ac: 0,
                 hp: { value: 0, max: 0 },
                 brokenThreshold: 0,
@@ -705,7 +705,7 @@ abstract class CreaturePF2e<
         if (!data) return null;
 
         const label = tupleHasValue(CORE_RESOURCES, slug)
-            ? game.i18n.localize(`PF2E.Actor.Resource.${key.capitalize()}`)
+            ? _loc(`PF2E.Actor.Resource.${key.capitalize()}`)
             : (this.synthetics.resources[key]?.label ?? key.capitalize());
         return { ...data, slug, label };
     }

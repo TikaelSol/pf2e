@@ -909,7 +909,7 @@ const ITEM_ALTERATION_HANDLERS = {
         },
         handle: function (data: AlterationApplicationData) {
             if (this.isValid(data)) {
-                data.item.name = game.i18n.localize(data.alteration.value);
+                data.item.name = _loc(data.alteration.value);
             }
         },
     }),

@@ -1,6 +1,6 @@
 import type { ActorPF2e } from "@actor";
 import { FormulaPicker } from "@actor/character/apps/formula-picker/app.ts";
-import type { RollMode } from "@common/constants.d.mts";
+import type { ChatMessageMode } from "@client/config.d.mts";
 import { AbilityItemPF2e, FeatPF2e } from "@item";
 import { extractEphemeralEffects } from "@module/rules/helpers.ts";
 import { DamageRoll } from "@system/damage/roll.ts";
@@ -17,7 +17,7 @@ function isCheckContextFlag(flag?: ChatContextFlag): flag is CheckContextChatFla
 /** Create a message with collapsed action description and button to apply an effect */
 async function createUseActionMessage(
     item: AbilityItemPF2e<ActorPF2e> | FeatPF2e<ActorPF2e>,
-    rollMode: RollMode | "roll" = "roll",
+    messageMode?: ChatMessageMode,
 ): Promise<ChatMessagePF2e | null> {
     const { actor, actionCost } = item;
     const token = actor.getActiveTokens(true, true).shift() ?? null;
@@ -43,7 +43,7 @@ async function createUseActionMessage(
 
     // If there is no self effect nor crafted item, show a regular message
     if (!item.system.selfEffect && !craftedItem) {
-        return (await item.toMessage(null, { rollMode })) ?? null;
+        return (await item.toMessage(null, { mode: messageMode })) ?? null;
     }
 
     const speaker = ChatMessagePF2e.getSpeaker({ actor, token });
@@ -69,7 +69,7 @@ async function createUseActionMessage(
     }
 
     // Create the message
-    const messageData = ChatMessagePF2e.applyRollMode({ speaker, flavor, content, flags }, rollMode);
+    const messageData = ChatMessagePF2e.applyMode({ speaker, flavor, content, flags }, messageMode);
     return (await ChatMessagePF2e.create(messageData)) ?? null;
 }
 
@@ -170,11 +170,11 @@ async function shiftAdjustDamage(message: ChatMessagePF2e, multiplier: number, r
     };
     const isHealing = multiplier < 0;
     new AdjustmentDialog({
-        title: game.i18n.localize(isHealing ? "PF2E.UI.shiftModifyHealingTitle" : "PF2E.UI.shiftModifyDamageTitle"),
+        title: _loc(isHealing ? "PF2E.UI.shiftModifyHealingTitle" : "PF2E.UI.shiftModifyDamageTitle"),
         content,
         buttons: {
             ok: {
-                label: game.i18n.localize("PF2E.OK"),
+                label: _loc("PF2E.OK"),
                 callback: async ($dialog: JQuery) => {
                     // In case of healing, multipler will have negative sign. The user will expect that positive
                     // modifier would increase healing value, while negative would decrease.

@@ -35,16 +35,6 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
     /** The most recently used animation for later use when a token override is reverted. */
     #lastAnimation: TokenAnimationOptions | null = null;
 
-    /** Prevent eager construction of synthetic actors */
-    override get actor(): ActorPF2e<this | null> | null {
-        if (game.ready || this.actorLink || this.scene?.isView || this.hasConstructedActor || super.inCombat) {
-            return super.actor as ActorPF2e<this | null> | null;
-        }
-        return Array.isArray(this._source.delta?.items) && this._source.delta.items.some((i) => i.type === "effect")
-            ? (super.actor as ActorPF2e<this | null> | null)
-            : null;
-    }
-
     /** Returns the combatant representing this token or this token's troop */
     override get combatant(): CombatantPF2e<EncounterPF2e, this> | null {
         const troop = this.flags[SYSTEM_ID].troop;
@@ -64,11 +54,6 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         return this.actorLink && this.actor?.isOfType("party")
             ? this.actor.members.every((a) => game.combat?.getCombatantsByActor(a).length)
             : super.inCombat;
-    }
-
-    /** This should be in Foundry core, but ... */
-    get scene(): TParent {
-        return this.parent;
     }
 
     /** Returns the other segments of a troop that exists in the current scene, or null if this token doesn't belong to a troop */
@@ -476,7 +461,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
                     whisper: this.actor?.hasPlayerOwner
                         ? []
                         : game.users.contents.flatMap((user) => (user.isGM ? user.id : [])),
-                    content: game.i18n.format("PF2E.InitiativeIsNow", { name: this.name, value: initiative }),
+                    content: _loc("PF2E.InitiativeIsNow", { name: this.name, value: initiative }),
                 },
             ]);
         }
@@ -504,7 +489,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
                 if (existing) return existing;
 
                 const combat = game.user.isGM ? await EncounterPF2e.create({ active: true }, { render: false }) : null;
-                if (!combat) throw new Error(game.i18n.localize("COMBAT.NoneActive"));
+                if (!combat) throw new Error(_loc("COMBAT.NoneActive"));
                 return combat;
             })();
             combatants.push(
@@ -762,6 +747,7 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
 interface TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> extends TokenDocument<TParent> {
     flags: TokenFlagsPF2e;
     regions: Set<RegionDocumentPF2e<NonNullable<TParent>>>;
+    get actor(): ActorPF2e<this | null> | null;
     get baseActor(): ActorPF2e<null> | null;
     get object(): TokenPF2e<this> | null;
     get sheet(): TokenConfigPF2e;

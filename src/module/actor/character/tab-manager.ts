@@ -22,7 +22,7 @@ export class PCSheetTabManager {
             delay: 250,
             interactive: true,
             theme: "crb-hover",
-            title: game.i18n.localize("PF2E.TabManageTabsLabel"),
+            title: _loc("PF2E.TabManageTabsLabel"),
             trigger: "custom",
             triggerOpen: { click: true },
             triggerClose: { originClick: true, mouseleave: true },

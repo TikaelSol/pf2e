@@ -32,6 +32,22 @@ export function deepFreeze<T extends object>(obj: T, options?: { strict?: boolea
 export function deepClone<T>(original: T): T;
 
 /**
+ * Test if two values are equivalent.
+ *
+ * This helper supports equality testing for:
+ * 1. Primitive data types (number, string, boolean, undefined)
+ * 2. Simple objects (Object prototype, null)
+ * 3. Complex objects which expose an `equals` method (Array, Set, Color, etc...)
+ *
+ * This method compares object `b` with object `a`, so in cases where an equality testing method is used it is called
+ * as `a.equals(b).
+ *
+ * @param a  The first value
+ * @param b  The second value
+ */
+export function equals(a: unknown, b: unknown): boolean;
+
+/**
  * A cheap data duplication trick which is relatively robust.
  * For a subset of cases the deepClone function will offer better performance.
  * @param original Some sort of data
@@ -164,13 +180,6 @@ export function diffObject<T extends Record<string, unknown> = Record<string, un
  * Forced replacement keys ("==") are assigned.
  */
 export function applySpecialKeys<T>(obj: T): T;
-
-/**
- * Test if two objects contain the same enumerable keys and values.
- * @param a  The first object.
- * @param b  The second object.
- */
-export function objectsEqual(a: object, b: object): boolean;
 
 /**
  * A helper function which tests whether an object has a property or nested property given a string key.

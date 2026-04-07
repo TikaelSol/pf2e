@@ -18,6 +18,7 @@ export { default as BaseFolder, FolderSource } from "./folder.mjs";
 export { default as BaseItem, ItemSchema, ItemSource } from "./item.mjs";
 export { default as BaseJournalEntryPage } from "./journal-entry-page.mjs";
 export { default as BaseJournalEntry, JournalEntrySource } from "./journal-entry.mjs";
+export { default as BaseLevel } from "./level.mjs";
 export { default as BaseMacro, MacroSource } from "./macro.mjs";
 export { default as BaseMeasuredTemplate, MeasuredTemplateSource } from "./measured-template.mjs";
 export { default as BaseNote, NoteSource } from "./note.mjs";
