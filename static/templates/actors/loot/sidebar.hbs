@@ -15,8 +15,9 @@
             <div class="form-group">
                 <label for="{{document.uuid}}-hidden-when-empty">
                     <span>{{localize "PF2E.loot.HiddenWhenEmpty.Label"}}</span>
-                    <i class="fa-solid fa-circle-info" inert
-                       data-tooltip aria-label="{{localize "PF2E.loot.HiddenWhenEmpty.Hint"}}"></i>
+                    <span data-tooltip aria-label="{{localize "PF2E.loot.HiddenWhenEmpty.Hint"}}">
+                        <i class="fa-solid fa-circle-info" inert></i>
+                    </span>
                 </label>
                 <input type="checkbox" id="{{document.uuid}}-hidden-when-empty" name="system.hiddenWhenEmpty" {{checked data.hiddenWhenEmpty}} />
             </div>
