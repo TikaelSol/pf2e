@@ -204,11 +204,7 @@ class RuleElementForm<
         priorityInput?.addEventListener("change", (event) => {
             event.stopPropagation();
             const value = priorityInput.value;
-            if (value === "" || Number.isNaN(Number(value))) {
-                this.updateItem({ "-=priority": null });
-            } else {
-                this.updateItem({ priority: Number(value) });
-            }
+            this.updateItem({ priority: value === "" || Number.isNaN(Number(value)) ? _del : Number(value) });
         });
 
         if (this.tabs) {

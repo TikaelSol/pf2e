@@ -582,7 +582,7 @@ class KingdomSheetPF2e extends ActorSheetPF2e<PartyPF2e> {
                     no: { default: true },
                 }));
             if (result) {
-                this.kingdom.update({ [`settlements.-=${id}`]: null });
+                this.kingdom.update({ [`settlements.${id}`]: _del });
             }
         });
     }

@@ -117,7 +117,7 @@ class CampaignFeaturePF2e<TParent extends ActorPF2e | null = ActorPF2e | null> e
         if (!this.parent) {
             this.updateSource({ "system.location": null });
             if (this._source.system.frequency) {
-                this.updateSource({ "system.frequency.-=value": null });
+                this.updateSource({ "system.frequency.value": _del });
             }
         }
         return super._preCreate(data, options, user);

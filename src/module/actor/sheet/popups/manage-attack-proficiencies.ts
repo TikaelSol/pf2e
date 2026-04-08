@@ -58,7 +58,7 @@ function remove(actor: CharacterPF2e, event: PointerEvent): void {
         yes: {
             callback: () => {
                 if (!(key in (actor._source.system.proficiencies?.attacks ?? {}))) return;
-                actor.update({ [`system.proficiencies.attacks.-=${key}`]: null });
+                actor.update({ [`system.proficiencies.attacks.${key}`]: _del });
             },
             default: false,
         },

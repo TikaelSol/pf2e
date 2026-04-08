@@ -624,12 +624,9 @@ class NPCPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | nul
         }
 
         if (changed.system.skills) {
-            for (const [key, skill] of Object.entries(changed.system.skills)) {
-                if (key.startsWith("-=") || !skill) continue;
-
-                if (skill.note === "") {
-                    delete skill.note;
-                    fu.mergeObject(skill, { "-=note": null });
+            for (const skill of Object.values(changed.system.skills)) {
+                if (skill?.note === "") {
+                    fu.mergeObject(skill, { note: _del });
                 }
             }
         }
