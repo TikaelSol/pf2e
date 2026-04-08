@@ -30,7 +30,6 @@ class TokenLayerPF2e<TObject extends TokenPF2e> extends fc.layers.TokenLayer<TOb
     protected override async _confirmDeleteKey(documents: TObject["document"][]): Promise<boolean> {
         const warnings = [];
         if (documents.some((t) => t.attachments.regions.size)) warnings.push("TOKEN.DeleteAttachedRegionWarning");
-
         const tokens = new Set(documents);
         const inCombat = game.combats.some((combat) =>
             combat.combatants.some((combatant) => {
