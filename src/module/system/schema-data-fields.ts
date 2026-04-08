@@ -631,7 +631,7 @@ class RecordField<
         options?: DataFieldValidationOptions,
     ): boolean | validation.DataModelValidationFailure | void {
         if (!R.isPlainObject(values)) {
-            return new validation.DataModelValidationFailure({ message: "must be an Object" });
+            return new validation.DataModelValidationFailure("must be an Object");
         }
         return this._validateValues(values, options);
     }
