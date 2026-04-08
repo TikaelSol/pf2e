@@ -36,6 +36,7 @@ import {
     AdaptiveBackgroundShader,
     AdaptiveColorationShader,
     AdaptiveIlluminationShader,
+    GridShader,
     WeatherShaderEffect,
 } from "./canvas/rendering/shaders/_module.mjs";
 import type {
@@ -151,6 +152,12 @@ export interface RollFunction {
 
 export type ChatMessageMode = "public" | "gm" | "blind" | "self" | "ic";
 
+interface GridStyleConfig {
+    label: string;
+    shaderClass: typeof GridShader;
+    shaderOptions: { style: number };
+}
+
 export default interface Config<
     TAmbientLightDocument extends documents.AmbientLightDocument<TScene | null>,
     TActiveEffect extends documents.ActiveEffect<TActor | TItem | null>,
@@ -165,7 +172,6 @@ export default interface Config<
     THotbar extends Hotbar<TMacro>,
     TItem extends documents.Item<TActor | null>,
     TMacro extends documents.Macro,
-    TMeasuredTemplateDocument extends documents.MeasuredTemplateDocument<TScene | null>,
     TRegionDocument extends documents.RegionDocument<TScene | null>,
     TRegionBehavior extends documents.RegionBehavior<TRegionDocument | null>,
     TTileDocument extends documents.TileDocument<TScene | null>,
@@ -429,26 +435,11 @@ export default interface Config<
         typeLabels: Record<string, string>;
     };
 
-    /** Configuration for the MeasuredTemplate embedded document type and its representation on the game Canvas */
-    MeasuredTemplate: {
-        defaults: {
-            angle: number;
-            width: number;
-        };
-        types: {
-            circle: string;
-            cone: string;
-            rect: string;
-            ray: string;
-        };
-        documentClass: ConstructorOf<TMeasuredTemplateDocument>;
-        objectClass: ConstructorOf<NonNullable<TMeasuredTemplateDocument["object"]>>;
-    };
-
     /** Configuration for the Region embedded document type and its representation on the game Canvas  */
     Region: {
         documentClass: ConstructorOf<TRegionDocument>;
         objectClass: ConstructorOf<TRegionDocument["object"]>;
+        layerClass: ConstructorOf<layers.RegionLayer>;
     };
 
     /** Configuration for the RegionBehavior embedded document type */
@@ -521,7 +512,6 @@ export default interface Config<
         darknessSourceClass: typeof PointDarknessSource;
         lightSourceClass: typeof PointLightSource;
         globalLightSourceClass: typeof GlobalLightSource;
-        rulerClass: typeof Ruler;
         visionSourceClass: ConstructorOf<PointVisionSource<NonNullable<TTokenDocument["object"]>>>;
         soundSourceClass: typeof PointSoundSource;
         groups: {
@@ -563,13 +553,13 @@ export default interface Config<
                 group: "effects";
                 layerClass: ConstructorOf<NonNullable<TWallDocument["object"]>["layer"]>;
             };
-            templates: {
-                group: "primary";
-                layerClass: ConstructorOf<NonNullable<TMeasuredTemplateDocument["object"]>["layer"]>;
-            };
             notes: {
                 group: "interface";
                 layerClass: typeof layers.NotesLayer;
+            };
+            regions: {
+                group: "interface";
+                layerClass: ConstructorOf<layers.RegionLayer>;
             };
             tokens: {
                 group: "primary";
@@ -605,8 +595,19 @@ export default interface Config<
             sound: typeof ClockwiseSweepPolygon;
             move: typeof ClockwiseSweepPolygon;
         };
+        rulerClass: typeof Ruler;
         dragSpeedModifier: number;
         maxZoom: number;
+        minZoom: number;
+        gridStyles: {
+            solidLines: GridStyleConfig;
+            dashedLines: GridStyleConfig;
+            dottedLines: GridStyleConfig;
+            squarePoints: GridStyleConfig;
+            diamondPoints: GridStyleConfig;
+            roundPoints: GridStyleConfig;
+        };
+
         objectBorderThickness: number;
         lightAnimations: Record<string, LightSourceAnimationConfig>;
 

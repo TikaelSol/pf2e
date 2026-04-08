@@ -32,7 +32,6 @@ import {
     ChoiceSetPackQuery,
     ChoiceSetSchema,
     ChoiceSetSource,
-    UninflatedChoiceSet,
 } from "./data.ts";
 import fields = foundry.data.fields;
 
@@ -41,7 +40,6 @@ import fields = foundry.data.fields;
  * @category RuleElement
  */
 class ChoiceSetRuleElement extends RuleElement<ChoiceSetSchema> {
-    declare choices: UninflatedChoiceSet;
     declare flag: string;
     declare allowedDrops: AllowedDropsData | null;
     declare allowNoSelection: boolean;

@@ -1,7 +1,7 @@
 import type { ActorPF2e } from "@actor";
-import { MeasuredTemplateType } from "@common/constants.mjs";
-import { MeasuredTemplatePF2e } from "@module/canvas/measured-template.ts";
+import { SpecificShapeSource } from "@common/data/_module.mjs";
 import { ChatMessagePF2e } from "@module/chat-message/document.ts";
+import { RegionDocumentPF2e } from "@scene";
 import type { DamageType } from "@system/damage/types.ts";
 import { createHTMLElement, ErrorPF2e, objectHasKey, setHasElement, tupleHasValue } from "@util";
 import type { Converter } from "showdown";
@@ -223,28 +223,37 @@ function createEffectAreaLabel(areaData: { type: EffectAreaShape; value: number 
     return _loc(formatString, { shape, size, unit, units });
 }
 
-function placeItemTemplate(
+function shapeDataFromEffectArea(area: { type: EffectAreaShape; value: number }): Partial<SpecificShapeSource> {
+    const distance = (area.value / 5) * canvas.grid.size;
+    const { x, y } = canvas.mousePosition;
+    switch (area.type) {
+        case "burst":
+        case "cylinder":
+            return { type: "circle", radius: distance, x, y };
+        case "cone":
+            return { type: "cone", radius: distance, x, y };
+        case "cube":
+        case "square":
+            return { type: "rectangle", width: distance, height: distance, x, y };
+        case "emanation":
+            return { type: "emanation", radius: distance };
+        case "line":
+            return { type: "line", length: distance, width: canvas.dimensions.distance, x, y };
+    }
+}
+
+function placeRegionFromItem(
     area: { type: EffectAreaShape; value: number },
     { message, item }: { message?: ChatMessagePF2e; item: ItemPF2e },
-): Promise<MeasuredTemplatePF2e> {
+): Promise<RegionDocumentPF2e | null> {
     if (!canvas.ready) throw ErrorPF2e("No canvas");
-
-    const templateConversion: Record<EffectAreaShape, MeasuredTemplateType> = {
-        burst: "circle",
-        cone: "cone",
-        cube: "rect",
-        cylinder: "circle",
-        emanation: "circle",
-        line: "ray",
-        square: "rect",
-    } as const;
-
-    const templateType = templateConversion[area.type];
-
-    const templateData: DeepPartial<foundry.documents.MeasuredTemplateSource> = {
-        t: templateType,
-        distance: (Number(area.value) / 5) * canvas.dimensions.distance,
-        fillColor: game.user.color.toString(),
+    const data: DeepPartial<fd.RegionSource> = {
+        name: item.name,
+        shapes: [shapeDataFromEffectArea(area)],
+        color: game.user.color.toString(),
+        highlightMode: "coverage",
+        displayMeasurements: true,
+        ownership: { [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER },
         flags: {
             [SYSTEM_ID]: {
                 messageId: message?.id,
@@ -258,24 +267,7 @@ function placeItemTemplate(
             },
         },
     };
-
-    switch (templateType) {
-        case "ray":
-            templateData.width = CONFIG.MeasuredTemplate.defaults.width * (canvas.dimensions?.distance ?? 1);
-            break;
-        case "cone":
-            templateData.angle = CONFIG.MeasuredTemplate.defaults.angle;
-            break;
-        case "rect": {
-            const distance = templateData.distance ?? 0;
-            templateData.distance = Math.hypot(distance, distance);
-            templateData.width = distance;
-            templateData.direction = 45;
-            break;
-        }
-    }
-
-    return canvas.templates.createPreview(templateData);
+    return canvas.regions.placeRegion(data);
 }
 
 export {
@@ -284,7 +276,8 @@ export {
     itemIsOfType,
     markdownToHTML,
     performLatePreparation,
-    placeItemTemplate,
+    placeRegionFromItem,
     reduceItemName,
     removeTrait,
+    shapeDataFromEffectArea,
 };

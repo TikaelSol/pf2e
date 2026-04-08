@@ -217,7 +217,7 @@ class TextEditorPF2e extends foundry.applications.ux.TextEditor {
             case "Localize":
                 return this.#localize(paramString, options);
             case "Template":
-                return this.#createTemplate(paramString, inlineLabel, item);
+                return this.#createTemplateRegion(paramString, inlineLabel, item);
             default:
                 return null;
         }
@@ -269,7 +269,7 @@ class TextEditorPF2e extends foundry.applications.ux.TextEditor {
     }
 
     /** Create inline template button from @template command */
-    static #createTemplate(paramString: string, label?: string, item?: ItemPF2e | null): HTMLSpanElement | null {
+    static #createTemplateRegion(paramString: string, label?: string, item?: ItemPF2e | null): HTMLSpanElement | null {
         // Get parameters from data
         const params = this.#parseInlineParams(paramString, { first: "type" });
         if (!params) return null;
@@ -306,15 +306,16 @@ class TextEditorPF2e extends foundry.applications.ux.TextEditor {
             // Add the html elements used for the inline buttons
             const html = document.createElement("span");
             html.innerHTML = label;
-            html.setAttribute("data-pf2-effect-area", params.type);
-            html.setAttribute("data-pf2-distance", params.distance);
-            if (params.traits !== "") html.setAttribute("data-pf2-traits", params.traits);
-            if (params.type === "line") html.setAttribute("data-pf2-width", params.width ?? "5");
+            html.dataset.type = params.type;
+            html.dataset.distance = params.distance;
+            if (params.traits) html.dataset.traits = params.traits;
+            if (params.type === "line") html.dataset.width = params.width;
             if (["cone", "line"].includes(params.type)) {
-                html.setAttribute("data-tooltip", "PF2E.Item.Spell.MeasuredTemplate.PlacementTooltip");
-                html.setAttribute("data-tooltip-class", "pf2e");
+                html.ariaLabel = _loc("PF2E.Item.Spell.MeasuredTemplate.PlacementTooltip");
+                html.dataset.tooltip = "";
+                html.dataset.tooltipClass = "pf2e";
             }
-            if (params.itemUuid !== "") html.setAttribute("data-item-uuid", params.itemUuid);
+            if (params.itemUuid) html.dataset.itemUuid = params.itemUuid;
             return html;
         }
         return null;

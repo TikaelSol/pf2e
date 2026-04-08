@@ -2,9 +2,9 @@ import { ActorPF2e } from "@actor";
 import { Modifier } from "@actor/modifiers.ts";
 import { SAVE_TYPES } from "@actor/values.ts";
 import type { ClientDocument } from "@client/documents/abstract/client-document.d.mts";
-import type { MeasuredTemplateType } from "@common/constants.d.mts";
 import { ItemPF2e } from "@item";
 import type { AbilityTrait } from "@item/ability/types.ts";
+import { shapeDataFromEffectArea } from "@item/helpers.ts";
 import { EFFECT_AREA_SHAPES } from "@item/values.ts";
 import { ChatMessageFlagsPF2e, ChatMessagePF2e } from "@module/chat-message/index.ts";
 import { calculateDC } from "@module/dc.ts";
@@ -317,64 +317,34 @@ export class InlineRollLinks {
 
     static #onClickInlineTemplate(_event: PointerEvent, link: HTMLAnchorElement | HTMLSpanElement): void {
         if (!canvas.ready) return;
-
-        const templateConversion: Record<string, MeasuredTemplateType> = {
-            burst: "circle",
-            cone: "cone",
-            cube: "rect",
-            emanation: "circle",
-            line: "ray",
-            rect: "rect",
-            square: "rect",
-        } as const;
-
-        const { pf2EffectArea, pf2Distance, pf2TemplateData, pf2Traits, pf2Width } = link.dataset;
-
-        if (typeof pf2EffectArea !== "string") {
-            console.warn(`PF2e System | Could not create template'`);
+        const dataset = link.dataset;
+        if (!tupleHasValue(EFFECT_AREA_SHAPES, dataset.type)) {
+            console.warn(`PF2e System | Could not create region.`);
             return;
         }
-
         const { actor, item, message } = resolveActorAndItemFromHTML(link);
-        const data: DeepPartial<foundry.documents.MeasuredTemplateSource> = JSON.parse(pf2TemplateData ?? "{}");
-        data.distance ||= Number(pf2Distance);
-        data.fillColor ||= game.user.color.toString();
-        data.t = templateConversion[pf2EffectArea];
-
-        switch (data.t) {
-            case "ray":
-                data.width = Number(pf2Width) || CONFIG.MeasuredTemplate.defaults.width * canvas.dimensions.distance;
-                break;
-            case "cone":
-                data.angle ||= CONFIG.MeasuredTemplate.defaults.angle;
-                break;
-            case "rect": {
-                const distance = data.distance ?? 0;
-                data.distance = Math.hypot(distance, distance);
-                data.width = distance;
-                data.direction = 45;
-                break;
-            }
-        }
-
-        const flags: { [SYSTEM_ID]: Record<string, JSONValue> } = { [SYSTEM_ID]: {} };
-
-        const normalSize = (Math.ceil(data.distance) / 5) * 5 || 5;
-        if (tupleHasValue(EFFECT_AREA_SHAPES, pf2EffectArea) && data.distance === normalSize) {
-            flags[SYSTEM_ID].areaShape = pf2EffectArea;
-        }
-        if (message) flags[SYSTEM_ID].messageId = message.id;
+        const area = { type: dataset.type, value: Number(dataset.distance) || 5 };
+        const data: DeepPartial<fd.RegionSource> = {
+            name: item?.name ?? _loc("PF2E.Area.Label"),
+            shapes: [shapeDataFromEffectArea(area)],
+            color: game.user.color.toString(),
+            highlightMode: "coverage",
+            displayMeasurements: true,
+        };
+        const flags: { [SYSTEM_ID]: Record<string, JSONValue> } = {
+            [SYSTEM_ID]: { areaShape: area.type, messageId: message?.id },
+        };
         if (item) {
             const origin = item.getOriginData();
             flags[SYSTEM_ID].origin = origin;
-        } else if (actor || pf2Traits) {
+        } else if (actor || dataset.traits) {
             flags[SYSTEM_ID].origin = {
                 actor: actor?.uuid ?? null,
-                traits: splitListString(pf2Traits ?? ""),
+                traits: splitListString(dataset.traits ?? ""),
             };
         }
-        if (!R.isEmpty(flags[SYSTEM_ID])) data.flags = flags;
-        canvas.templates.createPreview(data);
+        data.flags = flags;
+        canvas.regions.placeRegion(data);
     }
 
     static async #onRepostAction(target: HTMLElement): Promise<ChatMessagePF2e | undefined> {

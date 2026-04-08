@@ -16,13 +16,14 @@ import {
     FilePathFieldOptions,
     FormGroupConfig,
     FormInputConfig,
+    GridOffsetFieldOptions,
     JavaScriptFieldOptions,
     NumberFieldOptions,
     ObjectFieldOptions,
     StringFieldInputConfig,
     StringFieldOptions,
 } from "./_types.mjs";
-import { TombstoneDataSchema } from "./data.mjs";
+import { BaseShapeData, TombstoneDataSchema } from "./data.mjs";
 import { DataModelValidationFailure } from "./validation-failure.mjs";
 
 /* ---------------------------------------- */
@@ -1634,6 +1635,115 @@ export class SceneLevelsSetField extends SetField<DocumentIdField<string>> {
     constructor(options?: ArrayFieldOptions<string[], true, false, true>, context?: DataFieldContext);
 
     protected static override get _defaults(): ArrayFieldOptions<string[], true, false, true>;
+}
+
+/**
+ * A subclass of {@link ArrayField} for shapes.
+ */
+export class ShapesField<
+    TRequired extends boolean = true,
+    TNullable extends boolean = false,
+    THasInitial extends boolean = true,
+> extends ArrayField<
+    TypedSchemaField<typeof BaseShapeData.TYPES>,
+    SourceFromDataField<ArrayField<TypedSchemaField<typeof BaseShapeData.TYPES>>>,
+    ModelPropFromDataField<ArrayField<TypedSchemaField<typeof BaseShapeData.TYPES>>>,
+    TRequired,
+    TNullable,
+    THasInitial
+> {
+    /**
+     * @param options Options which configure the behavior of the field
+     * @param context Additional context which describes the field
+     */
+    constructor(
+        options?: ArrayFieldOptions<
+            SourceFromDataField<ArrayField<TypedSchemaField<typeof BaseShapeData.TYPES>>>,
+            TRequired,
+            TNullable,
+            THasInitial
+        >,
+        context?: DataFieldContext,
+    );
+
+    override initialize(
+        value: MaybeSchemaProp<
+            SourceFromDataField<ArrayField<TypedSchemaField<typeof BaseShapeData.TYPES>>>,
+            TRequired,
+            TNullable,
+            THasInitial
+        >,
+        model: abstract.DataModel,
+        options: ArrayFieldOptions<
+            SourceFromDataField<ArrayField<TypedSchemaField<typeof BaseShapeData.TYPES>>>,
+            TRequired,
+            TNullable,
+            THasInitial
+        >,
+    ): MaybeSchemaProp<
+        ModelPropFromDataField<ArrayField<TypedSchemaField<typeof BaseShapeData.TYPES>>>,
+        TRequired,
+        TNullable,
+        THasInitial
+    >;
+}
+
+/**
+ * The field for a grid offset.
+ */
+export class GridOffsetField<TRequired extends boolean = true, TNullable extends boolean = false> extends SchemaField<
+    GridOffsetSchema,
+    SourceFromSchema<GridOffsetSchema>,
+    ModelPropsFromSchema<GridOffsetSchema>,
+    TRequired,
+    TNullable,
+    false
+> {
+    /**
+     * @param options Options which configure the behavior of the field
+     * @param context Additional context which describes the field
+     */
+    constructor(options?: GridOffsetFieldOptions<TRequired, TNullable, false>, context?: DataFieldContext);
+
+    static override get _defaults(): GridOffsetFieldOptions<boolean, boolean, false>;
+
+    protected override _cast(value: unknown): object;
+}
+
+export type GridOffsetSchema = {
+    i: NumberField<number, number, true, false, false>;
+    j: NumberField<number, number, true, false, false>;
+    k: NumberField<number, number, true, false, false>;
+};
+
+/**
+ * The field of an array/set of grid offsets.
+ */
+export class GridOffsetsField<
+    TRequired extends boolean = true,
+    TNullable extends boolean = false,
+    THasInitial extends boolean = false,
+> extends ArrayField<
+    GridOffsetField,
+    SourceFromSchema<GridOffsetSchema>[],
+    ModelPropsFromSchema<GridOffsetSchema>[],
+    TRequired,
+    TNullable,
+    THasInitial
+> {
+    /**
+     * @param options Options which configure the behavior of the field
+     * @param context Additional context which describes the field
+     */
+    constructor(options?: GridOffsetFieldOptions<TRequired, TNullable, THasInitial>, context?: DataFieldContext);
+
+    static override get _defaults(): GridOffsetFieldOptions<true, false, false>;
+
+    /* -------------------------------------------- */
+    /*  Form Field Integration                      */
+    /* -------------------------------------------- */
+
+    protected override _toInput(config: FormInputConfig): HTMLElement;
 }
 
 // System utility types

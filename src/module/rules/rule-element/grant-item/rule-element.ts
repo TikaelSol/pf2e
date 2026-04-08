@@ -144,12 +144,9 @@ class GrantItemRuleElement extends RuleElement<GrantItemSchema> {
         if (!this.allowDuplicate && existingItem) {
             this.#setGrantFlags(itemSource, existingItem, itemUpdates);
 
-            ui.notifications.info(
-                _loc("PF2E.UI.RuleElements.GrantItem.AlreadyHasItem", {
-                    actor: this.actor.name,
-                    item: grantedItem.name,
-                }),
-            );
+            ui.notifications.info("PF2E.UI.RuleElements.GrantItem.AlreadyHasItem", {
+                format: { actor: this.actor.name, item: grantedItem.name },
+            });
             return;
         }
 

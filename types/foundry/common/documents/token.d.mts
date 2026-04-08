@@ -173,10 +173,8 @@ type TokenSchema = {
         contrast: fields.NumberField<number, number, true, false>;
     }>;
     /** An array of detection modes which are available to this Token */
-    detectionModes: fields.ArrayField<
+    detectionModes: fields.TypedObjectField<
         fields.SchemaField<{
-            /** The id of the detection mode, a key from CONFIG.Canvas.detectionModes */
-            id: fields.StringField<string>;
             /** Whether or not this detection mode is presently enabled */
             enabled: fields.BooleanField;
             /** The maximum range in distance units at which this mode can detect targets */

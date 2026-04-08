@@ -1107,31 +1107,6 @@ export const USER_ROLE_NAMES: {
 export type UserRole = keyof typeof USER_ROLE_NAMES;
 
 /**
- * An enumeration of the allowed types for a MeasuredTemplate embedded document
- * @see https://foundryvtt.com/article/measurement/
- */
-export const MEASURED_TEMPLATE_TYPES: Readonly<{
-    /**
-     * Circular templates create a radius around the starting point.
-     */
-    CIRCLE: "circle";
-    /**
-     * Cones create an effect in the shape of a triangle or pizza slice from the starting point.
-     */
-    CONE: "cone";
-    /**
-     * A rectangle uses the origin point as one of the corners, treating the origin as being inside of the rectangle's area.
-     */
-    RECTANGLE: "rect";
-    /**
-     * A ray creates a single line that is one square in width and as long as you want it to be.
-     */
-    RAY: "ray";
-}>;
-
-export type MeasuredTemplateType = (typeof MEASURED_TEMPLATE_TYPES)[keyof typeof MEASURED_TEMPLATE_TYPES];
-
-/**
  * Define the recognized User capabilities which individual Users or role levels may be permitted to perform
  */
 export const USER_PERMISSIONS: Readonly<{
@@ -1282,6 +1257,10 @@ export const USER_PERMISSIONS: Readonly<{
 }>;
 
 export type UserPermission = keyof typeof USER_PERMISSIONS;
+
+export const EDGE_RESTRICTION_TYPES: readonly ["light", "darkness", "sight", "sound", "move"];
+
+export type EdgeRestrictionType = (typeof EDGE_RESTRICTION_TYPES)[number];
 
 /**
  * The allowed directions of effect that a Wall can have
@@ -2155,6 +2134,8 @@ export const REGION_VISIBILITY: Readonly<{
      */
     ALWAYS: 2;
 }>;
+
+export type RegionVisibility = (typeof REGION_VISIBILITY)[keyof typeof REGION_VISIBILITY];
 
 /**
  * The types of a Region movement segment.

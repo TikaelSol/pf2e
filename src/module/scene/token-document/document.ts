@@ -24,7 +24,7 @@ import { objectHasKey, sluggify } from "@util";
 import * as R from "remeda";
 import { ScenePF2e } from "../document.ts";
 import { TokenAura } from "./aura/index.ts";
-import type { DetectionModeEntry, TokenFlagsPF2e, WithTroopFlags } from "./data.ts";
+import type { TokenFlagsPF2e, WithTroopFlags } from "./data.ts";
 import type { TokenConfigPF2e } from "./sheets/token-config.ts";
 
 class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> extends TokenDocument<TParent> {
@@ -364,9 +364,9 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
 
         // Reset detection modes if using rules-based vision
         const hasVision = actor.perception.hasVision;
-        const lightPerception: DetectionModeEntry = { id: "lightPerception", enabled: hasVision, range: Infinity };
-        const basicSight: DetectionModeEntry = { id: "basicSight", enabled: hasVision, range: 0 };
-        this.detectionModes = [lightPerception, basicSight];
+        const lightPerception = { enabled: hasVision, range: Infinity };
+        const basicSight = { enabled: hasVision, range: 0 };
+        this.detectionModes = { lightPerception, basicSight };
 
         // Reset sight defaults and set vision mode.
         // Unlike detection modes, there can only be one, and it decides how the player is currently seeing.
@@ -385,26 +385,22 @@ class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> ext
         // Update basic sight and adjust saturation based on darkvision or light levels
         if (visionMode === "darkvision") {
             this.sight.range = basicSight.range = Infinity;
-
             if (actor.isOfType("character") && actor.flags[SYSTEM_ID].colorDarkvision) {
                 this.sight.saturation = 1;
             } else if (!game.user.settings.monochromeDarkvision) {
                 this.sight.saturation = 0;
             }
         }
-
         if (actor.perception.senses.has("see-invisibility")) {
-            this.detectionModes.push({ id: "seeInvisibility", enabled: true, range: Infinity });
+            this.detectionModes.seeInvisibility = { enabled: true, range: Infinity };
         }
-
         const tremorsense = actor.perception.senses.get("tremorsense");
         if (tremorsense) {
-            this.detectionModes.push({ id: "feelTremor", enabled: true, range: tremorsense.range });
+            this.detectionModes.feelTremor = { enabled: true, range: tremorsense.range };
         }
-
         if (!actor.hasCondition("deafened")) {
             const range = scene?.flags[SYSTEM_ID].hearingRange ?? Infinity;
-            this.detectionModes.push({ id: "hearing", enabled: true, range });
+            this.detectionModes.hearing = { enabled: true, range };
         }
     }
 

@@ -7,9 +7,11 @@ import {
     DataField,
     DocumentFlagsField,
     DocumentStatsData,
+    GridOffsetSchema,
     MaybeSchemaProp,
     ModelPropFromDataField,
     SourceFromDataField,
+    SourceFromSchema,
 } from "./fields.mjs";
 import { DataModelValidationFailure } from "./validation-failure.mjs";
 
@@ -433,6 +435,14 @@ export interface JavaScriptFieldOptions<
 > extends StringFieldOptions<string, TRequired, TNullable, THasInitial> {
     /** Does the field allow async code? Default: false */
     async?: boolean;
+}
+
+export interface GridOffsetFieldOptions<
+    TRequired extends boolean,
+    TNullable extends boolean,
+    THasInitial extends boolean,
+> extends DataFieldOptions<SourceFromSchema<GridOffsetSchema>, TRequired, TNullable, THasInitial> {
+    dimensions: 2 | 3;
 }
 
 export interface ElementValidationFailure {

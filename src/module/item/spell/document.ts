@@ -17,12 +17,11 @@ import { ItemPF2e } from "@item";
 import { processSanctification } from "@item/ability/helpers.ts";
 import { ItemSourcePF2e, RawItemChatData } from "@item/base/data/index.ts";
 import type { ItemDescriptionData } from "@item/base/data/system.ts";
-import { createEffectAreaLabel, performLatePreparation, placeItemTemplate } from "@item/helpers.ts";
+import { createEffectAreaLabel, performLatePreparation, placeRegionFromItem } from "@item/helpers.ts";
 import { SpellSlotGroupId } from "@item/spellcasting-entry/collection.ts";
 import { spellSlotGroupIdToNumber } from "@item/spellcasting-entry/helpers.ts";
 import { BaseSpellcastingEntry } from "@item/spellcasting-entry/types.ts";
 import type { RangeData } from "@item/types.ts";
-import { MeasuredTemplatePF2e } from "@module/canvas/index.ts";
 import { ChatMessagePF2e, ItemOriginFlag } from "@module/chat-message/index.ts";
 import { OneToTen, Rarity, ZeroToThree, ZeroToTwo } from "@module/data.ts";
 import { RollNotePF2e } from "@module/notes.ts";
@@ -34,7 +33,7 @@ import {
     processDamageCategoryStacking,
 } from "@module/rules/helpers.ts";
 import { eventToRollParams } from "@module/sheet/helpers.ts";
-import type { TokenDocumentPF2e } from "@scene";
+import type { RegionDocumentPF2e, TokenDocumentPF2e } from "@scene";
 import { CheckRoll } from "@system/check/index.ts";
 import { DamagePF2e } from "@system/damage/damage.ts";
 import { DamageModifierDialog } from "@system/damage/dialog.ts";
@@ -550,10 +549,10 @@ class SpellPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Ite
             .sort((first, second) => first.level - second.level);
     }
 
-    placeTemplate(message?: ChatMessagePF2e): Promise<MeasuredTemplatePF2e> {
+    placeTemplate(message?: ChatMessagePF2e): Promise<RegionDocumentPF2e | null> {
         const area = this.system.area;
         if (!area) throw ErrorPF2e("Attempted to create template with non-area spell");
-        return placeItemTemplate(area, { item: this, message });
+        return placeRegionFromItem(area, { item: this, message });
     }
 
     override prepareBaseData(): void {

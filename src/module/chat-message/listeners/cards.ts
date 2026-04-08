@@ -6,7 +6,7 @@ import { SAVE_TYPES } from "@actor/values.ts";
 import type { Rolled } from "@client/dice/roll.d.mts";
 import { PhysicalItemPF2e, type ItemPF2e } from "@item";
 import { isSpellConsumableUUID } from "@item/consumable/spell-consumables.ts";
-import { placeItemTemplate } from "@item/helpers.ts";
+import { placeRegionFromItem } from "@item/helpers.ts";
 import { Coins } from "@item/physical/helpers.ts";
 import { eventToRollParams } from "@module/sheet/helpers.ts";
 import { effectTraits } from "@scripts/config/traits.ts";
@@ -136,10 +136,9 @@ class ChatCards {
                     spell?.placeTemplate(message);
                     return;
                 case "spell-template-clear": {
-                    const templateIds =
-                        canvas.scene?.templates.filter((t) => t.message === message).map((t) => t.id) ?? [];
+                    const regionIds = canvas.scene?.regions.filter((t) => t.message === message).map((t) => t.id) ?? [];
                     button.disabled = true;
-                    await canvas.scene?.deleteEmbeddedDocuments("MeasuredTemplate", templateIds);
+                    await canvas.scene?.deleteEmbeddedDocuments("Region", regionIds);
                     button.disabled = false;
                     return;
                 }
@@ -229,7 +228,7 @@ class ChatCards {
                 case "place-area-template": {
                     const context = message.flags[SYSTEM_ID].context;
                     const area = tupleHasValue(["area-fire", "auto-fire"], context?.type) ? context.area : null;
-                    if (area) placeItemTemplate(area, { item, message });
+                    if (area) placeRegionFromItem(area, { item, message });
                     return;
                 }
             }

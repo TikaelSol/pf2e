@@ -213,16 +213,18 @@ function toggleOffShieldBlock(messageId: string): void {
  * Show or hide a clear-measured-template button on a message (applicable to spell cards with template-placed buttons).
  * The button will be shown if templates are placed and the user has ownership; otherwise it will be hidden.
  */
-function toggleClearTemplatesButton(message: ChatMessagePF2e | null): void {
+function toggleClearEffectAreaButton(message: ChatMessagePF2e | null): void {
     if (!message || !canvas.ready) return;
 
     const selector = `li[data-message-id="${message.id}"] button[data-action=spell-template-clear]`;
     for (const chatLogDOM of htmlQueryAll(document.body, "#chat, #chat-popout")) {
         const clearTemplatesButton = htmlQuery(chatLogDOM, selector);
         if (!clearTemplatesButton) continue;
-        const hasMeasuredTemplates = !!canvas.scene?.templates.some((t) => t.message === message && t.isOwner);
-        clearTemplatesButton.classList.toggle("hidden", !hasMeasuredTemplates);
+        const hasEffectAreas = !!canvas.scene?.regions.some(
+            (t) => t.isOwner && t.isEffectArea && t.message === message,
+        );
+        clearTemplatesButton.classList.toggle("hidden", !hasEffectAreas);
     }
 }
 
-export { applyDamageFromMessage, createUseActionMessage, isCheckContextFlag, toggleClearTemplatesButton };
+export { applyDamageFromMessage, createUseActionMessage, isCheckContextFlag, toggleClearEffectAreaButton };

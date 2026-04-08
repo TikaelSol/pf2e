@@ -42,7 +42,6 @@ import type { RuleElement, RuleElements } from "@module/rules/index.ts";
 import type { UserPF2e } from "@module/user/index.ts";
 import type {
     AmbientLightDocumentPF2e,
-    MeasuredTemplateDocumentPF2e,
     RegionBehaviorPF2e,
     RegionDocumentPF2e,
     ScenePF2e,
@@ -293,7 +292,6 @@ type ConfiguredConfig = Config<
     Hotbar<MacroPF2e>,
     ItemPF2e,
     MacroPF2e,
-    MeasuredTemplateDocumentPF2e,
     RegionDocumentPF2e,
     RegionBehaviorPF2e,
     TileDocumentPF2e,
