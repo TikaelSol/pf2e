@@ -294,7 +294,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
             } else if (anchor.dataset.action === "delete-proficiency") {
                 const slug = anchor.dataset.slug ?? "";
                 if (slug in feat.system._source.subfeatures.proficiencies) {
-                    feat.update({ [`system.subfeatures.proficiencies.-=${slug}`]: null });
+                    feat.update({ [`system.subfeatures.proficiencies.${slug}`]: _del });
                 }
             }
         });
@@ -327,7 +327,7 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
                 case "delete-sense": {
                     const slug = anchor.dataset.slug ?? "";
                     if (slug in feat.system.subfeatures.senses) {
-                        feat.update({ [`system.subfeatures.senses.-=${slug}`]: null });
+                        feat.update({ [`system.subfeatures.senses.${slug}`]: _del });
                     }
                     break;
                 }
@@ -409,16 +409,6 @@ class FeatSheetPF2e extends ItemSheetPF2e<FeatPF2e> {
             delete formData[keyOptionsKey];
             if (this.item._source.system.subfeatures?.keyOptions) {
                 formData["system.subfeatures.-=keyOptions"] = null;
-            }
-        }
-
-        const pattern = /^system\.subfeatures\.proficiencies\.([a-z]+)\.to$/;
-        const proficiencies = Object.keys(formData).filter((k) => pattern.test(k));
-        for (const path of proficiencies) {
-            const slug = pattern.exec(path)?.at(1);
-            if (slug && slug in CONFIG.PF2E.classTraits && formData[path] !== 1) {
-                delete formData[`system.subfeatures.proficiencies.${slug}.attribute`];
-                formData[`system.subfeatures.proficiencies.${slug}.-=attribute`] = null;
             }
         }
 
