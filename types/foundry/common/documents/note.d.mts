@@ -1,4 +1,4 @@
-import { DocumentOwnershipLevel, DocumentOwnershipString, ImageFilePath, TextAnchorPoint } from "@common/constants.mjs";
+import { DocumentOwnershipLevel, ImageFilePath, TextAnchorPoint } from "@common/constants.mjs";
 import { Document, DocumentMetadata, MetadataPermission } from "../abstract/_module.mjs";
 import * as data from "../data/data.mjs";
 import * as fields from "../data/fields.mjs";
@@ -28,9 +28,9 @@ export default class BaseNote<TParent extends BaseScene | null> extends Document
     /*  Model Methods                               */
     /* -------------------------------------------- */
 
-    testUserPermission(
+    override testUserPermission(
         user: BaseUser,
-        permission: DocumentOwnershipString | DocumentOwnershipLevel,
+        permission: DocumentOwnershipLevel,
         { exact }?: { exact?: boolean },
     ): boolean;
 }
