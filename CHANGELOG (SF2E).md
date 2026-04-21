@@ -1,3 +1,82 @@
+## 1.0.3
+
+### Bugfixes
+
+- (stwlam) Fix field name in appearance tab of `TokenConfig`
+- (stwlam) Fix show damage dialog toggle
+- (stwlam) Restore overlay icon on tokens of dead actors
+- (stwlam) Restore status effects title bar
+- (Supe) Fix colors of whisper and blind inline rolls in dark mode
+- (Supe) Fix empty tooltips flashing when hovering over the effect panel
+- (Supe) Fix items and actions sent by players defaulting to blind
+- (Supe) Fix styling of character language tags
+
+### Data Updates
+
+- (Ambrose) Add an index to the Ancestry Journals and link to GM and Player screens
+- (Ambrose) Add Osharu language to the Osharu ancestry
+- (Ambrose) Correct weapon group for Orocoran's Projective Vomit Ancestral Unarmed Attack
+- (kromko) Fix spell link in Mutant Goblin's Mutant Magic
+- (Longstrider) Correct GA ancestries' descriptions
+
+## 1.0.2
+
+### System Improvements
+
+- (7H3LaughingMan) Allow modification of roll-twice behavior in damage-roll hooks
+- (stwlam) Convert Check Prompt Generator to `ApplicationV2`, add raw output preview
+- (Supe) Convert Attack Proficiencies dialog to `DialogV2`
+
+### Bugfixes
+
+- (In3luki) Fix Compendium Browser header controls
+- (In3luki) Fix updating physical-item prices
+- (In3luki) Fix `TextEditorPF2e#_createInlineRoll` failing to return pre-rolled inline rolls
+- (stwlam) Fix double-barrel icon on PC sheet
+- (stwlam) Fix handling of damage changes in NPC Attack sheet
+- (stwlam) Fix localization of damage-application chat message
+- (stwlam) Have hearing detection test against region surfaces
+- (stwlam) Restore token effect icons
+
+### Data Updates
+
+- (Ambrose) Add description and spell effect to Monstrosity form
+- (Ambrose) Move Recharge Weapon to the Cantrips folder
+- (Ambrose) Remove Quick Coercion's self-grant RE
+- (kromko) Add missing Galactic Ancestries localization strings
+- (Longstrider) Fix Golarion ancestries' descriptions
+- (Longstrider) Brush up SF2e versatile heritages
+- (Longstrider) Correct Cryopike's weapon group
+- (Rigo) Fix path to cover-reduction flag in Aim's ephemeral effect
+
+## 1.0.1
+
+### Bugfixes
+
+- (In3luki) Fix detection of inline damage rolls
+- (In3luki) Fix Region shape resetting after release of shape control handles
+- (In3luki, stwlam) Fix localization of check-roll message flavor
+- (stwlam) Fix style incapability with V14 code-mirror elements in Note Rule Element form
+- (stwlam) Fix issue preventing changing viewed scene
+- (stwlam) Restore styling of inline roll links according to roll (now message) mode
+
+### Data Updates
+
+- (Ambrose) Add missing traits to Android ancestry
+- (Ambrose) Correct Fonqugon's land speed
+- (iDantar) Condense bless aura and spell effects
+
+## 1.0.0
+
+### Bugfixes
+
+- (stwlam, Supe, In3luki) Update to support V14
+
+### Data Updates
+
+- (Ambrose) Add missing spellscasting entry and abilities to Hesper
+- (kromko) Fix Paragon Maratan Headache's level
+
 ## 0.0.11
 
 ### Bugfixes
@@ -179,6 +258,7 @@
 ## 0.0.4
 
 ### Bugfixes
+
 - (Supe) Fix updates to nested ammo wiping the ammo type
 - (Supe) Support apex items that don't require investment
 - (Supe) Adjust bulk resizing such that smaller items on larger actors are 1/2 instead of 1/10.
@@ -186,6 +266,7 @@
 - (Tikael) Fix scaling item price by size in SF2e
 
 ### Data Updates
+
 - (Ambrose) Correct typo in Solar Shield effect's rule elements
 - (Ambrose) Remove Rare tag from Elebrian
 - (Ambrose) Update feats and class features in SF2e Iconics

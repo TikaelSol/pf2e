@@ -1,6 +1,6 @@
 import { ItemSourcePF2e } from "@item/base/data/index.ts";
 import { itemIsOfType } from "@item/helpers.ts";
-import { classTraits } from "@scripts/config/traits.ts";
+import { ancestryTraits, classTraits } from "@scripts/config/traits.ts";
 import { objectHasKey, recursiveReplaceString, sluggify } from "@util/misc.ts";
 import fs from "fs";
 import path from "path";
@@ -93,13 +93,12 @@ const packPairs = allPackDirs.map((dir) => {
                 continue;
             }
 
-            // If the id matches, always consider it an overlap. Add the id though.
-            if (pf2eData._id && pf2eData._id === sf2eData._id) {
-                overlaps.add(pf2eData._id);
-                continue;
-            }
-
+            // Never treat certain types of items as overlaps
+            // Despite being in both systems, "Armored Coat" and "Courier" are not considered to be the same thing.
+            // Actual reprints (listed in duplicates) are still filtered out through other means
             const isItem = isItemSource(pf2eData) && sf2eData && isItemSource(sf2eData);
+            if (isItem && itemIsOfType(pf2eData, "background", "physical")) continue;
+
             if (isItem && itemIsOfType(pf2eData, "feat") && itemIsOfType(sf2eData, "feat")) {
                 const allTraits = [...pf2eData.system.traits.value, ...sf2eData.system.traits.value];
 
@@ -109,12 +108,23 @@ const packPairs = allPackDirs.map((dir) => {
                 // Class features and class feats for classes are also never overlaps
                 if (pf2eData.system.category === "classfeature") continue;
                 if (pf2eData.system.category === "class" && allTraits.some((t) => t in classTraits)) continue;
-            } else if (isItem && itemIsOfType(pf2eData, "background") && itemIsOfType(sf2eData, "background")) {
-                // Backgrounds often share names but aren't the same at all. Rely on id overlaps only.
-                continue;
+
+                // If both are ancestry feats but the traits don't have overlap, we should export even if the name matches
+                // A duplicate in such scenarios won't lead to dupe feats in a character's feat search
+                const pf2eAncestryTraits = pf2eData.system.traits.value.filter((t) => t in ancestryTraits);
+                const sf2eAncestryTraits = sf2eData.system.traits.value.filter((t) => t in ancestryTraits);
+                const hasAncestryTraits = pf2eAncestryTraits.length > 0 || sf2eAncestryTraits.length > 0;
+                if (hasAncestryTraits && !R.intersection(pf2eAncestryTraits, sf2eAncestryTraits).length) {
+                    continue;
+                }
             }
 
-            overlaps.add(pf2eData.name);
+            // Add to overlaps based on if its a name or id overlap
+            if (pf2eData.name === sf2eData.name) {
+                overlaps.add(pf2eData.name);
+            } else if (pf2eData._id && pf2eData._id === sf2eData._id) {
+                overlaps.add(pf2eData._id);
+            }
         }
     }
 
@@ -203,7 +213,7 @@ for (const contentSystem of contentSystems) {
         if (!pack) continue;
 
         const data = pack.data
-            .filter((d) => !packPair.overlaps.has(d.name))
+            .filter((d) => !!d._id && !(packPair.overlaps.has(d.name) || packPair.overlaps.has(d._id)))
             .map((entry) => {
                 entry = recursiveReplaceString(entry, (s) => {
                     s = s.replaceAll(`systems/${contentSystem}`, `systems/${targetSystem}`);
@@ -361,14 +371,19 @@ for (const contentSystem of contentSystems) {
     };
     const exportLog = R.pipe(
         packPairs.filter((p) => p.documentName === "Item"),
-        R.flatMap(({ overlaps, ...data }) =>
-            [...overlaps].map(
+        R.flatMap(({ overlaps, ...data }) => {
+            // From the pack, get all overlaps, but make sure we *actually* excluded it
+            const registeredDupes = [...overlaps].map(
                 (idOrName) =>
                     data[contentSystem]?.data.find((d) => d.name === idOrName || d._id === idOrName) ??
                     data[targetSystem]?.data.find((d) => d.name === idOrName || d._id === idOrName),
-            ),
-        ),
-        R.filter((i): i is ItemSourcePF2e => !!i && isItemSource(i)),
+            );
+            const outputPack = contentPacks.find((p) => p.id === data[contentSystem]?.id);
+            const outputtedIds = new Set(outputPack?.data.map((d) => d._id) ?? []);
+            return registeredDupes.filter(
+                (d): d is ItemSourcePF2e => !!d && isItemSource(d) && !outputtedIds.has(d._id),
+            );
+        }),
         R.groupBy((i) => (itemIsOfType(i, "feat") ? `feat-${i.system.category}` : i.type)),
         R.entries(),
         R.map(([key, value]) => {
