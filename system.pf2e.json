@@ -360,7 +360,7 @@
         },
         {
             "name": "menace-under-otari-bestiary",
-            "label": "Menace Under Otari",
+            "label": "Beginner Box",
             "path": "packs/menace-under-otari-bestiary",
             "type": "Actor",
             "banner": "systems/pf2e/assets/compendium-banner/red.webp",
@@ -791,6 +791,19 @@
             "name": "troubles-in-otari-bestiary",
             "label": "Troubles in Otari",
             "path": "packs/troubles-in-otari-bestiary",
+            "type": "Actor",
+            "banner": "systems/pf2e/assets/compendium-banner/red.webp",
+            "system": "pf2e",
+            "ownership": {
+                "PLAYER": "LIMITED",
+                "ASSISTANT": "OWNER"
+            },
+            "flags": {}
+        },
+        {
+            "name": "troubles-in-grayce-bestiary",
+            "label": "Troubles in Grayce",
+            "path": "packs/troubles-in-grayce-bestiary",
             "type": "Actor",
             "banner": "systems/pf2e/assets/compendium-banner/red.webp",
             "system": "pf2e",
@@ -1406,6 +1419,7 @@
                         "shadows-at-sundown-bestiary",
                         "the-enmity-cycle-bestiary",
                         "the-slithering-bestiary",
+                        "troubles-in-grayce-bestiary",
                         "troubles-in-otari-bestiary"
                     ]
                 },

@@ -927,6 +927,11 @@
             "AlchemicalGrenades": {
                 "Label": "Alchemical Grenade"
             },
+            "Alendreu": {
+                "ChoppingFrenzy": {
+                    "ToggleLabel": "Chopping Frenzy — Second Strike"
+                }
+            },
             "AmbushCopse": {
                 "RollOptionLabel": "Ambush Copse is hiding in Forests"
             },
@@ -1429,6 +1434,11 @@
                 "TargetMurderedPaleStranger": "Target Murdered Pale Stranger",
                 "TargetNeverKilled": "Target has Never Killed"
             },
+            "PathRiverPeeler": {
+                "SensitiveEars": {
+                    "Note": "Whenever the Peeler takes sonic damage, it must succeed at a @Check[will|dc:16|options:inflicts:frightened] saving throw or be @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure)."
+                }
+            },
             "PeacockPhoenix": {
                 "RadiantWing": "Radiant Wing"
             },
@@ -1517,6 +1527,14 @@
                     "RuneOfSmiting": {
                         "Label": "Rune of Smiting",
                         "Text": "When the weapon hits, the giant can @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.t6cx9FOODmeZQNYl]{Push} the target back 10 feet, or 20 feet on a critical hit."
+                    }
+                }
+            },
+            "Sangrist": {
+                "BloodVigor": {
+                    "FastHealing":{
+                        "Details": "While adjacent to a creature taking persistent bleed damage",
+                        "Toggle": "Blood Vigor — Fast Healing"
                     }
                 }
             },
@@ -4158,6 +4176,9 @@
                     "TitanicLabel": "Titanic",
                     "WyrmhideLabel": "Wyrmhide"
                 },
+                "GlacierHammer": {
+                    "ToggleLabel": "Glacier Hammer — Grow Icicles"
+                },
                 "GoldenGreaves": {
                     "ToggleLabel": "Golden Greaves — Increase Fortitude and Reflex DC"
                 },
@@ -4169,6 +4190,9 @@
                 },
                 "HumbugPocket": {
                     "ConcealAnObjectLabel": "Humbug Pocket (Conceal an Object in the Pocket)"
+                },
+                "HuntersBow": {
+                    "ToggleLabel": "Hunter's Bow — Target can't see you"
                 },
                 "HydraHeadClub": "Hydra Head Club — Reactive Snap",
                 "InstinctCrown": {
