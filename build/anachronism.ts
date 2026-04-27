@@ -181,8 +181,13 @@ for (const contentSystem of contentSystems) {
         const pair = packPairsById[normalizedPackId];
         if (!pair) return null;
 
-        const entryInTargetSystem = pair.get(targetSystem, docNameOrId);
+        // Pull the entry in the target and content systems, prioritizing target system variants
+        // Note that in the case of duplicates, sf2e does not contain the item, so we may need to fetch from pf2e
+        // This is only important for the target system, since we want to redirect content to target if it exists
         const entryInContentSystem = pair.get(contentSystem, docNameOrId);
+        const entryInTargetSystem =
+            pair.get(targetSystem, docNameOrId) ??
+            (entryInContentSystem && pair.duplicated.has(entryInContentSystem.name) ? entryInContentSystem : null);
         const id = entryInTargetSystem?._id ?? entryInContentSystem?._id;
         const name = entryInTargetSystem?.name ?? entryInContentSystem?.name;
         if (!name || !id) return null;
@@ -216,7 +221,11 @@ for (const contentSystem of contentSystems) {
         if (!pack) continue;
 
         const data = pack.data
-            .filter((d) => !!d._id && !(packPair.overlaps.has(d.name) || packPair.overlaps.has(d._id)))
+            .filter((d) => {
+                if (!d._id) return false;
+                const isOverlap = packPair.overlaps.has(d.name) || packPair.overlaps.has(d._id);
+                return !isOverlap && !packPair.duplicated.has(d.name);
+            })
             .map((entry) => {
                 entry = recursiveReplaceString(entry, (s) => {
                     s = s.replaceAll(`systems/${contentSystem}`, `systems/${targetSystem}`);
